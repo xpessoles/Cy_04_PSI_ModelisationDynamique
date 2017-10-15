@@ -1,0 +1,171 @@
+\documentclass[10pt,fleqn]{article} % Default font size and left-justified equations
+\usepackage[%
+    pdftitle={Résolutions de problèmes de statique : PFS 2D},
+    pdfauthor={Xavier Pessoles}]{hyperref}
+
+\input{style/new_style}
+\input{style/macros_SII}
+\usepackage{multicol}
+\usepackage{siunitx}
+%\usepackage{picins}
+\fichetrue
+%\fichefalse
+
+\proftrue
+\proffalse
+
+\tdtrue
+%\tdfalse
+
+\courstrue
+\coursfalse
+
+% -------------------------------------
+% Déclaration des titres
+% -------------------------------------
+
+\def\discipline{Sciences \\Industrielles de \\ l'Ingénieur}
+\def\xxtete{Sciences Industrielles de l'Ingénieur}
+
+
+\def\classe{\textsf{PSI$\star$ -- MP}}
+\def\xxnumpartie{Rév -- Stat}
+\def\xxpartie{Modéliser le comportement statique des systèmes mécaniques}
+
+\def\xxnumchapitre{Révision 1 \vspace{.2cm}}
+\def\xxchapitre{\hspace{.12cm} Résolution des problèmes de statique -- Statique plane}
+
+\def\xxposongletx{2}
+\def\xxposonglettext{1.45}
+\def\xxposonglety{19}%16
+
+\def\xxonglet{\textsf{Rév -- Cin}}
+
+\def\xxactivite{Application 01}
+\def\xxauteur{\textsl{Équipe PT -- PT$\star$ La Martinière Monplaisir}}
+
+
+\def\xxtitreexo{Toitures}
+\def\xxsourceexo{\hspace{.2cm} \footnotesize{Équipe PT -- PT$\star$ La Martinière Monplaisir}}
+
+\def\xxcompetences{%
+\textsl{%
+\textbf{Savoirs et compétences :}\\
+}}
+
+\def\xxfigures{
+%\includegraphics[width=.8\textwidth]{images/fig_01}
+}%figues de la page de garde
+
+\def\xxpied{%
+Révision statique -- Résolution des problèmes de statique plane\\
+Fiche 1 -- \xxactivite%
+}
+
+\setcounter{secnumdepth}{5}
+%---------------------------------------------------------------------------
+
+
+\begin{document}
+%\chapterimage{png/Fond_Cin}
+\input{style/new_pagegarde}
+\vspace{4cm}
+\pagestyle{fancy}
+\thispagestyle{plain}
+
+
+\def\columnseprulecolor{\color{ocre}}
+\setlength{\columnseprule}{0.4pt} 
+
+\ifprof
+\else
+\begin{multicols}{2}
+\fi
+\section*{Toit de stade}
+Un toit de stade représenté sur la figure suivante est sollicité par son propre poids  avec $q=\SI{-5}{kN/m}$.  On donne $a=\SI{4}{m}$, $b=\SI{5}{m}$. Les liaisons sont supposées être des liaisons pivot parfaites.
+\begin{center}
+\includegraphics[width=.9\linewidth]{images/fig_01}
+\end{center}
+
+\begin{center}
+\includegraphics[width=.9\linewidth]{images/fig_02}
+\end{center}
+
+\subparagraph{}\textit{Tracer le graphe de structure. Définir le nombre d'inconnues statiques.}
+
+\subparagraph{}\textit{Donner la stratégie permettant de déterminer toutes les inconnues de liaisons.}
+
+\subparagraph{}\textit{Déterminer les actions mécaniques dans toutes les liaisons.}
+
+
+\section*{Toit en béton armé}
+\setcounter{exo}{0}
+\begin{center}
+\includegraphics[width=.9\linewidth]{images/fig_03}
+\end{center}
+
+Les entrées et sorties d’un garage souterrain sont couvertes par un avant toit en béton armé $[ABC]$. Ce toit est en appui en $A$ sur un massif et en $B$ sur un mur incliné $[BD]$. Le toit est soumis à une charge uniformément répartie $p$. On donne :
+$a=\SI{5}{m}$; $b=\SI{2}{m}$; $c=\SI{3}{m}$ et $p=\SI{-3}{kN/m}$.
+
+
+\subparagraph{}\textit{Tracer le graphe de structure. Définir le nombre d'inconnues statiques.}
+
+\subparagraph{}\textit{Donner la stratégie permettant de déterminer toutes les inconnues de liaisons.}
+
+\subparagraph{}\textit{Déterminer les actions mécaniques dans toutes les liaisons.}
+
+
+
+\section*{Paroi rigide amovible}
+\setcounter{exo}{0}
+
+La figure ci-dessous représente de profil une véranda équipée d'une paroi amovible. Cette paroi repérée \textbf{(1)} peut être totalement escamotée sous le toit au moyen d'un guidage dans un rail fixé sur la poutre supérieure, par l'intermédiaire d'un galet de centre $D$ non représenté sur le schéma. Le levier (2) permet de soulever la partie inférieure de la paroi \textbf{(1)}. Un vérin électrique \textbf{(3)}-\textbf{(4)} ; articulé en $B$ et $E$ assure la mise en mouvement de l'ensemble.
+
+\begin{center}
+\includegraphics[width=.9\linewidth]{images/fig_04}
+\end{center}
+
+On a : 
+\begin{itemize}
+\item $\vect{EA}=a_0\vect{x_0} + b_0\vect{y_0}$;
+\item $\vect{BA}=d_2\vect{x_2}$;
+\item $\vect{CA}=L_2\vect{x_0}$;
+\item $\vect{EB}=d_4\vect{y_0}$;
+\item $\vect{CD}=L_1\vect{x_1}$;
+\item $\vect{HD}=H_1\vect{x_1}$;
+\item $\left(\vect{x_0},\vect{x_2}\right)=\theta_{10}$ et $\left(\vect{x_0},\vect{u_0}\right)=\alpha_{0}$.
+\end{itemize}
+L'action du corps de vérin \textbf{(4)} sur la tige \textbf{(3)} est notée $\vect{F_{43}}\vect{y_0}=F_m$.
+
+L'action de pesanteur sur la paroi \textbf{(1)} est modélisée par une action répartie $p_0$. Le poids des autres éléments est supposé négligeable.
+
+\subparagraph{}\textit{Tracer le graphe de structure. Définir le nombre d'inconnues statiques.}
+
+\subparagraph{}\textit{Donner la stratégie permettant de déterminer la valeur de la poussée $F_m$ en fonction de $p_0$.}
+
+\subparagraph{}\textit{Déterminer les actions mécaniques dans toutes les liaisons.}
+
+\ifprof
+\else
+\end{multicols}
+\fi
+
+%\begin{center}
+%\includegraphics[width=\linewidth]{images/fig_04}
+%%\textit{}
+%\end{center}
+
+\end{document}
+
+\subparagraph{}\textit{}
+
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/fig_06}
+%\textit{}
+\end{center}
+\begin{center}
+\includegraphics[width=\linewidth]{images/img_04}
+%\textit{}
+\end{center}
+
