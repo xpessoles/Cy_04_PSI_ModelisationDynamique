@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6400 64-bit) (preloaded format=pdflatex 2017.9.4)  10 OCT 2017 08:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6400 64-bit) (preloaded format=pdflatex 2017.9.4)  15 OCT 2017 21:41
 entering extended mode
 **./Cy_04_Rev_01_Geometrie_Fiche.tex
 (Cy_04_Rev_01_Geometrie_Fiche.tex
@@ -2821,23 +2821,98 @@ LaTeX Font Info:    Font shape `MDB/mdput/m/n' will be
 LaTeX Font Info:    Font shape `MDB/mdput/m/n' will be
 (Font)              scaled to size 5.51999pt on input line 226.
 )
-LaTeX Font Info:    Font shape `T1/mdput/m/n' will be
-(Font)              scaled to size 7.35999pt on input line 74.
-LaTeX Font Info:    Font shape `T1/mdput/m/sl' will be
-(Font)              scaled to size 7.35999pt on input line 74.
-LaTeX Font Info:    Font shape `T1/mdput/bx/n' in size <8> not available
-(Font)              Font shape `T1/mdput/b/n' tried instead on input line 74.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 70.
+LaTeX Font Info:    Try loading font information for TS1+mdput on input line 74
+.
+
+(C:\Enseignement\Livre_Exo_Vuibert\Installation\MATHDESIGN\texmf\tex\latex\math
+design\mdput\ts1mdput.fd
+File: ts1mdput.fd 2006/01/29 Fontinst v1.928 font definitions for TS1/mdput.
+)
+LaTeX Font Info:    Font shape `TS1/mdput/m/n' will be
+(Font)              scaled to size 9.19998pt on input line 74.
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `mdput' (encoding: TS1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 83.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 94.
+LaTeX Font Info:    Font shape `T1/mdput/bx/n' in size <10> not available
+(Font)              Font shape `T1/mdput/b/n' tried instead on input line 95.
 LaTeX Font Info:    Font shape `T1/mdput/b/n' will be
-(Font)              scaled to size 7.35999pt on input line 74.
+(Font)              scaled to size 9.19998pt on input line 95.
+<images/co.png, id=6, 80.3pt x 449.68pt>
+File: images/co.png Graphic file (type png)
+<use images/co.png>
+Package pdftex.def Info: images/co.png  used on input line 107. on input line 1
+07.
+Package pdftex.def Info: Requested size: 15.24245pt x 85.35826pt on input line 
+107.
+<images/cf.png, id=8, 375.4025pt x 444.66125pt>
+File: images/cf.png Graphic file (type png)
+<use images/cf.png>
+Package pdftex.def Info: images/cf.png  used on input line 109. on input line 1
+09.
+Package pdftex.def Info: Requested size: 72.06041pt x 85.35826pt on input line 
+109.
+<images/cc.png, id=9, 453.695pt x 444.66125pt>
+File: images/cc.png Graphic file (type png)
+<use images/cc.png>
+Package pdftex.def Info: images/cc.png  used on input line 111. on input line 1
+11.
+Package pdftex.def Info: Requested size: 87.08907pt x 85.35826pt on input line 
+111.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 120.
+LaTeX Font Info:    Font shape `T1/mdput/m/n' will be
+(Font)              scaled to size 7.35999pt on input line 132.
+LaTeX Font Info:    Font shape `T1/mdput/m/sl' will be
+(Font)              scaled to size 7.35999pt on input line 132.
+LaTeX Font Info:    Font shape `T1/mdput/bx/n' in size <8> not available
+(Font)              Font shape `T1/mdput/b/n' tried instead on input line 132.
+LaTeX Font Info:    Font shape `T1/mdput/b/n' will be
+(Font)              scaled to size 7.35999pt on input line 132.
  [1
 
-{C:/Users/Xavier/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 74.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 74.
+{C:/Users/Xavier/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <./images/c
+o.png> <./images/cf.png> <./images/cc.png>]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 135.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 145.
+<png/logo_lycee.png, id=32, 329.23pt x 265.99374pt>
+File: png/logo_lycee.png Graphic file (type png)
+<use png/logo_lycee.png>
+Package pdftex.def Info: png/logo_lycee.png  used on input line 148. on input l
+ine 148.
+Package pdftex.def Info: Requested size: 56.9055pt x 45.97325pt on input line 1
+48.
+LaTeX Font Info:    Font shape `T1/mdput/m/it' will be
+(Font)              scaled to size 7.35999pt on input line 148.
+LaTeX Font Info:    Font shape `T1/pag/m/it' in size <8> not available
+(Font)              Font shape `T1/pag/m/sl' tried instead on input line 148.
 
-(Cy_04_Rev_01_Geometrie_Fiche.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 74.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 74.
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 45.97325pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[2 <./png/logo_lycee.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 148.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 148.
+ (Cy_04_Rev_01_Geometrie_Fiche.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 148.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 148.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -2846,26 +2921,28 @@ Package logreq Info: Writing requests to 'Cy_04_Rev_01_Geometrie_Fiche.run.xml'
 .
 \openout1 = `Cy_04_Rev_01_Geometrie_Fiche.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 74.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 148.
  ) 
 Here is how much of TeX's memory you used:
- 53557 strings out of 493352
- 1128344 string characters out of 3139710
- 1809654 words of memory out of 3000000
- 56245 multiletter control sequences out of 15000+200000
- 662709 words of font info for 156 fonts, out of 3000000 for 9000
+ 53768 strings out of 493352
+ 1131693 string characters out of 3139710
+ 1821800 words of memory out of 3000000
+ 56338 multiletter control sequences out of 15000+200000
+ 692520 words of font info for 225 fonts, out of 3000000 for 9000
  1127 hyphenation exceptions out of 8191
  57i,17n,98p,10475b,1963s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/ly1/texnansi.enc}{C:/Program Fil
-es/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Enseignement/Livre_Exo_Vuibert/In
-stallation/MATHDESIGN/texmf/fonts/type1/mathdesign/mdput/md-utri7m.pfb><C:/Prog
-ram Files/MiKTeX 2.9/fonts/type1/adobe/utopia/putb8a.pfb><C:/Program Files/MiKT
-eX 2.9/fonts/type1/adobe/utopia/putr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
-ype1/adobe/utopia/putr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/avant
-gar/uagd8a.pfb>
-Output written on Cy_04_Rev_01_Geometrie_Fiche.pdf (1 page, 43702 bytes).
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}{C:/Program Files/Mi
+KTeX 2.9/fonts/enc/dvips/ly1/texnansi.enc}<C:/Enseignement/Livre_Exo_Vuibert/In
+stallation/MATHDESIGN/texmf/fonts/type1/mathdesign/mdput/md-utr7t.pfb><C:/Ensei
+gnement/Livre_Exo_Vuibert/Installation/MATHDESIGN/texmf/fonts/type1/mathdesign/
+mdput/md-utri7m.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/adobe/utopia/putb8
+a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/adobe/utopia/putr8a.pfb><C:/Prog
+ram Files/MiKTeX 2.9/fonts/type1/adobe/utopia/putr8a.pfb><C:/Program Files/MiKT
+eX 2.9/fonts/type1/urw/avantgar/uagd8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
+ype1/urw/avantgar/uagko8a.pfb>
+Output written on Cy_04_Rev_01_Geometrie_Fiche.pdf (2 pages, 190260 bytes).
 PDF statistics:
- 45 PDF objects out of 1000 (max. 8388607)
- 4 named destinations out of 1000 (max. 500000)
- 48669 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 85 PDF objects out of 1000 (max. 8388607)
+ 20 named destinations out of 1000 (max. 500000)
+ 68145 words of extra memory for PDF output out of 74296 (max. 10000000)
 
