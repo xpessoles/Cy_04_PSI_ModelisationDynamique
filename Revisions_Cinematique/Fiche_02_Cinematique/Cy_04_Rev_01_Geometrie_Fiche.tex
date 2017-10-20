@@ -1,0 +1,192 @@
+\documentclass[10pt,fleqn]{article} % Default font size and left-justified equations
+\usepackage[%
+    pdftitle={Modélisation cinématique : Cinématique du solide indéformable},
+    pdfauthor={Xavier Pessoles}]{hyperref}
+
+\input{style/new_style}
+\input{style/macros_SII}
+
+\fichetrue
+%\fichefalse
+
+\proftrue
+%\proffalse
+
+%\tdtrue
+\tdfalse
+
+%\courstrue
+\coursfalse
+
+% -------------------------------------
+% Déclaration des titres
+% -------------------------------------
+
+\def\discipline{Sciences \\Industrielles de \\ l'Ingénieur}
+\def\xxtete{Sciences Industrielles de l'Ingénieur}
+
+\def\classe{\textsf{PSI$\star$ -- MP}}
+\def\xxnumpartie{Rév -- Cin}
+\def\xxpartie{Modéliser le comportement cinématique des systèmes mécaniques}
+
+\def\xxnumchapitre{Révision 1 \vspace{.2cm}}
+\def\xxchapitre{\hspace{.12cm} Modélisation cinématique}
+
+\def\xxposongletx{2}
+\def\xxposonglettext{1.45}
+\def\xxposonglety{19}%16
+
+\def\xxonglet{Rév -- Cin}
+
+\def\xxactivite{Fiche}
+\def\xxauteur{\textsl{Xavier Pessoles}}
+
+\def\xxcompetences{%
+\textsl{%
+\textbf{Savoirs et compétences :}\\
+}}
+
+\def\xxfigures{
+%incgraphics[width=.8\textwidth]{}%images/prot_01}
+}%figues de la page de garde
+
+\def\xxpied{%
+Révision cinématique -- Modélisation cinématique\\
+Fiche 2 -- \xxactivite%
+}
+
+\setcounter{secnumdepth}{5}
+%---------------------------------------------------------------------------
+
+
+\begin{document}
+%\chapterimage{png/Fond_Cin}
+\input{style/new_pagegarde}
+\vspace{2cm}
+\pagestyle{fancy}
+\thispagestyle{plain}
+
+\begin{defi} [Solide Indéformable]
+On considère deux points $A$ et $B$ d'un solide indéformable noté $S$. On note $t$ le temps. $
+\forall A,B \in S, \forall t\in \mathbb{R}, \vect{AB(t)}^2 = \text{constante}
+$.
+
+\end{defi}
+
+\begin{defi} [Trajectoire d'un point appartenant à un solide]
+
+Soit un point $P$ se déplaçant dans un repère $\mathcal{R}_0 \left(O,\vect{i_0},\vect{j_0},\vect{k_0} \right)$. La trajectoire du point $P$ est définie par la courbe $\mathcal{C}(t)$ paramétrée par le temps $t$. On a : 
+$$
+\forall t\in \mathbb{R}^+, \vect{OP(t)}=
+\left[
+\begin{array}{l}
+x(t)\\
+y(t)\\
+z(t)\\
+\end{array}
+\right]_{\mathcal{R}_0}
+=x(t)\vect{i_0}+y(t)\vect{j_0}+z(t)\vect{k_0}
+$$
+\end{defi}
+
+
+
+\begin{defi} [Vitesse d'un point appartenant à un solide]
+
+Soit un solide $S_0$ auquel on associe le repère $\mathcal{R}_0$ $\left(O_0,\vect{i_0},\vect{j_0},\vect{k_0} \right)$.  Soit un solide $S_1$ auquel on associe le repère $\mathcal{R}_1$,  $\left(O_1,\vect{i_1},\vect{j_1},\vect{k_1} \right)$. Le solide $S_1$ est en mouvement par rapport au solide $S_0$. 
+Soit un point $P$ appartenant au solide $S_1$. La vitesse du point $P$ appartenant au solide $S_1$ par rapport au solide $S_0$ se calcule donc ainsi : $
+\vect{V(P\in S_1/S_0)}(t) = \left[\dfrac{\text{d}\vect{O_0P(t)}}{\text{d}t}\right]_{\mathcal{R}_0}.
+$
+\end{defi}
+
+\begin{exemple}
+
+\end{exemple}
+
+
+\begin{resultat}
+Lorsque il n'y a pas de degré de liberté de translation dans une liaison, la vitesse au centre de la liaison est nulle. Ainsi : 
+\begin{itemize}
+\item si les solides $S_1$ et $S_2$ sont en liaison rotule de centre $O$ alors $\vectv{O}{S_2}{S_1}=\vect{0}$;
+\item si les solides $S_1$ et $S_2$ sont en liaison pivot de d'axe $\left(O,\vect{u}\right)$ alors $\vectv{O}{S_2}{S_1}=\vect{0}$;
+\item si les solides $S_1$ et $S_2$ sont en liaison rotule à doigt de centre $O$ alors $\vectv{O}{S_2}{S_1}=\vect{0}$.
+\end{itemize}
+\end{resultat}
+
+
+\begin{resultat}
+\textbf{Dérivation vectorielle}
+
+Soient $S_0$ et $S_1$ deux solides en mouvements relatifs et $\mathcal{R}_0$ et $\mathcal{R}_1$ les repères orthonormés directs associés. Soit $\vect{v}$ un vecteur de l'espace. On note $\vect{\Omega(\mathcal{R}_1/\mathcal{R}_0)}$ le vecteur instantané de rotation permettant d'exprimer les rotations entre chacune des deux bases. La dérivée d'un vecteur dans une base mobile se calcule donc ainsi :
+
+$$
+\left[\dfrac{\text{d}\vect{v}}{\text{d}t}\right]_{\mathcal{R}_0} =
+\left[\dfrac{\text{d}\vect{v}}{\text{d}t}\right]_{\mathcal{R}_1} 
++ \vect{\Omega(\mathcal{R}_1/\mathcal{R}_0)}\wedge \vect{v}.
+$$
+\end{resultat}
+
+
+\begin{resultat}
+\textbf{Champ du vecteur vitesse dans un solide -- Formule de Varignon -- Formule de BABAR}
+
+Soient $A$ et $B$ deux points appartenant à un solide $S_1$ en mouvement par rapport à $S_0$. Le champ des vecteurs vitesses est donc déterminé ainsi :
+$$
+\vect{V(\mathbf{B}\in S_1/S_0)} = \vect{V(\mathbf{A}\in S_1/S_0)} + \vect{\mathbf{BA}}\wedge \underbrace{\vect{\Omega(S_1/S_0)}}_{\mathbf{\vect{R}}}
+$$
+
+\end{resultat}
+
+
+\begin{resultat}
+\textbf{Composition du vecteur vitesse}
+\label{ref_va}
+
+Soit un solide $S_1$ en mouvement par rapport à un repère $\mathcal{R}_0$ et un solide $S_2$ par rapport au solide $S_1$. Pour chacun des points $A$ appartenant au solide $S_2$, on a :
+$$
+\vectv{A}{S_2}{\mathcal{R}_0}=
+\vectv{A}{S_2}{S_1}+\vectv{A}{S_1}{\mathcal{R}_0}
+$$
+\end{resultat}
+
+
+\begin{rem}
+\begin{itemize}
+\item $\vectv{A}{S_2}{\mathcal{R}_0}$ est appelé vecteur vitesse absolu;
+\item $\vectv{A}{S_2}{S_1}$ est appelé vecteur vitesse relatif; 
+\item $\vectv{A}{S_1}{\mathcal{R}_0}$ est appelé vecteur vitesse d'entraînement.
+\end{itemize}
+\end{rem}
+
+\begin{resultat}
+\textbf{Composition du vecteur vitesse}
+
+Soit un solide $S_1$ en mouvement par rapport à un repère $\mathcal{R}_0$ et un solide $S_2$ par rapport au solide $S_1$. On a : 
+$$
+\vecto{S_2}{\mathcal{R}_0}=
+\vecto{S_2}{S_1}+\vecto{S_1}{\mathcal{R}_0}
+$$
+\end{resultat}
+
+\begin{defi}
+\textbf{Accélération d'un point appartenant à un solide}
+
+Soit un solide $S_0$ auquel on associe le repère $\mathcal{R}_0$ $\left(O_0,\vect{i_0},\vect{j_0},\vect{k_0} \right)$.  Soit un solide $S_1$ auquel on associe le repère $\mathcal{R}_1$,  $\left(O_1,\vect{i_1},\vect{j_1},\vect{k_1} \right)$. Le solide $S_1$ est en mouvement par rapport au solide $S_0$. 
+
+
+Soit un point $P$ appartenant au solide $S_1$. L'accélération du point $P$ appartenant au solide $S_1$ par rapport au solide $S_0$ se calcule donc ainsi : 
+$$
+\vect{\Gamma(P\in S_1/S_0)}(t) = \left[\dfrac{d\left( \vect{V(P\in S_1/S_0)}(t)\right)}{dt}\right]_{\mathcal{R}_0}
+$$
+
+\end{defi}
+
+
+
+
+
+
+
+\end{document}
+
+

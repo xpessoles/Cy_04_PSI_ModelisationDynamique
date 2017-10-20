@@ -12,7 +12,7 @@
 %\fichefalse
 
 \proftrue
-\proffalse
+%\proffalse
 
 \tdtrue
 %\tdfalse
@@ -92,10 +92,68 @@ Un toit de stade représenté sur la figure suivante est sollicité par son prop
 \end{center}
 
 \subparagraph{}\textit{Tracer le graphe de structure. Définir le nombre d'inconnues statiques.}
+\ifprof
+\begin{corrige}
+En faisant l'hypothèse d'un problème plan, il y a 6 inconnues statiques (2 par pivot). 
+\end{corrige}
+\else
+\fi
 
 \subparagraph{}\textit{Donner la stratégie permettant de déterminer toutes les inconnues de liaisons.}
+\ifprof
+\begin{corrige}
+\begin{itemize}
+\item On isole le solide \textbf{(2)}, soumis à 2 forces et on applique le PFS. 
+\item On isole le solilde \textbf{(1)}, soumis à 3 forces et on applique le PFS. 
+\item On résout. 
+\end{itemize}
+\end{corrige}
+\else
+\fi
+
 
 \subparagraph{}\textit{Déterminer les actions mécaniques dans toutes les liaisons.}
+
+\ifprof
+
+\begin{corrige} ~\\
+\begin{itemize}
+\item On isole le solide \textbf{(2)}. 
+\item Bilan des actions mécaniques extérieures : 
+\begin{itemize}
+\item pivot en $O$ de \textbf{(0)} sur \textbf{(2)} $\torseurstat{T}{S_0}{S_2}$;
+\item pivot en $B$ de \textbf{(1)} sur \textbf{(2)} $\torseurstat{T}{S_1}{S_2}$.
+\end{itemize} 
+\item On applique le PFS à \textbf{(2)} (en $O$ ou $B$). 
+\item \textbf{(2)} étant soumise à 2 glisseurs, les deux forces sont de même direction, de même norme et de sens opposé. On a $\torseurstat{T}{S_0}{S_2}=-\torseurstat{T}{S_1}{S_2}=\torseurl{F\vect{u}}{\vect{0}}{B}$ avec $\vect{u}=\cos\alpha \vect{x}+\sin\alpha \vect{y}$ $\left(\alpha=\dfrac{\pi}{2}\right)$.
+\end{itemize}
+
+\begin{itemize}
+\item On isole le solide \textbf{(1)}. 
+\item Bilan des actions mécaniques extérieures : 
+\begin{itemize}
+\item pivot en $A$ de \textbf{(0)} sur \textbf{(1)} $\torseurstat{T}{S_0}{S_1}$;
+\item pivot en $B$ de \textbf{(2)} sur \textbf{(1)} $\torseurstat{T}{S_2}{S_1}$;
+\item action de la charge répartie en $P$ (milieu de $[AC]$) sur \textbf{(1)} $\torseurstat{T}{\text{ext}}{S_1} =\torseurl{-q(a+b)\vect{y}=-R\vect{y}}{\vect{0}}{P}$.
+\end{itemize} 
+\item On applique le PFS à \textbf{(2)} (en $B$) et 
+$\torseurstat{T}{S_0}{S_1}+\torseurstat{T}{S_2}{S_1}+\torseurstat{T}{\text{ext}}{S_1}=0$:
+\begin{itemize}
+\item $X_{01}+F\cos\alpha=0$;
+\item $Y_{01}+F\sin\alpha-R=0$;
+\item $-aY_{01}+R((a+b)/2-a)=0 \Leftrightarrow-aY_{01}+R(b-a)/2=0$.
+\end{itemize}
+\item On résout : 
+\begin{itemize}
+\item $Y_{01}=R(b-a)/(2a)$
+\item $F\sin\alpha=R-R(b-a)/(2a)=R(3a-b)/(2a) \Leftrightarrow F=R(3a-b)/(2a\sin\alpha)$
+\item $X_{01}= R(b-3a)/(2a\arctan\alpha)$
+\end{itemize}
+\end{itemize}
+
+\end{corrige}
+\else
+\fi
 
 
 \section*{Toit en béton armé}
