@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6400 64-bit) (preloaded format=pdflatex 2017.9.4)  23 OCT 2017 21:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6400 64-bit) (preloaded format=pdflatex 2017.9.4)  24 OCT 2017 00:04
 entering extended mode
 **./Cy_04_Ch_01_Introduction_Cours.tex
 (Cy_04_Ch_01_Introduction_Cours.tex
@@ -2410,6 +2410,15 @@ Package: circuitikz 2017/05/28{} The CircuiTikz circuit drawing package version
 tendlayer\tikz\libraries\tikzlibrarybabel.code.tex
 File: tikzlibrarybabel.code.tex 2013/06/24 v3.0.0 (rcs-revision 1.1)
 )) (style/macros_SII.tex)
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\bm.sty"
+Package: bm 2017/01/16 v1.2c Bold Symbol Support (DPC/FMi)
+\symboldoperators=\mathgroup9
+\symboldletters=\mathgroup10
+\symboldsymbols=\mathgroup11
+\symboldlargesymbols=\mathgroup12
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 141.
+LaTeX Info: Redefining \bm on input line 207.
+)
 Package biblatex Info: Trying to load language 'french'...
 Package biblatex Info: ... file 'french.lbx' found.
 
@@ -2422,7 +2431,7 @@ Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 
 \@quotelevel=\count506
 \@quotereset=\count507
-(Cy_04_Ch_01_Introduction_Cours.aux)
+No file Cy_04_Ch_01_Introduction_Cours.aux.
 \openout1 = `Cy_04_Ch_01_Introduction_Cours.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 70.
@@ -2655,6 +2664,30 @@ LaTeX Font Info:    Font shape `MDB/mdput/m/n' will be
 (Font)              scaled to size 6.43999pt on input line 70.
 LaTeX Font Info:    Font shape `MDB/mdput/m/n' will be
 (Font)              scaled to size 4.59999pt on input line 70.
+LaTeX Font Info:    Font shape `OT1/mdput/b/n' will be
+(Font)              scaled to size 9.19998pt on input line 70.
+LaTeX Font Info:    Font shape `OT1/mdput/b/n' will be
+(Font)              scaled to size 6.43999pt on input line 70.
+LaTeX Font Info:    Font shape `OT1/mdput/b/n' will be
+(Font)              scaled to size 4.59999pt on input line 70.
+LaTeX Font Info:    Font shape `OML/mdput/b/it' will be
+(Font)              scaled to size 9.19998pt on input line 70.
+LaTeX Font Info:    Font shape `OML/mdput/b/it' will be
+(Font)              scaled to size 6.43999pt on input line 70.
+LaTeX Font Info:    Font shape `OML/mdput/b/it' will be
+(Font)              scaled to size 4.59999pt on input line 70.
+LaTeX Font Info:    Font shape `OMS/mdput/b/n' will be
+(Font)              scaled to size 9.19998pt on input line 70.
+LaTeX Font Info:    Font shape `OMS/mdput/b/n' will be
+(Font)              scaled to size 6.43999pt on input line 70.
+LaTeX Font Info:    Font shape `OMS/mdput/b/n' will be
+(Font)              scaled to size 4.59999pt on input line 70.
+LaTeX Font Info:    Font shape `OMX/mdput/b/n' will be
+(Font)              scaled to size 9.19998pt on input line 70.
+LaTeX Font Info:    Font shape `OMX/mdput/b/n' will be
+(Font)              scaled to size 6.43999pt on input line 70.
+LaTeX Font Info:    Font shape `OMX/mdput/b/n' will be
+(Font)              scaled to size 4.59999pt on input line 70.
 LaTeX Font Info:    Try loading font information for OT1+pag on input line 70.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1pag.fd"
@@ -2759,6 +2792,30 @@ LaTeX Font Info:    Font shape `MDB/mdput/m/n' will be
 (Font)              scaled to size 13.24796pt on input line 14.
 LaTeX Font Info:    Font shape `MDB/mdput/m/n' will be
 (Font)              scaled to size 11.03998pt on input line 14.
+LaTeX Font Info:    Font shape `OT1/mdput/b/n' will be
+(Font)              scaled to size 19.08076pt on input line 14.
+LaTeX Font Info:    Font shape `OT1/mdput/b/n' will be
+(Font)              scaled to size 13.24796pt on input line 14.
+LaTeX Font Info:    Font shape `OT1/mdput/b/n' will be
+(Font)              scaled to size 11.03998pt on input line 14.
+LaTeX Font Info:    Font shape `OML/mdput/b/it' will be
+(Font)              scaled to size 19.08076pt on input line 14.
+LaTeX Font Info:    Font shape `OML/mdput/b/it' will be
+(Font)              scaled to size 13.24796pt on input line 14.
+LaTeX Font Info:    Font shape `OML/mdput/b/it' will be
+(Font)              scaled to size 11.03998pt on input line 14.
+LaTeX Font Info:    Font shape `OMS/mdput/b/n' will be
+(Font)              scaled to size 19.08076pt on input line 14.
+LaTeX Font Info:    Font shape `OMS/mdput/b/n' will be
+(Font)              scaled to size 13.24796pt on input line 14.
+LaTeX Font Info:    Font shape `OMS/mdput/b/n' will be
+(Font)              scaled to size 11.03998pt on input line 14.
+LaTeX Font Info:    Font shape `OMX/mdput/b/n' will be
+(Font)              scaled to size 19.08076pt on input line 14.
+LaTeX Font Info:    Font shape `OMX/mdput/b/n' will be
+(Font)              scaled to size 13.24796pt on input line 14.
+LaTeX Font Info:    Font shape `OMX/mdput/b/n' will be
+(Font)              scaled to size 11.03998pt on input line 14.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 16.
@@ -2829,7 +2886,7 @@ LaTeX Font Info:    Font shape `T1/pag/bx/n' in size <10> not available
 LaTeX Font Info:    Font shape `T1/pag/b/n' in size <10> not available
 (Font)              Font shape `T1/pag/db/n' tried instead on input line 5.
 )
-<png/logoCC.png, id=32, 88.33pt x 31.11626pt>
+<png/logoCC.png, id=26, 88.33pt x 31.11626pt>
 File: png/logoCC.png Graphic file (type png)
 <use png/logoCC.png>
 Package pdftex.def Info: png/logoCC.png  used on input line 85. on input line 8
@@ -2860,90 +2917,126 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 91.
+(mdframed)              on input line 92.
 LaTeX Font Info:    Font shape `TS1/mdput/m/n' will be
-(Font)              scaled to size 8.27998pt on input line 101.
+(Font)              scaled to size 8.27998pt on input line 102.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 123.
+(mdframed)              on input line 124.
+LaTeX Font Info:    Font shape `OML/mdput/b/n' will be
+(Font)              scaled to size 9.19998pt on input line 131.
+LaTeX Font Info:    Font shape `OML/mdput/b/n' will be
+(Font)              scaled to size 6.43999pt on input line 131.
+LaTeX Font Info:    Font shape `OML/mdput/b/n' will be
+(Font)              scaled to size 4.59999pt on input line 131.
+LaTeX Font Info:    Font shape `MDA/mdput/b/n' will be
+(Font)              scaled to size 9.19998pt on input line 131.
+LaTeX Font Info:    Font shape `MDA/mdput/b/n' will be
+(Font)              scaled to size 6.43999pt on input line 131.
+LaTeX Font Info:    Font shape `MDA/mdput/b/n' will be
+(Font)              scaled to size 4.59999pt on input line 131.
+LaTeX Font Info:    Font shape `MDB/mdput/b/n' will be
+(Font)              scaled to size 9.19998pt on input line 131.
+LaTeX Font Info:    Font shape `MDB/mdput/b/n' will be
+(Font)              scaled to size 6.43999pt on input line 131.
+LaTeX Font Info:    Font shape `MDB/mdput/b/n' will be
+(Font)              scaled to size 4.59999pt on input line 131.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 151.
+(mdframed)              on input line 142.
 LaTeX Font Info:    Font shape `T1/mdput/m/n' will be
-(Font)              scaled to size 7.35999pt on input line 174.
+(Font)              scaled to size 6.43999pt on input line 149.
+LaTeX Font Info:    Font shape `T1/mdput/m/n' will be
+(Font)              scaled to size 4.59999pt on input line 149.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 161.
+Package mdframed Info: Box was splittet wrong
+ starting loop to iterate the splitting point
+(mdframed)              on input line 169.
+LaTeX Font Info:    Font shape `T1/mdput/m/n' will be
+(Font)              scaled to size 7.35999pt on input line 169.
 LaTeX Font Info:    Font shape `T1/mdput/m/sl' will be
-(Font)              scaled to size 7.35999pt on input line 174.
+(Font)              scaled to size 7.35999pt on input line 169.
 LaTeX Font Info:    Font shape `T1/mdput/bx/n' in size <8> not available
-(Font)              Font shape `T1/mdput/b/n' tried instead on input line 174.
+(Font)              Font shape `T1/mdput/b/n' tried instead on input line 169.
 LaTeX Font Info:    Font shape `T1/mdput/b/n' will be
-(Font)              scaled to size 7.35999pt on input line 174.
+(Font)              scaled to size 7.35999pt on input line 169.
  [2]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 174.
+(mdframed)              on input line 180.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 196.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 209.
+(mdframed)              on input line 188.
 LaTeX Font Info:    Font shape `OT1/mdput/m/n' will be
-(Font)              scaled to size 8.27998pt on input line 221.
+(Font)              scaled to size 8.27998pt on input line 194.
 LaTeX Font Info:    Font shape `OT1/mdput/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 221.
+(Font)              scaled to size 5.51999pt on input line 194.
 LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
-(Font)              scaled to size 8.27998pt on input line 221.
+(Font)              scaled to size 8.27998pt on input line 194.
 LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
-(Font)              scaled to size 5.51999pt on input line 221.
+(Font)              scaled to size 5.51999pt on input line 194.
 LaTeX Font Info:    Font shape `OMS/mdput/m/n' will be
-(Font)              scaled to size 8.27998pt on input line 221.
+(Font)              scaled to size 8.27998pt on input line 194.
 LaTeX Font Info:    Font shape `OMS/mdput/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 221.
+(Font)              scaled to size 5.51999pt on input line 194.
 LaTeX Font Info:    Font shape `OMX/mdput/m/n' will be
-(Font)              scaled to size 8.27998pt on input line 221.
+(Font)              scaled to size 8.27998pt on input line 194.
 LaTeX Font Info:    Font shape `OMX/mdput/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 221.
+(Font)              scaled to size 5.51999pt on input line 194.
 LaTeX Font Info:    Font shape `OT1/cmtt/m/n' will be
-(Font)              scaled to size 9.42297pt on input line 221.
+(Font)              scaled to size 9.42297pt on input line 194.
 LaTeX Font Info:    Font shape `OT1/cmtt/m/n' will be
-(Font)              scaled to size 6.28198pt on input line 221.
+(Font)              scaled to size 6.28198pt on input line 194.
 LaTeX Font Info:    Font shape `OML/mdput/m/n' will be
-(Font)              scaled to size 8.27998pt on input line 221.
+(Font)              scaled to size 8.27998pt on input line 194.
 LaTeX Font Info:    Font shape `OML/mdput/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 221.
+(Font)              scaled to size 5.51999pt on input line 194.
 LaTeX Font Info:    Font shape `MDA/mdput/m/n' will be
-(Font)              scaled to size 8.27998pt on input line 221.
+(Font)              scaled to size 8.27998pt on input line 194.
 LaTeX Font Info:    Font shape `MDA/mdput/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 221.
+(Font)              scaled to size 5.51999pt on input line 194.
 LaTeX Font Info:    Font shape `MDB/mdput/m/n' will be
-(Font)              scaled to size 8.27998pt on input line 221.
+(Font)              scaled to size 8.27998pt on input line 194.
 LaTeX Font Info:    Font shape `MDB/mdput/m/n' will be
-(Font)              scaled to size 5.51999pt on input line 221.
+(Font)              scaled to size 5.51999pt on input line 194.
+LaTeX Font Info:    Font shape `OT1/mdput/b/n' will be
+(Font)              scaled to size 8.27998pt on input line 194.
+LaTeX Font Info:    Font shape `OT1/mdput/b/n' will be
+(Font)              scaled to size 5.51999pt on input line 194.
+LaTeX Font Info:    Font shape `OML/mdput/b/it' will be
+(Font)              scaled to size 8.27998pt on input line 194.
+LaTeX Font Info:    Font shape `OML/mdput/b/it' will be
+(Font)              scaled to size 5.51999pt on input line 194.
+LaTeX Font Info:    Font shape `OMS/mdput/b/n' will be
+(Font)              scaled to size 8.27998pt on input line 194.
+LaTeX Font Info:    Font shape `OMS/mdput/b/n' will be
+(Font)              scaled to size 5.51999pt on input line 194.
+LaTeX Font Info:    Font shape `OMX/mdput/b/n' will be
+(Font)              scaled to size 8.27998pt on input line 194.
+LaTeX Font Info:    Font shape `OMX/mdput/b/n' will be
+(Font)              scaled to size 5.51999pt on input line 194.
+LaTeX Font Info:    Font shape `T1/mdput/m/n' will be
+(Font)              scaled to size 5.51999pt on input line 194.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 224.
+(mdframed)              on input line 197.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 235.
-
-
-Package mdframed Warning: You got a bad break
-(mdframed)                because the last box will be empty
-(mdframed)                you have to change it manually
-(mdframed)                by changing the text, the space
-(mdframed)                or something else on input line 244.
-
-<png/logo_lycee.png, id=81, 329.23pt x 265.99374pt>
+(mdframed)              on input line 203.
+<png/logo_lycee.png, id=73, 329.23pt x 265.99374pt>
 File: png/logo_lycee.png Graphic file (type png)
 <use png/logo_lycee.png>
-Package pdftex.def Info: png/logo_lycee.png  used on input line 244. on input l
-ine 244.
+Package pdftex.def Info: png/logo_lycee.png  used on input line 239. on input l
+ine 239.
 Package pdftex.def Info: Requested size: 56.9055pt x 45.97325pt on input line 2
-44.
+39.
 LaTeX Font Info:    Font shape `T1/mdput/m/it' will be
-(Font)              scaled to size 7.35999pt on input line 244.
+(Font)              scaled to size 7.35999pt on input line 239.
 LaTeX Font Info:    Font shape `T1/pag/m/it' in size <8> not available
-(Font)              Font shape `T1/pag/m/sl' tried instead on input line 244.
+(Font)              Font shape `T1/pag/m/sl' tried instead on input line 239.
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 45.97325pt.
@@ -2951,12 +3044,12 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 LaTeX Font Info:    Font shape `T1/mdput/bx/n' in size <12> not available
-(Font)              Font shape `T1/mdput/b/n' tried instead on input line 244.
+(Font)              Font shape `T1/mdput/b/n' tried instead on input line 239.
 LaTeX Font Info:    Font shape `T1/mdput/b/n' will be
-(Font)              scaled to size 11.03998pt on input line 244.
+(Font)              scaled to size 11.03998pt on input line 239.
 [3 <./png/logo_lycee.png>]
 LaTeX Font Info:    Font shape `T1/cmtt/m/it' will be
-(Font)              scaled to size 10.46997pt on input line 284.
+(Font)              scaled to size 10.46997pt on input line 247.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
@@ -2966,10 +3059,10 @@ Package microtype Info: Loading generic protrusion settings for font family
 
 File: png/logo_lycee.png Graphic file (type png)
 <use png/logo_lycee.png>
-Package pdftex.def Info: png/logo_lycee.png  used on input line 290. on input l
-ine 290.
+Package pdftex.def Info: png/logo_lycee.png  used on input line 253. on input l
+ine 253.
 Package pdftex.def Info: Requested size: 56.9055pt x 45.97325pt on input line 2
-90.
+53.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2978,52 +3071,67 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [4]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 290.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 290.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 253.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 253.
  (Cy_04_Ch_01_Introduction_Cours.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 290.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 290.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 253.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 253.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                Cy_04_Ch_01_Introduction_Cours
+(biblatex)                and rerun LaTeX afterwards.
 
 Package logreq Info: Writing requests to 'Cy_04_Ch_01_Introduction_Cours.run.xm
 l'.
 \openout1 = `Cy_04_Ch_01_Introduction_Cours.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 290.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 253.
  ) 
 Here is how much of TeX's memory you used:
- 53945 strings out of 493352
- 1134019 string characters out of 3139710
- 1826444 words of memory out of 3000000
- 56405 multiletter control sequences out of 15000+200000
- 756036 words of font info for 288 fonts, out of 3000000 for 9000
+ 54098 strings out of 493352
+ 1136365 string characters out of 3139710
+ 1826272 words of memory out of 3000000
+ 56556 multiletter control sequences out of 15000+200000
+ 811862 words of font info for 340 fonts, out of 3000000 for 9000
  1127 hyphenation exceptions out of 8191
- 57i,23n,98p,10477b,1965s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{subsection.1.1} has been referenced but does not 
-exist, replaced by a fixed one
-
- <C:\Users\Xavier\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi628\e
-ctt1000.pk>{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/ly1/texnansi.enc}{C:/Pr
-ogram Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Enseignement/Livre_Exo_V
-uibert/Installation/MATHDESIGN/texmf/fonts/type1/mathdesign/mdput/md-utr7t.pfb>
-<C:/Enseignement/Livre_Exo_Vuibert/Installation/MATHDESIGN/texmf/fonts/type1/ma
-thdesign/mdput/md-utr7v.pfb><C:/Enseignement/Livre_Exo_Vuibert/Installation/MAT
-HDESIGN/texmf/fonts/type1/mathdesign/mdput/md-utr7y.pfb><C:/Enseignement/Livre_
-Exo_Vuibert/Installation/MATHDESIGN/texmf/fonts/type1/mathdesign/mdput/md-utr8t
-.pfb><C:/Enseignement/Livre_Exo_Vuibert/Installation/MATHDESIGN/texmf/fonts/typ
-e1/mathdesign/mdput/md-utri7m.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/adob
-e/utopia/putb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/adobe/utopia/putb8
-a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/adobe/utopia/putr8a.pfb><C:/Prog
-ram Files/MiKTeX 2.9/fonts/type1/adobe/utopia/putr8a.pfb><C:/Program Files/MiKT
-eX 2.9/fonts/type1/adobe/utopia/putri8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/
-type1/urw/avantgar/uagd8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/avan
-tgar/uagk8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/avantgar/uagko8a.p
-fb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on Cy_04_Ch_01_Introduction_Cours.pdf (4 pages, 1018659 bytes).
+ 57i,17n,98p,10477b,1965s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\Xavier\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi628
+\ectt1000.pk>{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/ly1/texnansi.enc}{C:/
+Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Enseignement/Livre_Exo
+_Vuibert/Installation/MATHDESIGN/texmf/fonts/type1/mathdesign/mdput/md-utb7t.pf
+b><C:/Enseignement/Livre_Exo_Vuibert/Installation/MATHDESIGN/texmf/fonts/type1/
+mathdesign/mdput/md-utb7v.pfb><C:/Enseignement/Livre_Exo_Vuibert/Installation/M
+ATHDESIGN/texmf/fonts/type1/mathdesign/mdput/md-utb7y.pfb><C:/Enseignement/Livr
+e_Exo_Vuibert/Installation/MATHDESIGN/texmf/fonts/type1/mathdesign/mdput/md-utb
+i7m.pfb><C:/Enseignement/Livre_Exo_Vuibert/Installation/MATHDESIGN/texmf/fonts/
+type1/mathdesign/mdput/md-utr7t.pfb><C:/Enseignement/Livre_Exo_Vuibert/Installa
+tion/MATHDESIGN/texmf/fonts/type1/mathdesign/mdput/md-utr7v.pfb><C:/Enseignemen
+t/Livre_Exo_Vuibert/Installation/MATHDESIGN/texmf/fonts/type1/mathdesign/mdput/
+md-utr7y.pfb><C:/Enseignement/Livre_Exo_Vuibert/Installation/MATHDESIGN/texmf/f
+onts/type1/mathdesign/mdput/md-utr8t.pfb><C:/Enseignement/Livre_Exo_Vuibert/Ins
+tallation/MATHDESIGN/texmf/fonts/type1/mathdesign/mdput/md-utri7m.pfb><C:/Progr
+am Files/MiKTeX 2.9/fonts/type1/adobe/utopia/putb8a.pfb><C:/Program Files/MiKTe
+X 2.9/fonts/type1/adobe/utopia/putb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
+pe1/adobe/utopia/putbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/adobe/uto
+pia/putr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/adobe/utopia/putr8a.pfb
+><C:/Program Files/MiKTeX 2.9/fonts/type1/adobe/utopia/putri8a.pfb><C:/Program 
+Files/MiKTeX 2.9/fonts/type1/urw/avantgar/uagd8a.pfb><C:/Program Files/MiKTeX 2
+.9/fonts/type1/urw/avantgar/uagk8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
+/urw/avantgar/uagko8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/zapfding
+/uzdr.pfb>
+Output written on Cy_04_Ch_01_Introduction_Cours.pdf (4 pages, 1037564 bytes).
 PDF statistics:
- 228 PDF objects out of 1000 (max. 8388607)
- 48 named destinations out of 1000 (max. 500000)
- 88692 words of extra memory for PDF output out of 89155 (max. 10000000)
+ 217 PDF objects out of 1000 (max. 8388607)
+ 35 named destinations out of 1000 (max. 500000)
+ 92260 words of extra memory for PDF output out of 106986 (max. 10000000)
 

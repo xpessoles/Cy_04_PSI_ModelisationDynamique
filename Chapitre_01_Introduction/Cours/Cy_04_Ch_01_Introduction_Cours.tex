@@ -5,7 +5,7 @@
 
 \input{style/new_style}
 \input{style/macros_SII}
-
+\usepackage{bm}
 \fichetrue
 \fichefalse
 
@@ -79,17 +79,18 @@ Chapitre 1 -- \xxactivite%
 
 \section{Introduction}
 \begin{obj} ~\\
-L'objectif de ce cycle est double. L'étude dynamique des systèmes de solide permet de 
+L'objectif de ce cycle est triple. L'étude dynamique des systèmes de solide permet de 
 \begin{itemize}
 \item déterminer les actions mécaniques dans les liaisons en tenant compte des masses (et des répartitions de masses) des pièces ou des classes d'équivalence cinématique;
-\item dimensionner les actionneurs permettant d'actionner un système (on parle aussi d'équations de mouvement).
+\item dimensionner les actionneurs permettant d'actionner un système; 
+\item déterminer les équations de mouvement.
 \end{itemize}
 \end{obj}
 %\subsection{Définitions}
 
 
 \begin{definition}[Référentiel galiléen]
-Un \textbf{référentiel galiléen} se définit à partir d'une repère spatial (orthonormée direct $\quadruplet{O_g}{\overrightarrow{x_g}}{\overrightarrow{y_g}}{\overrightarrow{z_g}}$ et d'une base de temps ($t$) et est animé d'un mouvement de \textbf{translation rectiligne uniforme} (à vitesse constante) par rapport à un référentiel absolu fixe ou à un autre référentiel galiléen $\quadruplet{O}{\overrightarrow{x_0}}{\overrightarrow{y_0}}{\overrightarrow{z_0}}$. 
+Un \textbf{référentiel galiléen} se définit à partir d'une repère spatial (orthonormé direct $\quadruplet{O_g}{\overrightarrow{x_g}}{\overrightarrow{y_g}}{\overrightarrow{z_g}}$ et d'une base de temps ($t$) et est animé d'un mouvement de \textbf{translation rectiligne uniforme} (à vitesse constante) par rapport à un référentiel absolu fixe ou à un autre référentiel galiléen $\quadruplet{O}{\overrightarrow{x_0}}{\overrightarrow{y_0}}{\overrightarrow{z_0}}$. 
 
 On peut également le définir comme un référentiel << dans lequel le principe fondamental de la dynamique s'applique >>.
 \end{definition}
@@ -118,49 +119,35 @@ En mécanique classique (ou Newtonienne), les deux repères d'\textbf{espace et 
 
 \section{Principe Fondamental de la Dynamique : applications simplifiées}
 
-\subsection{Cas particulier d'un solide en translation}
+%\subsection{Cas particulier d'un solide en translation}
 
-\begin{definition}[Solide en translation par rapport à un référentiel galiléen]
+\begin{definition}[Solide en translation par rapport à un référentiel galiléen] ~\\
 Si un ensemble matériel $E$ (de centre d'inertie $G$) est en mouvement de translation dans un référentiel galiléen ($R_g$) alors : 
 
 \begin{itemize}
-\item \textbf{Théorème de la résultante dynamique : } la résultante des efforts extérieurs est égale au produit de la masse par l'accélération de G par rapport à $R_g$ :
-
-\begin{align}
-\boxed{
-m\;\overrightarrow{a}(G/R_g)=\vectf{\bar E}{E}%\resultante[\bar E]{E}
-}
-\end{align}
-
-\item \textbf{Théorème du moment dynamique : } le moment des actions mécaniques extérieures s'appliquant sur $E$ est égal au vecteur nul en tout point :
-
-\begin{align}
-\boxed{
-%\moment[A]{\bar E}{E}=\overrightarrow{0}\forall A
-\vectm{A}{\bar E}{E}=\overrightarrow{0}\forall A
-}
-\end{align}
+\item d'après le \textbf{théorème de la résultante dynamique : } la résultante des efforts extérieurs est égale au produit de la masse par l'accélération de G par rapport à $R_g$ :
+\bm{$
+%m\;\overrightarrow{\Gamma}(G/R_g)=\vectf{\bar E}{E};%\resultante[\bar E]{E}
+m\;\vectg{G}{E}{R_g}=\vectf{\bar E}{E}$};%\resultante[\bar E]{E}
+\item d'après le \textbf{théorème du moment dynamique : } le moment des actions mécaniques extérieures s'appliquant sur $E$ est égal au vecteur nul en tout point :
+\bm{$\vectm{A}{\bar E}{E}=\overrightarrow{0}\forall  A$}.
 \end{itemize}
 
 \end{definition}
+ 
+
+%\subsection{Cas d'un solide en mouvement de rotation autour d'un axe fixe}
 
 
-\subsection{Cas d'un solide en mouvement de rotation autour d'un axe fixe}
+\begin{definition}[Solide en rotation autour d'un axe fixe par rapport à un référentiel galiléen] ~\\
+Si un ensemble matériel $E$ (de centre d'inertie $G$) est en mouvement de rotation autour d'un axe $\Delta$ (dirigé par $\overrightarrow{u}$ unitaire) fixe dans un référentiel galiléen ($R_g$) alors, d'après le \textbf{théorème du moment dynamique}, le moment des actions mécaniques extérieures s'appliquant sur $E$ est égal au vecteur nul en tout point de l'axe :
 
-
-\begin{definition}[Solide en rotation autour d'un axe fixe par rapport à un référentiel galiléen]
-Si un ensemble matériel $E$ (de centre d'inertie $G$) est en mouvement de rotation autour d'un axe $\Delta$ (dirigé par $\overrightarrow{u}$ unitaire) fixe dans un référentiel galiléen ($R_g$) alors : 
-
-\begin{itemize}
-\item \textbf{Théorème du moment dynamique : } Le moment des actions mécaniques extérieures s'appliquant sur $E$ est égal au vecteur nul en tout point de l'axe :
-
-\begin{align}
-\boxed{
+\bm{$
 \vectm{A}{\bar E}{E}\cdot \overrightarrow{u}=J_{\Delta}(E)\cdot \ddot{\theta}\;\;\forall A\in \Delta
-}
-\end{align}
-\item avec $J_{\Delta}(E)$ le moment d'inertie de $E$ par rapport à l'axe $\Delta$ (en $kg\cdot m^2$) ;
-\item avec $\ddot{\theta}$, l'accélération angulaire de $E$ par rapport à $R_g$ suivant $\Delta$ : $\overrightarrow{\Omega}(E/R_g)\cdot \overrightarrow{u}$.
+$} avec :
+\begin{itemize}
+\item  $J_{\Delta}(E)$ le moment d'inertie de $E$ par rapport à l'axe $\Delta$ (en $\text{kg  m}^2$) ;
+\item $\ddot{\theta}$, l'accélération angulaire de $E$ par rapport à $R_g$ suivant $\Delta$ : $\overrightarrow{\Omega}(E/R_g)\cdot \overrightarrow{u}$.
 \end{itemize}
 \end{definition}
 
@@ -171,22 +158,19 @@ Si un ensemble matériel $E$ (de centre d'inertie $G$) est en mouvement de rotat
 
 \subsection{Principe Fondamental de la Dynamique}
 
-\begin{definition}[Énoncé du Principe Fondamental de la Dynamique]
-Dans le cas général, soit un ensemble matériel $E$ en mouvement par rapport à un référentiel galiléen ($R_0$), alors la somme des actions mécaniques extérieures (\textbf{Torseur des actions mécaniques extérieures} s'appliquant sur $E$ est égale au \textbf{torseur dynamique} du mouvement de $E$ par rapport à $R_0$ :
+\begin{definition}[Énoncé du Principe Fondamental de la Dynamique] ~\\
+Dans le cas général, soit un ensemble matériel $E$ en mouvement par rapport à un référentiel galiléen ($R_0$), alors la somme des actions mécaniques extérieures (\textbf{torseur des actions mécaniques extérieures} s'appliquant sur $E$) est égale au \textbf{torseur dynamique} du mouvement de $E$ par rapport à $R_0$ :
+$$
+\torseurstat{T}{\overline{E}}{E}=\torseurcin{D}{E}{R_0}.
+$$
 
-\begin{align}\label{eqn:pfd}
-\boxed{
-\torseurstat{T}{\overline{E}}{E}=\torseurcin{D}{E}{R_0}
-}
-\end{align}
-
-De plus le \textbf{Principe Fondamental de la Dynamique} postule que pour tout mouvement, il existe au moins un référentiel dans lequel la relation \ref{eqn:pfd} est vérifiée. Ce sera donc un \textbf{référentiel galiléen}.
+De plus le \textbf{Principe Fondamental de la Dynamique} postule que pour tout mouvement, il existe au moins un référentiel dans lequel la relation est vérifiée. Ce sera donc un \textbf{référentiel galiléen}.
 
 \end{definition}
 
 \begin{rem}
 \begin{itemize}
-\item Les démarches pour le calcul du torseur dynamique seront vues dans le cours C3-2.
+\item Les démarches pour le calcul du torseur dynamique seront vues ultérieurement.
 \item La démarche de calcul du torseur des actions mécaniques extérieures appliquées sur E est la  même que celle vu lors de l'utilisation du PFS (ce sont les mêmes torseurs). 
 \end{itemize}
 \end{rem}
@@ -194,54 +178,33 @@ De plus le \textbf{Principe Fondamental de la Dynamique} postule que pour tout m
 \subsection{Équations de mouvement}
 
 \begin{definition}[Équations de mouvement]
-Une \textbf{équation de mouvement} est une équation différentielle du second ordre traduisant les théorèmes généraux, dans laquelle ne figure \textbf{aucune composante inconnue d'action mécanique}. 
-
-Il est parfois nécessaire d'écrire plusieurs équations pour trouver par substitution une équation de mouvement. 
-
-On nomme \textbf{« Intégrale première du mouvement »} une équation différentielle du premier ordre avec un second membre constant, obtenue par  intégration d'une équation de mouvement. 
+Une \textbf{équation de mouvement} est une équation différentielle du second ordre traduisant les théorèmes généraux, dans laquelle ne figure \textbf{aucune composante inconnue d'action mécanique}. Il est parfois nécessaire d'écrire plusieurs équations pour trouver par substitution une équation de mouvement. On nomme \textbf{« intégrale première du mouvement »} une équation différentielle du premier ordre avec un second membre constant, obtenue par  intégration d'une équation de mouvement. 
 \end{definition}
 
 \subsection{Théorèmes généraux}
 
-Du Principe Fondamental de la dynamique découle plusieurs théorèmes généraux.
-\subsubsection{Théorème de la résultante dynamique}
+Du principe fondamental de la dynamique découle plusieurs théorèmes généraux.
 
-		\begin{theorem}[de la résultante dynamique]
-			Pour tout ensemble matériel $(E)$ de masse $m$ et de centre de gravité $G$ en mouvement par rapport à un référentiel galiléen ($R_0$), la somme des résultantes des efforts extérieurs s'appliquant sur $E$ est égale à la résultante dynamique du mouvement de $E$ par rapport à $R_0$ :
-			
-			\begin{align}
-			\boxed{
-				\vectf{\bar E}{E}=\overrightarrow{R_d}(E/R_0)=m\;\overrightarrow{a}(G/R_0).
-			}			
-			\end{align}
-		\end{theorem}
-
+\begin{theorem}[Théorème de la résultante dynamique]
+			Pour tout ensemble matériel $(E)$ de masse $m$ et de centre de gravité $G$ en mouvement par rapport à un référentiel galiléen ($R_0$), la somme des résultantes des efforts extérieurs s'appliquant sur $E$ est égale à la résultante dynamique du mouvement de $E$ par rapport à $R_0$ : 
+$$\vectf{\bar E}{E}=\overrightarrow{R_d}(E/R_0)=m\vectg{G}{E}{R_0}.$$
+\end{theorem}
 
 \begin{rem}
-On peut alors définir un Newton comme l'effort à mettre en \oe{}uvre pour mettre en mouvement $1kg$ avec une accélération de $1\;m\cdot s^{-2}$ en son centre de gravité $G$.
+On peut alors définir un Newton comme l'effort à mettre en \oe{}uvre pour mettre en mouvement $\SI{1}{kg}$ avec une accélération de $\SI{1}{m.s^{-2}}$ en son centre de gravité $G$.
 \end{rem}
-\subsubsection{Théorème du moment dynamique}
-\begin{theorem}[du moment dynamique]
-			Pour tout ensemble matériel $(E)$ de masse $m$ en mouvement par rapport à un référentiel galiléen ($R_0$), la somme des moments des efforts extérieurs s'appliquant sur $E$ en un point quelconque $A$ est égale au moment dynamique du mouvement de $E$ par rapport à $R_0$ en $A$ :
-			
-			\begin{align}
-			\boxed{
-				\vectm{A}{\bar E}{E}=\vectmd{A}{E}{R_0}.
-			}			
-			\end{align}
-		\end{theorem}
+%\subsubsection{Théorème du moment dynamique}
+\begin{theorem}[Théorème du moment dynamique]
+			Pour tout ensemble matériel $(E)$ de masse $m$ en mouvement par rapport à un référentiel galiléen ($R_0$), la somme des moments des efforts extérieurs s'appliquant sur $E$ en un point quelconque $A$ est égale au moment dynamique du mouvement de $E$ par rapport à $R_0$ en $A$ : 
+$$\vectm{A}{\bar E}{E}=\vectmd{A}{E}{R_0}.$$
+\end{theorem}
 
-\subsubsection{Théorème des actions mutuelles}
-\begin{theorem}[des actions mutuelles]
-			Soient $(E_1)$ et $(E_2)$ deux sous-ensembles matériels de $(E)$,
-			en mouvement par rapport à un référentiel galiléen, et exerçant une action mécanique l'un sur l'autre.
-			Alors :
-			\begin{align}
-			\boxed{
-				\torseurstat{T}{E_1}{E_2}=-\torseurstat{T}{E_2}{E_1}
-				}
-			\end{align}
-		\end{theorem}
+%\subsubsection{Théorème des actions mutuelles}
+\begin{theorem}[Théorème des actions mutuelles]
+Soient $(E_1)$ et $(E_2)$ deux sous-ensembles matériels de $(E)$,
+en mouvement par rapport à un référentiel galiléen, et exerçant une action mécanique l'un sur l'autre. Alors :
+	$$\torseurstat{T}{E_1}{E_2}=-\torseurstat{T}{E_2}{E_1}.$$
+\end{theorem}
 		
 
 
