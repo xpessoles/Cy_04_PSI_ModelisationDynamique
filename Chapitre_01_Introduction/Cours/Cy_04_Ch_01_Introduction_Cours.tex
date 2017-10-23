@@ -77,26 +77,29 @@ Chapitre 1 -- \xxactivite%
 \thispagestyle{plain}
 
 
-\section{Introduction et hypothèses}
+\section{Introduction}
+\begin{obj} ~\\
+L'objectif de ce cycle est double. L'étude dynamique des systèmes de solide permet de 
+\begin{itemize}
+\item déterminer les actions mécaniques dans les liaisons en tenant compte des masses (et des répartitions de masses) des pièces ou des classes d'équivalence cinématique;
+\item dimensionner les actionneurs permettant d'actionner un système (on parle aussi d'équations de mouvement).
+\end{itemize}
+\end{obj}
+%\subsection{Définitions}
 
-\subsection{Buts et motivations}
-Le \textbf{principe fondamental de la dynamique} (PFD) est une théorie clé de la mécanique classique. Ce principe fut énoncé pour la première fois par Isaac Newton au $XVII$\up{e} siècle. Ce principe fait le lien entre l'étude des mouvements des solides (\textbf{cinématique}) associés à leurs inerties (\textbf{cinétique}) et leurs causes (\textbf{actions mécaniques}). Grâce à cet outil, on peut alors prévoir avec une excellente précision les phénomènes mécaniques classiques. Dans le cadre de l'étude de systèmes, on utilisera les \textbf{théorèmes généraux de la dynamique} pour obtenir des \textbf{équations de mouvement}.
-
-
-\subsection{Référentiel galiléen}
 
 \begin{definition}[Référentiel galiléen]
 Un \textbf{référentiel galiléen} se définit à partir d'une repère spatial (orthonormée direct $\quadruplet{O_g}{\overrightarrow{x_g}}{\overrightarrow{y_g}}{\overrightarrow{z_g}}$ et d'une base de temps ($t$) et est animé d'un mouvement de \textbf{translation rectiligne uniforme} (à vitesse constante) par rapport à un référentiel absolu fixe ou à un autre référentiel galiléen $\quadruplet{O}{\overrightarrow{x_0}}{\overrightarrow{y_0}}{\overrightarrow{z_0}}$. 
 
-On peut également le définir comme un référentiel ``\textit{dans lequel le principe fondamental de la dynamique s'applique}''.
+On peut également le définir comme un référentiel << dans lequel le principe fondamental de la dynamique s'applique >>.
 \end{definition}
 
-\begin{rem}[Référentiels supposés galiléens]
-Dans la pratique, on fera toujours la \textbf{supposition qu'un repère est galiléen}. Cela dépendra effectivement des mouvements mis en jeu et des\textbf{ échelles temporelles et spatiales} considérées. 
+\begin{rem}
+Dans la pratique, on fera toujours la \textbf{supposition qu'un repère est galiléen}. Cela dépendra effectivement des mouvements mis en jeu et des \textbf{échelles temporelles et spatiales} considérées. 
 Par exemple :
 \begin{itemize}
 \item pour étudier des mouvements de l'ordre de quelques minutes à l'échelle humaine, le \textbf{référentiel terrestre} (origine liée au centre de la terre et les trois axes liés au globe terrestre) est approprié;
-\item pour étudier les effets météorologiques (ouragans, courants marins), ou les mouvements des satellites, il convient alors de tenir compte de l'inertie de la terre et on pourra choisir le \textbf{référentiel géocentrique} (origine liée au centre de la terre et les trois axes dirigés vers trois étoiles très éloignées) comme référentiel galiléen.
+\item pour étudier les effets météorologiques (ouragans, courants marins), ou les mouvements des satellites, il convient alors de tenir compte de l'inertie de la terre et on pourra choisir le \textbf{référentiel géocentrique} (origine liée au centre de la terre et les trois axes dirigés vers trois étoiles très éloignées) comme référentiel galiléen;
 \item pour étudier le mouvement des planètes, il convient mieux d'utiliser le \textbf{référentiel héliocentrique} (origine liée au centre du soleil et les trois axes dirigés vers trois étoiles très éloignées).
 \end{itemize}
 
@@ -104,59 +107,12 @@ Une chronologie galiléenne est obtenue par une horloge précise (Quartz, atomiq
 En mécanique classique (ou Newtonienne), les deux repères d'\textbf{espace et de temps} sont supposés \textbf{indépendants} ce qui n'est pas le cas de la mécanique relativiste. 
 \end{rem}
 
-\begin{figure}[ht!]
-\begin{center}
-\includegraphics[width=0.6\textwidth]{images/base_galileenne.pdf}
-\end{center}
-\caption{Définition d'un référentiel galiléen \label{fig:ref_galileen}}
-\end{figure}
-
-\subsection{Présentation du support du cours du cours}
-
-
-
-\begin{exemple}[Système de dépose de composants électroniques]
-Le système étudié permet de déposer automatiquement des composants électroniques sur un circuit.
-On s'intéresse ici à la modélisation d'un seul axe (selon la direction notée $\overrightarrow{y}_0$). actionné par un moteur électrique et utilisant un mécanisme de transformation de mouvement.
-
-\textbf{Hypothèses :}
-\begin{itemize}
-\item le référentiel associé au repère $R_0=\quadruplet{O_0}{\overrightarrow{x}_0}{\overrightarrow{y}_0}{\overrightarrow{z}_0}$ est supposé galiléen ;
-\item les solides seront supposés indéformables ; 
-\item on notera $J_1$ le moment d'inertie du solide 1 selon l'axe $\couple{O_0}{\overrightarrow{y}_0}$ : $J_1=I_{\couple{O_0}{\overrightarrow{y}_0}}(S_1)$ ;
-\item on note $M_3$ et $G_3$ respectivement la masse et le centre d'inertie du solide $S_3$ ;
-\item la position de $G_3$ est définie par $\overrightarrow{O_0G_3}=x\cdot \overrightarrow{x}_0+y\cdot \overrightarrow{y}_0+z\cdot \overrightarrow{z}_0$
-\item les liaisons sont supposées parfaites (sans jeu ni frottement).
-\end{itemize}
-
-\begin{center}
-\begin{tabular}{cc}
-\includegraphics[width=0.45\textwidth]{images/axe_y_photo.png}
-&
-\includegraphics[width=0.45\textwidth]{images/schema_cine_depose_composant.pdf}
-\end{tabular}
-\includegraphics[width=0.7\textwidth]{images/req_systeme_depose.pdf}
-\end{center}
-\begin{itemize}
-\item $S_0$ : poutre transversale considérée comme fixe par rapport au bâti ;
-\item $S_1$ : vis à billes (hélice à droite) ;
-\item $S_2$ : écrou de la vis à billes ;
-\item $S_3$ : chariot supportant la tête de dépose (masse $M_3$) ;
-\end{itemize}
-\end{exemple}
-
-\begin{obj}
-L'objectif de cette étude est de relier les grandeurs liées à l'actionneur du système (moteur) :
-\begin{itemize}
-\item couple transmis à $S_1$ : $\overrightarrow{C}_{Moteur\to S_1}$ ;
-\item vitesse de rotation de $S_1$ : $\overrightarrow{\Omega}(S_1/R_0)\cdot \overrightarrow{y}_0=\dot{\theta}$.
-\end{itemize} 
-à celles liée à l'effecteur (tête de dépose $S_3$) : 
-\begin{itemize}
-\item masse : $M_3$;
-\item cinématique de $S_3$ : $\overrightarrow{a}(G_3\in S_3/R_0)\cdot \overrightarrow{y}_0=\ddot{y}$.
-\end{itemize}
-\end{obj}
+%\begin{figure}[ht!]
+%\begin{center}
+%\includegraphics[width=0.6\textwidth]{images/base_galileenne.pdf}
+%\end{center}
+%\caption{Définition d'un référentiel galiléen \label{fig:ref_galileen}}
+%\end{figure}
 
 
 
@@ -188,34 +144,6 @@ m\;\overrightarrow{a}(G/R_g)=\vectf{\bar E}{E}%\resultante[\bar E]{E}
 
 \end{definition}
 
-\begin{exemple}[Machine de dépose de composants électroniques : déplacement dynamique de $S_3$]
-\begin{minipage}{0.35\textwidth}
-On connaît la masse $M_3$ de la tête de dépose et on cherche l'effort ($\overrightarrow{R}_{poussée\to S_3}$) de poussée que doit fournir l'actionneur pour obtenir l'accélération souhaitée.
-\end{minipage}
-\begin{minipage}{0.55\textwidth}
-\begin{center}
-\includegraphics[width=1.0\textwidth]{images/schema_cine_depose_translation.pdf}
-\end{center}
-\end{minipage}
-
-On utilise le théorème de la résultante dynamique en projection sur $\overrightarrow{y}_0$. On obtient : 
-%\begin{texteCache}
-\begin{align*}
-M_3\frac{d^2\overrightarrow{a}(G_3/R_0)}{dt^2}\cdot \overrightarrow{y}_0=\sum \overrightarrow{R}_{ext\to S_3}\cdot \overrightarrow{y}_0.\\
-\\
-M_3\cdot \ddot{y}=R_{poussee\to S_3}
-\end{align*} 
-%\end{texteCache}
-
-\textbf{Application numérique : }
-Détermination de $R_{poussee\to S_3}$ pour obtenir une accélération de $4m/s^2$ :
-
-%\begin{texteCache}
-\begin{align*}
-R_{poussee\to S_3}=20\times 4=80N
-\end{align*}
-%\end{texteCache}
-\end{exemple}
 
 \subsection{Cas d'un solide en mouvement de rotation autour d'un axe fixe}
 
@@ -236,48 +164,6 @@ Si un ensemble matériel $E$ (de centre d'inertie $G$) est en mouvement de rotat
 \end{itemize}
 \end{definition}
 
-\begin{exemple}[Machine de dépose de composants électroniques : déplacement dynamique de $S_3$]
-\begin{minipage}{0.5\textwidth}
-On donne les caractéristiques du moteur entraînant l'axe et la vis $S_1$ :
-\begin{itemize}
-\item couple maximal, $C_{max} = 21,2 N\cdot m$ ;
-\item fréquence de rotation maximale, $N_m = 6000 tr/min$
-\item moment d'inertie du moteur suivant l'axe $\overrightarrow{y}_0$ : $I_m = 1,6 \times 10^{-4} kg.m^2$ ;
-\item moment d'inertie de la vis à billes suivant l'axe $\overrightarrow{y}_0$ : $I_v = 2,15 x\times 10^{-4} kg\cdot m^2$.
-\end{itemize}
-De plus on notera : $\overrightarrow{\Omega}(S_1/R_0)=\dot{\theta}(t)\cdot \overrightarrow{y}_0$
-\end{minipage}
-\begin{minipage}{0.45\textwidth}
-\begin{center}
-\includegraphics[width=1.0\textwidth]{images/schema_cine_depose_rotation.pdf}
-\end{center}
-\end{minipage}
-
-\textbf{Détermination des caractéristiques maximales : }
-
-On se place de la cas le plus limite (Couple maximal, accélération angulaire constante pour atteindre la fréquence de rotation maximale en $t_a=0,2s$)
-Déterminer le couple résistant maximal que le moteur peut équilibrer dynamiquement ($C_{S_2\to S_1}$):
-
-%\begin{texteCache}
-On appliquant un théorème du moment dynamique à $S_1$ selon $\couple{O_0}{\overrightarrow{y}_0}$
-\begin{align*}
-(I_m+I_v)\cdot \ddot{\theta}=C_{max}+C_{S_2\to S_1}
-\end{align*}
-On obtient alors : 
-
-\begin{align*}
-C_{S_2\to S_1}=(I_m+I_v)\cdot \ddot{\theta}_{max}-C_{max}=(I_m+I_v)\cdot \frac{N_m\times 2\cdot \pi}{60\cdot t_a}-C_{max}=-20N\cdot m
-\end{align*}
-
-%\end{texteCache}
-\end{exemple}
-
-%\begin{bilan}
-\begin{itemize}
-\item Les deux cas présentés ci-dessus sont traités de manière indépendante.
-\item Le lien entre ces deux parties (actionneur et effecteur) repose sur le mécanisme de transformation de mouvement (ici vis-écrou).
-\item Il faudra donc procéder à une démarche de résolution globale pour relier le couple moteur $\overrightarrow{C}_{moteur\to S_1}$ à l'accélération ($\overrightarrow{a}(G_3/R_0)$) et la masse de l'effecteur ($M_3$). Ce sera l'objet des parties suivantes.
-\end{itemize}
 
 %\end{bilan}
 
@@ -290,7 +176,7 @@ Dans le cas général, soit un ensemble matériel $E$ en mouvement par rapport �
 
 \begin{align}\label{eqn:pfd}
 \boxed{
-\torseurstat{\overline{E}}{E}=\torseurcin{D}{E}{R_0}
+\torseurstat{T}{\overline{E}}{E}=\torseurcin{D}{E}{R_0}
 }
 \end{align}
 
@@ -332,7 +218,7 @@ Du Principe Fondamental de la dynamique découle plusieurs théorèmes générau
 
 
 \begin{rem}
-On peut alors définir un Newton comme l'effort à mettre en oeuvre pour mettre en mouvement $1kg$ avec une accélération de $1\;m\cdot s^{-2}$ en son centre de gravité $G$.
+On peut alors définir un Newton comme l'effort à mettre en \oe{}uvre pour mettre en mouvement $1kg$ avec une accélération de $1\;m\cdot s^{-2}$ en son centre de gravité $G$.
 \end{rem}
 \subsubsection{Théorème du moment dynamique}
 \begin{theorem}[du moment dynamique]
@@ -382,7 +268,7 @@ La méthodologie de résolution d'un problème de dynamique est très similaire 
 
 \begin{enumerate}
 \item On choisit un repère galiléen et on effectue le bilan complet des données d'entrée du problème.
-\item On construit un graph de structure.
+\item On construit un graphe de structure.
 \item On isole le solide ou le système de solides considéré.
 \item On effectue le Bilan des Actions Mécaniques Extérieures agissant sur le système isolé.
 \item On écrit le PFD.

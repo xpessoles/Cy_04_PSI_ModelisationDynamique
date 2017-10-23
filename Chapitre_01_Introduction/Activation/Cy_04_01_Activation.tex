@@ -1,0 +1,235 @@
+\documentclass[10pt,fleqn]{article} % Default font size and left-justified equations
+\usepackage[%
+    pdftitle={Modélisation dynamique},
+    pdfauthor={Xavier Pessoles}]{hyperref}
+
+    
+\input{style/new_style}
+\input{style/macros_SII}
+\usepackage{multicol}
+\usepackage{siunitx}
+%\usepackage{picins}
+\fichetrue
+%\fichefalse
+
+\proftrue
+%\proffalse
+
+\tdtrue
+%\tdfalse
+
+\courstrue
+\coursfalse
+
+
+\def\classe{\textsf{PSI$\star$ -- MP}}
+\def\xxnumpartie{Cycle 04}
+\def\xxpartie{Modéliser le comportement des systèmes mécaniques dans le but d'établir une loi de comportement ou de déterminer des actions mécaniques en utilisant le PFD}
+
+\def\xxnumchapitre{Chapitre 1 \vspace{.2cm}}
+\def\xxchapitre{\hspace{.12cm} Introduction à la dynamique du solide indéformable}
+
+\def\discipline{Sciences \\Industrielles de \\ l'Ingénieur}
+\def\xxtete{Sciences Industrielles de l'Ingénieur}
+
+
+
+
+\def\xxtitreexo{Activation}%Motorisation du moteur Haibike}
+\def\xxsourceexo{\hspace{.2cm} \footnotesize{Emilien Durif}}
+
+
+\def\xxposongletx{2}
+\def\xxposonglettext{1.45}
+\def\xxposonglety{20}
+%\def\xxonglet{Part. 1 -- Ch. 3}
+\def\xxonglet{Cycle 02}
+
+\def\xxactivite{Activation}
+\def\xxauteur{\textsl{E. Durif}}
+
+\def\xxcompetences{%
+\textsl{%
+\textbf{Savoirs et compétences :}\\
+%Les sources sont associées par un \emph{hacheur série}. La détermination des grandeurs électriques associées à ce montage permet de conclure vis à vis du cahier des charges.
+%\noindent \textbf{Résoudre :} à partir des modèles retenus :
+%\begin{itemize}[label=\ding{112},font=\color{ocre}] 
+%\item choisir une méthode de résolution analytique, graphique, numérique;
+%\item mettre en \oe{}uvre une méthode de résolution.
+%\end{itemize}
+%\begin{itemize}[label=\ding{112},font=\color{ocre}] 
+%\item \textit{Rés -- C1.1 :} Loi entrée sortie géométrique et cinématique -- Fermeture géométrique.
+%\end{itemize}
+%
+%\noindent \textit{Mod2 -- C4.1 :} Représentation par schéma bloc.
+}}
+
+\def\xxfigures{
+%\includegraphics[width=.9\linewidth]{images/c-evolution}
+}%figues de la page de garde
+
+
+\def\xxpied{%
+Cycle 04 -- Modéliser le comportement des systèmes mécaniques -- Dynamique\\% afin de valider leurs performances.\\
+Chapitre 1 -- \xxactivite%
+}
+
+\setcounter{secnumdepth}{5}
+%---------------------------------------------------------------------------
+
+\usepackage{pgfplots}
+\begin{document}
+\def\pathfig{images}
+%\chapterimage{png/Fond_Cin}
+\input{style/new_pagegarde}
+\vspace{4cm}
+\pagestyle{fancy}
+\thispagestyle{plain}
+
+\def\columnseprulecolor{\color{ocre}}
+\setlength{\columnseprule}{0.4pt} 
+
+\def\pathfig{images}
+
+\ifprof
+\else
+\begin{multicols}{2}
+\fi
+
+
+\subsection{Présentation du support du cours du cours}
+
+
+
+\begin{exemple}[Système de dépose de composants électroniques]
+Le système étudié permet de déposer automatiquement des composants électroniques sur un circuit.
+On s'intéresse ici à la modélisation d'un seul axe (selon la direction notée $\overrightarrow{y}_0$). actionné par un moteur électrique et utilisant un mécanisme de transformation de mouvement.
+
+\textbf{Hypothèses :}
+\begin{itemize}
+\item le référentiel associé au repère $R_0=\quadruplet{O_0}{\overrightarrow{x}_0}{\overrightarrow{y}_0}{\overrightarrow{z}_0}$ est supposé galiléen ;
+\item les solides seront supposés indéformables ; 
+\item on notera $J_1$ le moment d'inertie du solide 1 selon l'axe $\couple{O_0}{\overrightarrow{y}_0}$ : $J_1=I_{\couple{O_0}{\overrightarrow{y}_0}}(S_1)$ ;
+\item on note $M_3$ et $G_3$ respectivement la masse et le centre d'inertie du solide $S_3$ ;
+\item la position de $G_3$ est définie par $\overrightarrow{O_0G_3}=x\cdot \overrightarrow{x}_0+y\cdot \overrightarrow{y}_0+z\cdot \overrightarrow{z}_0$
+\item les liaisons sont supposées parfaites (sans jeu ni frottement).
+\end{itemize}
+
+\begin{center}
+\begin{tabular}{cc}
+\includegraphics[width=0.45\textwidth]{images/axe_y_photo.png}
+&
+\includegraphics[width=0.45\textwidth]{images/schema_cine_depose_composant.pdf}
+\end{tabular}
+\includegraphics[width=0.7\textwidth]{images/req_systeme_depose.pdf}
+\end{center}
+\begin{itemize}
+\item $S_0$ : poutre transversale considérée comme fixe par rapport au bâti ;
+\item $S_1$ : vis à billes (hélice à droite) ;
+\item $S_2$ : écrou de la vis à billes ;
+\item $S_3$ : chariot supportant la tête de dépose (masse $M_3$) ;
+\end{itemize}
+\end{exemple}
+
+\begin{obj}
+L'objectif de cette étude est de relier les grandeurs liées à l'actionneur du système (moteur) :
+\begin{itemize}
+\item couple transmis à $S_1$ : $\overrightarrow{C}_{Moteur\to S_1}$ ;
+\item vitesse de rotation de $S_1$ : $\overrightarrow{\Omega}(S_1/R_0)\cdot \overrightarrow{y}_0=\dot{\theta}$.
+\end{itemize} 
+à celles liée à l'effecteur (tête de dépose $S_3$) : 
+\begin{itemize}
+\item masse : $M_3$;
+\item cinématique de $S_3$ : $\overrightarrow{a}(G_3\in S_3/R_0)\cdot \overrightarrow{y}_0=\ddot{y}$.
+\end{itemize}
+\end{obj}
+
+
+
+\begin{exemple}[Machine de dépose de composants électroniques : déplacement dynamique de $S_3$]
+\begin{minipage}{0.35\textwidth}
+On connaît la masse $M_3$ de la tête de dépose et on cherche l'effort ($\overrightarrow{R}_{poussée\to S_3}$) de poussée que doit fournir l'actionneur pour obtenir l'accélération souhaitée.
+\end{minipage}
+\begin{minipage}{0.55\textwidth}
+\begin{center}
+\includegraphics[width=1.0\textwidth]{images/schema_cine_depose_translation.pdf}
+\end{center}
+\end{minipage}
+
+On utilise le théorème de la résultante dynamique en projection sur $\overrightarrow{y}_0$. On obtient : 
+%\begin{texteCache}
+\begin{align*}
+M_3\frac{d^2\overrightarrow{a}(G_3/R_0)}{dt^2}\cdot \overrightarrow{y}_0=\sum \overrightarrow{R}_{ext\to S_3}\cdot \overrightarrow{y}_0.\\
+\\
+M_3\cdot \ddot{y}=R_{poussee\to S_3}
+\end{align*} 
+%\end{texteCache}
+
+\textbf{Application numérique : }
+Détermination de $R_{poussee\to S_3}$ pour obtenir une accélération de $4m/s^2$ :
+
+%\begin{texteCache}
+\begin{align*}
+R_{poussee\to S_3}=20\times 4=80N
+\end{align*}
+%\end{texteCache}
+\end{exemple}
+
+
+
+
+\begin{exemple}[Machine de dépose de composants électroniques : déplacement dynamique de $S_3$]
+\begin{minipage}{0.5\textwidth}
+On donne les caractéristiques du moteur entraînant l'axe et la vis $S_1$ :
+\begin{itemize}
+\item couple maximal, $C_{max} = 21,2 N\cdot m$ ;
+\item fréquence de rotation maximale, $N_m = 6000 tr/min$
+\item moment d'inertie du moteur suivant l'axe $\overrightarrow{y}_0$ : $I_m = 1,6 \times 10^{-4} kg.m^2$ ;
+\item moment d'inertie de la vis à billes suivant l'axe $\overrightarrow{y}_0$ : $I_v = 2,15 x\times 10^{-4} kg\cdot m^2$.
+\end{itemize}
+De plus on notera : $\overrightarrow{\Omega}(S_1/R_0)=\dot{\theta}(t)\cdot \overrightarrow{y}_0$
+\end{minipage}
+\begin{minipage}{0.45\textwidth}
+\begin{center}
+\includegraphics[width=1.0\textwidth]{images/schema_cine_depose_rotation.pdf}
+\end{center}
+\end{minipage}
+
+\textbf{Détermination des caractéristiques maximales : }
+
+On se place de la cas le plus limite (Couple maximal, accélération angulaire constante pour atteindre la fréquence de rotation maximale en $t_a=0,2s$)
+Déterminer le couple résistant maximal que le moteur peut équilibrer dynamiquement ($C_{S_2\to S_1}$):
+
+%\begin{texteCache}
+On appliquant un théorème du moment dynamique à $S_1$ selon $\couple{O_0}{\overrightarrow{y}_0}$
+\begin{align*}
+(I_m+I_v)\cdot \ddot{\theta}=C_{max}+C_{S_2\to S_1}
+\end{align*}
+On obtient alors : 
+
+\begin{align*}
+C_{S_2\to S_1}=(I_m+I_v)\cdot \ddot{\theta}_{max}-C_{max}=(I_m+I_v)\cdot \frac{N_m\times 2\cdot \pi}{60\cdot t_a}-C_{max}=-20N\cdot m
+\end{align*}
+
+%\end{texteCache}
+\end{exemple}
+
+
+%\begin{bilan}
+\begin{itemize}
+\item Les deux cas présentés ci-dessus sont traités de manière indépendante.
+\item Le lien entre ces deux parties (actionneur et effecteur) repose sur le mécanisme de transformation de mouvement (ici vis-écrou).
+\item Il faudra donc procéder à une démarche de résolution globale pour relier le couple moteur $\overrightarrow{C}_{moteur\to S_1}$ à l'accélération ($\overrightarrow{a}(G_3/R_0)$) et la masse de l'effecteur ($M_3$). Ce sera l'objet des parties suivantes.
+\end{itemize}
+
+
+
+
+
+\ifprof
+\else
+\end{multicols}
+\fi
+
+
+\end{document}
