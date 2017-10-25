@@ -240,64 +240,12 @@ La méthodologie de résolution d'un problème de dynamique est très similaire 
 \item On effectue la résolution.
 \end{enumerate}
 
-\section{Loi de mouvement en trapèze}
-\noindent
-\begin{minipage}[c]{.48\linewidth}
-Une des lois usuellement suivie par un actionneur pour aller d'un point à un autre est une loi de mouvement de vitesse en trapèze.  Ce mouvement peut être décomposé en 3 phases : 
-\begin{itemize}
-\item phase 1 mouvement uniformément décéléré. L'accélération est donc constante, la vitesse croit de façon linéaire et la position de façon parabolique;
-\item phase 2 : mouvement uniforme. L'accélération est nulle, la vitesse est constante et la position évolue linéairement;
-\item phase 3 : mouvement uniforme. L'accélération est constante est négative, la vitesse décroît linéairement et la position évolue de façon parabolique. 
-\end{itemize}
+\section{Loi d'évolution usuelle}
 
-
-Dans le cas général, il ne sera souvent inutile d'écrire les équations horaires de chacune des phases. En effet, les questions liées à ces lois de mouvements sont généralement :
-\begin{itemize}
-\item d'identifier le << pire des cas >> en terme de vitesse/accélération;
-\item de déterminer les temps de une ou plusieurs des phases en fonction de la distance à parcourir, la vitesse maximale, l'accélération accélérations maximale;
-\item de déterminer la hauteur du palier de vitesse;
-\item de déterminer la distance parcourue. 
-\end{itemize}
-\end{minipage}\hfill
-\begin{minipage}[c]{.48\linewidth}
-\begin{center}
-\includegraphics[width=.9\linewidth]{images/trapeze}
-\end{center}
-\end{minipage}
-\begin{resultat}
-Dans les 3 derniers points, il est souvent suffisant de remarquer en utilisant les courbes que : 
-\begin{itemize}
-\item $t_1=\dfrac{\dot{x}_m}{\ddot{x}_m}$;
-\item en utilisant la courbe de vitesse et en remarquant que l'intégrale sous la courbe correspond à la distance parcourue, la distance parcourue lors de l'accélération est donnée par $\dfrac{1}{2}t_1\dot{x}_m$;
-\item en utilisant la courbe de vitesse et en remarquant que l'intégrale sous la courbe correspond à la distance parcourue, la distance parcourue lors des 3 phases est donnée par $2\cdot \dfrac{1}{2}t_1\dot{x}_m+\left(t_2-t_1\right)\dot{x}_m$.
-\end{itemize}
-\end{resultat}
-
-
-\begin{center}
-\begin{tabular}{|p{2.2cm}|c|c|c|}
-\hline
- & Phase 1 & Phase 2 & Phase 3 \\
-\hline \hline
-Équation de position & 
-$x(t)=\dfrac{1}{2}\ddot{x}_mt^2 $ &
-$x(t)= \dot{x}_m(t)\left( t-t_1\right)+x_m\left(t_1 \right)$ & 
-$x(t)= -\dfrac{1}{2}\ddot{x}_m\left(t-t_2\right)^2 + \dot{x}_m(t)\left( t-t_2\right)+x_m\left(t_2\right)$ \\ \hline
-Équation de vitesse &
-$\dot{x}(t)=\ddot{x}_m t$ &  
-$\dot{x}(t)=\dot{x}_m $ & 
-$\dot{x}(t)=-\ddot{x}_m \left(t-t_2\right)+\dot{x}_m$  \\ \hline
-Équation d'accélération &
-$\ddot{x}(t)=\ddot{x}_m$ & 
-$\ddot{x}(t)=0$ & 
-$\ddot{x}(t)=-\ddot{x}_m$ \\
-\hline
-\end{tabular}
-\end{center}
 
 \begin{thebibliography}{2}
-   \bibitem[1]{ref1} Émilien Durif, {\it Introduction à la dynamique des solides, Lycée La Martinière Monplaisir, Lyon.}
-      \bibitem[2]{ref2} Florestan Mathurin, {\it Introduction à la dynamique du solide, Lycée Bellevue, Toulouse, \url{http://florestan.mathurin.free.fr/}.}
+   \bibitem[1]{ref1} Emilien Durif, {\it Introduction à la dynamique des solides, Lycée La Martinière Monplaisir, Lyon.}
+      \bibitem[2]{ref2} Florestan Mathurin, {\it Correction des SLCI, Lycée Bellevue, Toulouse, \url{http://florestan.mathurin.free.fr/}.}
 
 
 
