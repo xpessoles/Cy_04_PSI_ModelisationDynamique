@@ -7,7 +7,10 @@
 
 \newcommand{\rep}[1]{\mathcal{R}_{#1}}
 \newcommand{\quadruplet}[4]{\left(#1;#2,#3,#4 \right)}
-\newcommand{\base}[4]{\left(#1;\vect{#2},\vect{#3},\vect{#4} \right)}
+\newcommand{\repere}[4]{\left(#1;\vect{#2},\vect{#3},\vect{#4} \right)}
+\newcommand{\base}[3]{\left(\vect{#1},\vect{#2},\vect{#3} \right)}
+
+
 
 \newcommand{\vx}[1]{\vect{x_{#1}}}
 \newcommand{\vy}[1]{\vect{y_{#1}}}
@@ -15,6 +18,14 @@
 
 % d droit pour le calcul différentiel
 \newcommand{\dd}{\text{d}}
+
+\newcommand{\inertie}[2]{I_{#1}\left( #2\right)}
+\newcommand{\matinertie}[7]{
+\begin{pmatrix}
+#1 & #6 & #5 \\
+#6 & #2 & #4 \\
+#5 & #4 & #3 \\
+\end{pmatrix}_{#7}}
 %%%%%%%%%%%%
 % Définition des torseurs 
 %%%%%%%%%%%%
