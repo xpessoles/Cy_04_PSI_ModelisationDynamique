@@ -2,6 +2,7 @@
 % Original author:
 % Mathias Legrand (legrand.mathias@gmail.com) with modifications by:
 % Vel (vel@latextemplates.com)
+% X Pessoles xpessoles.ptsi@free.fr
 % License:
 % CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -35,6 +36,28 @@
 \usepackage{pifont} % Pour les dinglist
 \usepackage{multicol}
 \usepackage{array} % Centrage vertical dans les tableaux
+
+
+
+% DIVERS STANDALONE + TIKZ
+%%%%%%%%%%%%%%%%%%%
+\usepackage{numprint}
+\usetikzlibrary{calc}
+\usepackage{siunitx}
+%definition style pour mettre un fond blanc dans un node sans avoir des marges énormes
+\tikzset{fondblanc/.style={ inner sep=2pt,fill=white,outer sep = 5pt}} 
+\tikzset{fondblanc2/.style={ inner sep=2pt,fill=white}} 
+\tikzset{fondblanc3/.style={ inner sep=1pt,fill=white,outer sep = 2pt}} 
+%\usetikzlibrary{calc,circuits.ee.IEC}
+%\usetikzlibrary{shapes}
+%\usepackage[european resistor, european voltage, european current]{circuitikz}
+%\usetikzlibrary{babel}
+\usepackage{standalone}
+\standaloneconfig{mode=buildnew}
+
+
+
+
 
 %----------------------------------------------------------------------------------------
 %	FONTS
@@ -350,6 +373,7 @@
 \newtheorem{vocabulary}{Vocabulaire}[section]
 %\newtheorem{definitionT}{Definition}[section]
 \newtheorem{definitionT}{Définition}[section]
+\newtheorem{propT}{Propriété}[section]
 \newtheorem{rappelT}{Rappel}[section]
 \newtheorem{demoT}{Démonstration}[section]
 \newtheorem{corollaryT}[dummy]{Corollaire}
@@ -477,11 +501,11 @@ linecolor=gray,
 backgroundcolor=black!5,
 innerleftmargin=5pt,
 innerrightmargin=5pt,
-innertopmargin=5pt,
+innertopmargin=1pt,
 leftmargin=0cm,
 rightmargin=0cm,
 linewidth=4pt,
-innerbottommargin=5pt]{hyBox}
+innerbottommargin=1pt]{hyBox}
 
 
 % Boite pour le titre de la partie (pBox)
@@ -635,6 +659,7 @@ innerbottommargin=5pt]{sqlBox}
 \newenvironment{exercice}{\begin{eBox}\begin{exerciseT}}{\hfill{\color{ocre}\tiny\ensuremath{\blacksquare}}\end{exerciseT}\end{eBox}}				  
 
 \newenvironment{definition}{\begin{dBox}\begin{definitionT}}{\end{definitionT}\end{dBox}}	
+\newenvironment{prop}{\begin{dBox}\begin{propT}}{\end{propT}\end{dBox}}	
 \newenvironment{rappel}{\begin{dBox}\begin{rappelT}}{\end{rappelT}\end{dBox}}	
 \newenvironment{defi}{\begin{dBox}\begin{definitionT}}{\end{definitionT}\end{dBox}}	
 \newenvironment{demo}{\begin{demoBox}\begin{demoT}}{\end{demoT}\end{demoBox}}	
@@ -1105,3 +1130,20 @@ literate=%
 \newif\ifprof
 \newif\iftd
 \newif\ifcours
+
+%% DIVERS TIKZ et STANDALONE
+
+%%%%%%%%%%%%%%%%%%%
+\usepackage{numprint}
+\usetikzlibrary{calc}
+%definition style pour mettre un fond blanc dans un node sans avoir des marges énormes
+\tikzset{fondblanc/.style={ inner sep=2pt,fill=white,outer sep = 5pt}} 
+\tikzset{fondblanc2/.style={ inner sep=2pt,fill=white}} 
+\tikzset{fondblanc3/.style={ inner sep=1pt,fill=white,outer sep = 2pt}} 
+\usetikzlibrary{calc,circuits.ee.IEC}
+\usetikzlibrary{shapes}
+\usepackage[european resistor, european voltage, european current]{circuitikz}
+\usetikzlibrary{babel}
+\usepackage{standalone}
+\standaloneconfig{mode=buildnew}
+\usepackage{siunitx}
