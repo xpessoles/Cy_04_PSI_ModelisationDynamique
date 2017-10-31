@@ -1,0 +1,128 @@
+\documentclass[10pt,fleqn]{article} % Default font size and left-justified equations
+\usepackage[%
+    pdftitle={Modélisation dynamique : cinétique},
+    pdfauthor={Xavier Pessoles}]{hyperref}
+
+    
+\input{style/new_style}
+\input{style/macros_SII}
+
+\fichetrue
+%\fichefalse
+
+\proftrue
+\proffalse
+
+\tdtrue
+%\tdfalse
+
+\courstrue
+\coursfalse
+
+
+\def\discipline{Sciences \\Industrielles de \\ l'Ingénieur}
+\def\xxtete{Sciences Industrielles de l'Ingénieur}
+
+\def\classe{\textsf{PSI$\star$ -- MP}}
+\def\xxnumpartie{Cycle 04}
+\def\xxpartie{Modéliser le comportement des systèmes mécaniques dans le but d'établir une loi de comportement ou de déterminer des actions mécaniques en utilisant le PFD}
+
+\def\xxnumchapitre{Chapitre 2 \vspace{.2cm}}
+\def\xxchapitre{\hspace{.12cm} Caractéristation inertielle des solides}
+
+
+
+
+\def\xxtitreexo{Activation -- Barrière sur la tamise}%Motorisation du moteur Haibike}
+\def\xxsourceexo{\hspace{.2cm} \footnotesize{Florestan Mathurin}}
+
+
+\def\xxposongletx{2}
+\def\xxposonglettext{1.45}
+\def\xxposonglety{20}
+%\def\xxonglet{Part. 1 -- Ch. 3}
+\def\xxonglet{Cycle 02}
+
+\def\xxactivite{Activation}
+\def\xxauteur{\textsl{F. Mathurin}}
+
+\def\xxcompetences{%
+\textsl{%
+\textbf{Savoirs et compétences :}\\
+\begin{itemize}[label=\ding{112},font=\color{ocre}] 
+\item \textit{Mod2.C13} : centre d'inertie
+\item \textit{Mod2.C14} : opérateur d'inertie
+\item \textit{Mod2.C15} : matrice d'inertie
+\end{itemize}
+}}
+\def\xxfigures{
+\includegraphics[width=.7\linewidth]{images/fig_00}
+}%figues de la page de garde
+
+
+\def\xxpied{%
+Cycle 04 -- Modélisation mécanique -- Cinétique\\% afin de valider leurs performances.\\
+Chapitre 2 -- \xxactivite%
+}
+
+\setcounter{secnumdepth}{5}
+%---------------------------------------------------------------------------
+
+\usepackage{pgfplots}
+\begin{document}
+\def\pathfig{images}
+%\chapterimage{png/Fond_Cin}
+\input{style/new_pagegarde}
+\vspace{5cm}
+\pagestyle{fancy}
+\thispagestyle{plain}
+
+\def\columnseprulecolor{\color{ocre}}
+\setlength{\columnseprule}{0.4pt} 
+
+\def\pathfig{images}
+
+\ifprof
+\else
+\begin{multicols}{2}
+\fi
+Le barrage sur la Tamise permet de protéger Londres des grandes marrées évitant ainsi des crues qui pourraient survenir. Ce barrage est constituée de dix portes dont une modélisation est donnée ci-dessous.
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/fig_01}
+\end{center}
+
+On donne :
+\begin{itemize}
+\item $L=\SI{58}{m}$ la longueur de la porte;
+\item $R=\SI{12,4}{m}$ le rayon de la porte;
+\item $e=\SI{0,05}{m}$ l'épaisseur de la porte, considérée négligeable devant $R$;
+\item $\rho=\SI{7800}{kg.m^{-3}}$;
+\item $\alpha=\dfrac{\pi}{3}$.
+\end{itemize}
+
+%\section*{Présentation du support du cours du cours}
+
+\subparagraph{}\textit{Déterminer les coordonnées du centre d'inertie de la porte : 
+\begin{enumerate}
+\item déterminer les coordonnées du centre d'inertie $G_P$ de la plaque;
+\item déterminer les coordonnées du centre d'inertie $G_C$ de la portion cylindrique;
+\item déterminer les coordonnées du centre d'inertie $G$ de la porte.
+\end{enumerate}}
+
+\subparagraph{}\textit{Déterminer la forme de la matrice d'inertie de la porte :
+\begin{enumerate}
+\item donner la forme de la matrice d'inertie de la plaque $P$ en $G_P$;
+\item donner la forme de la matrice d'inertie du cylindre $C$ en $G_C$;
+\item donner la forme de la matrice d'inertie de la porte $P$ en $G$.
+\end{enumerate}}
+
+\subparagraph{}\textit{Déterminer la moment d'inertie de la porte par rapport à $\axe{O}{z}$.}
+
+\ifprof
+\else
+\end{multicols}
+\fi
+
+
+\end{document}

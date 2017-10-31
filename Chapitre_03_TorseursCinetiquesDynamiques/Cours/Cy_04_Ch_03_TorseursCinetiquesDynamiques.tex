@@ -1,0 +1,202 @@
+\documentclass[10pt,fleqn]{article} % Default font size and left-justified equations
+\usepackage[%
+    pdftitle={Modélisation dynamique},
+    pdfauthor={Xavier Pessoles}]{hyperref}
+
+\input{style/new_style}
+\input{style/macros_SII}
+\usepackage{bm}
+\fichetrue
+\fichefalse
+
+\proftrue
+%\proffalse
+
+%\tdtrue
+\tdfalse
+
+\courstrue
+%\coursfalse
+
+
+
+% -------------------------------------
+% Déclaration des titres
+% -------------------------------------
+
+\def\discipline{Sciences \\Industrielles de \\ l'Ingénieur}
+\def\xxtete{Sciences Industrielles de l'Ingénieur}
+
+\def\classe{\textsf{PSI$\star$ -- MP}}
+\def\xxnumpartie{Cycle 04}
+\def\xxpartie{Modéliser le comportement des systèmes mécaniques dans le but d'établir une loi de comportement ou de déterminer des actions mécaniques en utilisant le PFD}
+
+\def\xxnumchapitre{Chapitre 2 \vspace{.2cm}}
+\def\xxchapitre{\hspace{.12cm} Caractéristation inertielle des solides}
+
+\def\xxposongletx{2}
+\def\xxposonglettext{1.45}
+\def\xxposonglety{19}%16
+
+\def\xxonglet{Cycle 04}
+
+\def\xxactivite{Cours}
+\def\xxauteur{\textsl{Xavier Pessoles}}
+
+\def\xxcompetences{%
+\textsl{%
+\textbf{Savoirs et compétences :}\\
+\begin{itemize}[label=\ding{112},font=\color{ocre}] 
+\item \textit{Mod2.C13} : centre d'inertie
+\item \textit{Mod2.C14} : opérateur d'inertie
+\item \textit{Mod2.C15} : matrice d'inertie
+\end{itemize}
+}}
+		
+\def\xxfigures{
+\includegraphics[width=4cm]{images/fig_01}\\
+\textit{Toupie}
+
+\includegraphics[width=4cm]{images/fig_02}\\
+\textit{Volants d'inertie d'un vilebrequin}
+
+}%figues de la page de garde
+
+\def\xxpied{%
+Cycle 04 -- Modéliser le comportement des systèmes mécaniques\\% afin de valider leurs performances.\\
+Chapitre 2 -- \xxactivite%
+}
+
+\setcounter{secnumdepth}{5}
+%---------------------------------------------------------------------------
+
+
+\begin{document}
+\chapterimage{png/Fond_CIN}
+\input{style/new_pagegarde}
+\setlength{\columnseprule}{.1pt}
+
+\vspace{2cm}
+\pagestyle{fancy}
+\thispagestyle{plain}
+
+
+\section{Masse et centre de masse (centre d'inertie)}
+\subsection{Masse d'un solide indéformable}
+\begin{defi}
+On peut définir la masse totale d'un solide $S$ par : $M=\int\limits_{P\in S} \,\dd m$. Si de plus l'ensemble est fait d'un matériau homogène de masse volumique $\mu$, on a $M=\mu \int\limits_{P\in S} \dd V$. \end{defi}
+
+\subsection{Centre d'inertie d'un solide}
+
+\begin{defi}
+La position du centre d'inertie $G$ d'un solide $S$ est définie par $\int\limits_{P\in S} \vect{GP} \dd m = \vect{0}$.
+\end{defi}
+
+Pour déterminer la position du centre d'inertie d'un solide $S$, on passe généralement par l'origine du repère associé à $S$. On a alors 
+$\int\limits_{P\in S} \vect{GP} \, \dd m=\int\limits_{P\in S} \left(\vect{GO}+\vect{OP}\right) \dd m = \vect{0} 
+\Leftrightarrow \int\limits_{P\in S} \vect{OG} \,\dd m =\int\limits_{P\in S} \vect{OP} \,\dd m
+\Leftrightarrow  M\vect{OG} =\int\limits_{P\in S} \vect{OP} \,\dd m$.
+
+\begin{methode}
+Pour déterminer les coordonnées $\left(x_G,y_G,z_G\right)$ du centre d'inertie $G$ du solide $S$ dans la base $\repere{O}{x}{y}{z}$, on a donc :
+$$
+\left\{
+\begin{array}{l}
+M x_G =\mu \int\limits_{P\in S} x_P \,\dd V \\
+M y_G =\mu \int\limits_{P\in S} y_P \,\dd V \\
+M z_G =\mu \int\limits_{P\in S} z_P \,\dd V \\
+\end{array}
+\right. \quad \text{avec }\dd V \text{ volume élémentaire du solide $S$.}
+$$ 
+
+Pour simplifier les calculs, on peut noter que le centre d'inertie appartient au(x) éventuel(s) plan(s) de symétrie du solide.
+\end{methode}
+
+\begin{rem}
+Centre d'inertie et centre de gravité sont confondus lorsque le champ de pesanteur est considéré comme uniforme en tout point de l'espace. 
+\end{rem}
+
+\subsection{Centre d'inertie d'un ensemble de solides encastrés entre eux}
+\begin{methode}
+Soit un solide composé de $n$ solides élémentaires dont la position des centres d'inertie $G_i$ et les masses $M_i$ sont connues. On note $M=\sum\limits_{i=1}^{n}M_i$.  La position du centre d'inertie $G$ de l'ensemble $S$ est donné par :
+$$\vect{OG}=\dfrac{1}{M}\sum\limits_{i=1}^{n}M_i \vect{OG_i} .$$
+
+\end{methode}
+
+
+
+\section{Matrice d'inertie d'un solide}
+\subsection{Opérateur et matrice d'inertie}
+
+\begin{defi}
+Soient : 
+\begin{itemize}
+\item un solide $S$ de masse $m$ en mouvement par rapport à un repère $\mathcal{R}_0=\repere{O_0}{x_0}{y_0}{z_0}$;
+\item $\mathcal{R}_S=\repere{O}{x}{y}{z}$ le repère lié au solide $S$;
+\item $P$ un point de $S$ tel que $\vect{OP}=x_p\vect{x}+y_p\vect{y}+z_p\vect{z}$;
+\item $\vect{u}$ un vecteur unitaire du solide $S$.
+\end{itemize}
+
+On appelle opérateur d'inertie l'application linéaire définie par :
+$$
+\vect{u} \rightarrow \vect{J_{\left(O,S\right)}\left(\vect{u}\right)} 
+= \int\limits_{S} \vect{OP}\wedge \left(\vect{u}\wedge \vect{OP}\right)\,\dd m
+$$
+
+On appelle matrice d'inertie du solide $S$ en $O$, $\inertie{O}{S}$, l'image de cette application linéaire : $\vect{J_{\left(O,S\right)}\left(\vect{u}\right)}  = \inertie{O}{S} \vect{u}$.
+ 
+\end{defi}
+
+\begin{defi}[Matrice d'inertie]
+La matrice d'inertie s'écrit ainsi : 
+$$
+\inertie{O}{S}=\matinertie{\int\limits_{S} \left(y_p^2 + z_p^2 \right)\,\dd m}{\int\limits_{S} \left(x_p^2 + z_p^2 \right)\,\dd m}{\int\limits_{S} \left(x_p^2 + y_p^2 \right)\,\dd m}{-\int\limits_{S} \left(y_pz_p\right)\,\dd m}{-\int\limits_{S} \left(x_pz_p\right)\,\dd m}{-\int\limits_{S} \left(x_py_p\right)\,\dd m}{\mathcal{R}_S}=\matinertie{A}{B}{C}{-D}{-E}{-F}{\mathcal{R}_S}
+.$$
+
+On appelle moments d'inertie par rapport aux axes $\axe{O}{{x}}$, $\axe{O}{{y}}$ et $\axe{O}{{z}}$  les termes $A$, $B$ et $C$. 
+
+On appelle produit d'inerties par rapport aux axes $\axe{O}{{y}}$ et $\axe{O}{\vect{z}}$,  $\axe{O}{{x}}$ et $\axe{O}{{z}}$,  $\axe{O}{{x}}$ et $\axe{O}{{y}}$ les termes $D$, $E$ et $F$.
+\end{defi}
+
+\begin{prop}~\\
+
+\begin{itemize}[label=\ding{112},font=\color{ocre}] 
+\item La matrice d'inertie est une matrice symétrique. Il existe une base dans laquelle elle est diagonalisable. Cette base est appelée base principale d'inertie. 
+\item Si $\left(O,\vect{x},\vect{y} \right)$ est un plan de symétrie du solide, $D$ et $E$ sont nuls.
+\item Si $\left(O,\vect{z},\vect{x} \right)$ est un plan de symétrie du solide, $D$ et $F$ sont nuls.
+\item Si $\left(O,\vect{y},\vect{z} \right)$ est un plan de symétrie du solide, $E$ et $F$ sont nuls.
+\item Si un solide admet 2 plans de symétrie, alors $D$, $E$ et $F$ sont nuls. 
+\end{itemize}
+
+\end{prop}
+\subsection[Déplacement d'une matrice d'inertie]{Déplacement d'une matrice d'inertie -- Théorème de Huygens}
+
+\begin{theorem}[Théorème de Huygens]
+Soit $S$ un solide de centre d'inertie $G$, de masse $m$, d'inertie $\inertie{G}{S}$ et d'inertie $\inertie{O}{S}$ avec $\vect{OG}=a\vect{x}+b\vect{y}+c\vect{z}$. Les matrices $\inertie{G}{S}$ et $\inertie{O}{S}$ exprimées dans la base $\mathcal{B}=\base{x}{y}{z}$ sont liées par : 
+$$
+\matinertie{A_O}{B_O}{C_O}{-D_O}{-E_O}{-F_O}{\mathcal{B}}
+= \matinertie{A_G}{B_G}{C_G}{-D_G}{-E_G}{-F_G}{\mathcal{B}}
++ \matinertie{m\left(b^2+c^2\right)}{m\left(a^2+c^2\right)}{m\left(a^2+b^2\right)}{-mbc}{-mac}{-mab}{\mathcal{B}}.
+$$
+
+\end{theorem}
+\subsection{Détermination de la matrice d'inertie d'un solide}
+
+%\subsection{Compléments}
+
+\subsection{Matrice d'inertie de solides usuels}
+
+
+\begin{thebibliography}{2}
+   \bibitem[1]{ref1} Emilien Durif, {\it Introduction à la dynamique des solides, Lycée La Martinière Monplaisir, Lyon.}
+      \bibitem[2]{ref2} Florestan Mathurin, {\it Correction des SLCI, Lycée Bellevue, Toulouse, \url{http://florestan.mathurin.free.fr/}.}
+
+
+
+\end{thebibliography}
+
+\end{document}
+
+
+
+
