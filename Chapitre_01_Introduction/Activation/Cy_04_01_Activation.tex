@@ -121,7 +121,7 @@ On s'intéresse ici à la modélisation d'un seul axe (selon la direction notée
 
 Le système est modélisé par le schéma cinématique ci-dessous :
 \begin{center}
-\includegraphics[width=0.95\linewidth]{images/schema_cine_depose_composant.pdf}
+\includegraphics[width=0.7\linewidth]{images/schema_cine_depose_composant.pdf}
 \end{center}
 
 On note : 
@@ -164,7 +164,6 @@ L'objectif de cette étude est de relier les grandeurs liées à l'actionneur du
 
 \subparagraph{}
 \textit{Réaliser le graphe de structure associé au mécanisme.}
-
 
 \subparagraph{}
 \textit{Proposer une stratégie pour répondre à l'objectif.}
@@ -228,29 +227,51 @@ $C_{S_2\to S_1}=(I_m+I_v)\cdot \ddot{\theta}_{\text{max}}-C_{\text{max}}=(I_m+I_
 
 
 %\begin{bilan}
-\begin{itemize}
-\item Les deux cas présentés ci-dessus sont traités de manière indépendante.
-\item Le lien entre ces deux parties (actionneur et effecteur) repose sur le mécanisme de transformation de mouvement (ici vis-écrou).
-\item Il faudra donc procéder à une démarche de résolution globale pour relier le couple moteur $\overrightarrow{C}_{\text{moteur}\to S_1}$ à l'accélération ($\vectg{G_3}{3}{R_0}$) et la masse de l'effecteur ($M_3$). Ce sera l'objet des parties suivantes.
-\end{itemize}
+%\begin{itemize}
+%\item Les deux cas présentés ci-dessus sont traités de manière indépendante.
+%\item Le lien entre ces deux parties (actionneur et effecteur) repose sur le mécanisme de transformation de mouvement (ici vis-écrou).
+%\item Il faudra donc procéder à une démarche de résolution globale pour relier le couple moteur $\overrightarrow{C}_{\text{moteur}\to S_1}$ à l'accélération ($\vectg{G_3}{3}{R_0}$) et la masse de l'effecteur ($M_3$). Ce sera l'objet des parties suivantes.
+%\end{itemize}
 \else
 \fi
-
 
 
 \subparagraph{}
 \textit{Donner la relation entre le couple transmis par la liaison hélicoïdale et l'effort axial.}
 
+\subparagraph{}
+\textit{Déterminer la relation entre l'effort axial dans la liaison hélicoïdale et l'effort de poussée dans la liaison sphère -- cylindre.}
+
 
 
 \subparagraph{}
-\textit{Déterminer la relation entre l'effort axial dans la liaison hélicoïdale et l'effort de poussée dans la liaison sphère -- cylindre.}
+\textit{Quel doit être le couple moteur pour déplacer le chariot $S_3$ ?}
+
+Le cahier des charges impose les performances dynamiques suivantes : 
+\begin{itemize}
+\item l'accélération minimale de l'axe transversal est de \SI{20}{m.s^{-2}};
+\item la vitesse minimale pour respecter la cadence souhaitée est de \SI{7}{m.s^{-1}};
+\item la course de l'axe est de \SI{2}{m}.
+\end{itemize}
+
+La loi de commande est une loi en trapèze de vitesse. 
+\subparagraph{}
+\textit{Donner les caractéristiques dynamiques que doit respecter le moteur.}
+
+\subparagraph{}
+\textit{Quel est le temps nécessaire pour parcourir la course de la machine ?}
+
+\subparagraph{}
+\textit{Quelle est la distance minimale à parcourir pour atteindre la vitesse maximale ?}
+
+\subparagraph{}
+\textit{Quel est le couple minimal que doit fournir le moteur pour déplacer le chariot ?}
+
 
 
 \ifprof
 \else
 \end{multicols}
 \fi
-
 
 \end{document}
