@@ -95,9 +95,20 @@
 
 
 
+
+% Vecteur résultante cin
+\newcommand{\vectrc}[2]{%
+\vect{R_c \left( {#1}/ {#2}\right)}
+}
+% Vecteur moment cin
+\newcommand{\vectmc}[3]{%
+\vect{\sigma \left( {#1}, {#2} /{#3}\right)}
+}
+
+
 % Vecteur résultante dyn
-\newcommand{\vectrd}[3]{%
-\vect{\delta \left( {#1}/ {#2}\right)}
+\newcommand{\vectrd}[2]{%
+\vect{R_d \left( {#1}/ {#2}\right)}
 }
 % Vecteur moment dyn
 \newcommand{\vectmd}[3]{%

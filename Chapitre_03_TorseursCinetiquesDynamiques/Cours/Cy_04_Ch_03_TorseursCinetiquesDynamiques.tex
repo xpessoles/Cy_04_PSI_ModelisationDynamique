@@ -31,14 +31,14 @@
 \def\xxnumpartie{Cycle 04}
 \def\xxpartie{Modéliser le comportement des systèmes mécaniques dans le but d'établir une loi de comportement ou de déterminer des actions mécaniques en utilisant le PFD}
 
-\def\xxnumchapitre{Chapitre 2 \vspace{.2cm}}
-\def\xxchapitre{\hspace{.12cm} Caractéristation inertielle des solides}
+\def\xxnumchapitre{Chapitre 3 \vspace{.2cm}}
+\def\xxchapitre{\hspace{.12cm} Application du Principe Fondamental de la Dynamique}
 
 \def\xxposongletx{2}
 \def\xxposonglettext{1.45}
 \def\xxposonglety{19}%16
 
-\def\xxonglet{Cycle 04}
+\def\xxonglet{\textsf{Cycle 04}}
 
 \def\xxactivite{Cours}
 \def\xxauteur{\textsl{Xavier Pessoles}}
@@ -47,9 +47,13 @@
 \textsl{%
 \textbf{Savoirs et compétences :}\\
 \begin{itemize}[label=\ding{112},font=\color{ocre}] 
-\item \textit{Mod2.C13} : centre d'inertie
-\item \textit{Mod2.C14} : opérateur d'inertie
+\item \textit{Mod2.C16} : torseur cinétique
+\item \textit{Mod2.C17} : torseur dynamique
+\item \textit{Mod2.C17.SF1} : déterminer le torseur dynamique d’un solide, ou d’un ensemble de solides, par rapport à un autre solide
 \item \textit{Mod2.C15} : matrice d'inertie
+\item \textit{Res1.C2} : principe fondamental de la dynamique
+\item \textit{Res1.C1.SF1} : proposer une démarche permettant la détermination de la loi de mouvement
+\item \textit{Res1.C2.SF1} : proposer une méthode permettant la détermination d’une inconnue de liaison
 \end{itemize}
 }}
 		
@@ -79,121 +83,537 @@ Chapitre 2 -- \xxactivite%
 \vspace{2cm}
 \pagestyle{fancy}
 \thispagestyle{plain}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%ù
 
 
-\section{Masse et centre de masse (centre d'inertie)}
-\subsection{Masse d'un solide indéformable}
-\begin{defi}
-On peut définir la masse totale d'un solide $S$ par : $M=\int\limits_{P\in S} \,\dd m$. Si de plus l'ensemble est fait d'un matériau homogène de masse volumique $\mu$, on a $M=\mu \int\limits_{P\in S} \dd V$. \end{defi}
 
-\subsection{Centre d'inertie d'un solide}
+\section{Énoncé du Principe Fondamental de la Dynamique : cas général}
 
-\begin{defi}
-La position du centre d'inertie $G$ d'un solide $S$ est définie par $\int\limits_{P\in S} \vect{GP} \dd m = \vect{0}$.
-\end{defi}
+\begin{definition}[Énoncé du Principe Fondamental de la Dynamique]
+Soit un ensemble matériel $E$ en mouvement par rapport à un référentiel galiléen ($R_0$), alors la somme des actions mécaniques extérieures s'appliquant sur $E$ est égale au torseur dynamique du mouvement de $E$ par rapport à $R_0$ :
 
-Pour déterminer la position du centre d'inertie d'un solide $S$, on passe généralement par l'origine du repère associé à $S$. On a alors 
-$\int\limits_{P\in S} \vect{GP} \, \dd m=\int\limits_{P\in S} \left(\vect{GO}+\vect{OP}\right) \dd m = \vect{0} 
-\Leftrightarrow \int\limits_{P\in S} \vect{OG} \,\dd m =\int\limits_{P\in S} \vect{OP} \,\dd m
-\Leftrightarrow  M\vect{OG} =\int\limits_{P\in S} \vect{OP} \,\dd m$.
-
-\begin{methode}
-Pour déterminer les coordonnées $\left(x_G,y_G,z_G\right)$ du centre d'inertie $G$ du solide $S$ dans la base $\repere{O}{x}{y}{z}$, on a donc :
 $$
-\left\{
-\begin{array}{l}
-M x_G =\mu \int\limits_{P\in S} x_P \,\dd V \\
-M y_G =\mu \int\limits_{P\in S} y_P \,\dd V \\
-M z_G =\mu \int\limits_{P\in S} z_P \,\dd V \\
-\end{array}
-\right. \quad \text{avec }\dd V \text{ volume élémentaire du solide $S$.}
-$$ 
+\torseurcin{D}{E}{R_0}=\torseurstat{T}{\overline{E}}{E}.
+$$
+De plus le \textbf{Principe Fondamental de la Dynamique} postule que pour tout mouvement, il existe au moins un référentiel dans lequel le PFD est vérifié. Ce sera donc un \textbf{référentiel galiléen}.
 
-Pour simplifier les calculs, on peut noter que le centre d'inertie appartient au(x) éventuel(s) plan(s) de symétrie du solide.
-\end{methode}
 
+\begin{minipage}[c]{.48\linewidth}
+Le \textbf{torseur dynamique} est de la forme : 
+$$
+\torseurcin{D}{E}{R_0}=\torseurl{
+\vectrd{E}{R_0}=m\;\vectg{G}{E}{R_0}
+}{
+\vectmd{A}{E}{R_0}
+}{A}.
+$$
+
+\end{minipage} \hfill
+\begin{minipage}[c]{.48\linewidth}
+\begin{itemize}
+\item On note $\vectrd{S}{R_0}$ la résultante dynamique où l'accélération est \textbf{toujours} calculée au centre d'inertie $G$.
+\item Le \textbf{moment dynamique} dépend du point A et se note $\vectmd{A}{E}{R_0}$.
+\end{itemize}
+
+\end{minipage} 
+
+%\item On note $\overrightarrow{R_d}(E/R_0)$ la résultante du torseur dynamique : 
+%
+%$$\overrightarrow{R_d}(S/R_0)=m\;\overrightarrow{a}(G\in E/R_0)
+%$$
+%\item Le \textbf{moment dynamique} dépend du point A et se note $\vectmd{A}{E}{R_0}$
+%\end{itemize}
+
+
+
+\end{definition}
+
+
+Du Principe Fondamental de la dynamique découle plusieurs \textbf{théorèmes généraux}.
+\subsection{Théorème de la résultante dynamique}
+
+		\begin{theorem}[Théorème de la résultante dynamique]
+			Pour tout ensemble matériel $(E)$ de masse $m$ et de centre d'inertie $G$ en mouvement par rapport à un référentiel galiléen ($R_0$), la somme des résultantes des efforts extérieurs s'appliquant sur $E$ est égale à la résultante dynamique du mouvement de $E$ par rapport à $R_0$ :
+$$
+\vectf{\bar E}{E}=\vectrd{E}{R_0}=m\;\vectg{G}{E}{R_0}.
+$$
+	\end{theorem}
+
+
+%\begin{rem}
+%On peut alors définir un Newton comme l'effort à mettre en \oe{}uvre pour mettre en mouvement $\SI{1}{kg}$ avec une accélération de $\SI{1}{m.s^{-2}}$ en son centre de gravité $G$.
+%\end{rem}
+
+\subsection{Théorème du moment dynamique}
+\begin{theorem}[Théorème du moment dynamique]
+			Pour tout ensemble matériel $(E)$ de masse $m$ en mouvement par rapport à un référentiel galiléen ($R_0$), la somme des moments des efforts extérieurs s'appliquant sur $E$ en un point quelconque $A$ est égale au moment dynamique du mouvement de $E$ par rapport à $R_0$ en $A$ :
+			$$
+				\vectm{A}{\bar E}{E}=\vectmd{A}{E}{R_0}.
+			$$
+		\end{theorem}
+
+%\begin{exemple}[Application à l'éolienne]
+%\question{Déterminer le théorème à utiliser pour relier $C_m$ aux paramètres dynamique du problème.}
+%
+%\begin{texteCache}
+%On pourra appliquer un théorème du moment dynamique s'appliquant sur l'éolienne ($E=\left\{1+2+3\right\}$) en projection sur l'axe $\couple{K}{\overrightarrow{z}_0}$  : 
+%
+%\begin{align*}
+%\moment[K]{\bar E}{E}\cdot \overrightarrow{z}_0=\vDelta[K]{E}{R_0}\cdot \overrightarrow{z}_0.\\
+%\\
+%\Leftrightarrow\\
+%C_m=\left(\vDelta[K]{1}{R_0}+\vDelta[K]{2}{R_0}+\vDelta[K]{3}{R_0}\right)\cdot \overrightarrow{z}_0
+%\end{align*}
+%\end{texteCache}
+%
+%\end{exemple}
+
+\section{Torseur cinétique }
+
+\subsection{Définition}
+
+\begin{definition}
+Le \textbf{torseur cinétique} d'un solide $S$ dans son mouvement par rapport à $R_0$ exprimé en un point $A$ quelconque se définit de la façon suivante,
+$$
+\torseurcin{C}{S}{R_0}=\torseurl{
+\overrightarrow{R_c}(S/R_0)=\displaystyle{\int_{P\in S}}\overrightarrow{V}(P/R_0)\;\dd m}{\vectmc{A}{S}{R_0}=\displaystyle{\int_{P\in S}}\overrightarrow{AP}\wedge \overrightarrow{V}(P/R_0)\; \dd m}{A}.
+$$
+\begin{itemize}
+\item La résultante du torseur cinétique $\overrightarrow{R_c}(S/R_0)$ s'exprime en $\text{kg m s}^{-1}$ et ne dépend pas du point $A$ mais uniquement du centre d'inertie $G$ de $S$ (de masse $m$) :
+$\vectrc{S}{R_0}=m\;\overrightarrow{V}(G/R_0)$.
+
+\item Le moment cinétique dépend du point A et peut s'exprimer avec la formule fondamentale de changement de point : $\vectmc{B}{S}{R_0}=\vectmc{A}{S}{R_0}+\overrightarrow{BA}\wedge \overrightarrow{R_c}(S/R_0)$.
+\end{itemize}
+
+\end{definition}
+
+%\begin{demonstration}[Résultante cinétique]
+%
+%\begin{texteCache}
+%\begin{align*}
+%\overrightarrow{R_c}(S/R_0)=\displaystyle{\int_{P\in S}}\overrightarrow{V}(P/R_0)\;dm=
+%\displaystyle{\int_{P\in S}}\left[\frac{d\overrightarrow{OP}}{\dd t}\right]_{R_0}\;dm\\
+%=\displaystyle{\int_{P\in S}}\left[\frac{d(\overrightarrow{OG}+\overrightarrow{GP})}{\dd t}\right]_{R_0}\;dm
+%=\displaystyle{\int_{P\in S}}\left[\frac{d\overrightarrow{OG}}{\dd t}\right]_{R_0}\;dm+\displaystyle{\int_{P\in S}}\left[\frac{d\overrightarrow{GP}}{\dd t}\right]_{R_0}\;dm.
+%\end{align*}
+%
+%Or, $S$ est à masse conservative,
+%
+%\begin{align*}
+%\displaystyle{\int_{P\in S}}\left[\frac{d\overrightarrow{GP}}{\dd t}\right]_{R_0}\;dm
+%=\left[\frac{d}{\dd t}\left(\displaystyle{\int_{P\in S}}\overrightarrow{GP}\;dm\right)\right]_{R_0}=\overrightarrow{0}.
+%\end{align*}
+%
+%On obtient alors,
+%
+%\begin{align*}
+%\overrightarrow{R_c}(S/R_0)=\displaystyle{\int_{P\in S}}\left[\frac{d\overrightarrow{OG}}{\dd t}\right]_{R_0}\;dm
+%=\left[\frac{d\overrightarrow{OG}}{\dd t}\right]_{R_0}\displaystyle{\int_{P\in S}}dm\\
+%=m\;\overrightarrow{V}(G/R_0)\\
+%\end{align*}
+%
+%\end{texteCache}
+%\end{demonstration}
+
+\subsection{Écriture avec l'opérateur d'inertie}
+
+\begin{prop}
+Pour un solide $S$ de masse $m$ dans son mouvement par rapport au repère $R_0$ et soit un point $A$ quelconque.
+$$\vectmc{A}{S}{R_0}=\inertie{A}{S}\cdot \vecto{S}{R_0}+m\;\vect{AG}\wedge \vectv{A}{S}{R_0}.
+$$
+%\item \textbf{Dans la pratique}, il faudra utiliser cette formule.
+%\end{itemize}
+\end{prop}
+
+%\begin{demonstration}
+%\begin{texteCache}
+%\begin{align*}
+%\vSigma[A]{S}{R_0}=\displaystyle{\int_{P\in S}}\overrightarrow{AP}\wedge \overrightarrow{V}(P/R_0)\;dm
+%=\displaystyle{\int_{P\in S}}\overrightarrow{AP}\wedge \overrightarrow{V}(P\in S/R_0)\;dm\\
+%=\displaystyle{\int_{P\in S}}\overrightarrow{AP}\wedge \left(\overrightarrow{V}(A\in S/R_0)+\overrightarrow{\Omega}(S/R_0)\wedge \overrightarrow{AP}\right)\;dm\\
+%=\overline{\overline{I}}_A(S)\cdot \overrightarrow{\Omega}(S/R_0)+M\;\overrightarrow{AG}\wedge \overrightarrow{V}(A\in S/R_0).
+%\end{align*}
+%\end{texteCache}
+%\end{demonstration}
+
+\subsection{Cas particuliers}
 \begin{rem}
-Centre d'inertie et centre de gravité sont confondus lorsque le champ de pesanteur est considéré comme uniforme en tout point de l'espace. 
+\begin{itemize}
+\item En appliquant cette formule en un point \textbf{$A$ fixe} dans le mouvement de $S/R_0$, on a :$\vectmc{A}{S}{R_0}=\inertie{A}{S}\cdot \vecto{S}{R_0}$.
+\item En appliquant cette formule en \textbf{$G$, centre d'inertie} de $S$, on a :
+$
+\vectmc{G}{S}{R_0}=\inertie{G}{S}\cdot \vecto{S}{R_0}.
+$
+\end{itemize}
 \end{rem}
 
-\subsection{Centre d'inertie d'un ensemble de solides encastrés entre eux}
-\begin{methode}
-Soit un solide composé de $n$ solides élémentaires dont la position des centres d'inertie $G_i$ et les masses $M_i$ sont connues. On note $M=\sum\limits_{i=1}^{n}M_i$.  La position du centre d'inertie $G$ de l'ensemble $S$ est donné par :
-$$\vect{OG}=\dfrac{1}{M}\sum\limits_{i=1}^{n}M_i \vect{OG_i} .$$
+\subsection{Méthodologie de Calcul}
 
-\end{methode}
+On considère un ensemble matériel $E$ composé de solides $S_i$. On étudie son mouvement dans le référentiel $R_0$.
+On donne la méthodologie de calcul sur la figure suivante.%\ref{algo_moment_cine}.
+
+%\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=.9\textwidth]{images/algorigramme_moment_cinetique.pdf}
+%\caption{Algorigramme de calcul du moment cinétique \label{algo_moment_cine}}
+\end{center}
+%\end{figure}
+
+%\begin{exemple}[Application à l'éolienne]
+%\question{Déterminer la composante suivant $\overrightarrow{z}_0$ du moment cinétique au point K de la girouette 1 dans son mouvement par rapport au support 0, notée $\overrightarrow{z}_0\cdot \vectmc{K}{1}{0}$.}
+%
+%\begin{texteCache}
+%\begin{itemize}
+%\item Le mouvement de $1/0$ est un mouvement de rotation autour d'un axe fixe \couple{K}{\overrightarrow{z}_0} : 
+%
+%\item $\vectmc{K}{1}{0}\cdot \overrightarrow{z}_0=\left(\overline{\overline{I}}_K(1)\cdot \overrightarrow{\Omega}(1/0)\right)\cdot \overrightarrow{z}_0=\left(\overline{\overline{I}}_K(1)\cdot \dot{\alpha}\cdot \overrightarrow{z}_0 \right)\cdot \overrightarrow{z}_0$
+%
+%\item or on note J son moment d'inertie par rapport à l'axe \couple{K}{\overrightarrow{z}} soit : 
+%\begin{align*}
+%\overline{\overline{I}}_K(1)\cdot\overrightarrow{z}_0\cdot \overrightarrow{z}_0=J
+%\end{align*}
+%
+%\item Ainsi : 
+%
+%\begin{align*}
+%\boxed{
+%\vectmc{K}{1}{0}\cdot \overrightarrow{z}_0=J\cdot \dot{\alpha}
+%}
+%\end{align*}
+%\end{itemize}
+%\end{texteCache}
+%
+%\question{Déterminer le moment cinétique $\vSigma[K]{2}{0}$  calculé au point K de l'hélice 2 dans son mouvement par rapport à 0.}
+%
+%\begin{texteCache}
+%\begin{itemize}
+%\item Le mouvement de $2/0$ n'est pas un mouvement simple. 
+%\item On connaît l'opérateur d'inertie en G, on calcule donc : $\vSigma[G]{2}{0}$,
+%
+%\begin{align*}
+%\vSigma[G]{2}{0}=\overline{\overline{I}}_G(2)\cdot \overrightarrow{\Omega}(2/0).
+%\end{align*}
+%
+%\item On calcule $\overrightarrow{\Omega}(2/0)$
+%\begin{align*}
+%\overrightarrow{\Omega}(2/0)=\overrightarrow{\Omega}(2/1)+\overrightarrow{\Omega}(1/0)=
+%\dot{\beta}\cdot \overrightarrow{x}_{1,2}+\dot{\alpha}\cdot \overrightarrow{z}_{1}
+%\\=\dot{\beta}\cdot \overrightarrow{x}_{1,2}
+%+\dot{\alpha}\left(\cos\beta\overrightarrow{z}_2+\sin\beta\overrightarrow{y}_2\right)\\
+%\end{align*}
+%
+%\item On calcule $\vSigma[G]{2}{0}$ : 
+%
+%\begin{align*}
+%\vSigma[G]{2}{0}=\left(
+%\begin{array}{ccc}
+%A & 0 & 0 \\ 
+%0 & B & 0 \\ 
+%0 & 0 & C
+%\end{array}
+%\right)_{\triplet{\overrightarrow{x}_2}{\overrightarrow{y}_2}{\overrightarrow{z}_2}} \cdot 
+%\left(
+%\begin{array}{c}
+%\dot{\beta}\\
+%\dot{\alpha}\cdot \sin\beta\\
+%\dot{\alpha}\cdot \cos\beta\\
+%\end{array}
+%\right)_{\triplet{\overrightarrow{x}_2}{\overrightarrow{y}_2}{\overrightarrow{z}_2}}\\
+%=\left(
+%\begin{array}{c}
+%A\cdot \dot{\beta}\\
+%B\cdot \dot{\alpha}\cdot \sin\beta\\
+%C\cdot \dot{\alpha}\cdot \cos\beta\\
+%\end{array}
+%\right)_{\triplet{\overrightarrow{x}_2}{\overrightarrow{y}_2}{\overrightarrow{z}_2}}\\
+%\end{align*}
+%\end{itemize}
+%\end{texteCache}
+%\end{exemple}
+
+%\setcounter{cptExemple}{2}
+%\begin{exemple}[Application à l'éolienne]
+%\begin{texteCache}
+%\begin{itemize}
+%\item On calcule $\vSigma[K]{2}{0}$ : 
+%
+%\begin{itemize}
+%\item \begin{align*}
+%\vSigma[K]{2}{0}=\vSigma[G]{2}{0}+\overrightarrow{KG}\wedge \overrightarrow{R_c}(2/0)
+%=\vSigma[G]{2}{0}+a\cdot \overrightarrow{x}_1\wedge M\cdot \overrightarrow{V}(G\in 2/0)
+%\end{align*}
+%
+%\item On calcule $\overrightarrow{V}(G\in 2/0)$ : 
+%
+%\begin{align*}
+%\overrightarrow{V}(G\in 2/0)=\overrightarrow{V}(K\in 2/0)+\overrightarrow{GK}\wedge \overrightarrow{\Omega}(2/0)=
+%\overrightarrow{0}-a\cdot \overrightarrow{x}_1\wedge \left(\dot{\beta}\cdot \overrightarrow{x}_{1,2}+\dot{\alpha}\cdot \overrightarrow{z}_{1}\right)\\
+%=a\cdot \dot{\alpha}\overrightarrow{y}_{1} 
+%\end{align*}
+%
+%\item On calcule $a\cdot \overrightarrow{x}_1\wedge M\cdot \overrightarrow{V}(G\in 2/0)$ : 
+%
+%\begin{align*}
+%a\cdot \overrightarrow{x}_1\wedge M\cdot \overrightarrow{V}(G\in 2/0)=
+%a\cdot \overrightarrow{x}_1\wedge M\left(a\cdot \dot{\alpha}\overrightarrow{y}_{1} \right)=\\
+%M\cdot a^2\cdot \dot{\alpha}\cdot \overrightarrow{z}_1
+%\end{align*}
+%
+%\item On en déduit $\vSigma[K]{2}{0}$: 
+%
+%\begin{align*}
+%\vSigma[K]{2}{0}=\left(
+%\begin{array}{c}
+%A\cdot \dot{\beta}\\
+%B\cdot \dot{\alpha}\cdot \sin\beta+M\cdot a^2\cdot \dot{\alpha}\sin\beta\\
+%C\cdot \dot{\alpha}\cdot \cos\beta+M\cdot a^2\cdot \dot{\alpha}\cos\beta\\
+%\end{array}
+%\right)_{\triplet{\overrightarrow{x}_2}{\overrightarrow{y}_2}{\overrightarrow{z}_2}}\\
+%\end{align*}
+%
+%\end{itemize}
+%
+%\end{itemize}
+%\end{texteCache}
+%
+%\question{Déterminer le moment cinétique $\vSigma[K]{3}{0}$.}
+%
+%\begin{texteCache}
+%\begin{itemize}
+%\item Le solide $3$ est solide à masse ponctuelle, ainsi $\vSigma[Q]{3}{0}=\overrightarrow{0}$.
+%\item $\vSigma[K]{3}{0}=\overrightarrow{KQ}\wedge m\cdot \overrightarrow{V}(Q\in 3/0)$ : 
+%\begin{itemize}
+%\item On calcule $\overrightarrow{KQ}$ : 
+%\begin{align*}
+%\overrightarrow{KQ}=\overrightarrow{KG}+\overrightarrow{GQ}=a\cdot \overrightarrow{x}_1-b\cdot \overrightarrow{z}_2
+%\end{align*}
+%\item On calcule $\overrightarrow{V}(Q\in 3/0)$ : 
+%
+%\begin{align*}
+%\overrightarrow{V}(Q\in 3/0)=\overrightarrow{V}(Q\in 3/2)+\overrightarrow{V}(Q\in 2/1)+\overrightarrow{V}(Q\in 1/0)
+%\\
+%=\overrightarrow{0}+\overrightarrow{V}(G\in 2/1)+\overrightarrow{QG}\wedge \overrightarrow{\Omega}(2/1)
+%+\overrightarrow{V}(G\in 1/0)+\overrightarrow{QG}\wedge \overrightarrow{\Omega}(1/0)\\
+%=\overrightarrow{0}+b\cdot \overrightarrow{z}_2\wedge \dot{\beta}\cdot \overrightarrow{x}_2+ a\cdot \dot{\alpha}\cdot \overrightarrow{y}_1+b\cdot \overrightarrow{z}_2\wedge \dot{\alpha}\cdot \overrightarrow{z}_1\\
+%=b\cdot \dot{\beta}\cdot \overrightarrow{y}_2+a\cdot \dot{\alpha}\cdot \overrightarrow{y}_1-b\cdot\dot{\alpha} \sin\beta\cdot \overrightarrow{x}_{1,2}
+%\end{align*}
+%
+%\item On calcule $\overrightarrow{KQ}\wedge m\overrightarrow{V}(Q\in 3/0)$ : 
+%
+%\begin{align*}
+%\overrightarrow{KQ}\wedge m\overrightarrow{V}(Q\in 3/0)=m\cdot \left[a\cdot \overrightarrow{x}_1-b\cdot \overrightarrow{z}_2\right]\wedge\left[b\cdot \dot{\beta}\cdot \overrightarrow{y}_2+a\cdot \dot{\alpha}\cdot \overrightarrow{y}_1-b\cdot\dot{\alpha} \sin\beta\cdot \overrightarrow{x}_{1,2}\right]\\
+%=m\left[a\cdot b\cdot \overrightarrow{z}_2+a^2\cdot \dot{\alpha}\cdot\overrightarrow{z}_1+b^2\cdot \dot{\beta}\cdot\overrightarrow{x}_2+b\cdot a\cdot \dot{\alpha}\cdot \cos\beta\cdot \overrightarrow{x}_1+b^2\cdot \dot{\alpha}\sin\beta\cdot \overrightarrow{y}_2\right]
+%\end{align*}
+%\end{itemize}
+%
+%\item,
+%
+%\begin{align*}
+%\boxed{
+%\vSigma[K]{3}{0}=m\left[a\cdot b\cdot\dot{\beta} \overrightarrow{z}_2+a^2\cdot \dot{\alpha}\cdot\overrightarrow{z}_1+b^2\cdot \dot{\beta}\cdot\overrightarrow{x}_2+b\cdot a\cdot \dot{\alpha}\cdot \cos\beta\cdot \overrightarrow{x}_1+b^2\cdot \dot{\alpha}\sin\beta\cdot \overrightarrow{y}_2\right]
+%}
+%\end{align*}
+%\end{itemize}
+%
+%\end{texteCache}
+%\end{exemple}
 
 
+\section{Torseur dynamique}
+\subsection{Définition}
+\begin{definition}[Torseur dynamique]
+Le \textbf{torseur dynamique} d'un solide $S$ dans son mouvement par rapport à $R_0$ se définit de la façon suivante,
 
-\section{Matrice d'inertie d'un solide}
-\subsection{Opérateur et matrice d'inertie}
+$$
+\torseurcin{D}{S}{R_0}=\torseurl{\overrightarrow{R_d}(S/R_0)=\displaystyle{\int_{P\in S}}\overrightarrow{a}(P/R_0)\;\dd m}{\vectmd{A}{S}{R_0}=\displaystyle{\int_{P\in S}}\overrightarrow{AP}\wedge \overrightarrow{\Gamma}(P/R_0)\;\dd m}{A}
+$$
 
-\begin{defi}
-Soient : 
 \begin{itemize}
-\item un solide $S$ de masse $m$ en mouvement par rapport à un repère $\mathcal{R}_0=\repere{O_0}{x_0}{y_0}{z_0}$;
-\item $\mathcal{R}_S=\repere{O}{x}{y}{z}$ le repère lié au solide $S$;
-\item $P$ un point de $S$ tel que $\vect{OP}=x_p\vect{x}+y_p\vect{y}+z_p\vect{z}$;
-\item $\vect{u}$ un vecteur unitaire du solide $S$.
+\item La résultante du torseur dynamique, $\overrightarrow{R_d}(S/R_0)$ ne dépend pas du point $A$ mais uniquement du centre de gravité $G$ de S (de masse $m$) et vérifie :
+
+$$\overrightarrow{R_d}(S/R_0)=m\;\overrightarrow{a}(G/R_0)
+$$
+\item Le moment dynamique dépend du point A et peut s'exprimer avec la formule fondamentale de changement de point :
+$$
+\vectmd{B}{S}{R_0}=\vectmd{A}{S}{R_0}+\overrightarrow{BA}\wedge \overrightarrow{R_d}(S/R_0).
+$$
 \end{itemize}
 
-On appelle opérateur d'inertie l'application linéaire définie par :
+\end{definition}
+
+%\begin{demonstration}[Résultante dynamique]
+
+%\begin{texteCache}
+%\begin{align*}
+%\overrightarrow{R_d}(S/R_0)=\displaystyle{\int_{P\in S}}\overrightarrow{a}(P/R_0)\;dm=
+%\displaystyle{\int_{P\in S}}\left[\frac{d^2\overrightarrow{OP}}{dt^2}\right]_{R_0}\;dm\\
+%=\displaystyle{\int_{P\in S}}\left[\frac{d^2(\overrightarrow{OG}+\overrightarrow{GP})}{dt^2}\right]_{R_0}\;dm
+%=\displaystyle{\int_{P\in S}}\left[\frac{d^2\overrightarrow{OG}}{dt^2}\right]_{R_0}\;dm+\displaystyle{\int_{P\in S}}\left[\frac{d^2\overrightarrow{GP}}{dt^2}\right]_{R_0}\;dm.
+%\end{align*}
+%
+%Or, $S$ est à masse conservative,
+%
+%\begin{align*}
+%\displaystyle{\int_{P\in S}}\left[\frac{d^2\overrightarrow{GP}}{dt^2}\right]_{R_0}\;dm
+%=\left[\frac{d^2}{dt^2}\left(\displaystyle{\int_{P\in S}}\overrightarrow{GP}\;dm\right)\right]_{R_0}=\overrightarrow{0}.
+%\end{align*}
+%
+%On obtient alors,
+%
+%\begin{align*}
+%\overrightarrow{R_d}(S/R_0)=\displaystyle{\int_{P\in S}}\left[\frac{d^2\overrightarrow{OG}}{dt^2}\right]_{R_0}\;dm
+%=\left[\frac{d^2\overrightarrow{OG}}{dt^2}\right]_{R_0}\displaystyle{\int_{P\in S}}dm\\
+%=m\;\overrightarrow{a}(G/R_0)\\
+%\end{align*}
+%
+%\end{texteCache}
+%\end{demonstration}
+
+\subsection{Relations entre les torseurs cinétiques et dynamiques}
+\begin{prop}[Relations entre les torseurs cinétiques et dynamiques]
+Pour un solide S de masse $M$ dans son mouvement par rapport au repère $R_0$ et soit un point $A$ quelconque.
+\begin{itemize}
+\item Relation entre les \textbf{résultantes} :
+
 $$
-\vect{u} \rightarrow \vect{J_{\left(O,S\right)}\left(\vect{u}\right)} 
-= \int\limits_{S} \vect{OP}\wedge \left(\vect{u}\wedge \vect{OP}\right)\,\dd m
+\overrightarrow{R_d}(S/R_0)=\left[\frac{d\overrightarrow{R_c}(S/R_0)}{\dd t}\right]_{R_0}
 $$
+\item Relation entre les \textbf{moments} :
 
-On appelle matrice d'inertie du solide $S$ en $O$, $\inertie{O}{S}$, l'image de cette application linéaire : $\vect{J_{\left(O,S\right)}\left(\vect{u}\right)}  = \inertie{O}{S} \vect{u}$.
- 
-\end{defi}
-
-\begin{defi}[Matrice d'inertie]
-La matrice d'inertie s'écrit ainsi : 
 $$
-\inertie{O}{S}=\matinertie{\int\limits_{S} \left(y_p^2 + z_p^2 \right)\,\dd m}{\int\limits_{S} \left(x_p^2 + z_p^2 \right)\,\dd m}{\int\limits_{S} \left(x_p^2 + y_p^2 \right)\,\dd m}{-\int\limits_{S} \left(y_pz_p\right)\,\dd m}{-\int\limits_{S} \left(x_pz_p\right)\,\dd m}{-\int\limits_{S} \left(x_py_p\right)\,\dd m}{\mathcal{R}_S}=\matinertie{A}{B}{C}{-D}{-E}{-F}{\mathcal{R}_S}
-.$$
-
-On appelle moments d'inertie par rapport aux axes $\axe{O}{{x}}$, $\axe{O}{{y}}$ et $\axe{O}{{z}}$  les termes $A$, $B$ et $C$. 
-
-On appelle produit d'inerties par rapport aux axes $\axe{O}{{y}}$ et $\axe{O}{\vect{z}}$,  $\axe{O}{{x}}$ et $\axe{O}{{z}}$,  $\axe{O}{{x}}$ et $\axe{O}{{y}}$ les termes $D$, $E$ et $F$.
-\end{defi}
-
-\begin{prop}~\\
-
-\begin{itemize}[label=\ding{112},font=\color{ocre}] 
-\item La matrice d'inertie est une matrice symétrique. Il existe une base dans laquelle elle est diagonalisable. Cette base est appelée base principale d'inertie. 
-\item Si $\left(O,\vect{x},\vect{y} \right)$ est un plan de symétrie du solide, $D$ et $E$ sont nuls.
-\item Si $\left(O,\vect{z},\vect{x} \right)$ est un plan de symétrie du solide, $D$ et $F$ sont nuls.
-\item Si $\left(O,\vect{y},\vect{z} \right)$ est un plan de symétrie du solide, $E$ et $F$ sont nuls.
-\item Si un solide admet 2 plans de symétrie, alors $D$, $E$ et $F$ sont nuls. 
+\vectmd{A}{S}{R_0}=\left[\frac{d\vectmc{A}{S}{R_0}}{\dd t}\right]_{R_0}+\overrightarrow{V(A/R_0)}\wedge \overrightarrow{R_c}(S/R_0).
+$$
 \end{itemize}
-
 \end{prop}
-\subsection[Déplacement d'une matrice d'inertie]{Déplacement d'une matrice d'inertie -- Théorème de Huygens}
 
-\begin{theorem}[Théorème de Huygens]
-Soit $S$ un solide de centre d'inertie $G$, de masse $m$, d'inertie $\inertie{G}{S}$ et d'inertie $\inertie{O}{S}$ avec $\vect{OG}=a\vect{x}+b\vect{y}+c\vect{z}$. Les matrices $\inertie{G}{S}$ et $\inertie{O}{S}$ exprimées dans la base $\mathcal{B}=\base{x}{y}{z}$ sont liées par : 
+\subsection{Cas particuliers}
+
+\begin{rem}[Cas particuliers]
+\begin{itemize}
+\item En appliquant cette formule en un point \textbf{$O$ fixe} dans $R_0$, on a :
+
 $$
-\matinertie{A_O}{B_O}{C_O}{-D_O}{-E_O}{-F_O}{\mathcal{B}}
-= \matinertie{A_G}{B_G}{C_G}{-D_G}{-E_G}{-F_G}{\mathcal{B}}
-+ \matinertie{m\left(b^2+c^2\right)}{m\left(a^2+c^2\right)}{m\left(a^2+b^2\right)}{-mbc}{-mac}{-mab}{\mathcal{B}}.
+\vectmd{O}{S}{R_0}=\left[\frac{d\vectmc{O}{S}{R_0}}{\dd t}\right]_{R_0}
+$$
+\item En appliquant cette formule en un point \textbf{$G$, centre d'inertie de $S$}, on a :
+
+$$
+\vectmd{G}{S}{R_0}=\left[\frac{d\vectmc{G}{S}{R_0}}{\dd t}\right]_{R_0}
 $$
 
-\end{theorem}
-\subsection{Détermination de la matrice d'inertie d'un solide}
-
-%\subsection{Compléments}
-
-\subsection{Matrice d'inertie de solides usuels}
-
-
-\begin{thebibliography}{2}
-   \bibitem[1]{ref1} Emilien Durif, {\it Introduction à la dynamique des solides, Lycée La Martinière Monplaisir, Lyon.}
-      \bibitem[2]{ref2} Florestan Mathurin, {\it Correction des SLCI, Lycée Bellevue, Toulouse, \url{http://florestan.mathurin.free.fr/}.}
+\end{itemize}
+\end{rem}
 
 
 
-\end{thebibliography}
+\subsection{Méthodologie de calcul}
+
+On considère un ensemble matériel $E$ composé de solides $S_i$. On étudie son mouvement dans le référentiel $R_0$.
+On donne l'algorigramme de calcul du moment dynamique sur la figure \ref{algo_moment_dyna}.
+
+%\begin{exemple}[Application à l'éolienne]
+%\question{Déterminer la composante suivant $\overrightarrow{z}_0$ du moment dynamique au point K de la girouette 1 dans son mouvement par rapport au support 0, notée $\overrightarrow{z}_0\cdot \vDelta[K]{1}{0}$.}
+%
+%\begin{texteCache}
+%\begin{align*}
+%\overrightarrow{z}_0\cdot \vDelta[K]{1}{0}=\overrightarrow{z}_0\cdot\left[\frac{d\vSigma[K]{1}{0}}{\dd t}\right]_{R_0}
+%=\left[\frac{d\overrightarrow{z}_0\cdot\vSigma[K]{1}{0}}{\dd t}\right]_{R_0}=J\cdot \ddot{\alpha}
+%\end{align*}
+%\end{texteCache}
+%
+%\question{Déterminer la composante suivant $\overrightarrow{z}_0$ du moment dynamique $\overrightarrow{z}_0\cdot \vDelta[K]{2}{0}$.}
+%
+%\begin{texteCache}
+%\begin{align*}
+%\overrightarrow{z}_0\cdot \vDelta[K]{2}{0}=\overrightarrow{z}_0\cdot\left[\frac{d\vSigma[K]{2}{0}}{\dd t}\right]_{R_0}
+%=\left[\frac{d\overrightarrow{z}_0\cdot\vSigma[K]{2}{0}}{\dd t}\right]_{R_0}
+%\end{align*}
+%
+%Or, $\overrightarrow{z}_{0,1}=\cos\beta\cdot \overrightarrow{z}_2+\sin\beta\cdot \overrightarrow{y}_2$,
+%
+%\begin{align*}
+%\overrightarrow{z}_0\cdot\vSigma[K]{2}{0}=
+%\left(
+%\begin{array}{c}
+%A\cdot \dot{\beta}\\
+%B\cdot \dot{\alpha}\cdot \sin\beta+M\cdot a^2\cdot \dot{\alpha}\sin\beta\\
+%C\cdot \dot{\alpha}\cdot \cos\beta+M\cdot a^2\cdot \dot{\alpha}\cos\beta\\
+%\end{array}
+%\right)_{\triplet{\overrightarrow{x}_2}{\overrightarrow{y}_2}{\overrightarrow{z}_2}}
+%\cdot
+%\left(
+%\begin{array}{c}
+%0\\
+%\sin\beta\\
+%\cos\beta\\
+%\end{array}
+%\right)_{\triplet{\overrightarrow{x}_2}{\overrightarrow{y}_2}{\overrightarrow{z}_2}}
+%\\
+%=\dot{\alpha}\left[B\cdot \sin^2\beta+C\cdot \cos^2\beta+M\cdot a^2\right]
+%\end{align*}
+%
+%d'où,
+%\begin{align*}
+%\boxed{
+%\overrightarrow{z}_0\cdot \vDelta[K]{2}{0}=\ddot{\alpha}\left[B\cdot \sin^2\beta+C\cdot \cos^2\beta+M\cdot a^2\right]
+%+2\cdot\dot{\alpha}\dot{\beta}\cdot \cos\beta\cdot \sin\beta\left[B-C\right].
+%}
+%\end{align*}
+%
+%\end{texteCache}
+%
+%\question{Déterminer la projection du moment dynamique de $3/0$ selon $\overrightarrow{z}_0$ : $\overrightarrow{z}_0\cdot \vSigma[K]{3}{0}$.}
+%
+%
+%
+%\begin{texteCache}
+%\begin{minipage}{0.5\textwidth}
+%\begin{center}
+%\scFigCalc[x_{1,2}]{y_1}{z_1}{y_2}{z_2}{\beta}
+%\end{center}
+%\end{minipage}
+%\begin{minipage}{0.5\textwidth}
+%\begin{align*}
+%\overrightarrow{z}_{0,1}\cdot \overrightarrow{z}_2=\cos\beta\\
+%\overrightarrow{z}_{0,1}\cdot \overrightarrow{z}_1=1\\
+%\overrightarrow{z}_{0,1}\cdot \overrightarrow{x}_0=0\\
+%\overrightarrow{z}_{0,1}\cdot \overrightarrow{x}_1=0\\
+%\overrightarrow{z}_1\cdot \overrightarrow{y}_2=\sin\beta\\
+%\end{align*}
+%\end{minipage}
+%
+%On trouve alors : 
+%
+%\begin{align*}
+%\overrightarrow{z}_0\cdot \vSigma[K]{3}{0}=
+%m\frac{d\left[a\cdot b\cdot \dot{\beta}\cos\beta+a^2\cdot \dot{\alpha}+b^2\cdot \dot{\alpha}\sin^2\beta\right]}{\dd t}\\
+%=m\left[a\cdot b\cdot \left(\ddot{\beta}\cos\beta-\dot{\beta}^2\sin\beta\right)+a^2\ddot{\alpha}+b^2\cdot\left(\ddot{\alpha}\sin^2\beta+2\dot{\alpha}\dot{\beta}\sin\beta\cos\beta\right)\right]
+%\end{align*}
+%
+%\end{texteCache}
+%
+%\question{Dans le cas d'une vitesse de rotation de l'hélice 2 ($\dot{\beta}$) constante et dans le cas où l'angle $\alpha$ est constant (pas de changement d'orientation de l'éolienne) déterminer l'expriment du couple $C_m$ que devrait fournir un moteur placé dans le mat (entre 0 et 1) pour "contrer" les effets dynamiques du balourd.}
+%
+%\begin{texteCache}
+%Le théorème du moment dynamique autour de l'axe $\couple{K}{\overrightarrow{z}_{0,1}}$ donne :
+%
+%\begin{align*}
+%C_m=-m\cdot a\cdot b\cdot \dot{\beta}^2\sin\beta
+%\end{align*} 
+%
+%
+%\end{texteCache}
+%\end{exemple}
+
+\begin{figure}[htb]
+\begin{center}
+\includegraphics[width=1.0\textwidth]{images/algorigramme_moment_dynamique.pdf}
+\caption{Algorigramme de calcul du moment dynamique \label{algo_moment_dyna}}
+\end{center}
+\end{figure}
+
+
+
 
 \end{document}
 
