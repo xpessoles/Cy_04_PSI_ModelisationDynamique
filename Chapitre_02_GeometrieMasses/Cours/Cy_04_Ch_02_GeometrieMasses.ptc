@@ -6,9 +6,10 @@
 \contentsline {subsection}{\numberline {1.1}Masse d'un solide ind\IeC {\'e}formable}{2}{subsection.1.1}
 \contentsline {subsection}{\numberline {1.2}Centre d'inertie d'un solide}{2}{subsection.1.2}
 \contentsline {subsection}{\numberline {1.3}Centre d'inertie d'un ensemble de solides encastr\IeC {\'e}s entre eux}{2}{subsection.1.3}
-\contentsline {section}{\numberline {2}Matrice d'inertie d'un solide}{2}{section.2}
-\contentsline {subsection}{\numberline {2.1}Op\IeC {\'e}rateur et matrice d'inertie}{2}{subsection.2.1}
-\contentsline {subsection}{\numberline {2.2}D\IeC {\'e}placement d'une matrice d'inertie}{3}{subsection.2.2}
-\contentsline {subsection}{\numberline {2.3}D\IeC {\'e}termination de la matrice d'inertie d'un solide}{3}{subsection.2.3}
-\contentsline {subsection}{\numberline {2.4}Matrice d'inertie de solides usuels}{3}{subsection.2.4}
+\contentsline {subsection}{\numberline {1.4}M\IeC {\'e}thode pour d\IeC {\'e}terminer le centre d'inertie d'un solide \cite {2}}{3}{subsection.1.4}
+\contentsline {section}{\numberline {2}Matrice d'inertie d'un solide}{3}{section.2}
+\contentsline {subsection}{\numberline {2.1}Op\IeC {\'e}rateur et matrice d'inertie}{3}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}D\IeC {\'e}placement d'une matrice d'inertie}{4}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}D\IeC {\'e}termination de la matrice d'inertie d'un solide \cite {2}}{5}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Matrice d'inertie de solides usuels [3]}{5}{subsection.2.4}
 \contentsfinish 

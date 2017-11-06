@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6400 64-bit) (preloaded format=pdflatex 2017.9.4)  4 NOV 2017 21:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6400 64-bit) (preloaded format=pdflatex 2017.9.4)  6 NOV 2017 16:24
 entering extended mode
 **./Cy_04_02_Application.tex
 (Cy_04_02_Application.tex
@@ -3041,14 +3041,6 @@ Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 145.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were undefined references.
-
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                Cy_04_02_Application
-(biblatex)                and rerun LaTeX afterwards.
-
 Package logreq Info: Writing requests to 'Cy_04_02_Application.run.xml'.
 \openout1 = `Cy_04_02_Application.run.xml'.
 
@@ -3057,7 +3049,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 145.
 Here is how much of TeX's memory you used:
  63166 strings out of 493352
  1449670 string characters out of 3139710
- 2243707 words of memory out of 3000000
+ 2243874 words of memory out of 3000000
  65599 multiletter control sequences out of 15000+200000
  737921 words of font info for 239 fonts, out of 3000000 for 9000
  1127 hyphenation exceptions out of 8191
@@ -3077,7 +3069,7 @@ e/utopia/putr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/adobe/utopia/putri
 gram Files/MiKTeX 2.9/fonts/type1/urw/avantgar/uagdo8a.pfb><C:/Program Files/Mi
 KTeX 2.9/fonts/type1/urw/avantgar/uagko8a.pfb><C:/Program Files/MiKTeX 2.9/font
 s/type1/urw/zapfding/uzdr.pfb>
-Output written on Cy_04_02_Application.pdf (2 pages, 274511 bytes).
+Output written on Cy_04_02_Application.pdf (2 pages, 274492 bytes).
 PDF statistics:
  107 PDF objects out of 1000 (max. 8388607)
  10 named destinations out of 1000 (max. 500000)

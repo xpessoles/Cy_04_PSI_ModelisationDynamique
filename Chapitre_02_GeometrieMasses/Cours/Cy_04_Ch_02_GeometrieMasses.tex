@@ -38,7 +38,7 @@
 \def\xxposonglettext{1.45}
 \def\xxposonglety{19}%16
 
-\def\xxonglet{Cycle 04}
+\def\xxonglet{\textsf{Cycle 04}}
 
 \def\xxactivite{Cours}
 \def\xxauteur{\textsl{Xavier Pessoles}}
@@ -124,6 +124,10 @@ $$\vect{OG}=\dfrac{1}{M}\sum\limits_{i=1}^{n}M_i \vect{OG_i} .$$
 \end{methode}
 
 
+\subsection{Méthode pour déterminer le centre d'inertie d'un solide \cite{2}}
+\begin{center}
+\includegraphics[width=.7\linewidth]{images/fig_04}
+\end{center}
 
 \section{Matrice d'inertie d'un solide}
 \subsection{Opérateur et matrice d'inertie}
@@ -169,6 +173,28 @@ On appelle produit d'inerties par rapport aux axes $\axe{O}{{y}}$ et $\axe{O}{\v
 \end{itemize}
 
 \end{prop}
+
+\begin{defi}[Moment d'inertie par rapport à un axe quelconque]~\\
+
+\noindent\begin{minipage}[c]{.65\linewidth}
+Le moment d’inertie caractérise la répartition de masse d’un solide autour d’un axe $\Delta$ $\left(O,\vect{u}\right)$. Plus la valeur
+de l’inertie est grande plus il sera difficile de mettre en mouvement de rotation ce solide autour de
+l’axe $\Delta$. 
+On note $I_{\Delta}(S)$, le moment d’inertie du solide $S$ autour de l’axe $\Delta$. Son unité est en $\text{kg.m}^2$. On a alors :
+
+$$I_{\Delta}(S)=\int\limits_{S} d_{\Delta}^2 \dd m \quad \text{où } d_{\Delta} \text{ est la distance entre le point courant } P \text{ et l’axe }\Delta.$$
+\end{minipage}\hfill
+\begin{minipage}[c]{.3\linewidth}
+\begin{center}
+\includegraphics[width=.95\linewidth]{images/fig_03}
+\end{center}
+\end{minipage}
+
+\begin{rem}
+Si on connaît $\inertie{O}{S}$, alors $I_{\Delta}(S)=\vect{u}\inertie{O}{S}\vect{u}$.
+\end{rem}
+\end{defi}
+
 \subsection[Déplacement d'une matrice d'inertie]{Déplacement d'une matrice d'inertie -- Théorème de Huygens}
 
 \begin{theorem}[Théorème de Huygens]
@@ -180,16 +206,33 @@ $$
 $$
 
 \end{theorem}
-\subsection{Détermination de la matrice d'inertie d'un solide}
 
+\subsection{Détermination de la matrice d'inertie d'un solide \cite{2}}
+
+\begin{center}
+\includegraphics[width=.7\linewidth]{images/fig_05}
+\end{center}
 %\subsection{Compléments}
 
-\subsection{Matrice d'inertie de solides usuels}
+\subsection{Matrice d'inertie de solides usuels [3]}
 
+\begin{center}
+\begin{tabular}{ccc}
+\includegraphics[width=7cm]{images/mat_01} & &
+\includegraphics[width=7cm]{images/mat_02} \\ 
+\includegraphics[width=7cm]{images/mat_03} & &
+\includegraphics[width=7cm]{images/mat_04} \\ 
+\includegraphics[width=7cm]{images/mat_05} & &
+\includegraphics[width=7cm]{images/mat_06} \\ 
+\includegraphics[width=7cm]{images/mat_07} & &
+\includegraphics[width=7cm]{images/mat_08} \\ 
+\end{tabular}
+\end{center}
 
 \begin{thebibliography}{2}
    \bibitem[1]{ref1} Emilien Durif, {\it Introduction à la dynamique des solides, Lycée La Martinière Monplaisir, Lyon.}
       \bibitem[2]{ref2} Florestan Mathurin, {\it Correction des SLCI, Lycée Bellevue, Toulouse, \url{http://florestan.mathurin.free.fr/}.}
+      \bibitem[3]{ref3} Robert Papanicola, {\it Opérateurs d'inetie, Lycée Charlemagne, Paris, \url{http://sciences-indus-cpge.papanicola.info/}.}
 
 
 
