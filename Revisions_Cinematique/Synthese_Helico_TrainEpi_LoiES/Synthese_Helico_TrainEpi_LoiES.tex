@@ -12,7 +12,7 @@
 %\fichefalse
 
 \proftrue
-\proffalse
+%\proffalse
 
 \tdtrue
 %\tdfalse
@@ -89,7 +89,8 @@ Révision cinématique -- Modélisation cinématique\\
 \section*{Pales d'hélicoptères}
 \subsection*{Mise en situation}
 %\vspace{.5cm}
-%\ifprof}{
+\ifprof
+\else
 %\begin{minipage}[c]{.6\linewidth}
 \begin{center}
 \includegraphics[width=.7\linewidth]{images/fig1}
@@ -107,7 +108,7 @@ En vol, les rotors tournent à une vitesse de rotation fixe. La modification de 
 \includegraphics[width=\linewidth]{images/SysML/Exigences}
 \end{center}
 %}
-
+\fi
 \subsection*{Cinématique analytique}
 \ifprof
 \else
@@ -331,6 +332,8 @@ $$
 \begin{flushleft}
 \textit{D'après le concours Centrale -- Supélec 2007.}
 \end{flushleft}
+\ifprof
+\else
 
 \begin{center}
 \includegraphics[width=.7\linewidth]{images/A6_coffre}
@@ -386,7 +389,11 @@ La chaîne d'énergie du système est constituée :
 \includegraphics[width=.95\linewidth]{images/A6_schema}
 \end{center}
 
+\fi
 \subsection*{Étude du train épicycloïdal}
+\ifprof
+\else
+
 On donne le schéma cinématique du double train épicycloïdal. 
 
 \vspace{.25cm}
@@ -413,6 +420,8 @@ Le second train est constitué :
 \begin{center}
 \includegraphics[width=\linewidth]{images/A6_train}
 \end{center}
+
+\fi
 
 \subparagraph{}
 \textit{Déterminer le rapport de réduction $\dfrac{\omega(31/0)}{\omega(21/0)}$.}
@@ -565,6 +574,9 @@ $$
 
 \subsection*{Étude du mécanisme de transformation de mouvement}
 
+\ifprof
+\else
+
 \begin{center}
 \includegraphics[width=\linewidth]{images/A6_3barres}
 \end{center}
@@ -584,6 +596,7 @@ On donne :
 \end{itemize}
 \end{minipage}
 
+\fi
 \subparagraph{}
 \textit{Établir une relation géométrique entre $\gamma_1$ et $\gamma_3$. Cette relation pourra faire intervenir les différents paramètres constants ($a$, $b$, $L_1$, $L_2$, $L_3$). On ne devra pas voir apparaître $\gamma_2$.}
 
