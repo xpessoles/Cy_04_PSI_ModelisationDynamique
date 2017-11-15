@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6400 64-bit) (preloaded format=pdflatex 2017.9.4)  14 NOV 2017 23:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6400 64-bit) (preloaded format=pdflatex 2017.9.4)  15 NOV 2017 10:26
 entering extended mode
 **./Synthese_Helico_TrainEpi_LoiES.tex
 (Synthese_Helico_TrainEpi_LoiES.tex
@@ -2614,59 +2614,94 @@ LaTeX Font Info:    Font shape `MDB/mdput/m/n' will be
 (Font)              scaled to size 5.51999pt on input line 226.
 )
 LaTeX Font Info:    Font shape `T1/mdput/bx/n' in size <10> not available
-(Font)              Font shape `T1/mdput/b/n' tried instead on input line 164.
+(Font)              Font shape `T1/mdput/b/n' tried instead on input line 165.
 LaTeX Font Info:    Font shape `T1/mdput/b/n' will be
-(Font)              scaled to size 9.19998pt on input line 164.
+(Font)              scaled to size 9.19998pt on input line 165.
 
 
 Package hyperref Warning: bookmark level for unknown exo defaults to 0.
 
 LaTeX Font Info:    Font shape `T1/mdput/m/it' will be
-(Font)              scaled to size 9.19998pt on input line 164.
+(Font)              scaled to size 9.19998pt on input line 165.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 166.
+(mdframed)              on input line 167.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 190.
+(mdframed)              on input line 191.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 211.
+(mdframed)              on input line 213.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 244.
+
+Overfull \hbox (29.49669pt too wide) detected at line 260
+[] \OT1/mdput/m/n/10 = [][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 269--271
+\T1/mdput/b/n/10 Question    [][] \T1/mdput/m/it/10 (+20) Ex-pri-mer l'ac-cé-lé
+-ra-tion $[]$.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 269--271
+
+ []
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 271.
+
+Overfull \hbox (10.52512pt too wide) detected at line 291
+[][] \OT1/mdput/m/n/10 = [][] + [] \OMS/mdput/m/n/10 ^ [] \OT1/mdput/m/n/10 = [
+][] \OMS/mdput/m/n/10 ^ [] \OT1/mdput/m/n/10 = \OMS/mdput/m/n/10  [][]
+ []
+
+
+Overfull \hbox (84.49896pt too wide) detected at line 307
+[][] \OT1/mdput/m/n/10 = [][] + [] \OMS/mdput/m/n/10 ^ [] \OT1/mdput/m/n/10 = [
+] \OMS/mdput/m/n/10 ^ [] \OT1/mdput/m/n/10 = [] [] \OML/mdput/m/it/10 [] \OT1/
+mdput/m/n/10 + [][]
+ []
+
+
+Overfull \hbox (172.6878pt too wide) detected at line 318
+[] \OT1/mdput/m/n/10 = \OMS/mdput/m/n/10  \OML/mdput/m/it/10 a[] [] [][] \OT1/
+mdput/m/n/10 + (\OML/mdput/m/it/10 a []  \OT1/mdput/m/n/10 + \OML/mdput/m/it/1
+0 r\OT1/mdput/m/n/10 )[][] \OMS/mdput/m/n/10   \OT1/mdput/m/n/10 (\OML/mdput/m/
+it/10 a []  \OT1/mdput/m/n/10 + \OML/mdput/m/it/10 r\OT1/mdput/m/n/10 )[][] \O
+MS/mdput/m/n/10   \OML/mdput/m/it/10 a[][] \OMS/mdput/m/n/10   \OML/mdput/m/it/
+10 a[] []
+ []
+
+Package mdframed Info: Box was splittet wrong
+ starting loop to iterate the splitting point
+(mdframed)              on input line 319.
 LaTeX Font Info:    Font shape `T1/mdput/m/n' will be
-(Font)              scaled to size 7.35999pt on input line 234.
+(Font)              scaled to size 7.35999pt on input line 319.
 LaTeX Font Info:    Font shape `T1/mdput/m/sl' will be
-(Font)              scaled to size 7.35999pt on input line 234.
+(Font)              scaled to size 7.35999pt on input line 319.
 LaTeX Font Info:    Font shape `T1/mdput/bx/n' in size <8> not available
-(Font)              Font shape `T1/mdput/b/n' tried instead on input line 234.
+(Font)              Font shape `T1/mdput/b/n' tried instead on input line 319.
 LaTeX Font Info:    Font shape `T1/mdput/b/n' will be
-(Font)              scaled to size 7.35999pt on input line 234.
+(Font)              scaled to size 7.35999pt on input line 319.
 [1
 
 {C:/Users/Xavier/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 241.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 268.
-LaTeX Font Info:    Font shape `T1/mdput/m/it' will be
-(Font)              scaled to size 6.43999pt on input line 319.
-LaTeX Font Info:    Font shape `T1/mdput/m/it' will be
-(Font)              scaled to size 4.59999pt on input line 319.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 321.
-<png/logo_lycee.png, id=32, 329.23pt x 265.99374pt>
+<png/logo_lycee.png, id=35, 329.23pt x 265.99374pt>
 File: png/logo_lycee.png Graphic file (type png)
 <use png/logo_lycee.png>
-Package pdftex.def Info: png/logo_lycee.png  used on input line 567. on input l
-ine 567.
-Package pdftex.def Info: Requested size: 56.9055pt x 45.97325pt on input line 5
-67.
+Package pdftex.def Info: png/logo_lycee.png  used on input line 319. on input l
+ine 319.
+Package pdftex.def Info: Requested size: 56.9055pt x 45.97325pt on input line 3
+19.
 LaTeX Font Info:    Font shape `T1/mdput/m/it' will be
-(Font)              scaled to size 7.35999pt on input line 567.
+(Font)              scaled to size 7.35999pt on input line 319.
 LaTeX Font Info:    Font shape `T1/pag/m/it' in size <8> not available
-(Font)              Font shape `T1/pag/m/sl' tried instead on input line 567.
+(Font)              Font shape `T1/pag/m/sl' tried instead on input line 319.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2675,19 +2710,70 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [2 <./png/logo_lycee.png>]
+LaTeX Font Info:    Font shape `T1/mdput/m/it' will be
+(Font)              scaled to size 6.43999pt on input line 322.
+LaTeX Font Info:    Font shape `T1/mdput/m/it' will be
+(Font)              scaled to size 4.59999pt on input line 322.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 567.
+(mdframed)              on input line 324.
+<images/A6_train.png, id=44, 1077.02374pt x 518.93875pt>
+File: images/A6_train.png Graphic file (type png)
+<use images/A6_train.png>
+Package pdftex.def Info: images/A6_train.png  used on input line 429. on input 
+line 429.
+Package pdftex.def Info: Requested size: 236.84843pt x 114.11937pt on input lin
+e 429.
+
+Underfull \hbox (badness 5771) in paragraph at lines 433--435
+\T1/mdput/b/n/10 Question    [][] \T1/mdput/m/it/10 (+20) Dé-ter-mi-ner le rap-
+port de ré-duc-tion
+ []
+
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 604.
+(mdframed)              on input line 435.
+
+Underfull \hbox (badness 10000) in paragraph at lines 438--443
+[]\T1/mdput/m/n/10 (+20) On cherche $[]$ ; donc $[] \OT1/mdput/m/n/10 (+20) =
+ []
+
+
+Underfull \hbox (badness 5771) in paragraph at lines 448--450
+\T1/mdput/b/n/10 Question    [][] \T1/mdput/m/it/10 (+20) Dé-ter-mi-ner le rap-
+port de ré-duc-tion
+ []
+
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 450.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 592.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 636.
+
+Overfull \hbox (203.01108pt too wide) in alignment at lines 639--647
+ [][][] []
+ []
+
+
+Overfull \hbox (128.3119pt too wide) detected at line 665
+[] \OMS/mdput/m/n/10 ([]) []
+ []
+
+
+Overfull \hbox (35.6296pt too wide) in alignment at lines 668--684
+ [][][] []
+ []
+
 File: png/logo_lycee.png Graphic file (type png)
 <use png/logo_lycee.png>
-Package pdftex.def Info: png/logo_lycee.png  used on input line 670. on input l
-ine 670.
-Package pdftex.def Info: Requested size: 56.9055pt x 45.97325pt on input line 6
-70.
-
+Package pdftex.def Info: png/logo_lycee.png  used on input line 703. on input l
+ine 703.
+Package pdftex.def Info: Requested size: 56.9055pt x 45.97325pt on input line 7
+03.
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 45.97325pt.
@@ -2695,15 +2781,15 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 LaTeX Font Info:    Font shape `T1/mdput/bx/n' in size <12> not available
-(Font)              Font shape `T1/mdput/b/n' tried instead on input line 670.
+(Font)              Font shape `T1/mdput/b/n' tried instead on input line 703.
 LaTeX Font Info:    Font shape `T1/mdput/b/n' will be
-(Font)              scaled to size 11.03998pt on input line 670.
-[3]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 670.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 670.
+(Font)              scaled to size 11.03998pt on input line 703.
+[3 <./images/A6_train.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 703.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 703.
  (Synthese_Helico_TrainEpi_LoiES.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 670.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 670.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 703.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 703.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -2712,16 +2798,16 @@ Package logreq Info: Writing requests to 'Synthese_Helico_TrainEpi_LoiES.run.xm
 l'.
 \openout1 = `Synthese_Helico_TrainEpi_LoiES.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 670.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 703.
  ) 
 Here is how much of TeX's memory you used:
- 42490 strings out of 493352
- 804810 string characters out of 3139710
- 1382194 words of memory out of 3000000
- 45249 multiletter control sequences out of 15000+200000
- 759404 words of font info for 224 fonts, out of 3000000 for 9000
+ 42558 strings out of 493352
+ 805622 string characters out of 3139710
+ 1424224 words of memory out of 3000000
+ 45258 multiletter control sequences out of 15000+200000
+ 763607 words of font info for 266 fonts, out of 3000000 for 9000
  1127 hyphenation exceptions out of 8191
- 57i,21n,79p,10445b,1912s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 57i,22n,79p,10445b,1912s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}{C:/Program Files/Mi
 KTeX 2.9/fonts/enc/dvips/ly1/texnansi.enc}<C:/Enseignement/Livre_Exo_Vuibert/In
 stallation/MATHDESIGN/texmf/fonts/type1/mathdesign/mdput/md-utr7t.pfb><C:/Ensei
@@ -2736,9 +2822,9 @@ e/utopia/putr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/adobe/utopia/putri
 8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/avantgar/uagd8a.pfb><C:/Pro
 gram Files/MiKTeX 2.9/fonts/type1/urw/avantgar/uagdo8a.pfb><C:/Program Files/Mi
 KTeX 2.9/fonts/type1/urw/avantgar/uagko8a.pfb>
-Output written on Synthese_Helico_TrainEpi_LoiES.pdf (3 pages, 191239 bytes).
+Output written on Synthese_Helico_TrainEpi_LoiES.pdf (3 pages, 229695 bytes).
 PDF statistics:
- 136 PDF objects out of 1000 (max. 8388607)
- 29 named destinations out of 1000 (max. 500000)
- 75874 words of extra memory for PDF output out of 89155 (max. 10000000)
+ 141 PDF objects out of 1000 (max. 8388607)
+ 31 named destinations out of 1000 (max. 500000)
+ 75879 words of extra memory for PDF output out of 89155 (max. 10000000)
 

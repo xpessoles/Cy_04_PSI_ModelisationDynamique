@@ -81,6 +81,7 @@ Révision cinématique -- Modélisation cinématique\\
 \setlength{\columnseprule}{0.4pt} 
 
 \ifprof
+\begin{multicols}{2}
 \else
 \begin{multicols}{2}
 \fi
@@ -169,11 +170,11 @@ $$
 \torseurcin{V}{S_3}{S_2} = \torseurl{\vecto{S_3}{S_2}=\dot{\alpha}\vect{x_{23}}}{\vectv{A_3}{S_3}{S_2}=\vect{0}}{A_3}
 $$
 
-Par ailleurs, 
-$$
-\vectv{G}{S_3}{S_2}=\underbrace{\vectv{A_3}{S_3}{S_2}}_{\vect{0}}+\vect{GA_3}\wedge\vecto{S_3}{S_2}=
+Par ailleurs, $
+\vectv{G}{S_3}{S_2}=\underbrace{\vectv{A_3}{S_3}{S_2}}_{\vect{0}}+\vect{GA_3}\wedge\vecto{S_3}{S_2}$
+$=
 -a\vect{x_{23}}\wedge \dot{\alpha}\vect{x_{23}}=\vect{0}
-$$
+$.
 
 Au final, 
 $$
@@ -194,10 +195,11 @@ $$
 $$
 
 Par ailleurs, 
-$$
-\vectv{G}{S_2}{S_1}=\underbrace{\vectv{A_3}{S_2}{S_1}}_{\vect{0}}+\vect{GA_3}\wedge\vecto{S_2}{S_1}=
+$
+\vectv{G}{S_2}{S_1}=\underbrace{\vectv{A_3}{S_2}{S_1}}_{\vect{0}}+\vect{GA_3}\wedge\vecto{S_2}{S_1}$
+$=
 -a\vect{x_{23}}\wedge \dot{\beta}\vect{y_{12}}=-a\dot{\beta}\vect{z_{2}}
-$$
+$
 
 Au final, 
 $$
@@ -215,11 +217,12 @@ $$
 $$
 
 Par ailleurs, 
-$$
-\vectv{G}{S_1}{S_0}=\underbrace{\vectv{O}{S_1}{S_0}}_{\vect{0}}+\vect{GO}\wedge\vecto{S_1}{S_0}=
+$
+\vectv{G}{S_1}{S_0}=\underbrace{\vectv{O}{S_1}{S_0}}_{\vect{0}}+\vect{GO}\wedge\vecto{S_1}{S_0}$
+$=
 \left(-a\vect{x_{23}}-r\vect{x_1}\right)\wedge \dot{\theta}\vect{z_{01}}=
 a\dot{\theta}\cos\beta\vect{y_{12}}+r\dot{\theta}\vect{y_{12}}
-$$
+$
 
 Au final, 
 $$
@@ -390,13 +393,14 @@ La chaîne d'énergie du système est constituée :
 \end{center}
 
 \fi
+
 \subsection*{Étude du train épicycloïdal}
 \ifprof
 \else
 
 On donne le schéma cinématique du double train épicycloïdal. 
 
-\vspace{.25cm}
+%\vspace{.25cm}
 
 %\begin{minipage}[c]{.6\linewidth}
 Le premier train est constitué :
@@ -417,17 +421,38 @@ Le second train est constitué :
 \end{itemize}
 %\end{minipage}
 
+
+\fi
+
+
 \begin{center}
 \includegraphics[width=\linewidth]{images/A6_train}
 \end{center}
 
+\subparagraph{}
+\textit{Déterminer le rapport de réduction $\dfrac{\omega(31/0)}{\omega(21/0)}$.}
+\ifprof
+\begin{corrige}
+On bloque le porte-satellite 31 et on libère le bâti. On a $\dfrac{\omega(0/31)}{\omega(21/31)}=-\dfrac{Z_{21}}{Z_0}$.
+
+On cherche 
+$\dfrac{\omega(31/0)}{\omega(21/0)}$; donc $\dfrac{\omega(31/0)}{\omega(21/31)}=\dfrac{\omega(31/0)}{\omega(21/0)+\omega(0/31)}=\dfrac{Z_{21}}{Z_0}$
+$\Leftrightarrow \omega(31/0)=\dfrac{Z_{21}}{Z_0}\omega(21/0)-\dfrac{Z_{21}}{Z_0}\omega(31/0)$
+$\Leftrightarrow \omega(31/0)\left(1+\dfrac{Z_{21}}{Z_0}\right)=\dfrac{Z_{21}}{Z_0}\omega(21/0)$
+$\Leftrightarrow \dfrac{\omega(31/0)}{\omega(21/0)}=\dfrac{\dfrac{Z_{21}}{Z_0}}{1+\dfrac{Z_{21}}{Z_0}}=\dfrac{Z_{21}}{Z_{0}+Z_{21}}$
+\end{corrige}
+\else
 \fi
 
 \subparagraph{}
-\textit{Déterminer le rapport de réduction $\dfrac{\omega(31/0)}{\omega(21/0)}$.}
-
-\subparagraph{}
 \textit{Déterminer le rapport de réduction $\dfrac{\omega(41/0)}{\omega(31/0)}$.}
+\ifprof
+\begin{corrige}
+Par analogie, 
+$\dfrac{\omega(41/0)}{\omega(31/0)}=\dfrac{Z_{31}}{Z_{0}+Z_{31}}$
+\end{corrige}
+\else
+\fi
 
 
 %\subparagraph{}
@@ -542,12 +567,12 @@ Le second train est constitué :
 %$$
 %
 %Au final :
-%$$
+$$
 % R_{21} \omega(21/0)= R_{21} \omega(31/0) + R_{0} \omega(31/0)
 %\Longleftrightarrow
 %\dfrac{\omega(31/0)}{\omega(21/0)} = \dfrac{R_{21}}{R_{21}+R_{0}}
 %= \dfrac{Z_{21}}{Z_{21}+Z_{0}}
-%$$
+$$
 %
 %Par ailleurs, la condition d'entraxe dans un train épicycoïdal se formule ainsi : 
 %$AJ = AI+IJ \Longleftrightarrow R_0 = R_{21} + 2 R_{22}$. On a alors : 
@@ -565,9 +590,16 @@ Le second train est constitué :
 
 \ifprof
 \begin{corrige}
-On a : 
+
+Le rapport de réduction du réducteur s'exprime par : 
+$\dfrac{Z_{21}}{Z_{0}+Z_{21}}\dfrac{Z_{31}}{Z_{0}+Z_{31}}$. Si les deux trains ont les mêmes caractéristiques, on a $\left(\dfrac{Z_{21}}{Z_{0}+Z_{21}}\right)^2$. 
+En exprimant les conditions de fonctionnement, on a : 
+$R_{21}+2R_{22}=R_0\Leftrightarrow Z_{21}+2Z_{22}=Z_0$. %et $R_{31}+2R_{32}=R_0$. En conséquences, 
+%$R_{21}+2R_{22}=R_{31}+2R_{32}$ $\Longleftrightarrow Z_{21}+2Z_{22}=Z_{31}+2Z_{32}$. 
+
+On a : alors 
 $$
-\left(\dfrac{Z_{21}}{2 Z_{21}+Z_{22}}\right)^2=0,0147
+\left(\dfrac{Z_{21}}{2 Z_{21}+2Z_{22}}\right)^2=0,0047%0,0147
 $$
 \end{corrige}
 \else \fi
@@ -658,6 +690,7 @@ L_3^2\cos^2\gamma_{3}+ L_1^2 \cos^2\gamma_{1} + a^2 \\
 
 
 \ifprof
+\end{multicols}
 \else
 \end{multicols}
 \fi
