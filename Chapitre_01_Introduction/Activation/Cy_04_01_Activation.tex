@@ -13,7 +13,7 @@
 %\fichefalse
 
 \proftrue
-\proffalse
+%\proffalse
 
 \tdtrue
 %\tdfalse
@@ -92,6 +92,7 @@ Chapitre 1 -- \xxactivite%
 \def\pathfig{images}
 
 \ifprof
+\begin{multicols}{2}
 \else
 \begin{multicols}{2}
 \fi
@@ -182,7 +183,8 @@ On connaît la masse $M_3$ de la tête de dépose et on cherche l'effort ($\over
 On utilise le théorème de la résultante dynamique en projection sur $\overrightarrow{y_0}$. On obtient : $
 M_3 \vectg{G_3}{3}{R_0}\cdot \overrightarrow{y_0}=\sum \overrightarrow{R}_{\text{ext}\to S_3}\cdot \overrightarrow{y_0}$.
  
-Au final $M_3\cdot \ddot{y}=R_{\text{pouss\'ee}\to S_3}$.
+%Au final $M_3\cdot \ddot{y}=R_{\text{pouss\'ee}\to S_3}$.
+Au final $M_3\cdot \ddot{y}=Y_{23}$.
 
 
 \textit{Application numérique : } détermination de $R_{\text{pouss\'ee}\to S_3}$ pour obtenir une accélération de $\SI{4}{m/s^2}$ : $R_{\text{pouss\'ee}\to S_3}=20\times 4=\SI{80}{N}
@@ -199,7 +201,7 @@ $.
 
 
 \ifprof
-
+\begin{corrige}
 %\begin{exemple}[Machine de dépose de composants électroniques : déplacement dynamique de $S_3$]
 %\begin{minipage}{0.5\textwidth}
 %\end{minipage}
@@ -216,7 +218,7 @@ On se place de la cas le plus limite (Couple maximal, accélération angulaire c
 Déterminer le couple résistant maximal que le moteur peut équilibrer dynamiquement ($C_{S_2\to S_1}$):
 
 %\begin{texteCache}
-On appliquant un théorème du moment dynamique à $S_1$ selon $\couple{O_0}{\overrightarrow{y}_0}$ :
+En appliquant un théorème du moment dynamique à $S_1$ selon $\couple{O_0}{{y}_0}$ :
 $(I_m+I_v)\cdot \ddot{\theta}=C_{\text{max}}+C_{S_2\to S_1}$. 
 
 On obtient alors : 
@@ -232,24 +234,54 @@ $C_{S_2\to S_1}=(I_m+I_v)\cdot \ddot{\theta}_{\text{max}}-C_{\text{max}}=(I_m+I_
 %\item Le lien entre ces deux parties (actionneur et effecteur) repose sur le mécanisme de transformation de mouvement (ici vis-écrou).
 %\item Il faudra donc procéder à une démarche de résolution globale pour relier le couple moteur $\overrightarrow{C}_{\text{moteur}\to S_1}$ à l'accélération ($\vectg{G_3}{3}{R_0}$) et la masse de l'effecteur ($M_3$). Ce sera l'objet des parties suivantes.
 %\end{itemize}
+\end{corrige}
 \else
 \fi
 
 
 \subparagraph{}
 \textit{Donner la relation entre le couple transmis par la liaison hélicoïdale et l'effort axial.}
-
+\ifprof
+\begin{corrige}
+On a : $M_{12}=Y_{12}\dfrac{\text{pas}}{2\pi}$.
+\end{corrige}
+\else
+\fi
 \subparagraph{}
 \textit{Déterminer la relation entre l'effort axial dans la liaison hélicoïdale et l'effort de poussée dans la liaison sphère -- cylindre.}
-
+\ifprof
+\begin{corrige}
+On isole $S_2$, soumis aux actions mécaniques de $S_3$ et $S_1$. La masse de $S_2$ est négligée. 
+On applique le TRD suivant $\vect{y_0}$ et on a : 
+$$
+Y_{32}+Y_{12}=0 \Leftrightarrow 
+Y_{23}=Y_{12}
+$$
+\end{corrige}
+\else
+\fi
 
 
 \subparagraph{}
 \textit{Quel doit être le couple moteur pour déplacer le chariot $S_3$ ?}
+\ifprof
+\begin{corrige}
+On a : 
+\begin{itemize}
+\item $M_{12}=Y_{12}\dfrac{\text{pas}}{2\pi} \Leftrightarrow M_{21}=-Y_{12}\dfrac{\text{pas}}{2\pi}$;
+\item $Y_{23}=Y_{12}$;
+\item $(I_m+I_v)\cdot \ddot{\theta}=C_{\text{max}}+M_{21}$;
+\item $M_3\cdot \ddot{y}=Y_{23}$.
+\end{itemize}
+
+On a donc $C_{\text{max}}=(I_m+I_v)\cdot \ddot{\theta}+M_3 \ddot{y}\dfrac{\text{pas}}{2\pi}$
+\end{corrige}
+\else
+\fi
 
 Le cahier des charges impose les performances dynamiques suivantes : 
 \begin{itemize}
-\item l'accélération minimale de l'axe transversal est de \SI{20}{m.s^{-2}};
+\item l'accélération minimale de l'axe transversal est de \SI{21}{m.s^{-2}};
 \item la vitesse minimale pour respecter la cadence souhaitée est de \SI{7}{m.s^{-1}};
 \item la course de l'axe est de \SI{2}{m}.
 \end{itemize}
@@ -257,19 +289,51 @@ Le cahier des charges impose les performances dynamiques suivantes :
 La loi de commande est une loi en trapèze de vitesse. 
 \subparagraph{}
 \textit{Donner les caractéristiques dynamiques que doit respecter le moteur.}
+\ifprof
+\begin{corrige}
+Avec un pas de \SI{20}{mm}, $\dot{\theta}=\dot{y}\dfrac{2\pi}{\text{pas}}$ et $\ddot{\theta}=\ddot{y}\dfrac{2\pi}{\text{pas}}$. 
+
+AN : $\dot{\theta}=7\cdot 2\pi/20 10^3=\SI{2200}{rad.s^{-1}}=\SI{230}{tr.min^{-1}}$ et $\ddot{\theta}=21\cdot 2\pi/20 10^3 = \SI{6600}{rad.s^{-2}}$.
+\end{corrige}
+\else
+\fi
 
 \subparagraph{}
-\textit{Quel est le temps nécessaire pour parcourir la course de la machine ?}
+\textit{Quel est le temps nécessaire pour parcourir la course de la machine ? Commenter.}
+\ifprof
+\begin{corrige}
+\begin{itemize}
+\item Temps d'accélération pour atteindre la vitesse maximale : $V_m = a_m T_a \Leftrightarrow T_a = \dfrac{V_m}{a_m}=\SI{0,33}{s}$. 
+%\item Distance totale : $2=2\dfrac{1}{2}T_aV_m + T_mV_m \Longleftrightarrow T_m = \dfrac{2-T_aV_m}{V_m}=$.
+\item Distance parcourue : $\dfrac{1}{2}T_aV_m = \SI{1,17}{m}$. 
+\end{itemize}
+En conséquence, la course de la machine ne permet pas d'atteindre la vitesse maximale. 
+
+Temps pour parcourir $\SI{1}{m}$ : $\dfrac{1}{2}a_mT_a^2 =1 \Rightarrow T_a = \dfrac{2}{21}=\SI{0,309}{s}$. Temps pour parcourir la course : \SI{0,62}{m}.
+\end{corrige}
+\else
+\fi
+
+%\subparagraph{}
+%\textit{Quelle est la distance minimale à parcourir pour atteindre la vitesse maximale ?}
+%\ifprof
+%\begin{corrige}
+%\end{corrige}
+%\else
+%\fi
 
 \subparagraph{}
-\textit{Quelle est la distance minimale à parcourir pour atteindre la vitesse maximale ?}
-
-\subparagraph{}
-\textit{Quel est le couple minimal que doit fournir le moteur pour déplacer le chariot ?}
+\textit{Quel est le couple que doit fournir le moteur pour déplacer le chariot dans le << pire des cas >> ?}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
 
 
 
 \ifprof
+\end{multicols}
 \else
 \end{multicols}
 \fi
