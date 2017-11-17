@@ -8,7 +8,7 @@ fid.close()
 
 les_t=[]
 les_angles=[]
-data = data[1:]
+data = data[2:]
 for ligne in data:
     ligne  =ligne.split(";")
     les_t.append(float(ligne[0]))
