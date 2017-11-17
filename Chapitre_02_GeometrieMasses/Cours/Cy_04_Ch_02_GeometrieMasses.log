@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6400) (preloaded format=pdflatex 2017.9.4)  16 NOV 2017 11:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6400) (preloaded format=pdflatex 2017.9.4)  17 NOV 2017 11:21
 entering extended mode
 **./Cy_04_Ch_02_GeometrieMasses.tex
 (Cy_04_Ch_02_GeometrieMasses.tex
@@ -3168,6 +3168,9 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 LaTeX Warning: There were undefined references.
 
 
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
 Package biblatex Warning: Please (re)run Biber on the file:
 (biblatex)                Cy_04_Ch_02_GeometrieMasses
 (biblatex)                and rerun LaTeX afterwards.
@@ -3179,10 +3182,10 @@ Package logreq Info: Writing requests to 'Cy_04_Ch_02_GeometrieMasses.run.xml'.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 244.
  ) 
 Here is how much of TeX's memory you used:
- 54495 strings out of 493352
- 1141034 string characters out of 3137163
- 1828761 words of memory out of 3000000
- 56958 multiletter control sequences out of 15000+200000
+ 54499 strings out of 493352
+ 1141120 string characters out of 3137163
+ 1828808 words of memory out of 3000000
+ 56962 multiletter control sequences out of 15000+200000
  797468 words of font info for 315 fonts, out of 3000000 for 9000
  1127 hyphenation exceptions out of 8191
  57i,22n,98p,10474b,3031s stack positions out of 5000i,500n,10000p,200000b,50000s
