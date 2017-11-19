@@ -35,7 +35,7 @@
 
 
 
-\def\xxtitreexo{TD -- Véhicule TIM}%Motorisation du moteur Haibike}
+\def\xxtitreexo{Véhicule TIM}%Motorisation du moteur Haibike}
 \def\xxsourceexo{\hspace{.2cm} \footnotesize{Florestan Mathurin}}
 
 
@@ -45,7 +45,7 @@
 %\def\xxonglet{Part. 1 -- Ch. 3}
 \def\xxonglet{Cycle 04}
 
-\def\xxactivite{Activation}
+\def\xxactivite{TD 01}
 \def\xxauteur{\textsl{F. Mathurin}}
 
 \def\xxcompetences{%
@@ -114,12 +114,32 @@ L'accélération de la pesanteur $\vect{g}$ tel que $\vect{g}=-g\vect{z_0}$.
 
 L’action de contact entre l’ensemble des roues \textbf{1} et le plan \textbf{0}, incliné d’un angle $\alpha$ par rapport à l’horizontale, est  modélisé comme un contact ponctuel avec frottement où  l’on tient compte de la résistance au roulement. 
 
-Cette action de contact peut s’écrire :$\torseurstat{T}{0}{1}=\torseurl{-T_{01}\vect{x}+N_{01}\vect{z}}{-C_r\vect{y}}{A_1}$ où $C_r$ représente le couple de résistance au roulement qui s’oppose au roulement tel que : $|C_r|=r|N_{01}|$ à la limite de l’équilibre et $|C_r|=r|N_{01}|$ à l’équilibre.
+Cette action de contact peut s’écrire :$\torseurstat{T}{0}{1}=\torseurl{-T_{01}\vect{x}+N_{01}\vect{z}}{-C_r\vect{y}}{A_1}$ où $C_r$ représente le couple de résistance au roulement qui s’oppose au roulement tel que : $|C_r|=r|N_{01}|$ à la limite de l’équilibre et $|C_r|<r|N_{01}|$ à l’équilibre.
+
+%\subparagraph{}
+%\textit{Réaliser un schéma illustrant les actions de contact. Préciser dans quel cas on se ici : limite du glissement sans roulement ou limite du roulement sans glissement ?}
 
 \subparagraph{}
-\textit{Après avoir fair un schéma, écrire le principe fondamental de la statique appliqué au solide \textbf{1} réduit au point $G$ en projection sur la base $\base{x}{y}{z}$.}
+\textit{Écrire le principe fondamental de la statique appliqué au solide \textbf{1} réduit au point $G$ en projection sur la base $\base{x}{y}{z}$.}
 \ifprof
 \begin{corrige}
+\begin{itemize}
+\item On isole le solide 1. 
+\item Le solide est soumis à l'action de pesanteur et à l'action du sol. 
+\item On applique le PFS :
+\begin{itemize}
+\item TRS : $-T_{01}\vect{x}+N_{01}\vect{z}=-mg\vect{z_0}=-mg\left( \cos \alpha \vect{z}-\sin\alpha \vect{x} \right)$;
+\item TMS en $G$ en projection sur $\vect{y}$: $-C_r+RT_{01}=0$.
+\end{itemize}
+\item On résout : 
+\begin{itemize}
+\item $-T_{01} +mg\sin\alpha = 0$;
+\item $N_{01} -mg\cos\alpha = 0$;
+\item $C_r=RT_{01}$.
+\end{itemize}
+\end{itemize}
+%MG = MA1+GA1 ^ R
+%MG = -Cry + z T01y   
 \end{corrige}
 \else
 \fi
@@ -129,6 +149,7 @@ Cette action de contact peut s’écrire :$\torseurstat{T}{0}{1}=\torseurl{-T_{0
 \textit{Déterminer l’expression analytique de l’angle $\alpha_{\text{lim}}$ à la limite de l’équilibre quand il y a début du roulement du solide 1 sur le plan 0. }
 \ifprof
 \begin{corrige}
+À la limite du roulement, on a $C_r=rN_{01}$ $\Leftrightarrow RT_{01}=rN_{01}$ $\Leftrightarrow Rmg\sin\alpha_{\text{lim}}=rmg\cos\alpha_{\text{lim}}$ et  $\tan \alpha_{\text{lim}} = \dfrac{r}{R}$.
 \end{corrige}
 \else
 \fi
@@ -139,6 +160,7 @@ Pour une masse du solide 1 $m = \SI{50}{kg}$ et pour un rayon $R = \SI{0,25}{m}$
 \textit{Déterminer le coefficient de résistance au roulement $r$.}
 \ifprof
 \begin{corrige}
+$r=\SI{0,002}{m}$.
 \end{corrige}
 \else
 \fi
@@ -148,6 +170,7 @@ Pour une masse du solide 1 $m = \SI{50}{kg}$ et pour un rayon $R = \SI{0,25}{m}$
 \textit{Au début du roulement, montrer qu’il ne peut pas y avoir glissement en $A_1$ si le coefficient de frottement au contact vaut $f = 0,5$. }
 \ifprof
 \begin{corrige}
+À la limite du glissement, on a $T_{01}=fN_{01}$ et $\dfrac{T_{01}}{N_{01}}=\tan\alpha$. Pour $\alpha_{lim}<f$ il y a donc roulement sans glissement. 
 \end{corrige}
 \else
 \fi
@@ -159,8 +182,8 @@ L’objectif est d’établir un modèle analytique du véhicule, lors d’une p
 L’accélération de la pesanteur $\vect{g}$ telle que $\vect{g}=-g\vect{z_0}$. Le modèle est donné figure suivante. On considère que le véhicule se déplace sur une pente inclinée d’un angle$\alpha$ par rapport à l’horizontale. Le véhicule est constitué :
 \begin{itemize}
 \item d’un châssis avec son pilote : solide 1 de centre d’inertie $G$, de masse $M$ en translation par rapport au repère galiléen $R$ avec $\vect{OG}=x\vect{x}+R\vect{z}$.
-\item de deux roues avant : solide 23 de centre d’inertie $O_{23}$ , de masse $2 m$, de rayon $R$, dont le moment d’inertie par rapport à l’axe $\axe{O_{23}}{\vect{y}}$ sera noté $2I$. Le solide 23 est en liaison pivot sans frottement par rapport au châssis 1 d’axe $\axe{O_{23}}{\vect{y}}$ caractérisé par le paramètre $\theta_{23}$. 
-\item d’une roue arrière motrice : solide 4 de centre d’inertie $O_4$, de masse $m$, de rayon $R$, dont le moment d’inertie par rapport à l’axe $\axe{O_{4}}{\vect{y}}$ sera noté $I$. Le solide 4 est en liaison pivot sans frottement par rapport au châssis 1 d’axe $\axe{O_{4}}{\vect{y}}$ caractérisé par le paramètre $\theta_4$; 
+\item de deux roues avant : solide 23 de centre d’inertie $O_{23}$, de masse $2 m$, de rayon $R$, dont le moment d’inertie par rapport à l’axe $\axe{O_{23}}{{y}}$ sera noté $2I$. Le solide 23 est en liaison pivot sans frottement par rapport au châssis 1 d’axe $\axe{O_{23}}{{y}}$ caractérisé par le paramètre $\theta_{23}$. 
+\item d’une roue arrière motrice : solide 4 de centre d’inertie $O_4$, de masse $m$, de rayon $R$, dont le moment d’inertie par rapport à l’axe $\axe{O_{4}}{{y}}$ sera noté $I$. Le solide 4 est en liaison pivot sans frottement par rapport au châssis 1 d’axe $\axe{O_{4}}{{y}}$ caractérisé par le paramètre $\theta_4$; 
 \item un moteur d’entraînement du véhicule dont le corps est solidaire du châssis 1 exerce sur la roue 4 un couple moteur noté $C_m \vect{y}$. 
 \end{itemize}
 
@@ -181,6 +204,9 @@ $\torseurl{-\dfrac{1}{2}\rho S C_x \dot{x}^2 \vect{x}}{\vect{0}}{O_{23}}$ avec $
 $A_4$.}
 \ifprof
 \begin{corrige}
+En $A_{23}$, on a : $\vectv{A_{23}}{23}{0}=\vect{0}$. On a alors $\vectv{A_{23}}{23}{0}=\vectv{A_{23}}{23}{1}+\vectv{A_{23}}{1}{0}$ et $\vect{0}=\vectv{O_{23}}{23}{1}+\vect{A_{23}O_{23}}\wedge \vecto{23}{1}+\vectv{A_{23}}{1}{0} $ $\Leftrightarrow \vect{0}=\vect{0}+R\vect{z}\wedge \dot{\theta}_{23}\vect{y} + \dot{x}\vect{x}$ $\Rightarrow 0=-R \dot{\theta}_{23} + \dot{x}$.
+
+De même en $A_4$, $0=-R \dot{\theta}_{4} + \dot{x}$.
 \end{corrige}
 \else
 \fi
