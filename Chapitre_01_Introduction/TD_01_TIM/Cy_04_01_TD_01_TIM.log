@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6400 64-bit) (preloaded format=pdflatex 2017.9.4)  20 NOV 2017 10:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6400 64-bit) (preloaded format=pdflatex 2017.9.4)  21 NOV 2017 17:12
 entering extended mode
 **./Cy_04_01_TD_01_TIM.tex
 (Cy_04_01_TD_01_TIM.tex
@@ -2848,10 +2848,10 @@ Package logreq Info: Writing requests to 'Cy_04_01_TD_01_TIM.run.xml'.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 289.
  ) 
 Here is how much of TeX's memory you used:
- 52444 strings out of 493352
- 1137643 string characters out of 3139710
- 1799597 words of memory out of 3000000
- 54927 multiletter control sequences out of 15000+200000
+ 52432 strings out of 493352
+ 1137310 string characters out of 3139710
+ 1799283 words of memory out of 3000000
+ 54915 multiletter control sequences out of 15000+200000
  770260 words of font info for 330 fonts, out of 3000000 for 9000
  1127 hyphenation exceptions out of 8191
  62i,21n,96p,10433b,1922s stack positions out of 5000i,500n,10000p,200000b,50000s
