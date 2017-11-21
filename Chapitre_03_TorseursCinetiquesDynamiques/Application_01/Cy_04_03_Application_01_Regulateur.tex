@@ -49,14 +49,14 @@
 \def\xxcompetences{%
 \textsl{%
 \textbf{Savoirs et compétences :}\\
-\begin{itemize}[label=\ding{112},font=\color{ocre}] 
-\item \textit{Mod2.C13} : centre d'inertie
-\item \textit{Mod2.C14} : opérateur d'inertie
-\item \textit{Mod2.C15} : matrice d'inertie
-\end{itemize}
+%\begin{itemize}[label=\ding{112},font=\color{ocre}] 
+%\item \textit{Mod2.C13} : centre d'inertie
+%\item \textit{Mod2.C14} : opérateur d'inertie
+%\item \textit{Mod2.C15} : matrice d'inertie
+%\end{itemize}
 }}
 \def\xxfigures{
-\includegraphics[width=.7\linewidth]{images/fig_00}
+%\includegraphics[width=.7\linewidth]{images/fig_00}
 }%figues de la page de garde
 
 
@@ -88,11 +88,74 @@ Chapitre 3 -- \xxactivite%
 \fi
 
 
+Un système matériel est constitué de 5 solides reliés au bâti \textbf{(0)}. Les solides \textbf{(1)}, \textbf{(2)}, \textbf{(3)} et \textbf{(5)} sont des barres sans épaisseur, articulées par des pivots en $O$, $A$ ou $B$ de manière à demeurer dans un même plan noté $ \left(\vect{x_1},\vect{y_1}\right)$. Cet ensemble est donc mobile en rotation autour de $\vect{z_1}$. On repère sa position angulaire par le paramètre $\psi$. 
+
+Au bâti \textbf{(0)}, on associé le repère fixe $\mathcal{R}_0$. 
+
+À chaque $S_i$ on associe une base $\mathcal{B}_i\base{x_i}{y_i}{z_i}$. Les repère $\mathcal{R}_i$ sont d'origine $O$ ou $A$ selon le cas. 
+
+Les rotations internes sont définies par $\theta_2$ autour de $\axe{O}{y_1}$ et $\theta_3$ autour de $\axe{A}{y_1}$.
+
+Les barres \textbf{(2)} et \textbf{(3)} sont identiques, de longueur $2a$ et de masse $m_2=m_3=m$.
+
+Les barres \textbf{(1)} et \textbf{(5)} ont une masse $m_i$ et des longueurs $\ell_i$. \textbf{(4)} est un volant d'inertie de masse $M$ qui fait l'objet d'une liaison pivot d'axe $\axe{G}{x_3}$ avec la barre \textbf{(3)}. Un repère $\mathcal{R}_4$ est lié à ce volant dont on définit sa position par le paramètre angulaire $\varphi$.
+
+
+
+
+\subparagraph{}
+\textit{Définir le paramétrage cinématique du problème.}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+
+\subparagraph{}
+\textit{Déterminer les torseurs cinétiques suivants : $\torseurci{1}{0}_O$, $\torseurci{2}{0}_O$ et  $\torseurci{3}{0}_O$ dans $\mathcal{R}_1$, $\torseurci{4}{0}_O$ dans $\mathcal{R}_3$  et  $\torseurci{5}{0}_A$ dans $\mathcal{R}_1$.}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+\subparagraph{}
+\textit{Déterminer les torseur dynamique $\torseurdyn{4}{0}_G\cdot \vect{x_3}$.}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+\subparagraph{}
+\textit{Déterminer les torseur dynamique $\torseurdyn{1\cup 2\cup 3\cup 4\cup 5}{0}_O\cdot \vect{z_0}$.}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+
+\subparagraph{}
+\textit{Calculer l'énergie cinétique de l'ensemble du système dans son mouvement par rapport au bâti.}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/Schema_Cin.png}
+\end{center}
+
+
 \ifprof
 \else
 \end{multicols}
 \fi
-
 
 
 
