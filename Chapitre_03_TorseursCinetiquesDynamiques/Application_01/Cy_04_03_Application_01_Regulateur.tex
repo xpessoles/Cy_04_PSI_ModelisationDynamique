@@ -163,33 +163,41 @@ $$
 
 $O$ est un point fixe. On a donc :
 $$
-\torseurci{1}{0}=
+\torseurci{2}{0}=
 \torseurl{
-m_1 \vectv{G_1}{1}{0}
+m_2 \vectv{G_2}{2}{0}
 }{
-\vectmc{O_1}{1}{0} = \inertie{O}{1} \vecto{1}{0}
+\vectmc{O}{2}{0} %= \inertie{G_2}{1} \vecto{2}{0}
 }{O}
 $$
 
-\textbf{(1)} est une tige d'axe $\vect{z_0}$ et de rayon négligeable. On a donc 
-$\inertie{O}{1} =  \matinertie{A_1}{A_1}{0}{0}{0}{0}{\mathcal{R}_1} $ avec $A_1=\dfrac{m_1l_1^2}{3}$. 
+\textbf{(2)} est une tige d'axe $\vect{z_2}$ et de rayon négligeable. On a donc 
+$\inertie{G_2}{2} =  \matinertie{A_2}{A_2}{0}{0}{0}{0}{\mathcal{R}_2} $ avec $A_2=\dfrac{m_2l_2^2}{3}$. 
 De plus,
 $
-\torseurcin{V}{1}{0}=
+\torseurcin{V}{2}{0}=
 \torseurl{
-\vecto{1}{0}=\dot{\psi}\vect{z_1}
+\vecto{2}{0}=\dot{\psi}\vect{z_1}+\dot{\theta}\vect{y_2}
 }{
-\vectv{O}{1}{0}=\vect{0}
-}{O}
+\vectv{G_2}{2}{0}
+}{G_2}
 $. 
-On a donc  $\inertie{O}{1} \vecto{1}{0} =   \matinertie{A_1}{A_1}{0}{0}{0}{0}{\mathcal{R}_1} \begin{pmatrix} 0 \\ 0 \\  \dot{\psi} \end{pmatrix}_{\mathcal{R}_1}=\vect{0}$.
+
+$\vectv{G_2}{2}{0}=\vectv{O}{2}{0}+\vect{G_2O}\wedge\vecto{2}{0}
+=-a\vect{z_2}\wedge \left(\dot{\psi}\vect{z_1}+\dot{\theta}\vect{y_2}\right)
+=a \left(\dot{\psi}\sin\theta\vect{y_1}+\dot{\theta}\vect{x_2}\right)$
+
+On a donc  $\inertie{G_2}{2} \vecto{2}{0} =   \matinertie{A_2}{A_2}{0}{0}{0}{0}{\mathcal{R}_2} \begin{pmatrix} -\dot{\psi}\sin\theta \\ \dot{\theta} \\  \dot{\psi}\cos\theta \end{pmatrix}_{\mathcal{R}_2}=
+ \begin{pmatrix} -A_2\dot{\psi}\sin\theta \\ A_2\dot{\theta} \\  0 \end{pmatrix}_{\mathcal{R}_2}$.
+ 
+ 
 Au final :
 $$
-\torseurci{1}{0}=
+\torseurci{2}{0}=
 \torseurl{
-\vect{0}
+%\vect{0}
 }{
-\vect{0}
+%\vect{0}
 }{O}
 $$
 
