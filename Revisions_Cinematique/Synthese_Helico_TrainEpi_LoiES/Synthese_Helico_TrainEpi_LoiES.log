@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6400) (preloaded format=pdflatex 2017.9.4)  15 NOV 2017 11:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6400) (preloaded format=pdflatex 2017.9.4)  23 NOV 2017 11:06
 entering extended mode
 **./Synthese_Helico_TrainEpi_LoiES.tex
 (Synthese_Helico_TrainEpi_LoiES.tex
@@ -2666,9 +2666,6 @@ Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 703.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package logreq Info: Writing requests to 'Synthese_Helico_TrainEpi_LoiES.run.xm
 l'.
 \openout1 = `Synthese_Helico_TrainEpi_LoiES.run.xml'.
@@ -2678,7 +2675,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 703.
 Here is how much of TeX's memory you used:
  42921 strings out of 493352
  809707 string characters out of 3137163
- 1384895 words of memory out of 3000000
+ 1384878 words of memory out of 3000000
  45652 multiletter control sequences out of 15000+200000
  760823 words of font info for 236 fonts, out of 3000000 for 9000
  1127 hyphenation exceptions out of 8191
@@ -2697,7 +2694,7 @@ a/putr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/adobe/utopia/putri8
 a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/avantgar/uagd8a.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/avantgar/uagdo8a.pfb><C:/Progr
 am Files (x86)/MiKTeX 2.9/fonts/type1/urw/avantgar/uagko8a.pfb>
-Output written on Synthese_Helico_TrainEpi_LoiES.pdf (3 pages, 196672 bytes).
+Output written on Synthese_Helico_TrainEpi_LoiES.pdf (3 pages, 196242 bytes).
 PDF statistics:
  143 PDF objects out of 1000 (max. 8388607)
  31 named destinations out of 1000 (max. 500000)
