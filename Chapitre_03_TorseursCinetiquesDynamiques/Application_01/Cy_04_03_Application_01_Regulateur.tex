@@ -119,11 +119,11 @@ On donne le paramétrage suivant.
 \subparagraph{}
 \textit{Déterminer les torseurs cinétiques suivants : $\torseurci{1}{0}_O$, $\torseurci{2}{0}_O$ et  $\torseurci{3}{0}_O$ dans $\mathcal{R}_1$, $\torseurci{4}{0}_O$ dans $\mathcal{R}_3$  et  $\torseurci{5}{0}_A$ dans $\mathcal{R}_1$.}
 \ifprof
-\begin{corrige}
-\subsection*{ ~\\
-Détermination de  $\torseurci{1}{0}_O$}
+\begin{corrige} ~\\
 
 \begin{multicols}{2}
+\subsection*{Détermination de  $\torseurci{1}{0}_O$}
+
 $O$ est un point fixe. On a donc :
 $$
 \torseurci{1}{0}=
@@ -136,7 +136,6 @@ $$
 
 \textbf{(1)} est une tige d'axe $\vect{z_0}$ et de rayon négligeable. On a donc 
 $\inertie{O}{1} =  \matinertie{A_1}{A_1}{0}{0}{0}{0}{\mathcal{R}_1} $ avec $A_1=\dfrac{m_1l_1^2}{3}$. 
-
 De plus,
 $
 \torseurcin{V}{1}{0}=
@@ -146,10 +145,8 @@ $
 \vectv{O}{1}{0}=\vect{0}
 }{O}
 $. 
-
 On a donc  $\inertie{O}{1} \vecto{1}{0} =   \matinertie{A_1}{A_1}{0}{0}{0}{0}{\mathcal{R}_1} \begin{pmatrix} 0 \\ 0 \\  \dot{\psi} \end{pmatrix}_{\mathcal{R}_1}=\vect{0}$.
-
-On a donc :
+Au final :
 $$
 \torseurci{1}{0}=
 \torseurl{
@@ -160,6 +157,45 @@ $$
 $$
 
 \end{multicols}
+
+\begin{multicols}{2}
+\subsection*{Détermination de  $\torseurci{2}{0}_O$}
+
+$O$ est un point fixe. On a donc :
+$$
+\torseurci{1}{0}=
+\torseurl{
+m_1 \vectv{G_1}{1}{0}
+}{
+\vectmc{O_1}{1}{0} = \inertie{O}{1} \vecto{1}{0}
+}{O}
+$$
+
+\textbf{(1)} est une tige d'axe $\vect{z_0}$ et de rayon négligeable. On a donc 
+$\inertie{O}{1} =  \matinertie{A_1}{A_1}{0}{0}{0}{0}{\mathcal{R}_1} $ avec $A_1=\dfrac{m_1l_1^2}{3}$. 
+De plus,
+$
+\torseurcin{V}{1}{0}=
+\torseurl{
+\vecto{1}{0}=\dot{\psi}\vect{z_1}
+}{
+\vectv{O}{1}{0}=\vect{0}
+}{O}
+$. 
+On a donc  $\inertie{O}{1} \vecto{1}{0} =   \matinertie{A_1}{A_1}{0}{0}{0}{0}{\mathcal{R}_1} \begin{pmatrix} 0 \\ 0 \\  \dot{\psi} \end{pmatrix}_{\mathcal{R}_1}=\vect{0}$.
+Au final :
+$$
+\torseurci{1}{0}=
+\torseurl{
+\vect{0}
+}{
+\vect{0}
+}{O}
+$$
+
+\end{multicols}
+
+
 \end{corrige}
 \else
 \fi
