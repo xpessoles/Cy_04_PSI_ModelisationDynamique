@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6400) (preloaded format=pdflatex 2017.9.4)  23 NOV 2017 11:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6400) (preloaded format=pdflatex 2017.9.4)  23 NOV 2017 14:25
 entering extended mode
 **./Synthese_Helico_TrainEpi_LoiES.tex
 (Synthese_Helico_TrainEpi_LoiES.tex
@@ -2567,87 +2567,157 @@ LaTeX Font Info:    Font shape `MDB/mdput/m/n' will be
 LaTeX Font Info:    Font shape `MDB/mdput/m/n' will be
 (Font)              scaled to size 5.64001pt on input line 226.
 )
+<images/fig1.png, id=6, 836.12375pt x 628.3475pt>
+File: images/fig1.png Graphic file (type png)
+<use images/fig1.png>
+Package pdftex.def Info: images/fig1.png  used on input line 97. on input line 
+97.
+Package pdftex.def Info: Requested size: 165.79317pt x 124.59343pt on input lin
+e 97.
+<images/SysML/Exigences.png, id=7, 551.4201pt x 232.7094pt>
+File: images/SysML/Exigences.png Graphic file (type png)
+<use images/SysML/Exigences.png>
+Package pdftex.def Info: images/SysML/Exigences.png  used on input line 109. on
+ input line 109.
+Package pdftex.def Info: Requested size: 236.84843pt x 99.95656pt on input line
+ 109.
+<images/fig2.png, id=8, 2601.72pt x 1611.01875pt>
+File: images/fig2.png Graphic file (type png)
+<use images/fig2.png>
+Package pdftex.def Info: images/fig2.png  used on input line 117. on input line
+ 117.
+Package pdftex.def Info: Requested size: 189.47946pt x 117.30594pt on input lin
+e 117.
+LaTeX Font Info:    Try loading font information for TS1+mdput on input line 12
+3.
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\mathdesign\mdput\ts1mdput.fd"
+File: ts1mdput.fd 2013/08/29 Fontinst v1.933 font definitions for TS1/mdput.
+)
+LaTeX Font Info:    Font shape `TS1/mdput/m/n' will be
+(Font)              scaled to size 9.40002pt on input line 123.
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `mdput' (encoding: TS1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+
+Underfull \hbox (badness 10000) in paragraph at lines 130--132
+[]\T1/mdput/m/n/10 (+20) un moyeu cen-tral $\OML/mdput/m/it/10 S[]$ \T1/mdput/m
+/n/10 (+20) as-so-cié au re-père
+ []
+
+<images/cor1.png, id=9, 1004.75375pt x 216.81pt>
+File: images/cor1.png Graphic file (type png)
+<use images/cor1.png>
+Package pdftex.def Info: images/cor1.png  used on input line 150. on input line
+ 150.
+Package pdftex.def Info: Requested size: 213.16214pt x 45.99458pt on input line
+ 150.
 LaTeX Font Info:    Font shape `T1/mdput/b/n' will be
 (Font)              scaled to size 9.40002pt on input line 165.
-
 
 Package hyperref Warning: bookmark level for unknown exo defaults to 0.
 
 LaTeX Font Info:    Font shape `T1/mdput/m/it' will be
 (Font)              scaled to size 9.40002pt on input line 165.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 167.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 191.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 213.
+LaTeX Font Info:    Font shape `T1/mdput/m/it' will be
+(Font)              scaled to size 6.58002pt on input line 322.
+LaTeX Font Info:    Font shape `T1/mdput/m/it' will be
+(Font)              scaled to size 4.70001pt on input line 322.
 LaTeX Font Info:    Font shape `T1/mdput/m/n' will be
-(Font)              scaled to size 7.52002pt on input line 244.
+(Font)              scaled to size 7.52002pt on input line 332.
 LaTeX Font Info:    Font shape `T1/mdput/m/sl' will be
-(Font)              scaled to size 7.52002pt on input line 244.
+(Font)              scaled to size 7.52002pt on input line 332.
 LaTeX Font Info:    Font shape `T1/mdput/b/n' will be
-(Font)              scaled to size 7.52002pt on input line 244.
+(Font)              scaled to size 7.52002pt on input line 332.
 [1
 
 {C:/Users/pt_ptsi/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
 design size mismatch in local font md-utbo8t in virtual font mdputbo8t.vf ignor
 ed.
 design size mismatch in local font md-utro8t in virtual font mdputro8t.vf ignor
-ed.]
+ed. <./images/fig1.png> <./images/SysML/Exigences.png (PNG copy)> <./images/fig
+2.png> <./images/cor1.png>]
+<images/A6_coffre.png, id=31, 1048.91875pt x 555.07375pt>
+File: images/A6_coffre.png Graphic file (type png)
+<use images/A6_coffre.png>
+Package pdftex.def Info: images/A6_coffre.png  used on input line 342. on input
+ line 342.
+Package pdftex.def Info: Requested size: 165.79317pt x 87.72948pt on input line
+ 342.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 244.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 271.
-LaTeX Font Info:    Font shape `T1/mdput/m/it' will be
-(Font)              scaled to size 6.58002pt on input line 322.
-LaTeX Font Info:    Font shape `T1/mdput/m/it' will be
-(Font)              scaled to size 4.70001pt on input line 322.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 324.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 435.
-<png/logo_lycee.png, id=33, 329.23pt x 265.99374pt>
+(mdframed)              on input line 354.
+<images/SysML/Req.png, id=32, 517.935pt x 402.50375pt>
+File: images/SysML/Req.png Graphic file (type png)
+<use images/SysML/Req.png>
+Package pdftex.def Info: images/SysML/Req.png  used on input line 371. on input
+ line 371.
+Package pdftex.def Info: Requested size: 225.00528pt x 174.86047pt on input lin
+e 371.
+<images/SysML/BDD.jpg, id=33, 824.07875pt x 305.14pt>
+File: images/SysML/BDD.jpg Graphic file (type jpg)
+<use images/SysML/BDD.jpg>
+Package pdftex.def Info: images/SysML/BDD.jpg  used on input line 387. on input
+ line 387.
+Package pdftex.def Info: Requested size: 225.00528pt x 83.31544pt on input line
+ 387.
+<images/A6_schema.png, id=34, 899.36pt x 528.97626pt>
+File: images/A6_schema.png Graphic file (type png)
+<use images/A6_schema.png>
+Package pdftex.def Info: images/A6_schema.png  used on input line 392. on input
+ line 392.
+Package pdftex.def Info: Requested size: 225.00528pt x 132.34059pt on input lin
+e 392.
+<images/A6_train.png, id=35, 1077.02374pt x 518.93875pt>
+File: images/A6_train.png Graphic file (type png)
+<use images/A6_train.png>
+Package pdftex.def Info: images/A6_train.png  used on input line 429. on input 
+line 429.
+Package pdftex.def Info: Requested size: 236.84843pt x 114.11937pt on input lin
+e 429.
+
+Underfull \hbox (badness 5878) in paragraph at lines 433--446
+\T1/mdput/b/n/10 Question    [][] \T1/mdput/m/it/10 (+20) Dé-ter-mi-ner le rap-
+port de ré-duc-tion
+ []
+
+<png/logo_lycee.png, id=36, 329.23pt x 265.99374pt>
 File: png/logo_lycee.png Graphic file (type png)
 <use png/logo_lycee.png>
-Package pdftex.def Info: png/logo_lycee.png  used on input line 443. on input l
-ine 443.
+Package pdftex.def Info: png/logo_lycee.png  used on input line 447. on input l
+ine 447.
 Package pdftex.def Info: Requested size: 56.9055pt x 45.97325pt on input line 4
-43.
+47.
 LaTeX Font Info:    Font shape `T1/mdput/m/it' will be
-(Font)              scaled to size 7.52002pt on input line 443.
+(Font)              scaled to size 7.52002pt on input line 447.
 LaTeX Font Info:    Font shape `T1/pag/m/it' in size <8> not available
-(Font)              Font shape `T1/pag/m/sl' tried instead on input line 443.
-
+(Font)              Font shape `T1/pag/m/sl' tried instead on input line 447.
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 45.97325pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[2 <./png/logo_lycee.png>]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 450.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 592.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 636.
+[2 <./png/logo_lycee.png> <./images/A6_coffre.png> <./images/SysML/Req.png (PNG
+ copy)> <./images/SysML/BDD.jpg> <./images/A6_schema.png>]
+Underfull \hbox (badness 5878) in paragraph at lines 448--456
+\T1/mdput/b/n/10 Question    [][] \T1/mdput/m/it/10 (+20) Dé-ter-mi-ner le rap-
+port de ré-duc-tion
+ []
+
+<images/A6_3barres.png, id=54, 1011.78pt x 664.4825pt>
+File: images/A6_3barres.png Graphic file (type png)
+<use images/A6_3barres.png>
+Package pdftex.def Info: images/A6_3barres.png  used on input line 613. on inpu
+t line 613.
+Package pdftex.def Info: Requested size: 236.84843pt x 155.54504pt on input lin
+e 613.
 File: png/logo_lycee.png Graphic file (type png)
 <use png/logo_lycee.png>
 Package pdftex.def Info: png/logo_lycee.png  used on input line 703. on input l
 ine 703.
 Package pdftex.def Info: Requested size: 56.9055pt x 45.97325pt on input line 7
 03.
-
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 45.97325pt.
@@ -2656,10 +2726,11 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 LaTeX Font Info:    Font shape `T1/mdput/b/n' will be
 (Font)              scaled to size 11.28003pt on input line 703.
-[3]
+[3 <./images/A6_train.png> <./images/A6_3barres.png>]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 703.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 703.
- (Synthese_Helico_TrainEpi_LoiES.aux)
+
+(Synthese_Helico_TrainEpi_LoiES.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 703.
 Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 703.
 
@@ -2673,30 +2744,29 @@ l'.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 703.
  ) 
 Here is how much of TeX's memory you used:
- 42921 strings out of 493352
- 809707 string characters out of 3137163
- 1384878 words of memory out of 3000000
- 45652 multiletter control sequences out of 15000+200000
- 760823 words of font info for 236 fonts, out of 3000000 for 9000
+ 43040 strings out of 493352
+ 811508 string characters out of 3137163
+ 1378412 words of memory out of 3000000
+ 45696 multiletter control sequences out of 15000+200000
+ 765235 words of font info for 287 fonts, out of 3000000 for 9000
  1127 hyphenation exceptions out of 8191
- 57i,22n,79p,10445b,1881s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 57i,17n,77p,10445b,1881s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}{C:/Program Fi
 les (x86)/MiKTeX 2.9/fonts/enc/dvips/ly1/texnansi.enc}<C:/Program Files (x86)/M
 iKTeX 2.9/fonts/type1/mathdesign/mdput/md-utr7m.pfb><C:/Program Files (x86)/MiK
 TeX 2.9/fonts/type1/mathdesign/mdput/md-utr7t.pfb><C:/Program Files (x86)/MiKTe
-X 2.9/fonts/type1/mathdesign/mdput/md-utr7v.pfb><C:/Program Files (x86)/MiKTeX 
-2.9/fonts/type1/mathdesign/mdput/md-utr7y.pfb><C:/Program Files (x86)/MiKTeX 2.
-9/fonts/type1/mathdesign/mdput/md-utri7m.pfb><C:/Program Files (x86)/MiKTeX 2.9
-/fonts/type1/adobe/utopia/putb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
-ype1/adobe/utopia/putb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/ado
-be/utopia/putr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/adobe/utopi
-a/putr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/adobe/utopia/putri8
-a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/avantgar/uagd8a.pfb><C
-:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/avantgar/uagdo8a.pfb><C:/Progr
-am Files (x86)/MiKTeX 2.9/fonts/type1/urw/avantgar/uagko8a.pfb>
-Output written on Synthese_Helico_TrainEpi_LoiES.pdf (3 pages, 196242 bytes).
+X 2.9/fonts/type1/mathdesign/mdput/md-utr7y.pfb><C:/Program Files (x86)/MiKTeX 
+2.9/fonts/type1/mathdesign/mdput/md-utri7m.pfb><C:/Program Files (x86)/MiKTeX 2
+.9/fonts/type1/adobe/utopia/putb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts
+/type1/adobe/utopia/putb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/a
+dobe/utopia/putr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/adobe/uto
+pia/putr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/adobe/utopia/putr
+i8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/avantgar/uagd8a.pfb>
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/avantgar/uagdo8a.pfb><C:/Pro
+gram Files (x86)/MiKTeX 2.9/fonts/type1/urw/avantgar/uagko8a.pfb>
+Output written on Synthese_Helico_TrainEpi_LoiES.pdf (3 pages, 2975926 bytes).
 PDF statistics:
- 143 PDF objects out of 1000 (max. 8388607)
- 31 named destinations out of 1000 (max. 500000)
- 77922 words of extra memory for PDF output out of 89155 (max. 10000000)
+ 142 PDF objects out of 1000 (max. 8388607)
+ 21 named destinations out of 1000 (max. 500000)
+ 78484 words of extra memory for PDF output out of 89155 (max. 10000000)
 

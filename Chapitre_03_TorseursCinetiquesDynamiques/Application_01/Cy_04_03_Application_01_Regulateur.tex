@@ -11,7 +11,7 @@
 %\fichefalse
 
 \proftrue
-\proffalse
+%\proffalse
 
 \tdtrue
 %\tdfalse
@@ -100,22 +100,66 @@ Les barres \textbf{(2)} et \textbf{(3)} sont identiques, de longueur $2a$ et de 
 
 Les barres \textbf{(1)} et \textbf{(5)} ont une masse $m_i$ et des longueurs $\ell_i$. \textbf{(4)} est un volant d'inertie de masse $M$ qui fait l'objet d'une liaison pivot d'axe $\axe{G}{x_3}$ avec la barre \textbf{(3)}. Un repère $\mathcal{R}_4$ est lié à ce volant dont on définit sa position par le paramètre angulaire $\varphi$.
 
+On donne le paramétrage suivant. 
 
-
-
-\subparagraph{}
-\textit{Définir le paramétrage cinématique du problème.}
-\ifprof
-\begin{corrige}
-\end{corrige}
-\else
-\fi
+\begin{center}
+\includegraphics[width=\linewidth]{images/param2.png}
+\end{center}
+%
+%
+%\subparagraph{}
+%\textit{Définir le paramétrage cinématique du problème.}
+%\ifprof
+%\begin{corrige}
+%\end{corrige}
+%\else
+%\fi
 
 
 \subparagraph{}
 \textit{Déterminer les torseurs cinétiques suivants : $\torseurci{1}{0}_O$, $\torseurci{2}{0}_O$ et  $\torseurci{3}{0}_O$ dans $\mathcal{R}_1$, $\torseurci{4}{0}_O$ dans $\mathcal{R}_3$  et  $\torseurci{5}{0}_A$ dans $\mathcal{R}_1$.}
 \ifprof
 \begin{corrige}
+\subsection*{ ~\\
+Détermination de  $\torseurci{1}{0}_O$}
+
+\begin{multicols}{2}
+$O$ est un point fixe. On a donc :
+$$
+\torseurci{1}{0}=
+\torseurl{
+m_1 \vectv{G_1}{1}{0}
+}{
+\vectmc{O_1}{1}{0} = \inertie{O}{1} \vecto{1}{0}
+}{O}
+$$
+
+\textbf{(1)} est une tige d'axe $\vect{z_0}$ et de rayon négligeable. On a donc 
+$\inertie{O}{1} =  \matinertie{A_1}{A_1}{0}{0}{0}{0}{\mathcal{R}_1} $ avec $A_1=\dfrac{m_1l_1^2}{3}$. 
+
+De plus,
+$
+\torseurcin{V}{1}{0}=
+\torseurl{
+\vecto{1}{0}=\dot{\psi}\vect{z_1}
+}{
+\vectv{O}{1}{0}=\vect{0}
+}{O}
+$. 
+
+On a donc  $\inertie{O}{1} \vecto{1}{0} =   \matinertie{A_1}{A_1}{0}{0}{0}{0}{\mathcal{R}_1} \begin{pmatrix} 0 \\ 0 \\  \dot{\psi} \end{pmatrix}_{\mathcal{R}_1}=\vect{0}$.
+
+On a donc :
+$$
+\torseurci{1}{0}=
+\torseurl{
+\vect{0}
+}{
+\vect{0}
+}{O}
+$$
+
+\end{multicols}
 \end{corrige}
 \else
 \fi
