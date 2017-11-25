@@ -172,7 +172,7 @@ m_2 \vectv{G_2}{2}{0}
 $$
 
 \textbf{(2)} est une tige d'axe $\vect{z_2}$ et de rayon négligeable. On a donc 
-$\inertie{G_2}{2} =  \matinertie{A_2}{A_2}{0}{0}{0}{0}{\mathcal{R}_2} $ avec $A_2=\dfrac{m_2l_2^2}{3}$. 
+$\inertie{O_2}{2} =  \matinertie{A_2}{A_2}{0}{0}{0}{0}{\mathcal{R}_2} $ avec $A_2=\dfrac{4ma^2}{3}=$. 
 De plus,
 $
 \torseurcin{V}{2}{0}=
@@ -185,9 +185,10 @@ $.
 
 $\vectv{G_2}{2}{0}=\vectv{O}{2}{0}+\vect{G_2O}\wedge\vecto{2}{0}
 =-a\vect{z_2}\wedge \left(\dot{\psi}\vect{z_1}+\dot{\theta}\vect{y_2}\right)
-=a \left(\dot{\psi}\sin\theta\vect{y_1}+\dot{\theta}\vect{x_2}\right)$
+=a \left(\dot{\psi}\sin\theta\vect{y_1}+\dot{\theta}\vect{x_2}\right)
+=a \left(\dot{\psi}\sin\theta\vect{y_1}+\dot{\theta}\left( \cos\theta \vect{x_1}-\sin\theta \vect{z_1}\right)\right)$
 
-On a donc  $\inertie{G_2}{2} \vecto{2}{0} =   \matinertie{A_2}{A_2}{0}{0}{0}{0}{\mathcal{R}_2} \begin{pmatrix} -\dot{\psi}\sin\theta \\ \dot{\theta} \\  \dot{\psi}\cos\theta \end{pmatrix}_{\mathcal{R}_2}=
+On a donc  $\inertie{O_2}{2} \vecto{2}{0} =   \matinertie{A_2}{A_2}{0}{0}{0}{0}{\mathcal{R}_2} \begin{pmatrix} -\dot{\psi}\sin\theta \\ \dot{\theta} \\  \dot{\psi}\cos\theta \end{pmatrix}_{\mathcal{R}_2}=
  \begin{pmatrix} -A_2\dot{\psi}\sin\theta \\ A_2\dot{\theta} \\  0 \end{pmatrix}_{\mathcal{R}_2}$.
  
  
@@ -195,9 +196,13 @@ Au final :
 $$
 \torseurci{2}{0}=
 \torseurl{
-%\vect{0}
+m\begin{pmatrix}
+ a\dot{\theta}\cos\theta\\
+ a\dot{\psi}\sin\theta \\
+ -a\dot{\theta}\sin\theta
+\end{pmatrix}_{\mathcal{R}_1}
 }{
-%\vect{0}
+\begin{pmatrix} -A_2\dot{\psi}\sin\theta \\ A_2\dot{\theta} \\  0 \end{pmatrix}_{\mathcal{R}_2}
 }{O}
 $$
 
