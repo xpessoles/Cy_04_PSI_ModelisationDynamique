@@ -188,7 +188,9 @@ $\vectv{G_2}{2}{0}=\vectv{O}{2}{0}+\vect{G_2O}\wedge\vecto{2}{0}
 =a \left(\dot{\psi}\sin\theta\vect{y_1}+\dot{\theta}\vect{x_2}\right)
 =a \left(\dot{\psi}\sin\theta\vect{y_1}+\dot{\theta}\left( \cos\theta \vect{x_1}-\sin\theta \vect{z_1}\right)\right)$
 
-On a donc  $\inertie{O_2}{2} \vecto{2}{0} =   \matinertie{A_2}{A_2}{0}{0}{0}{0}{\mathcal{R}_2} \begin{pmatrix} -\dot{\psi}\sin\theta \\ \dot{\theta} \\  \dot{\psi}\cos\theta \end{pmatrix}_{\mathcal{R}_2}=
+On a donc 
+
+$\inertie{O_2}{2} \vecto{2}{0} =   \matinertie{A_2}{A_2}{0}{0}{0}{0}{\mathcal{R}_2} \begin{pmatrix} -\dot{\psi}\sin\theta \\ \dot{\theta} \\  \dot{\psi}\cos\theta \end{pmatrix}_{\mathcal{R}_2}=
  \begin{pmatrix} -A_2\dot{\psi}\sin\theta \\ A_2\dot{\theta} \\  0 \end{pmatrix}_{\mathcal{R}_2}$.
  
  
@@ -203,6 +205,106 @@ ma\begin{pmatrix}
 \end{pmatrix}_{\mathcal{R}_1}
 }{
 \begin{pmatrix} -A_2\dot{\psi}\sin\theta \\ A_2\dot{\theta} \\  0 \end{pmatrix}_{\mathcal{R}_2}
+}{O}
+%$$
+%$$
+%\torseurci{2}{0}=
+%\torseurl{
+%ma\begin{pmatrix}
+% \dot{\theta}\cos\theta\\
+% \dot{\psi}\sin\theta \\
+% -\dot{\theta}\sin\theta
+%\end{pmatrix}_{\mathcal{R}_1}
+%}{
+%\begin{pmatrix} -A_2\dot{\psi}\sin\theta \\ A_2\dot{\theta} \\  0 \end{pmatrix}_{\mathcal{R}_2}
+%}{O}
+%$$
+%
+%$$
+%\torseurci{2}{0}
+=
+\torseurl{
+ma\begin{pmatrix}
+ \dot{\theta}\cos\theta\\
+ \dot{\psi}\sin\theta \\
+ -\dot{\theta}\sin\theta
+\end{pmatrix}_{\mathcal{R}_1}
+}{
+\begin{pmatrix} 
+-A_2\dot{\psi}\sin\theta\cos\theta \\ 
+A_2\dot{\theta} \\  
+A_2\dot{\psi}\sin\theta\sin\theta 
+\end{pmatrix}_{\mathcal{R}_1}
+}{O}
+$$
+
+\end{multicols}
+
+
+
+\begin{multicols}{2}
+\subsection*{Détermination de  $\torseurci{3}{0}_O$}
+******************
+Au point $G_3$, on a :
+$$
+\torseurci{3}{0}=
+\torseurl{
+m_3 \vectv{G_3}{3}{0}
+}{
+\vectmc{G_3}{3}{0} %= \inertie{G_2}{1} \vecto{2}{0}
+}{O}
+$$
+
+\textbf{(3)} est une tige d'axe $\vect{x_3}$ et de rayon négligeable. On a donc 
+$\inertie{G_3}{3} =  \matinertie{0}{B_3}{B_3}{0}{0}{0}{\mathcal{R}_3} $ avec $A_4=\dfrac{4ma^2}{3}=$. 
+De plus,
+$
+\torseurcin{V}{3}{0}=
+\torseurl{
+\vecto{3}{0}=\dot{\psi}\vect{z_1}+\dot{\theta}_3\vect{y_3}
+}{
+\vectv{G_3}{3}{0}
+}{G_3}
+$. 
+
+$\vectv{G_3}{3}{0}
+%=\vectv{O}{2}{0}+\vect{G_2O}\wedge\vecto{2}{0}
+%=-a\vect{z_2}\wedge \left(\dot{\psi}\vect{z_1}+\dot{\theta}\vect{y_2}\right)
+%=a \left(\dot{\psi}\sin\theta\vect{y_1}+\dot{\theta}\vect{x_2}\right)
+%=a \left(\dot{\psi}\sin\theta\vect{y_1}+\dot{\theta}\left( \cos\theta \vect{x_1}-\sin\theta \vect{z_1}\right)\right)$
+$
+
+On a donc 
+
+$\inertie{O_2}{2} \vecto{2}{0} =   \matinertie{A_2}{A_2}{0}{0}{0}{0}{\mathcal{R}_2} \begin{pmatrix} -\dot{\psi}\sin\theta \\ \dot{\theta} \\  \dot{\psi}\cos\theta \end{pmatrix}_{\mathcal{R}_2}=
+ \begin{pmatrix} -A_2\dot{\psi}\sin\theta \\ A_2\dot{\theta} \\  0 \end{pmatrix}_{\mathcal{R}_2}$.
+ 
+ 
+Au final :
+$$
+\torseurci{2}{0}=
+\torseurl{
+ma\begin{pmatrix}
+ \dot{\theta}\cos\theta\\
+ \dot{\psi}\sin\theta \\
+ -\dot{\theta}\sin\theta
+\end{pmatrix}_{\mathcal{R}_1}
+}{
+\begin{pmatrix} -A_2\dot{\psi}\sin\theta \\ A_2\dot{\theta} \\  0 \end{pmatrix}_{\mathcal{R}_2}
+}{O}
+=
+\torseurl{
+ma\begin{pmatrix}
+ \dot{\theta}\cos\theta\\
+ \dot{\psi}\sin\theta \\
+ -\dot{\theta}\sin\theta
+\end{pmatrix}_{\mathcal{R}_1}
+}{
+\begin{pmatrix} 
+-A_2\dot{\psi}\sin\theta\cos\theta \\ 
+A_2\dot{\theta} \\  
+A_2\dot{\psi}\sin\theta\sin\theta 
+\end{pmatrix}_{\mathcal{R}_1}
 }{O}
 $$
 
