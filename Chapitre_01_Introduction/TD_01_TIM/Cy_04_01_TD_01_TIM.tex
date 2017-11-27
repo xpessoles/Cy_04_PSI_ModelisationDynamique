@@ -92,16 +92,20 @@ Chapitre 1 -- \xxactivite%
 \def\pathfig{images}
 
 \ifprof
-\begin{multicols}{2}
+%\begin{multicols}{2}
 \else
 \begin{multicols}{2}
 \fi
 
-
+\ifprof
+\else
 L’éco-marathon SHELL est une compétition relative à la consommation énergétique des moyens de propulsion automobile. Les concurrents doivent concevoir et piloter leur véhicule sur une distance fixée avec une vitesse minimale imposée.  Les candidats sont ensuite classés en fonction de la consommation de leur véhicule, exprimée en «~kilomètre par litre~» de carburant. L’étude sur ce sujet, issue d’un projet élaboré par l’équipe T.I.M. de l’INSA Toulouse, a pour objet de quantifier les effets résistants et dissipatifs que sont la résistance au roulement et les actions aérodynamiques sur les performances de leur véhicule. Les effets inertiels étant plutôt quantifiés numériquement au niveau de la conception assistée par ordinateur du véhicule. 
+\fi
 
 \subsection*{Détermination expérimentale du coefficient de résistance au roulement}
 
+\ifprof
+\else
 Le principe est présenté sur la figure 1. On place 2 roues lestées sur un dispositif inclinable. On considère ensuite que l’angle d’inclinaison minimum de la pente, où il y a début du mouvement des roues, est représentatif de la résistance au roulement.  
 L’ensemble des 2 roues lestées peut être assimilé au solide \textbf{1} représenté sur la figure 1, de masse $m$, de rayon $R$ et de centre de masse $G$. 
 
@@ -118,7 +122,7 @@ Cette action de contact peut s’écrire :$\torseurstat{T}{0}{1}=\torseurl{-T_{0
 
 %\subparagraph{}
 %\textit{Réaliser un schéma illustrant les actions de contact. Préciser dans quel cas on se ici : limite du glissement sans roulement ou limite du roulement sans glissement ?}
-
+\fi
 \subparagraph{}
 \textit{Écrire le principe fondamental de la statique appliqué au solide \textbf{1} réduit au point $G$ en projection sur la base $\base{x}{y}{z}$.}
 \ifprof
@@ -176,6 +180,8 @@ $r=\SI{0,002}{m}$.
 \fi
 \subsection*{Modélisation du véhicule}
 
+\ifprof
+\else
 
 L’objectif est d’établir un modèle analytique du véhicule, lors d’une phase de roulement sans glissement sur une ligne droite inclinée d’un angle $\alpha$, en l’absence de vent. En adoptant des conditions particulières d’essai, il sera possible d’identifier précisément, grâce à ce modèle, les actions aérodynamiques. 
 
@@ -197,7 +203,7 @@ $\torseurl{-\dfrac{1}{2}\rho S C_x \dot{x}^2 \vect{x}}{\vect{0}}{O_{23}}$ avec $
 \begin{center}
 \includegraphics[width=\linewidth]{images/fig_03}
 \end{center}
-
+\fi
 
 \subparagraph{}
 \textit{Écrire les équations scalaires découlant des conditions de Roulement Sans Glissement (RSG) aux point $A_{23}$ et 
@@ -260,6 +266,27 @@ $-rN_{04}+RT_{04}+C_m=I\ddot{\theta}_{4}$.
 $C_m=\left( M+3m\right)g\cos\alpha r + \left[\dfrac{3I}{R}+R\left( M+3m\right) \right]\ddot{x}-R\left( M+3m\right)g\sin\alpha+\dfrac{1}{2}R\rho S C_x \dot{x}^2$. }
 \ifprof
 \begin{corrige}
+On a :
+%$-rN_{023}=-RT_{023}+2I\ddot{\theta}_{23}$x
+%
+%$R \dot{\theta}_{4} = \dot{x}$x
+%$R \dot{\theta}_{23}= \dot{x}$x
+%\begin{itemize}
+%\item $\left(M+3m\right)g\sin \alpha -\dfrac{1}{2}\rho S C_x \dot{x}^2-\left(M+3m\right)\ddot{x}=T_{04}+T_{023}$
+%\item x$ N_{04}=-N_{023}+\left(M+3m\right)g \cos \alpha$
+%\end{itemize}
+%
+$C_m=I\ddot{\theta}_{4}+rN_{04}-RT_{04}$ $=\dfrac{I}{R}\ddot{x}+rN_{04}-RT_{04}$
+$=\dfrac{I}{R}\ddot{x}-rN_{023}+r\left(M+3m\right)g \cos \alpha -RT_{04}$
+$=\dfrac{I}{R}\ddot{x}-RT_{023}+2I\ddot{\theta}_{23}+r\left(M+3m\right)g \cos \alpha -RT_{04}$
+$=\dfrac{I}{R}\ddot{x}+\dfrac{2I}{R}\ddot{x}+r\left(M+3m\right)g \cos \alpha -R\left(\left(M+3m\right)g\sin \alpha -\dfrac{1}{2}\rho S C_x \dot{x}^2-\left(M+3m\right)\ddot{x}\right)$. 
+
+$C_m=r\left(M+3m\right)g \cos \alpha+\left(\dfrac{3I}{R}+R\left(M+3m\right)\right)\ddot{x} +\left(-R\left(M+3m\right)g\sin \alpha+ R\dfrac{1}{2}\rho S C_x \dot{x}^2\right)$. 
+
+\begin{flushright}
+\textit{CQFD.}
+\end{flushright}
+
 \end{corrige}
 \else
 \fi
@@ -268,6 +295,9 @@ $C_m=\left( M+3m\right)g\cos\alpha r + \left[\dfrac{3I}{R}+R\left( M+3m\right) \
 \textit{Identifier dans l’expression de $C_m$ les différentes actions qui ont tendance à affecter l’avancement du véhicule. }
 \ifprof
 \begin{corrige}
+
+$$C_m=\underbrace{\left(M+3m\right)gr \cos \alpha}_{\text{Résistance au roulement}}-\underbrace{\left(M+3m\right)gR\sin \alpha}_{\text{Couple pour monter la pente}}+\underbrace{\left(\dfrac{3I}{R}+R\left(M+3m\right)\right)\ddot{x}}_{\text{Couple pour vaincre les effets d'inertie}} + \underbrace{R\dfrac{1}{2}\rho S C_x \dot{x}^2}_{\text{Couple pour vaincre la trainée}}$$. 
+
 \end{corrige}
 \else
 \fi
@@ -277,10 +307,14 @@ $C_m=\left( M+3m\right)g\cos\alpha r + \left[\dfrac{3I}{R}+R\left( M+3m\right) \
 \textit{Déterminer l’expression du couple moteur $C_m$ quand le véhicule a une vitesse constante $V$ sur une piste horizontale. }
 \ifprof
 \begin{corrige}
+À vitesse constante sur du plat, on a :
+$$C_m=\underbrace{\left(M+3m\right)gr}_{\text{Résistance au roulement}} + \underbrace{R\dfrac{1}{2}\rho S C_x \dot{x}^2}_{\text{Couple pour vaincre la trainée}}$$. 
 \end{corrige}
 \else
 \fi
 
+\ifprof
+\else
 On réalise un essai du véhicule sur terrain horizontal, le moteur du véhicule délivrant un couple $C_m$ constant.   
 Les données véhicules sont :  $M = \SI{70}{kg}$, $m = \SI{1}{kg}$, $r = {2.10^{-3}}\text{m}$, $R = \SI{0,25}{m}$, $C_m= \SI{3,245}{m.N}$, $g = \SI{10}{ms^{-2}}$. L’acquisition des paramètres vitesse véhicule et distance parcourue sont visualisés par les graphes ci-dessous. 
 
@@ -288,11 +322,14 @@ Les données véhicules sont :  $M = \SI{70}{kg}$, $m = \SI{1}{kg}$, $r = {2.10^
 \begin{center}
 \includegraphics[width=\linewidth]{images/fig_04}
 \end{center}
+\fi
 
 \subparagraph{}
 \textit{Déterminer dans les conditions d’essais le produit $\dfrac{1}{2}\rho S C_x$ caractérisant les effets aérodynamiques sur le véhicule. On précisera les unités. }
 \ifprof
 \begin{corrige}
+La vitesse constante atteinte sur les graphes est de $\SI{17}{m.s^{-1}}$.  Par ailleurs 
+$\dfrac{1}{2}\rho S C_x=\dfrac{C_m-\left(M+3m\right)gr}{R\dot{x}^2} =\dfrac{3,245-\left(70+3\cdot 1\right)\cdot 10 \cdot 0,002}{0,25\cdot 17^2}=\SI{0,025}{kg.m^{-1}}.$
 \end{corrige}
 \else
 \fi
@@ -309,6 +346,8 @@ Les données véhicules sont :  $M = \SI{70}{kg}$, $m = \SI{1}{kg}$, $r = {2.10^
 
 
 
+\ifprof
+\else
 \begin{enumerate}
 \item $-T_{01} +mg\sin\alpha = 0$; $N_{01} -mg\cos\alpha = 0$; $C_r=RT_{01}$.
 \item $\tan \alpha_{\text{lim}} = \dfrac{r}{R}$.
@@ -320,12 +359,13 @@ Les données véhicules sont :  $M = \SI{70}{kg}$, $m = \SI{1}{kg}$, $r = {2.10^
 \item $\,$
 \item $\,$
 \item $\,$
-\item $\dfrac{1}{2}\rho S C_x = \SI{0,028}{kg.m^{-1}}$.
+\item $\dfrac{1}{2}\rho S C_x = \SI{0,025}{kg.m^{-1}}$.
 \item $\alpha=1\degres$.
 \end{enumerate}
+\fi
 
 \ifprof
-\end{multicols}
+%\end{multicols}
 \else
 \end{multicols}
 \fi
