@@ -42,15 +42,21 @@
 \def\xxonglet{\textsf{Rév -- Cin}}
 
 \def\xxactivite{Application 01}
-\def\xxauteur{\textsl{Équipe PT -- PT$\star$ La Martinière Monplaisir}}
+\def\xxauteur{\textsl{Équipe PTSI La Martinière Monplaisir}}
 
 
-\def\xxtitreexo{Toitures}
-\def\xxsourceexo{\hspace{.2cm} \footnotesize{Équipe PT -- PT$\star$ La Martinière Monplaisir}}
+\def\xxtitreexo{}
+\def\xxsourceexo{\hspace{.2cm} \footnotesize{Équipe PTSI La Martinière Monplaisir}}
 
 \def\xxcompetences{%
 \textsl{%
 \textbf{Savoirs et compétences :}\\
+\begin{itemize}
+\item Appliquer le principe fondamental de la statique à un solide ou un système de solides;
+\item Réaliser l’inventaire des actions mécaniques agissant sur un solide ou un système de solides;
+\item Identifier les paramètres cinématiques d’entrée et de sortie d’une chaîne cinématique de transformation de mouvement;
+\item Identifier les puissances extérieures à un solide ou à un système de solides.
+\end{itemize}
 }}
 
 \def\xxfigures{
@@ -69,7 +75,7 @@ Fiche 1 -- \xxactivite%
 \begin{document}
 %\chapterimage{png/Fond_Cin}
 \input{style/new_pagegarde}
-\vspace{4cm}
+\vspace{6cm}
 \pagestyle{fancy}
 \thispagestyle{plain}
 
@@ -81,69 +87,47 @@ Fiche 1 -- \xxactivite%
 \else
 \begin{multicols}{2}
 \fi
-\section*{Toit de stade}
-Un toit de stade représenté sur la figure suivante est sollicité par son propre poids  avec $q=\SI{-5}{kN/m}$.  On donne $a=\SI{4}{m}$, $b=\SI{5}{m}$. Les liaisons sont supposées être des liaisons pivot parfaites.
-\begin{center}
-\includegraphics[width=.9\linewidth]{images/fig_01}
-\end{center}
+\section*{Étude d'un mécanisme de levage}
+Le mécanisme représenté schématiquement ci-dessus est destiné à assurer le levage d’une charge liée au coulisseau \textbf{(3)} au moyen d’un levier à excentrique \textbf{(1)} et d’un balancier \textbf{(2)}.
 
 \begin{center}
-\includegraphics[width=.9\linewidth]{images/fig_02}
+\includegraphics[width=\linewidth]{images/fig_01}
+%\textit{}
 \end{center}
+\begin{obj}
+Objectif : Dans cette étude, on va mettre en évidence l’influence du frottement sur l’équilibre d’un système.
+\end{obj}
 
-\subparagraph{}\textit{Tracer le graphe de structure. Définir le nombre d'inconnues statiques.}
+On note  $\vect{P_3}$ le poids de la charge appliquée sur le coulisseau et $\vect{F_m}$ l’effort appliqué en $E$ par l’opérateur sur le levier à excentrique \textbf{(1)}.
 
-\subparagraph{}\textit{Donner la stratégie permettant de déterminer toutes les inconnues de liaisons.}
+\subsection*{Paramétrage géométrique}
+$\vect{AB}=L_0\vect{x_0}$; 
+$\vect{AE}=-L_1\vect{x_1}$; 
+$\vect{BI}=d_0\vect{x_0}$; 
+$\vect{AC}=e_1\vect{x_1}$; 
+$\vect{HC}=R_1\vect{y_2}$; 
+$\vect{BJ}=\lambda_{32}\vect{x_2}$; 
+$\vect{ID}=\lambda_{30}\vect{y_0}$; 
+$\vect{JD}=R_3\vect{y_2}$; 
+$\left(\vect{x_0},\vect{x_1} \right)=\theta_{\left(1/0\right)}$; 
+$\left(\vect{x_0},\vect{x_2} \right)=\theta_{\left(2/0\right)}$.
+ 	 	 	 	 
 
-\subparagraph{}\textit{Déterminer les actions mécaniques dans toutes les liaisons.}
+\subsection*{On suppose dans un premier temps que toutes les liaisons sont sans frottement.}
+\subparagraph{}\textit{Justifier que le système est statiquement plan.}
+\subparagraph{}\textit{En écrivant les équations associées à l’équilibre de chacune des pièces, établir la relation liant $F_m$ et $P_3$ à l’équilibre.   \textit{On cherchera à écrire le minimum d'équations.}}
+%\subparagraph{}\textit{Indiquer quelles sont les équations qui auraient pu permettre de trouver cette relation sans écrire tout le système d’équation.}
+\subparagraph{}\textit{Pour quelle(s) valeur(s) particulières de $\theta_{1/0}$ l’équilibre est-il possible avec un effort $F_m$ nul ?}
+\subparagraph{}\textit{Établir les équations permettant de relier la translation $\lambda_{3/0}$ du coulisseau, la position angulaire $\theta_{(1/0)}$ et les constantes géométriques du mécanisme.}
+\subparagraph{}\textit{En établissant un bilan de puissance, vérifier les relations obtenues.}
 
+\subsection*{On suppose que les contacts en $H$ et $J$ s’effectuent avec frottement de même coefficient $f$}
 
-\section*{Toit en béton armé}
-\setcounter{exo}{0}
-\begin{center}
-\includegraphics[width=.9\linewidth]{images/fig_03}
-\end{center}
+\subparagraph{}\textit{On suppose que les contacts en $H$ et $J$ s’effectuent avec frottement de même coefficient $f$. Reprendre la question 2 dans le cadre de cette hypothèse. On se place dans la situation de descente de la charge.}
 
-Les entrées et sorties d’un garage souterrain sont couvertes par un avant toit en béton armé $[ABC]$. Ce toit est en appui en $A$ sur un massif et en $B$ sur un mur incliné $[BD]$. Le toit est soumis à une charge uniformément répartie $p$. On donne :
-$a=\SI{5}{m}$; $b=\SI{2}{m}$; $c=\SI{3}{m}$ et $p=\SI{-3}{kN/m}$.
+Distinguer deux situations, selon que $J$ est situé au-dessus ou en dessous de l’axe $\left(B,\vect{x_0}\right)$.
+\subparagraph{}\textit{Définir le domaine de valeurs de $\theta_{(1/0)}$ pour lequel l’équilibre du système est possible sans exercer d’effort sur le levier \textbf{(1)} ($F_m = 0$)}.
 
-
-\subparagraph{}\textit{Tracer le graphe de structure. Définir le nombre d'inconnues statiques.}
-
-\subparagraph{}\textit{Donner la stratégie permettant de déterminer toutes les inconnues de liaisons.}
-
-\subparagraph{}\textit{Déterminer les actions mécaniques dans toutes les liaisons.}
-
-
-
-\section*{Paroi rigide amovible}
-\setcounter{exo}{0}
-
-La figure ci-dessous représente de profil une véranda équipée d'une paroi amovible. Cette paroi repérée \textbf{(1)} peut être totalement escamotée sous le toit au moyen d'un guidage dans un rail fixé sur la poutre supérieure, par l'intermédiaire d'un galet de centre $D$ non représenté sur le schéma. Le levier (2) permet de soulever la partie inférieure de la paroi \textbf{(1)}. Un vérin électrique \textbf{(3)}-\textbf{(4)} ; articulé en $B$ et $E$ assure la mise en mouvement de l'ensemble.
-
-\begin{center}
-\includegraphics[width=.9\linewidth]{images/fig_04}
-\end{center}
-
-On a : 
-\begin{itemize}
-\item $\vect{EA}=a_0\vect{x_0} + b_0\vect{y_0}$;
-\item $\vect{BA}=d_2\vect{x_2}$;
-\item $\vect{CA}=L_2\vect{x_0}$;
-\item $\vect{EB}=d_4\vect{y_0}$;
-\item $\vect{CD}=L_1\vect{x_1}$;
-\item $\vect{HD}=H_1\vect{x_1}$;
-\item $\left(\vect{x_0},\vect{x_2}\right)=\theta_{10}$ et $\left(\vect{x_0},\vect{u_0}\right)=\alpha_{0}$.
-\end{itemize}
-L'action du corps de vérin \textbf{(4)} sur la tige \textbf{(3)} est notée $\vect{F_{43}}\vect{y_0}=F_m$.
-
-L'action de pesanteur sur la paroi \textbf{(1)} est modélisée par une action répartie $p_0$. Le poids des autres éléments est supposé négligeable.
-
-\subparagraph{}\textit{Tracer le graphe de structure. Définir le nombre d'inconnues statiques.}
-
-\subparagraph{}\textit{Donner la stratégie permettant de déterminer la valeur de la poussée $F_m$ en fonction de $p_0$.}
-
-\subparagraph{}\textit{Déterminer les actions mécaniques dans toutes les liaisons.}
 
 \ifprof
 \else
