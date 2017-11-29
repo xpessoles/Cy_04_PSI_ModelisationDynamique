@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6400) (preloaded format=pdflatex 2017.9.4)  17 NOV 2017 11:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6400) (preloaded format=pdflatex 2017.9.4)  29 NOV 2017 14:06
 entering extended mode
 **./Cy_04_Ch_02_GeometrieMasses.tex
 (Cy_04_Ch_02_GeometrieMasses.tex
@@ -2925,27 +2925,6 @@ Package microtype Info: Loading generic protrusion settings for font family
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 154.
-<png/logo_lycee.png, id=74, 329.23pt x 265.99374pt>
-File: png/logo_lycee.png Graphic file (type png)
-<use png/logo_lycee.png>
-Package pdftex.def Info: png/logo_lycee.png  used on input line 165. on input l
-ine 165.
-Package pdftex.def Info: Requested size: 56.9055pt x 45.97325pt on input line 1
-65.
-LaTeX Font Info:    Font shape `T1/mdput/m/it' will be
-(Font)              scaled to size 7.52002pt on input line 165.
-LaTeX Font Info:    Font shape `T1/pag/m/it' in size <8> not available
-(Font)              Font shape `T1/pag/m/sl' tried instead on input line 165.
-
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 45.97325pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-LaTeX Font Info:    Font shape `T1/mdput/b/n' will be
-(Font)              scaled to size 11.28003pt on input line 165.
-[3 <./png/logo_lycee.png> <./images/fig_04.png>]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 165.
@@ -2954,6 +2933,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 165--166
 
  []
 
+<png/logo_lycee.png, id=74, 329.23pt x 265.99374pt>
+File: png/logo_lycee.png Graphic file (type png)
+<use png/logo_lycee.png>
+Package pdftex.def Info: png/logo_lycee.png  used on input line 175. on input l
+ine 175.
+Package pdftex.def Info: Requested size: 56.9055pt x 45.97325pt on input line 1
+75.
+LaTeX Font Info:    Font shape `T1/mdput/m/it' will be
+(Font)              scaled to size 7.52002pt on input line 175.
+LaTeX Font Info:    Font shape `T1/pag/m/it' in size <8> not available
+(Font)              Font shape `T1/pag/m/sl' tried instead on input line 175.
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 45.97325pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+LaTeX Font Info:    Font shape `T1/mdput/b/n' will be
+(Font)              scaled to size 11.28003pt on input line 175.
+[3 <./png/logo_lycee.png> <./images/fig_04.png>]
 Package mdframed Info: Not enough space on this page on input line 175.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
@@ -3182,11 +3181,11 @@ Package logreq Info: Writing requests to 'Cy_04_Ch_02_GeometrieMasses.run.xml'.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 244.
  ) 
 Here is how much of TeX's memory you used:
- 54499 strings out of 493352
- 1141120 string characters out of 3137163
- 1828808 words of memory out of 3000000
- 56962 multiletter control sequences out of 15000+200000
- 797468 words of font info for 315 fonts, out of 3000000 for 9000
+ 54491 strings out of 493352
+ 1140990 string characters out of 3137163
+ 1831761 words of memory out of 3000000
+ 56958 multiletter control sequences out of 15000+200000
+ 797197 words of font info for 312 fonts, out of 3000000 for 9000
  1127 hyphenation exceptions out of 8191
  57i,22n,98p,10474b,3031s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\pt_ptsi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi64
@@ -3206,7 +3205,7 @@ pia/putri8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/avantgar/uag
 d8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/avantgar/uagk8a.pfb>
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/avantgar/uagko8a.pfb><C:/Pro
 gram Files (x86)/MiKTeX 2.9/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on Cy_04_Ch_02_GeometrieMasses.pdf (6 pages, 2156289 bytes).
+Output written on Cy_04_Ch_02_GeometrieMasses.pdf (6 pages, 2156019 bytes).
 PDF statistics:
  240 PDF objects out of 1000 (max. 8388607)
  31 named destinations out of 1000 (max. 500000)

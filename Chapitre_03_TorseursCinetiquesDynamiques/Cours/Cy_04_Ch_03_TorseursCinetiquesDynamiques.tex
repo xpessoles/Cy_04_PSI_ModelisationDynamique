@@ -68,7 +68,7 @@
 
 \def\xxpied{%
 Cycle 04 -- Modéliser le comportement des systèmes mécaniques\\% afin de valider leurs performances.\\
-Chapitre 2 -- \xxactivite%
+Chapitre 3 -- \xxactivite%
 }
 
 \setcounter{secnumdepth}{5}
@@ -182,7 +182,7 @@ $$
 \item La résultante du torseur cinétique $\overrightarrow{R_c}(S/R_0)$ s'exprime en $\text{kg m s}^{-1}$ et ne dépend pas du point $A$ mais uniquement du centre d'inertie $G$ de $S$ (de masse $m$) :
 $\vectrc{S}{R_0}=m\;\overrightarrow{V}(G/R_0)$.
 
-\item Le moment cinétique dépend du point A et peut s'exprimer avec la formule fondamentale de changement de point : $\vectmc{B}{S}{R_0}=\vectmc{A}{S}{R_0}+\overrightarrow{BA}\wedge \overrightarrow{R_c}(S/R_0)$.
+\item Le moment cinétique dépend du point $A$ et peut s'exprimer avec la formule fondamentale de changement de point : $\vectmc{B}{S}{R_0}=\vectmc{A}{S}{R_0}+\overrightarrow{BA}\wedge \overrightarrow{R_c}(S/R_0)$.
 \end{itemize}
 
 \end{definition}
@@ -225,6 +225,7 @@ $$
 %\end{itemize}
 \end{prop}
 
+
 %\begin{demonstration}
 %\begin{texteCache}
 %\begin{align*}
@@ -245,6 +246,7 @@ $
 \vectmc{G}{S}{R_0}=\inertie{G}{S}\cdot \vecto{S}{R_0}.
 $
 \end{itemize}
+
 
 
 \subsection{Méthodologie de Calcul}
@@ -441,6 +443,7 @@ $$
 
 \end{definition}
 
+
 %\begin{demonstration}[Résultante dynamique]
 
 %\begin{texteCache}
@@ -486,6 +489,9 @@ $$
 \end{itemize}
 \end{prop}
 
+
+
+
 \subsection{Cas particuliers}
 
 %\begin{rem}
@@ -503,6 +509,9 @@ $$
 
 \end{itemize}
 %\end{rem}
+
+
+
 
 
 
@@ -618,6 +627,73 @@ On donne l'algorigramme de calcul du moment dynamique sur la figure \ref{algo_mo
       \bibitem[2]{ref2} Florestan Mathurin, {\it Correction des SLCI, Lycée Bellevue, Toulouse, \url{http://florestan.mathurin.free.fr/}.}
 %      \bibitem[3]{ref3} Robert Papanicola, {\it Opérateurs d'inetie, Lycée Charlemagne, Paris, \url{http://sciences-indus-cpge.papanicola.info/}.}
 \end{thebibliography}
+
+\newpage
+
+\section*{Bilan}
+
+\begin{center}
+\rotatebox{90}{
+\begin{tabular}{|c|c|c|c|}
+\hline
+Point considéré & Point quelconque $A$ & Centre de gravité $G$  & Point fixe dans $\mathcal{R}_0$ $A$  \\
+\hline
+&&& \\
+Torseur cinétique$\torseurcin{C}{S}{R_0}$
+& 
+$\torseurl{
+\overrightarrow{R_c}(S/R_0)=m\;\overrightarrow{V}(G/R_0)
+}{\vectmc{A}{S}{R_0}=\inertie{A}{S}\cdot \vecto{S}{R_0}+m\;\vect{AG}\wedge \vectv{A}{S}{R_0}
+}{A}$ 
+&
+$\torseurl{
+\overrightarrow{R_c}(S/R_0)=m\;\overrightarrow{V}(G/R_0)
+}{
+\vectmc{G}{S}{R_0}=\inertie{G}{S}\cdot \vecto{S}{R_0}
+}{G}$
+&
+$\torseurl{
+\overrightarrow{R_c}(S/R_0)=m\;\overrightarrow{V}(G/R_0)
+}{
+\vectmc{A}{S}{R_0}=\inertie{A}{S}\cdot \vecto{S}{R_0}
+}{A}$
+\\
+&&& \\ \hline
+&&& \\
+Torseur dynamique $
+\torseurcin{D}{S}{R_0}$ & 
+$
+\torseurl{
+\overrightarrow{R_d}(S/R_0)=m\;\overrightarrow{\Gamma}(G/R_0)
+}{
+\vectmd{A}{S}{R_0}=\left[\frac{\dd \vectmc{A}{S}{R_0}}{\dd t}\right]_{R_0}+\overrightarrow{V(A/R_0)}\wedge \overrightarrow{R_c}(S/R_0)
+}{A}
+$
+&
+$
+\torseurl{
+\overrightarrow{R_d}(S/R_0)=m\;\overrightarrow{\Gamma}(G/R_0)
+}{
+\vectmd{G}{S}{R_0}=\left[\frac{\dd \vectmc{G}{S}{R_0}}{\dd t}\right]_{R_0}
+}{G}
+$
+&
+$
+\torseurl{
+\overrightarrow{R_d}(S/R_0)=m\;\overrightarrow{\Gamma}(G/R_0)
+}{
+\vectmd{O}{S}{R_0}=\left[\frac{\dd \vectmc{A}{S}{R_0}}{\dd t}\right]_{R_0}
+}{A}
+$
+\\ 
+&&& \\ \hline
+\end{tabular}}
+
+\end{center}
+
+
+
+
 
 
 
