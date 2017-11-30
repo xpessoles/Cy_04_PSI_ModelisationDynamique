@@ -11,7 +11,7 @@
 %\fichefalse
 
 \proftrue
-%\proffalse
+\proffalse
 
 \tdtrue
 %\tdfalse
@@ -117,22 +117,28 @@ Une vue 3D de la masselotte est donnée ci-dessous.
 
 
 \subparagraph{}\textit{Indiquer, sans développer de calculs, quelles sont les particularités des matrices d’inertie des solides (1) et (2).}
+\ifprof
 \begin{corrige}
 Le solide 1 est axisymétrique. En tout point de l'axe du solide, la matrice d'inertie sera diagonale. On a donc $\inertie{O_1}{S_1}=\matinertie{A_1}{B_1}{C_1}{0}{0}{0}{B_1}$.
 
 Le solide 2 admet le plan $\angl{y_2}{z_2}$ comme plan de symétrie. Les produits d'inertie dépendant de $x$ sont nuls. On a donc $\inertie{G_2}{S_2}=\matinertie{A_2}{B_2}{C_2}{-D_2}{0}{0}{B_2}$.
 
 \end{corrige}
-
+\else
+\fi
 Afin de ne pas trop alourdir les calculs, on suppose constantes les vitesse de rotation $\dot{\theta}_1$ et $\dot{\theta}_2$.
+
+\subparagraph{}\textit{Discuter de la pertinence de ces hypothèses. Vous pourrez éventuellement les remettre en cause. }
+
 \subparagraph{}\textit{Déterminer :
 \begin{itemize}
 \item le torseur dynamique $\torseurdyn{S_1}{R_0}$ en $O_1$;
-\item le torseur dynamique  $\torseurdyn{S_2}{R_0}$ en $O_2$;
-\item le torseur dynamique  $\torseurdyn{E}{R_0}$ en $O_2$;
+\item le torseur dynamique  $\torseurdyn{S_2}{R_0}$ en $O_2$.
+%\item le torseur dynamique  $\torseurdyn{E}{R_0}$ en $O_2$;
 %\item et enfin l’énergie cinétique de (E) par rapport à (R0).
 \end{itemize}}
 
+\ifprof
 \begin{corrige}~\\
 
 \textbf{Mouvement du solide 1/0}
@@ -243,7 +249,7 @@ $\vectg{G_2}{S_2}{R_0}
 - L_1 \dot{\theta}_1^2 \vect{y_1}
 $
 
-$\left[\dfrac{\dd}{\dd t}\inertie{G_2}{S_2}\vecto{S_2}{R_0}\right]_{R_0}
+$\left[\dfrac{\dd}{\dd t}\inertie{G_2}{S_2}\vecto{S_2}{R_0}\right]_{R_0}=...
 %=
 %\begin{pmatrix}
 %A_2\dot{\theta}_2 
@@ -297,10 +303,14 @@ $\left[\dfrac{\text{d} \vect{x_2}}{\text{d} t}\right]_{R_0}
 %$
 
 
+
 \end{corrige}
+\€lse
+\fi
+
 %Q3- Calculer les composantes de la matrice
 %du solide (2) au point G2.
-
+\subparagraph{}\textit{Déterminer le torseur dynamique  $\torseurdyn{E}{R_0}$ en $O_2$.}
 \ifprof
 \else
 \end{multicols}
