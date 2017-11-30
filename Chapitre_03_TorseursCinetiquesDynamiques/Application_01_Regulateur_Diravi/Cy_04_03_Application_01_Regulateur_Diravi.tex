@@ -107,8 +107,7 @@ Considérons uniquement le rotor \textbf{($S_1$)} et la masselotte \textbf{($S_2
 \end{itemize}
 Pour chacun des solides $S_i$ on note $m_i$ la masse, $\inertie{G_i}{S_i}=\matinertie{A_i}{B_i}{C_i}{-D_i}{-E_i}{-F_i}{B_i}$.
 
-On note $E=\left\{ S_1,S_2\right\}$.
-
+On note $E=\left\{ S_1,S_2\right\}$. 
 Une vue 3D de la masselotte est donnée ci-dessous. 
 
 \begin{center}
@@ -305,18 +304,33 @@ $\left[\dfrac{\text{d} \vect{x_2}}{\text{d} t}\right]_{R_0}
 
 
 \end{corrige}
-\€lse
+\else
 \fi
 
 %Q3- Calculer les composantes de la matrice
 %du solide (2) au point G2.
 \subparagraph{}\textit{Déterminer le torseur dynamique  $\torseurdyn{E}{R_0}$ en $O_2$.}
+
+\subparagraph{}\textit{Donner une méthode qui permettrait d'obtenir le couple moteur nécessaire à la mise en mouvement du régulateur.}
+
+Pour mettre en mouvement le régulateur on réalise une montée en vitesse de 0 à 2000 tours par minute en 0,5 seconde.  On reste ensuite à vitesse constante. On donne le résultats de deux simulation permettant de calculer le couple nécessaire à la mise en mouvement du régulateur: la première sans frottement dans la liaison entre $S_1$ et $S_2$ (couple maximal \SI{0,46}{Nm}) , une seconde avec frottement (couple maximal \SI{0,1}{Nm}). 
+
+\subparagraph{}\textit{Commenter ces résultats. }
+
+
+
 \ifprof
 \else
 \end{multicols}
 \fi
 
-\newpage
+\begin{center}
+\includegraphics[width=.48\linewidth]{images/Cm_SansFrottement.png}
+\includegraphics[width=.48\linewidth]{images/Cm_Frottement.png}
+\end{center}
+
+
+%\newpage
 
 
 \end{document}
