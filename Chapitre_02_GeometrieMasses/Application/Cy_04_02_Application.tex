@@ -91,6 +91,7 @@ Un vilebrequin est réalisé en mécanosoudage pour faire fonctionner un prototy
 \begin{center}
 \includegraphics[width=\linewidth]{images/fig_01}
 \end{center}
+L'origine $O$ repère $\mathcal{R}$ est située dans le plan de contact du cylindre 1 et du parallélépipède 2.
 
 On donne :
 \begin{multicols}{2}
@@ -105,9 +106,62 @@ On donne :
 \item $h = \SI{20}{mm}$.
 \end{itemize}
 \end{multicols}
-\subparagraph{}\textit{Calculer les masses des différentes pièces: $m_1$, $m_1$, $m_3$ et $m_4$.}
+\subparagraph{}\textit{Calculer les masses des différentes pièces: $m_1$, $m_2$, $m_3$ et $m_4$.}
+
+\begin{corrige}
+On a: 
+\begin{itemize}
+\item $m_1 = \mu \pi r_1^2 l_1$;
+\item $m_2 = \mu a b e$
+\item $m_3 = \mu \dfrac{1}{2}\pi R^2 e$;
+\item $m_4 = \mu \pi r_3^2L$.
+\end{itemize}
+\end{corrige}
+
+
 \subparagraph{}\textit{Déterminer le centre d’inertie de chaque pièce.}
+\begin{corrige}
+On a: 
+\begin{itemize}
+\item $\vect{OG_1} = h\vect{y}+\dfrac{l_1}{2}\vect{z}$;
+\item $\vect{OG_2} = \dfrac{b}{2}\vect{y}-\dfrac{e}{2}\vect{z}$;
+\item $\vect{OG_4} = -\left(e+\dfrac{L}{2}\right)\vect{z}$.
+\end{itemize}
+
+Le solide 3 a deux plans de symétrie : $\left(\vect{x},\vect{y}\right)$ et $\left(\vect{y},\vect{z}\right)$. On ne cherche donc la composante du centre d'inertie que dans la direction $\vect{y}$.
+
+$m_3 \vect{OG_3}\cdot \vect{y} = \int \vect{OP}\vect{y} \text{d}m$ avec $\text{d}m=\mu \rho \text{d}\rho\text{d}\theta e $ ($\rho$ variant de 0 à $R$ et $\theta$ variant de $-\pi$ à 0) et $\vect{OP}=\rho\left( \cos\theta \vect{x}+ \sin\theta \vect{y}\right)$. 
+On a donc : 
+
+$ \mu \dfrac{1}{2}\pi R^2 e \vect{OG_3}\cdot \vect{y} = \int \rho\left( \cos\theta \vect{x}+ \sin\theta \vect{y}\right) \vect{y} \mu e\rho \text{d}\rho\text{d}\theta $
+
+$ \Leftrightarrow \dfrac{1}{2}\pi R^2  \vect{OG_3}\cdot \vect{y} = \int \rho^2 \sin\theta  \vect{y} \rho \text{d}\rho\text{d}\theta $
+
+$ \Leftrightarrow \dfrac{1}{2}\pi R^2  \vect{OG_3}\cdot \vect{y} = -\dfrac{R^3}{3}  \left[\cos\theta \right]_{-\pi}^0  \vect{y}$
+
+$ \Leftrightarrow \dfrac{1}{2}\pi  \vect{OG_3}\cdot \vect{y} = -2\dfrac{R}{3}  $
+
+$ \Leftrightarrow  \vect{OG_3}\cdot \vect{y} = -4\dfrac{R}{3\pi}  \vect{y} $
+
+Au final : 
+$\vect{OG_3} = -\dfrac{4R}{3\pi}  \vect{y}-\dfrac{e}{2}\vect{z}$
+\end{corrige}
+
+
 \subparagraph{}\textit{Déterminer la valeur de $R$ afin que le centre d’inertie du vilebrequin soit sur son axe de rotation. Faire l’application numérique.}
+
+\begin{corrige}
+On a $\left( m_1+m_2+m_3+m_4\right) \vect{OG}\cdot \vect{y}=0 $
+
+$\Leftrightarrow m_1 \vect{OG_1}\cdot \vect{y}+m_2 \vect{OG_2}\cdot \vect{y}+m_3 \vect{OG_3}\cdot \vect{y}+m_4 \vect{OG_4}\cdot \vect{y} = 0$
+
+$\Leftrightarrow \left(\mu \pi r_1^2 l_1\right) h+\left(\mu a b e\right) \dfrac{b}{2}-\left(\mu \dfrac{1}{2}\pi R^2 e\right) \dfrac{4R}{3\pi} +\left(\mu \pi r_3^2L\right) \cdot 0 = 0$
+
+
+$\Leftrightarrow  \pi r_1^2 l_1 h+a b e \dfrac{b}{2}- \dfrac{1}{2} R^2 e \dfrac{4R}{3}  = 0$
+
+$\Leftrightarrow  \pi r_1^2 l_1 h\dfrac{3}{2}+a b^2 e \dfrac{3}{4}=  R^3 e  $
+\end{corrige}
 
 \subparagraph{}\textit{Calculer les matrices d’inertie de chaque pièce au point où elles s’expriment de manière la plus simple et dans la base $\base{x}{y}{z}$.}
 \subparagraph{}\textit{Calculer la matrice d’inertie du vilebrequin en $O$ dans la base $\base{x}{y}{z}$.}
