@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6400 64-bit) (preloaded format=pdflatex 2017.9.4)  27 NOV 2017 22:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6400 64-bit) (preloaded format=pdflatex 2017.9.4)  3 DEC 2017 12:06
 entering extended mode
 **./Cy_04_01_TD_01_TIM.tex
 (Cy_04_01_TD_01_TIM.tex
@@ -2813,13 +2813,6 @@ Package pdftex.def Info: images/fig_04.png  used on input line 323. on input li
 ne 323.
 Package pdftex.def Info: Requested size: 236.84843pt x 183.66057pt on input lin
 e 323.
-
-Underfull \hbox (badness 10000) in paragraph at lines 357--358
-[]$[] \OML/mdput/m/it/10 g []  \OMS/mdput/m/n/10   []\OML/mdput/m/it/10 SC[][
-] \OMS/mdput/m/n/10   \OML/mdput/m/it/10 T[] \OMS/mdput/m/n/10   \OML/mdput/m/i
-t/10 T[] \OT1/mdput/m/n/10 (+20) =
- []
-
 <png/logo_lycee.png, id=37, 329.23pt x 265.99374pt>
 File: png/logo_lycee.png Graphic file (type png)
 <use png/logo_lycee.png>
@@ -2831,6 +2824,7 @@ LaTeX Font Info:    Font shape `T1/mdput/m/it' will be
 (Font)              scaled to size 7.35999pt on input line 373.
 LaTeX Font Info:    Font shape `T1/pag/m/it' in size <8> not available
 (Font)              Font shape `T1/pag/m/sl' tried instead on input line 373.
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 45.97325pt.
@@ -2854,10 +2848,10 @@ Package logreq Info: Writing requests to 'Cy_04_01_TD_01_TIM.run.xml'.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 373.
  ) 
 Here is how much of TeX's memory you used:
- 52460 strings out of 493352
- 1137785 string characters out of 3139710
- 1808586 words of memory out of 3000000
- 54931 multiletter control sequences out of 15000+200000
+ 52432 strings out of 493352
+ 1137310 string characters out of 3139710
+ 1799276 words of memory out of 3000000
+ 54915 multiletter control sequences out of 15000+200000
  770260 words of font info for 330 fonts, out of 3000000 for 9000
  1127 hyphenation exceptions out of 8191
  62i,21n,96p,10433b,1922s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -2876,9 +2870,9 @@ be/utopia/putr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/adobe/utopia/putr
 ogram Files/MiKTeX 2.9/fonts/type1/urw/avantgar/uagd8a.pfb><C:/Program Files/Mi
 KTeX 2.9/fonts/type1/urw/avantgar/uagdo8a.pfb><C:/Program Files/MiKTeX 2.9/font
 s/type1/urw/avantgar/uagko8a.pfb>
-Output written on Cy_04_01_TD_01_TIM.pdf (2 pages, 1206156 bytes).
+Output written on Cy_04_01_TD_01_TIM.pdf (2 pages, 1203475 bytes).
 PDF statistics:
- 152 PDF objects out of 1000 (max. 8388607)
- 30 named destinations out of 1000 (max. 500000)
+ 138 PDF objects out of 1000 (max. 8388607)
+ 18 named destinations out of 1000 (max. 500000)
  76422 words of extra memory for PDF output out of 89155 (max. 10000000)
 
