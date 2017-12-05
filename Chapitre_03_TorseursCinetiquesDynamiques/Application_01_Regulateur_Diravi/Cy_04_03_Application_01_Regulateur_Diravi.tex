@@ -11,7 +11,7 @@
 %\fichefalse
 
 \proftrue
-\proffalse
+%\proffalse
 
 \tdtrue
 %\tdfalse
@@ -92,9 +92,15 @@ Chapitre 3 -- \xxactivite%
 On considère le mécanisme de la figure ci-contre, qui représente le régulateur centrifuge utilisé dans la direction assistée << DIRAVI >> de CITROËN. Ce système, dont la fréquence de rotation est liée à la vitesse du véhicule, agit sur un circuit hydraulique et permet de faire varier l’assistance en fonction de la vitesse.
 Considérons uniquement le rotor \textbf{($S_1$)} et la masselotte \textbf{($S_2$)} représentés schématiquement ci-dessous.
 
+\ifprof
+\begin{center}
+\includegraphics[width=.5\linewidth]{images/fig_02}
+\end{center}
+\else
 \begin{center}
 \includegraphics[width=\linewidth]{images/fig_02}
 \end{center}
+\fi
 
 \begin{itemize}
 \item \textbf{($S_1$)} est en liaison pivot d'axe $\axe{O_1}{z_0}$ avec \textbf{($S_0$)}.
@@ -110,10 +116,15 @@ Pour chacun des solides $S_i$ on note $m_i$ la masse, $\inertie{G_i}{S_i}=\matin
 On note $E=\left\{ S_1,S_2\right\}$. 
 Une vue 3D de la masselotte est donnée ci-dessous. 
 
+\ifprof
+\begin{center}
+\includegraphics[width=.5\linewidth]{images/fig_03}
+\end{center}
+\else
 \begin{center}
 \includegraphics[width=\linewidth]{images/fig_03}
 \end{center}
-
+\fi
 
 \subparagraph{}\textit{Indiquer, sans développer de calculs, quelles sont les particularités des matrices d’inertie des solides (1) et (2).}
 \ifprof
@@ -139,6 +150,12 @@ Afin de ne pas trop alourdir les calculs, on suppose constantes les vitesse de r
 
 \ifprof
 \begin{corrige}~\\
+
+
+\begin{center}
+\includegraphics[width=.48\linewidth]{images/param.png}
+\end{center}
+
 
 \textbf{Mouvement du solide 1/0}
 
@@ -185,16 +202,17 @@ $=
 
 $=
 \left( -L_2\vect{y_2}\wedge \dot{\theta}_2 \vect{x_2}\right)
-+ \left(-\left( d_1\vect{z_0}+L_1\vect{y_1} \right)\wedge \dot{\theta}_1 \vect{z_1}\right)$
++ \left(-\left( d_1\vect{z_0}+L_1\vect{y_1}+L_2\vect{y_2} \right)\wedge \dot{\theta}_1 \vect{z_1}\right)$
 $=
- L_2 \dot{\theta}_2 \vect{z_2}-\dot{\theta}_1L_1\vect{x_1}
+ L_2 \dot{\theta}_2 \vect{z_2}-
+\dot{\theta}_1\left (L_1+L_2 \cos\theta_2 \right)\vect{x_1}
 $
 
 $G_2$ est le centre de gravité de $S_2$. 
 
 $\torseurci{S_2}{R_0}
 =\torseurl{
-m_2\left(  L_2 \dot{\theta}_2 \vect{z_2}-\dot{\theta}_1L_1\vect{x_1}\right)
+m_2\left(   L_2 \dot{\theta}_2 \vect{z_2}-\dot{\theta}_1\left (L_1+L_2 \cos\theta_2 \right)\vect{x_1}\right)
 }{
 \inertie{G_2}{S_2}\vecto{S_2}{R_0}
 }{G_2}
@@ -238,15 +256,24 @@ $\torseurdyn{S_2}{R_0}
 =\torseurl{
 m_2 \vectg{G_2}{S_2}{R_0}
 }{
-\left[\dfrac{\dd}{\dd t}\inertie{G_2}{S_2}\vecto{S_2}{R_0}\right]_{R_0}
+\left[\dfrac{\dd}{\dd t}\left(\inertie{G_2}{S_2}\vecto{S_2}{R_0}\right)\right]_{R_0}
 }{G_2}
 $
 
 $\vectg{G_2}{S_2}{R_0}
-=\left[\dfrac{\text{d}\left(  L_2 \dot{\theta}_2 \vect{z_2}-\dot{\theta}_1L_1\vect{x_1}\right)}{\dd t}\right]_{R_0}
-=L_2 \dot{\theta}_2 \left( \dot{\theta}_1 \sin\theta_2 \vect{x_{1,2}} -\dot{\theta}_2 \vect{y_2} \right)
-- L_1 \dot{\theta}_1^2 \vect{y_1}
-$
+=\left[\dfrac{\text{d}\left( L_2 \dot{\theta}_2 \vect{z_2}-
+\dot{\theta}_1\left (L_1+L_2 \cos\theta_2 \right)\vect{x_1}\right)}{\dd t}\right]_{R_0}$
+
+$=L_2 \ddot{\theta}_2 \vect{z_2}+L_2 \dot{\theta}_2 \left( \dot{\theta}_1 \sin\theta_2 \vect{x_{1,2}} -\dot{\theta}_2 \vect{y_2} \right)
+-\ddot{\theta}_1\left (L_1+L_2 \cos\theta_2 \right)\vect{x_1}
+-\dot{\theta}_1\left (-L_2 \dot{\theta}_2\sin\theta_2 \right)\vect{x_1}
+-\dot{\theta}_1^2\left (L_1+L_2 \cos\theta_2 \right)\vect{y_1}$
+
+$=L_2 \ddot{\theta}_2 \vect{z_2}-L_2 \dot{\theta}_2^2 \vect{y_2} 
++\left(2L_2 \dot{\theta}_1 \dot{\theta}_2 \sin\theta_2 %\vect{x_1}
+-\ddot{\theta}_1\left (L_1+L_2 \cos\theta_2 \right)\right)\vect{x_1}
+-\dot{\theta}_1^2\left (L_1+L_2 \cos\theta_2 \right)\vect{y_1}$
+
 
 $\left[\dfrac{\dd}{\dd t}\inertie{G_2}{S_2}\vecto{S_2}{R_0}\right]_{R_0}=...
 %=
