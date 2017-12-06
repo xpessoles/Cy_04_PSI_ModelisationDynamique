@@ -275,22 +275,25 @@ $=L_2 \ddot{\theta}_2 \vect{z_2}-L_2 \dot{\theta}_2^2 \vect{y_2}
 -\dot{\theta}_1^2\left (L_1+L_2 \cos\theta_2 \right)\vect{y_1}$
 
 
-$\left[\dfrac{\dd}{\dd t}\inertie{G_2}{S_2}\vecto{S_2}{R_0}\right]_{R_0}=...
-%=
-%\begin{pmatrix}
-%A_2\dot{\theta}_2 
-%+\\
-%B_2\dot{\theta}_1\dot{\theta}_2\cos\theta_2 + D_2 \dot{\theta}_1\dot{\theta}_2\sin\theta_2
-%+\\
-%-D_2\dot{\theta}_1\dot{\theta}_2\cos\theta_2 -C_2 \dot{\theta}_1\dot{\theta}_2\sin\theta_2
-%+
-%\end{pmatrix}_{B_2}
-%\begin{pmatrix}
-%A_2\dot{\theta}_2 \\
-%B_2\dot{\theta}_1\sin\theta_2 - D_2 \dot{\theta}_1\cos\theta_2\\
-%-D_2\dot{\theta}_1\sin\theta_2 +C_2 \dot{\theta}_1\cos\theta_2
-%\end{pmatrix}_{B_2}
+$\left[\dfrac{\dd}{\dd t}\inertie{G_2}{S_2}\vecto{S_2}{R_0}\right]_{R_0}=...$
+
+$=
+\begin{pmatrix}
+A_2\ddot{\theta}_2 \\
+B_2\ddot{\theta}_1\sin\theta_2 - D_2 \ddot{\theta}_1\cos\theta_2
++B_2\dot{\theta}_1\dot{\theta}_2\cos\theta_2 + D_2 \dot{\theta}_1\dot{\theta}_2\sin\theta_2\\
+-D_2\ddot{\theta}_1\sin\theta_2 +C_2 \ddot{\theta}_1\cos\theta_2-D_2\dot{\theta}_1\dot{\theta}_2\cos\theta_2 -C_2 \dot{\theta}_1\dot{\theta}_2\sin\theta_2
+\end{pmatrix}_{B_2}
 $
+
+$
++
+A_2\dot{\theta}_2 \dot{\theta}_1 \vect{y_1}
+\left(B_2\dot{\theta}_1\sin\theta_2 - D_2 \dot{\theta}_1\cos\theta_2\right)\left( -\dot{\theta}_1 \cos\theta_2\vect{x_1}+\dot{\theta}_2 \vect{z_2}\right)
+\left(-D_2\dot{\theta}_1\sin\theta_2 +C_2 \dot{\theta}_1\cos\theta_2\right) \left( \dot{\theta}_1 \sin\theta_2 \vect{x_{1,2}} -\dot{\theta}_2 \vect{y_2} \right)
+$
+
+
 
 $\left[\dfrac{\text{d} \vect{z_2}}{\text{d} t}\right]_{R_0}
 =\left[\dfrac{\text{d} \vect{z_2}}{\text{d} t}\right]_{R_2} + \vecto{S_2}{R_0}\wedge\vect{z_2}
@@ -336,7 +339,7 @@ $\left[\dfrac{\text{d} \vect{x_2}}{\text{d} t}\right]_{R_0}
 
 %Q3- Calculer les composantes de la matrice
 %du solide (2) au point G2.
-\subparagraph{}\textit{Déterminer le torseur dynamique  $\torseurdyn{E}{R_0}$ en $O_2$.}
+\subparagraph{}\textit{Comment pourrait-on déterminer le torseur dynamique  $\torseurdyn{E}{R_0}$ en $O_2$ ?}
 
 \subparagraph{}\textit{Donner une méthode qui permettrait d'obtenir le couple moteur nécessaire à la mise en mouvement du régulateur.}
 

@@ -65,7 +65,7 @@
 }}
 
 \def\xxfigures{
-\includegraphics[width=.7\linewidth]{images/fig_02}
+\includegraphics[width=.6\linewidth]{images/fig_02}
 }%figues de la page de garde
 
 
@@ -161,6 +161,12 @@ par rapport à
 $\mathcal{R}$est définir par :
 $\theta_R = \left(\vect{x},\vect{x_R}\right) = \left(\vect{z},\vect{z_R}\right)$.
 
+\begin{center}
+\includegraphics[width=.8\linewidth]{images/fig_04}
+\end{center}
+
+
+
 \begin{hypo}
 La roue motrice \textbf{(1)} roule sans glisser sur le sol \textbf{(0)} au point $I_1$.
 La résistance au roulement est négligée.
@@ -177,8 +183,14 @@ La résistance au roulement est négligée.
 
 Le système $\Sigma$ est soumis aux actions mécaniques suivantes :
 \begin{itemize}
-\item action du sol sur la roue motrice \textbf{(1)} : $\torseurstat{T}{0}{1}=\torseurl{\vectf{0}{1}=-X_{01}\vect{x}+Z_{01}\vect{z}}{\vect{0}}{I_1}$ et sur la roue folle \textbf{(2)} : $\torseurstat{T}{0}{2}=\torseurl{\vectf{0}{2}=Z_{02}\vect{z}}{\vect{0}}{I_2}$;
-\item action de la pesanteur : $\torseurstat{T}{\text{pes}}{\Sigma}=\torseurl{\vectf{\text{pes}}{\Sigma}=-m_{\Sigma} g \vect{z}}{\vect{0}}{G}$;
+\item action du sol sur la roue motrice \textbf{(1)} : 
+
+$\torseurstat{T}{0}{1}=\torseurl{\vectf{0}{1}=-X_{01}\vect{x}+Z_{01}\vect{z}}{\vect{0}}{I_1}$ et sur la roue folle \textbf{(2)} :
+
+$\torseurstat{T}{0}{2}=\torseurl{\vectf{0}{2}=Z_{02}\vect{z}}{\vect{0}}{I_2}$;
+\item action de la pesanteur : 
+
+$\torseurstat{T}{\text{pes}}{\Sigma}=\torseurl{\vectf{\text{pes}}{\Sigma}=-m_{\Sigma} g \vect{z}}{\vect{0}}{G}$;
 \item action de freinage sur la roue motrice \textbf{(1)}: $\torseurstat{T}{\text{frein}}{1}=\torseurl{\vect{0}}{\vectm{A}{\text{frein}}{1}=-C_f\vect{y}}{A}$.
 \end{itemize}
 
