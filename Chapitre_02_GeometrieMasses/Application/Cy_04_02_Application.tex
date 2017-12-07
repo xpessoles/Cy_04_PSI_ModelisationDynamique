@@ -86,6 +86,9 @@ Chapitre 2 -- \xxactivite%
 \else
 \begin{multicols}{2}
 \fi
+
+\ifprof
+\else
 Un vilebrequin est réalisé en mécanosoudage pour faire fonctionner un prototype de moteur. Les géométries sont par conséquent simples : assemblage de tôles ou cylindres en acier.
 
 \begin{center}
@@ -106,9 +109,11 @@ On note $\rho=\SI{7200}{kg.m^{3}}$ la masse volumique du matériau et on donne :
 \item $h = \SI{20}{mm}$.
 \end{itemize}
 \end{multicols}
+\fi
+
 \subparagraph{}\textit{Calculer les masses des différentes pièces: $m_1$, $m_2$, $m_3$ et $m_4$.}
 
-\begin{corrige}
+\ifprof \begin{corrige}
 On a: 
 \begin{itemize}
 \item $m_1 = \mu \pi r_1^2 l_1$;
@@ -117,10 +122,12 @@ On a:
 \item $m_4 = \mu \pi r_3^2L$.
 \end{itemize}
 \end{corrige}
+\else
+\fi
 
 
 \subparagraph{}\textit{Déterminer le centre d’inertie de chaque pièce.}
-\begin{corrige}
+\ifprof \begin{corrige}
 On a: 
 \begin{itemize}
 \item $\vect{OG_1} = h\vect{y}+\dfrac{l_1}{2}\vect{z}$;
@@ -130,26 +137,27 @@ On a:
 
 Le solide 3 a deux plans de symétrie : $\left(\vect{x},\vect{y}\right)$ et $\left(\vect{y},\vect{z}\right)$. On ne cherche donc la composante du centre d'inertie que dans la direction $\vect{y}$.
 
-$m_3 \vect{OG_3}\cdot \vect{y} = \int \vect{OP}\vect{y} \text{d}m$ avec $\text{d}m=\mu \rho \text{d}\rho\text{d}\theta e $ ($\rho$ variant de 0 à $R$ et $\theta$ variant de $-\pi$ à 0) et $\vect{OP}=\rho\left( \cos\theta \vect{x}+ \sin\theta \vect{y}\right)$. 
+$m_3 \vect{OG_3}\cdot \vect{y} = \int \vect{OP}\vect{y} \text{d}m$ avec $\text{d}m=\mu \rho \text{d}\rho\text{d}\theta e $ ($\rho$ variant de 0 à $R$ et $\theta$ variant de $-\pi$ à 0) et 
+
+$\vect{OP}=\rho\left( \cos\theta \vect{x}+ \sin\theta \vect{y}\right)$. 
+
 On a donc : 
 
 $ \mu \dfrac{1}{2}\pi R^2 e \vect{OG_3}\cdot \vect{y} = \int \rho\left( \cos\theta \vect{x}+ \sin\theta \vect{y}\right) \vect{y} \mu e\rho \text{d}\rho\text{d}\theta $
 
 $ \Leftrightarrow \dfrac{1}{2}\pi R^2  \vect{OG_3}\cdot \vect{y} = \int \rho^2 \sin\theta  \vect{y} \rho \text{d}\rho\text{d}\theta $
-
 $ \Leftrightarrow \dfrac{1}{2}\pi R^2  \vect{OG_3}\cdot \vect{y} = -\dfrac{R^3}{3}  \left[\cos\theta \right]_{-\pi}^0  \vect{y}$
 
 $ \Leftrightarrow \dfrac{1}{2}\pi  \vect{OG_3}\cdot \vect{y} = -2\dfrac{R}{3}  $
-
 $ \Leftrightarrow  \vect{OG_3}\cdot \vect{y} = -4\dfrac{R}{3\pi}  \vect{y} $
 
 Au final : 
 $\vect{OG_3} = -\dfrac{4R}{3\pi}  \vect{y}-\dfrac{e}{2}\vect{z}$
-\end{corrige}
+\end{corrige}\else\fi
 
 \subparagraph{}\textit{Déterminer la valeur de $R$ afin que le centre d’inertie du vilebrequin soit sur son axe de rotation. Faire l’application numérique.}
 
-\begin{corrige}
+\ifprof \begin{corrige}
 On a $\left( m_1+m_2+m_3+m_4\right) \vect{OG}\cdot \vect{y}=0 $
 
 $\Leftrightarrow m_1 \vect{OG_1}\cdot \vect{y}+m_2 \vect{OG_2}\cdot \vect{y}+m_3 \vect{OG_3}\cdot \vect{y}+m_4 \vect{OG_4}\cdot \vect{y} = 0$
@@ -160,25 +168,21 @@ $\Leftrightarrow \left(\mu \pi r_1^2 l_1\right) h+\left(\mu a b e\right) \dfrac{
 $\Leftrightarrow  \pi r_1^2 l_1 h+a b e \dfrac{b}{2}- \dfrac{1}{2} R^2 e \dfrac{4R}{3}  = 0$
 
 $\Leftrightarrow  \pi r_1^2 l_1 h\dfrac{3}{2}+a b^2 e \dfrac{3}{4}=  R^3 e  $
-
 $\Leftrightarrow   R^3 = \pi r_1^2 l_1 h\dfrac{3}{2e}+a b^2 \dfrac{3}{4}    $
-\end{corrige}
+\end{corrige}\else\fi
 
 \subparagraph{}\textit{Donner les formes des matrices d’inertie de chaque pièce au point où elles s’expriment de manière la plus simple et dans la base $\base{x}{y}{z}$.}
-\begin{corrige} ~\\
+\ifprof \begin{corrige} ~\\
 
 $\inertie{G_1}{S_1}=\matinertie{A_1}{A_1}{C_1}{0}{0}{0}{R}$
-
 $\inertie{G_2}{S_2}=\matinertie{A_2}{B_2}{C_2}{0}{0}{0}{R}$
-
 $\inertie{G_3}{S_3}=\matinertie{A_3}{B_3}{C_3}{0}{0}{0}{R}$
-
 $\inertie{G_4}{S_4}=\matinertie{A_4}{A_4}{C_4}{0}{0}{0}{R}$
-\end{corrige}
+\end{corrige}\else\fi
 
 \subparagraph{}\textit{Donner les formes de matrices d’inertie du vilebrequin en $O$ dans la base $\base{x}{y}{z}$.}
 
-\begin{corrige}
+\ifprof \begin{corrige}
 
 $\vect{OG_1} = h\vect{y}+\dfrac{l_1}{2}\vect{z}$
 
@@ -202,24 +206,28 @@ $\inertie{O}{S_4}=\matinertie{A_4}{A_4}{C_4}{0}{0}{0}{R}
 
 On a : 
 
+<<<<<<< HEAD
 $\inertie{O}{S}=\matinertie{A}{B}{C}{-D}{0}{0}{R}$
 \end{corrige}
+=======
+$\inertie{G}{S}=\matinertie{A}{B}{C}{-D}{0}{0}{R}$
+\end{corrige}\else\fi
+>>>>>>> 4a3769486e3bf5a9e5aad766921c55c571061cad
 
 Le carter moteur peut être basculé pour l’entretien. Cette opération ne doit normalement pas être effectuée lorsque le moteur fonctionne. Afin de calculer les effets dynamiques engendrés par cette manipulation, il est nécessaire de calculer l’inertie en rotation du vilebrequin par rapport à cet axe de rotation.
 
 \subparagraph{}\textit{Calculer l’inertie en rotation par rapport à l’axe $\vect{OA}$.}
-\begin{corrige}
+\ifprof \begin{corrige}
 $\vect{u}=\dfrac{\vect{OA}}{||\vect{OA}||}=\dfrac{L_1\vect{z}+h\vect{y}}{\sqrt{L_1^2+h^2}}$
 
 $J_{\Delta}=\begin{pmatrix} 0 & u_y &  u_z \end{pmatrix} \matinertie{A}{B}{C}{-D}{0}{0}{R}
 \begin{pmatrix} 0 \\ u_y \\  u_z \end{pmatrix}$
-
-$J_{\Delta}=\begin{pmatrix} 0 & u_y &  u_z \end{pmatrix} 
+$=\begin{pmatrix} 0 & u_y &  u_z \end{pmatrix} 
 \begin{pmatrix} 0 \\ Bb-Dc \\  -Db +Cc \end{pmatrix}$
 
 $J_{\Delta}= \left( Bb-Dc\right)u_y + \left( -Db +Cc\right)u_z$
 
-\end{corrige}
+\end{corrige}\else\fi
 
 
 %\section*{Présentation du support du cours du cours}
