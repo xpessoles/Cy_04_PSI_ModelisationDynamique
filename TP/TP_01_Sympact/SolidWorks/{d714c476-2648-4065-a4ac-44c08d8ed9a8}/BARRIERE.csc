@@ -1,5 +1,5 @@
 0x150
-Mixte
+Dynamique
 1
 Vit. Variable
 2
