@@ -138,15 +138,16 @@ Un moteur exerce un couple connu de moment $\vect{C_m}=C_m\vect{x_0}$ sur l'arbr
 \textbf{On réalise le bilan des actions mécaniques.}
 \begin{itemize}
 \item Liaison pivot : $\torseurstat{T}{0}{1}
-=\torseurl{X_{01}\vect{x}+Y_{01}\vect{y}+Z_{01}\vect{z}}{M_{01}\vect{y}+N_{01}\vect{z}}{O}
-=\torseurl{Y_{01}\vect{y}+Z_{01}\vect{z}}{\vect{0}}{O}$.
+=\torseurl{X_{01}\vect{x_0}+Y_{01}\vect{y_0}+Z_{01}\vect{z_0}}{M_{01}\vect{y_0}+N_{01}\vect{z_0}}{O}
+=\torseurl{Y_{01}\vect{y_0}+Z_{01}\vect{z_0}}{\vect{0}}{O}$.
 \item Liaison ponctuelle : $\torseurstat{T}{2}{1}
 =\torseurl{Y_{21}\vect{y_0}+Z_{21}\vect{z_0}}{\vect{0}}{I}$. On a $Z_{21}<0$, $Y_{21}>0$ et à la limite du glissement, $Y_{21}=-fZ_{21}$. 
 
 $\vectm{O}{2}{1}=\vectm{I}{2}{1}+\vect{OI}\wedge \vectf{2}{1}=\left( e\vect{z_1}+R\vect{z_0}\right)\wedge \left(Y_{21}\vect{y_0}+Z_{21}\vect{z_0} \right)$ 
 $= -eY_{21}\cos\theta \vect{x_0}-e Z_{21}\sin\theta\vect{x_0}-RY_{21}\vect{x_0}$
 $= -\left(\left(e\cos\theta+R\right)Y_{21} +e Z_{21}\sin\theta\right)\vect{x_0}$.
-\item couple moteur : $\torseurstat{T}{\text{Moteur}}{1}
+
+\item Couple moteur : $\torseurstat{T}{\text{Moteur}}{1}
 =\torseurl{\vect{0}}{C_m\vect{x_0}}{O}$.
 \end{itemize}
 
@@ -165,38 +166,38 @@ $$
 C_m-\left(\left(e\cos\theta+R\right)Y_{21} +e Z_{21}\sin\theta\right) =I_1\ddot{\theta}.
 $$
 
-\textbf{On isole le solide \textbf{(1)}.}
+\textbf{On isole le solide \textbf{(2)}.}
 
 \textbf{On réalise le bilan des actions mécaniques.}
 \begin{itemize}
-\item Liaison pivot : $\torseurstat{T}{0}{1}
-=\torseurl{X_{01}\vect{x}+Y_{01}\vect{y}+Z_{01}\vect{z}}{M_{01}\vect{y}+N_{01}\vect{z}}{O}
-=\torseurl{Y_{01}\vect{y}+Z_{01}\vect{z}}{\vect{0}}{O}$.
-\item Liaison ponctuelle : $\torseurstat{T}{2}{1}
-=\torseurl{Y_{21}\vect{y_0}+Z_{21}\vect{z_0}}{\vect{0}}{I}$. On a $Z_{21}<0$, $Y_{21}>0$ et à la limite du glissement, $Y_{21}=-fZ_{21}$. 
+\item Liaison pivot glissant: $\torseurstat{T}{0}{2}
+=\torseurl{Y_{02}\vect{y_0}}{L_{02}\vect{x_0}}{O}$.
+\item Liaison ponctuelle : $\torseurstat{T}{1}{2}=-\torseurstat{T}{2}{1}
+=\torseurl{-Y_{21}\vect{y_0}-Z_{21}\vect{z_0}}{\vect{0}}{I}$. 
+\item Ressort: $\torseurstat{T}{\text{Ressort}}{2}
+=\torseurl{-F_0-kz\vect{z_0}}{\vect{0}}{A}$.
+\item Pesanteur: $\torseurstat{T}{\text{Pesanteur}}{2}
+=\torseurl{-m_2g\vect{z_0}}{\vect{0}}{A}$.
+\item Fluide: $\torseurstat{T}{\text{Fluide}}{2}
+=\torseurl{-F_h\vect{z_0}}{\vect{0}}{A}$.
 
-$\vectm{O}{2}{1}=\vectm{I}{2}{1}+\vect{OI}\wedge \vectf{2}{1}=\left( e\vect{z_1}+R\vect{z_0}\right)\wedge \left(Y_{21}\vect{y_0}+Z_{21}\vect{z_0} \right)$ 
-$= -eY_{21}\cos\theta \vect{x_0}-e Z_{21}\sin\theta\vect{x_0}-RY_{21}\vect{x_0}$
-$= -\left(\left(e\cos\theta+R\right)Y_{21} +e Z_{21}\sin\theta\right)\vect{x_0}$.
-\item couple moteur : $\torseurstat{T}{\text{Moteur}}{1}
-=\torseurl{\vect{0}}{C_m\vect{x_0}}{O}$.
 \end{itemize}
 
-\textbf{Calcul de $\vectmd{O}{1}{0}\cdot \vect{x_0}$.}
+\textbf{Calcul de $\vectrd{2}{0}\cdot \vect{z_0}$.}
  
-$O$ est un point fixe et $I_1$ moment d'inertie par rapport à $\axe{O}{x_0}$ on a donc : 
-$\vectmd{O}{1}{0}\cdot \vect{x_0}
-=\left[\dfrac{\dd \vectmc{O}{1}{0}}{\dd t}\right]_{\mathcal{R}_0}\vect{x_0}
-=\left[\dfrac{\dd \vectmc{O}{1}{0}\cdot \vect{x_0}}{\dd t}  \right]_{\mathcal{R}_0}$
-$=\left[\dfrac{\dd \inertie{O}{1}\vecto{1}{0}\cdot \vect{x_0}}{\dd t}  \right]_{\mathcal{R}_0}$
-$=\left[\dfrac{\dd I_1\dot{\theta}\vect{x_0}\cdot \vect{x_0}}{\dd t}  \right]_{\mathcal{R}_0}$
-$=I_1\ddot{\theta}$.
+$\vectrd{2}{0}\cdot \vect{z_0}=m_2\ddot{z}$
 
-\textbf{Application du théorème du moment dynamique en projection sur $\vect{x_0}$.}
+\textbf{Application du théorème de la résultante dynamique en projection sur $\vect{z_0}$.}
 $$
-C_m-\left(\left(e\cos\theta+R\right)Y_{21} +e Z_{21}\sin\theta\right) =I_1\ddot{\theta}.
+-F_h-Z_{21}-F_0-kz-m_2g=m_2\ddot{z}.
 $$
 
+
+\textbf{Bilan :}
+$$C_m-\left(\left(e\cos\theta+R\right)Y_{21} +e \left( -F_h-F_0-kz-m_2g-m_2\ddot{z}\right)\sin\theta\right) =I_1\ddot{\theta}.$$
+
+\textbf{Bilan sans frottement :}
+$$C_m-\left(e \left( -F_h-F_0-kz-m_2g-m_2\ddot{z}\right)\sin\theta\right) =I_1\ddot{\theta}.$$
 
 
 \end{document}
