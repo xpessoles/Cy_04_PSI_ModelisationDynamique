@@ -133,6 +133,14 @@ Un moteur exerce un couple connu de moment $\vect{C_m}=C_m\vect{x_0}$ sur l'arbr
 \newpage
 
 %TO DO : graphe de liaisons.
+\textbf{Fermeture géométrique.}
+
+On a : $\vect{OB}+\vect{BI}+\vect{IA}+\vect{AO}=\vect{0}$.
+
+En projection sur $\vect{z_0}$ : $e\cos\theta+R=z$. Par dérivation successive, on a :
+$-e\dot{\theta}\sin\theta=\dot{z}$ et $-e\ddot{\theta}\sin\theta-e\dot{\theta}^2\cos\theta=\ddot{z}$.
+
+
 \textbf{On isole le solide \textbf{(1)}.}
 
 \textbf{On réalise le bilan des actions mécaniques.}
@@ -196,8 +204,15 @@ $$
 \textbf{Bilan :}
 $$C_m-\left(\left(e\cos\theta+R\right)Y_{21} +e \left( -F_h-F_0-kz-m_2g-m_2\ddot{z}\right)\sin\theta\right) =I_1\ddot{\theta}.$$
 
+On a alors :
+$$C_m-\left(\left(e\cos\theta+R\right)Y_{21} -e \left( F_h+F_0+k\left( e\cos\theta+R \right)+m_2g-em_2\left( \ddot{\theta}\sin\theta+\dot{\theta}^2\cos\theta\right)\right)\sin\theta\right) =I_1\ddot{\theta}.$$
+
+
 \textbf{Bilan sans frottement :}
-$$C_m-\left(e \left( -F_h-F_0-kz-m_2g-m_2\ddot{z}\right)\sin\theta\right) =I_1\ddot{\theta}.$$
+$$C_m+e\left(
+F_h+F_0+k\left( e\cos\theta+R \right)+m_2g
+-em_2\sin\theta\left( \ddot{\theta}\sin\theta+\dot{\theta}^2\cos\theta\right)
+\right) =I_1\ddot{\theta}.$$
 
 
 \end{document}
