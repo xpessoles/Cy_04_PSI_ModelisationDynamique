@@ -203,7 +203,6 @@ C_1(t)=&
 & -X_F \left( l_1 \cos \gamma +l_2 \cos \left( \gamma+\delta\right) \right) + Z_F \left( l_1 \sin \gamma + l_2 \left( \gamma + \delta \right)\right)
 \end{array}
 $$
-\end{multicols}
 
 \subparagraph{}
 \textit{Détailler la démarche qui a permis d’obtenir cette équation, on précisera en particulier l’isolement,
@@ -224,8 +223,102 @@ le bilan des Actions Mécaniques Extérieures et le choix des équations utilis�
 
 \subparagraph{}
 \textit{Écrire une deuxième relation issue du Principe Fondamental de la Dynamique, indépendante de la
-précédente, faisant intervenir le couple $C_2(t)$, et qui permette de ne pas faire apparaître les composantes $L_1$, $M_1$, $N_1$, $L_2$, $M_2$, $N_2$ des torseurs des actions de liaison. On détaillera la démarche de la même façon que ci-dessus.}
+précédente, faisant intervenir le couple $C_2(t)$, et qui permette de ne pas faire apparaître les composantes $L_1$, $M_1$, $N_1$, $L_2$, $M_2$, $N_2$ des torseurs des actions de liaison. On détaillera la démarche de la même façon que lors de la première question.}
 
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+
+\subparagraph{}
+\textit{Calculer les couples $(C_1,C_2)$ exercés par les actionneurs sur les axes des articulations dans le cas où
+l’on n’exerce pas de force à l’extrémité du solide \{Avant-bras\} ($X_F = 0$, $Z_F = 0$) ; discuter de la configuration angulaire la plus défavorable vis-à-vis du cahier des charges.}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+
+\subparagraph{}
+\textit{Compte-tenu du cahier des charges, quelle charge statique maximale peut-on exercer sur l’extrémité du solide \{Avant-bras\} ?}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+\subsection*{Synthèse d'une loi de commande << deux axes >>}
+\begin{obj}
+L’objectif de cette partie est de déterminer une loi de commande afin que la relation entre les variations
+des positions $t\left(\gamma, \delta\right)^t$ du bras et de l’avant-bras et la variation de la force $Z_F$ exercée par le patient soit
+celle d’une raideur en torsion de valeurs $(K_1;K_2)$ données dans le cahier des charges. La
+raideur comparativement à la force $X_F$ ne sera pas à vérifier dans ce cas d’étude.
+\end{obj}
+
+L’équation dynamique décrivant le comportement de l’exosquelette est de la forme
+$
+A\left(q,\dot{q}\right)\ddot{q}+
+B\left(q,\dot{q}\right)\dot{q}+
+C\left(q,\dot{q}\right)+
+Q\left(q,\dot{q}\right)\cdot F = C_a$
+où $C_a=\left( C_1 \; C_2\right)^t$, $q=\left( \gamma \; \delta\right)^t$ et 
+$F=\left( X_F \;  Z_F\right)^t$. On note sous forme vectorielle $q_{\text{ref}}= \left( \gamma_{\text{ref}}\; \delta_{\text{ref}}\right)^t$ les consignes
+de positions angulaires. La loi de commande adoptée est organisée selon deux boucles :
+\begin{itemize}
+\item une boucle externe linéaire ;
+\item une boucle interne non linéaire qui détermine le couple $C_a$ par la relation
+$ C_a =
+A\left(q,\dot{q}\right)U+
+B\left(q,\dot{q}\right)\dot{q}+
+C\left(q,\dot{q}\right)+
+$
+où $U = (U_1 \; U_2)^t$ sont les deux nouvelles commandes issues du correcteur linéaire de la boucle externe. 
+\end{itemize}
+Le principe de cette loi de commande est donné par la structure représentée par le schéma de la figure suivante.
+
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/fig_06}
+\end{center}
+
+
+\subparagraph{}
+\textit{Donner au moins un argument, en particulier vis-à-vis du cahier des charges souhaité, de l’intérêt de la boucle interne correspondant à la loi non linéaire donnée précédemment.}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+
+Pour la synthèse de la loi de commande, il est nécessaire de linéariser le modèle dynamique autour d’un point
+de fonctionnement défini par les positions articulaires $(\gamma_0 \; \delta_0)^t$  et les forces $\left(X_{F0} \; Z_{F0}\right)^t$ . On note autour de ce
+point de fonctionnement :
+\begin{itemize}
+\item $u = \left(u_1 \; u_2\right)^t$ les variations des grandeurs de commande autour de $U_0 = \left(U_{10} \; U_{20}\right)^t$  ;
+\item $q_1 = \left(\gamma_1 \; \delta_1\right)^t$ les variations des positions angulaires des deux articulations autour de $q_0 = \left(\gamma_0\; \delta_0\right)$ ;
+\item $f = \left(x_F \; z_F \right)$ les variations des efforts exercés par le patient autour de $F_0=\left(X_{F0} \; Z_{F0}\right)^t$.
+\end{itemize}
+En utilisant la loi correspondant à la boucle interne, le modèle dynamique peut être réécrit selon la forme 
+$\ddot{q}=I+N\left(q,\dot{q},F \right)$ où $N\left(q,\dot{q},F \right)=\text{M}\left(q,\dot{q}\right)\cdot F$.
+
+\subparagraph{}
+\textit{Préciser l’expression de la matrice M en fonction de A et de Q.}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+\subparagraph{}
+\textit{Donner, par exemple sous forme algorithmique, une démarche permettant de linéariser le modèle dynamique
+selon la forme 
+$\ddot{q}_1=\tilde{\text{A}}q_1 + \tilde{\text{B}}\dot{q}_1 + \tilde{\text{G}}u + \tilde{\text{H}}f$ où $\tilde{\text{A}}$, $\tilde{\text{B}}$, $\tilde{\text{G}}$ et $\tilde{\text{H}}$ sont des matrices constantes, éventuellement dépendantes du point de fonctionnement.}
+
+La démarche de linéarisation faisant fait intervenir $\dfrac{\partial N}{\partial q}$, $\dfrac{\partial N}{\partial \dot{q}}$ et $\dfrac{\partial N}{\partial F}$. L'expression explicite du modèle linéarisé en fonction de $M$ n'est pas demandée.
 \ifprof
 \begin{corrige}
 \end{corrige}
@@ -242,39 +335,10 @@ précédente, faisant intervenir le couple $C_2(t)$, et qui permette de ne pas f
 \fi
 
 
-\subparagraph{}
-\textit{}
-\ifprof
-\begin{corrige}
-\end{corrige}
-\else
-\fi
-
-\subparagraph{}
-\textit{}
-\ifprof
-\begin{corrige}
-\end{corrige}
-\else
-\fi
 
 
-\subparagraph{}
-\textit{}
-\ifprof
-\begin{corrige}
-\end{corrige}
-\else
-\fi
+\end{multicols}
 
-
-\subparagraph{}
-\textit{}
-\ifprof
-\begin{corrige}
-\end{corrige}
-\else
-\fi
 
 \end{document}
 \begin{center}
