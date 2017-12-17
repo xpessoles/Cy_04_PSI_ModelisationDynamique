@@ -56,7 +56,7 @@
 %\end{itemize}
 }}
 \def\xxfigures{
-\includegraphics[width=.4\linewidth]{images/fig_01}
+\includegraphics[width=.36\linewidth]{images/fig_01}
 }%figues de la page de garde
 
 
@@ -231,6 +231,35 @@ précédente, faisant intervenir le couple $C_2(t)$, et qui permette de ne pas f
 \else
 \fi
 
+\subparagraph{}\textit{En déduire que les deux équations précédentes peuvent s'écrire sous la forme matricielle suivante : 
+$\begin{pmatrix}
+C_1 \\ C_2
+\end{pmatrix}
+=
+A
+\begin{pmatrix}
+\ddot{\gamma} \\ \ddot{\delta}
+\end{pmatrix}
++
+B
+\begin{pmatrix}
+\dot{\gamma} \\ \dot{\delta}
+\end{pmatrix}
++
+C
++
+Q
+\begin{pmatrix}
+X_F \\ Y_F
+\end{pmatrix}$ où $C$ est un vecteur et $A$, $B$ et $Q$ sont des matrices $2\times 2$ que l'on précisera en fonction des paramètres du mouvement $\left(\gamma,\delta\right)$ et de leurs dérivées premières $\left(\dot{\gamma},\dot{\delta}\right)$.
+}
+
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
 
 \subparagraph{}
 \textit{Calculer les couples $(C_1,C_2)$ exercés par les actionneurs sur les axes des articulations dans le cas où
@@ -318,7 +347,7 @@ $\ddot{q}=I+N\left(q,\dot{q},F \right)$ où $N\left(q,\dot{q},F \right)=\text{M}
 selon la forme 
 $\ddot{q}_1=\tilde{\text{A}}q_1 + \tilde{\text{B}}\dot{q}_1 + \tilde{\text{G}}u + \tilde{\text{H}}f$ où $\tilde{\text{A}}$, $\tilde{\text{B}}$, $\tilde{\text{G}}$ et $\tilde{\text{H}}$ sont des matrices constantes, éventuellement dépendantes du point de fonctionnement.}
 
-La démarche de linéarisation faisant fait intervenir $\dfrac{\partial N}{\partial q}$, $\dfrac{\partial N}{\partial \dot{q}}$ et $\dfrac{\partial N}{\partial F}$. L'expression explicite du modèle linéarisé en fonction de $M$ n'est pas demandée.
+La démarche de linéarisation fait intervenir $\dfrac{\partial N}{\partial q}$, $\dfrac{\partial N}{\partial \dot{q}}$ et $\dfrac{\partial N}{\partial F}$. L'expression explicite du modèle linéarisé en fonction de $M$ n'est pas demandée.
 \ifprof
 \begin{corrige}
 \end{corrige}
@@ -326,18 +355,76 @@ La démarche de linéarisation faisant fait intervenir $\dfrac{\partial N}{\part
 \fi
 
 
-\subparagraph{}
-\textit{}
-\ifprof
-\begin{corrige}
-\end{corrige}
-\else
-\fi
+%\subparagraph{}
+%\textit{}
+%\ifprof
+%\begin{corrige}
+%\end{corrige}
+%\else
+%\fi
 
 
 
 
 \end{multicols}
+
+\newpage
+
+\setcounter{exo}{0}
+
+\subparagraph{}
+\begin{center}
+\includegraphics[width=\linewidth]{images/cor_01}
+\end{center}
+
+\subparagraph{}
+\begin{center}
+\includegraphics[width=\linewidth]{images/cor_02}
+\end{center}
+
+\subparagraph{}
+\begin{center}
+\includegraphics[width=\linewidth]{images/cor_03}
+\end{center}
+
+\subparagraph{}
+\begin{center}
+\includegraphics[width=\linewidth]{images/cor_04}
+
+\includegraphics[width=\linewidth]{images/cor_04_bis}
+\end{center}
+
+\subparagraph{}
+\begin{center}
+\includegraphics[width=\linewidth]{images/cor_05}
+\end{center}
+
+\subparagraph{}
+\begin{center}
+\includegraphics[width=\linewidth]{images/cor_06}
+\end{center}
+
+\subparagraph{}
+\begin{center}
+\includegraphics[width=\linewidth]{images/cor_07}
+\end{center}
+
+\subparagraph{}
+\begin{center}
+\includegraphics[width=\linewidth]{images/cor_08}
+\end{center}
+
+\subparagraph{}
+\begin{center}
+\includegraphics[width=\linewidth]{images/cor_09}
+\end{center}
+
+\subparagraph{}
+\begin{center}
+\includegraphics[width=\linewidth]{images/cor_10_1}
+
+\includegraphics[width=\linewidth]{images/cor_10_2}
+\end{center}
 
 
 \end{document}
