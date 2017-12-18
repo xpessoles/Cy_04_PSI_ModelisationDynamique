@@ -10,8 +10,8 @@
 \fichetrue
 %\fichefalse
 
-%\proftrue
-\proffalse
+\proftrue
+%\proffalse
 
 \tdtrue
 %\tdfalse
@@ -100,7 +100,7 @@ On note :
 \item $\angl{x_0}{x_1}=\angl{y_0}{y_1}=\theta_1$, $\angl{x_0}{x_2}=\angl{y_0}{y_1}=\theta_2$; $\omega_{10}=\dot{\theta}_1$ et $\omega_{20}=\dot{\theta}_2$.
 \end{itemize}
 
-On note $C_m$ le couple délivré par le moteur et $F_e$ la force exercée sur le piston suite à l'explosion du mélange air - carburant.
+On note $C_m$ le couple délivré par le moteur et $F_e$ la force exercée sur le piston suite à l'explosion du mélange air -- carburant. On néglige les effets de la pesanteur.
 
 \subparagraph{}
 \textit{Exprimer la relation liant la vitesse de rotation $\omega_{10}$ du vilebrequin \textbf{(1)} et la vitesse du piston \textbf{(3)}, notée $V_{3/0}$. Déterminer la vitesse et l'accélération du centre d'inertie de la bielle \textbf{(2)} par rapport à \textbf{(0)}.}
@@ -169,10 +169,10 @@ $H$ est un point fixe :
 \begin{itemize}
 \item $\torseurci{1}{0}
 =\torseurl{\vectrc{1}{0}=m_1\vectv{G_1}{1}{0}}{\vectmc{H}{1}{0}=\inertie{H}{1}\vecto{1}{0}}{H}
-=\torseurl{\vect{0}}{\dot{\theta}_1\vect{z_1}}{H}$
+=\torseurl{\vect{0}}{C_1\dot{\theta}_1\vect{z_1}}{H}$
 \item $\torseurdyn{1}{0}
 =\torseurl{\vectrd{1}{0}=m_1\vectg{G_1}{1}{0}}{\vectmd{H}{1}{0}=\left[\dfrac{\dd \vectmd{H}{1}{0}}{\dd t}\right]_{\mathcal{R}_0}}{H}
-=\torseurl{\vect{0}}{\ddot{\theta}_1\vect{z_1}}{H}$
+=\torseurl{\vect{0}}{C_1\ddot{\theta}_1\vect{z_1}}{H}$
 \end{itemize}
 
 
@@ -190,13 +190,28 @@ $G_2$ est le centre de gravité de 2.
 \begin{itemize}
 \item $\torseurci{2}{0}
 =\torseurl{\vectrc{2}{0}=m_2\vectv{G_2}{2}{0}}{\vectmc{G_2}{2}{0}=\inertie{G_2}{2}\vecto{2}{0}}{G_2}
-=\torseurl{  }{  }{G_2}$
+=\torseurl{ m_2 \left(\dot{\lambda}_3\vect{y_0}+a_2 \dot{\theta}_2\vect{x_2}\right) }{
+C_2 \dot{\theta}_2 \vect{z_0}  }{G_2}$
 \item $\torseurdyn{2}{0}
 =\torseurl{\vectrd{2}{0}=m_2\vectg{G_2}{2}{0}}{\vectmd{G_2}{2}{0}=\left[\dfrac{\dd \vectmc{G_2}{2}{0}}{\dd t}\right]_{\mathcal{R}_0}}{G_2}
-=\torseurl{  }{  }{G_2}$
+=\torseurl{ m_2 \left(\ddot{\lambda}_3\vect{y_0}+a_2 \ddot{\theta}_2\vect{x_2}+a_2 \dot{\theta}_2^2\vect{y_2}\right) }{C_2 \ddot{\theta}_2 \vect{z_0}  }{G_2}$
 \end{itemize}
 
+Détail des calculs.
 
+\textbf{Calcul de  $\vectv{G_2}{2}{0}$.}
+
+$ \vectv{G_2}{2}{0} = \vectv{G_2}{2}{3}+\vectv{G_2}{3}{0}$
+
+$\vectv{G_2}{2}{3}=\vectv{C}{2}{3}+\vect{G_2C}\wedge \vecto{2}{3}=\vect{0}+a_2\vect{y_2}\wedge \dot{\theta}_2\vect{z_0}=a_2 \dot{\theta}_2\vect{x_2}$
+$\quad$ 
+$\vectv{G_2}{3}{0}=\dot{\lambda}_3\vect{y_0}$ 
+
+$ \vectv{G_2}{2}{0}=\dot{\lambda}_3\vect{y_0}+a_2 \dot{\theta}_2\vect{x_2}$.
+
+\textbf{Calcul de  $\vectg{G_2}{2}{0}$.}
+
+$ \vectg{G_2}{2}{0}=\ddot{\lambda}_3\vect{y_0}+a_2 \ddot{\theta}_2\vect{x_2}+a_2 \dot{\theta}_2^2\vect{y_2}$.
 \end{corrige}
 \else
 \fi
@@ -204,7 +219,90 @@ $G_2$ est le centre de gravité de 2.
 \subparagraph{}
 \textit{Déterminer l'équation de mouvement par les théorèmes généraux.}
 \ifprof
-\begin{corrige}
+\begin{corrige} ~\\
+\begin{itemize}
+\item On isole \textbf{(1)}.
+\item Bilan des actions mécaniques extérieures :
+\begin{itemize}
+\item Liaison pivot : $\torseurstat{T}{0}{1}=\torseurl{\vectf{0}{1}}{\vectm{A}{0}{1}}{A}$ avec $\vectm{A}{0}{1}\cdot\vect{z_0}=0$ (pas de frottement dans la liaison).
+\item Liaison pivot : $\torseurstat{T}{2}{1}=\torseurl{\vectf{2}{1}}{\vectm{B}{2}{1}}{B}$ avec $\vectm{B}{2}{1}\cdot\vect{z_0}=0$ (pas de frottement dans la liaison).
+Par ailleurs, $\vectm{A}{2}{1}\cdot\vect{z_0}=\vectm{B}{2}{1}\cdot\vect{z_0}+\left(\vect{AB}\wedge\vectf{2}{1}\right) \vect{z_0}=\left(e\vect{x_1}\wedge\left(X_{21}\vect{x_2}+Y_{21}\vect{y_2}\right)\right)\vect{z_0}$
+$=\left(eX_{21}\vect{x_1}\wedge \vect{x_2}+ eY_{21} \vect{x_1}\wedge \vect{y_2}\right)\vect{z_0} $
+$=eX_{21}\sin \left( \theta_2 - \theta_1\right)+ eY_{21} \cos \left( \theta_2 - \theta_1\right) $
+
+\item Couple moteur : $\torseurstat{T}{0_m}{1}=\torseurl{\vect{0}}{C_m\vect{z_0}}{A}$.
+\end{itemize}
+\item On applique le TMD en $A$ en projection suivant $\vect{z}$ :
+$$
+eX_{21}\sin \left( \theta_2 - \theta_1\right)+ eY_{21} \cos \left( \theta_2 - \theta_1\right) + C_m=C_1\ddot{\theta}_1
+$$
+\end{itemize}
+
+%\begin{itemize}
+%\item On isole \textbf{(3)}.
+%\item Bilan des actions mécaniques extérieures :
+%\begin{itemize}
+%\item Liaison glissière: $\torseurstat{T}{0}{3}=\torseurl{\vectf{0}{3}}{\vectm{A}{0}{3}}{A}$ avec $\vectf{0}{3}\cdot\vect{y_0}=0$ (pas de frottement dans la liaison).
+%\item Liaison pivot : $\torseurstat{T}{2}{3}=\torseurl{\vectf{2}{3}}{\vectm{C}{2}{3}}{C}$ avec $\vectm{C}{2}{3}\cdot\vect{z_0}=0$ (pas de frottement dans la liaison).
+%\item Force explosion: $\torseurstat{T}{0_e}{3}=\torseurl{F_y\vect{y}+F_z\vect{z}}{\vect{C_{exp}}}{C}$.
+%\end{itemize}
+%\item On applique le TMD en $C$ projection suivant $\vect{z_0}$ :
+%$$
+%F_y+Y_{23}=m_3\ddot{\lambda}_3
+%$$
+%\end{itemize}
+
+
+\begin{itemize}
+\item On isole \textbf{(2)}.
+\item Bilan des actions mécaniques extérieures :
+\begin{itemize}
+\item Liaison pivot : $\torseurstat{T}{1}{2}=\torseurl{-\vectf{2}{1}}{-\vectm{B}{2}{1}}{B}$ avec $\vectm{B}{2}{1}\cdot\vect{z_0}=0$ (pas de frottement dans la liaison).
+\item Liaison pivot : $\torseurstat{T}{3}{2}=\torseurl{-\vectf{2}{3}}{-\vectm{C}{2}{3}}{C}$ avec $\vectm{C}{2}{3}\cdot\vect{z_0}=0$ (pas de frottement dans la liaison).
+\end{itemize}
+\item On applique le TMD en $C$ en projection sur $\vect{z_0}$ :
+%TRD
+%$$
+%-Y_{21}-Y_{23}=\left(m_2 \left(\ddot{\lambda}_3\vect{y_0}+a_2 \ddot{\theta}_2\vect{x_2}+a_2 \dot{\theta}_2^2\vect{y_2}\right)\right)\cdot\vect{y_0}. 
+%$$
+$$
+- \vect{CB}\wedge\vectf{2}{1}\cdot \vect{z} = \vectmd{C}{2}{0}\cdot \vect{z}
+\Longleftrightarrow 
+L_2\vect{y_2} \wedge\left( X_{21}\vect{x_2}+ Y_{21}\vect{y_2}\right)\cdot \vect{z} = \left( \vectmd{G_2}{2}{0} + \vect{CG_2}\wedge m_2\vectg{G_2}{2}{0} \right)\cdot \vect{z}
+$$
+
+$$
+\Longrightarrow 
+-L_2 X_{21} = C_2\ddot{\theta}_2\left(  -a_2 \vect{y_2}\wedge \left(  m_2 \left(\ddot{\lambda}_3\vect{y_0}+a_2 \ddot{\theta}_2\vect{x_2}+a_2 \dot{\theta}_2^2\vect{y_2}\right)\right) \right)\cdot \vect{z}
+$$
+$$
+\Longrightarrow 
+-L_2 X_{21} = C_2\ddot{\theta}_2+a_2 m_2 \left(\ddot{\lambda}_3 \sin\theta_2-  a_2 \ddot{\theta}_2\vect{z_2}\right)
+$$
+\end{itemize}
+
+
+
+\begin{itemize}
+\item On isole \textbf{(2+3)}.
+\item Bilan des actions mécaniques extérieures :
+\begin{itemize}
+\item Liaison glissière: $\torseurstat{T}{0}{3}=\torseurl{\vectf{0}{3}}{\vectm{A}{0}{3}}{A}$ avec $\vectf{0}{3}\cdot\vect{y_0}=0$ (pas de frottement dans la liaison).
+\item Liaison pivot : $\torseurstat{T}{1}{2}=\torseurl{-\vectf{2}{1}}{-\vectm{B}{2}{1}}{B}$ avec $\vectm{B}{2}{1}\cdot\vect{z_0}=0$ (pas de frottement dans la liaison).
+\item Force explosion: $\torseurstat{T}{0_e}{3}=\torseurl{F_y\vect{y}+F_z\vect{z}}{\vect{C_{exp}}}{C}$.
+\end{itemize}
+\item On applique le TRD en projection sur $\vect{y_0}$ :
+$$
+F_y-Y_{21}=m_3\ddot{\lambda}_3+\left(  m_2 \left(\ddot{\lambda}_3\vect{y_0}+a_2 \ddot{\theta}_2\vect{x_2}+a_2 \dot{\theta}_2^2\vect{y_2}\right)\right)\cdot \vect{y_0}
+$$
+
+$$
+\Longleftrightarrow
+F_y-Y_{21}=m_3\ddot{\lambda}_3+\left(  m_2 \left(\ddot{\lambda}_3+a_2 \ddot{\theta}_2 \sin \theta_2+a_2 \dot{\theta}_2^2\cos\theta_2\right)\right)
+$$
+\end{itemize}
+
+
 \end{corrige}
 \else
 \fi
