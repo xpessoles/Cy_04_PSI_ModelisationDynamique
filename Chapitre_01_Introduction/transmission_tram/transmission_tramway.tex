@@ -1,0 +1,265 @@
+\graphicspath{{/Users/emiliendurif/Documents/prepa/sujets/DS/transmission_tram/images/}}
+\vspace{-1.5cm}
+\section{Système de maintenance de Tramway}
+\vspace{-.5cm}
+\subsection{Étude de la transmission de puissance d'un système d'élévation d'une rame de Tram}
+\vspace{-.5cm}
+\begin{figure}[!htb]
+\begin{minipage}{0.35\textwidth}
+L'étude repose sur un système permettant de soulever une rame de Tramway du sol pour effectuer des opérations de maintenance.
+On s'intéresse dans cette études aux exigences (figure \ref{req_tram}) :
+\textbf{1.2 Générer un mouvement vertical}
+\end{minipage}
+\begin{minipage}{0.65\textwidth}
+\begin{center}
+\includegraphics[width=0.9\textwidth]{req_tram.pdf}
+\caption{Diagramme des exigences partiel \label{req_tram}}
+\end{center}
+\end{minipage}
+\end{figure}
+
+
+\begin{center}
+\includegraphics[width=0.6\textwidth]{tram_photo.png}
+\end{center}
+
+
+%\subsection{Exigence 1.3 : Dimensionnement du système de fixation pour garantir la stabilité mécanique}
+%
+%\subsubsection{Paramétrage}
+%On souhaite déterminer la surface d'appui du système de fixation.
+%
+%Le cahier des charges du système permettant de réaliser la maintenance des tramway en soulevant ces derniers est donné en figure \ref{req}.
+%
+%
+%\begin{itemize}
+%\item Système isolé : colonne entière.
+%
+%\item Le plan yOz est plan de symétrie pour les efforts et la géométrie.
+%
+%\item Le poids des éléments de la colonne est négligé par rapport à la charge à soulever.
+%
+%\item L'action de contact sol/colonne est modélisée par une répartition de pression $q(y)$ variant linéairement entre $q_1$ et $q_2$ pour $y\in\left[e,e+L\right]$, et restant uniforme selon $x$, comme indiqué sur les deux figures \ref{AM_colonne}. L'unité de $q(y)$ est le $MPa$.
+%
+%\item La charge à soulever est modélisée par un glisseur $\overrightarrow{F_{T\to C}}$  dont le support passe par le point P situé à la distance $d$ de l'axe Oz de la vis du chariot.
+%
+%\end{itemize}
+%
+%On souhaite vérifier le critère $P_{adm}$ de non dépassement de la résistance mécanique du sol.
+%
+%\textbf{Données géométriques :} 	L = 600 mm ; b = 200 mm ; d = 480 mm ; e = 110 mm
+%
+%\textbf{Charge à soulever :}  $F_{T\to C}=60000\;N$
+%
+%\subsubsection{Modélisation}
+%%\setcounter{thequestion}{0}
+%\question{En vous appuyant sur la figure \ref{AM_colonne}, donner l'évolution de la répartition de pression $q(y)$ en fonction des paramètres géométriques ($e$ et $L$)  et en fonction de $q_1$ et $q_2$}
+%
+%
+%
+%\question{Déterminer l'expression du torseur des actions mécaniques réparties du sol sur la colonne en O.}
+%
+%
+%\question{Montrer que ce torseur est un glisseur.}
+%
+%\question{Représenter le graph de structure du système.}
+%
+%
+%\question{Faire le bilan des actions mécaniques extérieures à la colonne.}
+%
+%
+%\question{Par application du principe fondamental de la statique à la colonne en O défini par $\overrightarrow{HO}=-a\;\overrightarrow{x}+e\;\overrightarrow{y}$, déterminer la valeur de la pression de contact maximale $P_{max}$ entre les pieds et le sol.}
+%
+%
+%
+%\question{Conclure vis-à-vis de la puissance maximale admissible.}
+%
+%
+%
+%
+%\begin{figure}[!htb]
+%\begin{center}
+%\includegraphics[width=0.6\textwidth]{tram4.png}
+%\\
+%\includegraphics[width=0.9\textwidth]{tram5.png}
+%\caption{Modélisation des actions mécaniques extérieures s'appliquant sur la colonne.\label{AM_colonne}}
+%\end{center}
+%\end{figure}
+
+\FloatBarrier
+\subsection{Exigence 1.2 Générer un mouvement vertical}
+
+Le système permettant de générer le mouvement vertical du Tramway est modélisé par le schéma cinématique de la figure \ref{schema_cine_tram}.
+
+\begin{figure}[!htb]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{schema_cine_tram.pdf}
+\caption{Schéma Cinématique du système permettant de soulever les tramway \label{schema_cine_tram}}
+\end{center}
+\end{figure}
+
+
+On note :
+\begin{itemize}
+\item la vitesse de rotation de l'arbre moteur : $\overrightarrow{\Omega}(1/0)=\omega_{10}\cdot \overrightarrow{x}_0=\dot{\theta}_1\cdot \overrightarrow{x}_0$ ;
+\item la vitesse de levé du tramway :  $V_L=\dot{z}_4=\overrightarrow{V}(O_4\in 4/0)\cdot \overrightarrow{z}_0$.
+\end{itemize}
+ 
+
+\subsubsection{Données sur les liaisons}
+\begin{itemize}
+\item Liaison $L_{12}$ : 
+\begin{itemize}
+\item Pignon de l'arbre 1 engrenant avec l'arbre 2 : nombre de dents : $Z_{12}=15$,
+\item Pignon de l'arbre 2 engrenant avec l'arbre 1 : nombre de dents : $Z_{21}=75$,
+\end{itemize}
+\item Liaison $L_{23}$ : 
+\begin{itemize}
+\item Pignon de l'arbre 2 engrenant avec la vis 3 : nombre de dents : $Z_{23}=14$,
+\item Pignon de la vis 3 engrenant avec l'arbre 2 : nombre de dents : $Z_{32}=35$,
+\end{itemize}
+\item Liaison $L_{34}$ : pas du système vis-écrou : $p_{34}=5\;mm$
+\end{itemize}
+
+\subsubsection{Étude du réducteur de vitesse}
+
+\question{Déterminer l'expression littérale des rapports de réduction en fonction des données concernant les roues dentées : 
+\begin{enumerate}
+\item $r_{12}=\frac{\omega_{20}}{\omega_{10}}$,
+\item $r_{23}=\frac{\omega_{30}}{\omega_{20}}$,
+\end{enumerate}
+}
+
+\question{En déduire les expressions de :
+\begin{enumerate}
+\item $\overrightarrow{\Omega}_{2/0}$ ,
+\item $\overrightarrow{\Omega}_{3/0}$.
+\end{enumerate}
+en fonction de $\dot{\theta}_1$ et des données concernant les roues dentées
+}
+
+\question{Déterminer numériquement les rapports :
+\begin{enumerate}
+\item $r_{12}=\frac{\omega_{20}}{\omega_{10}}$,
+\item $r_{23}=\frac{\omega_{30}}{\omega_{20}}$,
+\end{enumerate}
+}
+
+
+\subsubsection{Étude du système de transformation de mouvement}
+
+\question{Tracer le graph des liaisons du système de transformation de mouvement constitué des solides $0-3-4$.}
+
+\question{Écrire les torseurs cinématiques associé à chaque liaison en précisant les lieux d'invariance.}
+
+\question{Écrire la fermeture cinématique.}
+
+\question{En déduire une relation entre la vitesse de levée : $V_L=\overrightarrow{V}(O_4\in 4/0)\cdot \overrightarrow{z}_0$ et $\omega_{30}=\overrightarrow{\Omega}_{3/0}\cdot \overrightarrow{z}_0$}
+
+\question{En déduire les rapports : 
+\begin{enumerate}
+\item $r_{34}=\frac{V_L}{\omega_{30}}$,
+\item $r_{g}=-\frac{V_L}{\omega_{10}}$.
+\end{enumerate}
+}
+
+\question{Déterminer la vitesse de rotation du moteur souhaitée (à exprimer en tours par minute) pour obtenir une vitesse de levée conforme au cahier des charges.}
+
+
+
+
+\subsubsection{Dimensionnement dynamique du système.}
+
+\textbf{Données}
+\begin{itemize}
+\item Le référentiel associé au repère $R_0=\quadruplet{O_0}{\overrightarrow{x}_0}{\overrightarrow{y}_0}{\overrightarrow{z}_0}$ est supposé galiléen ;
+\item Toutes les liaisons sont supposées parfaites ;
+\item Masse du solide 4 : $M_4=67kg$ ;
+\item Masse du solide 5 : $M5=6000kg$ ;
+\item accélération de la pesanteur : $\overrightarrow{g}=-g\cdot \overrightarrow{z}_0$ avec $g=9,81m\cdot s^{-2}$ ;
+\item Les solides 4 et 5 sont supposés encastrés ;
+\item Moment d'inertie du solide 1 selon l'axe $\couple{O_1}{\overrightarrow{x}_0}$ : $J_{\couple{O_1}{\overrightarrow{x}_0}}(S_1)=J_1=10,5\times 10^{-3}kg\cdot m^2$.
+\item Inerties des solides 2 et 3 négligeables ;
+\item $C_m$ le couple qu'exerce le moteur sur le solide 1 (selon l'axe $\overrightarrow{x}_0$) ;
+\item $C_{21}$ le moment de l'action de l'arbre 2 sur l'arbre 1 en projection sur \couple{O_1}{\overrightarrow{x}_0} : $\overrightarrow{M}_{O_1}(2\to 1)\cdot \overrightarrow{x}_0=C_{21}$ ;
+\item $C_{23}$ le moment de l'action de l'arbre 2 sur l'arbre 3 en projection sur \couple{O_3}{\overrightarrow{z}_0} : $\overrightarrow{M}_{O_3}(2\to 3)\cdot \overrightarrow{x}_0=C_{23}$ ;
+\item En supposant un rendement égal à 1 au niveau du réducteur on obtient la relation entre $C_{21}$ et $C_{23}$ : 
+\begin{align*}
+C_{23}=-\frac{p_{34}}{r_g\cdot 2\cdot \pi}\cdot C_{21}
+\end{align*}
+\item On rappelle le résultat de la partie précédente : 
+\begin{align*}
+\dot{z}_4=-r_g\cdot \dot{\theta}_1
+\end{align*}
+et quelle que soit la valeur trouvée pour $r_g$, la valeur utilisée dans la suite du sujet sera : $r_g=6,36\times 10^{-5}m$.
+\end{itemize}
+
+\question{Donner le graphe de structure de l'ensemble $0-3-4-5$.}
+
+
+\question{Donner la forme du torseur de l'action mécanique du à la liaison de $3\to 4$.}
+
+\question{En isolant l'ensemble $E=\left\{4+5\right\}$ et en appliquant un théorème général de la dynamique, déterminer une équation reliant $\ddot{z}_4$, $M_4$, $M_5$, $g$ et le(s) inconnue(s) de l'action mécanique du solide 3 sur 4.}
+
+\question{En isolant le solide $1$ et en appliquant un théorème général de la dynamique, déterminer une équation reliant $\ddot{\theta}_1$, $J_1$, $C_m$ et $C_{21}$}
+
+\question{En isolant le solide $3$ et en appliquant un théorème général de la dynamique, déterminer une équation reliant $C_{23}$ à(aux) inconnue(s) de l'action mécanique du solide 3 sur 4.}
+
+\question{Déduire des questions précédentes l'expression de $C_m$ en fonction de $\ddot{z}_4$, $M_4$, $M_5$, $g$, $r_g$,  et $J_1$.}
+
+\question{On souhaite piloter le moteur avec un trapèze en vitesse. Donner les caractéristiques du trapèze en fonction des données du cahier des charges.}
+
+\begin{center}
+\includegraphics[width=0.6\textwidth]{trapeze.pdf}
+\end{center}
+
+\question{Pour chaque phase du trapèze, donner l'expression du couple moteur $C_m$ ainsi que les applications numériques associées.}
+
+\subsubsection{Étude de la commande du système}
+
+
+On donne le schéma bloc de l'asservissement en position du système selon la position verticale (figure \ref{schema_bloc}).
+\begin{itemize}
+\item $z_c(t)$ est la consigne en position selon $\overrightarrow{z}_0$ du chariot 4.
+\item $z_s(t)=z_4(t)$ est la position du chariot 4 selon $\overrightarrow{z}_0$.
+\item Le correcteur $C_1(p)$ est pris égal à 1.
+\item La charge maximale est de $6tonnes$.
+\item pour la charge moyenne de $5,6 tonnes$, la vitesse de montée doit être de $10 mm/s$ ;
+\item $U_m(p)$ et $C_r(p)$ seront considérés comme des échelons.
+\item L'étude est conduite pour la phase de montée et la tension d'alimentation du moteur $U_m(p)$ est limitée à $U_{sat}$.
+\item Valeurs numériques : 
+$R=3\Omega$ ; $L=0,03H$, $K_m=1,4Nm/A$ ; $J=0,02kg\cdot m^2$ ; $f_v=0,012Nm/(rad/s)$ ; $K_e=1,4V/(rad/s)$ ; $r_g=6,36\times 10^{-5}m$.
+\end{itemize}
+
+\begin{figure}[!htb]
+\begin{center}
+\includegraphics[width=1.0\textwidth]{schema_bloc}
+\caption{Schéma bloc de l'asservissement en position du système \label{schema_bloc}}
+\end{center}
+\end{figure}
+
+\textbf{Traitons tout d'abord le cas où $C_r(p)=0$.}
+
+\question{Déterminer la fonction de transfert $H_1(p)=\frac{V_s(p)}{U_m(p)}$ et la mettre sous forme canonique.}
+
+\question{Déterminer l'expression de la valeur finale de la vitesse Vs en réponse à un échelon $U_m(p)$ d'amplitude $U_0$.}
+
+\question{En déduire la valeur de $U_0$ pour obtenir une vitesse $V_s = 10 mm/s$.}
+
+\textbf{Traitons ensuite le cas où  $U_m(p)=0$.}
+
+\question{Déterminer la fonction de transfert $H_2(p)=\frac{V_s(p)}{C_r(p)}$ et la mettre sous forme
+canonique.}
+
+\question{Déterminer l'expression de la valeur finale de la vitesse $V_s$ en réponse à un échelon $C_r(t)$
+d'amplitude $C_{r0}$.}
+
+\question{Effectuer l'application numérique pour $C_{r0} = 12 Nm$.}
+
+\textbf{Enfin traitons le cas où $C_r(p)=12N\cdot m$ et $U_m(p)\neq 0$.}
+
+\question{Déterminer la valeur de l'amplitude de l'échelon $U_m(p)$, noté $U_1$, afin de compenser l'effet de la perturbation $C_r(t)$.}
+
+\question{Effectuer l'application numérique.}
+
+\question{Justifier qu'un correcteur proportionnel-intégral $K_i\left(1+\frac{1}{T_i\cdot p}\right)$ permettrait d'avoir un système précis, en boucle fermée.}

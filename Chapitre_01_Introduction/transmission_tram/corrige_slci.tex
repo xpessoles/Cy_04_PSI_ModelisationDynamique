@@ -1,0 +1,231 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage[]{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\PassOptionsToPackage{hyphens}{url} % url is loaded by hyperref
+\usepackage[unicode=true]{hyperref}
+\hypersetup{
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+
+\date{}
+
+\begin{document}
+
+Q17- Système non perturbé
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  Fonction de transfert
+\end{enumerate}
+
+La formule de Black permet d'obtenir~:
+
+\[H_{1}\left( p \right) = r_{g} \cdot \frac{\frac{K_{m}}{\left( R + L \cdot p \right) \cdot \left( f_{v} + J\  \cdot p \right)}}{1 + \frac{K_{m} \cdot K_{e}}{\left( R + L \cdot p \right) \cdot \left( f_{v} + J\  \cdot p \right)}}\]
+
+Sous forme canonique~:
+
+\[H_{1}\left( p \right) = \frac{\frac{r_{g} \cdot K_{m}}{R \cdot f_{v} + K_{m} \cdot K_{e}}}{1 + \frac{\left( R \cdot J + L \cdot f_{v} \right)}{R \cdot f_{v} + K_{m} \cdot K_{e}} \cdot p + \frac{L \cdot J}{R \cdot f_{v} + K_{m} \cdot K_{e}} \cdot p^{2}}\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  Valeur finale
+\end{enumerate}
+
+Soit \(V_{s\infty 1}\) la valeur finale de \(V_{s}\) pour le système non
+perturbé. On a~:
+
+\[V_{s\infty 1} = \operatorname{}{\left( p \cdot \frac{U_{0}}{p} \cdot H_{1}\left( p \right) \right) = \frac{r_{g} \cdot K_{m} \cdot U_{0}}{R \cdot f_{v} + K_{m} \cdot K_{e}}}\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  Tension à vide
+\end{enumerate}
+
+On a donc
+\(U_{sat - vide} = \frac{V_{s\infty 1} \cdot \left( R \cdot f_{v} + K_{m} \cdot K_{e} \right)}{r_{g} \cdot K_{m}} = 223,8\ V\).
+
+Q18- Système soumis à la seule perturbation
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  Fonction de transfert
+\end{enumerate}
+
+On a~:
+
+\[H_{2}\left( p \right) = - \lambda \cdot \frac{\frac{1}{\left( f_{v} + J\  \cdot p \right)}}{1 + \frac{K_{m} \cdot K_{e}}{\left( f_{v} + J\  \cdot p \right) \cdot \left( R + L \cdot p \right)}}\]
+
+Soit, sous forme canonique~:
+
+\[H_{2}\left( p \right) = \frac{- \frac{\lambda \cdot R \cdot \left( 1 + \frac{L}{R} \cdot p \right)}{\left( R \cdot f_{v} + K_{m} \cdot K_{e} \right)}}{1 + \frac{\left( R \cdot J + L \cdot f_{v} \right)}{R \cdot f_{v} + K_{m} \cdot K_{e}} \cdot p + \frac{L \cdot J}{R \cdot f_{v} + K_{m} \cdot K_{e}} \cdot p^{2}}\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  Valeur finale
+\end{enumerate}
+
+Soit \(V_{s\infty 2}\) la valeur finale de \(V_{s}\) pour le système
+soumis à la seule perturbation. On a~:
+
+\[V_{s\infty 2} = \operatorname{}{\left( p \cdot \frac{C_{r}}{p} \cdot H_{2}\left( p \right) \right) = - \frac{\lambda \cdot R \cdot C_{r}}{\left( R \cdot f_{v} + K_{m} \cdot K_{e} \right)}}\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  Application numérique
+\end{enumerate}
+
+On obtient alors \(V_{s\infty 2} = - 1,15 \cdot 10^{- 3}\ m \slash s\)
+
+Q19- Système perturbé, principe de superposition
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  Tension sous charge
+\end{enumerate}
+
+Pour compenser la perte de vitesse \(V_{s\infty 2}\), on doit appliquer
+une tension supplémentaire \(\Delta_{U_{\text{sat}}}\). La question
+Q17-b permet d'écrire~:
+
+\[\Delta_{U_{\text{sat}}} = - \frac{V_{s\infty 2} \cdot \left( R \cdot f_{v} + K_{m} \cdot K_{e} \right)}{\lambda \cdot K_{m}}\]
+
+D'où
+\(U_{sat - charge} = U_{sat - vide} + \Delta_{U_{\text{sat}}} = \frac{\left( V_{s\infty 1} - V_{s\infty 2} \right) \cdot \left( R \cdot f_{v} + K_{m} \cdot K_{e} \right)}{\lambda \cdot K_{m}}\)
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  Application numérique
+\end{enumerate}
+
+Donc \(U_{sat - charge} = 249,5\ V\).
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  Correcteur
+\end{enumerate}
+
+Un correcteur proportionnel-intégral augmente la classe du système, qui
+passe à 1. L'erreur statique est donc nulle, sous réserve de stabilité.
+Ce correcteur, placé en amont de la perturbation, annule également
+l'effet de celle-ci.
+
+\subsubsection{Deuxième étude~:
+Couplage}\label{deuxiuxe8me-uxe9tude-couplage}
+
+Q20- Pertinence du correcteur
+
+L'utilisation d'un correcteur à caractère intégral va poser un problème
+de stabilité.
+
+Q21- Ecart de position entre colonnes
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  Expression
+\end{enumerate}
+
+On peut adapter le schéma-blocs pour une lecture plus directe~:
+
+\includegraphics[width=6.53194in,height=2.68403in]{media/image1.png}
+
+Une lecture du schéma-blocs permet alors d'écrire~:
+
+\[\varepsilon_{12 - 2}\left( p \right) = \frac{1}{\left( f_{v} + J\  \cdot p \right)} \cdot \left( - \frac{\lambda}{p} \right) \cdot \left( - C_{r2}\left( p \right) + \frac{K_{m}}{R} \cdot K_{e} \cdot \left( \frac{\left( K + K_{v} \cdot p \right)}{K_{e}} - \left( - \frac{p}{\lambda} \right) \right) \cdot \varepsilon_{12 - 2}\left( p \right) \right)\]
+
+On isole alors \(\varepsilon_{12 - 2}\) et \(C_{r2}\), en on obtient~:
+
+\[\varepsilon_{12 - 2}\left( p \right) = \frac{C_{r2}\left( p \right) \cdot R \cdot \lambda}{p \cdot \left\lbrack R \cdot \left( f_{v} + J\  \cdot p \right) + K_{m} \cdot \left( K_{e} + \lambda \cdot K_{v} \right) \right\rbrack + \lambda \cdot K_{m} \cdot K}\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  Valeur du gain
+\end{enumerate}
+
+On a donc~:
+
+\[\varepsilon_{12}\left( p \right) = \frac{\left( C_{r2}\left( p \right) - C_{r1}\left( p \right) \right) \cdot R \cdot \lambda}{p \cdot \left\lbrack R \cdot \left( f_{v} + J\  \cdot p \right) + K_{m} \cdot \left( K_{e} + \lambda \cdot K_{v} \right) \right\rbrack + \lambda \cdot K_{m} \cdot K}\]
+
+La valeur finale \(\varepsilon_{12\infty}\) de l'écart de position est
+donc
+\(\varepsilon_{12\infty} = \Delta C_{r} \cdot \frac{R}{K_{m} \cdot K}\)
+, soit~:
+
+\[K = \Delta C_{r} \cdot \frac{R}{K_{m} \cdot \varepsilon_{12\infty}}\]
+
+Pour avoir un écart de 5mm maximal pour \(\Delta C_{r} = 2\ N \cdot m\),
+on doit donc avoir \(K > 857\ V \slash m\), sous réserve que la réponse
+temporelle ne présente pas de dépassement.
+
+On calcule, pour ce système du second ordre, avec la valeur de gain
+ci-dessus, une pulsation propre non amortie
+\(\omega_{0} = 1,13\ rad \slash s\) et un coefficient d'amortissement
+\(\xi = 14\ \): le système ne présente pas de dépassement, mais a un
+temps de réponse à 5\% de 70s environ.
+
+\end{document}
