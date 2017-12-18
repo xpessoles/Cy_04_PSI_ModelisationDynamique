@@ -10,8 +10,8 @@
 \fichetrue
 %\fichefalse
 
-\proftrue
-%\proffalse
+%\proftrue
+\proffalse
 
 \tdtrue
 %\tdfalse
@@ -171,9 +171,32 @@ $H$ est un point fixe :
 =\torseurl{\vectrc{1}{0}=m_1\vectv{G_1}{1}{0}}{\vectmc{H}{1}{0}=\inertie{H}{1}\vecto{1}{0}}{H}
 =\torseurl{\vect{0}}{\dot{\theta}_1\vect{z_1}}{H}$
 \item $\torseurdyn{1}{0}
-=\torseurl{\vectrd{1}{0}=m_1\vectg{G_1}{1}{0}}{\vectmc{H}{1}{0}=\left[\dfrac{\dd \vectmc{H}{1}{0}}{\dd t}\right]_{\mathcal{R}_0}}{H}
+=\torseurl{\vectrd{1}{0}=m_1\vectg{G_1}{1}{0}}{\vectmd{H}{1}{0}=\left[\dfrac{\dd \vectmd{H}{1}{0}}{\dd t}\right]_{\mathcal{R}_0}}{H}
 =\torseurl{\vect{0}}{\ddot{\theta}_1\vect{z_1}}{H}$
 \end{itemize}
+
+
+$G_3$ est le centre de gravité de 3. Le solide 3 est en translation par rapport à 0.
+\begin{itemize}
+\item $\torseurci{3}{0}
+=\torseurl{\vectrc{3}{0}=m_3\vectv{G_3}{3}{0}}{\vectmc{G_3}{3}{0}}{G_3}
+=\torseurl{m_3\dot{\lambda}_3\vect{y_0}}{\vect{0}}{G_3}$
+\item $\torseurdyn{3}{0}
+=\torseurl{\vectrd{3}{0}=m_1\vectg{G_3}{3}{0}}{\vectmd{G_3}{1}{0}=\left[\dfrac{\dd \vectmc{G_3}{3}{0}}{\dd t}\right]_{\mathcal{R}_0}}{G_3}
+=\torseurl{m_3\ddot{\lambda}_3\vect{y_0}}{\vect{0}}{G_3}$
+\end{itemize}
+
+$G_2$ est le centre de gravité de 2.
+\begin{itemize}
+\item $\torseurci{2}{0}
+=\torseurl{\vectrc{2}{0}=m_2\vectv{G_2}{2}{0}}{\vectmc{G_2}{2}{0}=\inertie{G_2}{2}\vecto{2}{0}}{G_2}
+=\torseurl{  }{  }{G_2}$
+\item $\torseurdyn{2}{0}
+=\torseurl{\vectrd{2}{0}=m_2\vectg{G_2}{2}{0}}{\vectmd{G_2}{2}{0}=\left[\dfrac{\dd \vectmc{G_2}{2}{0}}{\dd t}\right]_{\mathcal{R}_0}}{G_2}
+=\torseurl{  }{  }{G_2}$
+\end{itemize}
+
+
 \end{corrige}
 \else
 \fi
