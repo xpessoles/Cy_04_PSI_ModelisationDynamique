@@ -11,7 +11,7 @@
 %\fichefalse
 
 \proftrue
-\proffalse
+%\proffalse
 
 \tdtrue
 %\tdfalse
@@ -107,6 +107,28 @@ On note $C_m$ le couple délivré par le moteur et $F_e$ la force exercée sur l
 
 \ifprof
 \begin{corrige}
+On réalise une fermeture géométrique dans le triangle $ABC$ et on a : 
+$\vect{AB}+\vect{BC}+\vect{CA}=\vect{0}$ $\Leftrightarrow e\vect{x_1}+L_2\vect{x_2}-\lambda_3 \vect{y_0}$ $\Leftrightarrow e\left( \cos \theta_1 \vect{x_0}+\sin \theta_1 \vect{y_0} \right)+L_2\left( \cos \theta_2 \vect{x_0}+\sin \theta_2 \vect{y_0} \right)-\lambda_3 \vect{y_0} = \vect{0}$. 
+On a donc : 
+$\left\{
+\begin{array}{l}
+e\cos \theta_1 +L_2 \cos \theta_2 = 0 \\
+e\sin \theta_1 + L_2 \sin \theta_2 -\lambda_3 = 0
+\end{array}
+\right.$
+$\Leftrightarrow \left\{
+\begin{array}{l}
+L_2 \cos \theta_2 = -e\cos \theta_1  \\
+L_2 \sin \theta_2  = \lambda_3-e\sin \theta_1
+\end{array}
+\right.
+$
+Au final, $L_2^2 = e^2\cos^2 \theta_1 + \left(\lambda_3-e\sin \theta_1\right)^2$
+$\Leftrightarrow L_2^2 - e^2\cos^2 \theta_1 = \left(\lambda_3-e\sin \theta_1\right)^2$
+
+$\Rightarrow \sqrt{L_2^2 - e^2\cos^2 \theta_1} = \lambda_3-e\sin \theta_1$
+$ \Rightarrow \lambda_3 = \sqrt{L_2^2 - e^2\cos^2 \theta_1}+e\sin \theta_1$.
+
 \end{corrige}
 \else
 \fi
@@ -118,19 +140,40 @@ On note $\inertie{H}{1}=\matinertie{A_1}{B_1}{C_1}{-D_1}{-E_1}{-F_1}{\repere{H}{
 \subparagraph{}
 \textit{En considérant que seul le plan $\left(H,\vect{x_1},\vect{z_1}\right)$ est le plan de symétrie, indiquer quelle(s) simplification(s) cela apporte à cette matrice d'inertie.} 
 
-\subparagraph{}
-\textit{Reprendre la question précédente en l'appliquant à la bielle \textbf{(2)} et au piston \textbf{(3)}. Définir la forme de la matrice d’inertie de chacune de ces deux pièces, en précisant en quel point et dans quelle base elle est définie.}
 \ifprof
 \begin{corrige}
+On a donc une invariance suivant $\vect{y_1}$ et 
+$\inertie{H}{1}=\matinertie{A_1}{B_1}{C_1}{0}{-E_1}{0}{\repere{H}{x_1}{y_1}{z_1}}$
 \end{corrige}
 \else
 \fi
 
 
 \subparagraph{}
+\textit{Reprendre la question précédente en l'appliquant à la bielle \textbf{(2)} et au piston \textbf{(3)}. Définir la forme de la matrice d’inertie de chacune de ces deux pièces, en précisant en quel point et dans quelle base elle est définie.}
+\ifprof
+\begin{corrige}
+De même $\inertie{G_2}{2}=\matinertie{A_2}{B_2}{C_2}{0}{-E_2}{0}{\repere{G_2}{x_2}{y_2}{z_2}}$ et 
+$\inertie{G_3}{3}=\matinertie{A_2}{B_2}{C_2}{0}{-E_2}{0}{\repere{G_3}{x_2}{y_2}{z_2}}$.
+\end{corrige}
+\else
+\fi
+
+
+Par la suite on fait l'hypothèse que les matrices d'inertie sont diagonales.
+\subparagraph{}
 \textit{On note $m_1$, $m_2$ et $m_3$ les masses des trois pièces mobiles \textbf{(1)}, \textbf{(2)} et \textbf{(3)}. Exprimer, pour chacune d’elles : son torseur cinétique et son torseur dynamique.}
 \ifprof
 \begin{corrige}
+$H$ est un point fixe : 
+\begin{itemize}
+\item $\torseurci{1}{0}
+=\torseurl{\vectrc{1}{0}=m_1\vectv{G_1}{1}{0}}{\vectmc{H}{1}{0}=\inertie{H}{1}\vecto{1}{0}}{H}
+=\torseurl{\vect{0}}{\dot{\theta}_1\vect{z_1}}{H}$
+\item $\torseurdyn{1}{0}
+=\torseurl{\vectrd{1}{0}=m_1\vectg{G_1}{1}{0}}{\vectmc{H}{1}{0}=\left[\dfrac{\dd \vectmc{H}{1}{0}}{\dd t}\right]_{\mathcal{R}_0}}{H}
+=\torseurl{\vect{0}}{\ddot{\theta}_1\vect{z_1}}{H}$
+\end{itemize}
 \end{corrige}
 \else
 \fi
@@ -143,8 +186,10 @@ On note $\inertie{H}{1}=\matinertie{A_1}{B_1}{C_1}{-D_1}{-E_1}{-F_1}{\repere{H}{
 \else
 \fi
 
-
+\ifprof
+\else
 \end{multicols}
+\fi
 
 \begin{center}
 \includegraphics[width=.7\linewidth]{images/fig_03}
