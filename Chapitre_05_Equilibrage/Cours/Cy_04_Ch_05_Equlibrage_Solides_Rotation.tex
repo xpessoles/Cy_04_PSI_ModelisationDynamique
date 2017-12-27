@@ -58,10 +58,10 @@
 }}
 		
 \def\xxfigures{
-\includegraphics[width=4cm]{images/fig_01}\\
+%\includegraphics[width=4cm]{images/fig_01}\\
 \textit{Toupie}
 
-\includegraphics[width=4cm]{images/fig_02}\\
+%\includegraphics[width=4cm]{images/fig_02}\\
 \textit{Volants d'inertie d'un vilebrequin}
 
 }%figues de la page de garde
@@ -87,612 +87,487 @@ Chapitre 5 -- \xxactivite%
 
 
 
-\section{Énoncé du Principe Fondamental de la Dynamique : cas général}
 
-\begin{definition}[Énoncé du Principe Fondamental de la Dynamique]
-Soit un ensemble matériel $E$ en mouvement par rapport à un référentiel galiléen ($R_0$), alors la somme des actions mécaniques extérieures s'appliquant sur $E$ est égale au torseur dynamique du mouvement de $E$ par rapport à $R_0$ :
+\section{Introduction}
+\subsection{Problématique industrielle}
 
-$$
-\torseurcin{D}{E}{R_0}=\torseurstat{T}{\overline{E}}{E}.
-$$
-De plus le \textbf{Principe Fondamental de la Dynamique} postule que pour tout mouvement, il existe au moins un référentiel dans lequel le PFD est vérifié. Ce sera donc un \textbf{référentiel galiléen}.
+Le mise en rotation de rotor à haute vitesse (à partir de quelques centaines de tours par minute) est une configuration classique rencontrée dans l'industrie. Si un défaut géométrique existe, cela induit une dissymétrie de la répartition de masse qui provoque des effets vibratoires pouvant aller jusqu'à la rupture des éléments de guidage (paliers, roulements à billes).
 
+Afin d'éviter ces problèmes il convient d'équilibrer dynamiquement ces rotors ce qui implique de rendre les actions mécaniques au niveau des guidages en rotation constantes au cours du temps.
 
-\begin{minipage}[c]{.48\linewidth}
-Le \textbf{torseur dynamique} est de la forme : 
-$$
-\torseurcin{D}{E}{R_0}=\torseurl{
-\vectrd{E}{R_0}=m\;\vectg{G}{E}{R_0}
-}{
-\vectmd{A}{E}{R_0}
-}{A}.
-$$
-
-\end{minipage} \hfill
-\begin{minipage}[c]{.48\linewidth}
-\begin{itemize}
-\item On note $\vectrd{S}{R_0}$ la résultante dynamique où l'accélération est \textbf{toujours} calculée au centre d'inertie $G$.
-\item Le \textbf{moment dynamique} dépend du point A et se note $\vectmd{A}{E}{R_0}$.
-\end{itemize}
-
-\end{minipage} 
-
-%\item On note $\overrightarrow{R_d}(E/R_0)$ la résultante du torseur dynamique : 
-%
-%$$\overrightarrow{R_d}(S/R_0)=m\;\overrightarrow{a}(G\in E/R_0)
-%$$
-%\item Le \textbf{moment dynamique} dépend du point A et se note $\vectmd{A}{E}{R_0}$
-%\end{itemize}
-
-
-
-\end{definition}
-
-
-Du Principe Fondamental de la dynamique découle plusieurs \textbf{théorèmes généraux}.
-\subsection{Théorème de la résultante dynamique}
-
-		\begin{theorem}[Théorème de la résultante dynamique]
-			Pour tout ensemble matériel $(E)$ de masse $m$ et de centre d'inertie $G$ en mouvement par rapport à un référentiel galiléen ($R_0$), la somme des résultantes des efforts extérieurs s'appliquant sur $E$ est égale à la résultante dynamique du mouvement de $E$ par rapport à $R_0$ :
-$$
-\vectf{\bar E}{E}=\vectrd{E}{R_0}=m\;\vectg{G}{E}{R_0}.
-$$
-	\end{theorem}
-
-
-%\begin{rem}
-%On peut alors définir un Newton comme l'effort à mettre en \oe{}uvre pour mettre en mouvement $\SI{1}{kg}$ avec une accélération de $\SI{1}{m.s^{-2}}$ en son centre de gravité $G$.
-%\end{rem}
-
-\subsection{Théorème du moment dynamique}
-\begin{theorem}[Théorème du moment dynamique]
-			Pour tout ensemble matériel $(E)$ de masse $m$ en mouvement par rapport à un référentiel galiléen ($R_0$), la somme des moments des efforts extérieurs s'appliquant sur $E$ en un point quelconque $A$ est égale au moment dynamique du mouvement de $E$ par rapport à $R_0$ en $A$ :
-			$$
-				\vectm{A}{\bar E}{E}=\vectmd{A}{E}{R_0}.
-			$$
-		\end{theorem}
-
-%\begin{exemple}[Application à l'éolienne]
-%\question{Déterminer le théorème à utiliser pour relier $C_m$ aux paramètres dynamique du problème.}
-%
-%\begin{texteCache}
-%On pourra appliquer un théorème du moment dynamique s'appliquant sur l'éolienne ($E=\left\{1+2+3\right\}$) en projection sur l'axe $\couple{K}{\overrightarrow{z}_0}$  : 
-%
-%\begin{align*}
-%\moment[K]{\bar E}{E}\cdot \overrightarrow{z}_0=\vDelta[K]{E}{R_0}\cdot \overrightarrow{z}_0.\\
-%\\
-%\Leftrightarrow\\
-%C_m=\left(\vDelta[K]{1}{R_0}+\vDelta[K]{2}{R_0}+\vDelta[K]{3}{R_0}\right)\cdot \overrightarrow{z}_0
-%\end{align*}
-%\end{texteCache}
-%
-%\end{exemple}
-
-\section{Torseur cinétique }
-
-\subsection{Définition}
-
-\begin{definition}
-Le \textbf{torseur cinétique} d'un solide $S$ dans son mouvement par rapport à $R_0$ exprimé en un point $A$ quelconque se définit de la façon suivante,
-$$
-\torseurcin{C}{S}{R_0}=\torseurl{
-\overrightarrow{R_c}(S/R_0)=\displaystyle{\int_{P\in S}}\overrightarrow{V}(P/R_0)\;\dd m}{\vectmc{A}{S}{R_0}=\displaystyle{\int_{P\in S}}\overrightarrow{AP}\wedge \overrightarrow{V}(P/R_0)\; \dd m}{A}.
-$$
-\begin{itemize}
-\item La résultante du torseur cinétique $\overrightarrow{R_c}(S/R_0)$ s'exprime en $\text{kg m s}^{-1}$ et ne dépend pas du point $A$ mais uniquement du centre d'inertie $G$ de $S$ (de masse $m$) :
-$\vectrc{S}{R_0}=m\;\overrightarrow{V}(G/R_0)$.
-
-\item Le moment cinétique dépend du point $A$ et peut s'exprimer avec la formule fondamentale de changement de point : $\vectmc{B}{S}{R_0}=\vectmc{A}{S}{R_0}+\overrightarrow{BA}\wedge \overrightarrow{R_c}(S/R_0)$.
-\end{itemize}
-
-\end{definition}
-
-%\begin{demonstration}[Résultante cinétique]
-%
-%\begin{texteCache}
-%\begin{align*}
-%\overrightarrow{R_c}(S/R_0)=\displaystyle{\int_{P\in S}}\overrightarrow{V}(P/R_0)\;dm=
-%\displaystyle{\int_{P\in S}}\left[\frac{d\overrightarrow{OP}}{\dd t}\right]_{R_0}\;dm\\
-%=\displaystyle{\int_{P\in S}}\left[\frac{d(\overrightarrow{OG}+\overrightarrow{GP})}{\dd t}\right]_{R_0}\;dm
-%=\displaystyle{\int_{P\in S}}\left[\frac{d\overrightarrow{OG}}{\dd t}\right]_{R_0}\;dm+\displaystyle{\int_{P\in S}}\left[\frac{d\overrightarrow{GP}}{\dd t}\right]_{R_0}\;dm.
-%\end{align*}
-%
-%Or, $S$ est à masse conservative,
-%
-%\begin{align*}
-%\displaystyle{\int_{P\in S}}\left[\frac{d\overrightarrow{GP}}{\dd t}\right]_{R_0}\;dm
-%=\left[\frac{d}{\dd t}\left(\displaystyle{\int_{P\in S}}\overrightarrow{GP}\;dm\right)\right]_{R_0}=\overrightarrow{0}.
-%\end{align*}
-%
-%On obtient alors,
-%
-%\begin{align*}
-%\overrightarrow{R_c}(S/R_0)=\displaystyle{\int_{P\in S}}\left[\frac{d\overrightarrow{OG}}{\dd t}\right]_{R_0}\;dm
-%=\left[\frac{d\overrightarrow{OG}}{\dd t}\right]_{R_0}\displaystyle{\int_{P\in S}}dm\\
-%=m\;\overrightarrow{V}(G/R_0)\\
-%\end{align*}
-%
-%\end{texteCache}
-%\end{demonstration}
-
-\subsection{Écriture avec l'opérateur d'inertie}
-
-\begin{prop}
-Pour un solide $S$ de masse $m$ dans son mouvement par rapport au repère $R_0$ et soit un point $A$ quelconque.
-$$\vectmc{A}{S}{R_0}=\inertie{A}{S}\cdot \vecto{S}{R_0}+m\;\vect{AG}\wedge \vectv{A}{S}{R_0}.
-$$
-%\item \textbf{Dans la pratique}, il faudra utiliser cette formule.
-%\end{itemize}
-\end{prop}
-
-
-%\begin{demonstration}
-%\begin{texteCache}
-%\begin{align*}
-%\vSigma[A]{S}{R_0}=\displaystyle{\int_{P\in S}}\overrightarrow{AP}\wedge \overrightarrow{V}(P/R_0)\;dm
-%=\displaystyle{\int_{P\in S}}\overrightarrow{AP}\wedge \overrightarrow{V}(P\in S/R_0)\;dm\\
-%=\displaystyle{\int_{P\in S}}\overrightarrow{AP}\wedge \left(\overrightarrow{V}(A\in S/R_0)+\overrightarrow{\Omega}(S/R_0)\wedge \overrightarrow{AP}\right)\;dm\\
-%=\overline{\overline{I}}_A(S)\cdot \overrightarrow{\Omega}(S/R_0)+M\;\overrightarrow{AG}\wedge \overrightarrow{V}(A\in S/R_0).
-%\end{align*}
-%\end{texteCache}
-%\end{demonstration}
-
-\subsection{Cas particuliers}
-
-\begin{itemize}
-\item En appliquant cette formule en un point \textbf{$A$ fixe} dans le mouvement de $S/R_0$, on a :$\vectmc{A}{S}{R_0}=\inertie{A}{S}\cdot \vecto{S}{R_0}$.
-\item En appliquant cette formule en \textbf{$G$, centre d'inertie} de $S$, on a :
-$
-\vectmc{G}{S}{R_0}=\inertie{G}{S}\cdot \vecto{S}{R_0}.
-$
-\end{itemize}
-
-
-
-\subsection{Méthodologie de Calcul}
-
-On considère un ensemble matériel $E$ composé de solides $S_i$. On étudie son mouvement dans le référentiel $R_0$.
-On donne la méthodologie de calcul du moment cinétique en un point $A$ sur la figure suivante.%\ref{algo_moment_cine}.
-
-%\begin{figure}[htb]
+%\begin{figure}[!htbf]
 \begin{center}
-\includegraphics[width=.9\textwidth]{images/algorigramme_moment_cinetique.pdf}
-%\caption{Algorigramme de calcul du moment cinétique \label{algo_moment_cine}}
+\begin{tabular}{cc}
+\includegraphics[width=0.4\textwidth]{images/turbine_alstom.jpeg}
+&
+\includegraphics[width=0.5\textwidth]{images/turboreacteur.jpeg}\\
+Turbine à gaz Alstom & Turborécateur Snecma
+\end{tabular}
+%\caption{Exemple de systèmes présentant des structures tournantes à haute vitesse \label{exemple_rotor}}
+\textit{Exemple de systèmes présentant des structures tournantes à haute vitesse \label{exemple_rotor}}
 \end{center}
 %\end{figure}
 
-%\begin{exemple}[Application à l'éolienne]
-%\question{Déterminer la composante suivant $\overrightarrow{z}_0$ du moment cinétique au point K de la girouette 1 dans son mouvement par rapport au support 0, notée $\overrightarrow{z}_0\cdot \vectmc{K}{1}{0}$.}
-%
-%\begin{texteCache}
-%\begin{itemize}
-%\item Le mouvement de $1/0$ est un mouvement de rotation autour d'un axe fixe \couple{K}{\overrightarrow{z}_0} : 
-%
-%\item $\vectmc{K}{1}{0}\cdot \overrightarrow{z}_0=\left(\overline{\overline{I}}_K(1)\cdot \overrightarrow{\Omega}(1/0)\right)\cdot \overrightarrow{z}_0=\left(\overline{\overline{I}}_K(1)\cdot \dot{\alpha}\cdot \overrightarrow{z}_0 \right)\cdot \overrightarrow{z}_0$
-%
-%\item or on note J son moment d'inertie par rapport à l'axe \couple{K}{\overrightarrow{z}} soit : 
-%\begin{align*}
-%\overline{\overline{I}}_K(1)\cdot\overrightarrow{z}_0\cdot \overrightarrow{z}_0=J
-%\end{align*}
-%
-%\item Ainsi : 
-%
-%\begin{align*}
-%\boxed{
-%\vectmc{K}{1}{0}\cdot \overrightarrow{z}_0=J\cdot \dot{\alpha}
-%}
-%\end{align*}
-%\end{itemize}
-%\end{texteCache}
-%
-%\question{Déterminer le moment cinétique $\vSigma[K]{2}{0}$  calculé au point K de l'hélice 2 dans son mouvement par rapport à 0.}
-%
-%\begin{texteCache}
-%\begin{itemize}
-%\item Le mouvement de $2/0$ n'est pas un mouvement simple. 
-%\item On connaît l'opérateur d'inertie en G, on calcule donc : $\vSigma[G]{2}{0}$,
-%
-%\begin{align*}
-%\vSigma[G]{2}{0}=\overline{\overline{I}}_G(2)\cdot \overrightarrow{\Omega}(2/0).
-%\end{align*}
-%
-%\item On calcule $\overrightarrow{\Omega}(2/0)$
-%\begin{align*}
-%\overrightarrow{\Omega}(2/0)=\overrightarrow{\Omega}(2/1)+\overrightarrow{\Omega}(1/0)=
-%\dot{\beta}\cdot \overrightarrow{x}_{1,2}+\dot{\alpha}\cdot \overrightarrow{z}_{1}
-%\\=\dot{\beta}\cdot \overrightarrow{x}_{1,2}
-%+\dot{\alpha}\left(\cos\beta\overrightarrow{z}_2+\sin\beta\overrightarrow{y}_2\right)\\
-%\end{align*}
-%
-%\item On calcule $\vSigma[G]{2}{0}$ : 
-%
-%\begin{align*}
-%\vSigma[G]{2}{0}=\left(
-%\begin{array}{ccc}
-%A & 0 & 0 \\ 
-%0 & B & 0 \\ 
-%0 & 0 & C
-%\end{array}
-%\right)_{\triplet{\overrightarrow{x}_2}{\overrightarrow{y}_2}{\overrightarrow{z}_2}} \cdot 
-%\left(
-%\begin{array}{c}
-%\dot{\beta}\\
-%\dot{\alpha}\cdot \sin\beta\\
-%\dot{\alpha}\cdot \cos\beta\\
-%\end{array}
-%\right)_{\triplet{\overrightarrow{x}_2}{\overrightarrow{y}_2}{\overrightarrow{z}_2}}\\
-%=\left(
-%\begin{array}{c}
-%A\cdot \dot{\beta}\\
-%B\cdot \dot{\alpha}\cdot \sin\beta\\
-%C\cdot \dot{\alpha}\cdot \cos\beta\\
-%\end{array}
-%\right)_{\triplet{\overrightarrow{x}_2}{\overrightarrow{y}_2}{\overrightarrow{z}_2}}\\
-%\end{align*}
-%\end{itemize}
-%\end{texteCache}
-%\end{exemple}
+\subsection{Présentation du support de cours}
 
-%\setcounter{cptExemple}{2}
-%\begin{exemple}[Application à l'éolienne]
-%\begin{texteCache}
-%\begin{itemize}
-%\item On calcule $\vSigma[K]{2}{0}$ : 
-%
-%\begin{itemize}
-%\item \begin{align*}
-%\vSigma[K]{2}{0}=\vSigma[G]{2}{0}+\overrightarrow{KG}\wedge \overrightarrow{R_c}(2/0)
-%=\vSigma[G]{2}{0}+a\cdot \overrightarrow{x}_1\wedge M\cdot \overrightarrow{V}(G\in 2/0)
-%\end{align*}
-%
-%\item On calcule $\overrightarrow{V}(G\in 2/0)$ : 
-%
-%\begin{align*}
-%\overrightarrow{V}(G\in 2/0)=\overrightarrow{V}(K\in 2/0)+\overrightarrow{GK}\wedge \overrightarrow{\Omega}(2/0)=
-%\overrightarrow{0}-a\cdot \overrightarrow{x}_1\wedge \left(\dot{\beta}\cdot \overrightarrow{x}_{1,2}+\dot{\alpha}\cdot \overrightarrow{z}_{1}\right)\\
-%=a\cdot \dot{\alpha}\overrightarrow{y}_{1} 
-%\end{align*}
-%
-%\item On calcule $a\cdot \overrightarrow{x}_1\wedge M\cdot \overrightarrow{V}(G\in 2/0)$ : 
-%
-%\begin{align*}
-%a\cdot \overrightarrow{x}_1\wedge M\cdot \overrightarrow{V}(G\in 2/0)=
-%a\cdot \overrightarrow{x}_1\wedge M\left(a\cdot \dot{\alpha}\overrightarrow{y}_{1} \right)=\\
-%M\cdot a^2\cdot \dot{\alpha}\cdot \overrightarrow{z}_1
-%\end{align*}
-%
-%\item On en déduit $\vSigma[K]{2}{0}$: 
-%
-%\begin{align*}
-%\vSigma[K]{2}{0}=\left(
-%\begin{array}{c}
-%A\cdot \dot{\beta}\\
-%B\cdot \dot{\alpha}\cdot \sin\beta+M\cdot a^2\cdot \dot{\alpha}\sin\beta\\
-%C\cdot \dot{\alpha}\cdot \cos\beta+M\cdot a^2\cdot \dot{\alpha}\cos\beta\\
-%\end{array}
-%\right)_{\triplet{\overrightarrow{x}_2}{\overrightarrow{y}_2}{\overrightarrow{z}_2}}\\
-%\end{align*}
-%
-%\end{itemize}
-%
-%\end{itemize}
-%\end{texteCache}
-%
-%\question{Déterminer le moment cinétique $\vSigma[K]{3}{0}$.}
-%
-%\begin{texteCache}
-%\begin{itemize}
-%\item Le solide $3$ est solide à masse ponctuelle, ainsi $\vSigma[Q]{3}{0}=\overrightarrow{0}$.
-%\item $\vSigma[K]{3}{0}=\overrightarrow{KQ}\wedge m\cdot \overrightarrow{V}(Q\in 3/0)$ : 
-%\begin{itemize}
-%\item On calcule $\overrightarrow{KQ}$ : 
-%\begin{align*}
-%\overrightarrow{KQ}=\overrightarrow{KG}+\overrightarrow{GQ}=a\cdot \overrightarrow{x}_1-b\cdot \overrightarrow{z}_2
-%\end{align*}
-%\item On calcule $\overrightarrow{V}(Q\in 3/0)$ : 
-%
-%\begin{align*}
-%\overrightarrow{V}(Q\in 3/0)=\overrightarrow{V}(Q\in 3/2)+\overrightarrow{V}(Q\in 2/1)+\overrightarrow{V}(Q\in 1/0)
-%\\
-%=\overrightarrow{0}+\overrightarrow{V}(G\in 2/1)+\overrightarrow{QG}\wedge \overrightarrow{\Omega}(2/1)
-%+\overrightarrow{V}(G\in 1/0)+\overrightarrow{QG}\wedge \overrightarrow{\Omega}(1/0)\\
-%=\overrightarrow{0}+b\cdot \overrightarrow{z}_2\wedge \dot{\beta}\cdot \overrightarrow{x}_2+ a\cdot \dot{\alpha}\cdot \overrightarrow{y}_1+b\cdot \overrightarrow{z}_2\wedge \dot{\alpha}\cdot \overrightarrow{z}_1\\
-%=b\cdot \dot{\beta}\cdot \overrightarrow{y}_2+a\cdot \dot{\alpha}\cdot \overrightarrow{y}_1-b\cdot\dot{\alpha} \sin\beta\cdot \overrightarrow{x}_{1,2}
-%\end{align*}
-%
-%\item On calcule $\overrightarrow{KQ}\wedge m\overrightarrow{V}(Q\in 3/0)$ : 
-%
-%\begin{align*}
-%\overrightarrow{KQ}\wedge m\overrightarrow{V}(Q\in 3/0)=m\cdot \left[a\cdot \overrightarrow{x}_1-b\cdot \overrightarrow{z}_2\right]\wedge\left[b\cdot \dot{\beta}\cdot \overrightarrow{y}_2+a\cdot \dot{\alpha}\cdot \overrightarrow{y}_1-b\cdot\dot{\alpha} \sin\beta\cdot \overrightarrow{x}_{1,2}\right]\\
-%=m\left[a\cdot b\cdot \overrightarrow{z}_2+a^2\cdot \dot{\alpha}\cdot\overrightarrow{z}_1+b^2\cdot \dot{\beta}\cdot\overrightarrow{x}_2+b\cdot a\cdot \dot{\alpha}\cdot \cos\beta\cdot \overrightarrow{x}_1+b^2\cdot \dot{\alpha}\sin\beta\cdot \overrightarrow{y}_2\right]
-%\end{align*}
-%\end{itemize}
-%
-%\item,
-%
-%\begin{align*}
-%\boxed{
-%\vSigma[K]{3}{0}=m\left[a\cdot b\cdot\dot{\beta} \overrightarrow{z}_2+a^2\cdot \dot{\alpha}\cdot\overrightarrow{z}_1+b^2\cdot \dot{\beta}\cdot\overrightarrow{x}_2+b\cdot a\cdot \dot{\alpha}\cdot \cos\beta\cdot \overrightarrow{x}_1+b^2\cdot \dot{\alpha}\sin\beta\cdot \overrightarrow{y}_2\right]
-%}
-%\end{align*}
-%\end{itemize}
-%
-%\end{texteCache}
-%\end{exemple}
+\begin{exemple}[Étude d'une pompe turbo-moléculaire]
+On s'intéresse ici à l'étude d'une pompe à vide destinée à la fabrication de composants électroniques capable d'évacuer des gaz en créant un vide de l'ordre $10^{-9}mbar$ dans une chambre blanche. Les conditions du cahier des charges sont très exigeantes et résumées dans le diagramme des exigences partiel suivant : 
 
-
-\section{Torseur dynamique}
-\subsection{Définition}
-\begin{definition}%[Torseur dynamique]
-Le \textbf{torseur dynamique} d'un solide $S$ dans son mouvement par rapport à $R_0$ se définit de la façon suivante,
-
-$$
-\torseurcin{D}{S}{R_0}=\torseurl{\overrightarrow{R_d}(S/R_0)=\displaystyle{\int_{P\in S}}\overrightarrow{\Gamma}(P/R_0)\;\dd m}{\vectmd{A}{S}{R_0}=\displaystyle{\int_{P\in S}}\overrightarrow{AP}\wedge \overrightarrow{\Gamma}(P/R_0)\;\dd m}{A}
-$$
-
-\begin{itemize}
-\item La résultante du torseur dynamique, $\overrightarrow{R_d}(S/R_0)$ ne dépend pas du point $A$ mais uniquement du centre de gravité $G$ de S (de masse $m$) et vérifie :
-
-$$\overrightarrow{R_d}(S/R_0)=m\;\overrightarrow{\Gamma}(G/R_0).
-$$
-\item Le moment dynamique dépend du point A et peut s'exprimer avec la formule fondamentale de changement de point :
-$$
-\vectmd{B}{S}{R_0}=\vectmd{A}{S}{R_0}+\overrightarrow{BA}\wedge \overrightarrow{R_d}(S/R_0).
-$$
-\end{itemize}
-
-\end{definition}
-
-
-%\begin{demonstration}[Résultante dynamique]
-
-%\begin{texteCache}
-%\begin{align*}
-%\overrightarrow{R_d}(S/R_0)=\displaystyle{\int_{P\in S}}\overrightarrow{a}(P/R_0)\;dm=
-%\displaystyle{\int_{P\in S}}\left[\frac{d^2\overrightarrow{OP}}{dt^2}\right]_{R_0}\;dm\\
-%=\displaystyle{\int_{P\in S}}\left[\frac{d^2(\overrightarrow{OG}+\overrightarrow{GP})}{dt^2}\right]_{R_0}\;dm
-%=\displaystyle{\int_{P\in S}}\left[\frac{d^2\overrightarrow{OG}}{dt^2}\right]_{R_0}\;dm+\displaystyle{\int_{P\in S}}\left[\frac{d^2\overrightarrow{GP}}{dt^2}\right]_{R_0}\;dm.
-%\end{align*}
-%
-%Or, $S$ est à masse conservative,
-%
-%\begin{align*}
-%\displaystyle{\int_{P\in S}}\left[\frac{d^2\overrightarrow{GP}}{dt^2}\right]_{R_0}\;dm
-%=\left[\frac{d^2}{dt^2}\left(\displaystyle{\int_{P\in S}}\overrightarrow{GP}\;dm\right)\right]_{R_0}=\overrightarrow{0}.
-%\end{align*}
-%
-%On obtient alors,
-%
-%\begin{align*}
-%\overrightarrow{R_d}(S/R_0)=\displaystyle{\int_{P\in S}}\left[\frac{d^2\overrightarrow{OG}}{dt^2}\right]_{R_0}\;dm
-%=\left[\frac{d^2\overrightarrow{OG}}{dt^2}\right]_{R_0}\displaystyle{\int_{P\in S}}dm\\
-%=m\;\overrightarrow{a}(G/R_0)\\
-%\end{align*}
-%
-%\end{texteCache}
-%\end{demonstration}
-
-\subsection{Relations entre les torseurs cinétiques et dynamiques}
-\begin{prop}[Relations entre les torseurs cinétiques et dynamiques]
-Pour un solide S de masse $M$ dans son mouvement par rapport au repère $R_0$ et soit un point $A$ quelconque.
-\begin{itemize}
-\item Relation entre les \textbf{résultantes} :
-
-$$
-\overrightarrow{R_d}(S/R_0)=\left[\frac{\dd \overrightarrow{R_c}(S/R_0)}{\dd t}\right]_{R_0}.
-$$
-\item Relation entre les \textbf{moments} :
-
-$$
-\vectmd{A}{S}{R_0}=\left[\frac{\dd \vectmc{A}{S}{R_0}}{\dd t}\right]_{R_0}+\overrightarrow{V(A/R_0)}\wedge \overrightarrow{R_c}(S/R_0).
-$$
-\end{itemize}
-\end{prop}
-
-
-
-
-\subsection{Cas particuliers}
-
-%\begin{rem}
-\begin{itemize}
-\item En appliquant cette formule en un point \textbf{$O$ fixe} dans $R_0$, on a :
-
-$$
-\vectmd{O}{S}{R_0}=\left[\frac{\dd \vectmc{O}{S}{R_0}}{\dd t}\right]_{R_0}.
-$$
-\item En appliquant cette formule en un point \textbf{$G$, centre d'inertie de $S$}, on a :
-
-$$
-\vectmd{G}{S}{R_0}=\left[\frac{\dd \vectmc{G}{S}{R_0}}{\dd t}\right]_{R_0}.
-$$
-
-\end{itemize}
-%\end{rem}
-
-
-
-
-
-\newpage
-\subsection{Méthodologie de calcul}
-
-On considère un ensemble matériel $E$ composé de solides $S_i$. On étudie son mouvement dans le référentiel $R_0$.
-On donne l'algorigramme de calcul du moment dynamique en un point $A$ sur la figure ci-dessous.%\ref{algo_moment_dyna}.
-
-%\begin{exemple}[Application à l'éolienne]
-%\question{Déterminer la composante suivant $\overrightarrow{z}_0$ du moment dynamique au point K de la girouette 1 dans son mouvement par rapport au support 0, notée $\overrightarrow{z}_0\cdot \vDelta[K]{1}{0}$.}
-%
-%\begin{texteCache}
-%\begin{align*}
-%\overrightarrow{z}_0\cdot \vDelta[K]{1}{0}=\overrightarrow{z}_0\cdot\left[\frac{d\vSigma[K]{1}{0}}{\dd t}\right]_{R_0}
-%=\left[\frac{d\overrightarrow{z}_0\cdot\vSigma[K]{1}{0}}{\dd t}\right]_{R_0}=J\cdot \ddot{\alpha}
-%\end{align*}
-%\end{texteCache}
-%
-%\question{Déterminer la composante suivant $\overrightarrow{z}_0$ du moment dynamique $\overrightarrow{z}_0\cdot \vDelta[K]{2}{0}$.}
-%
-%\begin{texteCache}
-%\begin{align*}
-%\overrightarrow{z}_0\cdot \vDelta[K]{2}{0}=\overrightarrow{z}_0\cdot\left[\frac{d\vSigma[K]{2}{0}}{\dd t}\right]_{R_0}
-%=\left[\frac{d\overrightarrow{z}_0\cdot\vSigma[K]{2}{0}}{\dd t}\right]_{R_0}
-%\end{align*}
-%
-%Or, $\overrightarrow{z}_{0,1}=\cos\beta\cdot \overrightarrow{z}_2+\sin\beta\cdot \overrightarrow{y}_2$,
-%
-%\begin{align*}
-%\overrightarrow{z}_0\cdot\vSigma[K]{2}{0}=
-%\left(
-%\begin{array}{c}
-%A\cdot \dot{\beta}\\
-%B\cdot \dot{\alpha}\cdot \sin\beta+M\cdot a^2\cdot \dot{\alpha}\sin\beta\\
-%C\cdot \dot{\alpha}\cdot \cos\beta+M\cdot a^2\cdot \dot{\alpha}\cos\beta\\
-%\end{array}
-%\right)_{\triplet{\overrightarrow{x}_2}{\overrightarrow{y}_2}{\overrightarrow{z}_2}}
-%\cdot
-%\left(
-%\begin{array}{c}
-%0\\
-%\sin\beta\\
-%\cos\beta\\
-%\end{array}
-%\right)_{\triplet{\overrightarrow{x}_2}{\overrightarrow{y}_2}{\overrightarrow{z}_2}}
-%\\
-%=\dot{\alpha}\left[B\cdot \sin^2\beta+C\cdot \cos^2\beta+M\cdot a^2\right]
-%\end{align*}
-%
-%d'où,
-%\begin{align*}
-%\boxed{
-%\overrightarrow{z}_0\cdot \vDelta[K]{2}{0}=\ddot{\alpha}\left[B\cdot \sin^2\beta+C\cdot \cos^2\beta+M\cdot a^2\right]
-%+2\cdot\dot{\alpha}\dot{\beta}\cdot \cos\beta\cdot \sin\beta\left[B-C\right].
-%}
-%\end{align*}
-%
-%\end{texteCache}
-%
-%\question{Déterminer la projection du moment dynamique de $3/0$ selon $\overrightarrow{z}_0$ : $\overrightarrow{z}_0\cdot \vSigma[K]{3}{0}$.}
-%
-%
-%
-%\begin{texteCache}
-%\begin{minipage}{0.5\textwidth}
-%\begin{center}
-%\scFigCalc[x_{1,2}]{y_1}{z_1}{y_2}{z_2}{\beta}
-%\end{center}
-%\end{minipage}
-%\begin{minipage}{0.5\textwidth}
-%\begin{align*}
-%\overrightarrow{z}_{0,1}\cdot \overrightarrow{z}_2=\cos\beta\\
-%\overrightarrow{z}_{0,1}\cdot \overrightarrow{z}_1=1\\
-%\overrightarrow{z}_{0,1}\cdot \overrightarrow{x}_0=0\\
-%\overrightarrow{z}_{0,1}\cdot \overrightarrow{x}_1=0\\
-%\overrightarrow{z}_1\cdot \overrightarrow{y}_2=\sin\beta\\
-%\end{align*}
-%\end{minipage}
-%
-%On trouve alors : 
-%
-%\begin{align*}
-%\overrightarrow{z}_0\cdot \vSigma[K]{3}{0}=
-%m\frac{d\left[a\cdot b\cdot \dot{\beta}\cos\beta+a^2\cdot \dot{\alpha}+b^2\cdot \dot{\alpha}\sin^2\beta\right]}{\dd t}\\
-%=m\left[a\cdot b\cdot \left(\ddot{\beta}\cos\beta-\dot{\beta}^2\sin\beta\right)+a^2\ddot{\alpha}+b^2\cdot\left(\ddot{\alpha}\sin^2\beta+2\dot{\alpha}\dot{\beta}\sin\beta\cos\beta\right)\right]
-%\end{align*}
-%
-%\end{texteCache}
-%
-%\question{Dans le cas d'une vitesse de rotation de l'hélice 2 ($\dot{\beta}$) constante et dans le cas où l'angle $\alpha$ est constant (pas de changement d'orientation de l'éolienne) déterminer l'expriment du couple $C_m$ que devrait fournir un moteur placé dans le mat (entre 0 et 1) pour "contrer" les effets dynamiques du balourd.}
-%
-%\begin{texteCache}
-%Le théorème du moment dynamique autour de l'axe $\couple{K}{\overrightarrow{z}_{0,1}}$ donne :
-%
-%\begin{align*}
-%C_m=-m\cdot a\cdot b\cdot \dot{\beta}^2\sin\beta
-%\end{align*} 
-%
-%
-%\end{texteCache}
-%\end{exemple}
-
-%\begin{figure}[htb]
 \begin{center}
-\includegraphics[width=.9\textwidth]{images/algorigramme_moment_dynamique.pdf}
-%\caption{Algorigramme de calcul du moment dynamique \label{algo_moment_dyna}}
+\includegraphics[width=0.9\textwidth]{images/req_pompe.pdf}\\
+\textbf{Diagramme des exigences partiel de la pompe à vide}
 \end{center}
-%\end{figure}
+\end{exemple}
 
-
-\begin{thebibliography}{2}
-   \bibitem[1]{ref1} Emilien Durif, {\it Cinétique des solides, Lycée La Martinière Monplaisir, Lyon.}
-      \bibitem[2]{ref2} Florestan Mathurin, {\it Cinétique, Lycée Bellevue, Toulouse, \url{http://florestan.mathurin.free.fr/}.}
-%      \bibitem[3]{ref3} Robert Papanicola, {\it Opérateurs d'inetie, Lycée Charlemagne, Paris, \url{http://sciences-indus-cpge.papanicola.info/}.}
-\end{thebibliography}
-
-\newpage
-
-\section*{Bilan}
-
+%\begin{figure}[!htbf]
 \begin{center}
-\rotatebox{90}{
-\begin{tabular}{|c|c|c|c|}
-\hline
-Point considéré & Point quelconque $A$ & Centre de gravité $G$  & Point fixe dans $\mathcal{R}_0$ $A$  \\
-\hline
-&&& \\
-Torseur cinétique$\torseurcin{C}{S}{R_0}$
-& 
-$\torseurl{
-\overrightarrow{R_c}(S/R_0)=m\;\overrightarrow{V}(G/R_0)
-}{\vectmc{A}{S}{R_0}=\inertie{A}{S}\cdot \vecto{S}{R_0}+m\;\vect{AG}\wedge \vectv{A}{S}{R_0}
-}{A}$ 
+\begin{tabular}{cc}
+\includegraphics[width=0.3\textwidth]{images/rotor_pompe.jpg}
 &
-$\torseurl{
-\overrightarrow{R_c}(S/R_0)=m\;\overrightarrow{V}(G/R_0)
-}{
-\vectmc{G}{S}{R_0}=\inertie{G}{S}\cdot \vecto{S}{R_0}
-}{G}$
-&
-$\torseurl{
-\overrightarrow{R_c}(S/R_0)=m\;\overrightarrow{V}(G/R_0)
-}{
-\vectmc{A}{S}{R_0}=\inertie{A}{S}\cdot \vecto{S}{R_0}
-}{A}$
+\includegraphics[width=0.5\textwidth]{images/guidage_pompe.jpg}
 \\
-&&& \\ \hline
-&&& \\
-Torseur dynamique $
-\torseurcin{D}{S}{R_0}$ & 
+Rotor de la pompe
+&
+Vue en coupe du guidage par paliers magnétiques de la pompe
+\end{tabular}
+\end{center}
+%\end{figure}
+
+
+
+
+
+\section{Modélisation du problème}
+\subsection{Paramétrage du problème}
+
+La figure ci-dessous représente le paramétrage d'un rotor $S_3$ en mouvement par rapport à $S_0$.
+
+%\begin{figure}[htbf!]
+\begin{center}
+\begin{tabular}{cc}
+\includegraphics[width=0.5\textwidth]{images/figure_presentation.pdf}&
+%%%\scFigCalc[z_{0,3}]{x_0}{y_0}{x_3}{y_3}{\theta}
+\end{tabular}
+\end{center}
+%\caption{Paramétrage du problème}
+\textit{Paramétrage du problème}
+%\end{figure}
+
+
+
+\begin{itemize}
+\item Le référentiel $R_0$ associé à $S_0$ est supposé comme étant galiléen.
+\item Le guidage par paliers magnétiques entre le rotor $S_3$ et le bâti $S_0$ est modélisé par une liaison pivot d'axe ($O_3$,$\overrightarrow{z}_{0,3}$) avec bâti $S_0$.
+\item Le paramètre du mouvement de $S_3/S_0$ est défini par $\theta=(\overrightarrow{x}_0,\overrightarrow{x}_3)$.
+\item Le rotor $S_3$ est de masse $m_3$, de centre de masse $G_3$ tel que $\overrightarrow{O_3G_3}=b \overrightarrow{y}_3+c\overrightarrow{z}_3$.
+\item Le rotor $S_3$, bien qu'ayant une symétrie théorique de révolution est en réalité imparfait. Sa matrice d'inertie en $O_3$ est donnée par :
+$$
+\overline{\overline{I}}_{O_3}(S_3)=\left(\begin{array}{ccc}
+A_3 & -F_3 & -E_3 \\ 
+-F_3 & B_3 & -D_3 \\ 
+-E_3 & -D_3 & C_3
+\end{array} \right)_{R_3}
+$$
+\item Un moteur, non représenté, entraîne $S_3$ avec un couple $C_m \overrightarrow{z}_{0,3}$ à vitesse constante ($\omega=\dot{\theta}$).
+\item L'accélération de la pesanteur est dirigée selon $+\overrightarrow{y}_0$ et vaut $g=9,81m\cdot s^{-2}$.
+\end{itemize}
+
+
+\subsection{Analyse préliminaire}
+%\begin{exemple}[Analyse préliminaire]
+\subparagraph{}\textit{Faire le bilan des actions mécaniques extérieures pour $\left\{S_3\right\}$.}
+%\begin{texteCache}
+\begin{itemize}
+\item \textbf{Action du bâti (liaison pivot)} :
+\begin{align*}
+\torseurstat{T}{S_0}{S_3}
+=\torseurl{\forall P\in \couple{O_3}{\overrightarrow{z}_{0,3}}}{X_{03}\cdot \overrightarrow{x}_{0}+ Y_{03}\cdot \overrightarrow{y}_{0}+Z_{03}\cdot \overrightarrow{z}_{0}}{L_{03}\cdot \overrightarrow{x}_{0}+M_{03}\cdot \overrightarrow{y}_{0}}
+\end{align*}
+\item \textbf{Action du moteur : }
+\begin{align*}
+\torseurstat{T}{\text{moteur}}{S_3}
+=\torseurl{\forall P}{\overrightarrow{0}}{C_{m}\cdot \overrightarrow{z}_{0}}
+\end{align*}
+\item \textbf{Action de la pesanteur : }
+\begin{align*}
+\torseurstat{T}{\text{pesanteur}}{S_3}
+=\torseurl{G_3}{m_3\cdot g\cdot \overrightarrow{y}_0}{\overrightarrow{0}}\\
+=\torseurl{O_3}{m_3\cdot g\cdot \overrightarrow{y}_0}{\overrightarrow{O_3G_3}\wedge \left(m_3\cdot g\cdot \overrightarrow{y}_0\right)=\left(b \overrightarrow{y}_3+c\overrightarrow{z}_3\right)\wedge\left(m_3\cdot g\cdot \overrightarrow{y}_0\right)}
+=\torseurl{O_3}{m_3\cdot g\cdot \overrightarrow{y}_0}{m_3\cdot g\left(-b\sin\theta\cdot \overrightarrow{z}_{0,3} -c\overrightarrow{x}_0\right)}\\
+\end{align*}
+\end{itemize}
+
+%\end{texteCache}
+
+\subparagraph{}\textit{Déterminer le torseur dynamique : $\mathcal{D}_{O_3}\left(S_3/S_0\right)$.}
+
+\begin{itemize}
+\item Le solide $S_3$ est en mouvement de rotation autour de l'axe $\couple{O_3}{\overrightarrow{z}_{0,3}}$ fixe par rapport à $R_0$.
+
+%\begin{texteCache}
+\begin{align*}
+\torseurdyn{S_3}{R_0}=
+\torseurl{O_3}{
+\overrightarrow{R_d}(S_3/R_0)=m_3\cdot \overrightarrow{a}(G_3\in S_3/R_0)}{
+\vectmd{O_3}{S_3}{R_0}=\left[\frac{d\vectmc{O_3}{S_3}{R_0}}{dt}\right]_{R_0}}
+\end{align*}
+%\end{texteCache}
+
+\item On calcule $\overrightarrow{R_d}(S_3/R_0)$ : 
+
+%\begin{texteCache}
+\begin{align*}
+\overrightarrow{R_d}(S_3/R_0)=m_3\cdot \overrightarrow{a}(G_3\in S_3/R_0)
+=m_3\cdot \left[\frac{d\overrightarrow{V}(G_3\in S_3/R_0)}{dt}\right]_{R_0}
+\end{align*}
+
+Or, 
+
+\begin{align*}
+\overrightarrow{V}(G_3\in S_3/R_0)=\overrightarrow{G_3O_3}\wedge \overrightarrow{\Omega}(S_3/R_0)=
+(-b\cdot \overrightarrow{y}_3-c\cdot \overrightarrow{z}_3)\wedge \dot{\theta}\cdot \overrightarrow{z}_{0,3}\\
+=-b\cdot \dot{\theta}\cdot \overrightarrow{x}_3.
+\end{align*}
+
+Donc,
+
+\begin{align*}
+\overrightarrow{R_d}(S_3/R_0)=-b\cdot m_3\cdot \left(\ddot{\theta}\cdot \overrightarrow{x}_3+\dot{\theta}\cdot \left[\frac{d \overrightarrow{x}_3}{dt}\right]_{R_0}\right)
+=-b\cdot m_3\cdot \left(\ddot{\theta}\cdot \overrightarrow{x}_3+\dot{\theta}^2\cdot \overrightarrow{y}_3\right)\\
+=-b\cdot m_3\cdot \omega^2\cdot \overrightarrow{y}_3=-b\cdot m_3\cdot \omega^2\left(-\sin\theta\cdot \overrightarrow{x}_0+\cos\theta\cdot \overrightarrow{y}_0\right)
+\end{align*}
+
+%\end{texteCache}
+
+\item On calcule $\vectmc{O_3}{S_3}{R_0}$ : 
+%\begin{texteCache}
+
+$O_3$ est fixe par rapport à $R_0$ : 
+\begin{align*}
+\vectmc{O_3}{S_3}{R_0}=\overline{\overline{I}}_{O_3}(S_3)\cdot \overrightarrow{\Omega}(S_3/R_0)
+=\left(\begin{array}{ccc}
+A_3 & -F_3 & -E_3 \\ 
+-F_3 & B_3 & -D_3 \\ 
+-E_3 & -D_3 & C_3
+\end{array} \right)_{R_3}\cdot
+\left(\begin{array}{c}
+0 \\ 
+0 \\ 
+\dot{\theta}
+\end{array} \right)_{R_3}
+=\dot{\theta}\left(-E_3\cdot \overrightarrow{x}_3-D_3\cdot \overrightarrow{y}_3+C_3\cdot \overrightarrow{z}_3\right)
+\end{align*}
+%\end{texteCache}
+\end{itemize}
+%\end{exemple}
+
+%\setcounter{cptExemple}{\thecptExemple-1}
+%\begin{exemple}[Analyse préliminaire]
+\begin{itemize}
+\item On calcule $\vDelta[O_3]{_3}{R_0}$ : 
+%\begin{texteCache}
+$O_3$ est fixe par rapport à $R_0$ : 
+\begin{align*}
+\vDelta[O_3]{_3}{R_0}=\left[\frac{d\vectmc{O_3}{S_3}{R_0}}{dt}\right]_{R_0}
+=
+\left(-E_3\cdot\ddot{\theta}+D_3\cdot \dot{\theta}^2\right)\cdot \overrightarrow{x}_3+\left(-D_3\cdot\ddot{\theta}-E_3\cdot \dot{\theta}^2\right)\cdot \overrightarrow{y}_3+C_3\cdot\ddot{\theta} \overrightarrow{z}_{0,3}\\
+=D_3\cdot \omega^2\cdot \overrightarrow{x}_3-E_3\cdot \omega^2\cdot \overrightarrow{y}_3\\
+=\omega^2\cdot \left[\left(D_3\cdot\cos\theta+E_3\cdot\sin\theta\right)\cdot \overrightarrow{x}_0+\left(D_3\cdot\sin\theta-E_3\cdot\cos\theta\right)\cdot \overrightarrow{y}_0\right]
+\end{align*}
+%\end{texteCache}
+
+\item On en déduit $\tDyn{S_3}{R_0}$ exprimé dans la base $b_0=\triplet{\overrightarrow{x}_0}{\overrightarrow{y}_0}{\overrightarrow{z}_0}$ : 
+%\begin{texteCache}
+\begin{align*}
+\tDyn{S_3}{R_0}=\torseurLigne{O_3}{-b\cdot m_3\cdot \omega^2\left(-\sin\theta\cdot \overrightarrow{x}_0+\cos\theta\cdot \overrightarrow{y}_0\right)}{\omega^2\cdot \left[\left(D_3\cdot\cos\theta+E_3\cdot\sin\theta\right)\cdot \overrightarrow{x}_0+\left(D_3\cdot\sin\theta-E_3\cdot\cos\theta\right)\cdot \overrightarrow{y}_0\right]}
+\end{align*}
+%\end{texteCache}
+\end{itemize}
+
+\subparagraph{}\textit{Déduire du Principe Fondamental de la Dynamique, les équations de mouvement.}
+
+%\begin{texteCache}
+Le Principe Fondamental de la dynamique appliqué à $S_3$ par rapport au référentiel $R_0$ donne :
+
+\begin{itemize}
+\item Théorème de la résultante dynamique : 
+
+\begin{align*}
+\begin{array}{cc}
+\begin{array}{c}
+\overrightarrow{x}_0\\
+\\
+\overrightarrow{y}_0\\
+\\
+\overrightarrow{z}_0
+\end{array}
+&
+\left\{
+\begin{array}{c}
+X_{03}=b\cdot m_3\cdot \omega^2\sin\theta\\
+\\
+Y_{03}+m_3\cdot g=-b\cdot m_3\cdot \omega^2\cos\theta\\
+\\
+Z_{03}=0
+\end{array}
+\right.
+\end{array}
+\end{align*}
+\item Théorème du moment dynamique en $O_0$: 
+
+\begin{align*}
+\begin{array}{cc}
+\begin{array}{c}
+\overrightarrow{x}_0\\
+\\
+\overrightarrow{y}_0\\
+\\
+\overrightarrow{z}_0
+\end{array}
+&
+\left\{
+\begin{array}{c}
+L_{03}=\omega^2\cdot \left(D_3\cdot\cos\theta+E_3\cdot\sin\theta\right)+c\cdot m_3\cdot g\\
+\\
+M_{03}=\omega^2\cdot\left(D_3\cdot\sin\theta-E_3\cdot\cos\theta\right)\\
+\\
+C_m-m_3\cdot g\cdot b\sin\theta=0
+\end{array}
+\right.
+\end{array}
+\end{align*}
+\end{itemize}
+%\end{texteCache}
+
+%\end{exemple}
+
+
+\end{document}
+
+\begin{propriete}[Évolution des efforts au niveau des paliers au cours du temps]
+Lorsque le rotor n'est pas équilibré dynamiquement (comme dans l'exemple précédent), les actions extérieurs dans la liaison pivot dépendant de la position angulaire et fluctuent cycliquement.
+
+On donne ci-dessous les évolutions des composantes de l'action mécanique dans la liaison pivot pour une rotation du rotor 3.
+\begin{itemize}
+\item opérateur d'inertie : $E_3=0$ et $D_3=10^{-4}kg\cdot m^2$ ; 
+\item Masse et centre de masse : $m_3=10kg$, $c=0mm$ et $b=0,05mm$ ; 
+\item Rotation de $3/0$ : $\omega=30000tour/min$
+\end{itemize}
+
+\begin{center}
+
+\begin{minipage}{0.45\textwidth}
+\begin{center}
+\includegraphics[width=1.0\textwidth]{images/effort.pdf}
+\end{center}
+\end{minipage}
+\begin{minipage}{0.45\textwidth}
+\begin{center}
+\includegraphics[width=1.0\textwidth]{images/moment.pdf}
+\end{center}
+\end{minipage}
+\end{center}
+
+Il apparaît des variations d'efforts de l'ordre de $10kN$ et de moment de $2kN\cdot m$ sur des périodes très brèves ($2ms$) ce qui constitue une source importante de vibrations pour la structure. Ce valeurs sont très supérieures à celles exigées par le cahier des charges puisque on ne tolère au maximum que $5N$.
+\end{propriete}
+
+\FloatBarrier
+\section{Conditions d'équilibrage}
+
+\subsection{Présentation}
+
+\begin{definition}[Équilibrage d'un solide en rotation]
+Pour éviter les vibrations, il faut rendre l'action mécanique extérieure s'exerçant sur un solide en rotation la plus constante possible. Il faut donc qu'elle soit indépendante de la vitesse de rotation ($\omega$).
+\begin{itemize}
+\item On en tire les conditions de \textbf{l'équilibrage statique} en vérifiant cette définition sur les équations dynamiques de mouvement en \textbf{résultante}.
+\item On en tire les conditions de \textbf{l'équilibrage dynamique} en vérifiant cette définition sur les équations dynamiques de mouvement en \textbf{moment}.
+\end{itemize}
+ 
+\end{definition}
+
+\subsection{Équilibrage statique}
+
+\begin{exemple}[Mise en oeuvre de l'équilibrage statique du rotor $S_3$]
+\subparagraph{}\textit{Déterminer les conditions d'équilibrage statique.}
+
+%\begin{texteCache}
+Les équations en résultantes impliquent que le paramètre $b$ doit être nul. Cela revient à dire que le centre d'inertie $G_3$ soit sur l'axe de rotation $\couple{O_3}{\overrightarrow{z}_{0,3}}$ de $S_3$ par rapport à $S_0$.
+%\end{texteCache}
+\end{exemple}
+
+
+\subsection{Équilibrage dynamique}
+
+\begin{exemple}[Mise en oeuvre de l'équilibrage dynamique du rotor $S_3$]
+\subparagraph{}\textit{Déterminer les conditions d'équilibrage dynamique.}
+
+%\begin{texteCache}
+Les équations en moment impliquent que $D_3=E_3=0$.
+Cela revient à dire que l'axe $\couple{O_0}{\overrightarrow{z}_{0,3}}$ soit axe principal d'inertie du solide $S_3$.
+%\end{texteCache}
+\end{exemple}
+
+\subsection{Conditions d'équilibrage}
+
+\begin{definition}[Condition d'équilibrage d'un solide en rotation]
+Un solide équilibré doit vérifier les deux conditions suivantes :
+\begin{itemize}
+\item son centre d'inertie se situe sur son axe de rotation ; 
+\item son axe de rotation est axe principal d'inertie : les produits d'inertie sont nul selon cet axe.
+\end{itemize}
+\end{definition}
+
+\subsection{Illustration de l'équilibrage}
+
+
+\begin{figure}[ht!]
+  \begin{center}
+  \includegraphics[width=0.8\textwidth]{images/illustration_equilibrage.png}
+  \end{center}
+    \caption{Illustration avec deux masses ponctuelles}
+    \label{fig:map}
+\end{figure}
+
+\begin{itemize}
+\item \textbf{(a)} : Les 2 masses ne sont pas à la même distance de l'axe de rotation : on n'a ni équilibrage statique ni équilibrage dynamique.
+\item \textbf{(b)} : Les deux masses sont à la même distance de l'axe : on a réalisé l'équilibrage statique.
+\item \textbf{(c)} : Les deux masses sont en face l'une de l'autre : on a réalisé l'équilibrage dynamique.
+\end{itemize}
+
+
+\section{Réalisation de l'équilibrage}
+\subsection{Présentation de la méthode d'ajout de masses ponctuelles}
+On utilise alors deux masses d'équilibrage ponctuelles $m_1$ et $m_2$ localisées sur la jante (rayon r) sur sa partie avant (masse $m_1$) et sur sa partie arrière (masse $m_2$) par les angles $\Phi_1$ et $\Phi_2$.
+On définit alors leur position par :
+\begin{itemize}
+\item $\overrightarrow{O_3G_1}=r \overrightarrow{x}_1+h\overrightarrow{z}_3$
+\item $\overrightarrow{O_3G_2}=r \overrightarrow{x}_2-h\overrightarrow{z}_3$
+\end{itemize}
+
+
+\begin{figure}[ht!]
+\begin{center}
+\includegraphics[width=0.9\textwidth]{images/figure-masse-roue.pdf}
+\end{center}
+\caption{Définition du problème avec la présence de masses d'équilibrage}
+\end{figure}
+
+On considère dorénavant l'ensemble cinématiquement lié $E=\left\{1+2+3\right\}$ : 
+\begin{itemize}
+\item Soit $G$ son centre d'inertie ;
+\item $\overline{\overline{I}}{O_3}(E)$ sont opérateur d'inertie en $O_3$ :
+
+\begin{align*}
+\overline{\overline{I}}{O_3}(E)=
+=\left(\begin{array}{ccc}
+A & -F & -E \\ 
+-F & B & -D \\ 
+-E & -D & C
+\end{array} \right)_{R_3}
+\end{align*}
+\end{itemize}
+
+\begin{exemple}[Détermination de l'équilibrage statique]
+\subparagraph{}\textit{Traduire la relation donnée par l'équilibrage statique.}
+\begin{itemize}
+\item La condition d'équilibrage statique implique : $\overrightarrow{O_3G}\cdot \overrightarrow{x}_3=0$ et $\overrightarrow{O_3G}\cdot \overrightarrow{y}_3=0$.
+\item La formule du barycentre donne : 
+%\begin{texteCache}
+$$
+\overrightarrow{O_3G}=\frac{m_1\cdot \overrightarrow{O_3G_1}+m_1\cdot \overrightarrow{O_3G_2}+m_3\cdot \overrightarrow{O_3G_3}}{m_1+m_2+m_3}
+$$
+%\end{texteCache}
+\item On peut exprimer $\overrightarrow{O_3G_1}$ et $\overrightarrow{O_3G_2}$ dans la base $b_3=\triplet{\overrightarrow{x}_3}{\overrightarrow{y}_3}{\overrightarrow{z}_{0,3}}$ :
+%\begin{texteCache}
+\begin{align*}
+\overrightarrow{O_3G_1}=r\cdot \cos\Phi_1\cdot \overrightarrow{x}_3+r\cdot \sin\Phi_1\cdot \overrightarrow{x}_3+h\cdot \overrightarrow{z}_{0,3}\\
+\\
+\overrightarrow{O_3G_2}=r\cdot \cos\Phi_2\cdot \overrightarrow{x}_3+r\cdot \sin\Phi_2\cdot \overrightarrow{x}_3-h\cdot \overrightarrow{z}_{0,3}\\
+\end{align*}
+%\end{texteCache}
+\item $\overrightarrow{O_3G}\cdot \overrightarrow{x}_3=0$ donne : 
+%\begin{texteCache}
+\begin{align*}
+r\cdot \left(m_1\cdot \cos\Phi_1+m_1\cdot \cos\Phi_1 \right)=0\\
+\end{align*}
+%\end{texteCache}
+\item $\overrightarrow{O_3G}\cdot \overrightarrow{y}_3=0$ donne : 
+\begin{texteCache}
+\begin{align*}
+m_3\cdot b+r\cdot \left(m_1\cdot \sin\Phi_1+m_1\cdot \sin\Phi_1 \right)=0\\
+\end{align*}
+\end{texteCache}
+\end{itemize}
+
+\end{exemple}
+\begin{exemple}[Détermination de l'équilibrage statique]
+\subparagraph{}\textit{Traduire la relation donnée par l'équilibrage dynamique.}
+
+\begin{itemize}
+\item L'opérateur d'inertie de $E$ en $O_3$ doit avoir la direction $\couple{O_3}{\overrightarrow{z}_{0,3}}$  comme principale d'inertie d'où $D=E=0$.
+\item On obtient alors une relation avec l'expression de $D$ : 
+%\begin{texteCache}
+\begin{align*}
+D=D_3+m_1\cdot y_1\cdot z_1+ m_2\cdot y_2\cdot z_2=D_3+m_1\cdot r\cdot \sin\Phi_1\cdot h-m_2\cdot r\cdot \sin\Phi_2\cdot h
+\end{align*}
+%\end{texteCache}
+\item On obtient alors une relation avec l'expression de $E$ :
+%\begin{texteCache}
+\begin{align*}
+E=E_3+m_1\cdot x_1\cdot z_1+m_2\cdot x_2\cdot z_2=E_3+m_1\cdot r\cdot \cos\Phi_1\cdot h-m_2\cdot r\cdot \cos\Phi_2\cdot h
+\end{align*} 
+%\end{texteCache}
+\end{itemize}
+
+\end{exemple}
+
+\subsection{Équations de détermination de l'équilibrage}
+
+\begin{definition}[Équations de détermination de l'équilibrage]
+En notant,
+\begin{itemize}
+\item $x_i$, $y_i$ et $z_i$ ($i$ allant de $1$ à $2$) les coordonnées des deux masselottes dans le repère $\quadruplet{O}{\overrightarrow{x}_s}{\overrightarrow{y}_s}{\overrightarrow{z}_s}$ lié à un solide $S$,
+\item $r_s$ la distance entre le centre d'inertie de $S$ par rapport à $\couple{O}{\overrightarrow{z}_s}$, 
+\item $D_s$, $E_s$ et $E_s$ les produits d'inertie du solide S dans la base $b_s=\triplet{\overrightarrow{x}_s}{\overrightarrow{y}_s}{\overrightarrow{z}_s}$
+\end{itemize}
+l'écriture des condition d'équilibrage d'un solide en rotation autour d'un axe $\couple{O}{\overrightarrow{z}_s}$ donne : 
+
+\begin{tabular}{|p{6.5cm}|p{6.5cm}|}
+\hline 
+\textbf{Centre d'inertie $G$ sur l'axe de rotation} & \textbf{Axe de rotation $\couple{O}{\overrightarrow{z}}$ axe principal d'inertie du solide $S$} \\ 
+\hline 
 $
-\torseurl{
-\overrightarrow{R_d}(S/R_0)=m\;\overrightarrow{\Gamma}(G/R_0)
-}{
-\vectmd{A}{S}{R_0}=\left[\frac{\dd \vectmc{A}{S}{R_0}}{\dd t}\right]_{R_0}+\overrightarrow{V(A/R_0)}\wedge \overrightarrow{R_c}(S/R_0)
-}{A}
+m_1\cdot x_1+m_2\cdot x_2=0
 $
 &
 $
-\torseurl{
-\overrightarrow{R_d}(S/R_0)=m\;\overrightarrow{\Gamma}(G/R_0)
-}{
-\vectmd{G}{S}{R_0}=\left[\frac{\dd \vectmc{G}{S}{R_0}}{\dd t}\right]_{R_0}
-}{G}
-$
-&
-$
-\torseurl{
-\overrightarrow{R_d}(S/R_0)=m\;\overrightarrow{\Gamma}(G/R_0)
-}{
-\vectmd{A}{S}{R_0}=\left[\frac{\dd \vectmc{A}{S}{R_0}}{\dd t}\right]_{R_0}
-}{A}
+D=D_s+m_1\cdot y_1\cdot z_1+ m_2\cdot y_2\cdot z_2
 $
 \\ 
-&&& \\ \hline
-\end{tabular}}
+$
+m_3\cdot r_s+m_1\cdot y_1+m_2\cdot y_2=0
+$
+&
+$
+E=E_s+m_1\cdot x_1\cdot z_1+m_2\cdot x_2\cdot z_2
+$\\
+\hline 
+\end{tabular} 
 
+\end{definition}
+
+\subsection{Mise en oeuvre : machine d'équilibrage industriel}
+
+\begin{propriete}[Mise en oeuvre de l'équilibrage dynamique]
+D'après l'étude précédente, on obtient 4 équations avec 8 inconnues ($m_1$, $m_2$, $x_1$, $y_1$, $z_1$, $x_2$, $y_2$ et $z_2$).
+Il faut donc imposer 4 variables. Généralement pour des raisons pratiques comme dans l'exemple précédent, on impose $z_1$ et $z_2$ puis on impose une relation entre $x_1$ et $y_1$ puis entre $x_2$ et $y_2$ cela revient à fixer une distance entre les masses additionnelles et l'axe de rotation.
+
+Dans la pratique on utilise une équilibreuse qui mesure les efforts au niveau des paliers et qui en déduit les variables citées précédemment pour obtenir les conditions d'équilibrage.
+
+\begin{center}
+\includegraphics[width=0.4\textwidth]{images/machine_equilibrage.jpeg}
 \end{center}
-
-
-
+\end{propriete}
 
 
 
