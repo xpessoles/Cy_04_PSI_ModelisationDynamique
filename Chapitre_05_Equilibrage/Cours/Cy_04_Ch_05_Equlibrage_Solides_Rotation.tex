@@ -57,12 +57,15 @@
 \end{itemize}
 }}
 		
-\def\xxfigures{
-%\includegraphics[width=4cm]{images/fig_01}\\
-\textit{Toupie}
 
-%\includegraphics[width=4cm]{images/fig_02}\\
-\textit{Volants d'inertie d'un vilebrequin}
+
+
+\def\xxfigures{
+\includegraphics[width=0.4\textwidth]{images/turbine_alstom.jpeg}\\
+\textit{Turbine à gaz Alstom}
+
+\includegraphics[width=0.5\textwidth]{images/turboreacteur.jpeg}\\
+\textit{Turborécateur Snecma}
 
 }%figues de la page de garde
 
@@ -94,24 +97,24 @@ Chapitre 5 -- \xxactivite%
 Le mise en rotation de rotor à haute vitesse (à partir de quelques centaines de tours par minute) est une configuration classique rencontrée dans l'industrie. Si un défaut géométrique existe, cela induit une dissymétrie de la répartition de masse qui provoque des effets vibratoires pouvant aller jusqu'à la rupture des éléments de guidage (paliers, roulements à billes).
 
 Afin d'éviter ces problèmes il convient d'équilibrer dynamiquement ces rotors ce qui implique de rendre les actions mécaniques au niveau des guidages en rotation constantes au cours du temps.
-
-%\begin{figure}[!htbf]
-\begin{center}
-\begin{tabular}{cc}
-\includegraphics[width=0.4\textwidth]{images/turbine_alstom.jpeg}
-&
-\includegraphics[width=0.5\textwidth]{images/turboreacteur.jpeg}\\
-Turbine à gaz Alstom & Turborécateur Snecma
-\end{tabular}
-%\caption{Exemple de systèmes présentant des structures tournantes à haute vitesse \label{exemple_rotor}}
-\textit{Exemple de systèmes présentant des structures tournantes à haute vitesse \label{exemple_rotor}}
-\end{center}
-%\end{figure}
+%
+%%\begin{figure}[!htbf]
+%\begin{center}
+%\begin{tabular}{cc}
+%\includegraphics[width=0.4\textwidth]{images/turbine_alstom.jpeg}
+%&
+%\includegraphics[width=0.5\textwidth]{images/turboreacteur.jpeg}\\
+%Turbine à gaz Alstom & Turborécateur Snecma
+%\end{tabular}
+%%\caption{Exemple de systèmes présentant des structures tournantes à haute vitesse \label{exemple_rotor}}
+%\textit{Exemple de systèmes présentant des structures tournantes à haute vitesse \label{exemple_rotor}}
+%\end{center}
+%%\end{figure}
 
 \subsection{Présentation du support de cours}
 
 \begin{exemple}[Étude d'une pompe turbo-moléculaire]
-On s'intéresse ici à l'étude d'une pompe à vide destinée à la fabrication de composants électroniques capable d'évacuer des gaz en créant un vide de l'ordre $10^{-9}mbar$ dans une chambre blanche. Les conditions du cahier des charges sont très exigeantes et résumées dans le diagramme des exigences partiel suivant : 
+On s'intéresse ici à l'étude d'une pompe à vide destinée à la fabrication de composants électroniques capable d'évacuer des gaz en créant un vide de l'ordre $10^{-9}\,\text{mbar}$ dans une chambre blanche. Les conditions du cahier des charges sont très exigeantes et résumées dans le diagramme des exigences partiel suivant : 
 
 \begin{center}
 \includegraphics[width=0.9\textwidth]{images/req_pompe.pdf}\\
@@ -140,14 +143,14 @@ Vue en coupe du guidage par paliers magnétiques de la pompe
 \section{Modélisation du problème}
 \subsection{Paramétrage du problème}
 
+\begin{multicols}{2}
 La figure ci-dessous représente le paramétrage d'un rotor $S_3$ en mouvement par rapport à $S_0$.
 
 %\begin{figure}[htbf!]
 \begin{center}
-\begin{tabular}{cc}
-\includegraphics[width=0.5\textwidth]{images/figure_presentation.pdf}&
+\includegraphics[width=.8\linewidth]{images/figure_presentation.pdf}
 %%%\scFigCalc[z_{0,3}]{x_0}{y_0}{x_3}{y_3}{\theta}
-\end{tabular}
+\includegraphics[width=.4\linewidth]{images/sc}
 \end{center}
 %\caption{Paramétrage du problème}
 \textit{Paramétrage du problème}
@@ -157,9 +160,9 @@ La figure ci-dessous représente le paramétrage d'un rotor $S_3$ en mouvement p
 
 \begin{itemize}
 \item Le référentiel $R_0$ associé à $S_0$ est supposé comme étant galiléen.
-\item Le guidage par paliers magnétiques entre le rotor $S_3$ et le bâti $S_0$ est modélisé par une liaison pivot d'axe ($O_3$,$\overrightarrow{z}_{0,3}$) avec bâti $S_0$.
-\item Le paramètre du mouvement de $S_3/S_0$ est défini par $\theta=(\overrightarrow{x}_0,\overrightarrow{x}_3)$.
-\item Le rotor $S_3$ est de masse $m_3$, de centre de masse $G_3$ tel que $\overrightarrow{O_3G_3}=b \overrightarrow{y}_3+c\overrightarrow{z}_3$.
+\item Le guidage par paliers magnétiques entre le rotor $S_3$ et le bâti $S_0$ est modélisé par une liaison pivot d'axe ($O_3$,$\vect{z}_{0,3}$) avec bâti $S_0$.
+\item Le paramètre du mouvement de $S_3/S_0$ est défini par $\theta=(\vect{x_0},\vect{x_3})$.
+\item Le rotor $S_3$ est de masse $m_3$, de centre de masse $G_3$ tel que $\vect{O_3G_3}=b \vect{y_3}+c\vect{z_3}$.
 \item Le rotor $S_3$, bien qu'ayant une symétrie théorique de révolution est en réalité imparfait. Sa matrice d'inertie en $O_3$ est donnée par :
 $$
 \overline{\overline{I}}_{O_3}(S_3)=\left(\begin{array}{ccc}
@@ -168,83 +171,82 @@ A_3 & -F_3 & -E_3 \\
 -E_3 & -D_3 & C_3
 \end{array} \right)_{R_3}
 $$
-\item Un moteur, non représenté, entraîne $S_3$ avec un couple $C_m \overrightarrow{z}_{0,3}$ à vitesse constante ($\omega=\dot{\theta}$).
-\item L'accélération de la pesanteur est dirigée selon $+\overrightarrow{y}_0$ et vaut $g=9,81m\cdot s^{-2}$.
+\item Un moteur, non représenté, entraîne $S_3$ avec un couple $C_m \vect{z_{0,3}}$ à vitesse constante ($\omega=\dot{\theta}$).
+\item L'accélération de la pesanteur est dirigée selon $+\vect{y_0}$ et vaut $g=\SI{9,81}{m.s^{-2}}$.
 \end{itemize}
-
+\end{multicols}
 
 \subsection{Analyse préliminaire}
 %\begin{exemple}[Analyse préliminaire]
-\subparagraph{}\textit{Faire le bilan des actions mécaniques extérieures pour $\left\{S_3\right\}$.}
+%\subparagraph{}
+\textit{Faire le bilan des actions mécaniques extérieures pour $\left\{S_3\right\}$.}
 %\begin{texteCache}
 \begin{itemize}
 \item \textbf{Action du bâti (liaison pivot)} :
-\begin{align*}
+$
 \torseurstat{T}{S_0}{S_3}
-=\torseurl{\forall P\in \couple{O_3}{\overrightarrow{z}_{0,3}}}{X_{03}\cdot \overrightarrow{x}_{0}+ Y_{03}\cdot \overrightarrow{y}_{0}+Z_{03}\cdot \overrightarrow{z}_{0}}{L_{03}\cdot \overrightarrow{x}_{0}+M_{03}\cdot \overrightarrow{y}_{0}}
-\end{align*}
+=\torseurl{X_{03} \vect{x_{0}}+ Y_{03} \vect{y_{0}}+Z_{03} \vect{z_{0}}}{L_{03} \vect{x_{0}}+M_{03} \vect{y_{0}}}{\forall P\in \couple{O_3}{z_{0,3}}}
+$
 \item \textbf{Action du moteur : }
-\begin{align*}
+$
 \torseurstat{T}{\text{moteur}}{S_3}
-=\torseurl{\forall P}{\overrightarrow{0}}{C_{m}\cdot \overrightarrow{z}_{0}}
-\end{align*}
+=\torseurl{\vect{0}}{C_{m} \vect{z_0}}{\forall P}
+$.
 \item \textbf{Action de la pesanteur : }
-\begin{align*}
+$
 \torseurstat{T}{\text{pesanteur}}{S_3}
-=\torseurl{G_3}{m_3\cdot g\cdot \overrightarrow{y}_0}{\overrightarrow{0}}\\
-=\torseurl{O_3}{m_3\cdot g\cdot \overrightarrow{y}_0}{\overrightarrow{O_3G_3}\wedge \left(m_3\cdot g\cdot \overrightarrow{y}_0\right)=\left(b \overrightarrow{y}_3+c\overrightarrow{z}_3\right)\wedge\left(m_3\cdot g\cdot \overrightarrow{y}_0\right)}
-=\torseurl{O_3}{m_3\cdot g\cdot \overrightarrow{y}_0}{m_3\cdot g\left(-b\sin\theta\cdot \overrightarrow{z}_{0,3} -c\overrightarrow{x}_0\right)}\\
-\end{align*}
+=\torseurl{m_3 g \vect{y_0}}{\vect{0}}{G_3}\\
+=\torseurl{m_3 g \vect{y_0}}{\vect{O_3G_3}\wedge \left(m_3 g \vect{y_0}\right)=\left(b \vect{y_3}+c\vect{z_3}\right)\wedge\left(m_3 g \vect{y_0}\right)}{O_3}
+=\torseurl{m_3 g \vect{y_0}}{m_3 g\left(-b\sin\theta \vect{z_{0,3}} -c\vect{x_0}\right)}{O_3}\\
+$
 \end{itemize}
 
 %\end{texteCache}
 
-\subparagraph{}\textit{Déterminer le torseur dynamique : $\mathcal{D}_{O_3}\left(S_3/S_0\right)$.}
+%\subparagraph{}
+\textit{Déterminer le torseur dynamique $\torseurdyn{S_3}{R_0}$ en $O_3$.}
 
 \begin{itemize}
-\item Le solide $S_3$ est en mouvement de rotation autour de l'axe $\couple{O_3}{\overrightarrow{z}_{0,3}}$ fixe par rapport à $R_0$.
+\item Le solide $S_3$ est en mouvement de rotation autour de l'axe $\couple{O_3}{z_{0,3}}$ fixe par rapport à $R_0$.
 
 %\begin{texteCache}
 \begin{align*}
 \torseurdyn{S_3}{R_0}=
-\torseurl{O_3}{
-\overrightarrow{R_d}(S_3/R_0)=m_3\cdot \overrightarrow{a}(G_3\in S_3/R_0)}{
-\vectmd{O_3}{S_3}{R_0}=\left[\frac{d\vectmc{O_3}{S_3}{R_0}}{dt}\right]_{R_0}}
+\torseurl{
+\vect{R_d}(S_3/R_0)=m_3 \vect{a}(G_3\in S_3/R_0)}{
+\vectmd{O_3}{S_3}{R_0}=\left[\frac{\dd \vectmc{O_3}{S_3}{R_0}}{\dd t}\right]_{R_0}}{O_3}
 \end{align*}
 %\end{texteCache}
 
-\item On calcule $\overrightarrow{R_d}(S_3/R_0)$ : 
-
+\item On calcule $\vect{R_d}(S_3/R_0)$ : 
 %\begin{texteCache}
-\begin{align*}
-\overrightarrow{R_d}(S_3/R_0)=m_3\cdot \overrightarrow{a}(G_3\in S_3/R_0)
-=m_3\cdot \left[\frac{d\overrightarrow{V}(G_3\in S_3/R_0)}{dt}\right]_{R_0}
-\end{align*}
+$
+\vect{R_d}(S_3/R_0)=m_3 \vect{a}(G_3\in S_3/R_0)
+=m_3 \left[\frac{\dd \vect{V}(G_3\in S_3/R_0)}{\dd t}\right]_{R_0}
+$.
 
 Or, 
-
-\begin{align*}
-\overrightarrow{V}(G_3\in S_3/R_0)=\overrightarrow{G_3O_3}\wedge \overrightarrow{\Omega}(S_3/R_0)=
-(-b\cdot \overrightarrow{y}_3-c\cdot \overrightarrow{z}_3)\wedge \dot{\theta}\cdot \overrightarrow{z}_{0,3}\\
-=-b\cdot \dot{\theta}\cdot \overrightarrow{x}_3.
-\end{align*}
+$
+\vect{V}(G_3\in S_3/R_0)=\vect{G_3O_3}\wedge \vect{\Omega}(S_3/R_0)=
+(-b \vect{y}_3-c \vect{z_3})\wedge \dot{\theta} \vect{z_{0,3}}
+=-b \dot{\theta} \vect{x_3}.
+$
 
 Donc,
 
 \begin{align*}
-\overrightarrow{R_d}(S_3/R_0)=-b\cdot m_3\cdot \left(\ddot{\theta}\cdot \overrightarrow{x}_3+\dot{\theta}\cdot \left[\frac{d \overrightarrow{x}_3}{dt}\right]_{R_0}\right)
-=-b\cdot m_3\cdot \left(\ddot{\theta}\cdot \overrightarrow{x}_3+\dot{\theta}^2\cdot \overrightarrow{y}_3\right)\\
-=-b\cdot m_3\cdot \omega^2\cdot \overrightarrow{y}_3=-b\cdot m_3\cdot \omega^2\left(-\sin\theta\cdot \overrightarrow{x}_0+\cos\theta\cdot \overrightarrow{y}_0\right)
+\vect{R_d}(S_3/R_0)=-b m_3 \left(\ddot{\theta} \vect{x_3}+\dot{\theta} \left[\frac{\dd  \vect{x_3}}{\dd t}\right]_{R_0}\right)
+=-b m_3 \left(\ddot{\theta} \vect{x_3}+\dot{\theta}^2 \vect{y_3}\right)\\
+=-b m_3 \omega^2 \vect{y_3}=-b m_3 \omega^2\left(-\sin\theta \vect{x_0}+\cos\theta \vect{y_0}\right)
 \end{align*}
 
 %\end{texteCache}
 
-\item On calcule $\vectmc{O_3}{S_3}{R_0}$ : 
+\item On calcule $\vectmc{O_3}{S_3}{R_0}$.
 %\begin{texteCache}
-
 $O_3$ est fixe par rapport à $R_0$ : 
-\begin{align*}
-\vectmc{O_3}{S_3}{R_0}=\overline{\overline{I}}_{O_3}(S_3)\cdot \overrightarrow{\Omega}(S_3/R_0)
+$
+\vectmc{O_3}{S_3}{R_0}=\overline{\overline{I}}_{O_3}(S_3) \vect{\Omega}(S_3/R_0)
 =\left(\begin{array}{ccc}
 A_3 & -F_3 & -E_3 \\ 
 -F_3 & B_3 & -D_3 \\ 
@@ -255,8 +257,8 @@ A_3 & -F_3 & -E_3 \\
 0 \\ 
 \dot{\theta}
 \end{array} \right)_{R_3}
-=\dot{\theta}\left(-E_3\cdot \overrightarrow{x}_3-D_3\cdot \overrightarrow{y}_3+C_3\cdot \overrightarrow{z}_3\right)
-\end{align*}
+=\dot{\theta}\left(-E_3 \vect{x_3}-D_3 \vect{y_3}+C_3 \vect{z_3}\right)
+$
 %\end{texteCache}
 \end{itemize}
 %\end{exemple}
@@ -268,90 +270,82 @@ A_3 & -F_3 & -E_3 \\
 %\begin{texteCache}
 $O_3$ est fixe par rapport à $R_0$ : 
 \begin{align*}
-\vectmd{O_3}{_3}{R_0}=\left[\frac{d\vectmc{O_3}{S_3}{R_0}}{dt}\right]_{R_0}
+\vectmd{O_3}{_3}{R_0}=\left[\frac{\dd \vectmc{O_3}{S_3}{R_0}}{\dd t}\right]_{R_0}
 =
-\left(-E_3\cdot\ddot{\theta}+D_3\cdot \dot{\theta}^2\right)\cdot \overrightarrow{x}_3+\left(-D_3\cdot\ddot{\theta}-E_3\cdot \dot{\theta}^2\right)\cdot \overrightarrow{y}_3+C_3\cdot\ddot{\theta} \overrightarrow{z}_{0,3}\\
-=D_3\cdot \omega^2\cdot \overrightarrow{x}_3-E_3\cdot \omega^2\cdot \overrightarrow{y}_3\\
-=\omega^2\cdot \left[\left(D_3\cdot\cos\theta+E_3\cdot\sin\theta\right)\cdot \overrightarrow{x}_0+\left(D_3\cdot\sin\theta-E_3\cdot\cos\theta\right)\cdot \overrightarrow{y}_0\right]
+\left(-E_3\cdot\ddot{\theta}+D_3 \dot{\theta}^2\right) \vect{x_3}+\left(-D_3\cdot\ddot{\theta}-E_3 \dot{\theta}^2\right) \vect{y_3}+C_3\cdot\ddot{\theta} \vect{z_{0,3}}\\
+=D_3 \omega^2 \vect{x}_3-E_3 \omega^2 \vect{y_3}\\
+=\omega^2 \left[\left(D_3\cdot\cos\theta+E_3\cdot\sin\theta\right) \vect{x_0}+\left(D_3\cdot\sin\theta-E_3\cdot\cos\theta\right) \vect{y_0}\right]
 \end{align*}
 %\end{texteCache}
 
-\item On en déduit $\torseurdyn{S_3}{R_0}$ exprimé dans la base $b_0=\base{\overrightarrow{x}_0}{\overrightarrow{y}_0}{\overrightarrow{z}_0}$ : 
+\item On en déduit $\torseurdyn{S_3}{R_0}$ exprimé dans la base $b_0=\base{{x}_0}{{y}_0}{{z}_0}$ : 
 %\begin{texteCache}
 \begin{align*}
-\torseurdyn{S_3}{R_0}=\torseurl{O_3}{-b\cdot m_3\cdot \omega^2\left(-\sin\theta\cdot \overrightarrow{x}_0+\cos\theta\cdot \overrightarrow{y}_0\right)}{\omega^2\cdot \left[\left(D_3\cdot\cos\theta+E_3\cdot\sin\theta\right)\cdot \overrightarrow{x}_0+\left(D_3\cdot\sin\theta-E_3\cdot\cos\theta\right)\cdot \overrightarrow{y}_0\right]}
+\torseurdyn{S_3}{R_0}
+=\torseurl{-b m_3 \omega^2\left(-\sin\theta \vect{x_0}+\cos\theta \vect{y_0}\right)}{\omega^2 \left[\left(D_3\cdot\cos\theta+E_3\cdot\sin\theta\right) \vect{x_0}+\left(D_3\cdot\sin\theta-E_3\cdot\cos\theta\right) \vect{y_0}\right]}{O_3}
 \end{align*}
 %\end{texteCache}
 \end{itemize}
 
-\subparagraph{}\textit{Déduire du Principe Fondamental de la Dynamique, les équations de mouvement.}
+%\subparagraph{}
+\textit{Déduire du Principe Fondamental de la Dynamique, les équations de mouvement.}
 
 %\begin{texteCache}
 Le Principe Fondamental de la dynamique appliqué à $S_3$ par rapport au référentiel $R_0$ donne :
 
-\begin{itemize}
-\item Théorème de la résultante dynamique : 
+\begin{multicols}{2}
+Théorème de la résultante dynamique : 
 
-\begin{align*}
+$$
 \begin{array}{cc}
 \begin{array}{c}
-\overrightarrow{x}_0\\
-\\
-\overrightarrow{y}_0\\
-\\
-\overrightarrow{z}_0
+\vect{x_0}\\
+\vect{y_0}\\
+\vect{z_0}
 \end{array}
 &
 \left\{
 \begin{array}{c}
-X_{03}=b\cdot m_3\cdot \omega^2\sin\theta\\
-\\
-Y_{03}+m_3\cdot g=-b\cdot m_3\cdot \omega^2\cos\theta\\
-\\
+X_{03}=b m_3 \omega^2\sin\theta\\
+Y_{03}+m_3 g=-b m_3 \omega^2\cos\theta\\
 Z_{03}=0
 \end{array}
 \right.
 \end{array}
-\end{align*}
-\item Théorème du moment dynamique en $O_0$: 
+$$
 
-\begin{align*}
+Théorème du moment dynamique en $O_0$: 
+$$
 \begin{array}{cc}
 \begin{array}{c}
-\overrightarrow{x}_0\\
-\\
-\overrightarrow{y}_0\\
-\\
-\overrightarrow{z}_0
+\vect{x_0}\\
+\vect{y_0}\\
+\vect{z_0}
 \end{array}
 &
 \left\{
 \begin{array}{c}
-L_{03}=\omega^2\cdot \left(D_3\cdot\cos\theta+E_3\cdot\sin\theta\right)+c\cdot m_3\cdot g\\
-\\
+L_{03}=\omega^2 \left(D_3\cdot\cos\theta+E_3\cdot\sin\theta\right)+c m_3 g\\
 M_{03}=\omega^2\cdot\left(D_3\cdot\sin\theta-E_3\cdot\cos\theta\right)\\
-\\
-C_m-m_3\cdot g\cdot b\sin\theta=0
+C_m-m_3 g b\sin\theta=0
 \end{array}
 \right.
 \end{array}
-\end{align*}
-\end{itemize}
+$$
+\end{multicols}
 %\end{texteCache}
 
 %\end{exemple}
 
 
-\end{document}
-
-\begin{propriete}[Évolution des efforts au niveau des paliers au cours du temps]
+\begin{prop}[Évolution des efforts au niveau des paliers au cours du temps]
 Lorsque le rotor n'est pas équilibré dynamiquement (comme dans l'exemple précédent), les actions extérieurs dans la liaison pivot dépendant de la position angulaire et fluctuent cycliquement.
 
 On donne ci-dessous les évolutions des composantes de l'action mécanique dans la liaison pivot pour une rotation du rotor 3.
 \begin{itemize}
-\item opérateur d'inertie : $E_3=0$ et $D_3=10^{-4}kg\cdot m^2$ ; 
-\item Masse et centre de masse : $m_3=10kg$, $c=0mm$ et $b=0,05mm$ ; 
-\item Rotation de $3/0$ : $\omega=30000tour/min$
+\item opérateur d'inertie : $E_3=0$ et $D_3=10^{-4}\;\text{kg m}^2$ ; 
+\item Masse et centre de masse : $m_3=\SI{10}{kg}$, $c=\SI{0}{mm}$ et $b=\SI{0,05}{mm}$ ; 
+\item Rotation de $3/0$ : $\omega=\SI{30000}{tour/min}$
 \end{itemize}
 
 \begin{center}
@@ -368,10 +362,10 @@ On donne ci-dessous les évolutions des composantes de l'action mécanique dans 
 \end{minipage}
 \end{center}
 
-Il apparaît des variations d'efforts de l'ordre de $10kN$ et de moment de $2kN\cdot m$ sur des périodes très brèves ($2ms$) ce qui constitue une source importante de vibrations pour la structure. Ce valeurs sont très supérieures à celles exigées par le cahier des charges puisque on ne tolère au maximum que $5N$.
-\end{propriete}
+Il apparaît des variations d'efforts de l'ordre de $\SI{10}{kN}$ et de moment de $\SI{2}{kN m}$ sur des périodes très brèves ($\SI{2}{ms}$) ce qui constitue une source importante de vibrations pour la structure. Ce valeurs sont très supérieures à celles exigées par le cahier des charges puisque on ne tolère au maximum que $\SI{5}{N}$.
+\end{prop}
 
-\FloatBarrier
+%\FloatBarrier
 \section{Conditions d'équilibrage}
 
 \subsection{Présentation}
@@ -387,46 +381,52 @@ Pour éviter les vibrations, il faut rendre l'action mécanique extérieure s'ex
 
 \subsection{Équilibrage statique}
 
-\begin{exemple}[Mise en oeuvre de l'équilibrage statique du rotor $S_3$]
-\subparagraph{}\textit{Déterminer les conditions d'équilibrage statique.}
+\begin{exemple}
+[Mise en \oe{}uvre de l'équilibrage statique du rotor $S_3$]
+
+\textit{Déterminer les conditions d'équilibrage statique.}
 
 %\begin{texteCache}
-Les équations en résultantes impliquent que le paramètre $b$ doit être nul. Cela revient à dire que le centre d'inertie $G_3$ soit sur l'axe de rotation $\couple{O_3}{\overrightarrow{z}_{0,3}}$ de $S_3$ par rapport à $S_0$.
+Les équations en résultantes impliquent que le paramètre $b$ doit être nul. Cela revient à dire que le centre d'inertie $G_3$ soit sur l'axe de rotation $\couple{O_3}{z_{0,3}}$ de $S_3$ par rapport à $S_0$.
 %\end{texteCache}
 \end{exemple}
 
 
 \subsection{Équilibrage dynamique}
 
-\begin{exemple}[Mise en oeuvre de l'équilibrage dynamique du rotor $S_3$]
-\subparagraph{}\textit{Déterminer les conditions d'équilibrage dynamique.}
+\begin{exemple}[Mise en \oe{}uvre de l'équilibrage dynamique du rotor $S_3$]
+%\subparagraph{}
+\textit{Déterminer les conditions d'équilibrage dynamique.}
 
 %\begin{texteCache}
 Les équations en moment impliquent que $D_3=E_3=0$.
-Cela revient à dire que l'axe $\couple{O_0}{\overrightarrow{z}_{0,3}}$ soit axe principal d'inertie du solide $S_3$.
+Cela revient à dire que l'axe $\couple{O_0}{{z_{0,3}}}$ soit axe principal d'inertie du solide $S_3$.
 %\end{texteCache}
 \end{exemple}
+%\end{document}
 
 \subsection{Conditions d'équilibrage}
 
-\begin{definition}[Condition d'équilibrage d'un solide en rotation]
+\begin{defi}[Condition d'équilibrage d'un solide en rotation]
 Un solide équilibré doit vérifier les deux conditions suivantes :
 \begin{itemize}
 \item son centre d'inertie se situe sur son axe de rotation ; 
 \item son axe de rotation est axe principal d'inertie : les produits d'inertie sont nul selon cet axe.
 \end{itemize}
-\end{definition}
+\end{defi}
 
 \subsection{Illustration de l'équilibrage}
 
 
-\begin{figure}[ht!]
+%\begin{figure}[ht!]
   \begin{center}
   \includegraphics[width=0.8\textwidth]{images/illustration_equilibrage.png}
+  
+  \textit{Illustration avec deux masses ponctuelles}
   \end{center}
-    \caption{Illustration avec deux masses ponctuelles}
-    \label{fig:map}
-\end{figure}
+%    \caption{Illustration avec deux masses ponctuelles}
+    %\label{fig:map}
+%\end{figure}
 
 \begin{itemize}
 \item \textbf{(a)} : Les 2 masses ne sont pas à la même distance de l'axe de rotation : on n'a ni équilibrage statique ni équilibrage dynamique.
@@ -440,8 +440,8 @@ Un solide équilibré doit vérifier les deux conditions suivantes :
 On utilise alors deux masses d'équilibrage ponctuelles $m_1$ et $m_2$ localisées sur la jante (rayon r) sur sa partie avant (masse $m_1$) et sur sa partie arrière (masse $m_2$) par les angles $\Phi_1$ et $\Phi_2$.
 On définit alors leur position par :
 \begin{itemize}
-\item $\overrightarrow{O_3G_1}=r \overrightarrow{x}_1+h\overrightarrow{z}_3$
-\item $\overrightarrow{O_3G_2}=r \overrightarrow{x}_2-h\overrightarrow{z}_3$
+\item $\vect{O_3G_1}=r \vect{x}_1+h\vect{z}_3$
+\item $\vect{O_3G_2}=r \vect{x}_2-h\vect{z}_3$
 \end{itemize}
 
 
@@ -459,7 +459,7 @@ On considère dorénavant l'ensemble cinématiquement lié $E=\left\{1+2+3\right
 
 \begin{align*}
 \overline{\overline{I}}{O_3}(E)=
-=\left(\begin{array}{ccc}
+\left(\begin{array}{ccc}
 A & -F & -E \\ 
 -F & B & -D \\ 
 -E & -D & C
@@ -468,54 +468,57 @@ A & -F & -E \\
 \end{itemize}
 
 \begin{exemple}[Détermination de l'équilibrage statique]
-\subparagraph{}\textit{Traduire la relation donnée par l'équilibrage statique.}
+%\subparagraph{}
+
+\textit{Traduire la relation donnée par l'équilibrage statique.}
 \begin{itemize}
-\item La condition d'équilibrage statique implique : $\overrightarrow{O_3G}\cdot \overrightarrow{x}_3=0$ et $\overrightarrow{O_3G}\cdot \overrightarrow{y}_3=0$.
+\item La condition d'équilibrage statique implique : $\vect{O_3G} \vect{x}_3=0$ et $\vect{O_3G} \vect{y}_3=0$.
 \item La formule du barycentre donne : 
 %\begin{texteCache}
 $$
-\overrightarrow{O_3G}=\frac{m_1\cdot \overrightarrow{O_3G_1}+m_1\cdot \overrightarrow{O_3G_2}+m_3\cdot \overrightarrow{O_3G_3}}{m_1+m_2+m_3}
+\vect{O_3G}=\frac{m_1 \vect{O_3G_1}+m_1 \vect{O_3G_2}+m_3 \vect{O_3G_3}}{m_1+m_2+m_3}
 $$
 %\end{texteCache}
-\item On peut exprimer $\overrightarrow{O_3G_1}$ et $\overrightarrow{O_3G_2}$ dans la base $b_3=\base{\overrightarrow{x}_3}{\overrightarrow{y}_3}{\overrightarrow{z}_{0,3}}$ :
+\item On peut exprimer $\vect{O_3G_1}$ et $\vect{O_3G_2}$ dans la base $b_3=\base{{x_3}}{{y}_3}{{z}_{0,3}}$ :
 %\begin{texteCache}
-\begin{align*}
-\overrightarrow{O_3G_1}=r\cdot \cos\Phi_1\cdot \overrightarrow{x}_3+r\cdot \sin\Phi_1\cdot \overrightarrow{x}_3+h\cdot \overrightarrow{z}_{0,3}\\
-\\
-\overrightarrow{O_3G_2}=r\cdot \cos\Phi_2\cdot \overrightarrow{x}_3+r\cdot \sin\Phi_2\cdot \overrightarrow{x}_3-h\cdot \overrightarrow{z}_{0,3}\\
-\end{align*}
+$$
+\vect{O_3G_1}=r \cos\Phi_1 \vect{x_3}+r \sin\Phi_1 \vect{x_3}+h \vect{z_{0,3}}
+\quad\quad\quad
+\vect{O_3G_2}=r \cos\Phi_2 \vect{x_3}+r \sin\Phi_2 \vect{x_3}-h \vect{z_{0,3}}
+$$
+
 %\end{texteCache}
-\item $\overrightarrow{O_3G}\cdot \overrightarrow{x}_3=0$ donne : 
+\item $\vect{O_3G} \vect{x_3}=0$ donne : 
 %\begin{texteCache}
-\begin{align*}
-r\cdot \left(m_1\cdot \cos\Phi_1+m_1\cdot \cos\Phi_1 \right)=0\\
-\end{align*}
+$
+r \left(m_1 \cos\Phi_1+m_1 \cos\Phi_1 \right)=0$.
 %\end{texteCache}
-\item $\overrightarrow{O_3G}\cdot \overrightarrow{y}_3=0$ donne : 
-\begin{texteCache}
-\begin{align*}
-m_3\cdot b+r\cdot \left(m_1\cdot \sin\Phi_1+m_1\cdot \sin\Phi_1 \right)=0\\
-\end{align*}
-\end{texteCache}
+\item $\vect{O_3G} \vect{y_3}=0$ donne : 
+%\begin{texteCache}
+$
+m_3 b+r \left(m_1 \sin\Phi_1+m_1 \sin\Phi_1 \right)=0
+$.
+%\end{texteCache}
 \end{itemize}
 
 \end{exemple}
 \begin{exemple}[Détermination de l'équilibrage statique]
-\subparagraph{}\textit{Traduire la relation donnée par l'équilibrage dynamique.}
+%\subparagraph{}
+
+\textit{Traduire la relation donnée par l'équilibrage dynamique.}
 
 \begin{itemize}
-\item L'opérateur d'inertie de $E$ en $O_3$ doit avoir la direction $\couple{O_3}{\overrightarrow{z}_{0,3}}$  comme principale d'inertie d'où $D=E=0$.
+\item L'opérateur d'inertie de $E$ en $O_3$ doit avoir la direction $\couple{O_3}{{z_{0,3}}}$  comme principale d'inertie d'où $D=E=0$.
 \item On obtient alors une relation avec l'expression de $D$ : 
 %\begin{texteCache}
-\begin{align*}
-D=D_3+m_1\cdot y_1\cdot z_1+ m_2\cdot y_2\cdot z_2=D_3+m_1\cdot r\cdot \sin\Phi_1\cdot h-m_2\cdot r\cdot \sin\Phi_2\cdot h
-\end{align*}
+$
+D=D_3+m_1 y_1 z_1+ m_2 y_2 z_2=D_3+m_1 r \sin\Phi_1 h-m_2 r \sin\Phi_2 h
+$.
 %\end{texteCache}
 \item On obtient alors une relation avec l'expression de $E$ :
 %\begin{texteCache}
-\begin{align*}
-E=E_3+m_1\cdot x_1\cdot z_1+m_2\cdot x_2\cdot z_2=E_3+m_1\cdot r\cdot \cos\Phi_1\cdot h-m_2\cdot r\cdot \cos\Phi_2\cdot h
-\end{align*} 
+$E=E_3+m_1 x_1 z_1+m_2 x_2 z_2=E_3+m_1 r \cos\Phi_1 h-m_2 r \cos\Phi_2 h
+$.
 %\end{texteCache}
 \end{itemize}
 
@@ -524,41 +527,34 @@ E=E_3+m_1\cdot x_1\cdot z_1+m_2\cdot x_2\cdot z_2=E_3+m_1\cdot r\cdot \cos\Phi_1
 \subsection{Équations de détermination de l'équilibrage}
 
 \begin{definition}[Équations de détermination de l'équilibrage]
+
 En notant,
 \begin{itemize}
-\item $x_i$, $y_i$ et $z_i$ ($i$ allant de $1$ à $2$) les coordonnées des deux masselottes dans le repère $\quadruplet{O}{\overrightarrow{x}_s}{\overrightarrow{y}_s}{\overrightarrow{z}_s}$ lié à un solide $S$,
-\item $r_s$ la distance entre le centre d'inertie de $S$ par rapport à $\couple{O}{\overrightarrow{z}_s}$, 
-\item $D_s$, $E_s$ et $E_s$ les produits d'inertie du solide S dans la base $b_s=\base{\overrightarrow{x}_s}{\overrightarrow{y}_s}{\overrightarrow{z}_s}$
+\item $x_i$, $y_i$ et $z_i$ ($i$ allant de $1$ à $2$) les coordonnées des deux masselottes dans le repère $\quadruplet{O}{\vect{x_s}}{\vect{y_s}}{\vect{z_s}}$ lié à un solide $S$,
+\item $r_s$ la distance entre le centre d'inertie de $S$ par rapport à $\couple{O}{{z}_s}$, 
+\item $D_s$, $E_s$ et $E_s$ les produits d'inertie du solide S dans la base $b_s=\base{{x}_s}{{y}_s}{{z}_s}$
 \end{itemize}
-l'écriture des condition d'équilibrage d'un solide en rotation autour d'un axe $\couple{O}{\overrightarrow{z}_s}$ donne : 
+l'écriture des condition d'équilibrage d'un solide en rotation autour d'un axe $\couple{O}{{z}_s}$ donne : 
 
 \begin{tabular}{|p{6.5cm}|p{6.5cm}|}
 \hline 
-\textbf{Centre d'inertie $G$ sur l'axe de rotation} & \textbf{Axe de rotation $\couple{O}{\overrightarrow{z}}$ axe principal d'inertie du solide $S$} \\ 
+\textbf{Centre d'inertie $G$ sur l'axe de rotation} & \textbf{Axe de rotation $\couple{O}{{z}}$ axe principal d'inertie du solide $S$} \\ 
 \hline 
-$
-m_1\cdot x_1+m_2\cdot x_2=0
-$
+$m_1 x_1+m_2 x_2=0$
 &
-$
-D=D_s+m_1\cdot y_1\cdot z_1+ m_2\cdot y_2\cdot z_2
-$
+$D=D_s+m_1 y_1 z_1+ m_2 y_2 z_2$
 \\ 
-$
-m_3\cdot r_s+m_1\cdot y_1+m_2\cdot y_2=0
-$
+$m_3 r_s+m_1 y_1+m_2 y_2=0$
 &
-$
-E=E_s+m_1\cdot x_1\cdot z_1+m_2\cdot x_2\cdot z_2
-$\\
+$E=E_s+m_1 x_1 z_1+m_2 x_2 z_2$\\
 \hline 
 \end{tabular} 
 
 \end{definition}
 
-\subsection{Mise en oeuvre : machine d'équilibrage industriel}
+\subsection{Mise en\ oe{}uvre : machine d'équilibrage industriel}
 
-\begin{propriete}[Mise en oeuvre de l'équilibrage dynamique]
+\begin{prop}[Mise en  \oe{}uvre de l'équilibrage dynamique]
 D'après l'étude précédente, on obtient 4 équations avec 8 inconnues ($m_1$, $m_2$, $x_1$, $y_1$, $z_1$, $x_2$, $y_2$ et $z_2$).
 Il faut donc imposer 4 variables. Généralement pour des raisons pratiques comme dans l'exemple précédent, on impose $z_1$ et $z_2$ puis on impose une relation entre $x_1$ et $y_1$ puis entre $x_2$ et $y_2$ cela revient à fixer une distance entre les masses additionnelles et l'axe de rotation.
 
@@ -567,7 +563,7 @@ Dans la pratique on utilise une équilibreuse qui mesure les efforts au niveau d
 \begin{center}
 \includegraphics[width=0.4\textwidth]{images/machine_equilibrage.jpeg}
 \end{center}
-\end{propriete}
+\end{prop}
 
 
 
