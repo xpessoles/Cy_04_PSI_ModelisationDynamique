@@ -264,11 +264,11 @@ A_3 & -F_3 & -E_3 \\
 %\setcounter{cptExemple}{\thecptExemple-1}
 %\begin{exemple}[Analyse préliminaire]
 \begin{itemize}
-\item On calcule $\vDelta[O_3]{_3}{R_0}$ : 
+\item On calcule $\vectmd{O_3}{_3}{R_0}$ : 
 %\begin{texteCache}
 $O_3$ est fixe par rapport à $R_0$ : 
 \begin{align*}
-\vDelta[O_3]{_3}{R_0}=\left[\frac{d\vectmc{O_3}{S_3}{R_0}}{dt}\right]_{R_0}
+\vectmd{O_3}{_3}{R_0}=\left[\frac{d\vectmc{O_3}{S_3}{R_0}}{dt}\right]_{R_0}
 =
 \left(-E_3\cdot\ddot{\theta}+D_3\cdot \dot{\theta}^2\right)\cdot \overrightarrow{x}_3+\left(-D_3\cdot\ddot{\theta}-E_3\cdot \dot{\theta}^2\right)\cdot \overrightarrow{y}_3+C_3\cdot\ddot{\theta} \overrightarrow{z}_{0,3}\\
 =D_3\cdot \omega^2\cdot \overrightarrow{x}_3-E_3\cdot \omega^2\cdot \overrightarrow{y}_3\\
@@ -276,10 +276,10 @@ $O_3$ est fixe par rapport à $R_0$ :
 \end{align*}
 %\end{texteCache}
 
-\item On en déduit $\tDyn{S_3}{R_0}$ exprimé dans la base $b_0=\triplet{\overrightarrow{x}_0}{\overrightarrow{y}_0}{\overrightarrow{z}_0}$ : 
+\item On en déduit $\torseurdyn{S_3}{R_0}$ exprimé dans la base $b_0=\base{\overrightarrow{x}_0}{\overrightarrow{y}_0}{\overrightarrow{z}_0}$ : 
 %\begin{texteCache}
 \begin{align*}
-\tDyn{S_3}{R_0}=\torseurLigne{O_3}{-b\cdot m_3\cdot \omega^2\left(-\sin\theta\cdot \overrightarrow{x}_0+\cos\theta\cdot \overrightarrow{y}_0\right)}{\omega^2\cdot \left[\left(D_3\cdot\cos\theta+E_3\cdot\sin\theta\right)\cdot \overrightarrow{x}_0+\left(D_3\cdot\sin\theta-E_3\cdot\cos\theta\right)\cdot \overrightarrow{y}_0\right]}
+\torseurdyn{S_3}{R_0}=\torseurl{O_3}{-b\cdot m_3\cdot \omega^2\left(-\sin\theta\cdot \overrightarrow{x}_0+\cos\theta\cdot \overrightarrow{y}_0\right)}{\omega^2\cdot \left[\left(D_3\cdot\cos\theta+E_3\cdot\sin\theta\right)\cdot \overrightarrow{x}_0+\left(D_3\cdot\sin\theta-E_3\cdot\cos\theta\right)\cdot \overrightarrow{y}_0\right]}
 \end{align*}
 %\end{texteCache}
 \end{itemize}
@@ -477,7 +477,7 @@ $$
 \overrightarrow{O_3G}=\frac{m_1\cdot \overrightarrow{O_3G_1}+m_1\cdot \overrightarrow{O_3G_2}+m_3\cdot \overrightarrow{O_3G_3}}{m_1+m_2+m_3}
 $$
 %\end{texteCache}
-\item On peut exprimer $\overrightarrow{O_3G_1}$ et $\overrightarrow{O_3G_2}$ dans la base $b_3=\triplet{\overrightarrow{x}_3}{\overrightarrow{y}_3}{\overrightarrow{z}_{0,3}}$ :
+\item On peut exprimer $\overrightarrow{O_3G_1}$ et $\overrightarrow{O_3G_2}$ dans la base $b_3=\base{\overrightarrow{x}_3}{\overrightarrow{y}_3}{\overrightarrow{z}_{0,3}}$ :
 %\begin{texteCache}
 \begin{align*}
 \overrightarrow{O_3G_1}=r\cdot \cos\Phi_1\cdot \overrightarrow{x}_3+r\cdot \sin\Phi_1\cdot \overrightarrow{x}_3+h\cdot \overrightarrow{z}_{0,3}\\
@@ -528,7 +528,7 @@ En notant,
 \begin{itemize}
 \item $x_i$, $y_i$ et $z_i$ ($i$ allant de $1$ à $2$) les coordonnées des deux masselottes dans le repère $\quadruplet{O}{\overrightarrow{x}_s}{\overrightarrow{y}_s}{\overrightarrow{z}_s}$ lié à un solide $S$,
 \item $r_s$ la distance entre le centre d'inertie de $S$ par rapport à $\couple{O}{\overrightarrow{z}_s}$, 
-\item $D_s$, $E_s$ et $E_s$ les produits d'inertie du solide S dans la base $b_s=\triplet{\overrightarrow{x}_s}{\overrightarrow{y}_s}{\overrightarrow{z}_s}$
+\item $D_s$, $E_s$ et $E_s$ les produits d'inertie du solide S dans la base $b_s=\base{\overrightarrow{x}_s}{\overrightarrow{y}_s}{\overrightarrow{z}_s}$
 \end{itemize}
 l'écriture des condition d'équilibrage d'un solide en rotation autour d'un axe $\couple{O}{\overrightarrow{z}_s}$ donne : 
 
