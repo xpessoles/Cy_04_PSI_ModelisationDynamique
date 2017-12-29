@@ -341,11 +341,11 @@ $$
 \begin{prop}[Évolution des efforts au niveau des paliers au cours du temps]
 Lorsque le rotor n'est pas équilibré dynamiquement (comme dans l'exemple précédent), les actions extérieurs dans la liaison pivot dépendant de la position angulaire et fluctuent cycliquement.
 
-On donne ci-dessous les évolutions des composantes de l'action mécanique dans la liaison pivot pour une rotation du rotor 3.
+On donne ci-dessous les évolutions des composantes de l'action mécanique dans la liaison pivot pour une rotation du rotor 3:
 \begin{itemize}
 \item opérateur d'inertie : $E_3=0$ et $D_3=10^{-4}\;\text{kg m}^2$ ; 
-\item Masse et centre de masse : $m_3=\SI{10}{kg}$, $c=\SI{0}{mm}$ et $b=\SI{0,05}{mm}$ ; 
-\item Rotation de $3/0$ : $\omega=\SI{30000}{tour/min}$
+\item masse et centre de masse : $m_3=\SI{10}{kg}$, $c=\SI{0}{mm}$ et $b=\SI{0,05}{mm}$ ; 
+\item rotation de $3/0$ : $\omega=\SI{30000}{tour/min}$.
 \end{itemize}
 
 \begin{center}
@@ -362,7 +362,7 @@ On donne ci-dessous les évolutions des composantes de l'action mécanique dans 
 \end{minipage}
 \end{center}
 
-Il apparaît des variations d'efforts de l'ordre de $\SI{10}{kN}$ et de moment de $\SI{2}{kN m}$ sur des périodes très brèves ($\SI{2}{ms}$) ce qui constitue une source importante de vibrations pour la structure. Ce valeurs sont très supérieures à celles exigées par le cahier des charges puisque on ne tolère au maximum que $\SI{5}{N}$.
+Il apparaît des variations d'efforts de l'ordre de $\SI{10}{kN}$ et de moment de $\SI{2}{kN m}$ sur des périodes très brèves ($\SI{2}{ms}$) ce qui constitue une source importante de vibrations pour la structure. Ces valeurs sont très supérieures à celles exigées par le cahier des charges puisqu'on ne tolère au maximum que $\SI{5}{N}$.
 \end{prop}
 
 %\FloatBarrier
@@ -440,8 +440,8 @@ Un solide équilibré doit vérifier les deux conditions suivantes :
 On utilise alors deux masses d'équilibrage ponctuelles $m_1$ et $m_2$ localisées sur la jante (rayon r) sur sa partie avant (masse $m_1$) et sur sa partie arrière (masse $m_2$) par les angles $\Phi_1$ et $\Phi_2$.
 On définit alors leur position par :
 \begin{itemize}
-\item $\vect{O_3G_1}=r \vect{x}_1+h\vect{z}_3$
-\item $\vect{O_3G_2}=r \vect{x}_2-h\vect{z}_3$
+\item $\vect{O_3G_1}=r \vect{x_1}+h\vect{z_3}$
+\item $\vect{O_3G_2}=r \vect{x_2}-h\vect{z_3}$
 \end{itemize}
 
 
@@ -456,28 +456,26 @@ On considère dorénavant l'ensemble cinématiquement lié $E=\left\{1+2+3\right
 \begin{itemize}
 \item Soit $G$ son centre d'inertie ;
 \item $\overline{\overline{I}}{O_3}(E)$ sont opérateur d'inertie en $O_3$ :
-
-\begin{align*}
+$
 \overline{\overline{I}}{O_3}(E)=
 \left(\begin{array}{ccc}
 A & -F & -E \\ 
 -F & B & -D \\ 
 -E & -D & C
 \end{array} \right)_{R_3}
-\end{align*}
+$.
 \end{itemize}
 
 \begin{exemple}[Détermination de l'équilibrage statique]
 %\subparagraph{}
-
-\textit{Traduire la relation donnée par l'équilibrage statique.}
+ \textit{Traduire la relation donnée par l'équilibrage statique.}
 \begin{itemize}
-\item La condition d'équilibrage statique implique : $\vect{O_3G} \vect{x}_3=0$ et $\vect{O_3G} \vect{y}_3=0$.
+\item La condition d'équilibrage statique implique : $\vect{O_3G} \vect{x_3}=0$ et $\vect{O_3G} \vect{y_3}=0$.
 \item La formule du barycentre donne : 
 %\begin{texteCache}
-$$
-\vect{O_3G}=\frac{m_1 \vect{O_3G_1}+m_1 \vect{O_3G_2}+m_3 \vect{O_3G_3}}{m_1+m_2+m_3}
-$$
+$
+\vect{O_3G}=\frac{m_1 \vect{O_3G_1}+m_1 \vect{O_3G_2}+m_3 \vect{O_3G_3}}{m_1+m_2+m_3}.
+$
 %\end{texteCache}
 \item On peut exprimer $\vect{O_3G_1}$ et $\vect{O_3G_2}$ dans la base $b_3=\base{{x_3}}{{y}_3}{{z}_{0,3}}$ :
 %\begin{texteCache}
@@ -501,8 +499,6 @@ $.
 %\end{texteCache}
 \end{itemize}
 
-\end{exemple}
-\begin{exemple}[Détermination de l'équilibrage statique]
 %\subparagraph{}
 
 \textit{Traduire la relation donnée par l'équilibrage dynamique.}
@@ -534,7 +530,7 @@ En notant,
 \item $r_s$ la distance entre le centre d'inertie de $S$ par rapport à $\couple{O}{{z}_s}$, 
 \item $D_s$, $E_s$ et $E_s$ les produits d'inertie du solide S dans la base $b_s=\base{{x}_s}{{y}_s}{{z}_s}$
 \end{itemize}
-l'écriture des condition d'équilibrage d'un solide en rotation autour d'un axe $\couple{O}{{z}_s}$ donne : 
+L'écriture des condition d'équilibrage d'un solide en rotation autour d'un axe $\couple{O}{{z}_s}$ donne : 
 
 \begin{tabular}{|p{6.5cm}|p{6.5cm}|}
 \hline 
@@ -554,15 +550,19 @@ $E=E_s+m_1 x_1 z_1+m_2 x_2 z_2$\\
 
 \subsection{Mise en\ oe{}uvre : machine d'équilibrage industriel}
 
-\begin{prop}[Mise en  \oe{}uvre de l'équilibrage dynamique]
+\begin{prop}[Mise en  \oe{}uvre de l'équilibrage dynamique]~\\
+
+\begin{minipage}[c]{.8\linewidth}
 D'après l'étude précédente, on obtient 4 équations avec 8 inconnues ($m_1$, $m_2$, $x_1$, $y_1$, $z_1$, $x_2$, $y_2$ et $z_2$).
 Il faut donc imposer 4 variables. Généralement pour des raisons pratiques comme dans l'exemple précédent, on impose $z_1$ et $z_2$ puis on impose une relation entre $x_1$ et $y_1$ puis entre $x_2$ et $y_2$ cela revient à fixer une distance entre les masses additionnelles et l'axe de rotation.
-
 Dans la pratique on utilise une équilibreuse qui mesure les efforts au niveau des paliers et qui en déduit les variables citées précédemment pour obtenir les conditions d'équilibrage.
 
+\end{minipage}\hfill
+\begin{minipage}[c]{.15\linewidth}
 \begin{center}
-\includegraphics[width=0.4\textwidth]{images/machine_equilibrage.jpeg}
+\includegraphics[width=.9\linewidth]{images/machine_equilibrage.jpeg}
 \end{center}
+\end{minipage}
 \end{prop}
 
 
