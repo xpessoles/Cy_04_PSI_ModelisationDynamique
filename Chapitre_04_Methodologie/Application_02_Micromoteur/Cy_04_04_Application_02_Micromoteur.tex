@@ -102,13 +102,14 @@ On note :
 \begin{itemize}
 \item $\vect{AB}=e\vect{x_1}$, $\vect{BC}=L_2\vect{y_2}$, $\vect{AC}=\lambda_3\vect{y_0}$;
 \item $\vect{HG_1}=a_1\vect{x_1}$, $\vect{BG_2}=a_2\vect{y_2}$, $\vect{CG_3}=a_3\vect{y_0}$;
-\item $\angl{x_0}{x_1}=\angl{y_0}{y_1}=\theta_1$, $\angl{x_0}{x_2}=\angl{y_0}{y_1}=\theta_2$; $\omega_{10}=\dot{\theta}_1$ et $\omega_{20}=\dot{\theta}_2$.
+\item $\angl{x_0}{x_1}=\angl{y_0}{y_1}=\theta_1$, $\angl{x_0}{x_2}=\angl{y_0}{y_1}=\theta_2$; $\omega_{10}=\dot{\theta}_1$ et $\omega_{20}=\dot{\theta}_2$;
+\item $m_1$, $m_2$ et $m_3$ les masses des trois pièces mobiles \textbf{(1)}, \textbf{(2)} et \textbf{(3)}.
 \end{itemize}
 
-On note $C_m$ le couple délivré par le moteur et $F_e$ la force exercée sur le piston suite à l'explosion du mélange air -- carburant. On néglige les effets de la pesanteur.
+On note $C_m \vect{z_0}$ le couple délivré par le moteur et $F_e \vect{y_0}$ la force exercée sur le piston suite à l'explosion du mélange air -- carburant. On néglige les effets de la pesanteur.
 
 \subparagraph{}
-\textit{Exprimer la relation liant la vitesse de rotation $\omega_{10}$ du vilebrequin \textbf{(1)} et la vitesse du piston \textbf{(3)}, notée $V_{3/0}$. Déterminer la vitesse et l'accélération du centre d'inertie de la bielle \textbf{(2)} par rapport à \textbf{(0)}.}
+\textit{Exprimer la relation liant la vitesse de rotation $\omega_{10}$ du vilebrequin \textbf{(1)} et la vitesse du piston \textbf{(3)}, notée $\dot{\lambda}=V_{3/0}$.}% Déterminer la vitesse et l'accélération du centre d'inertie de la bielle \textbf{(2)} par rapport à \textbf{(0)}.}
 
 \ifprof
 \begin{corrige}
@@ -155,7 +156,7 @@ $\inertie{H}{1}=\matinertie{A_1}{B_1}{C_1}{0}{-E_1}{0}{\repere{H}{x_1}{y_1}{z_1}
 
 
 \subparagraph{}
-\textit{Reprendre la question précédente en l'appliquant à la bielle \textbf{(2)} et au piston \textbf{(3)}. Définir la forme de la matrice d’inertie de chacune de ces deux pièces, en précisant en quel point et dans quelle base elle est définie.}
+\textit{Définir la forme de la matrice d’inertie de la bielle \textbf{(2)} et du piston \textbf{(3)} en précisant en quel point et dans quelle base elle est définie.}
 \ifprof
 \begin{corrige}
 De même $\inertie{G_2}{2}=\matinertie{A_2}{B_2}{C_2}{0}{-E_2}{0}{\repere{G_2}{x_2}{y_2}{z_2}}$ et 
@@ -166,8 +167,8 @@ $\inertie{G_3}{3}=\matinertie{A_2}{B_2}{C_2}{0}{-E_2}{0}{\repere{G_3}{x_2}{y_2}{
 
 
 Par la suite on fait l'hypothèse que les matrices d'inertie sont diagonales.
-\subparagraph{}
-\textit{On note $m_1$, $m_2$ et $m_3$ les masses des trois pièces mobiles \textbf{(1)}, \textbf{(2)} et \textbf{(3)}. Exprimer, pour chacune d’elles : son torseur cinétique et son torseur dynamique.}
+%\subparagraph{}
+%\textit{Exprimer, pour chacune d’elles : son torseur cinétique et son torseur dynamique.}
 \ifprof
 \begin{corrige}
 $H$ est un point fixe : 
