@@ -1,0 +1,195 @@
+\documentclass[10pt,fleqn]{article} % Default font size and left-justified equations
+\usepackage[%
+    pdftitle={Modélisation dynamique : cinétique},
+    pdfauthor={Xavier Pessoles}]{hyperref}
+
+    
+\input{style/new_style}
+\input{style/macros_SII}
+
+\fichetrue
+%\fichefalse
+
+\proftrue
+\proffalse
+
+\tdtrue
+%\tdfalse
+
+\courstrue
+\coursfalse
+
+
+\def\discipline{Sciences \\Industrielles de \\ l'Ingénieur}
+\def\xxtete{Sciences Industrielles de l'Ingénieur}
+
+\def\classe{\textsf{PSI$\star$ -- MP}}
+\def\xxnumpartie{Cycle 04}
+\def\xxpartie{Modéliser le comportement des systèmes mécaniques dans le but d'établir une loi de comportement ou de déterminer des actions mécaniques en utilisant le PFD}
+
+\def\xxnumchapitre{Chapitre 4 \vspace{.2cm}}
+\def\xxchapitre{\hspace{.12cm} Méthodologie : détermination des équations de mouvement}
+
+
+
+
+\def\xxtitreexo{Chaîne ouverte -- Banc d'essai vibrant}
+\def\xxsourceexo{\hspace{.2cm} \footnotesize{Pôle Chateaubriand -- Joliot Curie}}
+
+
+\def\xxposongletx{2}
+\def\xxposonglettext{1.45}
+\def\xxposonglety{20}
+%\def\xxonglet{Part. 1 -- Ch. 3}
+\def\xxonglet{Cycle 04}
+
+\def\xxactivite{Application 02}
+\def\xxauteur{\textsl{Pôle Chateaubriand -- Joliot Curie}}
+
+\def\xxcompetences{%
+\textsl{%
+\textbf{Savoirs et compétences :}\\
+%\begin{itemize}[label=\ding{112},font=\color{ocre}] 
+%\item \textit{Mod2.C13} : centre d'inertie
+%\item \textit{Mod2.C14} : opérateur d'inertie
+%\item \textit{Mod2.C15} : matrice d'inertie
+%\end{itemize}
+}}
+\def\xxfigures{
+\includegraphics[width=.35\linewidth]{images/fig_00}
+}%figues de la page de garde
+
+
+\def\xxpied{%
+Cycle 04 -- Modélisation mécanique -- Cinétique\\% afin de valider leurs performances.\\
+Chapitre 4 -- \xxactivite%
+}
+
+\setcounter{secnumdepth}{5}
+%---------------------------------------------------------------------------
+
+\usepackage{pgfplots}
+\begin{document}
+\def\pathfig{images}
+%\chapterimage{png/Fond_Cin}
+\input{style/new_pagegarde}
+\vspace{5cm}
+\pagestyle{fancy}
+\thispagestyle{plain}
+
+\def\columnseprulecolor{\color{ocre}}
+\setlength{\columnseprule}{0.4pt} 
+
+\def\pathfig{images}
+
+\ifprof
+\else
+\begin{multicols}{2}
+\fi
+
+\subsection*{Présentation}
+Les vibrations se retrouvent dans tous les systèmes et nuisent à leur durée de vie. On s’intéresse à un banc d’essai permettant d’étudier les conséquences de ces vibrations sur l’usure et la fatigue des pièces mécaniques.
+La figure ci-après représente un modèle cinématique du dispositif étudié. Une modélisation plane a été retenue.
+Le bâti vibrant est modélisé par un solide $S_1$, de masse $m_1$ en liaison glissière parfaite avec un support $S_0$, fixe par rapport à un repère $\mathcal{R}_0$ supposé galiléen.
+
+Le solide $S_1$ est rappelé par un ressort de longueur libre $l_0$ et de raideur $k$.
+Une masse ponctuelle $m_2$ excentrée, placée en $P$, tourne sur un rayon $r$ et est entraînée à vitesse constante $\Omega$. Elle modélise le 
+balourd du rotor d’un moteur $S_2$.
+
+Un pendule simple de longueur $L$, porte à son extrémité $D$ une masse concentrée $m_3$, l’ensemble constitue le solide $S_3$, en liaison pivot parfaite d’axe $\axe{C}{z_0}$ avec $S_1$.
+
+Les masses autres que $m_1$, $m_2$ et $m_3$ sont négligées.
+
+
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/fig_01}
+\end{center}
+
+\begin{obj}
+Déterminer les conditions géométriques permettant de supprimer les vibrations.
+\end{obj}
+
+
+\subparagraph{}
+\textit{Préciser les théorèmes à utiliser permettant de déterminer deux équations différentielles liant $x$, $\theta$ et leurs dérivées et les paramètres cinétiques et cinématiques utiles. Déterminer ces deux équations.}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+On souhaite supprimer les vibrations du bâti vibrant. On recherche alors une solution du système d’équations différentielles
+déterminé précédemment autour de la position d’équilibre $\left(x_0,\theta_0\right)=(0,0)$ en supposant que $x$, $\theta$, $\dot{x}$, $\dot{\theta}$ sont des petites variations
+de position ou de vitesse autour de cette position d’équilibre.
+
+
+\subparagraph{}
+\textit{Proposer une linéarisation, à l’ordre 1, des deux équations différentielles précédentes.}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+On s’intéresse uniquement au régime d’oscillations forcées. On cherche donc des solutions de la forme $x(t)=A\cos\left( \Omega t \right)$ et $\theta(t)=B\cos\left( \Omega t \right)$.
+
+
+\subparagraph{}
+\textit{Déterminer le système d’équations permettant de calculer $A$ et $B$.}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+
+
+\subparagraph{}
+\textit{Indiquer la condition que doit vérifier la longueur $L$ afin d’assurer $x(t) = 0$ en régime forcé.}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+
+
+\vspace{1cm}
+\paragraph*{Éléments de correction}
+\footnotesize
+\begin{enumerate}
+\item $\left( m_1 + m_2 + m_3\right) \ddot{x} + kx + m_3 L\ddot{\theta} \cos \theta - m_3 L\dot{\theta}^2 \sin \theta = m_2 r \Omega^2 \cos \left( \Omega t \right)$ et $\ddot{x}\cos\theta+L\ddot{\theta}+g\sin\theta=0$.
+\item $\left( m_1 + m_2 + m_3\right) \ddot{x} + kx + m_3 L\ddot{\theta}= m_2 r \Omega^2 \cos \left( \Omega t \right)$ et $\ddot{x}+L\ddot{\theta}+g\theta=0$.
+\item $A=\dfrac{m_2 r \Omega^2 \left( -L\Omega^2 + g\right)}{\left[-\left( m_1 + m_2 + m_3\right)\Omega^2 +k\right]\left( -L\Omega^2 +g\right)-m_3L\Omega^4}$ et 
+$B=\dfrac{m_2 r \Omega^2 }{\left[-\left( m_1 + m_2 + m_3\right)\Omega^2 +k\right]\left( -L\Omega^2 +g\right)-m_3L\Omega^4}$.
+\item $L=\dfrac{g}{\Omega^2}$.
+\end{enumerate}
+\normalsize
+\end{multicols}
+
+\newpage
+\begin{center}
+\includegraphics[width=\linewidth]{images/cor_01}
+\end{center}
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/cor_02}
+\end{center}
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/cor_03}
+\end{center}
+
+\end{document}
+\begin{center}
+\includegraphics[width=\linewidth]{images/}
+\end{center}
+
+\subparagraph{}
+\textit{}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
