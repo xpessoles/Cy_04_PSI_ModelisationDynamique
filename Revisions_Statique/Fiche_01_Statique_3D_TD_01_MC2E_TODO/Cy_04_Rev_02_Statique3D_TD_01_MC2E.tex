@@ -54,7 +54,7 @@
 }}
 
 \def\xxfigures{
-%\includegraphics[width=.8\textwidth]{images/fig_01}
+\includegraphics[width=.55\textwidth]{images/fig_01}
 }%figues de la page de garde
 
 \def\xxpied{%
@@ -69,7 +69,7 @@ Fiche 1 -- \xxactivite%
 \begin{document}
 %\chapterimage{png/Fond_Cin}
 \input{style/new_pagegarde}
-\vspace{4cm}
+\vspace{4.5cm}
 \pagestyle{fancy}
 \thispagestyle{plain}
 
@@ -82,11 +82,64 @@ Fiche 1 -- \xxactivite%
 \begin{multicols}{2}
 \fi
 \section*{Mise en situation}
+Le robot $\text{MC}^2\text{E}$ est utilisé par des chirurgiens en tant que troisième main lors de l'ablation de la vésicule biliaire. La cinématique du robot permet de garantir que le point d'insertion des outils chirurgicaux soit fixe dans le référentiel du patient. 
 
+Le robot est constitué de 3 axes de rotations permettant de mettre en position une pince. La pince est animée d'un mouvement de translation permettant de tirer la vésicule pendant que le chirurgien la détache du foie. 
+
+
+\begin{obj}
+Valider par un calcul simplifié de pré-dimensionnement la motorisation de l'axe 1 du  $\text{MC}^2\text{E}$.
+
+\end{obj}
+
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/fig_04}
+%\textit{}
+\end{center}
+
+\subsection*{Validation des performances statiques des motorisations}
+On donne ci-dessous le schéma cinématique simplifié du mécanisme.
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/fig_02}
+%\textit{}
+\end{center}
+
+Dans l’étude envisagée, les trois axes de rotation sont asservis en position angulaire et l’axe de translation de la pince \textbf{(4)} est asservi en effort. On va étudier le maintien en position réalisé par les trois axes de rotation. Dans cette phase, les trois moteurs maintiennent la position du robot le plus précisément possible et ce malgré les perturbations qu’engendrent les actions de pesanteur ainsi que les réactions dues aux efforts à l’extrémité de la pince \textbf{(4)}.
+
+\noindent\textbf{Hypothèses}
+\begin{itemize}
+\item Étant données la très faible amplitude des mouvements et leur faible évolution dans le temps, une étude quasi statique est suffisante.
+\item Le point $O_0 = O_{0,1,2,3}$ est supposé fixe.
+\item Les actions mécaniques entre l’abdomen du patient et la pince \textbf{(4)} en $O_0$ seront négligées. On considère donc qu’il n’y a pas de liaison et d’action mécanique transmissible associée.
+\item Les liaisons pivot et la liaison glissière sont toutes supposées parfaites (sans frottement).
+\end{itemize}
+
+\noindent\textbf{Modélisation des actions mécaniques}
+\begin{itemize}
+\item Le moteur \textbf{M1} et son réducteur, mettant en mouvement le solide \textbf{(1)} par rapport à \textbf{(0)}, permettent d’exercer en sortie de réducteur un couple sur \textbf{(1)} dont le moment est noté : $\vect{C}_{\text{m01}}=C_{\text{m01}}\vect{z_1}$.
+\item Le moteur \textbf{M2} et son réducteur, mettant en mouvement le solide \textbf{(2)} par rapport à \textbf{(1)}, permettent d’exercer en sortie de réducteur un couple sur \textbf{(2)} dont le moment est noté : $\vect{C}_{\text{m12}}=C_{\text{m12}}\vect{z_2}$.
+\item Le moteur \textbf{M3} et son réducteur, mettant en mouvement le solide \textbf{(3)} par rapport à \textbf{(2)}, permettent d’exercer en sortie de réducteur un couple sur \textbf{(3)} dont le moment est noté : $\vect{C}_{\text{m23}}=C_{\text{m23}}\vect{z_3}$.
+\item On admettra que le moteur \textbf{M4} et son réducteur, mettant en mouvement la pince \textbf{(4)} par rapport à \textbf{(3)}, permettent d’exercer un glisseur en $O_4$ de résultante
+$\vect{F}_{\text{m34}}=F_{\text{m34}}\vect{z_3}$.
+\item L’action mécanique qu’exerce l’organe du patient sur la pince \textbf{(4)} est modélisable par un glisseur noté $\torseurstat{T}{\text{ext}}{4}=\torseurl{\vect{R}_{\text{ext}\to 4}=R_{\text{ext}\to 4}\vect{z_4}}{\vect{0}}{O_4}$ où $O_4$ est le point de contact entre \textbf{(4)} et l'organe du patient. 
+\end{itemize}
+
+
+
+
+
+ 
 \ifprof
 \else
 \end{multicols}
 \fi
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/fig_03}
+%\textit{}
+\end{center}
 
 %\begin{center}
 %\includegraphics[width=\linewidth]{images/fig_04}
