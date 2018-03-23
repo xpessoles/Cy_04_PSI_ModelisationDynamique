@@ -12,7 +12,7 @@
 %\fichefalse
 
 \proftrue
-\proffalse
+%\proffalse
 
 \tdtrue
 %\tdfalse
@@ -82,6 +82,8 @@ Fiche 1 -- \xxactivite%
 \begin{multicols}{2}
 \fi
 \section*{Mise en situation}
+\ifprof
+\else
 Le robot $\text{MC}^2\text{E}$ est utilisé par des chirurgiens en tant que troisième main lors de l'ablation de la vésicule biliaire. La cinématique du robot permet de garantir que le point d'insertion des outils chirurgicaux soit fixe dans le référentiel du patient. 
 
 Le robot est constitué de 3 axes de rotations permettant de mettre en position une pince. La pince est animée d'un mouvement de translation permettant de tirer la vésicule pendant que le chirurgien la détache du foie. 
@@ -126,24 +128,52 @@ $\vect{F}_{\text{m34}}=F_{\text{m34}}\vect{z_3}$.
 \item L’action mécanique qu’exerce l’organe du patient sur la pince \textbf{(4)} est modélisable par un glisseur noté $\torseurstat{T}{\text{ext}}{4}=\torseurl{\vect{R}_{\text{ext}\to 4}=R_{\text{ext}\to 4}\vect{z_4}}{\vect{0}}{O_4}$ où $O_4$ est le point de contact entre \textbf{(4)} et l'organe du patient. 
 \end{itemize}
 
-
+\fi
 \subsection*{Démarche globale}
 
 
 \subparagraph{}
 \textit{Réaliser le graphe d'analyse associé au système étudié.}
+\ifprof
+\begin{corrige}~\\
 
+\begin{center} 
+\includegraphics[width=\linewidth]{images/cor_01}
+%\textit{}
+\end{center}
+
+\end{corrige}
+\else
+\fi
 \subparagraph{}
 \textit{Proposer la démarche (solide(s) isolé(s), théorème(s) utilisé(s)) permettant de déterminer les expressions littérales des couples $C_{\text{m01}}$, $C_{\text{m12}}$, $C_{\text{m23}}$,  et de la résultante $F_{\text{m34}}$,  lors de la phase de
 maintien statique. Les calculs ne doivent pas être développés.}
+\ifprof
+\begin{corrige} ~\\
+
+\begin{methode}
+On cherche ici à déterminer le couple et les efforts à fournir par chacun des actionneurs pour maintenir en le système en équilibre statique. 4 actionneurs sont à déterminer, il faut donc un minimum de 4 équations. On va écrire les équations du PFS correspondant au mobilité afin de pas faire apparaître les inconnues de liaisons.   
+\end{methode}
+
+\begin{enumerate}
+\item Pour déterminer $F_{\text{m34}}$ on isole le solide \textbf{(4)} et on applique le théorème de la résultante statique en projection sur $\vect{z_4}$.
+\item Pour déterminer $C_{\text{m23}}$ on isole l'ensemble \textbf{(3+4)} et on applique le théorème du moment statique en $O$ en projection sur $\vect{z_3}$.
+\item Pour déterminer $C_{\text{m12}}$ on isole l'ensemble \textbf{(2+3+4)} et on applique le théorème du moment statique en $O$ en projection sur $\vect{z_2}$.
+\item Pour déterminer $C_{\text{m01}}$ on  isole l'ensemble \textbf{(1+2+3+4)} et on applique le théorème du moment statique en $O$ en projection sur $\vect{z_1}$.
+\end{enumerate}
+\end{corrige}
+\else
+\fi
 
  
  \subsection*{Modélisation simplifiée}
  
+ \ifprof
+ \else
 \begin{itemize}
 \item On se place dans une configuration particulière telle que 1 $\theta_1=45\degres$ et $\theta_2=\theta_3=0\degres$. On donne pour cela les figures de calcul simplifiées.
 \item Le centre d’inertie équivalent de l’ensemble matériel \textbf{E=(1+2+3+4)} est noté $G$.
-Pour la configuration étudiée, la position de $G$ est considérée telle que $\vect{O_0G}=l\vect{z_2}$ . La masse totale de cet ensemble est notée $M$. On prend $l=\SI{5}{cm}$. Le champ de pesanteur est noté $-g\vect{z_0}$ avec (avec $g=\SI{9,81}{m.s^{-2}}$).
+Pour la configuration étudiée, la position de $G$ est considérée telle que $\vect{O_0G}=\ell\vect{z_2}$ . La masse totale de cet ensemble est notée $M=\SI{1,3}{kg}$. On prend $\ell=\SI{5}{cm}$. Le champ de pesanteur est noté $-g\vect{z_0}$ avec (avec $g=\SI{9,81}{m.s^{-2}}$).
 \end{itemize}
 
 
@@ -151,33 +181,90 @@ Pour la configuration étudiée, la position de $G$ est considérée telle que $
 \includegraphics[width=\linewidth]{images/fig_05}
 %\textit{}
 \end{center}
-
+\fi
 \subparagraph{}
-\textit{Déterminer analytiquement en fonction de $g$, $l$, $M$, $\theta_1$, $\alpha_1$ et $\alpha_2$, l'expression littérale de $C_{\text{m01}}$ lors de la phase de maintien statique. Effecteur l'application numérique.}
+\textit{Déterminer analytiquement en fonction de $g$, $l$, $M$, $\theta_1$, $\alpha_1$ et $\alpha_2$, l'expression littérale de $C_{\text{m01}}$ lors de la phase de maintien statique. Effecteur l'application numérique (avec $\alpha_1=70\degres$ et $\alpha_2=-70\degres$).}
+\ifprof
+\begin{corrige} ~\\
+\begin{itemize}
+\item On isole l'ensemble \textbf{(1+2+3+4)}.
+\item On réalise le bilan des actions mécaniques :
+\begin{itemize}
+\item action de la liaison pivot de 0 sur 1 : $\vectm{O}{0}{1}\vect{z_1}=0$.
+\item action du moteur 0 sur 1 : $\vectm{O}{0_m}{1}\vect{z_1}=C_{\text{m01}}$.
+\item action de la pesanteur sur $E$ :$\vectm{O}{\text{pes}}{E}\vect{z_1}$ : 
+\begin{itemize}
+\item $ \vectm{O}{\text{pes}}{E}\vect{z_1} = \underbrace{\vectm{G}{\text{pes}}{E}\vect{z_1}}_{\vect{0}}+\vect{OG}\wedge \left(-Mg\vect{z_0}\right)\cdot \vect{z_1}=-Mg\ell\left( \vect{z_2}\wedge\vect{z_0}\right)\cdot \vect{z_1}=-Mg\ell\left( \vect{z_0}\wedge\vect{z_1}\right)\cdot \vect{z_2}=-Mg\ell\sin\alpha_1\left( \vect{x_0}\cdot \vect{z_2} \right)=-Mg\ell\sin\alpha_1\left( \vect{x_0}\cdot \left(\cos\alpha_2\vect{z_1}-\sin\alpha_2\vect{y_1} \right) \right)=Mg\ell\sin\alpha_1\sin\alpha_2\cos\left( \dfrac{\pi}{2}+\theta_1\right)=Mg\ell\sin\alpha_1\sin\alpha_2\sin\theta_1$.
+\end{itemize}
+\item action de l'organe sur \textbf{(4)} : $\vectm{O}{\text{ext}}{4}\vect{z_1} =\vect{0}$.
+\end{itemize}
+\item On applique le théorème du moment statique en $O$ en projection sur $\vect{z_1}$ :
+$$
+C_m + Mg\ell\sin\alpha_1\sin\alpha_2\sin\theta_1 = 0.
+$$
+\end{itemize}
 
+\item On réalise l'application numérique : $C_m=-Mg\ell\sin\alpha_1\sin\alpha_2\sin\theta_1 =-1,3\cdot 9,8 \cdot 0,05 \cdot \sin  70 \sin -70 \sin 45 = \SI{0,4}{Nm}$.
+\end{corrige}
+\else\fi
 
 \subsection*{Retour sur la cahier des charges}
 
 \subparagraph{}
 \textit{En utilisant le diagramme de blocs et les résultats précédents, vérifier que l'exigence 1.1.1 peut être satisfaite. Remplir le diagramme suivant.}
 
+\ifprof
+\begin{corrige}
+Le couple en sortie de réducteur est de $16\cdot 10^{-3} \cdot 66 = \SI{1,056}{Nm}$ ce qui est supérieur au couple nécessaire calculé à la question précédente. L'exigence 1.1.1 est donc validée .
+\begin{center}
+\includegraphics[width=.5\linewidth]{images/cor_02}
+%\textit{}
+\end{center}
+
+\end{corrige}
+\else
+\fi
+
+\ifprof
+\else
+
 \begin{center}
 \includegraphics[width=\linewidth]{images/fig_06}
 %\textit{}
 \end{center}
+\fi
 
 
 \ifprof
 \else
+\begin{center}
+\begin{tabular}{|p{.95\linewidth}|}
+\hline
+\textbf{Corrigé résumé}
+\begin{enumerate}
+\item $\quad$
+\item $\quad$
+\item $C_m=-Mg\ell\sin\alpha_1\sin\alpha_2\sin\theta_1 =\SI{0,4}{Nm}$.
+\item $\quad$
+\end{enumerate} \\
+\hline
+\end{tabular}
+\end{center}
+\fi
+\ifprof
+\else
 \end{multicols}
 \fi
+
+\ifprof
+\else
 
 \vspace{1cm}
 \begin{center}
 \includegraphics[width=\linewidth]{images/fig_03}
 %\textit{}
 \end{center}
-
+\fi
 %\begin{center}
 %\includegraphics[width=\linewidth]{images/fig_04}
 %%\textit{}
