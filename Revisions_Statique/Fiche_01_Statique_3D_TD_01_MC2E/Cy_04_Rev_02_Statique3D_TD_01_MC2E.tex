@@ -12,7 +12,7 @@
 %\fichefalse
 
 \proftrue
-%\proffalse
+\proffalse
 
 \tdtrue
 %\tdfalse
@@ -234,6 +234,41 @@ Le couple en sortie de réducteur est de $16\cdot 10^{-3} \cdot 66 = \SI{1,056}{
 \end{center}
 \fi
 
+
+\section*{Validation des performances de l'asservissement d'effort}
+Lors du retrait de la vésicule, il est nécessaire de maintenir un effort constant en bout de pince \textbf{(4)}. Pour cela, on réalise un asservissement d'effort de l'axe en translation. 
+\begin{obj}
+Valider le positionnement du capteur d'effort et justifier la nécessité de faire une compensation de pesanteur. 
+\end{obj}
+
+L'ensemble \textbf{(E)} contient ici la totalité de la transmission d’effort de la pince \textbf{(4)}, moteur M4 compris.
+Dans cette partie, on simplifiera le modèle de contact entre abdomen et pince en retenant une liaison libre.
+Pour deux configurations géométriques distinctes, le montage du capteur d’effort peut être modélisé par les
+schémas cinématiques simplifiés ci-dessous.
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/fig_07}
+%\textit{}
+\end{center}
+
+\subsubsection*{Hypothèses}
+\begin{itemize}
+\item Le problème est plan.
+\item Étant données les faibles vitesses et accélérations envisagées, une étude quasi-statique est
+suffisante.
+\item Les actions mécaniques de pesanteur sur \textbf{(E)} ne peuvent pas être négligées face aux actions mécaniques mises en jeu lors d’une opération. On notera leur résultante $\vect{P}_{(E)}$.
+\item Le capteur d’effort assure la liaison entre l’ensemble \textbf{(0+1+2+3)} et \textbf{(E)}. Le capteur sera donc toujours en contact avec ces deux ensembles.
+\end{itemize}
+\subsubsection*{Modélisation des actions mécaniques}
+\begin{itemize}
+\item L'action mécanique qu’exerce le ressort sur l’ensemble \textbf{(E)} est modélisée par un glisseur noté $\torseurstat{T}{\text{Ressort}}{E}=\torseurl{\vectf{\text{Ressort}}{E}}{\vect{0}}{O_4}$ où $O_4$ est le point de contact entre la pince \textbf{(4)} et le ressort.
+\item L'action mécanique, mesurée par le capteur, liée à sa liaison avec l'ensemble
+\textbf{(E)}, est modélisée par
+$\torseurstat{T}{\text{Capteur}}{E}=\torseurl{\vectf{\text{Capteur}}{E}}{\vectm{O_4}{\text{Capteur}}{E}}{O_4}$. La résultante sera notée $\vectf{\text{Capteur}}{E}=F_z\vect{z_3}+F_y\vect{y_3}$. Seules ces deux composantes seront prises en compte par la suite. 
+\end{itemize}
+
+Pour que la résultante de l’action mécanique mesurée par le capteur soit égale à la résultante de l’action mécanique que génère le ressort sur \textbf{(E)}, il faut
+compenser la résultante de l’action mécanique de pesanteur.
 
 \ifprof
 \else
