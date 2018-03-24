@@ -251,6 +251,8 @@ schémas cinématiques simplifiés ci-dessous.
 %\textit{}
 \end{center}
 
+Un ressort simulant la vésicule biliaire (raideur du ressort similaire à la
+raideur de la vésicule) est installé en bout de pince.
 \subsubsection*{Hypothèses}
 \begin{itemize}
 \item Le problème est plan.
@@ -269,6 +271,35 @@ $\torseurstat{T}{\text{Capteur}}{E}=\torseurl{\vectf{\text{Capteur}}{E}}{\vectm{
 
 Pour que la résultante de l’action mécanique mesurée par le capteur soit égale à la résultante de l’action mécanique que génère le ressort sur \textbf{(E)}, il faut
 compenser la résultante de l’action mécanique de pesanteur.
+
+\subparagraph{}
+\textit{Pour la configuration 1 et par la méthode de votre choix, définir l’expression de $F_z$ et $F_y$ en fonction des autres actions mécaniques utiles. Commenter le résultat obtenu et la capacité du capteur à mesurer seulement les actions mécaniques générées par la pince sur le ressort.}
+
+
+La compensation de pesanteur revient à faire prendre en compte par le calculateur, en temps réel, la valeur des actions mécaniques de pesanteur quelle que soit la configuration géométrique du $\text{MC}^2\text{E}$. On pourra alors connaître, à partir de la mesure du capteur d’effort, l’action mécanique exercée par la pince \textbf{(4)} sur le ressort.
+
+Pour comprendre le traitement de l’information que devra faire le calculateur on propose une deuxième configuration géométrique (configuration 2) du $\text{MC}^2\text{E}$.
+
+\subparagraph{}
+\textit{Dans la configuration 2, définir l’expression de $F_z$ et $F_y$ en fonction des autres actions mécaniques utiles. Pour réaliser la compensation, quels sont les paramètres à connaître en temps réel ?}
+
+Le montage d’essai suivant a été mis en place. Cet essai, réalisé sans interaction entre le ressort et la pince \textbf{(4)}, a permis d’obtenir les valeurs expérimentales suivantes mesurées par le
+capteur :
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\multicolumn{2}{|c|}{Configuration 1}&\multicolumn{2}{c|}{Configuration 2}\\ \hline
+$|F_y|$ & $|F_z|$ & $|F_y|$ & $|F_z|$ \\ \hline
+\SI{0,0222}{N} & \SI{12,753}{N} & \SI{4,382}{N} & \SI{11,999}{N} \\ \hline
+\end{tabular}
+\end{center}
+
+\subparagraph{}
+\textit{Quelles devraient être les valeurs numériques de $F_y$ et $F_z$ renvoyées par le capteur dans les deux configurations ?}
+
+\subparagraph{}
+\textit{Estimer la précision de mesure en pourcents. Pour réaliser la compensation de pesanteur, comment doivent être utilisées ces grandeurs mesurées ?}
+
 
 \ifprof
 \else
