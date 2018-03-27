@@ -39,7 +39,7 @@
 \def\xxposonglettext{1.45}
 \def\xxposonglety{19}%16
 
-\def\xxonglet{\textsf{Rév -- Cin}}
+\def\xxonglet{\textsf{Rév -- Stat}}
 
 \def\xxactivite{TD 01}
 \def\xxauteur{\textsl{Xavier Pessoles}}
@@ -242,6 +242,8 @@ Lors du retrait de la vésicule, il est nécessaire de maintenir un effort const
 Valider le positionnement du capteur d'effort et justifier la nécessité de faire une compensation de pesanteur. 
 \end{obj}
 
+\ifprof
+\else
 L'ensemble \textbf{(E)} contient ici la totalité de la transmission d’effort de la pince \textbf{(4)}, moteur M4 compris.
 Dans cette partie, on simplifiera le modèle de contact entre abdomen et pince en retenant une liaison libre.
 Pour deux configurations géométriques distinctes, le montage du capteur d’effort peut être modélisé par les
@@ -273,59 +275,126 @@ $\torseurstat{T}{\text{Capteur}}{E}=\torseurl{\vectf{\text{Capteur}}{E}}{\vectm{
 Pour que la résultante de l’action mécanique mesurée par le capteur soit égale à la résultante de l’action mécanique que génère le ressort sur \textbf{(E)}, il faut
 compenser la résultante de l’action mécanique de pesanteur.
 
+\fi
+
 \subparagraph{}
 \textit{Pour la configuration 1 et par la méthode de votre choix, définir l’expression de $F_z$ et $F_y$ en fonction des autres actions mécaniques utiles. Commenter le résultat obtenu et la capacité du capteur à mesurer seulement les actions mécaniques générées par la pince sur le ressort.}
 
 \ifprof
-\begin{corrige}
+\begin{corrige}~\\
 
+\begin{methode}
+Dans la configuration 1, $\vect{z_0}=\vect{z_3}$ et $\vect{y_0}=\vect{y_3}$. On cherche des expressions suivant $\vect{z_0}$ et $\vect{y_0}$. Appliquer le théorème de la résultante statique suivant $\vect{y_0}$ et $\vect{z_0}$ devrait permettre de conclure. 
+\end{methode}
+\begin{itemize}
+\item On isole \textbf{(E)}.
+\item On réalise le bilan des actions mécaniques : 
+\begin{itemize}
+\item actions de pesanteur sur \textbf{(E)} de résultante $\vect{P}_{(E)}=-P\vect{z_0}$;
+\item actions du ressort sur \textbf{(E)} de résultante $\vectf{\text{Ressort}}{E}=-F_{R\to E} \vect{z_0}$;
+\item actions du capteur sur \textbf{(E)} de résultante $\vectf{\text{Capteur}}{E}=F_z\vect{z_0}+F_y\vect{y_0}$.
+\end{itemize}
+\item On applique le théorème de la résultante statique suivant $\vect{y_0}$ et $\vect{z_0}$ et on obtient : 
+\begin{itemize}
+\item $F_y = 0$. 
+\item $F_z = P- F_{R\to E}$. 
+\end{itemize}
+\end{itemize}
+Le capteur doit mesurer les actions de la pince sur le ressort. Or ici, l'effort va aussi dépendre du points de l’ensemble. Dans cette configuration, le capteur ne permet donc pas de dissocier l'effort de l'abdomen du poids du système.
 \end{corrige}
 \else
 \fi
 
-
+\ifprof
+\else
 La compensation de pesanteur revient à faire prendre en compte par le calculateur, en temps réel, la valeur des actions mécaniques de pesanteur quelle que soit la configuration géométrique du $\text{MC}^2\text{E}$. On pourra alors connaître, à partir de la mesure du capteur d’effort, l’action mécanique exercée par la pince \textbf{(4)} sur le ressort.
 
 Pour comprendre le traitement de l’information que devra faire le calculateur on propose une deuxième configuration géométrique (configuration 2) du $\text{MC}^2\text{E}$.
 
+\fi
 \subparagraph{}
 \textit{Dans la configuration 2, définir l’expression de $F_z$ et $F_y$ en fonction des autres actions mécaniques utiles. Pour réaliser la compensation, quels sont les paramètres à connaître en temps réel ?}
 \ifprof
-\begin{corrige}
+\begin{corrige} ~\\
 
+\begin{methode}
+Dans la configuration 2, appliquer le théorème de la résultante statique suivant $\vect{y_3}$ et $\vect{z_3}$ devrait permettre de conclure. 
+\end{methode}
+\begin{itemize}
+\item On isole \textbf{(E)}.
+\item On réalise le bilan des actions mécaniques : 
+\begin{itemize}
+\item actions de pesanteur sur \textbf{(E)} de résultante $\vect{P}_{(E)}=-P\vect{z_0}=-P\left(\cos\varphi  \vect{z_3}-\sin\varphi  \vect{y_3}\right)$;
+\item actions du ressort sur \textbf{(E)} de résultante $\vectf{\text{Ressort}}{E}=-F_{R\to E} \vect{z_3}$;
+\item actions du capteur sur \textbf{(E)} de résultante $\vectf{\text{Capteur}}{E}=F_z\vect{z_3}+F_y\vect{y_3}$.
+\end{itemize}
+\item On applique le théorème de la résultante statique suivant $\vect{y_3}$ et $\vect{z_3}$ et on obtient : 
+\begin{itemize}
+\item $F_y = -P\sin\varphi $. 
+\item $F_z = P\cos\varphi  - F_{R\to E}$. 
+\end{itemize}
+\end{itemize}
+Si $\varphi$ est une valeur connue, la mesure suivant $\vect{y_3}$ permet de déterminer le poids de l'ensemble. Connaissant $P$, la mesure suivant $\vect{z_3}$ permet alors de déterminer l'action mécanique du ressort. 
 \end{corrige}
 \else
 \fi
 
 
-Le montage d’essai suivant a été mis en place. Cet essai, réalisé sans interaction entre le ressort et la pince \textbf{(4)}, a permis d’obtenir les valeurs expérimentales suivantes mesurées par le
-capteur :
+
+\subsection*{Retour sur le cahier des charges}
+\ifprof
+\else
+
+
+Le montage d’essai suivant a été mis en place. La seconde configuration a été réalisée avec un angle $\varphi$ de 20\degres. Cet essai, réalisé sans interaction entre le ressort et la pince \textbf{(4)}, a permis d’obtenir les valeurs expérimentales suivantes mesurées par le
+capteur.
 \begin{center}
 \begin{tabular}{|c|c|c|c|}
 \hline
 \multicolumn{2}{|c|}{Configuration 1}&\multicolumn{2}{c|}{Configuration 2}\\ \hline
-$|F_y|$ & $|F_z|$ & $|F_y|$ & $|F_z|$ \\ \hline
+$|F_{y0}|$ & $|F_{z0}|$ & $|F_{y20}|$ & $|F_{z20}|$ \\ \hline
 \SI{0,0222}{N} & \SI{12,753}{N} & \SI{4,382}{N} & \SI{11,999}{N} \\ \hline
 \end{tabular}
 \end{center}
 
+\fi
 \subparagraph{}
-\textit{Quelles devraient être les valeurs numériques de $F_y$ et $F_z$ renvoyées par le capteur dans les deux configurations ?}
+\textit{Estimer la valeur du poids. Donner une estimation de la fiabilité sur la détermination du poids par les capteurs d'efforts. 
+Pour réaliser la compensation de pesanteur, comment doivent être utilisées ces grandeurs mesurées ?}
 \ifprof
-\begin{corrige}
+\begin{corrige} ~\\
+On ne connaît pas le poids de l'ensemble qui devrait être une donnée. On va donc le déduire du montage expérimental. En utilisant les expressions de la question précédente, on déduit que $P\simeq  \SI{12,753}{N}$ . 
+
+Dans la seconde configuration, on a $|P|=\dfrac{|F_{y20}|}{\sin\varphi}=\dfrac{4,382}{\sin 20}\simeq \SI{12,81}{N}$ ou  $|P|=\dfrac{|F_{z20}|}{\cos\varphi}=\dfrac{11,999}{\cos 20}\simeq \SI{12,77}{N}$.
+
+Ainsi, une estimation de l'erreur peut être donnée par : $e=\dfrac{12,81-12,753}{12,753}\simeq0,4\%$
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/cor_03}
+%\textit{}
+\end{center}
+
+%
+%\begin{center}
+%\begin{tabular}{l|c|c|c|c|}
+%\cline{2-5}
+%&\multicolumn{2}{|c|}{Configuration 1}&\multicolumn{2}{c|}{Configuration 2}\\ \cline{2-5}
+%&$|F_y|$ & $|F_z|$ & $|F_y|$ & $|F_z|$ \\ \cline{2-5}
+%Expérimental &\SI{0,0222}{N} & \SI{12,753}{N} & \SI{4,382}{N} & \SI{11,999}{N} \\ \cline{2-5}
+%Théorique &\SI{0}{N} & \SI{12,753}{N} & \SI{4,382}{N} & \SI{11,999}{N} \\ \cline{2-5}
+%\end{tabular}
+%\end{center}
+
 
 \end{corrige}
 \else
+\begin{center}
+\includegraphics[width=\linewidth]{images/fig_08}
+%\textit{}
+\end{center}
+
 \fi
 
-\subparagraph{}
-\textit{Estimer la précision de mesure en pourcents. Pour réaliser la compensation de pesanteur, comment doivent être utilisées ces grandeurs mesurées ?}
-\ifprof
-\begin{corrige}
-
-\end{corrige}
-\else
-\fi
 
 
 \ifprof
