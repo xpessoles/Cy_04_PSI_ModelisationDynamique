@@ -1,0 +1,168 @@
+\documentclass[10pt,fleqn]{article} % Default font size and left-justified equations
+\usepackage[%
+    pdftitle={Résolutions de problèmes de statique : PFS 3D},
+    pdfauthor={Xavier Pessoles}]{hyperref}
+
+\input{style/new_style}
+\input{style/macros_SII}
+\usepackage{multicol}
+\usepackage{siunitx}
+%\usepackage{picins}
+\fichetrue
+%\fichefalse
+
+\proftrue
+\proffalse
+
+\tdtrue
+%\tdfalse
+
+\courstrue
+\coursfalse
+
+% -------------------------------------
+% Déclaration des titres
+% -------------------------------------
+
+\def\discipline{Sciences \\Industrielles de \\ l'Ingénieur}
+\def\xxtete{Sciences Industrielles de l'Ingénieur}
+
+
+\def\classe{\textsf{PSI$\star$ -- MP}}
+\def\xxnumpartie{Rév -- Stat}
+\def\xxpartie{Modéliser le comportement statique des systèmes mécaniques}
+
+\def\xxnumchapitre{Révision 1 \vspace{.2cm}}
+\def\xxchapitre{\hspace{.12cm} Résolution des problèmes de statique -- Statique plane}
+
+\def\xxposongletx{2}
+\def\xxposonglettext{1.45}
+\def\xxposonglety{19}%16
+
+\def\xxonglet{\textsf{Rév -- Stat}}
+
+\def\xxactivite{TD 02}
+\def\xxauteur{\textsl{Xavier Pessoles}}
+
+
+\def\xxtitreexo{Quille pendulaire}
+\def\xxsourceexo{\hspace{.2cm} \footnotesize{Concours Commun Mines Ponts 2014}}
+
+\def\xxcompetences{%
+\textsl{%
+\textbf{Savoirs et compétences :}\\
+}}
+
+\def\xxfigures{
+\includegraphics[width=.75\textwidth]{images/fig_00}
+}%figues de la page de garde
+
+\def\xxpied{%
+Révision statique -- Résolution des problèmes de statique plane\\
+Fiche 1 -- \xxactivite%
+}
+
+\setcounter{secnumdepth}{5}
+%---------------------------------------------------------------------------
+
+
+\begin{document}
+%\chapterimage{png/Fond_Cin}
+\input{style/new_pagegarde}
+\vspace{4.5cm}
+\pagestyle{fancy}
+\thispagestyle{plain}
+
+
+\def\columnseprulecolor{\color{ocre}}
+\setlength{\columnseprule}{0.4pt} 
+
+\ifprof
+\else
+\begin{multicols}{2}
+\fi
+\section*{Mise en situation}
+\ifprof
+\else
+
+Les actions de l'air et de l'eau permettent au voilier d'avancer mais provoquent aussi son inclinaison autour de l'axe longitudinal $\vect{z}_N$. C’est le phénomène de gîte. Pour contrebalancer ce mouvement et éviter que le voilier ne se couche sur l’eau, la quille joue le rôle de contrepoids. 
+
+
+\begin{center}
+\includegraphics[width=.8\linewidth]{images/fig_01}
+%\textit{}
+\end{center}
+
+Une évolution récente des voiliers de course océanique a été de les doter d’une quille pendulaire. Cette quille est en liaison pivot d’axe $\left(O,\vect{z}_N \right)$ avec la coque du navire et peut être orientée d’un côté ou de l’autre du navire. Une fois l’orientation désirée obtenue, tout mouvement dans la liaison pivot est supprimé par le blocage en rotation de celle-ci. 
+%Cette quille est généralement constituée d’un voile immergé dans l’eau à l’extrémité duquel se trouve un lest profilé. L’efficacité de la quille dépend de la masse du lest et de la longueur du voile. Ces deux paramètres présentent des limitations : le lest ne peut être trop important sous peine de solliciter dangereusement le voile de quille et la longueur de quille est limitée par le tirant d’eau maximal admissible (il faut permettre l’entrée dans les ports sans toucher le fond !).
+
+
+\begin{center}
+\includegraphics[width=.8\linewidth]{images/fig_02}
+%\textit{}
+\end{center}
+
+\begin{obj}
+L’objectif de cette partie est de valider la solution technologique de réalisation de la liaison pivot  entre la quille et la coque.
+\end{obj}
+
+\begin{center}
+\includegraphics[width=.95\linewidth]{images/Exigences}
+%\textit{}
+\end{center}
+
+\subsection*{Travail à réaliser}
+
+Le modèle de calcul est donné dans les figures suivantes.
+
+\textbf{Hypothèses}
+
+\begin{itemize}
+\item Les liaisons sont toutes parfaites.
+\item Seul le vérin 2-4 est moteur ($F_{h3}=0$): l’action mécanique motrice est donnée par
+$\torseurstat{T}{\text{ph}}{2}=\torseurl{F_{h2}\vect{x}_2}{\vect{0}}{C}$.
+\item Les actions mécaniques de frottement visqueux provenant du déplacement du fluide dans les canalisations sont toutes négligées ($k=0$).
+\item Les actions hydrodynamiques sur le voile et le lest de quille sont également négligées.
+%\item Les actions hydrodynamiques sur le voile et le lest de quille sont également négligées.
+\item Les poids des éléments constitutifs des deux vérins sont négligés.
+\item La variation de $\theta_2$ pour toute l’amplitude du mouvement de relevage de la quille est faible; $\theta_2$ sera pris égal à 0 : les bases $\mathcal{B}_2$, $\mathcal{B}_4$ et $\mathcal{B}_N$ sont donc confondues. Cependant l’angle $\theta_1$ est différent de zéro.
+\item Les conditions de déplacement rendent négligeables les effets dynamiques. Les théorèmes de la statique seront donc utilisés dans la suite.
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=.8\linewidth]{images/fig_03}
+
+\textit{Modèle volumique 3D}
+\end{center}
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/fig_04}
+\textit{Modèle volumique 3D}
+\end{center}
+
+
+
+\ifprof
+\else
+\end{multicols}
+\fi
+
+\ifprof
+\else
+
+
+
+\end{document}
+
+\subparagraph{}\textit{}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/img_04}
+%\textit{}
+\end{center}
+
