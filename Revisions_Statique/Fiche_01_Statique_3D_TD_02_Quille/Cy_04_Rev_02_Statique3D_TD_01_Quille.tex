@@ -12,7 +12,7 @@
 %\fichefalse
 
 \proftrue
-\proffalse
+%\proffalse
 
 \tdtrue
 %\tdfalse
@@ -77,13 +77,14 @@ Fiche 1 -- \xxactivite%
 \def\columnseprulecolor{\color{ocre}}
 \setlength{\columnseprule}{0.4pt} 
 
-\ifprof
-\else
+%\ifprof
+%\else
 \begin{multicols}{2}
-\fi
+%\fi
+
 \section*{Mise en situation}
-\ifprof
-\else
+%\ifprof
+%\else
 
 Les actions de l'air et de l'eau permettent au voilier d'avancer mais provoquent aussi son inclinaison autour de l'axe longitudinal $\vect{z}_N$. C’est le phénomène de gîte. Pour contrebalancer ce mouvement et éviter que le voilier ne se couche sur l’eau, la quille joue le rôle de contrepoids. 
 
@@ -121,7 +122,7 @@ Le modèle de calcul est donné dans les figures suivantes.
 \item Les liaisons sont toutes parfaites.
 \item Seul le vérin 2-4 est moteur ($F_{h3}=0$): l’action mécanique motrice est donnée par
 $\torseurstat{T}{\text{ph}}{2}=\torseurl{F_{h2}\vect{x}_2}{\vect{0}}{C}$.
-\item Les actions mécaniques de frottement visqueux provenant du déplacement du fluide dans les canalisations sont toutes négligées ($k=0$).
+\item Les actions mécaniques de frottement visqueux provenant du déplacement du fluide dans les canalisations sont toutes négligées.% ($k=0$).
 \item Les actions hydrodynamiques sur le voile et le lest de quille sont également négligées.
 %\item Les actions hydrodynamiques sur le voile et le lest de quille sont également négligées.
 \item Les poids des éléments constitutifs des deux vérins sont négligés.
@@ -137,7 +138,7 @@ $\torseurstat{T}{\text{ph}}{2}=\torseurl{F_{h2}\vect{x}_2}{\vect{0}}{C}$.
 
 \begin{center}
 \includegraphics[width=\linewidth]{images/fig_04}
-\textit{Modèle volumique 3D}
+\textit{Schéma cinématique 3D}
 \end{center}
 
 \subparagraph{}\textit{
@@ -145,6 +146,12 @@ En isolant le bon système, montrer que l’action de 2 sur 1 en $A_2$ est repr�
 $\torseurl{F_{21}\vect{x}_N}{\vect{0}}{A_2}$ puisque $\mathcal{B}_N=\mathcal{B}_2$.}
 \ifprof
 \begin{corrige}
+Le graphe de structure associé au modèle cinématique est donné dans la figure suivante. 
+\begin{center}
+\includegraphics[width=\linewidth]{images/cor_01}
+%\textit{Modèle volumique 3D}
+\end{center}
+
 \end{corrige}
 \else
 \fi
@@ -187,16 +194,6 @@ base $\mathcal{B}_N=\left(\vect{x}_N , \vect{y}_N , \vect{z}_N \right)$, en fonc
 \else
 \fi
 
-%\vspace{.25cm}
-On se place dans les conditions suivantes :
-\begin{itemize}
-\item la valeur maximale de l’action $F_{21}$ a été estimée dans l’étude précédente : $F_{21\text{Maxi}}=\SI{2e5}{N}$. De
-plus : $M_1 g = \SI{4,1e4}{N}$, $e=\SI{350}{mm}$ et $d=\SI{200}{mm}$;
-\item les << paliers >> sont constitués côté quille de contacts cylindriques de diamètre $d_c =\SI{80}{mm}$ et de longueur $L_c =\SI{50}{mm}$, $O_1$ étant dans le plan médian du cylindre de contact. Un coussinet de nylon
-sert d’interface entre la quille et le navire. Ce coussinet est caractérisé par sa pression de contact
-maximale admissible : $p_{\text{adm}}= \SI{50}{N.mm^{-2}}$. Par ailleurs on peut montrer que lorsqu'un coussinet est chargé par une pression uniforme sur un demi-cylindre, la relation entre l'effort radial est la pression est donnée par : $p_{21}=\dfrac{F_{21}}{d_cL_c}$.
-\end{itemize}
-
 
 \subsection*{Retour sur le cahier des charges}
 On se place dans les conditions suivantes :
@@ -211,14 +208,14 @@ maximale admissible : $p_{\text{adm}}= \SI{50}{N.mm^{-2}}$. Par ailleurs on peut
 \subparagraph{}\textit{Dans ces conditions, calculer la valeur de l’effort radial (perpendiculaire à l’axe géométrique du coussinet) qui sollicite ce coussinet en $O_1$.
 Valider ensuite l’usage de ce coussinet de nylon.}
 
-\ifprof
-\else
+%\ifprof
+%\else
 
 \end{multicols}
-\fi
+%\fi
 
-\ifprof
-\else
+%\ifprof
+%\else
 
 
 
