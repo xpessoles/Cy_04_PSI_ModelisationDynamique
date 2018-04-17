@@ -33,7 +33,7 @@
 \def\xxpartie{Modéliser le comportement statique des systèmes mécaniques}
 
 \def\xxnumchapitre{Révision 1 \vspace{.2cm}}
-\def\xxchapitre{\hspace{.12cm} Résolution des problèmes de statique -- Statique plane}
+\def\xxchapitre{\hspace{.12cm} Résolution des problèmes de statique -- Statique 3D}
 
 \def\xxposongletx{2}
 \def\xxposonglettext{1.45}
@@ -142,7 +142,7 @@ $\torseurstat{T}{\text{ph}}{2}=\torseurl{F_{h2}\vect{x}_2}{\vect{0}}{C}$.
 
 \subparagraph{}\textit{
 En isolant le bon système, montrer que l’action de 2 sur 1 en $A_2$ est représentable par le glisseur dont la forme sera notée : $\torseurl{F_{21}\vect{x}_2}{\vect{0}}{A_2}$ ou 
-$\torseurl{F_{21}\vect{x}_N}{\vect{0}}{A_2}$ puisque $\mathcal{B}_n=\mathcal{B}_2$.}
+$\torseurl{F_{21}\vect{x}_N}{\vect{0}}{A_2}$ puisque $\mathcal{B}_N=\mathcal{B}_2$.}
 \ifprof
 \begin{corrige}
 \end{corrige}
@@ -187,19 +187,28 @@ base $\mathcal{B}_N=\left(\vect{x}_N , \vect{y}_N , \vect{z}_N \right)$, en fonc
 \else
 \fi
 
-
+%\vspace{.25cm}
 On se place dans les conditions suivantes :
 \begin{itemize}
 \item la valeur maximale de l’action $F_{21}$ a été estimée dans l’étude précédente : $F_{21\text{Maxi}}=\SI{2e5}{N}$. De
 plus : $M_1 g = \SI{4,1e4}{N}$, $e=\SI{350}{mm}$ et $d=\SI{200}{mm}$;
 \item les << paliers >> sont constitués côté quille de contacts cylindriques de diamètre $d_c =\SI{80}{mm}$ et de longueur $L_c =\SI{50}{mm}$, $O_1$ étant dans le plan médian du cylindre de contact. Un coussinet de nylon
 sert d’interface entre la quille et le navire. Ce coussinet est caractérisé par sa pression de contact
-maximale admissible : $p_{\text{adm}}= \SI{50}{N.mm^{-2}}$.
+maximale admissible : $p_{\text{adm}}= \SI{50}{N.mm^{-2}}$. Par ailleurs on peut montrer que lorsqu'un coussinet est chargé par une pression uniforme sur un demi-cylindre, la relation entre l'effort radial est la pression est donnée par : $p_{21}=\dfrac{F_{21}}{d_cL_c}$.
 \end{itemize}
 
 
-\subparagraph{}\textit{Dans ces conditions, calculer la valeur de l’effort radial (perpendiculaire à l’axe géométrique du
-coussinet) qui sollicite ce coussinet en $O_1$.
+\subsection*{Retour sur le cahier des charges}
+On se place dans les conditions suivantes :
+\begin{itemize}
+\item la valeur maximale de l’action $F_{21}$ a été estimée dans l’étude précédente : $F_{21\text{Maxi}}=\SI{2e5}{N}$. De
+plus : $M_1 g = \SI{4,1e4}{N}$, $e=\SI{350}{mm}$ et $d=\SI{200}{mm}$;
+\item les << paliers >> sont constitués côté quille de contacts cylindriques de diamètre $d_c =\SI{80}{mm}$ et de longueur $L_c =\SI{50}{mm}$, $O_1$ étant dans le plan médian du cylindre de contact. Un coussinet de nylon
+sert d’interface entre la quille et le navire. Ce coussinet est caractérisé par sa pression de contact
+maximale admissible : $p_{\text{adm}}= \SI{50}{N.mm^{-2}}$. Par ailleurs on peut montrer que lorsqu'un coussinet est chargé par une pression uniforme sur un demi-cylindre, la relation entre l'effort radial est la pression est donnée par : $p_{21}=\dfrac{F_{21}}{d_cL_c}$.
+\end{itemize}
+
+\subparagraph{}\textit{Dans ces conditions, calculer la valeur de l’effort radial (perpendiculaire à l’axe géométrique du coussinet) qui sollicite ce coussinet en $O_1$.
 Valider ensuite l’usage de ce coussinet de nylon.}
 
 \ifprof
