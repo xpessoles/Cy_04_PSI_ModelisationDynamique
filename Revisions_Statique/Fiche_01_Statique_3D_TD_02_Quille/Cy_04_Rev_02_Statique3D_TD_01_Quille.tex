@@ -77,10 +77,10 @@ Fiche 1 -- \xxactivite%
 \def\columnseprulecolor{\color{ocre}}
 \setlength{\columnseprule}{0.4pt} 
 
-%\ifprof
-%\else
+\ifprof
+\else
 \begin{multicols}{2}
-%\fi
+\fi
 
 \section*{Mise en situation}
 %\ifprof
@@ -178,7 +178,7 @@ On réalise le BAME :
 \begin{itemize}
 \item action de 2 sur 1 : $\torseurstat{T}{2}{1}=\torseurl{F_{21}\vect{x_N}}{\vect{0}}{A_2}$;
 \item action de 3 sur 1 : $\torseurstat{T}{3}{1}=\{0\}$ (pas d'action mécanique dans le vérin);
-\item action de N sur 1 : $\torseurstat{T}{N}{1}_{\text{pivot}}$;
+\item action de N sur 1 : $\torseurstat{T}{N}{1}_{\text{pivot}}=\torseurl{X_{N1p}\vect{x_N}+Y_{N1p}\vect{y_N}+Z_{N1p}\vect{z_N}}{L_{N1p}\vect{x_N}+M_{N1p}\vect{y_N}+Z_{N1p}\vect{z_N}}{O}$;
 \item action de la pesanteur sur 1 : $\torseurstat{T}{\text{pes}}{1}=\torseurl{M_1g\vect{y_N}}{\vect{0}}{G_1}$.
 \end{itemize}
 
@@ -214,10 +214,90 @@ $\Leftrightarrow F_{21}=-\dfrac{L_1}{R} M_1g\tan\theta_1 $.
 $M_1$, et $F_{21}$, par ses éléments de réduction en $O$, dans la base $\left( \vect{x_N} , \vect{y_N} , \vect{z_N} \right)$, le torseur d’action mécanique de $N$
 sur 1, $\torseurstat{T}{N}{1}_{\text{pivot}}$.}
 \ifprof
-\begin{corrige}
+\begin{corrige} ~\\
+
+\begin{center}
+\includegraphics[width=.5\linewidth]{images/cor_02}
+%\textit{Modèle volumique 3D}
+\end{center}
+
+
+En conservant le même isolement et le même bilan des actions mécaniques, on réalise le PFS en $O$ et on a : 
+$$
+\left\{
+\begin{array}{l}
+F_21\vect{x_N}+X_{N1p}\vect{x_N}+Y_{N1p}\vect{y_N}+Z_{N1p}\vect{z_N} + M_1g\vect{y_N} = \vect{0}\\
+\vect{OA_2}\wedge F_{21}\vect{x_N}  + 
+\vect{OG_1}\wedge M_1g\vect{y_N}  +L_{N1p}\vect{x_N}+M_{N1p}\vect{y_N}+Z_{N1p}\vect{z_N}= \vect{0} \\
+\end{array}
+\right.
+$$
+
+
+
+$$ \Leftrightarrow
+\left\{
+\begin{array}{l}
+F_{21}\vect{x_N}+X_{N1p}\vect{x_N}+Y_{N1p}\vect{y_N}+Z_{N1p}\vect{z_N} + M_1g\vect{y_N} = \vect{0}\\
+ F_{21}\left( R\vect{y_1} \wedge \vect{x_N}- d\vect{z_N}\wedge \vect{x_N}\right)  
++L_1M_1g \sin \theta \vect{z_N} +L_{N1p}\vect{x_N}+M_{N1p}\vect{y_N}+Z_{N1p}\vect{z_N} = \vect{0} \\
+\end{array}
+\right.
+$$
+
+$$ \Leftrightarrow
+\left\{
+\begin{array}{l}
+F_{21}\vect{x_N}+X_{N1p}\vect{x_N}+Y_{N1p}\vect{y_N}+Z_{N1p}\vect{z_N} + M_1g\vect{y_N} = \vect{0}\\
+ F_{21}\left( - R\cos\theta_1\vect{z_N}- d\vect{y_N}\right)  
++L_1M_1g \sin \theta \vect{z_N} +L_{N1p}\vect{x_N}+M_{N1p}\vect{y_N}+Z_{N1p}\vect{z_N} = \vect{0} \\
+\end{array}
+\right.
+$$
+
+On a : 
+$$
+\left\{
+\begin{array}{l}
+F_{21}+X_{N1p} = 0 \\
+Y_{N1p}+ M_1g = 0 \\
+Z_{N1p}=0 \\
+\end{array}
+\right.
+\quad
+\left\{
+\begin{array}{l}
+ L_{N1p} = {0} \\
+- dF_{21}+M_{N1p} = {0} \\
+-F_{21}  R\cos\theta_1+L_1M_1g \sin \theta +Z_{N1p} = {0} \\
+\end{array}
+\right.
+$$
+
+$$
+\Leftrightarrow
+\left\{
+\begin{array}{l}
+X_{N1p} = - F_{21}\\
+Y_{N1p}=- M_1g  \\
+Z_{N1p}=0 \\
+\end{array}
+\right.
+\quad
+\left\{
+\begin{array}{l}
+ L_{N1p} = {0} \\
+M_{N1p} =dF_{21} \\
+Z_{N1p} = F_{21}  R\cos\theta_1-L_1M_1g \sin \theta_1  \\
+\end{array}
+\right.
+$$
+
+
 \end{corrige}
 \else
 \fi
+
 
 \subparagraph{}\textit{
 La liaison pivot de $N$ sur $1$ est composée de deux paliers modélisés par une liaison sphère-cylindre et une liaison sphérique placées en parallèle (voir figure suivante). La
@@ -260,11 +340,10 @@ maximale admissible : $p_{\text{adm}}= \SI{50}{N.mm^{-2}}$. Par ailleurs on peut
 \subparagraph{}\textit{Dans ces conditions, calculer la valeur de l’effort radial (perpendiculaire à l’axe géométrique du coussinet) qui sollicite ce coussinet en $O_1$.
 Valider ensuite l’usage de ce coussinet de nylon.}
 
-%\ifprof
-%\else
-
+\ifprof
+\else
 \end{multicols}
-%\fi
+\fi
 
 %\ifprof
 %\else
