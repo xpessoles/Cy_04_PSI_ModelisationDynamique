@@ -82,19 +82,38 @@ Fiche 1 -- \xxactivite%
 \begin{multicols}{2}
 \fi
 \section*{Mise en situation}
+Le PCS (Power Closure System), conçu par Valéo, est un système d’ouverture et de fermeture automatique de
+hayon de coffre automobile.
+
+le plan d’évolution de la porte de coffre et leur action mécanique s’exerçant sur la porte de coffre est supposée identique.
+
+Le repère $\quadruplet{B}{x_t}{y_t}{z_0}$ est lié à la Terre. $\vect{y_t}$ est un vecteur unitaire vertical tel que l’accélération de la pesanteur s’écrit $\vect{g}=-g\vect{y_t}$ avec $g=\SI{9,81}{m.s^{-2}}$. $\vect{x_t}$ est un vecteur unitaire horizontal. La liaison pivot entre
+la structure du véhicule et la porte de coffre est d’axe $\axe{B}{z_0}$.
+
+Le repère $\repere{B}{x_p}{y_p}{z_0}$ est lié à la porte de coffre. Le repère $\repere{B}{x_v}{y_v}{z_0}$ est lié au corps du vérin. La sortie
+de tige par rapport au corps du vérin se fait dans la direction du vecteur $\vect{x_v}$.
+Les liaisons entre la tige du vérin et le bâti d’une part et entre le corps du vérin et la porte de coffre d’autre part, sont des liaisons rotules de centres respectifs $A$ et $C$.
+Le point $D$ représente l’extrémité de la porte du coffre. La hauteur du point $D$ par rapport au sol suivant la
+verticale est de \SI{0,7}{m} en position coffre fermé et de \SI{1,8}{m} en position coffre ouvert.
 
 \begin{obj}
-
+Déterminer les caractéristiques du vérin à choisir pour répondre au cahier des charges : longueur
+du vérin en position coffre ouvert et coffre fermé, course du vérin, raideur du ressort équipant le
+vérin, couple moteur maximal nécessaire pour le maintien en position du hayon.
 \end{obj}
 
 \begin{center}
-%\includegraphics[width=\linewidth]{images/fig_04}
+\includegraphics[width=\linewidth]{images/fig_01}
 %\textit{}
 \end{center}
 
+\subsection*{Caractéristiques géométriques du vérin}
+Le centre d’inertie du coffre est situé en $G$ tel que $\vect{BG}=\lambda\vect{x_p}$ avec $\lambda=\SI{0,6}{m}$.
+
+$\vect{AB}=-a\vect{x_0}+b\vect{y_0}$, $\vect{AC}=L\vect{x_v}$, $\vect{BC}=c\vect{x_p}$, $\vect{BD}=d\vect{x_p}$ avec $a=\SI{0,55}{m}$, $b=\SI{0,14}{m}$, $a=\SI{0,14}{m}$  et $d=\SI{1}{m}$. L’angle formé entre $\vect{x_0}$ et l’horizontale $\vect{x_t}$ est $\theta_0 = 42\degres$.
 
 \subparagraph{}
-\textit{}
+\textit{Déterminer l’angle d’ouverture maximal.}
 \ifprof
 \begin{corrige}~\\
 
@@ -102,6 +121,83 @@ Fiche 1 -- \xxactivite%
 \else
 \fi
 
+%Par l’écriture de la fermeture géométrique dans le triangle 𝐴𝐵𝐶, déterminer la longueur du vérin 𝐿 en fonction de l’angle d’ouverture du coffre 𝜃.
+
+\subparagraph{}
+\textit{Déterminer la longueur du vérin $L$ en fonction de l’angle d’ouverture du coffre $\theta$.}
+\ifprof
+\begin{corrige}~\\
+
+\end{corrige}
+\else
+\fi
+
+\subparagraph{}
+\textit{Déterminer les valeurs extrêmes de $L$, ainsi que la course du vérin.}
+\ifprof
+\begin{corrige}~\\
+
+\end{corrige}
+\else
+\fi
+
+
+\subsection*{Vérification de critère du cahier des charges de la fonction ***FC1 et détermination de la
+raideur du ressort correspondante}
+
+Les vérins utilisés sont constitués d’un moteur à courant continu, d’un réducteur à engrenage, d’une vis à billes et d’un ressort.
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/fig_02}
+%\textit{}
+\end{center}
+
+Le cahier des charges impose que la porte soit en équilibre sur une large plage d’ouverture en cas de panne
+moteur. C’est pourquoi il faut déterminer la raideur et la longueur à vide des ressorts qui assurent cette fonction
+dans les vérins électriques.
+
+On suppose dans un premier temps que le coffre est à l’équilibre.
+
+\subparagraph{}
+\textit{Déterminer l’effort $F$ exercé par chacun des vérins sur la porte de coffre en fonction de $\theta$, $\alpha$ et des constantes du problème.}
+\ifprof
+\begin{corrige}~\\
+
+\end{corrige}
+\else
+\fi
+
+En exploitant les équations obtenues à partir de l’écriture de la fermeture géométrique obtenue précédemment, on montre que la relation entre $\theta$ et $\alpha$ s’écrit : 
+$ \tan \alpha = \dfrac{b+c\sin\theta}{-a+c\cos\theta}$.
+
+On déduit de la question précédente le tracé de l’évolution de l’effort $F$ nécessaire au maintien en équilibre du coffre en fonction de la longueur $L$ du vérin.
+
+On choisit d’utiliser un ressort précontraint au sein du vérin (voir figure suivante) de manière à assister l’ouverture du coffre et à assurer l’équilibre du coffre sur une plage de fonctionnement maximale. On estime que les forces de frottement maximales au sein du vérin (essentiellement dues à la friction dans la vis) sont de l’ordre de $F_{\text{frot}}=\SI{100}{N}$. 
+
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/fig_03}
+%\textit{}
+\end{center}
+
+La figure suivante représente la force que doit exercer le vérin sur la porte de coffre pour assurer
+l’équilibre de cette dernière en fonction de la longueur du vérin. Les courbes en pointillés représentent la force du vérin $\pm\SI{100}{N}$.
+
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/fig_04}
+%\textit{}
+\end{center}
+
+
+\subparagraph{}
+\textit{Déterminer le couple moteur maximal en phase d’ouverture puis en phase de fermeture.}
+\ifprof
+\begin{corrige}~\\
+
+\end{corrige}
+\else
+\fi
 
 \ifprof
 \else
