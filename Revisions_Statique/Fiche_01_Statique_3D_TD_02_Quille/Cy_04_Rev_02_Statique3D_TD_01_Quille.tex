@@ -178,33 +178,33 @@ On réalise le BAME :
 \begin{itemize}
 \item action de 2 sur 1 : $\torseurstat{T}{2}{1}=\torseurl{F_{21}\vect{x_N}}{\vect{0}}{A_2}$;
 \item action de 3 sur 1 : $\torseurstat{T}{3}{1}=\{0\}$ (pas d'action mécanique dans le vérin);
-\item action de N sur 1 : $\torseurstat{T}{N}{1}_{\text{pivot}}=\torseurl{X_{N1p}\vect{x_N}+Y_{N1p}\vect{y_N}+Z_{N1p}\vect{z_N}}{L_{N1p}\vect{x_N}+M_{N1p}\vect{y_N}+Z_{N1p}\vect{z_N}}{O}$;
-\item action de la pesanteur sur 1 : $\torseurstat{T}{\text{pes}}{1}=\torseurl{M_1g\vect{y_N}}{\vect{0}}{G_1}$.
+\item action de N sur 1 : $\torseurstat{T}{N}{1}_{\text{pivot}}=\torseurl{X_{N1p}\vect{x_N}+Y_{N1p}\vect{y_N}+Z_{N1p}\vect{z_N}}{L_{N1p}\vect{x_N}+M_{N1p}\vect{y_N}}{O}$;
+\item action de la pesanteur sur 1 : $\torseurstat{T}{\text{pes}}{1}=\torseurl{-M_1g\vect{y_N}}{\vect{0}}{G_1}$.
 \end{itemize}
 
 La quille étant en pivot d'axe $\axe{O}{z_N}$ par rapport à \textbf{0}, réalisons le théorème du moment statique en $O$ en projection sur $\vect{z_N}$ :
 
 \noindent
 $\left(\vect{OA_2}\wedge F_{21}\vect{x_N}  + 
-\vect{OG_1}\wedge M_1g\vect{y_N} \right) \vect{z_N} = {0}$ 
+\vect{OG_1}\wedge -M_1g\vect{y_N} \right) \vect{z_N} = {0}$ 
 
 \noindent
 $\Leftrightarrow  \left(\left( R\vect{y_1} - d\vect{z_N}\right)\wedge F_{21}\vect{x_N}  
--L_1\vect{y_1}\wedge M_1g\vect{y_N} \right) \vect{z_N} = {0}$
++L_1\vect{y_1}\wedge M_1g\vect{y_N} \right) \vect{z_N} = {0}$
 
 \noindent
 $\Leftrightarrow 
 -F_{21}\vect{y_N}\left( R\vect{y_1} - d\vect{z_N}\right)  
--L_1 M_1g\left(\vect{x_N} \cdot \vect{y_1}\right) = {0}$
++L_1 M_1g\left(\vect{x_N} \cdot \vect{y_1}\right) = {0}$
 \noindent
 
 \noindent
 $\Leftrightarrow 
 -RF_{21}\cos \theta_1
--L_1 M_1g\sin\theta_1 = {0}$
++L_1 M_1g\sin\theta_1 = {0}$
 
 \noindent
-$\Leftrightarrow F_{21}=-\dfrac{L_1}{R} M_1g\tan\theta_1 $.
+$\Leftrightarrow F_{21}=\dfrac{L_1}{R} M_1g\tan\theta_1 $.
 
 \end{corrige}
 \else
@@ -226,9 +226,9 @@ En conservant le même isolement et le même bilan des actions mécaniques, on r
 $$
 \left\{
 \begin{array}{l}
-F_21\vect{x_N}+X_{N1p}\vect{x_N}+Y_{N1p}\vect{y_N}+Z_{N1p}\vect{z_N} + M_1g\vect{y_N} = \vect{0}\\
+F_21\vect{x_N}+X_{N1p}\vect{x_N}+Y_{N1p}\vect{y_N}+Z_{N1p}\vect{z_N} - M_1g\vect{y_N} = \vect{0}\\
 \vect{OA_2}\wedge F_{21}\vect{x_N}  + 
-\vect{OG_1}\wedge M_1g\vect{y_N}  +L_{N1p}\vect{x_N}+M_{N1p}\vect{y_N}+Z_{N1p}\vect{z_N}= \vect{0} \\
+\vect{OG_1}\wedge -M_1g\vect{y_N}  +L_{N1p}\vect{x_N}+M_{N1p}\vect{y_N}= \vect{0} \\
 \end{array}
 \right.
 $$
@@ -238,9 +238,9 @@ $$
 $$ \Leftrightarrow
 \left\{
 \begin{array}{l}
-F_{21}\vect{x_N}+X_{N1p}\vect{x_N}+Y_{N1p}\vect{y_N}+Z_{N1p}\vect{z_N} + M_1g\vect{y_N} = \vect{0}\\
+F_{21}\vect{x_N}+X_{N1p}\vect{x_N}+Y_{N1p}\vect{y_N}+Z_{N1p}\vect{z_N} - M_1g\vect{y_N} = \vect{0}\\
  F_{21}\left( R\vect{y_1} \wedge \vect{x_N}- d\vect{z_N}\wedge \vect{x_N}\right)  
-+L_1M_1g \sin \theta \vect{z_N} +L_{N1p}\vect{x_N}+M_{N1p}\vect{y_N}+Z_{N1p}\vect{z_N} = \vect{0} \\
+-L_1M_1g \sin \theta \vect{z_N} +L_{N1p}\vect{x_N}+M_{N1p}\vect{y_N} = \vect{0} \\
 \end{array}
 \right.
 $$
@@ -248,9 +248,9 @@ $$
 $$ \Leftrightarrow
 \left\{
 \begin{array}{l}
-F_{21}\vect{x_N}+X_{N1p}\vect{x_N}+Y_{N1p}\vect{y_N}+Z_{N1p}\vect{z_N} + M_1g\vect{y_N} = \vect{0}\\
+F_{21}\vect{x_N}+X_{N1p}\vect{x_N}+Y_{N1p}\vect{y_N}+Z_{N1p}\vect{z_N} - M_1g\vect{y_N} = \vect{0}\\
  F_{21}\left( - R\cos\theta_1\vect{z_N}- d\vect{y_N}\right)  
-+L_1M_1g \sin \theta \vect{z_N} +L_{N1p}\vect{x_N}+M_{N1p}\vect{y_N}+Z_{N1p}\vect{z_N} = \vect{0} \\
+-L_1M_1g \sin \theta \vect{z_N} +L_{N1p}\vect{x_N}+M_{N1p}\vect{y_N} = \vect{0} \\
 \end{array}
 \right.
 $$
@@ -260,7 +260,7 @@ $$
 \left\{
 \begin{array}{l}
 F_{21}+X_{N1p} = 0 \\
-Y_{N1p}+ M_1g = 0 \\
+Y_{N1p}- M_1g = 0 \\
 Z_{N1p}=0 \\
 \end{array}
 \right.
@@ -269,7 +269,7 @@ Z_{N1p}=0 \\
 \begin{array}{l}
  L_{N1p} = {0} \\
 - dF_{21}+M_{N1p} = {0} \\
--F_{21}  R\cos\theta_1+L_1M_1g \sin \theta +Z_{N1p} = {0} \\
+-F_{21}  R\cos\theta_1-L_1M_1g \sin \theta  = {0} \\
 \end{array}
 \right.
 $$
@@ -279,7 +279,7 @@ $$
 \left\{
 \begin{array}{l}
 X_{N1p} = - F_{21}\\
-Y_{N1p}=- M_1g  \\
+Y_{N1p}= M_1g  \\
 Z_{N1p}=0 \\
 \end{array}
 \right.
@@ -288,10 +288,11 @@ Z_{N1p}=0 \\
 \begin{array}{l}
  L_{N1p} = {0} \\
 M_{N1p} =dF_{21} \\
-Z_{N1p} = F_{21}  R\cos\theta_1-L_1M_1g \sin \theta_1  \\
+0 = 0\\
 \end{array}
 \right.
 $$
+
 
 
 \end{corrige}
