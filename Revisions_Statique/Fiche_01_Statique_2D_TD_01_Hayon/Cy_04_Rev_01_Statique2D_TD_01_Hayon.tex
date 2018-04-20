@@ -12,7 +12,7 @@
 %\fichefalse
 
 \proftrue
-\proffalse
+%\proffalse
 
 \tdtrue
 %\tdfalse
@@ -78,6 +78,7 @@ Fiche 1 -- \xxactivite%
 \setlength{\columnseprule}{0.4pt} 
 
 \ifprof
+\begin{multicols}{2}
 \else
 \begin{multicols}{2}
 \fi
@@ -87,7 +88,7 @@ hayon de coffre automobile.
 
 le plan d’évolution de la porte de coffre et leur action mécanique s’exerçant sur la porte de coffre est supposée identique.
 
-Le repère $\quadruplet{B}{x_t}{y_t}{z_0}$ est lié à la Terre. $\vect{y_t}$ est un vecteur unitaire vertical tel que l’accélération de la pesanteur s’écrit $\vect{g}=-g\vect{y_t}$ avec $g=\SI{9,81}{m.s^{-2}}$. $\vect{x_t}$ est un vecteur unitaire horizontal. La liaison pivot entre
+Le repère $\repere{B}{x_t}{y_t}{z_0}$ est lié à la Terre. $\vect{y_t}$ est un vecteur unitaire vertical tel que l’accélération de la pesanteur s’écrit $\vect{g}=-g\vect{y_t}$ avec $g=\SI{9,81}{m.s^{-2}}$. $\vect{x_t}$ est un vecteur unitaire horizontal. La liaison pivot entre
 la structure du véhicule et la porte de coffre est d’axe $\axe{B}{z_0}$.
 
 Le repère $\repere{B}{x_p}{y_p}{z_0}$ est lié à la porte de coffre. Le repère $\repere{B}{x_v}{y_v}{z_0}$ est lié au corps du vérin. La sortie
@@ -116,6 +117,13 @@ $\vect{AB}=-a\vect{x_0}+b\vect{y_0}$, $\vect{AC}=L\vect{x_v}$, $\vect{BC}=c\vect
 \textit{Déterminer l’angle d’ouverture maximal.}
 \ifprof
 \begin{corrige}~\\
+\begin{center}
+\includegraphics[width=\linewidth]{images/cor_01}
+%\textit{}
+\end{center}
+D'une part, $x = d\sin 42 \simeq \SI{0,67}{m}$. D'autre part, $\sin\alpha = \dfrac{1,8-0,7-x}{d}=0,43$. Au final $\alpha = 25,5\degres$. 
+
+L'angle d'ouverture est donc de $67,5\degres$.
 
 \end{corrige}
 \else
@@ -200,6 +208,7 @@ l’équilibre de cette dernière en fonction de la longueur du vérin. Les cour
 \fi
 
 \ifprof
+\end{multicols}
 \else
 \end{multicols}
 \fi
