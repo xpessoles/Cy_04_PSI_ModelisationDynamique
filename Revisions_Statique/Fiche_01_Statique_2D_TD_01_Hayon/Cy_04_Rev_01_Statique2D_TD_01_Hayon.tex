@@ -111,7 +111,7 @@ vérin, couple moteur maximal nécessaire pour le maintien en position du hayon.
 \subsection*{Caractéristiques géométriques du vérin}
 Le centre d’inertie du coffre est situé en $G$ tel que $\vect{BG}=\lambda\vect{x_p}$ avec $\lambda=\SI{0,6}{m}$.
 
-$\vect{AB}=-a\vect{x_0}+b\vect{y_0}$, $\vect{AC}=L\vect{x_v}$, $\vect{BC}=c\vect{x_p}$, $\vect{BD}=d\vect{x_p}$ avec $a=\SI{0,55}{m}$, $b=\SI{0,14}{m}$, $a=\SI{0,14}{m}$  et $d=\SI{1}{m}$. L’angle formé entre $\vect{x_0}$ et l’horizontale $\vect{x_t}$ est $\theta_0 = 42\degres$.
+$\vect{AB}=-a\vect{x_0}+b\vect{y_0}$, $\vect{AC}=L\vect{x_v}$, $\vect{BC}=c\vect{x_p}$, $\vect{BD}=d\vect{x_p}$ avec $a=\SI{0,55}{m}$, $b=\SI{0,14}{m}$, $c=\SI{0,14}{m}$  et $d=\SI{1}{m}$. L’angle formé entre $\vect{x_0}$ et l’horizontale $\vect{x_t}$ est $\theta_0 = 42\degres$.
 
 \subparagraph{}
 \textit{Déterminer l’angle d’ouverture maximal.}
@@ -147,19 +147,26 @@ b + c\sin\theta -L\sin\alpha ={0}
 \end{array}
 \right.
 $$
-On a donc $L^2 =\left(-a + c\cos\theta \right)^2 + \left(b + c\sin\theta \right)^2  
-= a^2 +c^2 \cos ^2 \theta - 2 ac \cos \theta + b^2 + c^2\sin^2\theta + 2b c\sin\theta
-= a^2 +c^2 - 2 ac \cos \theta + b^2 +  2b c\sin\theta$ 
+On a donc $L^2 =\left(-a + c\cos\theta \right)^2 + \left(b + c\sin\theta \right)^2  $.
+%= a^2 +c^2 \cos ^2 \theta - 2 ac \cos \theta + b^2 + c^2\sin^2\theta + 2b c\sin\theta
+%= a^2 +c^2 - 2 ac \cos \theta + b^2 +  2b c\sin\theta$ 
 
 \end{corrige}
 \else
 \fi
 
+On donne la courbe donnant l'évolution de la course du vérin en fonction de l'ouverture du hayon. 
+\begin{center}
+\includegraphics[width=\linewidth]{images/cor_02}
+%\textit{}
+\end{center}
+
+
 \subparagraph{}
 \textit{Déterminer les valeurs extrêmes de $L$, ainsi que la course du vérin.}
 \ifprof
 \begin{corrige}~\\
-
+La longueur du vérin varie de \SI{46,9}{cm} à \SI{42,3}{cm} soit une course de \SI{4,6}{cm}. 
 \end{corrige}
 \else
 \fi
