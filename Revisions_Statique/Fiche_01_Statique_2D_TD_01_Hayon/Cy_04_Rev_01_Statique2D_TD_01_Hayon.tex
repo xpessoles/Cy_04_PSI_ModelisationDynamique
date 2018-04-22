@@ -85,13 +85,13 @@ Fiche 1 -- \xxactivite%
 \section*{Mise en situation}
 Le PCS (Power Closure System), conçu par Valéo, est un système d’ouverture et de fermeture automatique de
 hayon de coffre automobile.
-
+Le système étant symétrique, les deux vérins sont ramenées dans 
 le plan d’évolution de la porte de coffre et leur action mécanique s’exerçant sur la porte de coffre est supposée identique.
 
 Le repère $\repere{B}{x_t}{y_t}{z_0}$ est lié à la Terre. $\vect{y_t}$ est un vecteur unitaire vertical tel que l’accélération de la pesanteur s’écrit $\vect{g}=-g\vect{y_t}$ avec $g=\SI{9,81}{m.s^{-2}}$. $\vect{x_t}$ est un vecteur unitaire horizontal. La liaison pivot entre
 la structure du véhicule et la porte de coffre est d’axe $\axe{B}{z_0}$.
 
-Le repère $\repere{B}{x_p}{y_p}{z_0}$ est lié à la porte de coffre. Le repère $\repere{B}{x_v}{y_v}{z_0}$ est lié au corps du vérin. La sortie
+Le repère $\repere{B}{x_p}{y_p}{z_0}$ est lié à la porte de coffre de masse $M=\SI{30}{kg}$. Le repère $\repere{B}{x_v}{y_v}{z_0}$ est lié au corps du vérin. La sortie
 de tige par rapport au corps du vérin se fait dans la direction du vecteur $\vect{x_v}$.
 Les liaisons entre la tige du vérin et le bâti d’une part et entre le corps du vérin et la porte de coffre d’autre part, sont des liaisons rotules de centres respectifs $A$ et $C$.
 Le point $D$ représente l’extrémité de la porte du coffre. La hauteur du point $D$ par rapport au sol suivant la
@@ -166,7 +166,7 @@ On donne la courbe donnant l'évolution de la course du vérin en fonction de l'
 \textit{Déterminer les valeurs extrêmes de $L$, ainsi que la course du vérin.}
 \ifprof
 \begin{corrige}~\\
-La longueur du vérin varie de \SI{46,9}{cm} à \SI{42,3}{cm} soit une course de \SI{4,6}{cm}. 
+La longueur du vérin varie de \SI{43,3}{cm} à \SI{56,5}{cm} soit une course de \SI{13,2}{cm}. 
 \end{corrige}
 \else
 \fi
@@ -220,6 +220,7 @@ $\Leftrightarrow  c F_v\sin \left( \alpha - \theta\right) - \lambda Mg\cos \thet
 
 $   F_v = \dfrac{\lambda Mg\cos \theta}{c\sin \left( \alpha - \theta\right)} $.
 
+Dans le cas où on considère les deux vérins, on aura $F_1=F_2=F_v/2$.
 
 \end{center}
 
@@ -235,7 +236,13 @@ $ \tan \alpha = \dfrac{b+c\sin\theta}{-a+c\cos\theta}$.
 
 On déduit de la question précédente le tracé de l’évolution de l’effort $F$ nécessaire au maintien en équilibre du coffre en fonction de la longueur $L$ du vérin.
 
+
 On choisit d’utiliser un ressort précontraint au sein du vérin (voir figure suivante) de manière à assister l’ouverture du coffre et à assurer l’équilibre du coffre sur une plage de fonctionnement maximale. On estime que les forces de frottement maximales au sein du vérin (essentiellement dues à la friction dans la vis) sont de l’ordre de $F_{\text{frot}}=\SI{100}{N}$. 
+
+
+
+La figure suivante représente la force que doit exercer le vérin sur la porte de coffre pour assurer
+l’équilibre de cette dernière en fonction de la longueur du vérin. Les courbes en pointillés représentent la force du vérin $\pm\SI{100}{N}$.
 
 
 \begin{center}
@@ -243,15 +250,26 @@ On choisit d’utiliser un ressort précontraint au sein du vérin (voir figure 
 %\textit{}
 \end{center}
 
-La figure suivante représente la force que doit exercer le vérin sur la porte de coffre pour assurer
-l’équilibre de cette dernière en fonction de la longueur du vérin. Les courbes en pointillés représentent la force du vérin $\pm\SI{100}{N}$.
+
+
+\subparagraph{}
+\textit{Déterminer la raideur $k$ du ressort et sa longueur à vide $L_0$ de manière à obtenir une situation d’équilibre
+sur la plus grande plage de fonctionnement. Préciser votre démarche.}
+\ifprof
+\begin{corrige}~\\
+
+\end{corrige}
+\else
+\fi
+
+La figure suivante représente l’évolution du couple moteur dans un vérin lors des phases d’ouverture et de fermeture
+du coffre.
 
 
 \begin{center}
 \includegraphics[width=\linewidth]{images/fig_04}
 %\textit{}
 \end{center}
-
 
 \subparagraph{}
 \textit{Déterminer le couple moteur maximal en phase d’ouverture puis en phase de fermeture.}
