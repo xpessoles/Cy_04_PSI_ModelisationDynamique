@@ -192,8 +192,41 @@ On suppose dans un premier temps que le coffre est à l’équilibre.
 \textit{Déterminer l’effort $F$ exercé par chacun des vérins sur la porte de coffre en fonction de $\theta$, $\alpha$ et des constantes du problème.}
 \ifprof
 \begin{corrige}~\\
-On isole le corps et le piston du vérin. L'ensemble est soumis à deux actions mécaniques (liaisons sphériques en $A$ et $C$). D'après le PFS, cette action mécanique est donc suivant Ces deux actions mécaniques sont donc de même direction (le vecteur $\vect{x_v}, de même norme et de sens opposé. 
+On isole le corps et le piston du vérin. L'ensemble est soumis à deux actions mécaniques (liaisons sphériques en $A$ et $C$). D'après le PFS, cette action mécanique est donc suivant Ces deux actions mécaniques sont donc de même direction (le vecteur $\vect{x_v}$), de même norme et de sens opposé. 
+
+On isole le hayon $h$. 
+
+On réalise le BAME : 
+\begin{itemize}
+\item action mécanique du vérin $v$: $\torseurstat{T}{v}{h}=\torseurl{F_v\vect{x_v}}{\vect{0}}{C}$;
+\item action de la pesanteur : $\torseurstat{T}{\text{pes}}{h}=\torseurl{-Mg\vect{y_t}}{\vect{0}}{G}$;
+\item action de la pivot en $B$ : $\torseurstat{T}{\text{0}}{h}$.
+\end{itemize}
+
+On cherche à connaître l'action du vérin en fonction des actions de pesanteur. On réalise donc le théorème du moment statique en $B$ en projection sur $\vect{z_0}$ : 
+
+$ \left( 
+\vect{0} + \vect{BC}\wedge F_v\vect{x_v}
++ \vect{0} + \vect{BG}\wedge -Mg\vect{y_t}
+\right) \cdot \vect {z_0} = \vect{0} $
+$\Rrightarrow \left( c\vect{x_p}\wedge F_v\vect{x_v} + \lambda \vect{x_p}\wedge -Mg\vect{y_t}
+\right) \cdot \vect {z_0} = \vect{0} $
+
+\begin{center}
+\includegraphics[width=.5\linewidth]{images/cor_03}
+%\textit{}
+
+$\Leftrightarrow  c F_v\sin \left( \alpha - \theta\right) - \lambda Mg\cos \theta  = {0} $
+
+$   F_v = \dfrac{\lambda Mg\cos \theta}{c\sin \left( \alpha - \theta\right)} $.
+
+
+\end{center}
+
+
 \end{corrige}
+
+
 \else
 \fi
 
