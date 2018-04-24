@@ -78,7 +78,7 @@ Fiche 1 -- \xxactivite%
 \setlength{\columnseprule}{0.4pt} 
 
 \ifprof
-\begin{multicols}{2}
+%\begin{multicols}{2}
 \else
 \begin{multicols}{2}
 \fi
@@ -96,17 +96,23 @@ de tige par rapport au corps du vérin se fait dans la direction du vecteur $\ve
 Les liaisons entre la tige du vérin et le bâti d’une part et entre le corps du vérin et la porte de coffre d’autre part, sont des liaisons rotules de centres respectifs $A$ et $C$.
 Le point $D$ représente l’extrémité de la porte du coffre. La hauteur du point $D$ par rapport au sol suivant la
 verticale est de \SI{0,7}{m} en position coffre fermé et de \SI{1,8}{m} en position coffre ouvert.
-
-\begin{obj}
-Déterminer les caractéristiques du vérin à choisir pour répondre au cahier des charges : longueur
-du vérin en position coffre ouvert et coffre fermé, course du vérin, raideur du ressort équipant le
-vérin, couple moteur maximal nécessaire pour le maintien en position du hayon.
-\end{obj}
-
 \begin{center}
-\includegraphics[width=\linewidth]{images/fig_01}
+%\includegraphics[width=\linewidth]{images/fig_01}
+\includegraphics[width=.8\linewidth]{images/hayon_parametrage}
 %\textit{}
 \end{center}
+
+
+\begin{obj}
+\begin{itemize}
+\item Déterminer les caractéristiques du vérin à choisir pour répondre au cahier des charges : longueur
+du vérin en position coffre ouvert et coffre fermé, course du vérin, raideur du ressort équipant le
+vérin. 
+\item Determiner le couple moteur maximal nécessaire pour le maintien en position du hayon.
+\item Déterminer le courant de pincement afin que l'effort de pincement soit inférieure à \SI{40}{N} pendant \SI{10}{ms}.
+\end{itemize}
+\end{obj}
+
 
 \subsection*{Caractéristiques géométriques du vérin}
 Le centre d’inertie du coffre est situé en $G$ tel que $\vect{BG}=\lambda\vect{x_p}$ avec $\lambda=\SI{0,6}{m}$.
@@ -171,20 +177,30 @@ La longueur du vérin varie de \SI{43,3}{cm} à \SI{56,5}{cm} soit une course de
 \else
 \fi
 
+\vspace{.25cm}
 
-\subsection*{Vérification de critère du cahier des charges de la fonction ***FC1 et détermination de la
-raideur du ressort correspondante}
+\footnotesize
+\noindent Corrigé des trois premières questions.
+%\fbox{
+\begin{enumerate}
+\item L'angle d'ouverture est de $67,5\degres$.
+\item $L^2 =\left(-a + c\cos\theta \right)^2 + \left(b + c\sin\theta \right)^2  $.
+\item Course de \SI{13,2}{cm}.
+\end{enumerate}
 
-Les vérins utilisés sont constitués d’un moteur à courant continu, d’un réducteur à engrenage, d’une vis à billes et d’un ressort.
+\normalsize
+
+\subsection*{Dimensionnement des caractéristiques du ressort}
+Les vérins utilisés sont constitués d’un moteur à courant continu, d’un réducteur à engrenage, d’une vis à billes et d’un ressort. Ce dernier permet d'assurer l'équilibre de la porte de coffre en cas de panne des vérins électriques. 
 
 \begin{center}
 \includegraphics[width=\linewidth]{images/fig_02}
 %\textit{}
 \end{center}
 
-Le cahier des charges impose que la porte soit en équilibre sur une large plage d’ouverture en cas de panne
-moteur. C’est pourquoi il faut déterminer la raideur et la longueur à vide des ressorts qui assurent cette fonction
-dans les vérins électriques.
+%Le cahier des charges impose que la porte soit en équilibre sur une large plage d’ouverture en cas de panne
+%moteur. C’est pourquoi il faut déterminer la raideur et la longueur à vide des ressorts qui assurent cette fonction
+%dans les vérins électriques.
 
 On suppose dans un premier temps que le coffre est à l’équilibre.
 
@@ -237,18 +253,16 @@ $ \tan \alpha = \dfrac{b+c\sin\theta}{-a+c\cos\theta}$.
 On déduit de la question précédente le tracé de l’évolution de l’effort $F$ nécessaire au maintien en équilibre du coffre en fonction de la longueur $L$ du vérin.
 
 
-On choisit d’utiliser un ressort précontraint au sein du vérin (voir figure suivante) de manière à assister l’ouverture du coffre et à assurer l’équilibre du coffre sur une plage de fonctionnement maximale. On estime que les forces de frottement maximales au sein du vérin (essentiellement dues à la friction dans la vis) sont de l’ordre de $F_{\text{frot}}=\SI{100}{N}$. 
-
-
-
-La figure suivante représente la force que doit exercer le vérin sur la porte de coffre pour assurer
-l’équilibre de cette dernière en fonction de la longueur du vérin. Les courbes en pointillés représentent la force du vérin $\pm\SI{100}{N}$.
-
-
 \begin{center}
 \includegraphics[width=\linewidth]{images/fig_03}
 %\textit{}
 \end{center}
+
+On choisit d’utiliser un ressort précontraint au sein du vérin de manière à assister l’ouverture du coffre et à assurer l’équilibre du coffre sur une plage de fonctionnement maximale. On estime que les forces de frottement maximales au sein du vérin (essentiellement dues à la friction dans la vis) sont de l’ordre de $F_{\text{frot}}=\SI{100}{N}$. 
+
+La figure précédente représente la force que doit exercer le vérin sur la porte de coffre pour assurer l’équilibre de cette dernière en fonction de la longueur du vérin. Les courbes en pointillés représentent la force du vérin $\pm\SI{100}{N}$.
+
+
 
 
 
@@ -289,7 +303,7 @@ du coffre.
 
 
 \begin{center}
-\includegraphics[width=\linewidth]{images/fig_04}
+\includegraphics[width=.8\linewidth]{images/fig_04}
 %\textit{}
 \end{center}
 
@@ -297,16 +311,82 @@ du coffre.
 \textit{Déterminer le couple moteur maximal en phase d’ouverture puis en phase de fermeture.}
 \ifprof
 \begin{corrige}~\\
+En phase d'ouverture, le couple maximal est de \SI{4e-3}{Nm}. En phase de fermeture il est de \SI{3,5e-3}{Nm}.
+\end{corrige}
+\else
+\fi
+
+
+\subsection*{Réglage de la fonction sécurité des personnes}
+%La commande d’ouverture et de fermeture du coffre est assurée par un asservissement de position angulaire $\theta$
+%du hayon. L’étude porte sur l’asservissement d’un seul vérin que nous appellerons « vérin maitre ».
+Pour limiter le risque d’accident lié au pincement d’un utilisateur, il est nécessaire de limiter le couple du moteur
+à courant continu durant la phase de fermeture du hayon. %Le couple moteur étant proportionnel au courant, il
+%faut que la commande du moteur dispose d’un contrôle du courant induit.
+%Cette fonction est assurée par une boucle de courant dans la commande du moteur.
+
+
+
+On envisage la présence d’un obstacle empêchant la fermeture du coffre. On modélise l’action de l’obstacle sur la porte de coffre par un glisseur s’appliquant en $D$ et s’exprimant $\vect{F_{\text{pinc}}} = F_{\text{pinc}}\vect{y_p}$.
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/fig_05}
+%\textit{}
+\end{center}
+
+
+
+%\subparagraph{}
+%\textit{Quelle doit être la valeur maximale de $ F_{\text{pinc}}$ pour respecter le cahier des charges ?}
+%\ifprof
+%\begin{corrige}~\\
+%
+%\end{corrige}
+%\else
+%\fi
+
+On cherche à déterminer l’accroissement de couple moteur en cas de présence d’obstacle. On suppose ainsi que la
+porte de coffre est en équilibre sous l’effet du poids et de l’action des vérins. On ajoute ainsi l’effort de pincement
+$ F_{\text{pinc}}$ en $D$ et on cherche l’accroissement d’effort $\Delta F\vec{x}_v$ qu’exercent chacun des vérins en $C$ sur la porte en la supposant en équilibre.
+
+On donne la relation entre le couple moteur et la force fournie par le vérin en régime quasi-statique : $C_m=\rho F$ avec $F=\SI{7,89e-5}{m}$.
+\subparagraph{}
+\textit{En isolant la porte de hayon de coffre, déterminer l’expression littérale puis la valeur
+numérique de $\Delta F$ l’accroissement de la force qu’exerce chacun des vérins sur la porte de hayon.}
+\ifprof
+\begin{corrige}~\\
+
+\end{corrige}
+\else
+
+\fi
+
+\subparagraph{}
+\textit{En déduire la valeur numérique de l’accroissement $\Delta C_m$  de couple moteur en fonction de la présence d’un obstacle.}% (on supposera que le rendement de la transmission est unitaire).}
+\ifprof
+\begin{corrige}~\\
 
 \end{corrige}
 \else
 \fi
 
+Dans la suite on prendra comme accroissement de couple moteur en cas de pincement une valeur de \SI{0,035}{Nm}. La constante de couple du moteur est donnée par $K_t = \SI{9,5e-3}{NmA^{-1}}$.
+\subparagraph{}
+\textit{Déterminer l’intensité maximale du courant dans le moteur lors d’un pincement.}
 \ifprof
-\end{multicols}
+\begin{corrige}~\\
+
+\end{corrige}
+\else
+\fi
+
+
+\ifprof
+%\end{multicols}
 \else
 \end{multicols}
 \fi
+
 
 \end{document}
 
