@@ -12,7 +12,7 @@
 %\fichefalse
 
 \proftrue
-%\proffalse
+\proffalse
 
 \tdtrue
 %\tdfalse
@@ -78,11 +78,13 @@ Fiche 1 -- \xxactivite%
 \setlength{\columnseprule}{0.4pt} 
 
 \ifprof
-%\begin{multicols}{2}
+\begin{multicols}{2}
 \else
 \begin{multicols}{2}
 \fi
 \section*{Mise en situation}
+\ifprof
+\else
 Le PCS (Power Closure System), conçu par Valéo, est un système d’ouverture et de fermeture automatique de
 hayon de coffre automobile.
 Le système étant symétrique, les deux vérins sont ramenées dans 
@@ -101,7 +103,7 @@ verticale est de \SI{0,7}{m} en position coffre fermé et de \SI{1,8}{m} en posi
 \includegraphics[width=.8\linewidth]{images/hayon_parametrage}
 %\textit{}
 \end{center}
-
+\fi
 
 \begin{obj}
 \begin{itemize}
@@ -115,9 +117,12 @@ vérin.
 
 
 \subsection*{Caractéristiques géométriques du vérin}
+\ifprof
+\else
 Le centre d’inertie du coffre est situé en $G$ tel que $\vect{BG}=\lambda\vect{x_p}$ avec $\lambda=\SI{0,6}{m}$.
 
 $\vect{AB}=-a\vect{x_0}+b\vect{y_0}$, $\vect{AC}=L\vect{x_v}$, $\vect{BC}=c\vect{x_p}$, $\vect{BD}=d\vect{x_p}$ avec $a=\SI{0,55}{m}$, $b=\SI{0,14}{m}$, $c=\SI{0,14}{m}$  et $d=\SI{1}{m}$. L’angle formé entre $\vect{x_0}$ et l’horizontale $\vect{x_t}$ est $\theta_0 = 42\degres$.
+\fi
 
 \subparagraph{}
 \textit{Déterminer l’angle d’ouverture maximal.}
@@ -161,12 +166,14 @@ On a donc $L^2 =\left(-a + c\cos\theta \right)^2 + \left(b + c\sin\theta \right)
 \else
 \fi
 
+\ifprof
+\else
 On donne la courbe donnant l'évolution de la course du vérin en fonction de l'ouverture du hayon. 
 \begin{center}
 \includegraphics[width=\linewidth]{images/cor_02}
 %\textit{}
 \end{center}
-
+\fi
 
 \subparagraph{}
 \textit{Déterminer les valeurs extrêmes de $L$, ainsi que la course du vérin.}
@@ -176,6 +183,9 @@ La longueur du vérin varie de \SI{43,3}{cm} à \SI{56,5}{cm} soit une course de
 \end{corrige}
 \else
 \fi
+\ifprof
+\else
+
 
 \vspace{.25cm}
 
@@ -189,8 +199,12 @@ La longueur du vérin varie de \SI{43,3}{cm} à \SI{56,5}{cm} soit une course de
 \end{enumerate}
 
 \normalsize
+\fi
 
 \subsection*{Dimensionnement des caractéristiques du ressort}
+
+\ifprof
+\else
 Les vérins utilisés sont constitués d’un moteur à courant continu, d’un réducteur à engrenage, d’une vis à billes et d’un ressort. Ce dernier permet d'assurer l'équilibre de la porte de coffre en cas de panne des vérins électriques. 
 
 \begin{center}
@@ -203,6 +217,7 @@ Les vérins utilisés sont constitués d’un moteur à courant continu, d’un 
 %dans les vérins électriques.
 
 On suppose dans un premier temps que le coffre est à l’équilibre.
+\fi
 
 \subparagraph{}
 \textit{Déterminer l’effort $F$ exercé par chacun des vérins sur la porte de coffre en fonction de $\theta$, $\alpha$ et des constantes du problème.}
@@ -247,6 +262,8 @@ Dans le cas où on considère les deux vérins, on aura $F_1=F_2=F_v/2$.
 \else
 \fi
 
+\ifprof
+\else
 En exploitant les équations obtenues à partir de l’écriture de la fermeture géométrique obtenue précédemment, on montre que la relation entre $\theta$ et $\alpha$ s’écrit : 
 $ \tan \alpha = \dfrac{b+c\sin\theta}{-a+c\cos\theta}$.
 
@@ -261,7 +278,7 @@ On déduit de la question précédente le tracé de l’évolution de l’effort
 On choisit d’utiliser un ressort précontraint au sein du vérin de manière à assister l’ouverture du coffre et à assurer l’équilibre du coffre sur une plage de fonctionnement maximale. On estime que les forces de frottement maximales au sein du vérin (essentiellement dues à la friction dans la vis) sont de l’ordre de $F_{\text{frot}}=\SI{100}{N}$. 
 
 La figure précédente représente la force que doit exercer le vérin sur la porte de coffre pour assurer l’équilibre de cette dernière en fonction de la longueur du vérin. Les courbes en pointillés représentent la force du vérin $\pm\SI{100}{N}$.
-
+\fi
 
 
 
@@ -284,20 +301,23 @@ Si on isole la tige du vérin :
 \end{itemize}
 
 
-\begin{center}
-\includegraphics[width=\linewidth]{images/cor_05}
-%\textit{}
-\end{center}
 
 
-La plage de foncitonnement la plus large est située entre $\SI{0,5}{m}$ et $\SI{0,56}{m}$. La pente est la même pour les 3 courbes. Elle est d'environ $k=\dfrac{100}{0,06}\simeq \SI{1667}{N.m^{-1}}$.
+
+La plage de fonctionnement la plus large est située entre $\SI{0,5}{m}$ et $\SI{0,56}{m}$. La pente est la même pour les 3 courbes. Elle est d'environ $k=\dfrac{100}{0,06}\simeq \SI{1667}{N.m^{-1}}$.
 
 En phase de fermeture, lorsque le vérin est déployé, la précharge permettant d'assurer l'équilibre est d'environ \SI{500}{N}.  L'écrasement est donc  de \SI{300}{mm} environ.
 
 \end{corrige}
+\begin{center}
+\includegraphics[width=\linewidth]{images/cor_05}
+%\textit{}
+\end{center}
 \else
 \fi
 
+\ifprof
+\else
 La figure suivante représente l’évolution du couple moteur dans un vérin lors des phases d’ouverture et de fermeture
 du coffre.
 
@@ -306,6 +326,7 @@ du coffre.
 \includegraphics[width=.8\linewidth]{images/fig_04}
 %\textit{}
 \end{center}
+\fi
 
 \subparagraph{}
 \textit{Déterminer le couple moteur maximal en phase d’ouverture puis en phase de fermeture.}
@@ -318,6 +339,9 @@ En phase d'ouverture, le couple maximal est de \SI{4e-3}{Nm}. En phase de fermet
 
 
 \subsection*{Réglage de la fonction sécurité des personnes}
+
+\ifprof
+\else
 %La commande d’ouverture et de fermeture du coffre est assurée par un asservissement de position angulaire $\theta$
 %du hayon. L’étude porte sur l’asservissement d’un seul vérin que nous appellerons « vérin maitre ».
 Pour limiter le risque d’accident lié au pincement d’un utilisateur, il est nécessaire de limiter le couple du moteur
@@ -350,6 +374,10 @@ porte de coffre est en équilibre sous l’effet du poids et de l’action des v
 $ F_{\text{pinc}}$ en $D$ et on cherche l’accroissement d’effort $\Delta F\vec{x}_v$ qu’exercent chacun des vérins en $C$ sur la porte en la supposant en équilibre.
 
 On donne la relation entre le couple moteur et la force fournie par le vérin en régime quasi-statique : $C_m=\rho F$ avec $\rho=\SI{7,89e-5}{m}$.
+
+\fi
+
+
 \subparagraph{}
 \textit{Déterminer l’expression littérale puis la valeur
 numérique de $\Delta F$ l’accroissement de la force qu’exerce chacun des vérins sur la porte de hayon.}
@@ -370,7 +398,7 @@ $\Rightarrow
 $\Rightarrow  
 \Delta F  = \dfrac{dF_{\text{pinc}}}{c 2  \sin \alpha}  $. 
 
-\texit{AN :}
+\textit{AN :}
 Pour $\theta=0$, $ \tan \alpha = \dfrac{b}{-a+c}=\dfrac{0,14}{-0,55+0,14}=-0,34 \Rightarrow \alpha \simeq -18,8 \degres$.
 $\Rightarrow  
 \Delta F  = \dfrac{40}{2\cdot 0,14  \sin \alpha} = \SI{-443}{N} $.
@@ -379,28 +407,53 @@ $\Rightarrow
 
 \fi
 
+La constante de couple du moteur est donnée par $K_t = \SI{9,5e-3}{NmA^{-1}}$.
+
 \subparagraph{}
-\textit{En déduire la valeur numérique de l’accroissement $\Delta C_m$  de couple moteur en fonction de la présence d’un obstacle.}% (on supposera que le rendement de la transmission est unitaire).}
+\textit{En déduire la valeur numérique de l’accroissement $\Delta C_m$  de couple moteur en fonction de la présence d’un obstacle. Déterminer l’intensité maximale du courant dans le moteur lors d’un pincement.}% (on supposera que le rendement de la transmission est unitaire).}
 \ifprof
 \begin{corrige}~\\
+On a $\left|\Delta C_m\right|=\rho \left|\Delta F \right|$ avec $\rho=\SI{7,89e-5}{m}$. En conséquence : $\left|\Delta C_m\right|=443 \cdot 7,89 \cdot 10^{-5} = \SI{35}{mNm}$.
+
+En fin de fermeture, $C_m=\SI{2,5e-3}{Nm}$.
+En conséquence $I_{\text{max}}=\dfrac{C_{\text{max}}}{K_t}=\dfrac{C_{m}+\Delta C_m}{K_t}=\dfrac{2,5\cdot 10^{-3}+35\cdot 10^{-3}}{9,5\cdot 10^{-3}}=\SI{3,95}{A}$.
 
 \end{corrige}
 \else
 \fi
 
-Dans la suite on prendra comme accroissement de couple moteur en cas de pincement une valeur de \SI{0,035}{Nm}. La constante de couple du moteur est donnée par $K_t = \SI{9,5e-3}{NmA^{-1}}$.
-\subparagraph{}
-\textit{Déterminer l’intensité maximale du courant dans le moteur lors d’un pincement.}
+%Dans la suite on prendra comme accroissement de couple moteur en cas de pincement une valeur de \SI{0,035}{Nm}. 
+%\subparagraph{}
+%\textit{}
+%\ifprof
+%\begin{corrige}~\\
+%
+%\end{corrige}
+%\else
+%\fi
 \ifprof
-\begin{corrige}~\\
-
-\end{corrige}
 \else
+\footnotesize
+\vspace{.5cm}
+\noindent Éléments de corrigé 
+%\fbox{
+\begin{enumerate}
+\item L'angle d'ouverture est de $67,5\degres$.
+\item $L^2 =\left(-a + c\cos\theta \right)^2 + \left(b + c\sin\theta \right)^2  $.
+\item Course de \SI{13,2}{cm}.
+\item $   F_v = \dfrac{\lambda Mg\cos \theta}{c\sin \left( \alpha - \theta\right)} $ ($F_v/2$).
+\item $k=\SI{1667}{N.m^{-1}}$ et écrasement de $\SI{300}{mm}$.
+\item .
+\item $\Delta F = \pm \SI{443}{N}$.
+\item $I_{\text{max}} = \SI{3,95}{A}$.
+\end{enumerate}
 \fi
 
+\normalsize
+
 
 \ifprof
-%\end{multicols}
+\end{multicols}
 \else
 \end{multicols}
 \fi
