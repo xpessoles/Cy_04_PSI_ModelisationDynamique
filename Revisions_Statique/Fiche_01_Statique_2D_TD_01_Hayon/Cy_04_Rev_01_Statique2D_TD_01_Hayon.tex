@@ -65,7 +65,7 @@ Fiche 1 -- \xxactivite%
 \setcounter{secnumdepth}{5}
 %---------------------------------------------------------------------------
 
-
+\usepackage{bm}
 \begin{document}
 %\chapterimage{png/Fond_Cin}
 \input{style/new_pagegarde}
@@ -93,14 +93,14 @@ le plan d’évolution de la porte de coffre et leur action mécanique s’exer�
 Le repère $\repere{B}{x_t}{y_t}{z_0}$ est lié à la Terre. $\vect{y_t}$ est un vecteur unitaire vertical tel que l’accélération de la pesanteur s’écrit $\vect{g}=-g\vect{y_t}$ avec $g=\SI{9,81}{m.s^{-2}}$. $\vect{x_t}$ est un vecteur unitaire horizontal. La liaison pivot entre
 la structure du véhicule et la porte de coffre est d’axe $\axe{B}{z_0}$.
 
-Le repère $\repere{B}{x_p}{y_p}{z_0}$ est lié à la porte de coffre de masse $M=\SI{30}{kg}$. Le repère $\repere{B}{x_v}{y_v}{z_0}$ est lié au corps du vérin. La sortie
-de tige par rapport au corps du vérin se fait dans la direction du vecteur $\vect{x_v}$.
-Les liaisons entre la tige du vérin et le bâti d’une part et entre le corps du vérin et la porte de coffre d’autre part, sont des liaisons rotules de centres respectifs $A$ et $C$.
+Le repère $\repere{B}{x_p}{y_p}{z_0}$ est lié à la porte de coffre \textbf{$\bm{S_1}$} de masse $M=\SI{30}{kg}$. Le repère $\repere{B}{x_v}{y_v}{z_0}$ est lié au corps du vérin. La sortie
+de tige par rapport au corps du vérin \textbf{$S_3$} se fait dans la direction du vecteur $\vect{x_v}$.
+Les liaisons entre le corps du vérin \textbf{$\bm{S_3}$} et le bâti \textbf{$\bm{S_0}$} d’une part et entre la tige du vérin \textbf{$\bm{S_2}$} et la porte de coffre \textbf{$\bm{S_1}$} d’autre part, sont des liaisons rotules de centres respectifs $A$ et $C$.
 Le point $D$ représente l’extrémité de la porte du coffre. La hauteur du point $D$ par rapport au sol suivant la
 verticale est de \SI{0,7}{m} en position coffre fermé et de \SI{1,8}{m} en position coffre ouvert.
 \begin{center}
-%\includegraphics[width=\linewidth]{images/fig_01}
-\includegraphics[width=.8\linewidth]{images/hayon_parametrage}
+\includegraphics[width=\linewidth]{images/fig_01_bis}
+%\includegraphics[width=.8\linewidth]{images/hayon_parametrage}
 %\textit{}
 \end{center}
 \fi
