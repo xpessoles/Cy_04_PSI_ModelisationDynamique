@@ -167,10 +167,84 @@ $$\vect{OG}=\dfrac{1}{M}\sum\limits_{i=1}^{n}M_i \vect{OG_i} .$$
 \paragraph{Centre d'inertie d'une surface plane}
 
 \subsection{Grandeurs inertielles d'un solide}
+\subsubsection{Moment et produit d'inertie}
+\begin{defi}[Moment d'inertie par rapport à un point dans $\mathcal{R}$]
+Soit un repère $\rep{}$ $\repere{O}{i}{j}{k}$ et un point $P$ de coordonnées $\left(x,y,z\right)$ dans $\mathcal{R}$.  
+On appelle moment d'inertie du solide $S$ par rapport à un point $O$ la quantité :
+
+$$ I_O(S)=\int\limits_S \vect{OP}^2 \dd m = \int\limits_S \left( x^2 + y^2 + z^2 \right) \dd m.  $$
+
+\end{defi}
+
+\begin{defi}[Moment d'inertie par rapport à un axe dans $\mathcal{R}$]
+On appelle moment d'inertie du solide $S$ par rapport à une droite $\left(\Delta\right)$ la quantité positive :
+
+$$ I_{\Delta}(S)=\int\limits_S \left( \vect{\delta} \wedge \vect{AP}\right)^2 \dd m  $$.
+
+Par suite, le moment d'inertie du solide $S$ par rapport à la droite $\left(O,\vect{x}\right)$ est donné par : 
+$$ I_{\left(O,\vect{x}\right)}(S)=\int\limits_S \left( \vect{x} \wedge \vect{OP}\right)^2 \dd m.  $$
+
+On détermine donc les moments d'inerties par rapport à $\left(O,\vect{x}\right)$, $\left(O,\vect{y}\right)$ et $\left(O,\vect{z}\right)$ :
+
+$$ I_{\left(O,\vect{x}\right)}(S) =\int\limits_S \left(y^2 + z^2\right) \dd m\quad \quad
+I_{\left(O,\vect{y}\right)}(S)     =\int\limits_S \left(x^2 + z^2\right) \dd m\quad \quad
+I_{\left(O,\vect{z}\right)}(S)     =\int\limits_S \left(x^2 + y^2\right)\dd m.
+$$
+
+
+
+\end{defi}
+
+%\begin{defi}[Moment d'inertie par rapport à un point]
+%On appelle moment d'inertie du solide $S$ par rapport à un point $A$ la quantité positive :
+%
+%\begin{tabular}{m{.45\linewidth}m{.45\linewidth}}
+%$$ I_A(S)=\int\limits_S \vect{AP}^2 \dd m  $$ &  
+%avec :
+%\begin{itemize}
+%\item $ I_A(S)$ en $\text{kg m}^2$;
+%\item $S$ un solide;
+%\item $A$ un point;
+%\item $P$ un point du solide;
+%\item $\dd m$ la quantité de matière.
+%\end{itemize} \\
+%\end{tabular}
+%\end{defi}
+
+
+%\begin{defi}[Moment d'inertie par rapport à une droite]
+%On appelle moment d'inertie du solide $S$ par rapport à une droite $\left(\Delta\right)$ la quantité positive :
+%
+%\begin{tabular}{m{.45\linewidth}m{.45\linewidth}}
+%$$ I_{\Delta}(S)=\int\limits_S \left( \vect{\delta} \vect{AP}\right)^2 \dd m  $$ &  
+%avec :
+%\begin{itemize}
+%\item $ I_\Delta(S)$ en $\text{kg m}^2$;
+%\item $\vect{\delta}$
+%\item $S$ un solide;
+%\item $A$ un point;
+%\item $P$ un point du solide;
+%\item $\dd m$ la quantité de matière.
+%\end{itemize} \\
+%\end{tabular}
+%\end{defi}
+
 \subsubsection{Matrice d'inertie}
-\subsubsection{Moment d'inertie}
+
 \subsubsection{Propriétés des matrices d'inertie}
 \subsubsection{Théorème de Huygens}
+\begin{theorem}[Théorème de Huygens]
+Le moment d'inertie d'un solide par rapport à un axe  $\axe{A}{\delta}$ est donné par :
+
+\begin{tabular}{m{.45\linewidth}m{.45\linewidth}}
+$$I_{\axe{A}{\delta}}(S)=I_{\axe{G}{\delta}}(S)+md^2 $$ & 
+avec :
+\begin{itemize}
+\item $d$ : distance séparant $\axe{A}{\delta}$ et $\axe{G}{\delta}$ en m;
+\item $m$ : masse de $S$ en kg.
+\end{itemize}
+\end{tabular}
+\end{theorem}
 \subsubsection{Rotation de la matrice d'inertie}
 
 \section{Cinétique et dynamique du solide indéformable}
