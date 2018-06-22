@@ -1,0 +1,349 @@
+\documentclass[10pt,fleqn]{article} % Default font size and left-justified equations
+\usepackage[%
+    pdftitle={Modélisation systèmes multiphysiques : Modélisation par fonction de transfert et schéma-blocs},
+    pdfauthor={Xavier Pessoles}]{hyperref}
+
+
+\input{style/new_style}
+\input{style/macros_SII}
+\usepackage{multicol}
+\usepackage{siunitx}
+
+\fichetrue
+%\fichefalse
+
+\proftrue
+\proffalse
+
+\tdtrue
+%\tdfalse
+
+\courstrue
+\coursfalse
+
+
+%\def\classe{\textsf{PSI$\star$ -- MP}}
+\def\classe{\textsf{CMPT -- SI}}
+
+\def\xxnumpartie{Cycle xx}
+\def\xxpartie{Résoudre la loi Entrée -- Sortie du transmetteur d'un système}
+
+\def\xxnumchapitre{Chap *** \vspace{.2cm}}
+\def\xxchapitre{\hspace{.12cm} Résolution d'une loi ES }
+
+
+\def\discipline{Sciences \\Industrielles de \\ l'Ingénieur}
+\def\xxtete{Sciences Industrielles de l'Ingénieur}
+
+
+
+
+\def\xxactivite{Activation 01}
+\def\xxauteur{\textsl{Xavier Pessoles}}
+
+
+\def\xxtitreexo{Assistance pour le maniement de charges dans l’industrie}
+\def\xxsourceexo{\hspace{.2cm} \footnotesize{Concours Centrale Supelec TSI 2017}}
+
+
+
+
+  
+\def\xxposongletx{2}
+\def\xxposonglettext{1.45}
+\def\xxposonglety{20}
+%\def\xxonglet{Part. 1 -- Ch. 3}
+\def\xxonglet{\textsf{Cycle 01}}
+
+\def\xxactivite{TD 01}
+\def\xxauteur{\textsl{Xavier Pessoles}}
+
+\def\xxcompetences{%
+\vspace{-.5cm}
+\footnotesize{
+\textsl{%
+\textbf{Savoirs et compétences :}\\
+\vspace{-.2cm}
+\begin{itemize}[label=\ding{112},font=\color{ocre}] 
+\item\textit{Res2.C12} : loi entrée – sortie géométrique;
+\item\textit{Res2.C12.SF1} : déterminer la loi entrée - sortie géométrique d’une chaîne cinématique;
+\item\textit{Res2.C15} : loi entrée – sortie cinématique;
+\item\textit{Res2.C15.SF1} : déterminer les relations de fermeture de la chaîne cinématique.
+\end{itemize}}}}
+
+
+\def\xxfigures{
+\includegraphics[width=.3\textwidth]{images/fig_01}
+}%figues de la page de garde
+
+
+\def\xxpied{%
+Cycle xx -- xx \\%dans le but de déterminer les contraintes géométriques dans les mécanismes\\% afin de valider leurs performances.\\
+xx \xxactivite%
+}
+
+\setcounter{secnumdepth}{5}
+%---------------------------------------------------------------------------
+
+
+\begin{document}
+%\chapterimage{png/Fond_Cin}
+\input{style/new_pagegarde}
+\vspace{4.5cm}
+\pagestyle{fancy}
+\thispagestyle{plain}
+
+
+\def\columnseprulecolor{\color{ocre}}
+\setlength{\columnseprule}{0.4pt} 
+
+\ifprof
+\else
+\begin{multicols}{2}
+\fi
+
+\section*{Mise en situation -- Assurer le mouvement vertical}
+\ifprof
+\else
+
+\ifprof
+\else
+\noindent
+\begin{tabular}{m{.6\linewidth}m{.3\linewidth}}
+L’exosquelette est un appareil qui apporte à un être humain des capacités qu’il ne possède pas ou qu’il a perdues à cause d’un accident. Ce type d’appareil peut permettre à une personne de soulever des charges lourdes et diminuer considérablement les efforts à fournir sans la moindre fatigue. Après avoir revêtu un exosquelette adapté à sa morphologie et à sa taille, l’utilisateur peut faire ses mouvements en bénéficiant
+d’une grande fluidité.
+& 
+\includegraphics[width=\linewidth]{images/fig_02}
+
+\end{tabular}
+
+
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/Exigences}
+%\textit{}
+\end{center}
+\fi
+
+%\subsection*{}
+\fi
+\begin{obj}
+Proposer un modèle de connaissance des éléments réalisant l’exigence fonctionnelle <<~assurer le mouvement vertical~>> puis valider les performances attendues listées par le cahier des charges.
+\end{obj}
+
+
+
+\subsection*{Élaboration du modèle géométrique direct et du modèle articulaire inverse}
+\begin{obj}
+Élaborer la commande du moteur pilotant le genou à partir d’un mouvement défini dans l’espace
+opérationnel puis converti dans l’espace articulaire.
+\end{obj}
+
+\ifprof
+\else
+L’étude se limite au passage de la position accroupie à la position relevée de l’exosquelette. Lors de ce passage,
+le point $O_2$ est en mouvement de translation verticale suivant la direction $\axe{O_0}{{z_0}}$ et sa vitesse de déplacement
+évolue selon une loi trapézoïdale. Un modèle plan de la chaîne cinématique ouverte représente la partie inférieure
+de l’exosquelette en position debout et fléchie.
+
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/fig_03}
+%\textit{}
+\end{center}
+
+
+%Selon le cahier des charges, pour assurer une bonne synchronisation des axes, l’exigence de précision statique suite à une entrée de type échelon, de type rampe ou de type accélération doit être inférieure à 1\%.
+
+
+On donne le paramétrage du modèle proposé. 
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/fig_04}
+%\textit{}
+\end{center}
+
+\textbf{Hypothèses : }
+\begin{itemize}
+\item le référentiel lié au repère $\mathcal{R}_0\repere{A}{x_0}{y_0}{z_0}$ est galiléen et est fixe par rapport à la terre;
+\item le point $O_2$ représentant la hanche se déplace verticalement selon la direction $\axe{O_0}{z_0}$;
+\item l’angle $\alpha$ entre la charge transportée et la verticale $\vect{z_0}$ reste constant;
+\item le point d’appui $A$ du pied sur le sol est considéré fixe par rapport à la terre;
+\item lors du mouvement étudié la jambe (1) reste perpendiculaire au pied (3).
+\end{itemize}
+
+\textbf{Données : }
+\begin{itemize}
+\item $\theta_{10}=\angl{y_0}{y_1}=\angl{z_0}{z_1}$;
+\item $\theta_{21}=\angl{y_1}{y_2}=\angl{z_1}{z_2}$;
+\item $\alpha=\text{constante}$;
+\item $L=\sqrt{\left(l_2+l_3\right)^2+l_4^2}$.
+\end{itemize}
+
+\fi
+
+\subparagraph{}\textit{Déterminer littéralement les coordonnées opérationnelles $l_4$ et $h(t)$ en fonction des coordonnées articulaires $\theta_{10}$, $\theta_{21}$ et des paramètres dimensionnels $L$ et $l_1$.}
+\ifprof
+\begin{corrige}
+On a $\vect{A O_1}+\vect{O_1 O_2}+\vect{O_2 O_0}+\vect{O_0 A}=\vect{0}$ soit 
+$L\vect{y_1}+l_1\vect{y_2}-h(t)\vect{z_0}+l_4\vect{y_0}=\vect{0}$. 
+En projetant sur $\vect{y_0}$ et $\vect{z_0}$ on a :
+$$
+\left\{
+\begin{array}{l}
+L\cos\theta_{10} +l_1\cos\left(\theta_{10}+\theta_{21}\right)+l_4={0} \\
+L\sin\theta_{10}  +l_1\sin\left(\theta_{10}+\theta_{21}\right)-h(t) ={0} \\
+\end{array}
+\right.
+$$
+
+En projetant sur $\vect{y_1}$ et $\vect{z_1}$ on a :
+$$
+\left\{
+\begin{array}{l}
+L+l_1\cos\theta_{21}-h(t)\sin\theta_{10}+l_4\cos\theta_{10}={0} \\
+l_1\sin\theta_{21}-h(t)\cos\theta_{10}-l_4\sin\theta_{10}={0}
+\end{array}
+\right.
+$$
+
+
+\end{corrige}
+\else
+\fi
+
+
+\subparagraph{}\textit{Déterminer le modèle articulaire inverse $\theta_{10}$ et $\theta_{21}$ en fonction de $l_1$, $l_4$, $L$ et $h(t)$.}
+\ifprof
+\begin{corrige}
+Pour exprimer $\theta_{10}$, on peut utiliser le premier système d'équation : 
+$$
+\left\{
+\begin{array}{l}
+L\cos\theta_{10}+l_4 =-l_1\cos\left(\theta_{10}+\theta_{21}\right) \\
+L\sin\theta_{10}-h(t)  =-l_1\sin\left(\theta_{10}+\theta_{21}\right) \\
+\end{array}
+\right.
+$$
+En élevant les expressions au carré, on a alors : 
+$
+l_1^2 = \left(L\cos\theta_{10}+l_4 \right)^2+ \left(L\sin\theta_{10}-h(t)\right)^2
+$
+$
+\Leftrightarrow 
+l_1^2 = L^2+l_4^2 +h(t)^2+2Ll_4\cos\theta_{10} -2Lh(t)\sin\theta_{10}
+$
+
+$
+\Leftrightarrow 
+\dfrac{l_1^2 - L^2-l_4^2 -h(t)^2}{2L}=l_4\cos\theta_{10} -h(t)\sin\theta_{10}
+$
+
+En utilisant l'indication, on a : 
+$$
+\dfrac{l_4}{\sqrt{l_4^2 + h(t)^2}}\cos\theta_{10} +\dfrac{-h(t)}{\sqrt{l_4^2 + h(t)^2}}\sin\theta_{10}=\dfrac{l_1^2 - L^2-l_4^2 -h(t)^2}{2L{\sqrt{l_4^2 + h(t)^2}}}
+$$
+En conséquence, on pose $\cos\varphi=\dfrac{l_4}{\sqrt{l_4^2 + h(t)^2}}$ et 
+$\sin\varphi = \dfrac{-h(t)}{\sqrt{l_4^2 + h(t)^2}}$. 
+En conséquences %$\tan\varphi = \dfrac{\dfrac{-h(t)}{\sqrt{l_4^2 + h(t)^2}}}{\dfrac{l_4}{\sqrt{l_4^2 + h(t)^2}}}=\dfrac{-h(t)}{l_4}$.
+$\tan\varphi =\dfrac{-h(t)}{l_4}$.
+
+
+Par suite, $\cos\left( \theta_{10} - \varphi \right) =\dfrac{l_1^2 - L^2-l_4^2 -h(t)^2}{2L{\sqrt{l_4^2 + h(t)^2}}}$. On a donc 
+$\theta_{10} =\arccos \left( \dfrac{l_1^2 - L^2-l_4^2 -h(t)^2}{2L{\sqrt{l_4^2 + h(t)^2}}}\right) + \varphi$.
+
+
+Au final, 
+$$\theta_{10} =\arccos \left( \dfrac{l_1^2 - L^2-l_4^2 -h(t)^2}{2L{\sqrt{l_4^2 + h(t)^2}}}\right) + \arctan\left(\dfrac{-h(t)}{l_4} \right).$$
+
+Pour exprimer  $\theta_{21}$ on réutilise le premier système d'équations :
+$
+\left\{
+\begin{array}{l}
+-l_4 =l_1\cos\left(\theta_{10}+\theta_{21}\right) + L\cos\theta_{10} \\
+h(t)  =l_1\sin\left(\theta_{10}+\theta_{21}\right) + L\sin\theta_{10}\\
+\end{array}
+\right.
+$
+
+On a alors 
+$l_4 ^2 +h(t)^2= L^2 + l_1^2 + 2l_1L\left(\cos\theta_{10}\cos\left(\theta_{10}+\theta_{21}\right) +\sin\left(\theta_{10}+\theta_{21}\right) \sin\theta_{10}\right)$.
+En conséquences, 
+$\dfrac{l_4 ^2 +h(t)^2- L^2 - l_1^2}{2l_1L} = \cos\theta_{10}\cos\left(\theta_{10}+\theta_{21}\right) +\sin\left(\theta_{10}+\theta_{21}\right) \sin\theta_{10}$
+$= \cos\left(\theta_{10}+\theta_{21}-\theta_{10}\right) $.
+D'où $\theta_{21}=\arccos\left(\dfrac{l_4 ^2 +h(t)^2- L^2 - l_1^2}{2l_1L}  \right)$.
+\end{corrige}
+
+
+\else
+\fi
+
+\ifprof
+\else
+\begin{methode}
+Lorsqu'on a une équation de la forme $A\cos\theta_{10}+B\sin\theta_{10}=C$. On peut normer cette équation en la mettant sous la forme $\dfrac{A}{\sqrt{A^2+B^2}}\cos\theta_{10}+\dfrac{B}{\sqrt{A^2+B^2}}\sin\theta_{10}=\dfrac{C}{\sqrt{A^2+B^2}}$.
+On pose alors $\cos\varphi = \dfrac{A}{\sqrt{A^2+B^2}}$ et $\sin\varphi=\dfrac{B}{\sqrt{A^2+B^2}}$. On a alors $\cos\left( \theta_{10} - \varphi \right)=\dfrac{C}{\sqrt{A^2+B^2}}$.
+\end{methode}
+\fi
+
+\subsection*{Élaboration du modèle cinématique}
+\begin{obj}
+En vue de dimensionner le moteur du genou, déterminer la vitesse articulaire en fonction de la  vitesse opérationnelle.
+\end{obj}
+
+\subparagraph{}\textit{Déterminer à partir du modèle articulaire inverse la vitesse angulaire 
+$\theta_{21}$ en fonction de $h(t)$, $\dot{h}(t)$, $l_1$, $L$ et $\sin\theta_{21}$.}
+\ifprof
+\begin{corrige}
+On a vu que $\cos\theta_{21}=\dfrac{l_4 ^2 +h(t)^2- L^2 - l_1^2}{2l_1L}  $.
+En dérivant, on a donc $- \dot{\theta}_{21} \sin\theta_{21}=\dfrac{2\dot{h}(t)h(t)}{2l_1L}$.
+Au final,  $\dot{\theta}_{21} =-\dfrac{\dot{h}(t)h(t)}{l_1L\sin\theta_{21}}$.
+\end{corrige}
+\else
+\fi
+
+\ifprof
+\else
+Un modèle multiphysique a permis de déterminer les conditions suivantes correspondant à la vitesse maximale : $t=\SI{1,5}{s}$, $h(t=1,5)=\SI{0,829}{m}$, $\dot{h}(t=1,5)=\SI{0,422}{m.s^{-1}}$ et $\theta_{21} = 55,9\degres$. Les longueurs $l_1$ et $L$ valent
+respectivement \SI{43,1}{cm} et \SI{51,8}{cm}. Le réducteur de vitesse utilisé a un rapport de réduction égal à $r=\dfrac{1}{120}$.
+\fi
+
+\subparagraph{}\textit{Déterminer la valeur maximale de la vitesse angulaire $\dot{\theta}_{21}$ et $\text{rad s}^{-1}$ puis celle de la fréquence de rotation d’un moteur de genou en $\text{tr min}^{-1}$.}
+\ifprof
+\begin{corrige}
+On a : $\dot{\theta}_{21} =-\dfrac{0,422 \times 0,829}{0,431\times 0,518\sin \left(55,9\right)}\simeq -\SI{1,89}{rad.s^{-1}}$. Soit une fréquence de rotation du moteur de \SI{2168}{tr.min^{-1}}.
+\end{corrige}
+\else
+\fi
+
+
+\ifprof
+\else
+
+\footnotesize
+\begin{tabular}{|p{.95\linewidth}|}
+\hline
+Éléments de corrigé :
+\begin{enumerate}
+\item $L\cos\theta_{10} +l_1\cos\left(\theta_{10}+\theta_{21}\right)+l_4={0}$ et 
+$L\sin\theta_{10}  +l_1\sin\left(\theta_{10}+\theta_{21}\right)-h(t) ={0}$.
+\item $\theta_{10} =\arccos \left( \dfrac{l_1^2 - L^2-l_4^2 -h(t)^2}{2L{\sqrt{l_4^2 + h(t)^2}}}\right) + \arctan\left(\dfrac{-h(t)}{l_4} \right)$ et $\theta_{21}=\arccos\left(\dfrac{l_4 ^2 +h(t)^2- L^2 - l_1^2}{2l_1L}  \right)$ et 
+\item $\dot{\theta}_{21} =-\dfrac{\dot{h}(t)h(t)}{l_1L\sin\theta_{21}}$.
+\item $\dot{\theta}_{21} \simeq -\SI{1,89}{rad.s^{-1}}$ $\dot{\theta}_m\simeq \SI{2168}{tr.min^{-1}}$.
+\end{enumerate} \\
+\hline
+\end{tabular}
+\normalsize
+\fi
+
+\ifprof
+\else
+\end{multicols}
+\fi
+
+%\begin{center}
+%\includegraphics[width=.65\linewidth]{images/cor_01}
+%%\textit{}
+%\end{center}
+
+\end{document}
