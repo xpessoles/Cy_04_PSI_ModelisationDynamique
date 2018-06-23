@@ -428,6 +428,20 @@ La loi d'évolution de la vitesse de la hanche est donnée à la figure suivante
 
 \ifprof
 \begin{corrige}
+\begin{itemize}
+\item On isole l'ensemble $E$.
+\item On réalise le bilan des actions mécaniques : 
+\begin{itemize}
+\item action de la liaison pivot : $\torseurstat{T}{1}{E}=\torseurl{\vectf{1}{E}}{\vectm{O_1}{1}{E}}{O_1}$ avec $\vectm{O_1}{1}{E}\cdot \vect{x_0}=0$;
+\item action du réducteur: $\torseurstat{T}{1_m}{E}=\torseurl{\vect{0}}{C_m \vect{x_0}}{O_1}$ avec $\vectm{O_1}{1}{E}\cdot \vect{x_0}=0$;
+\item action de la pesanteur : $\torseurstat{T}{\text{pes}}{E}=\torseurl{-m_4g\vect{z_0}}{\vect{0}}{G_4}$. On a alors $\vectm{G_4}{\text{pes}}{E}\cdot \vect{x_0}=\vectm{O_1}{\text{pes}}{E}\cdot \vect{x_0}+\left(\vect{G_4O_1}\wedge -m_4g\vect{z_0} \right)\cdot \vect{x_0}$  $=\left(\left(L\cos\theta_{10}\vect{y_0}-\lambda(t)\vect{z_0}\right)\wedge -m_4g\vect{z_0} \right)\cdot \vect{x_0}$ $=\left(L\cos\theta_{10}\vect{y_0}\wedge -m_4g\vect{z_0}\right)\cdot \vect{x_0}$ $= -m_4gL\cos\theta_{10}$.
+\end{itemize}
+\item $E$ étant en pivot d'axe $\axe{O_1}{{x_1}}$, on applique le théorème du moment dynamique en $O_1$ en projection sur $\vect{x_1}$ :
+$-Lm_4\cos\theta_{10}\ddot{h}(t) =C_m -m_4gL\cos\theta_{10}$
+$ \Leftrightarrow C_m=m_4 L \cos\theta_{10} \left(g-\ddot{h}(t)\right) $.
+
+\textbf{Encore un probleme de signe ??}
+\end{itemize}
 \end{corrige}
 \else
 \fi
@@ -437,6 +451,7 @@ La loi d'évolution de la vitesse de la hanche est donnée à la figure suivante
 \subparagraph{} \textit{Calculer le couple $C_m$ au niveau de l’arbre moteur du genou en prenant un facteur de perte $\eta = 0,75$ (estimé à l’aide du modèle multiphysique).}
 \ifprof
 \begin{corrige}
+
 \end{corrige}
 \else
 \fi
