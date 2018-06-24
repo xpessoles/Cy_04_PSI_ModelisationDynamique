@@ -14,7 +14,7 @@
 %\fichefalse
 
 \proftrue
-\proffalse
+%\proffalse
 
 \tdtrue
 %\tdfalse
@@ -357,7 +357,7 @@ Le modèle d’étude est celui représenté à la figure suivante correspondant
 
 On note E=\{cuisse(2)+charge transportée(4)\}. 
 
-\subparagraph{} \textit{Donner qualitativement le mouvement de E par rapport à 0. Tracer le graphe de structure du système.}
+\subparagraph{} \textit{Donner qualitativement le mouvement de 4 par rapport à 0. Tracer le graphe de structure du système.}
 
 \ifprof
 \begin{corrige}
@@ -404,11 +404,12 @@ Par suite on a
 $\left(\vectv{O_1}{E}{0}\wedge\vectv{G_4}{E}{0}\right)\vect{x_0}=
 \left(\left( L\vect{y_1}\wedge \dot{\theta}_{10} \vect{x_0} \right) \wedge\dot{h}(t)\vect{z_0}\right)\vect{x_0} 
 = \left( -L\dot{\theta}_{10} \vect{z_1} \wedge\dot{h}(t)\vect{z_0}\right)\vect{x_0} $ 
-$= -L\dot{\theta}_{10} \dot{h}(t) \cos \theta_{10} $. 
+$= -L\dot{\theta}_{10} \dot{h}(t) \sin \theta_{10} $. 
 
 Enfin, 
- $\vectmd{O_1}{E}{0}\cdot\vect{x_0}=-Lm_4\cos\theta_{10}\ddot{h}(t)+Lm_4\dot{\theta}_{10}\sin\theta_{10}\dot{h}(t)-m_4L\dot{\theta}_{10} \dot{h}(t) \cos \theta_{10}$.
-\textbf{ :( Chercher l'erreur....}
+ $\vectmd{O_1}{E}{0}\cdot\vect{x_0}=-Lm_4\cos\theta_{10}\ddot{h}(t)+Lm_4\dot{\theta}_{10}\sin\theta_{10}\dot{h}(t)-m_4L\dot{\theta}_{10} \dot{h}(t) \sin \theta_{10}$
+ $=-Lm_4\cos\theta_{10}\ddot{h}(t)$.
+
 
  
 \end{corrige}
@@ -434,16 +435,18 @@ La loi d'évolution de la vitesse de la hanche est donnée à la figure suivante
 \begin{itemize}
 \item action de la liaison pivot : $\torseurstat{T}{1}{E}=\torseurl{\vectf{1}{E}}{\vectm{O_1}{1}{E}}{O_1}$ avec $\vectm{O_1}{1}{E}\cdot \vect{x_0}=0$;
 \item action du réducteur: $\torseurstat{T}{1_r}{E}=\torseurl{\vect{0}}{C_r \vect{x_0}}{O_1}$ avec $\vectm{O_1}{1}{E}\cdot \vect{x_0}=0$;
-\item action de la pesanteur : $\torseurstat{T}{\text{pes}}{E}=\torseurl{-m_4g\vect{z_0}}{\vect{0}}{G_4}$. On a alors $\vectm{G_4}{\text{pes}}{E}\cdot \vect{x_0}=\vectm{O_1}{\text{pes}}{E}\cdot \vect{x_0}+\left(\vect{G_4O_1}\wedge -m_4g\vect{z_0} \right)\cdot \vect{x_0}$  $=\left(\left(L\cos\theta_{10}\vect{y_0}-\lambda(t)\vect{z_0}\right)\wedge -m_4g\vect{z_0} \right)\cdot \vect{x_0}$ $=\left(L\cos\theta_{10}\vect{y_0}\wedge -m_4g\vect{z_0}\right)\cdot \vect{x_0}$ $= -m_4gL\cos\theta_{10}$.
+\item action de la pesanteur : 
+$\torseurstat{T}{\text{pes}}{E}=\torseurl{-m_4g\vect{z_0}}{\vect{0}}{G_4}$. On a alors 
+$\vectm{O_1}{\text{pes}}{E}\cdot \vect{x_0}=\vectm{G_4}{\text{pes}}{E}\cdot \vect{x_0}+\left(\vect{O_1G_4}\wedge -m_4g\vect{z_0} \right)\cdot \vect{x_0}$  
+$=\left(\left(\lambda(t)\vect{z_0}-L\cos\theta_{10}\vect{y_0}\right)\wedge -m_4g\vect{z_0} \right)\cdot \vect{x_0}$ 
+$=\left(-L\cos\theta_{10}\vect{y_0}\wedge -m_4g\vect{z_0}\right)\cdot \vect{x_0}$ $= m_4gL\cos\theta_{10}$.
 \end{itemize}
 \item $E$ étant en pivot d'axe $\axe{O_1}{{x_1}}$, on applique le théorème du moment dynamique en $O_1$ en projection sur $\vect{x_1}$ :
-$-Lm_4\cos\theta_{10}\ddot{h}(t) =C_r -m_4gL\cos\theta_{10}$
-$ \Leftrightarrow C_r=m_4 L \cos\theta_{10} \left(g-\ddot{h}(t)\right) $. 
-
-\textbf{Encore un probleme de signe ??}
+$-Lm_4\cos\theta_{10}\ddot{h}(t) =C_r +m_4gL\cos\theta_{10}$
+$ \Leftrightarrow C_r=-m_4 L \cos\theta_{10} \left(g+\ddot{h}(t)\right) $. 
 \end{itemize}
 
-En réalisant l'application numérique, on a : $C_r = 60 \times 51,8\times 10^{-2}\times \cos 54,5 \left(9,81 - \dfrac{0,425}{0,5} \right)  $
+En réalisant l'application numérique, on a : $C_r = - 60 \times 51,8\times 10^{-2}\times \cos 54,5 \left(9,81 +\dfrac{0,425}{0,5} \right)  $
 
 
 \end{corrige}
@@ -500,18 +503,31 @@ et ce en tenant compte du moment d’inertie du rotor, sur un cycle de période 
 
 \ifprof
 \begin{corrige}
+\begin{itemize}
+\item Phase 1 : le couple est décroissant, suivant la convention de signe utilisée, on peut faire l'hypothèse que le genou fléchit et que l’accélération est décroissante.
+\item Phase 2 : le couple est constant. On peut faire l'hypothèse que le moteur tourne à vitesse constante et que le couple moteur est celui nécessaire à vaincre les frottements. 
+\item Phase 3 : le couple est croissant. En conservant la même << convention >> que précédemment, le genou ralentit et arrive en fin de flexion .
+\item Phase 4 : si le genou ne bouge plus, on peut faire l'hypothèse que l'exosquelette est en butée. Ainsi, il n'est pas nécessaire d'avoir un couple pour maintenir le système en position.
+\end{itemize}
 \end{corrige}
 \else
 \fi
 
 Le couple efficace est également appelé couple thermiquement équivalent, il est défini par :
-$C_{\text{eff}}=\sqrt{\dfrac{1}{T}\int\limits_0^Tc(t)^2 \dd t}$.
-
+$C_{\text{eff}}=\sqrt{\dfrac{1}{T}\int\limits_0^Tc(t)^2 \dd t}$. On a aussi 
+$C_{\text{eff}}=\sqrt{\dfrac{1}{T}\sum\limits_{i=1}^n C_{\text{i,eff}}^2 T_i }$
 
 
 \subparagraph{} \textit{Calculer la valeur efficace du couple moteur du genou pour ce cycle périodique de \SI{15}{s}.}
 
-Le couple moteur varie entre -\SI{1,156}{Nm} et \SI{0,596}{Nm}.
+\ifprof
+\begin{corrige}
+$C_{\text{eff}}=\sqrt{\dfrac{1}{T}\sum\limits_{i=1}^n C_{\text{i,eff}}^2 T_i }$
+$=\sqrt{\dfrac{1}{15}\left(0,838^2 \times 2 +0,912^2 \times 2 + 0,838^2 \times 2 \right) }\simeq \SI{0,546}{Nm}$.
+\end{corrige}
+\else
+\fi
+Le couple moteur varie entre \SI{-1,156}{Nm} et \SI{0,596}{Nm}.
 Les caractéristiques du moteur choisi sont :
 \begin{itemize}
 \item vitesse à vide de \SI{3120}{tr.min^{-1}} pour une alimentation nominale en amont de l’onduleur de \SI{36}{V};
@@ -520,16 +536,17 @@ Les caractéristiques du moteur choisi sont :
 \end{itemize}
 
 De plus une étude cinématique précédente a montré que le moteur permettant d'actionner le moteur doit pouvoir atteindre une vitesse de \SI{2200}{tr.min^{-1}}.
-\ifprof
-\begin{corrige}
-\end{corrige}
-\else
-\fi
+
 
 \subparagraph{} \textit{Conclure quant au choix de ce moteur au regard de la valeur maximale de la vitesse angulaire calculée lors d'une étude précédente et du couple efficace calculé à la question précédente.}
 
 \ifprof
 \begin{corrige}
+\begin{enumerate}
+\item Le couple thermiquement équivalent calculé est de \SI{0,546}{Nm} ce qui est inférieur aux couple admissible par le moteur. 
+\item La fréquence de rotation à atteindre par le moteur est de \SI{2200}{tr.min^{-1}}. Le moteur proposé tourne à \SI{3120}{tr.min^{-1}} à vide. On peut donc supposer qu'en charge, il atteindre les \SI{2200}{tr.min^{-1}}.
+\end{enumerate}
+Su ces deux critères le moteur proposé est donc validé. 
 \end{corrige}
 \else
 \fi
