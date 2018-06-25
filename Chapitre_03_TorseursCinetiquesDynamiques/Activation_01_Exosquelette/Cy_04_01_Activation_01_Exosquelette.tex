@@ -14,7 +14,7 @@
 %\fichefalse
 
 \proftrue
-%\proffalse
+\proffalse
 
 \tdtrue
 %\tdfalse
@@ -320,7 +320,8 @@ Proposer un modèle de connaissance des éléments réalisant l’exigence fonct
 \begin{obj}
 Dimensionner le moteur situé au niveau d’un genou permettant à l’exosquelette de soulever une masse de \SI{60}{kg} de la position accroupie à la position debout.
 \end{obj}
-
+\ifprof
+\else
 Ces calculs visent à déterminer l’équation dynamique qui permet d’obtenir le couple moteur (minimal) en fonction des caractéristiques géométriques et massique de la charge à soulever ainsi que des conditions d’utilisation.
 Le modèle d’étude est celui représenté à la figure suivante correspondant au modèle d’étude plan position fléchie.
 \begin{center}
@@ -329,7 +330,7 @@ Le modèle d’étude est celui représenté à la figure suivante correspondant
 \end{center}
 
 \begin{center}
-\includegraphics[width=.7\linewidth]{images/fig_14}
+\includegraphics[width=.5\linewidth]{images/fig_14}
 %\textit{}
 \end{center}
 
@@ -357,11 +358,17 @@ Le modèle d’étude est celui représenté à la figure suivante correspondant
 
 On note E=\{cuisse(2)+charge transportée(4)\}. 
 
+\fi
+
 \subparagraph{} \textit{Donner qualitativement le mouvement de 4 par rapport à 0. Tracer le graphe de structure du système.}
 
 \ifprof
 \begin{corrige}
-Étant donné que l'on souhaite que l'angle $\alpha$ reste constant pendant la levée d'une charge, le mouvement de $E$ sera donc un mouvement de translation rectiligne.  
+Étant donné que l'on souhaite que l'angle $\alpha$ reste constant pendant la levée d'une charge, le mouvement de 4 sera donc un mouvement de translation rectiligne.  
+
+\begin{center}
+\includegraphics[width=.7\linewidth]{images/cor_00}
+\end{center}
 \end{corrige}
 \else
 \fi
@@ -388,6 +395,7 @@ $ \vectmc{O_1}{E}{0}\cdot \vect{x_0}
 
 
 
+
 \subparagraph{} \textit{Déduire $\vectmd{O_1}{E}{0}\cdot \vect{x_0}$ en fonction de $m_4$, $\ddot{h}(t)$, $L$ et $\cos\theta_{10}$.}
 
 \ifprof
@@ -402,27 +410,30 @@ On a aussi $\vectmd{O_1}{E}{0} = \left(\dfrac{d \vectmc{O_1}{E}{0}}{\dd t}\right
 
 Par suite on a 
 $\left(\vectv{O_1}{E}{0}\wedge\vectv{G_4}{E}{0}\right)\vect{x_0}=
-\left(\left( L\vect{y_1}\wedge \dot{\theta}_{10} \vect{x_0} \right) \wedge\dot{h}(t)\vect{z_0}\right)\vect{x_0} 
-= \left( -L\dot{\theta}_{10} \vect{z_1} \wedge\dot{h}(t)\vect{z_0}\right)\vect{x_0} $ 
+\left(\left( L\vect{y_1}\wedge \dot{\theta}_{10} \vect{x_0} \right) \wedge\dot{h}(t)\vect{z_0}\right)\vect{x_0} $
+
+$= \left( -L\dot{\theta}_{10} \vect{z_1} \wedge\dot{h}(t)\vect{z_0}\right)\vect{x_0} $ 
+
 $= -L\dot{\theta}_{10} \dot{h}(t) \sin \theta_{10} $. 
 
 Enfin, 
  $\vectmd{O_1}{E}{0}\cdot\vect{x_0}=-Lm_4\cos\theta_{10}\ddot{h}(t)+Lm_4\dot{\theta}_{10}\sin\theta_{10}\dot{h}(t)-m_4L\dot{\theta}_{10} \dot{h}(t) \sin \theta_{10}$
  $=-Lm_4\cos\theta_{10}\ddot{h}(t)$.
-
-
  
 \end{corrige}
+
 \else
 \fi
 
+\ifprof
+\else
 La loi d'évolution de la vitesse de la hanche est donnée à la figure suivante. 
 
 \begin{center}
-\includegraphics[width=\linewidth]{images/fig_11}
+\includegraphics[width=.8\linewidth]{images/fig_11}
 %\textit{}
 \end{center}
-
+\fi
 
 \subparagraph{} \textit{Déterminer l’expression littérale du couple $C_r$ exercé par l’arbre de sortie du réducteur sur le genou imposé par la loi d’évolution de la hanche et calculer numériquement ce couple pour une valeur de $\theta_{10}$ égale à
 54,5\degres correspondant à la valeur maximale du couple.}
@@ -437,7 +448,7 @@ La loi d'évolution de la vitesse de la hanche est donnée à la figure suivante
 \item action du réducteur: $\torseurstat{T}{1_r}{E}=\torseurl{\vect{0}}{C_r \vect{x_0}}{O_1}$ avec $\vectm{O_1}{1}{E}\cdot \vect{x_0}=0$;
 \item action de la pesanteur : 
 $\torseurstat{T}{\text{pes}}{E}=\torseurl{-m_4g\vect{z_0}}{\vect{0}}{G_4}$. On a alors 
-$\vectm{O_1}{\text{pes}}{E}\cdot \vect{x_0}=\vectm{G_4}{\text{pes}}{E}\cdot \vect{x_0}+\left(\vect{O_1G_4}\wedge -m_4g\vect{z_0} \right)\cdot \vect{x_0}$  
+$\vectm{O_1}{\text{pes}}{E}\cdot \vect{x_0}$ $=\vectm{G_4}{\text{pes}}{E}\cdot \vect{x_0}+\left(\vect{O_1G_4}\wedge -m_4g\vect{z_0} \right)\cdot \vect{x_0}$  
 $=\left(\left(\lambda(t)\vect{z_0}-L\cos\theta_{10}\vect{y_0}\right)\wedge -m_4g\vect{z_0} \right)\cdot \vect{x_0}$ 
 $=\left(-L\cos\theta_{10}\vect{y_0}\wedge -m_4g\vect{z_0}\right)\cdot \vect{x_0}$ $= m_4gL\cos\theta_{10}$.
 \end{itemize}
@@ -446,29 +457,30 @@ $-Lm_4\cos\theta_{10}\ddot{h}(t) =C_r +m_4gL\cos\theta_{10}$
 $ \Leftrightarrow C_r=-m_4 L \cos\theta_{10} \left(g+\ddot{h}(t)\right) $. 
 \end{itemize}
 
-En réalisant l'application numérique, on a : $C_r = - 60 \times 51,8\times 10^{-2}\times \cos 54,5 \left(9,81 +\dfrac{0,425}{0,5} \right)  $
+En réalisant l'application numérique, on a : $C_r = - 60 \times 51,8\times 10^{-2}\times \cos 54,5 \left(9,81 +\dfrac{0,425}{0,5} \right) \simeq \SI{190,5}{Nm} $.
 
 
 \end{corrige}
 
 \else
 \fi
-
-
 
 \subparagraph{} \textit{Calculer le couple $C_m$ au niveau de l’arbre moteur du genou en prenant un facteur de perte $\eta = 0,75$ (estimé à l’aide du modèle multiphysique).}
 \ifprof
 \begin{corrige}
-En régime permanent, on a $\eta=\dfrac{C_r \omega_r}{C_m \omega_m}=r\dfrac{C_r}{C_m}$ et $C_r = \dfrac{\eta}{r}C_m$=.
+En régime permanent, on a $\eta=\dfrac{C_r \omega_r}{C_m \omega_m}=r\dfrac{C_r}{C_m}$ et $C_m = \dfrac{r}{\eta}C_r=\dfrac{1}{0,75\times 120} \times 190,5 \simeq \SI{2,12}{Nm}$.
 \end{corrige}
 \else
 \fi
+
 
 
 
 \subparagraph{} \textit{Expliquer en moins de 5 lignes comment estimer un rendement à partir d'un modèle multiphysique.}
 \ifprof
 \begin{corrige}
+Si on en avait la possibilité, il faudrait mettre un capteur de puissance au niveau de la commande (mesure de la vitesse et du couple de commande) puis un capteur de puissance au niveau de la charge (mesure de vitesse et du couple en sortie au niveau du genou). Le rendement peut s'observer en régime permanent en faisant le rapport des puissances. 
+Pour observer une perte de rendement, il est nécessaire que soient modélisées les actions de frottement.
 \end{corrige}
 \else
 \fi
@@ -478,6 +490,9 @@ En régime permanent, on a $\eta=\dfrac{C_r \omega_r}{C_m \omega_m}=r\dfrac{C_r}
 Vérifier que le moteur choisi convient pour une utilisation intensive comprenant 4 cycles par minute
 de descente suivie d’une montée.
 \end{obj}
+
+\ifprof
+\else
 
 Le cycle suivant obtenu à l’aide du modèle multiphysique de représente l’évolution du couple moteur,
 et ce en tenant compte du moment d’inertie du rotor, sur un cycle de période $T=\SI{15}{s}$.
@@ -494,7 +509,7 @@ et ce en tenant compte du moment d’inertie du rotor, sur un cycle de période 
 
 
 \begin{center}
-\includegraphics[width=\linewidth]{images/fig_12}
+\includegraphics[width=.8\linewidth]{images/fig_12}
 %\textit{}
 \end{center}
 
@@ -518,6 +533,8 @@ $C_{\text{eff}}=\sqrt{\dfrac{1}{T}\int\limits_0^Tc(t)^2 \dd t}$. On a aussi
 $C_{\text{eff}}=\sqrt{\dfrac{1}{T}\sum\limits_{i=1}^n C_{\text{i,eff}}^2 T_i }$
 
 
+\fi
+
 \subparagraph{} \textit{Calculer la valeur efficace du couple moteur du genou pour ce cycle périodique de \SI{15}{s}.}
 
 \ifprof
@@ -527,6 +544,13 @@ $=\sqrt{\dfrac{1}{15}\left(0,838^2 \times 2 +0,912^2 \times 2 + 0,838^2 \times 2
 \end{corrige}
 \else
 \fi
+
+
+\subsection*{Retour sur l'objectif}
+
+\ifprof
+\else
+
 Le couple moteur varie entre \SI{-1,156}{Nm} et \SI{0,596}{Nm}.
 Les caractéristiques du moteur choisi sont :
 \begin{itemize}
@@ -537,8 +561,10 @@ Les caractéristiques du moteur choisi sont :
 
 De plus une étude cinématique précédente a montré que le moteur permettant d'actionner le moteur doit pouvoir atteindre une vitesse de \SI{2200}{tr.min^{-1}}.
 
+\fi
 
-\subparagraph{} \textit{Conclure quant au choix de ce moteur au regard de la valeur maximale de la vitesse angulaire calculée lors d'une étude précédente et du couple efficace calculé à la question précédente.}
+
+\subparagraph{} \textit{Conclure quant au choix de ce moteur au regard de la valeur maximale de la vitesse angulaire calculée lors d'une étude précédente et du couple efficace calculé à la question précédente et compléter le schéma bilan.}
 
 \ifprof
 \begin{corrige}
@@ -560,7 +586,14 @@ Su ces deux critères le moteur proposé est donc validé.
 \hline
 Éléments de corrigé :
 \begin{enumerate}
-\item ....
+\item .
+\item $\vectmc{O_1}{E}{0}\cdot \vect{x_0} = -Lm_4\cos\theta_{10}\dot{h}(t)$.
+\item $\vectmd{O_1}{E}{0}\cdot\vect{x_0}=-Lm_4\cos\theta_{10}\ddot{h}(t)$.
+\item $ C_r=-m_4 L \cos\theta_{10} \left(g+\ddot{h}(t)\right)\simeq \SI{190,5}{Nm} $. 
+\item $C_m\simeq \SI{2,12}{Nm}$.
+\item ...
+\item ...
+\item $C_{\text{eff}} \simeq \SI{0,546}{Nm}$.
 \end{enumerate} \\
 \hline
 \end{tabular}
@@ -574,10 +607,24 @@ Su ces deux critères le moteur proposé est donc validé.
 
 
 
+\ifprof
 \begin{center}
-\includegraphics[width=\linewidth]{images/fig_07}
+\includegraphics[width=\linewidth]{images/cor_02}
 %\textit{}
 \end{center}
+
+\else
+%\begin{center}
+%\includegraphics[width=\linewidth]{images/fig_07}
+%\textit{}
+%\end{center}
+
+
+\begin{center}
+\includegraphics[width=.7\linewidth]{images/fig_15}
+%\textit{}
+\end{center}
+\fi
 
 %\begin{center}
 %\includegraphics[width=.65\linewidth]{images/cor_01}
