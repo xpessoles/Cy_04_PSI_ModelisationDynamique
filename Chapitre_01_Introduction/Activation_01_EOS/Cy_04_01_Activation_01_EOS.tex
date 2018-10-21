@@ -1,0 +1,345 @@
+\documentclass[10pt,fleqn]{article} % Default font size and left-justified equations
+\usepackage[%
+    pdftitle={Modélisation dynamique},
+    pdfauthor={Xavier Pessoles}]{hyperref}
+
+    
+\input{style/new_style}
+\input{style/macros_SII}
+\usepackage{multicol}
+\usepackage{siunitx}
+%\usepackage{picins}
+\fichetrue
+%\fichefalse
+
+\proftrue
+\proffalse
+
+\tdtrue
+%\tdfalse
+
+\courstrue
+\coursfalse
+
+
+\def\classe{\textsf{PSI$\star$ -- MP}}
+\def\xxnumpartie{Cycle 04}
+\def\xxpartie{Modéliser le comportement des systèmes mécaniques dans le but d'établir une loi de comportement ou de déterminer des actions mécaniques en utilisant le PFD}
+
+\def\xxnumchapitre{Chapitre 1 \vspace{.2cm}}
+\def\xxchapitre{\hspace{.12cm} Introduction à la dynamique du solide indéformable}
+
+\def\discipline{Sciences \\Industrielles de \\ l'Ingénieur}
+\def\xxtete{Sciences Industrielles de l'Ingénieur}
+
+
+
+
+\def\xxtitreexo{Activation -- Système de dépose de composants électroniques}%Motorisation du moteur Haibike}
+\def\xxsourceexo{\hspace{.2cm} \footnotesize{Banque PT SIA -- 201}}
+
+
+\def\xxposongletx{2}
+\def\xxposonglettext{1.45}
+\def\xxposonglety{20}
+%\def\xxonglet{Part. 1 -- Ch. 3}
+\def\xxonglet{Cycle 04}
+
+\def\xxactivite{Activation}
+\def\xxauteur{\textsl{X. Pessoles}}
+
+\def\xxcompetences{%
+\textsl{%
+\textbf{Savoirs et compétences :}\\
+%Les sources sont associées par un \emph{hacheur série}. La détermination des grandeurs électriques associées à ce montage permet de conclure vis à vis du cahier des charges.
+%\noindent \textbf{Résoudre :} à partir des modèles retenus :
+%\begin{itemize}[label=\ding{112},font=\color{ocre}] 
+%\item choisir une méthode de résolution analytique, graphique, numérique;
+%\item mettre en \oe{}uvre une méthode de résolution.
+%\end{itemize}
+%\begin{itemize}[label=\ding{112},font=\color{ocre}] 
+%\item \textit{Rés -- C1.1 :} Loi entrée sortie géométrique et cinématique -- Fermeture géométrique.
+%\end{itemize}
+%
+%\noindent \textit{Mod2 -- C4.1 :} Représentation par schéma bloc.
+}}
+
+\def\xxfigures{
+\includegraphics[width=.45\linewidth]{images/fig_01}
+}%figues de la page de garde
+
+
+\def\xxpied{%
+Cycle 04 -- Modélisation mécanique -- Dynamique\\% afin de valider leurs performances.\\
+Chapitre 1 -- \xxactivite%
+}
+
+\setcounter{secnumdepth}{5}
+%---------------------------------------------------------------------------
+
+\usepackage{pgfplots}
+\begin{document}
+\def\pathfig{images}
+%\chapterimage{png/Fond_Cin}
+\input{style/new_pagegarde}
+\vspace{4.5cm}
+\pagestyle{fancy}
+\thispagestyle{plain}
+
+\def\columnseprulecolor{\color{ocre}}
+\setlength{\columnseprule}{0.4pt} 
+
+\def\pathfig{images}
+
+\ifprof
+\begin{multicols}{2}
+\else
+\begin{multicols}{2}
+\fi
+
+
+\subsection*{Mise en situation}
+
+Le système EOS permet de réaliser des radiographies 3D du corps humain tout en réduisant de 90\% la dose de rayons X par rapport à un système conventionnel. Il est constitué d'un bras permettant de supporter le système de radiographie ainsi que de 3 blocs de transmission de puissance, chacun étant constitué d'un moteur, d'un réducteur à engrenages et d'une vis à biles. 
+
+%On donne les exigences associées au système : 
+%
+\begin{center}
+\includegraphics[width=.48\linewidth]{images/fig_02}
+\includegraphics[width=.48\linewidth]{images/fig_03}
+\end{center}
+
+\begin{center}
+\includegraphics[width=.8\linewidth]{images/fig_04}
+\end{center}
+
+
+\textbf{Hypothèses :}
+\begin{itemize}
+\item le référentiel associé au repère $R_0=\quadruplet{O_0}{\overrightarrow{x_0}}{\overrightarrow{y_0}}{\overrightarrow{z_0}}$ est supposé galiléen ;
+\item les solides seront supposés indéformables ; 
+\item on notera $J_1$ le moment d'inertie du solide 1 selon l'axe $\couple{O_0}{y_0}$ : $J_1=I_{\couple{O_0}{y_0}}(S_1)$ ;
+\item on note $M_3$ et $G_3$ respectivement la masse et le centre d'inertie du solide $S_3$ ;
+\item la position de $G_3$ est définie par $\overrightarrow{O_0G_3}=x\overrightarrow{x_0}+y \overrightarrow{y_0}+z \overrightarrow{z_0}$
+\item les liaisons sont supposées parfaites (sans jeu ni frottement).
+\end{itemize}
+
+Le système est modélisé par le schéma cinématique ci-dessous :
+%\begin{center}
+%\includegraphics[width=0.6\linewidth]{images/schema_cine_depose_composant.pdf}
+%\end{center}
+
+On note : 
+\begin{itemize}
+\item $S_0$ : poutre transversale considérée comme fixe par rapport au bâti ;
+\item $S_1$ : vis à billes (hélice à droite) de pas $p=\SI{20}{mm}$;
+\item $S_2$ : écrou de la vis à billes ;
+\item $S_3$ : chariot supportant la tête de dépose (masse $M_3$).
+\end{itemize}
+
+
+On donne les caractéristiques du moteur entraînant l'axe et la vis $S_1$ :
+\begin{itemize}
+%\item couple maximal, $C_{\text{max}} = \SI{21,2}{N.m}$ ;
+%\item fréquence de rotation maximale, $N_m = \SI{6000}{tr/min}$;
+\item moment d'inertie du moteur suivant l'axe $\overrightarrow{y_0}$ : $I_m = \SI{1,6}{10^{-4} kg.m^2}$ ;
+\item moment d'inertie de la vis à billes suivant l'axe $\overrightarrow{y_0}$ : $I_v = 2,1\,  10^{-4}\text{kg m}^2$.
+\end{itemize}
+De plus $\overrightarrow{\Omega}(S_1/R_0)=\dot{\theta}(t)\cdot \overrightarrow{y_0}$
+
+
+\begin{obj}
+L'objectif de cette étude est de relier les grandeurs liées à l'actionneur du système (moteur) :
+\begin{itemize}
+\item couple transmis à $S_1$ : $\overrightarrow{C}_{\text{Moteur}\to S_1}$ ;
+\item vitesse de rotation de $S_1$ : $\overrightarrow{\Omega}(S_1/R_0)\cdot \overrightarrow{y}_0=\dot{\theta}$.
+\end{itemize} 
+à celles liée à l'effecteur (tête de dépose $S_3$) : 
+\begin{itemize}
+\item masse : $M_3$;
+\item cinématique de $S_3$ : $\vectg{G_3}{S_3}{R_0}\cdot \overrightarrow{y}_0=\ddot{y}$.
+\end{itemize}
+\end{obj}
+
+
+
+%\begin{exemple}[Machine de dépose de composants électroniques : déplacement dynamique de $S_3$]
+%\begin{minipage}{0.35\textwidth}
+
+
+\subparagraph{}
+\textit{Réaliser le graphe de structure associé au mécanisme.}
+
+\subparagraph{}
+\textit{Proposer une stratégie pour répondre à l'objectif.}
+
+\subparagraph{}
+\textit{Déterminer la relation entre l'effort de poussée dans la liaison linéaire annulaire et l'accélération du chariot.}
+\ifprof
+\begin{corrige}
+On connaît la masse $M_3$ de la tête de dépose et on cherche l'effort ($\overrightarrow{R}_{\text{poussée}\to S_3}$) de poussée que doit fournir l'actionneur pour obtenir l'accélération souhaitée.
+
+%\begin{center}
+%\includegraphics[width=1.0\linewidth]{images/schema_cine_depose_translation.pdf}
+%\end{center}
+%\end{minipage}
+
+On utilise le théorème de la résultante dynamique en projection sur $\overrightarrow{y_0}$. On obtient : $
+M_3 \vectg{G_3}{3}{R_0}\cdot \overrightarrow{y_0}=\sum \overrightarrow{R}_{\text{ext}\to S_3}\cdot \overrightarrow{y_0}$.
+ 
+%Au final $M_3\cdot \ddot{y}=R_{\text{pouss\'ee}\to S_3}$.
+Au final $M_3\cdot \ddot{y}=Y_{23}$.
+
+
+\textit{Application numérique : } détermination de $R_{\text{pouss\'ee}\to S_3}$ pour obtenir une accélération de $\SI{4}{m/s^2}$ : $R_{\text{pouss\'ee}\to S_3}=20\times 4=\SI{80}{N}
+$.
+\end{corrige}
+%\end{texteCache}
+%\end{exemple}
+\else
+\fi
+
+
+\subparagraph{}
+\textit{Déterminer la relation entre le couple moteur et le couple transmis dans la liaison hélicoïdale.}
+
+
+\ifprof
+\begin{corrige}
+%\begin{exemple}[Machine de dépose de composants électroniques : déplacement dynamique de $S_3$]
+%\begin{minipage}{0.5\textwidth}
+%\end{minipage}
+%\begin{minipage}{0.45\textwidth}
+%\begin{center}
+%\includegraphics[width=.8\linewidth]{images/schema_cine_depose_rotation.pdf}
+%\end{center}
+%\end{minipage}
+
+\textbf{Détermination des caractéristiques maximales : }
+
+
+On se place de la cas le plus limite (Couple maximal, accélération angulaire constante pour atteindre la fréquence de rotation maximale en $t_a=\SI{0,2}{s}$)
+Déterminer le couple résistant maximal que le moteur peut équilibrer dynamiquement ($C_{S_2\to S_1}$):
+
+%\begin{texteCache}
+En appliquant un théorème du moment dynamique à $S_1$ selon $\couple{O_0}{{y}_0}$ :
+$(I_m+I_v)\cdot \ddot{\theta}=C_{\text{max}}+C_{S_2\to S_1}$. 
+
+On obtient alors : 
+$C_{S_2\to S_1}=(I_m+I_v)\cdot \ddot{\theta}_{\text{max}}-C_{\text{max}}=(I_m+I_v)\cdot \frac{N_m\times 2\cdot \pi}{60\cdot t_a}-C_{\text{max}}=-\SI{20}{Nm}$.
+
+%\end{texteCache}
+%\end{exemple}
+
+
+%\begin{bilan}
+%\begin{itemize}
+%\item Les deux cas présentés ci-dessus sont traités de manière indépendante.
+%\item Le lien entre ces deux parties (actionneur et effecteur) repose sur le mécanisme de transformation de mouvement (ici vis-écrou).
+%\item Il faudra donc procéder à une démarche de résolution globale pour relier le couple moteur $\overrightarrow{C}_{\text{moteur}\to S_1}$ à l'accélération ($\vectg{G_3}{3}{R_0}$) et la masse de l'effecteur ($M_3$). Ce sera l'objet des parties suivantes.
+%\end{itemize}
+\end{corrige}
+\else
+\fi
+
+
+\subparagraph{}
+\textit{Donner la relation entre le couple transmis par la liaison hélicoïdale et l'effort axial.}
+\ifprof
+\begin{corrige}
+On a : $M_{12}=Y_{12}\dfrac{\text{pas}}{2\pi}$.
+\end{corrige}
+\else
+\fi
+\subparagraph{}
+\textit{Déterminer la relation entre l'effort axial dans la liaison hélicoïdale et l'effort de poussée dans la liaison sphère -- cylindre.}
+\ifprof
+\begin{corrige}
+On isole $S_2$, soumis aux actions mécaniques de $S_3$ et $S_1$. La masse de $S_2$ est négligée. 
+On applique le TRD suivant $\vect{y_0}$ et on a : 
+$$
+Y_{32}+Y_{12}=0 \Leftrightarrow 
+Y_{23}=Y_{12}
+$$
+\end{corrige}
+\else
+\fi
+
+
+\subparagraph{}
+\textit{Quel doit être le couple moteur pour déplacer le chariot $S_3$ ?}
+\ifprof
+\begin{corrige}
+On a : 
+\begin{itemize}
+\item $M_{12}=Y_{12}\dfrac{\text{pas}}{2\pi} \Leftrightarrow M_{21}=-Y_{12}\dfrac{\text{pas}}{2\pi}$;
+\item $Y_{23}=Y_{12}$;
+\item $(I_m+I_v)\cdot \ddot{\theta}=C_{\text{max}}+M_{21}$;
+\item $M_3\cdot \ddot{y}=Y_{23}$.
+\end{itemize}
+
+On a donc $C_{\text{max}}=(I_m+I_v)\cdot \ddot{\theta}+M_3 \ddot{y}\dfrac{\text{pas}}{2\pi}$
+\end{corrige}
+\else
+\fi
+
+Le cahier des charges impose les performances dynamiques suivantes : 
+\begin{itemize}
+\item l'accélération minimale de l'axe transversal est de \SI{21}{m.s^{-2}};
+\item la vitesse minimale pour respecter la cadence souhaitée est de \SI{7}{m.s^{-1}};
+\item la course de l'axe est de \SI{2}{m}.
+\end{itemize}
+
+La loi de commande est une loi en trapèze de vitesse. 
+\subparagraph{}
+\textit{Donner les caractéristiques dynamiques que doit respecter le moteur.}
+\ifprof
+\begin{corrige}
+Avec un pas de \SI{20}{mm}, $\dot{\theta}=\dot{y}\dfrac{2\pi}{\text{pas}}$ et $\ddot{\theta}=\ddot{y}\dfrac{2\pi}{\text{pas}}$. 
+
+AN : $\dot{\theta}=7\cdot 2\pi/20 10^3=\SI{2200}{rad.s^{-1}}=\SI{230}{tr.min^{-1}}$ et $\ddot{\theta}=21\cdot 2\pi/20 10^3 = \SI{6600}{rad.s^{-2}}$.
+\end{corrige}
+\else
+\fi
+
+\subparagraph{}
+\textit{Quel est le temps nécessaire pour parcourir la course de la machine ? Commenter.}
+\ifprof
+\begin{corrige}
+\begin{itemize}
+\item Temps d'accélération pour atteindre la vitesse maximale : $V_m = a_m T_a \Leftrightarrow T_a = \dfrac{V_m}{a_m}=\SI{0,33}{s}$. 
+%\item Distance totale : $2=2\dfrac{1}{2}T_aV_m + T_mV_m \Longleftrightarrow T_m = \dfrac{2-T_aV_m}{V_m}=$.
+\item Distance parcourue : $\dfrac{1}{2}T_aV_m = \SI{1,17}{m}$. 
+\end{itemize}
+En conséquence, la course de la machine ne permet pas d'atteindre la vitesse maximale. 
+
+Temps pour parcourir $\SI{1}{m}$ : $\dfrac{1}{2}a_mT_a^2 =1 \Rightarrow T_a = \dfrac{2}{21}=\SI{0,309}{s}$. Temps pour parcourir la course : \SI{0,62}{m}.
+\end{corrige}
+\else
+\fi
+
+%\subparagraph{}
+%\textit{Quelle est la distance minimale à parcourir pour atteindre la vitesse maximale ?}
+%\ifprof
+%\begin{corrige}
+%\end{corrige}
+%\else
+%\fi
+
+\subparagraph{}
+\textit{Quel est le couple que doit fournir le moteur pour déplacer le chariot dans le << pire des cas >> ?}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+
+
+\ifprof
+\end{multicols}
+\else
+\end{multicols}
+\fi
+
+\end{document}
