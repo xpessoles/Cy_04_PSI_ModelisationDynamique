@@ -11,7 +11,7 @@
 %\fichefalse
 
 \proftrue
-\proffalse
+%\proffalse
 
 \tdtrue
 %\tdfalse
@@ -95,7 +95,7 @@ la synthèse de la commande.
 \end{obj}
 En vue d’élaborer une commande automatisée du déchargement des conteneurs, une bonne compréhension de
 la dynamique du système est nécessaire. Cette partie vise à établir les équations du mouvement du conteneur.
-Seul le vérin 3 est libéré. La charge peut alors balancer selon le modèle figure ******9. Dans cette étude, le mouvement
+Seul le vérin 3 est libéré. La charge peut alors balancer selon le modèle présenté ci-après. Dans cette étude, le mouvement
 de levage est supposé arrêté et la vitesse de vent nulle. Les douze câbles supportant le conteneur sont assimilés
 à un seul câble indéformable, en liaison pivot à ses extrémités. Les liaisons entre les solides 0, 1, 2 et 3 sont
 supposées parfaites.
@@ -128,16 +128,17 @@ $\inertie{3}{G_3}=\matinertie{A_3}{B_3}{C_3}{0}{0}{0}{\left(\vect{x_0},\vect{y_3
 
 
 \begin{center}
-\includegraphics[width=\linewidth]{images/fig_01}
+\includegraphics[width=.8\linewidth]{images/fig_01}
 \end{center}
 
 
 \subparagraph{}
-\textit{Déterminer le nombre de degrés de liberté et le nombre d’actionneurs du modèle proposé figure 9****. En
+\textit{Après avoir réalisé le graphe de structure, déterminer le nombre de degrés de liberté et le nombre d’actionneurs du modèle proposé figure précédente. En
 déduire le nombre de degrés de liberté non motorisés. Expliquer pourquoi il est difficile de poser le conteneur
 sur un camion avec précision ?}
 \ifprof
 \begin{corrige}
+
 \end{corrige}
 \else
 \fi
@@ -154,7 +155,8 @@ sur un camion avec précision ?}
 
 \subparagraph{}
 \textit{En précisant l’isolement et le bilan des actions mécaniques extérieures, déterminer l’équation différentielle
-de résultante reliant les paramètres $\theta(t)$, $\beta(t)$ et $y_{ch}(t)$ et sans inconnue de liaison.}
+de résultante reliant les paramètres $\theta(t)$, $\beta(t)$%$\beta(t)$
+ et $y_{ch}(t)$ et sans inconnue de liaison.}
 \ifprof
 \begin{corrige}
 \end{corrige}
@@ -164,7 +166,7 @@ de résultante reliant les paramètres $\theta(t)$, $\beta(t)$ et $y_{ch}(t)$ e
 
 \subparagraph{}
 \textit{En précisant l’isolement et le bilan des actions mécaniques extérieures, déterminer les équations différentielles
-reliant les paramètres $\theta(t)$, $\beta(t)$ et $y_{ch}(t)$ et sans inconnue de liaison. La méthode sera clairement séparée des calculs.}
+reliant les paramètres $\theta(t)$, $\beta(t)$  et $y_{ch}(t)$ et sans inconnue de liaison. La méthode sera clairement séparée des calculs.}
 \ifprof
 \begin{corrige}
 \end{corrige}
@@ -181,8 +183,19 @@ reliant les paramètres $\theta(t)$, $\beta(t)$ et $y_{ch}(t)$ et sans inconnue
 \fi
 
 
-Les courbes temporelles figure 10**** ont été obtenues par simulation, à partir des équations précédentes, pour un
-échelon en $y_{ch}(t)$ de \SI{10}{m}$. 
+Les courbes temporelles ont été obtenues par simulation, à partir des équations précédentes, pour un
+échelon en $y_{ch}(t)$ de $\SI{10}{m}$. 
+
+
+\begin{center}
+\includegraphics[width=.8\linewidth]{images/fig_02}
+\end{center}
+
+\begin{center}
+\includegraphics[width=.8\linewidth]{images/fig_03}
+\end{center}
+
+
 
 
 \subparagraph{}
