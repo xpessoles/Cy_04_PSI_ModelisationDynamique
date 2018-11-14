@@ -54,11 +54,7 @@
 }}
 
 \def\xxfigures{
-\includegraphics[width=.6\linewidth]{images/capsuleuse}
-
-%\textit{Centrifugeuse humaine développée par le CNRS / MEDES } 
-
-}%figues de la page de garde
+\includegraphics[width=.6\linewidth]{images/fig_01}}%figues de la page de garde
 
 \def\xxpied{%
 Révision cinématique -- Modélisation cinématique\\
@@ -80,6 +76,12 @@ Fiche 1 -- \xxactivite%
 \def\columnseprulecolor{\color{ocre}}
 \setlength{\columnseprule}{0.4pt} 
 
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/fig_02}
+%\textit{}
+\end{center}
+
 \ifprof
 \else
 \begin{multicols}{2}
@@ -98,7 +100,7 @@ Pour cette étude on considère que le véhicule est constitué d’un châssis 
 
 On définit le repère $\rep{}\repere{C}{x}{y}{z}$ attaché au châssis où le point $C$, origine du repère, est tel que 
 $\vect{A_4 C}= d\vect{x}$. Le véhicule est en phase de virage et on considère alors qu’il est en rotation par rapport au
-repère $\rep{0}\repere{O}{x_0}{y_0}{z_0}$ autour du point $I_{S/R0} = I$, centre instantanée de rotation du mouvement. On pose $\beta=\angl{x0}{y0}$  angle de rotation du châssis par rapport à $\rep{0}$. 
+repère $\rep{0}\repere{O}{x_0}{y_0}{z_0}$ autour du point $I_{S/R0} = I$, centre instantanée de rotation du mouvement. On pose $\beta=\angl{x_0}{y_0}$  angle de rotation du châssis par rapport à $\rep{0}$. 
 
 On définit le repère $\rep{i}\repere{A_i}{u_i}{p_i}{q_i}$ attaché à chaque roue $(S_i)$ . Ces 4 roues de rayon $R$ sont en
 liaison pivot avec le châssis $(S)$ suivant les axes $\axe{A_i}{u_i}$ avec 
@@ -136,37 +138,40 @@ On considère que le contact sol/roue et assimilable à un contact ponctuel en $
 \begin{corrige}
 \end{corrige}\else\fi
 \subparagraph{}
-\textit{}
+\textit{On pose $\vect{IA_1}=a\vect{u_1}+b\vect{v_1}+c\vect{z}$, montrer que l'on a nécessairement $a=-\dfrac{R\dot{\theta}_1}{\dot{\beta}}$ et $b = 0$ pour que la relation obtenue question précédente soit respectée. }
 \ifprof%
 \begin{corrige}
 \end{corrige}\else\fi
 \subparagraph{}
-\textit{}
+\textit{ Montrer que l'axe $(D_1)$ de la roue $(S_1)$ passe par $I$,  puis en déduire que l'axe $(D_i )$ de la roue $(S_i )$ passe par $I$.  On pose par la suite $\vect{IC}=\rho \vect{x}$ et on note $\vectv{C}{S}{R} =V\vect{y}$ ($\rho$ est le rayon du virage et $V$ la vitesse du véhicule).}
 \ifprof%
 \begin{corrige}
 \end{corrige}\else\fi
 \subparagraph{}
-\textit{}
+\textit{À partir de $\torseurcin{V}{S}{\rep{0}}$ exprimé en $I$, quelle relation simple existe-t-il entre $V$ et $\rho$ ?}
 \ifprof%
 \begin{corrige}
 \end{corrige}\else\fi
 \subparagraph{}
-\textit{}
+\textit{En utilisant les résultats de la question précédente, déterminer les vitesses de rotation $\dot{\theta}_3$ et $\dot{\theta}_4$ des deux roues arrières $(S_3)$ et $(S_4)$ en fonction de $\rho$, $R$, $d$ et $V$. Que constate-t-on ? }
 \ifprof%
 \begin{corrige}
 \end{corrige}\else\fi
 \subparagraph{}
-\textit{}
+\textit{En déduire une condition technologique à assurer sur l'essieu arrière pour que les conditions de roulement sans glissement soient respectées en $I_3$ et $I_4$. }
+\ifprof%
+\begin{corrige}
+\end{corrige}\else\fi
+
+On considère que le véhicule roule à \SI{90}{km}{h}, les roues ont pour diamètre \SI{80}{cm} et le virage décrit une courbe telle que la vitesse angulaire du véhicule  $\dot{\beta}=\SI{0,1}{rad/s}$. On donne $d=\SI{1}{m}$. 
+
+\subparagraph{}
+\textit{Déterminer graphiquement les vitesses des roues $S_1$, $S_2$, $S_3$, $S_4$ en $I_1$, $I_2$, $I_3$, $I_4$ . Utiliser une échelle judicieuse pour les vitesses et  justifier les constructions.}
 \ifprof%
 \begin{corrige}
 \end{corrige}\else\fi
 \subparagraph{}
-\textit{}
-\ifprof%
-\begin{corrige}
-\end{corrige}\else\fi
-\subparagraph{}
-\textit{}
+\textit{Que constate-t-on sur les roues avants et en déduire une condition technologique à assurer sur l'essieu avant pour que les conditions de roulement sans glissement soient respectées en $I_1$ et $I_2$ . }
 \ifprof%
 \begin{corrige}
 \end{corrige}\else\fi
