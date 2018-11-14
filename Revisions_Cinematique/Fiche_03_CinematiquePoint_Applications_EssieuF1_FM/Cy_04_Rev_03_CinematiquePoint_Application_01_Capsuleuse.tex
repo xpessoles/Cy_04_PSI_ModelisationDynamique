@@ -1,0 +1,201 @@
+\documentclass[10pt,fleqn]{article} % Default font size and left-justified equations
+\usepackage[%
+    pdftitle={Modélisation cinématique : Chaîne ouverte},
+    pdfauthor={Xavier Pessoles}]{hyperref}
+
+\input{style/new_style}
+\input{style/macros_SII}
+\usepackage{multicol}
+\usepackage{siunitx}
+%\usepackage{picins}
+\fichetrue
+%\fichefalse
+
+\proftrue
+\proffalse
+
+\tdtrue
+%\tdfalse
+
+\courstrue
+\coursfalse
+
+% -------------------------------------
+% Déclaration des titres
+% -------------------------------------
+
+\def\discipline{Sciences \\Industrielles de \\ l'Ingénieur}
+\def\xxtete{Sciences Industrielles de l'Ingénieur}
+
+
+\def\classe{\textsf{PSI$\star$ -- MP}}
+\def\xxnumpartie{Rév -- Cin}
+\def\xxpartie{Modéliser le comportement cinématique des systèmes mécaniques}
+
+\def\xxnumchapitre{Révision 1 \vspace{.2cm}}
+\def\xxchapitre{\hspace{.12cm} Modélisation cinématique}
+
+\def\xxposongletx{2}
+\def\xxposonglettext{1.45}
+\def\xxposonglety{19}%16
+
+\def\xxonglet{\textsf{Rév -- Cin}}
+
+\def\xxactivite{Application 02}
+\def\xxauteur{\textsl{Florestan Mathurin}}
+
+
+\def\xxtitreexo{Étude des performances cinématiques en virage d’une Formule 1 }
+\def\xxsourceexo{\hspace{.2cm} \footnotesize{Xavier Pessoles}}
+
+\def\xxcompetences{%
+\textsl{%
+\textbf{Savoirs et compétences :}\\
+}}
+
+\def\xxfigures{
+\includegraphics[width=.6\linewidth]{images/capsuleuse}
+
+%\textit{Centrifugeuse humaine développée par le CNRS / MEDES } 
+
+}%figues de la page de garde
+
+\def\xxpied{%
+Révision cinématique -- Modélisation cinématique\\
+Fiche 1 -- \xxactivite%
+}
+
+\setcounter{secnumdepth}{5}
+%---------------------------------------------------------------------------
+
+
+\begin{document}
+%\chapterimage{images/Fond_Cin}
+\input{style/new_pagegarde}
+\vspace{4.4cm}
+\pagestyle{fancy}
+\thispagestyle{plain}
+
+
+\def\columnseprulecolor{\color{ocre}}
+\setlength{\columnseprule}{0.4pt} 
+
+\ifprof
+\else
+\begin{multicols}{2}
+\fi
+
+
+\subsection*{Mise en situation}
+Une Formule 1 doit assurer un certain nombre d’exigences techniques afin d’assurer les meilleures performances en course tout en garantissant la sécurité du pilote. Une de ces exigences est que « le système doit tenir la trajectoire en phase de virage ». Pour y parvenir, le véhicule dispose d'une cinématique particulière permettant aux roues de tourner sur le sol en limitant le risque de glissement. On s'intéresse aux conséquences pratiques nécessaire pour assurer la condition de roulement sans glissement des roues sur le sol. On supposera donc que les 4 roues roulent sans glisser dans le plan
+$\plan{O}{x_0}{y_0}$. 
+
+
+Pour cette étude on considère que le véhicule est constitué d’un châssis \textbf{$(S)$} et de 4 roues \textbf{$(S_i)$}
+ avec $i=1,2,3,4$.  Le châssis est modélisé par un rectangle $A_1A_2A_3A_4$ tel que 
+ $\vect{A_4 A_3}=\vect{A_1 A_2}=2d\vect{x}$ et $\vect{A_4 A_1}=\vect{A_3 A_2}=L\vect{y}$  où $L$ correspond à l’empattement du véhicule et $2d$ à la voie. 
+
+
+On définit le repère $\rep{}\repere{C}{x}{y}{z}$ attaché au châssis où le point $C$, origine du repère, est tel que 
+$\vect{A_4 C}= d\vect{x}$. Le véhicule est en phase de virage et on considère alors qu’il est en rotation par rapport au
+repère $\rep{0}\repere{O}{x_0}{y_0}{z_0}$ autour du point $I_{S/R0} = I$, centre instantanée de rotation du mouvement. On pose $\beta=\angl{x0}{y0}$  angle de rotation du châssis par rapport à $\rep{0}$. 
+
+On définit le repère $\rep{i}\repere{A_i}{u_i}{p_i}{q_i}$ attaché à chaque roue $(S_i)$ . Ces 4 roues de rayon $R$ sont en
+liaison pivot avec le châssis $(S)$ suivant les axes $\axe{A_i}{u_i}$ avec 
+$i=1,2,3,4$. On pose $\theta_i=\angl{z}{q_i}$ angle de rotation de la roue $i$ par rapport au châssis. 
+Afin d’assurer la direction du véhicule, les 2 roues pivotent d’un angle $\psi_1$ suivant l’axe $\axe{A_i}{z}$ pour la roue 1 et d’un angle $\psi_2$ suivant l’axe $\axe{A_2}{z}$) pour la roue 2 avec $\psi_1=\angl{x}{u_1}=\angl{y}{v_1}$ et $\psi_2=\angl{x}{u_2}=\angl{y}{v_2}$. 
+On considère que le contact sol/roue et assimilable à un contact ponctuel en $I$ de normale $\axe{I}{z}$ tel que $\vect{I_i A_i}=R\vect{z}$ .  
+
+
+
+\subparagraph{}
+\textit{Établir les figures géométrales utiles.}
+\ifprof%
+\begin{corrige}
+\end{corrige}\else\fi
+
+\subparagraph{}
+\textit{Écrire la condition de roulement sans glissement de la roue $(S_1)$ par rapport au sol $\rep{0}$. En déduire une relation vectorielle simple entre $\vectv{I_1}{S_1}{S}$ et $\vectv{I_1}{S_1}{\rep{0}}$.}
+\ifprof%
+\begin{corrige}
+\end{corrige}\else\fi
+
+\subparagraph{}
+\textit{Donner la forme simple du torseur cinématique $\torseurcin{V}{S}{\rep{0}}$ écrit en $I$. En déduire alors $\vectv{I_1}{S}{\rep{0}}$ en fonction de $\vecto{S}{\rep{0}}$ et $\vect{II_1}$ (on n'effectuera pas les produits vectoriels).}
+\ifprof%
+\begin{corrige}
+\end{corrige}\else\fi
+\subparagraph{}
+\textit{Donner la forme simple du torseur cinématique $\torseurcin{V}{S_1}{S}$ écrit en $A_1$. En déduire alors $\vectv{I_1}{S_1}{S}$ en fonction de $\vecto{S_1}{S}$ et $\vect{A_1 I_1}$ (on n'effectuera pas les produits vectoriels).}
+\ifprof%
+\begin{corrige}
+\end{corrige}\else\fi
+\subparagraph{}
+\textit{Déduire des relations précédentes que $\vecto{S}{\rep{0}}\wedge \vect{IA_1} + \vecto{S_1}{\rep{0}}\wedge \vect{A_1I_1}=\vect{0}$.}
+\ifprof%
+\begin{corrige}
+\end{corrige}\else\fi
+\subparagraph{}
+\textit{}
+\ifprof%
+\begin{corrige}
+\end{corrige}\else\fi
+\subparagraph{}
+\textit{}
+\ifprof%
+\begin{corrige}
+\end{corrige}\else\fi
+\subparagraph{}
+\textit{}
+\ifprof%
+\begin{corrige}
+\end{corrige}\else\fi
+\subparagraph{}
+\textit{}
+\ifprof%
+\begin{corrige}
+\end{corrige}\else\fi
+\subparagraph{}
+\textit{}
+\ifprof%
+\begin{corrige}
+\end{corrige}\else\fi
+\subparagraph{}
+\textit{}
+\ifprof%
+\begin{corrige}
+\end{corrige}\else\fi
+\subparagraph{}
+\textit{}
+\ifprof%
+\begin{corrige}
+\end{corrige}\else\fi
+
+
+
+
+
+\ifprof
+\else
+\end{multicols}
+\fi
+
+%\begin{center}
+%\includegraphics[width=\linewidth]{images/fig_04}
+%%\textit{}
+%\end{center}
+
+\end{document}
+
+\subparagraph{}\textit{}
+
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/fig_06}
+%\textit{}
+\end{center}
+\begin{center}
+\includegraphics[width=\linewidth]{images/img_04}
+%\textit{}
+\end{center}
+
