@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6400) (preloaded format=pdflatex 2017.9.4)  13 JUN 2018 17:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6400) (preloaded format=pdflatex 2017.9.4)  19 NOV 2018 11:21
 entering extended mode
 **./Cy_04_Ch_02_GeometrieMasses.tex
 (Cy_04_Ch_02_GeometrieMasses.tex
@@ -2897,23 +2897,24 @@ File: images/fig_04.png Graphic file (type png)
 <use images/fig_04.png>
 Package pdftex.def Info: images/fig_04.png  used on input line 128. on input li
 ne 128.
-Package pdftex.def Info: Requested size: 338.58632pt x 342.2063pt on input line
- 128.
+Package pdftex.def Info: Requested size: 266.03474pt x 268.87793pt on input lin
+e 128.
 LaTeX Font Info:    Font shape `T1/mdput/m/n' will be
-(Font)              scaled to size 7.52002pt on input line 129.
+(Font)              scaled to size 7.52002pt on input line 134.
 LaTeX Font Info:    Font shape `T1/mdput/m/sl' will be
-(Font)              scaled to size 7.52002pt on input line 129.
+(Font)              scaled to size 7.52002pt on input line 134.
 LaTeX Font Info:    Font shape `T1/mdput/b/n' will be
-(Font)              scaled to size 7.52002pt on input line 129.
+(Font)              scaled to size 7.52002pt on input line 134.
 [2
 design size mismatch in local font md-utro8t in virtual font mdputro8t.vf ignor
-ed.]
+ed. <./images/fig_04.png>]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 134.
 LaTeX Font Info:    Try loading font information for TS1+mdput on input line 13
 7.
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\mathdesign\mdput\ts1mdput.fd"
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\mathdesign\mdput\ts1mdput.fd"
 File: ts1mdput.fd 2013/08/29 Fontinst v1.933 font definitions for TS1/mdput.
 )
 LaTeX Font Info:    Font shape `TS1/mdput/m/n' will be
@@ -2933,27 +2934,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 164--165
 
  []
 
-<png/logo_lycee.png, id=74, 329.23pt x 265.99374pt>
-File: png/logo_lycee.png Graphic file (type png)
-<use png/logo_lycee.png>
-Package pdftex.def Info: png/logo_lycee.png  used on input line 174. on input l
-ine 174.
-Package pdftex.def Info: Requested size: 56.9055pt x 45.97325pt on input line 1
-74.
-LaTeX Font Info:    Font shape `T1/mdput/m/it' will be
-(Font)              scaled to size 7.52002pt on input line 174.
-LaTeX Font Info:    Font shape `T1/pag/m/it' in size <8> not available
-(Font)              Font shape `T1/pag/m/sl' tried instead on input line 174.
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 45.97325pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-LaTeX Font Info:    Font shape `T1/mdput/b/n' will be
-(Font)              scaled to size 11.28003pt on input line 174.
-[3 <./png/logo_lycee.png> <./images/fig_04.png>]
-Package mdframed Info: Not enough space on this page on input line 174.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 176.
@@ -2969,7 +2949,7 @@ Overfull \hbox (7.8661pt too wide) detected at line 184
 0 :
  []
 
-<images/fig_03.png, id=83, 1271.75125pt x 1069.9975pt>
+<images/fig_03.png, id=75, 1271.75125pt x 1069.9975pt>
 File: images/fig_03.png Graphic file (type png)
 <use images/fig_03.png>
 Package pdftex.def Info: images/fig_03.png  used on input line 188. on input li
@@ -3027,112 +3007,129 @@ LaTeX Font Info:    Font shape `OMX/mdput/b/n' will be
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 199.
-
-LaTeX Warning: Citation '2' on page 4 undefined on input line 212.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\cite' on input line 212.
-
-<images/fig_05.png, id=84, 644.4075pt x 577.15625pt>
-File: images/fig_05.png Graphic file (type png)
-<use images/fig_05.png>
-Package pdftex.def Info: images/fig_05.png  used on input line 215. on input li
-ne 215.
-Package pdftex.def Info: Requested size: 338.58632pt x 303.25815pt on input lin
-e 215.
+<png/logo_lycee.png, id=76, 329.23pt x 265.99374pt>
 File: png/logo_lycee.png Graphic file (type png)
 <use png/logo_lycee.png>
-Package pdftex.def Info: png/logo_lycee.png  used on input line 216. on input l
-ine 216.
+Package pdftex.def Info: png/logo_lycee.png  used on input line 210. on input l
+ine 210.
 Package pdftex.def Info: Requested size: 56.9055pt x 45.97325pt on input line 2
-16.
+10.
+LaTeX Font Info:    Font shape `T1/mdput/m/it' will be
+(Font)              scaled to size 7.52002pt on input line 210.
+LaTeX Font Info:    Font shape `T1/pag/m/it' in size <8> not available
+(Font)              Font shape `T1/pag/m/sl' tried instead on input line 210.
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 45.97325pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[4 <./images/fig_03.png>]
-<images/mat_01.png, id=94, 777.90625pt x 245.91875pt>
+LaTeX Font Info:    Font shape `T1/mdput/b/n' will be
+(Font)              scaled to size 11.28003pt on input line 210.
+[3 <./png/logo_lycee.png> <./images/fig_03.png>]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 214.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 220.
+LaTeX Font Info:    Font shape `T1/pag/b/n' in size <5> not available
+(Font)              Font shape `T1/pag/db/n' tried instead on input line 221.
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 230.
+
+
+LaTeX Warning: Citation '2' on page 4 undefined on input line 236.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\cite' on input line 236.
+
+<images/fig_05.png, id=89, 644.4075pt x 577.15625pt>
+File: images/fig_05.png Graphic file (type png)
+<use images/fig_05.png>
+Package pdftex.def Info: images/fig_05.png  used on input line 239. on input li
+ne 239.
+Package pdftex.def Info: Requested size: 338.58632pt x 303.25815pt on input lin
+e 239.
+<images/mat_01.png, id=90, 777.90625pt x 245.91875pt>
 File: images/mat_01.png Graphic file (type png)
 <use images/mat_01.png>
-Package pdftex.def Info: images/mat_01.png  used on input line 223. on input li
-ne 223.
+Package pdftex.def Info: images/mat_01.png  used on input line 247. on input li
+ne 247.
 Package pdftex.def Info: Requested size: 199.16928pt x 62.96173pt on input line
- 223.
-<images/mat_02.png, id=95, 771.88374pt x 233.87375pt>
+ 247.
+<images/mat_02.png, id=91, 771.88374pt x 233.87375pt>
 File: images/mat_02.png Graphic file (type png)
 <use images/mat_02.png>
-Package pdftex.def Info: images/mat_02.png  used on input line 224. on input li
-ne 224.
+Package pdftex.def Info: images/mat_02.png  used on input line 248. on input li
+ne 248.
 Package pdftex.def Info: Requested size: 199.16928pt x 60.34538pt on input line
- 224.
-<images/mat_03.png, id=96, 638.385pt x 264.99pt>
+ 248.
+<images/mat_03.png, id=92, 638.385pt x 264.99pt>
 File: images/mat_03.png Graphic file (type png)
 <use images/mat_03.png>
-Package pdftex.def Info: images/mat_03.png  used on input line 225. on input li
-ne 225.
+Package pdftex.def Info: images/mat_03.png  used on input line 249. on input li
+ne 249.
 Package pdftex.def Info: Requested size: 199.16928pt x 82.67169pt on input line
- 225.
-<images/mat_04.png, id=97, 646.415pt x 275.0275pt>
+ 249.
+<images/mat_04.png, id=93, 646.415pt x 275.0275pt>
 File: images/mat_04.png Graphic file (type png)
 <use images/mat_04.png>
-Package pdftex.def Info: images/mat_04.png  used on input line 226. on input li
-ne 226.
+Package pdftex.def Info: images/mat_04.png  used on input line 250. on input li
+ne 250.
 Package pdftex.def Info: Requested size: 199.16928pt x 84.73726pt on input line
- 226.
-<images/mat_05.png, id=98, 720.6925pt x 259.97125pt>
+ 250.
+<images/mat_05.png, id=94, 720.6925pt x 259.97125pt>
 File: images/mat_05.png Graphic file (type png)
 <use images/mat_05.png>
-Package pdftex.def Info: images/mat_05.png  used on input line 227. on input li
-ne 227.
+Package pdftex.def Info: images/mat_05.png  used on input line 251. on input li
+ne 251.
 Package pdftex.def Info: Requested size: 199.16928pt x 71.84337pt on input line
- 227.
-<images/mat_06.png, id=99, 720.6925pt x 259.97125pt>
+ 251.
+<images/mat_06.png, id=95, 720.6925pt x 259.97125pt>
 File: images/mat_06.png Graphic file (type png)
 <use images/mat_06.png>
-Package pdftex.def Info: images/mat_06.png  used on input line 228. on input li
-ne 228.
+Package pdftex.def Info: images/mat_06.png  used on input line 252. on input li
+ne 252.
 Package pdftex.def Info: Requested size: 199.16928pt x 71.84337pt on input line
- 228.
-<images/mat_07.png, id=100, 737.75626pt x 296.10625pt>
+ 252.
+<images/mat_07.png, id=96, 737.75626pt x 296.10625pt>
 File: images/mat_07.png Graphic file (type png)
 <use images/mat_07.png>
-Package pdftex.def Info: images/mat_07.png  used on input line 229. on input li
-ne 229.
+Package pdftex.def Info: images/mat_07.png  used on input line 253. on input li
+ne 253.
 Package pdftex.def Info: Requested size: 199.16928pt x 79.93619pt on input line
- 229.
-<images/mat_08.png, id=101, 747.79375pt x 274.02374pt>
+ 253.
+<images/mat_08.png, id=97, 747.79375pt x 274.02374pt>
 File: images/mat_08.png Graphic file (type png)
 <use images/mat_08.png>
-Package pdftex.def Info: images/mat_08.png  used on input line 230. on input li
-ne 230.
+Package pdftex.def Info: images/mat_08.png  used on input line 254. on input li
+ne 254.
 Package pdftex.def Info: Requested size: 199.16928pt x 72.98389pt on input line
- 230.
+ 254.
+File: png/logo_lycee.png Graphic file (type png)
+<use png/logo_lycee.png>
+Package pdftex.def Info: png/logo_lycee.png  used on input line 256. on input l
+ine 256.
+Package pdftex.def Info: Requested size: 56.9055pt x 45.97325pt on input line 2
+56.
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 45.97325pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[4 <./images/fig_05.png>]
 LaTeX Font Info:    Font shape `T1/cmtt/m/it' will be
-(Font)              scaled to size 10.70007pt on input line 236.
+(Font)              scaled to size 10.70007pt on input line 260.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-File: png/logo_lycee.png Graphic file (type png)
-<use png/logo_lycee.png>
-Package pdftex.def Info: png/logo_lycee.png  used on input line 237. on input l
-ine 237.
-Package pdftex.def Info: Requested size: 56.9055pt x 45.97325pt on input line 2
-37.
 
-
-Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 45.97325pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[5 <./images/fig_05.png> <./images/mat_01.png> <./images/mat_02.png> <./images/
-mat_03.png> <./images/mat_04.png> <./images/mat_05.png> <./images/mat_06.png> <
-./images/mat_07.png> <./images/mat_08.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 237--238
+Underfull \hbox (badness 10000) in paragraph at lines 261--262
 []\T1/mdput/m/n/10 (+20) Robert Pa-pa-ni-cola, \T1/mdput/m/it/10 (+20) Opé-ra-t
 eurs d'in-etie, Ly-cée Char-le-magne, Pa-ris, []$\T1/cmtt/m/it/10 http : / / sc
 iences-[]indus-[]cpge .
@@ -3143,31 +3140,30 @@ iences-[]indus-[]cpge .
 
 File: png/logo_lycee.png Graphic file (type png)
 <use png/logo_lycee.png>
-Package pdftex.def Info: png/logo_lycee.png  used on input line 243. on input l
-ine 243.
+Package pdftex.def Info: png/logo_lycee.png  used on input line 267. on input l
+ine 267.
 Package pdftex.def Info: Requested size: 56.9055pt x 45.97325pt on input line 2
-43.
+67.
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 45.97325pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[6]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 243.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 243.
+[5 <./images/mat_01.png> <./images/mat_02.png> <./images/mat_03.png> <./images/
+mat_04.png> <./images/mat_05.png> <./images/mat_06.png> <./images/mat_07.png> <
+./images/mat_08.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 267.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 267.
  (Cy_04_Ch_02_GeometrieMasses.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 243.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 243.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 267.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 267.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 
 LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 
 Package biblatex Warning: Please (re)run Biber on the file:
@@ -3178,28 +3174,26 @@ Package logreq Info: Writing requests to 'Cy_04_Ch_02_GeometrieMasses.run.xml'.
 
 \openout1 = `Cy_04_Ch_02_GeometrieMasses.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 243.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 267.
  ) 
 Here is how much of TeX's memory you used:
- 54490 strings out of 493352
- 1140984 string characters out of 3137163
- 1831761 words of memory out of 3000000
- 56957 multiletter control sequences out of 15000+200000
- 797197 words of font info for 312 fonts, out of 3000000 for 9000
+ 54521 strings out of 493352
+ 1141435 string characters out of 3137163
+ 1847132 words of memory out of 3000000
+ 56980 multiletter control sequences out of 15000+200000
+ 799795 words of font info for 318 fonts, out of 3000000 for 9000
  1127 hyphenation exceptions out of 8191
  57i,22n,98p,10474b,3031s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{subsection.1.4} has been referenced but does not 
-exist, replaced by a fixed one
-
- <C:\Users\pt_ptsi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi642\
-ectt1000.pk>{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/ly1/texnansi.enc
-}{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Fil
-es (x86)/MiKTeX 2.9/fonts/type1/mathdesign/mdput/md-utr7m.pfb><C:/Program Files
- (x86)/MiKTeX 2.9/fonts/type1/mathdesign/mdput/md-utr7t.pfb><C:/Program Files (
-x86)/MiKTeX 2.9/fonts/type1/mathdesign/mdput/md-utr7v.pfb><C:/Program Files (x8
-6)/MiKTeX 2.9/fonts/type1/mathdesign/mdput/md-utr7y.pfb><C:/Program Files (x86)
-/MiKTeX 2.9/fonts/type1/mathdesign/mdput/md-utr8t.pfb><C:/Program Files (x86)/M
-iKTeX 2.9/fonts/type1/mathdesign/mdput/md-utri7m.pfb><C:/Program Files (x86)/Mi
+ <C:\Users\pt_ptsi\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi64
+2\ectt1000.pk>{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/ly1/texnansi.e
+nc}{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program F
+iles (x86)/MiKTeX 2.9/fonts/type1/mathdesign/mdput/md-utr7m.pfb><C:/Program Fil
+es (x86)/MiKTeX 2.9/fonts/type1/mathdesign/mdput/md-utr7t.pfb><C:/Program Files
+ (x86)/MiKTeX 2.9/fonts/type1/mathdesign/mdput/md-utr7v.pfb><C:/Program Files (
+x86)/MiKTeX 2.9/fonts/type1/mathdesign/mdput/md-utr7y.pfb><C:/Program Files (x8
+6)/MiKTeX 2.9/fonts/type1/mathdesign/mdput/md-utr8t.pfb><C:/Program Files (x86)
+/MiKTeX 2.9/fonts/type1/mathdesign/mdput/md-utri7m.pfb><C:/Program Files (x86)/
+MiKTeX 2.9/fonts/type1/mathdesign/mdpgd/md-utrma.pfb><C:/Program Files (x86)/Mi
 KTeX 2.9/fonts/type1/adobe/utopia/putb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9
 /fonts/type1/adobe/utopia/putb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/t
 ype1/adobe/utopia/putr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/ado
@@ -3208,9 +3202,9 @@ a/putri8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/avantgar/uagd8
 a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/avantgar/uagk8a.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/avantgar/uagko8a.pfb><C:/Progr
 am Files (x86)/MiKTeX 2.9/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on Cy_04_Ch_02_GeometrieMasses.pdf (6 pages, 2164311 bytes).
+Output written on Cy_04_Ch_02_GeometrieMasses.pdf (5 pages, 2168609 bytes).
 PDF statistics:
- 237 PDF objects out of 1000 (max. 8388607)
- 31 named destinations out of 1000 (max. 500000)
- 97445 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 243 PDF objects out of 1000 (max. 8388607)
+ 33 named destinations out of 1000 (max. 500000)
+ 97965 words of extra memory for PDF output out of 106986 (max. 10000000)
 

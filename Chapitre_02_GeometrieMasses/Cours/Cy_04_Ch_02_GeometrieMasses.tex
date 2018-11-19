@@ -110,11 +110,11 @@ $$
 
 Pour simplifier les calculs, on peut noter que le centre d'inertie appartient au(x) éventuel(s) plan(s) de symétrie du solide.
 \end{methode}
-
+\vspace{-.5cm}
 \begin{rem}
 Centre d'inertie et centre de gravité sont confondus lorsque le champ de pesanteur est considéré comme uniforme en tout point de l'espace. 
 \end{rem}
-
+\vspace{-.5cm}
 \subsection{Centre d'inertie d'un ensemble de solides encastrés entre eux}
 \begin{methode}
 Soit un solide composé de $n$ solides élémentaires dont la position des centres d'inertie $G_i$ et les masses $M_i$ sont connues. On note $M=\sum\limits_{i=1}^{n}M_i$.  La position du centre d'inertie $G$ de l'ensemble $S$ est donné par :
@@ -125,7 +125,7 @@ $$\vect{OG}=\dfrac{1}{M}\sum\limits_{i=1}^{n}M_i \vect{OG_i} .$$
 
 \subsection{Méthode pour déterminer le centre d'inertie d'un solide \cite{2}}
 \begin{center}
-\includegraphics[width=.7\linewidth]{images/fig_04}
+\includegraphics[width=.55\linewidth]{images/fig_04}
 \end{center}
 
 \section{Matrice d'inertie d'un solide}
@@ -208,6 +208,30 @@ $$
 Si le solide est modélisé par une masse ponctuelle $m$ en $G$ et si on souhaite connaître le moment d'inertie pour un point situé à une distance $d$ de $G$, on a $I=md^2$.
 
 \end{theorem}
+
+
+\subsection{Changement de base de la matrice d'inertie}
+\begin{defi}[Matrice de Passage]
+On appelle $P_{12}$ la matrice de passage permettant de passer de la base $\mathcal{B}_1$ à la base $\mathcal{B}_2$. Cette matrice est constituée en colonnes des coordonnées des vecteurs de la base $\mathcal{B}_2$ écrits dans la base d'origine $\mathcal{B}_1$. On l'appelle aussi matrice de changement de base. Cette matrice est inversible.
+
+Dans le cas des matrices de rotation, $P_{12}^{-1}=P_{12}^{T}$.
+\end{defi}
+
+\begin{exemple}
+Soit $\rep{1}\repere{O}{x_1}{y_1}{z}$ et $\rep{2}\repere{O}{x_2}{y_2}{z}$ avec
+$\beta = \angl{x_1}{x_2}$. On a alors $\vect{x_2}=\cos\beta\vect{x_1}+\sin\beta\vect{y_1}$ et $\vect{y_2}=\cos\beta\vect{y_2}-\sin\beta\vect{x_2}$. En conséquences, $P_{12}=
+\begin{pmatrix} 
+\cos\beta & -\sin \beta & 0\\  
+\sin\beta & \cos \beta & 0\\  
+0 & 0 & 1\\  
+\end{pmatrix}$.
+\end{exemple}
+
+\begin{resultat}
+Pour passer $\inertie{A}{S}_{\mathcal{B}_1}$ de ${\mathcal{B}_1}$ et ${\mathcal{B}_2}$  de la on a $\inertie{A}{S}_{\mathcal{B}_2} = P_{12}^{-1} \inertie{A}{S}_{\mathcal{B}_1} P_{12} $.
+\end{resultat}
+
+
 
 \subsection{Détermination de la matrice d'inertie d'un solide \cite{2}}
 
