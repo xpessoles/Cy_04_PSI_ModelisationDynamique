@@ -1,0 +1,347 @@
+\documentclass[10pt,fleqn]{article} % Default font size and left-justified equations
+\usepackage[%
+    pdftitle={Modélisation dynamique : cinétique},
+    pdfauthor={Xavier Pessoles}]{hyperref}
+
+    
+\input{style/new_style}
+\input{style/macros_SII}
+
+\fichetrue
+%\fichefalse
+
+\proftrue
+\proffalse
+
+\tdtrue
+%\tdfalse
+
+\courstrue
+\coursfalse
+
+
+\def\discipline{Sciences \\Industrielles de \\ l'Ingénieur}
+\def\xxtete{Sciences Industrielles de l'Ingénieur}
+
+\def\classe{\textsf{PSI$\star$ -- MP}}
+\def\xxnumpartie{Cycle 04}
+\def\xxpartie{Modéliser le comportement des systèmes mécaniques dans le but d'établir une loi de comportement ou de déterminer des actions mécaniques en utilisant le PFD}
+
+\def\xxnumchapitre{Chapitre 2 \vspace{.2cm}}
+\def\xxchapitre{\hspace{.12cm} Caractérisation inertielle des solides}
+
+
+
+
+\def\xxtitreexo{Activation 1}%Motorisation du moteur Haibike}
+\def\xxsourceexo{ \hspace{.2cm} \footnotesize{X. Pessoles}}
+
+
+\def\xxposongletx{2}
+\def\xxposonglettext{1.45}
+\def\xxposonglety{20}
+%\def\xxonglet{Part. 1 -- Ch. 3}
+\def\xxonglet{Cycle 04}
+
+\def\xxactivite{Activation 1}
+\def\xxauteur{\textsl{X. Pessoles}}
+
+\def\xxcompetences{%
+\textsl{%
+\textbf{Savoirs et compétences :}\\
+\begin{itemize}[label=\ding{112},font=\color{ocre}] 
+\item \textit{Mod2.C13} : centre d'inertie
+\item \textit{Mod2.C14} : opérateur d'inertie
+\item \textit{Mod2.C15} : matrice d'inertie
+\end{itemize}
+}}
+\def\xxfigures{
+%\includegraphics[width=.7\linewidth]{images/fig_00}
+}%figues de la page de garde
+
+
+\def\xxpied{%
+Cycle 04 -- Modélisation mécanique -- Cinétique\\% afin de valider leurs performances.\\
+Chapitre 2 -- \xxactivite%
+}
+
+\setcounter{secnumdepth}{5}
+%---------------------------------------------------------------------------
+
+\usepackage{pgfplots}
+\begin{document}
+\def\pathfig{images}
+%\chapterimage{png/Fond_Cin}
+\input{style/new_pagegarde}
+\vspace{5cm}
+\pagestyle{fancy}
+\thispagestyle{plain}
+
+\def\columnseprulecolor{\color{ocre}}
+\setlength{\columnseprule}{0.4pt} 
+
+\def\pathfig{images}
+
+\ifprof
+\else
+\begin{multicols}{2}
+\fi
+%\section*{Encore un vilebrequin}
+%On donne le plan d'un vilebrequin. 
+%
+%\begin{center}
+%\includegraphics[width=\linewidth]{images/plan.png}
+%\end{center}
+%
+%\subparagraph{}
+%\textit{Indiquer la méthode pour déterminer le tenseur d'inertie en $O$ sur la base $\base{X}{Y}{Z}$.}
+%\ifprof
+%\begin{corrige}
+%\end{corrige}
+%\else
+%\fi
+%
+%On donne $\mu=\SI{7,8}{kg.dm^{-3}}$.
+%\subparagraph{}
+%\textit{Déterminer la matrice de tenseur d'inertie.}
+%\ifprof
+%\begin{corrige}
+%\end{corrige}
+%\else
+%\fi
+%
+%Pour cette pièce, SolidWorks nous donne les informations suivantes. 
+%\begin{center}
+%\includegraphics[width=\linewidth]{images/SW_03.png}
+%\end{center}
+%
+%%
+%%Propriétés de masse de Vilebrequin
+%%     Configuration: Défaut
+%%     Système de coordonnées: (X,Y,Z)
+%%
+%%Densité = 0.0078 grammes par millimètre cube
+%%
+%%Masse = 836 grammes
+%%
+%%Volume = 1.07e+005 millimètres cubes
+%%
+%%Superficie = 1.67e+004  millimètres carrés
+%%
+%%Centre de gravité: ( millimètres )
+%%	X = -2.62
+%%	Y = 5.89
+%%	Z = 0
+%%
+%%Principaux axes et moments d'inertie: ( grammes *  millimètres carrés )
+%%Pris au centre de gravité.
+%%	 Ix = ( 0.96,  0.26,  0)   	Px = 1.85e+005
+%%	 Iy = (-0.26,  0.96,  0)   	Py = 6.67e+005
+%%	 Iz = ( 0,  0,  1)   	Pz = 6.74e+005
+%%
+%%Moments d'inertie: ( grammes *  millimètres carrés )
+%%Pris au centre de gravité et aligné avec le système de coordonnées de sortie.
+%%	Lxx = 2.18e+005	Lxy = 1.23e+005	Lxz = 0
+%%	Lyx = 1.23e+005	Lyy = 6.34e+005	Lyz = 0
+%%	Lzx = 0	Lzy = 0	Lzz = 6.74e+005
+%%
+%%Moments d'inertie: ( grammes *  millimètres carrés )
+%%Pris au système de coordonnées de sortie.
+%%	Ixx = 2.47e+005	Ixy = 1.1e+005	Ixz = 0
+%%	Iyx = 1.1e+005	Iyy = 6.4e+005	Iyz = 0
+%%	Izx = 0	Izy = 0	Izz = 7.09e+005
+%%	
+%\subparagraph{}
+%\textit{Détailler ce que cela signifie.}
+%\ifprof
+%\begin{corrige}
+%\end{corrige}
+%\else
+
+\section*{Triaxe}
+\setcounter{exo}{0}
+On donne le plan d'un triaxe constitué des 3 axes $A_1$, $A_2$, $A_3$ et du moyeu central noté $M$. On note  $T$ l'ensemble.
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/triaxe.png}
+\end{center}
+On note $\vect{z}$ l'axe perpendiculaire au plan de la feuille. On se place ci-dessus dans le plan de symétrie $\left(O,\vect{x},\vect{y}\right)$.
+
+
+\textbf{TOUS LES CALCULS SE FERONT DE MANIÈRE LITTEREALE !}
+\begin{itemize}
+\item $D_1=\SI{18}{mm}$ et $H_1=\SI{25}{mm}$.
+\item $D=\SI{46}{mm}$, $D'=\SI{30}{mm}$ et $H=\SI{48}{mm}$.
+\item $\alpha=\angl{x}{x_2}=-150$ et 
+$\beta=\angl{x}{x_3}=-30\degres$.
+\end{itemize}
+
+\subparagraph{}
+\textit{Déterminer (sans calcul) la position du centre de gravité du triaxe. }
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+
+
+\subparagraph{}
+\textit{Déterminer analytiquement la position du centre de gravité $G_1$ du solide $A_1$ dans le repère $\rep{1}\repere{O_1}{x_1}{y_1}{z_1}$.}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+
+\subparagraph{}
+\textit{Déterminer (sans calcul) la \textbf{forme} de la matrice d'inertie du triaxe.}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+\subparagraph{}
+\textit{Déterminer analytiquement la matrice d'inertie du solide $A_1$ en $G_1$ dans $\rep{1}$. On la note $\inertie{G_1}{A_1}=\matinertie{A_1}{B_1}{C_1}{-D_1}{-E_1}{-F_1}{\rep{1}}$ où les constantes seront à déterminer.}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+\subparagraph{}
+\textit{Déterminer $\inertie{G_1}{A_1}$ dans la base $\mathcal{B}\base{x}{y}{z}$ puis 
+$\inertie{O}{A_1}$ dans la base $\mathcal{B}\base{x}{y}{z}$.}
+\ifprof
+\begin{corrige}
+ 
+\end{corrige}
+\else
+\fi
+
+\subparagraph{}
+\textit{Déterminer $\inertie{O}{A_2}$  et $\inertie{O}{A_3}$ dans la base $\mathcal{B}\base{x}{y}{z}$.}
+\ifprof
+\begin{corrige}
+ 
+\end{corrige}
+\else
+\fi
+
+\subparagraph{}
+\textit{Déterminer $\inertie{O}{M}$  la matrice d'inertie du moyeu $M$.}
+\ifprof
+\begin{corrige}
+ 
+\end{corrige}
+\else
+\fi
+
+
+\subparagraph{}
+\textit{Déterminer $\inertie{O}{T}$  la matrice d'inertie du triaxe $T$.}
+\ifprof
+\begin{corrige}
+ 
+\end{corrige}
+\else
+\fi
+%
+%
+%On donne $\mu=\SI{7,8}{kg.dm^{-3}}$.
+%\subparagraph{}
+%\textit{Déterminer ce moment d'inertie.}
+%\ifprof
+%\begin{corrige}
+%\end{corrige}
+%\else
+%\fi
+%
+%\subparagraph{}
+%\textit{Indiquer la méthode pour déterminer le tenseur d'inertie en $O$ dans la base $\base{x}{y}{z}$ ($O$ étant situé au centre de la pièce).}
+%\ifprof
+%\begin{corrige}
+%\end{corrige}
+%\else
+%%\fi
+%%
+%On donne $\mu=\SI{7,8}{kg.dm^{-3}}$.
+%\subparagraph{}
+%\textit{Déterminer ce moment d'inertie.}
+%\ifprof
+%\begin{corrige}
+%\end{corrige}
+%\else
+%\fi
+%Pour cette pièce, SolidWorks nous donne les informations suivantes. 
+%\begin{center}
+%\includegraphics[width=.9\linewidth]{images/SW_04.png}
+%\end{center}
+
+%Propriétés de masse de TriAxe
+%     Configuration: Défaut
+%     Système de coordonnées: -- par défaut --
+%
+%Densité = 0.0078 grammes par millimètre cube
+%
+%Masse = 357 grammes
+%
+%Volume = 4.58e+004 millimètres cubes
+%
+%Superficie = 1.44e+004  millimètres carrés
+%
+%Centre de gravité: ( millimètres )
+%	X = 0
+%	Y = 0
+%	Z = 0
+%
+%Principaux axes et moments d'inertie: ( grammes *  millimètres carrés )
+%Pris au centre de gravité.
+%	 Ix = ( 0,  0,  1)   	Px = 1.55e+005
+%	 Iy = ( 1,  0,  0)   	Py = 1.55e+005
+%	 Iz = ( 0,  1,  0)   	Pz = 2.77e+005
+%
+%Moments d'inertie: ( grammes *  millimètres carrés )
+%Pris au centre de gravité et aligné avec le système de coordonnées de sortie.
+%	Lxx = 1.55e+005	Lxy = 0	Lxz = 0
+%	Lyx = 0	Lyy = 2.77e+005	Lyz = 0
+%	Lzx = 0	Lzy = 0	Lzz = 1.55e+005
+%
+%Moments d'inertie: ( grammes *  millimètres carrés )
+%Pris au système de coordonnées de sortie.
+%	Ixx = 1.55e+005	Ixy = 0	Ixz = 0
+%	Iyx = 0	Iyy = 2.77e+005	Iyz = 0
+%	Izx = 0	Izy = 0	Izz = 1.55e+005
+%\subparagraph{}
+%\textit{Détailler ce que cela signifie.}
+%\ifprof
+%\begin{corrige}
+%\end{corrige}
+%\else
+%
+%
+%
+
+
+
+
+\ifprof
+\else
+\end{multicols}
+\fi
+
+\end{document}
+\begin{center}
+\includegraphics[width=\linewidth]{images/}
+\end{center}
+
+\subparagraph{}
+\textit{}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
