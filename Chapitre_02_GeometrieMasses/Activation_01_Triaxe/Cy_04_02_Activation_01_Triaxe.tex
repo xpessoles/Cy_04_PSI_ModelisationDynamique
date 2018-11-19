@@ -11,7 +11,7 @@
 %\fichefalse
 
 \proftrue
-\proffalse
+%\proffalse
 
 \tdtrue
 %\tdfalse
@@ -172,14 +172,24 @@ On note $\vect{z}$ l'axe perpendiculaire au plan de la feuille. On se place ci-d
 \begin{itemize}
 \item $D_1=\SI{18}{mm}$ et $H_1=\SI{25}{mm}$.
 \item $D=\SI{46}{mm}$, $D'=\SI{30}{mm}$ et $H=\SI{48}{mm}$.
-\item $\alpha=\angl{x}{x_2}=-150$ et 
-$\beta=\angl{x}{x_3}=-30\degres$.
+\item $\alpha_1=\angl{x}{x_1}=90\degres$, $\alpha_2=\angl{x}{x_2}=-150\degres$ et 
+$\alpha_3=\angl{x}{x_3}=-30\degres$.
 \end{itemize}
 
 \subparagraph{}
 \textit{Déterminer (sans calcul) la position du centre de gravité du triaxe. }
 \ifprof
-\begin{corrige}
+\begin{corrige} ~\\
+
+Le plan $\left(O,\vect{x},\vect{y}\right)$ est plan de symétrie du triaxe; donc $\vect{OG}\cdot\vect{z} =0$
+
+Le plan $\left(O,\vect{y},\vect{z}\right)$ est plan de symétrie du triaxe; donc $\vect{OG}\cdot\vect{x} =0$
+
+Reste la coordonnée selon $\vect{y}$. 
+
+Les plans $\left(O,\vect{z},\vect{x_2}\right)$ et $\left(O,\vect{z},\vect{x_3}\right)$ étant plans de symétrie, on a 
+ $\vect{OG}\cdot\vect{y_2} =0$ et  $\vect{OG}\cdot\vect{y_3} =0$. 
+ Or $\vect{OG}= y_g \vect{y} =  y_g \cos \alpha_2 \vect{y_2} - y_g \sin \alpha_2 \vect{x_2}$. Il en résulte que   $y_g \cos \alpha_2 = 0$ et donc nécessairement $y_g=0$ car $\alpha_2\neq 0$. 
 \end{corrige}
 \else
 \fi
@@ -190,6 +200,16 @@ $\beta=\angl{x}{x_3}=-30\degres$.
 \textit{Déterminer analytiquement la position du centre de gravité $G_1$ du solide $A_1$ dans le repère $\rep{1}\repere{O_1}{x_1}{y_1}{z_1}$.}
 \ifprof
 \begin{corrige}
+On pourrait répondre directement en disant que le solide à 3 plans de symétrie orthogonaux entre eux. 
+En utilisant la définition on a :
+\begin{itemize}
+\item $M_1 =\mu H_1\pi \dfrac{D_1^2}{4}$;
+\item en coordonnées cylindriques, $\vect{O_1P}=x\vect{x_1}+ \rho \cos\theta \vect{y_1}+\rho \sin\theta \vect{z_1}$ et $\dd V = \rho\dd \rho \dd \theta \dd x$ avec $x\in[0,H_1]$, $\theta\in [0,2\pi]$, $\rho \in \left[0,D_1/2\right]$;
+\item $m_1x_{G_1}=\mu \iiint x_P dV = \mu \iiint x  \rho\dd \rho \dd \theta \dd x= \mu \dfrac{H_1^2}{2} 2\pi \dfrac{D_1^2}{8}$;
+\item $m_1y_{G_1}=\mu \iiint y_P dV = \mu \iiint \rho \cos\theta   \rho\dd \rho \dd \theta \dd x=0$;
+\item $m_1z_{G_1}=\mu \iiint z_P dV = \mu \iiint \rho \sin\theta  \rho\dd \rho \dd \theta \dd x=0$. 
+\end{itemize}
+Au final,  $\mu H_1\pi  \dfrac{D_1^2}{4}x_{G_1}=\mu \dfrac{H_1^2}{2}  2\pi  \dfrac{D_1^2}{8} \Leftrightarrow   x_{G_1}= \dfrac{H_1}{2}$.
 \end{corrige}
 \else
 \fi
@@ -199,6 +219,12 @@ $\beta=\angl{x}{x_3}=-30\degres$.
 \textit{Déterminer (sans calcul) la \textbf{forme} de la matrice d'inertie du triaxe.}
 \ifprof
 \begin{corrige}
+Me plan $\left(O,\vect{x},\vect{y}\right)$ est plan de symétrie du triaxe; donc $E = \iiint xz \dd m = 0 $ et $D = \iiint yz \dd m = 0 $.
+
+Le plan $\left(O,\vect{y},\vect{z}\right)$ est plan de symétrie du triaxe; donc $E = \iiint xz \dd m = 0 $ et $E = \iiint xy \dd m = 0 $.
+
+La matrice est donc diagonale et de la forme $\matinertie{A_1}{B_1}{C_1}{0}{0}{0}{\rep{}}$.
+
 \end{corrige}
 \else
 \fi
@@ -207,6 +233,32 @@ $\beta=\angl{x}{x_3}=-30\degres$.
 \textit{Déterminer analytiquement la matrice d'inertie du solide $A_1$ en $G_1$ dans $\rep{1}$. On la note $\inertie{G_1}{A_1}=\matinertie{A_1}{B_1}{C_1}{-D_1}{-E_1}{-F_1}{\rep{1}}$ où les constantes seront à déterminer.}
 \ifprof
 \begin{corrige}
+Au vu de la forme du solide, on a : $D_1=E_1=F_1 = 0$ et $C=B$. D'où  $\inertie{G_1}{A_1}=\matinertie{A_1}{B_1}{B_1}{0}{0}{0}{\rep{1}}$.
+
+Calculons $A_1 = \iiint \left(y^2+z^2\right)  \dd m=\mu \iiint \left(\rho^2\cos^2\theta +\rho^2\sin^2\theta\right) \rho \dd \rho \dd \theta \dd x  $
+
+$ = \mu \iiint \rho^3  \dd \rho \dd \theta \dd z  = \mu \left[ \dfrac{\rho^4}{4}\right]_{0}^{D_1/2}2\pi H_1 = \mu \dfrac{D_1^4}{16\cdot 4}2\pi H_1 = M_1 \dfrac{D_1^2}{8}$.
+
+
+Calculons $B_1 = \iiint \left(x^2+z^2\right)  \dd m=\mu \iiint \left(x^2 +\rho^2\sin^2\theta\right) \rho \dd \rho \dd \theta \dd x$ 
+
+$B_x=\mu \iiint x^2  \rho \dd \rho \dd \theta \dd x+\mu \iiint \rho^2\sin^2\theta \rho \dd \rho \dd \theta \dd x  $
+$=\mu \iiint x^2  \rho \dd \rho \dd \theta \dd x = \mu \dfrac{H_1^3}{4\cdot 3}\dfrac{D_1^2}{8} 2\pi  = M  \dfrac{H_1^2}{12}   $
+
+$B_z =\mu \iiint \rho^2\sin^2\theta \rho \dd \rho \dd \theta \dd x =\mu \iiint \rho^3\dfrac{1-\cos 2x}{2}\theta  \dd \rho \dd \theta \dd x=\mu \iiint \dfrac{\rho^3}{2}\theta  \dd \rho \dd \theta \dd x =\mu \dfrac{D_i^4}{2\cdot 16\cdot 4}2 \pi H_1 =M  \dfrac{D_i^2}{16}$.
+
+Au final, $A =M_1 \dfrac{D_1^2}{8}$ et  $B =M\left(\dfrac{H_1^2}{12} + \dfrac{D_1^2}{16} \right)$.
+
+%$\mu  \iiint y^2 \dd V +\mu  \iiint z^2 \dd V $.
+
+%$ \mu  \iiint y^2 \dd V =  \mu  \iiint  \rho^2\cos^2\theta \dd V $ 
+%$ = \mu  \iiint  \rho^2 \dd V \;  \iiint  \cos^2\theta \dd V  $
+
+%$ = \mu  \iiint  \rho^3   \dfrac{1+\cos2\theta }{2} \dd \rho \dd \theta \dd z   $
+%$ = \dfrac{\mu}{2}  \iiint     \rho^3+\rho^3\cos2\theta \dd \rho \dd \theta \dd z   $
+
+%$ = \dfrac{\mu}{2} \left(\dfrac{D_1^4}{16\cdot 4} 2\pi H_1  +  \dfrac{D_1^4}{16\cdot 4} \left[ \dfrac{\sin 2 \theta}{2}\right]_{0}^{2\pi} H_1\right) = \dfrac{\mu}{2} \dfrac{D_1^4}{16\cdot 4} 2\pi H_1  =M_1 \dfrac{D_1^2}{16}  $
+
 \end{corrige}
 \else
 \fi
@@ -216,6 +268,44 @@ $\beta=\angl{x}{x_3}=-30\degres$.
 $\inertie{O}{A_1}$ dans la base $\mathcal{B}\base{x}{y}{z}$.}
 \ifprof
 \begin{corrige}
+ On a $\vect{x_1}=\cos\alpha\vect{x}+\sin\alpha\vect{y}$, $\vect{y_1}=\cos\alpha\vect{y}-\sin\alpha\vect{x}$. 
+ En conséquences, on a : 
+$P_{10}=\begin{pmatrix} \cos \alpha & - \sin\alpha & 0 \\ \sin \alpha & \cos \alpha & 0 \\ 0 & 0 & 1 \\ \end{pmatrix}$. 
+On a donc 
+$\inertie{G_1}{A_1}_{\rep{}}=P_{10}^{-1}\inertie{G_1}{A_1}_{\rep{1}}P_{10}$. 
+
+$\inertie{G_1}{A_1}_{\rep{}}=
+\begin{pmatrix} \cos \alpha & \sin\alpha & 0 \\-\sin \alpha & \cos \alpha & 0 \\ 0 & 0 & 1 \\ \end{pmatrix}
+\matinertie{A_1}{B_1}{B_1}{0}{0}{0}{\rep{1}}
+\begin{pmatrix} \cos \alpha & - \sin\alpha & 0 \\ \sin \alpha & \cos \alpha & 0 \\ 0 & 0 & 1 \\ \end{pmatrix}
+$
+
+$=
+\begin{pmatrix} \cos \alpha & \sin\alpha & 0 \\-\sin \alpha & \cos \alpha & 0 \\ 0 & 0 & 1 \\ \end{pmatrix}
+\begin{pmatrix}A_1 \cos \alpha & -A_1 \sin\alpha & 0 \\ B_1\sin \alpha & B_1\cos \alpha & 0 \\ 0 & 0 & B_1 \\ \end{pmatrix}
+$
+$=
+\begin{pmatrix}
+A_1 \cos^2\alpha +B_1 \sin^2\alpha& -A_1 \sin\alpha\cos\alpha+B_1\cos\alpha\sin\alpha & 0 \\ 
+-A_1\sin \alpha\cos\alpha+B_1\cos\alpha\sin\alpha  &A_1\sin^2\alpha+ B_1\cos^2 \alpha & 0 \\ 0 & 0 & B_1 \\ \end{pmatrix}
+$
+%\textbf{Attention, pour aller de $\vect{x_1}$ vers $\vect{x}$, $\alpha=-\alpha_1$.}
+Avec $\alpha=\pi/2$, 
+on a : $\inertie{G_1}{A_1}_{\rep{}}=\begin{pmatrix}
+B_1 &0 & 0 \\ 
+0 & A_1 & 0 \\
+ 0 & 0 & B_1 \\\end{pmatrix}_{\rep{}}
+$.
+
+
+Par ailleurs, $\vect{OG_1}=\dfrac{H+D}{2}\vect{y}$; donc :
+  $\inertie{O}{A_1}_{\rep{}}=\matinertie{B_1}{A_1}{B_1}{0}{0}{0}{\rep{}}+M_1\begin{pmatrix}
+\left( \dfrac{H+D}{2}\right)^2 &0 & 0 \\ 
+0 & 0& 0 \\
+ 0 & 0 & \left( \dfrac{H+D}{2}\right)^2 \\\end{pmatrix}_{\rep{}}$.
+ 
+Au final, 
+$\inertie{O}{A_1}_{\rep{}}=\matinertie{B_1+M_1\left( \dfrac{H+D}{2}\right)^2}{A_1}{B_1+M_1\left( \dfrac{H+D}{2}\right)^2}{0}{0}{0}{\rep{}}$.
  
 \end{corrige}
 \else
@@ -224,7 +314,47 @@ $\inertie{O}{A_1}$ dans la base $\mathcal{B}\base{x}{y}{z}$.}
 \subparagraph{}
 \textit{Déterminer $\inertie{O}{A_2}$  et $\inertie{O}{A_3}$ dans la base $\mathcal{B}\base{x}{y}{z}$.}
 \ifprof
-\begin{corrige}
+
+\begin{corrige}  ~\\
+
+
+ $\inertie{G_2}{A_2}_{\rep{}}=
+\begin{pmatrix}
+A_1 \cos^2\alpha +B_1 \sin^2\alpha& -A_1 \sin\alpha\cos\alpha+B_1\cos\alpha\sin\alpha & 0 \\ 
+-A_1\sin \alpha\cos\alpha+B_1\cos\alpha\sin\alpha  &A_1\sin^2\alpha+ B_1\cos^2 \alpha & 0 \\ 0 & 0 & B_1 \\ \end{pmatrix}.$
+
+
+
+Avec $\alpha=-\pi/6$, 
+on a : 
+ $\inertie{G_2}{A_2}_{\rep{}}=
+\begin{pmatrix}
+ \dfrac{3A_1 + B_1}{4} & \left(A_1-B_1\right) \dfrac{\sqrt{3}}{4} & 0 \\ 
+ \left(A_1-B_1\right) \dfrac{\sqrt{3}}{4}  &\dfrac{A_1+3B_1}{4}  & 0 \\ 0 & 0 & B_1 \\ \end{pmatrix}.$
+
+
+Par ailleurs, $\vect{OG_2}=\dfrac{H+D}{2}\cos\alpha\vect{x}+\dfrac{H+D}{2}\sin\alpha\vect{y}$; 
+
+
+donc :
+  $\inertie{O}{A_1}_{\rep{}}=\matinertie{B_1}{A_1}{B_1}{0}{0}{0}{\rep{}}+M_1\begin{pmatrix}
+\left( \dfrac{H+D}{2}\right)^2\dfrac{1}{4}  & -\dfrac{(H+D)^2}{4}\dfrac{\sqrt{3}}{4}  & 0 \\ 
+-\dfrac{(H+D)^2}{4}\dfrac{\sqrt{3}}{4}& \left( \dfrac{H+D}{2}\right)^2\dfrac{3}{4}& 0 \\
+ 0 & 0 & \left( \dfrac{H+D}{2}\right)^2 \\\end{pmatrix}_{\rep{}}$.
+ 
+
+%
+%Par ailleurs, $\vect{OG_2}=\dfrac{H+D}{2}\cos\alpha\vect{x}+\dfrac{H+D}{2}\sin\alpha\vect{y}$; 
+%
+%
+%donc :
+%  $\inertie{O}{A_1}_{\rep{}}=\matinertie{B_1}{A_1}{B_1}{0}{0}{0}{\rep{}}+M_1\begin{pmatrix}
+%\left( \dfrac{H+D}{2}\right)^2 \sin^2\alpha  & -\dfrac{(H+D)^2}{4}\cos\alpha\sin\alpha  & 0 \\ 
+%-\dfrac{(H+D)^2}{4}\cos\alpha\sin\alpha & \left( \dfrac{H+D}{2}\right)^2 \cos^2\alpha& 0 \\
+% 0 & 0 & \left( \dfrac{H+D}{2}\right)^2 \\\end{pmatrix}_{\rep{}}$.
+% 
+%Au final, 
+%$\inertie{O}{A_1}_{\rep{}}=\matinertie{B_1+M_1\left( \dfrac{H+D}{2}\right)^2}{A_1}{B_1+M_1\left( \dfrac{H+D}{2}\right)^2}{0}{0}{0}{\rep{}}$.
  
 \end{corrige}
 \else
