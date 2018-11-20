@@ -11,7 +11,7 @@
 %\fichefalse
 
 \proftrue
-%\proffalse
+\proffalse
 
 \tdtrue
 %\tdfalse
@@ -165,7 +165,12 @@ On donne le plan d'un triaxe constitué des 3 axes $A_1$, $A_2$, $A_3$ et du moy
 \begin{center}
 \includegraphics[width=\linewidth]{images/triaxe.png}
 \end{center}
-On note $\vect{z}$ l'axe perpendiculaire au plan de la feuille. On se place ci-dessus dans le plan de symétrie $\left(O,\vect{x},\vect{y}\right)$.
+On note :
+\begin{itemize}
+\item $\vect{z}$ l'axe perpendiculaire au plan de la feuille. On se place ci-dessus dans le plan de symétrie $\left(O,\vect{x},\vect{y}\right)$;
+\item $\rep{i}$ le repère $\repere{O_i}{x_i}{y_i}{z_i}$ et $\mathcal{B}_i$ la base associée.
+\end{itemize}
+
 
 
 \textbf{TOUS LES CALCULS SE FERONT DE MANIÈRE LITTEREALE !}
@@ -176,6 +181,11 @@ On note $\vect{z}$ l'axe perpendiculaire au plan de la feuille. On se place ci-d
 $\alpha_3=\angl{x}{x_3}=-30\degres$.
 \end{itemize}
 
+On donne ci-dessous le paramétrage d'un axe $A_i$.
+
+\begin{center}
+\includegraphics[width=.8\linewidth]{images/param.png}
+\end{center}
 \subparagraph{}
 \textit{Déterminer (sans calcul) la position du centre de gravité du triaxe. }
 \ifprof
@@ -197,7 +207,7 @@ Les plans $\left(O,\vect{z},\vect{x_2}\right)$ et $\left(O,\vect{z},\vect{x_3}\r
 
 
 \subparagraph{}
-\textit{Déterminer analytiquement la position du centre de gravité $G_1$ du solide $A_1$ dans le repère $\rep{1}\repere{O_1}{x_1}{y_1}{z_1}$.}
+\textit{Déterminer analytiquement la position du centre de gravité $G_i$ du solide $A_1$ dans le repère $\rep{i}$.}
 \ifprof
 \begin{corrige}
 On pourrait répondre directement en disant que le solide à 3 plans de symétrie orthogonaux entre eux. 
@@ -230,7 +240,8 @@ La matrice est donc diagonale et de la forme $\matinertie{A_1}{B_1}{C_1}{0}{0}{0
 \fi
 
 \subparagraph{}
-\textit{Déterminer analytiquement la matrice d'inertie du solide $A_1$ en $G_1$ dans $\rep{1}$. On la note $\inertie{G_1}{A_1}=\matinertie{A_1}{B_1}{C_1}{-D_1}{-E_1}{-F_1}{\rep{1}}$ où les constantes seront à déterminer.}
+\textit{Déterminer analytiquement la matrice d'inertie du solide $A_i$ en $G_
+i$ dans $\rep{i}$. On la note $\inertie{G_i}{A_i}=\matinertie{A_i}{B_i}{C_i}{-D_i}{-E_i}{-F_i}{\rep{i}}$ où les constantes seront à déterminer littéralement.}
 \ifprof
 \begin{corrige}
 Au vu de la forme du solide, on a : $D_1=E_1=F_1 = 0$ et $C=B$. D'où  $\inertie{G_1}{A_1}=\matinertie{A_1}{B_1}{B_1}{0}{0}{0}{\rep{1}}$.
@@ -264,8 +275,8 @@ Au final, $A =M_1 \dfrac{D_1^2}{8}$ et  $B =M\left(\dfrac{H_1^2}{12} + \dfrac{D_
 \fi
 
 \subparagraph{}
-\textit{Déterminer $\inertie{G_1}{A_1}$ dans la base $\mathcal{B}\base{x}{y}{z}$ puis 
-$\inertie{O}{A_1}$ dans la base $\mathcal{B}\base{x}{y}{z}$.}
+\textit{Déterminer $\inertie{G_i}{A_i}$ dans la base $\mathcal{B}\base{x}{y}{z}$ puis 
+$\inertie{O}{A_i}$ dans la base $\mathcal{B}$.}
 \ifprof
 \begin{corrige}
  On a $\vect{x_1}=\cos\alpha\vect{x}+\sin\alpha\vect{y}$, $\vect{y_1}=\cos\alpha\vect{y}-\sin\alpha\vect{x}$. 
@@ -312,7 +323,19 @@ $\inertie{O}{A_1}_{\rep{}}=\matinertie{B_1+M_1\left( \dfrac{H+D}{2}\right)^2}{A_
 \fi
 
 \subparagraph{}
-\textit{Déterminer $\inertie{O}{A_2}$  et $\inertie{O}{A_3}$ dans la base $\mathcal{B}\base{x}{y}{z}$.}
+\textit{Déterminer $\inertie{O}{B}$  dans la base $\mathcal{B}$.}
+
+
+
+\subparagraph{}
+\textit{Proposer une méthode pour déterminer le tenseur d'inertie du triaxe en $O$ dans la base $\mathcal{B}$.}
+
+\subparagraph{}
+\textit{Déterminer le tenseur d'inertie du triaxe en $O$ dans la base $\mathcal{B}$.}
+
+
+%\subparagraph{}
+%\textit{Déterminer $\inertie{O}{A_2}$  et $\inertie{O}{A_3}$ dans la base $\mathcal{B}\base{x}{y}{z}$.}
 \ifprof
 
 \begin{corrige}  ~\\
