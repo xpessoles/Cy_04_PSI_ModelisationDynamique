@@ -158,6 +158,7 @@ Chapitre 2 -- \xxactivite%
 %\end{corrige}
 %\else
 
+
 \section*{Triaxe}
 \setcounter{exo}{0}
 On donne le plan d'un triaxe constitué des 3 axes $A_1$, $A_2$, $A_3$ et du moyeu central noté $M$. On note  $T$ l'ensemble.
@@ -170,6 +171,8 @@ On note :
 \item $\vect{z}$ l'axe perpendiculaire au plan de la feuille. On se place ci-dessus dans le plan de symétrie $\left(O,\vect{x},\vect{y}\right)$;
 \item $\rep{i}$ le repère $\repere{O_i}{x_i}{y_i}{z_i}$ et $\mathcal{B}_i$ la base associée.
 \end{itemize}
+
+
 
 
 
@@ -214,15 +217,16 @@ On pourrait répondre directement en disant que le solide à 3 plans de symétri
 En utilisant la définition on a :
 \begin{itemize}
 \item $M_1 =\mu H_1\pi \dfrac{D_1^2}{4}$;
-\item en coordonnées cylindriques, $\vect{O_1P}=x\vect{x_1}+ \rho \cos\theta \vect{y_1}+\rho \sin\theta \vect{z_1}$ et $\dd V = \rho\dd \rho \dd \theta \dd x$ avec $x\in[0,H_1]$, $\theta\in [0,2\pi]$, $\rho \in \left[0,D_1/2\right]$;
-\item $m_1x_{G_1}=\mu \iiint x_P dV = \mu \iiint x  \rho\dd \rho \dd \theta \dd x= \mu \dfrac{H_1^2}{2} 2\pi \dfrac{D_1^2}{8}$;
-\item $m_1y_{G_1}=\mu \iiint y_P dV = \mu \iiint \rho \cos\theta   \rho\dd \rho \dd \theta \dd x=0$;
-\item $m_1z_{G_1}=\mu \iiint z_P dV = \mu \iiint \rho \sin\theta  \rho\dd \rho \dd \theta \dd x=0$. 
+\item en coordonnées cylindriques, $\vect{OP_i}=x\vect{x_i}+ \rho \cos\theta \vect{y_i}+\rho \sin\theta \vect{z_i}$ et $\dd V = \rho\dd \rho \dd \theta \dd x$ avec $x\in[D,D+H_1]$, $\theta\in [0,2\pi]$, $\rho \in \left[0,D_1/2\right]$;
+\item $m_ix_{G_i}=\mu \iiint x_P dV = \mu \iiint x  \rho\dd \rho \dd \theta \dd x= \mu \dfrac{H_1^2}{2} 2\pi \dfrac{D_1^2}{8}$;
+\item $m_iy_{G_i}=\mu \iiint y_P dV = \mu \iiint \rho \cos\theta   \rho\dd \rho \dd \theta \dd x=0$;
+\item $m_iz_{G_i}=\mu \iiint z_P dV = \mu \iiint \rho \sin\theta  \rho\dd \rho \dd \theta \dd x=0$. 
 \end{itemize}
 Au final,  $\mu H_1\pi  \dfrac{D_1^2}{4}x_{G_1}=\mu \dfrac{H_1^2}{2}  2\pi  \dfrac{D_1^2}{8} \Leftrightarrow   x_{G_1}= \dfrac{H_1}{2}$.
 \end{corrige}
 \else
 \fi
+
 
 
 \subparagraph{}
