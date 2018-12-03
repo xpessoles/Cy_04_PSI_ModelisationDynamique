@@ -1,0 +1,444 @@
+\documentclass[10pt,fleqn]{article} % Default font size and left-justified equations
+\usepackage[%
+    pdftitle={Equilibrage des solides en rotation},
+    pdfauthor={Xavier Pessoles}]{hyperref}
+
+\input{style/new_style}
+\input{style/macros_SII}
+\usepackage{bm}
+\fichetrue
+\fichefalse
+
+\proftrue
+%\proffalse
+
+%\tdtrue
+\tdfalse
+
+\courstrue
+%\coursfalse
+
+
+
+% -------------------------------------
+% Déclaration des titres
+% -------------------------------------
+
+\def\discipline{Sciences \\Industrielles de \\ l'Ingénieur}
+\def\xxtete{Sciences Industrielles de l'Ingénieur}
+
+\def\classe{\textsf{PSI$\star$ -- MP}}
+\def\xxnumpartie{Cycle 05}
+\def\xxpartie{Modéliser le comportement des systèmes mécaniques dans le but d'établir une loi de comportement en utilisant les méthodes énergétiques.}
+
+\def\xxnumchapitre{Chapitre 1 \vspace{.2cm}}
+\def\xxchapitre{\hspace{.12cm} Approche énergétique}
+
+\def\xxposongletx{2}
+\def\xxposonglettext{1.45}
+\def\xxposonglety{19}%16
+
+\def\xxonglet{\textsf{Cycle 05}}
+
+\def\xxactivite{Cours}
+\def\xxauteur{\textsl{Xavier Pessoles}}
+
+\def\xxcompetences{%
+\footnotesize\textsl{%
+\textbf{Savoirs et compétences :}\\
+\begin{itemize}[label=\ding{112},font=\color{ocre}] 
+\item Mod2.C18.SF1 : Déterminer l’énergie cinétique d’un solide, ou d’un ensemble de solides, dans son mouvement par rapport à un autre solide.
+\item Res1.C1.SF1 : Proposer une démarche permettant la détermination de la loi de mouvement.
+\item Res1.C3.SF1 : Choisir une méthode pour déterminer la valeur des paramètres conduisant à des positions d'équilibre.
+\item Mod1.C4.SF1 : Associer les grandeurs physiques aux échanges d’énergie et à la transmission de puissance.
+\item Mod1.C5.SF1 : Identifier les pertes d’énergie .
+\item Mod1.C6.SF1 : Évaluer le rendement d’une chaîne d’énergie en régime permanent.
+\item Mod1.C5.SF2 : Déterminer la puissance des actions mécaniques extérieures à un solide ou à un ensemble de solides, dans son mouvement rapport à un autre solide.
+\item Mod1.C5.SF3 : Déterminer la puissance des actions mécaniques intérieures à un ensemble de solides.
+\end{itemize}
+}
+\normalsize}
+		
+\def\xxfigures{
+%\includegraphics[width=4cm]{images/fig_01}\\
+%\textit{Toupie}
+
+%\includegraphics[width=4cm]{images/fig_02}\\
+%\textit{Volants d'inertie d'un vilebrequin}
+
+}%figues de la page de garde
+
+\def\xxpied{%
+Cycles 4 et 5 -- Modéliser les systèmes mécaniques \\% afin de valider leurs performances.\\
+Cours% deChapitre 1 -- \xxactivite%
+}
+
+\setcounter{secnumdepth}{5}
+%---------------------------------------------------------------------------
+
+
+\begin{document}
+\chapterimage{png/Fond_CIN}
+\input{style/new_pagegarde}
+\setlength{\columnseprule}{.1pt}
+
+\vspace{2cm}
+\pagestyle{fancy}
+\thispagestyle{plain}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%ù
+
+
+
+
+\section{Caractéristiques d'inertie des solides}
+L'inertie d'un solide peut se << caractériser >> par la résistance ressentie lorsqu'on souhaite mettre un solide en mouvement. Pour un mouvement de translation, la connaissance de la masse permet de déterminer l'effort nécessaire à la mettre en mouvement. 
+Pour un mouvement de rotation, il est nécessaire de connaître la répartition de la masse autour de l'axe de rotation.
+
+\begin{exemple}~\\
+
+\begin{itemize}
+\item Couple pour faire tourner une hélice bipale, tripale, quadripale.
+\item Couple pour faire tourner une bille et effort pour faire translater une bille.
+\end{itemize}
+\end{exemple}
+
+\subsection{Détermination de la masse d'un solide}
+\subsubsection{Définition}
+\begin{defi}~\\
+%
+On peut définir la masse $M$ d'un système matériel (solide) $S$ par : 
+\begin{multicols}{2}
+\vspace{-1cm}
+$$ M = \int\limits_S \dd m =\int\limits_{P\in V} \mu(P) \dd v $$ 
+avec :
+\begin{itemize}
+\item $\mu(P)$ la masse volumique au point $P$;
+\item $\dd v$ un élément volumique de $S$.
+\end{itemize}
+\end{multicols}
+\vspace{.01cm}
+\end{defi}
+\subsubsection{Principe de conservation de la masse}
+
+\subsection{Centre d'inertie d'un solide}
+\subsubsection{Définition}
+
+\begin{defi}[Centre d'inertie d'un solide]
+La position du centre d'inertie $G$ d'un solide $S$ est définie par $\int\limits_{P\in S} \vect{GP} \dd m = \vect{0}$.
+\end{defi}
+
+Pour déterminer la position du centre d'inertie d'un solide $S$, on passe généralement par l'origine du repère associé à $S$. On a alors 
+$\int\limits_{P\in S} \vect{GP} \, \dd m=\int\limits_{P\in S} \left(\vect{GO}+\vect{OP}\right) \dd m = \vect{0} 
+\Leftrightarrow \int\limits_{P\in S} \vect{OG} \,\dd m =\int\limits_{P\in S} \vect{OP} \,\dd m
+\Leftrightarrow  M\vect{OG} =\int\limits_{P\in S} \vect{OP} \,\dd m$.
+
+\begin{methode}
+Pour déterminer les coordonnées $\left(x_G,y_G,z_G\right)$ du centre d'inertie $G$ du solide $S$ dans la base $\repere{O}{x}{y}{z}$, on a donc :
+\begin{multicols}{2}
+$$
+\left\{
+\begin{array}{l}
+M x_G =\mu \int\limits_{P\in S} x_P \,\dd V \\
+M y_G =\mu \int\limits_{P\in S} y_P \,\dd V \\
+M z_G =\mu \int\limits_{P\in S} z_P \,\dd V \\
+\end{array}
+\right. 
+$$
+avec : 
+\begin{itemize}
+  \item $\dd V$ : un élément volumique de $S$;
+  \item $\mu$ : la masse volumique supposée constante.
+\end{itemize}
+Pour simplifier les calculs, on peut noter que le centre d'inertie appartient au(x) éventuel(s) plan(s) de symétrie du solide.
+
+\end{multicols}
+
+
+
+\end{methode}
+
+\subsubsection{Centre d'inertie d'un solide constitué de plusieurs solides}
+Soit un solide composé de $n$ solides élémentaires dont la position des centres d'inertie $G_i$ et les masses $M_i$ sont connues. On note $M=\sum\limits_{i=1}^{n}M_i$.  La position du centre d'inertie $G$ de l'ensemble $S$ est donné par :
+$$\vect{OG}=\dfrac{1}{M}\sum\limits_{i=1}^{n}M_i \vect{OG_i} .$$
+
+
+\subsubsection{Théorème de Guldin}
+\paragraph{Centre d'inertie d'une courbe plane}
+\paragraph{Centre d'inertie d'une surface plane}
+
+\subsection{Grandeurs inertielles d'un solide}
+\subsubsection{Moment et produit d'inertie}
+\begin{defi}[Moment d'inertie par rapport à un point dans $\mathcal{R}$]
+Soit un repère $\rep{}$ $\repere{O}{i}{j}{k}$ et un point $P$ de coordonnées $\left(x,y,z\right)$ dans $\mathcal{R}$.  
+On appelle moment d'inertie du solide $S$ par rapport à un point $O$ la quantité :
+
+$$ I_O(S)=\int\limits_S \vect{OP}^2 \dd m = \int\limits_S \left( x^2 + y^2 + z^2 \right) \dd m.  $$
+
+\end{defi}
+
+\begin{defi}[Moment d'inertie par rapport à un axe dans $\mathcal{R}$]
+On appelle moment d'inertie du solide $S$ par rapport à une droite $\left(\Delta\right)$ la quantité positive :
+
+$$ I_{\Delta}(S)=\int\limits_S \left( \vect{\delta} \wedge \vect{AP}\right)^2 \dd m  $$.
+
+Par suite, le moment d'inertie du solide $S$ par rapport à la droite $\left(O,\vect{x}\right)$ est donné par : 
+$$ I_{\left(O,\vect{x}\right)}(S)=\int\limits_S \left( \vect{x} \wedge \vect{OP}\right)^2 \dd m.  $$
+
+On détermine donc les moments d'inerties par rapport à $\left(O,\vect{x}\right)$, $\left(O,\vect{y}\right)$ et $\left(O,\vect{z}\right)$ :
+
+$$ I_{\left(O,\vect{x}\right)}(S) =\int\limits_S \left(y^2 + z^2\right) \dd m\quad \quad
+I_{\left(O,\vect{y}\right)}(S)     =\int\limits_S \left(x^2 + z^2\right) \dd m\quad \quad
+I_{\left(O,\vect{z}\right)}(S)     =\int\limits_S \left(x^2 + y^2\right)\dd m.
+$$
+
+
+
+\end{defi}
+
+%\begin{defi}[Moment d'inertie par rapport à un point]
+%On appelle moment d'inertie du solide $S$ par rapport à un point $A$ la quantité positive :
+%
+%\begin{tabular}{m{.45\linewidth}m{.45\linewidth}}
+%$$ I_A(S)=\int\limits_S \vect{AP}^2 \dd m  $$ &  
+%avec :
+%\begin{itemize}
+%\item $ I_A(S)$ en $\text{kg m}^2$;
+%\item $S$ un solide;
+%\item $A$ un point;
+%\item $P$ un point du solide;
+%\item $\dd m$ la quantité de matière.
+%\end{itemize} \\
+%\end{tabular}
+%\end{defi}
+
+
+%\begin{defi}[Moment d'inertie par rapport à une droite]
+%On appelle moment d'inertie du solide $S$ par rapport à une droite $\left(\Delta\right)$ la quantité positive :
+%
+%\begin{tabular}{m{.45\linewidth}m{.45\linewidth}}
+%$$ I_{\Delta}(S)=\int\limits_S \left( \vect{\delta} \vect{AP}\right)^2 \dd m  $$ &  
+%avec :
+%\begin{itemize}
+%\item $ I_\Delta(S)$ en $\text{kg m}^2$;
+%\item $\vect{\delta}$
+%\item $S$ un solide;
+%\item $A$ un point;
+%\item $P$ un point du solide;
+%\item $\dd m$ la quantité de matière.
+%\end{itemize} \\
+%\end{tabular}
+%\end{defi}
+
+\subsubsection{Matrice d'inertie \label{def_inert}}
+
+\begin{defi}
+Soient : 
+\begin{itemize}
+\item un solide $S$ de masse $m$ en mouvement par rapport à un repère $\mathcal{R}_0=\repere{O_0}{i}{j}{k}$;
+\item $\mathcal{R}_S=\repere{O}{i}{j}{k}$ le repère lié au solide $S$;
+\item $P$ un point de $S$ tel que $\vect{OP}=x_p\vect{i}+y_p\vect{j}+z_p\vect{k}$;
+\item $\vect{u}$ un vecteur unitaire du solide $S$.
+\end{itemize}
+
+On appelle opérateur d'inertie l'application linéaire définie par :
+$$
+\vect{u} \rightarrow \vect{J_{\left(O,S\right)}\left(\vect{u}\right)} 
+= \int\limits_{S} \vect{OP}\wedge \left(\vect{u}\wedge \vect{OP}\right)\,\dd m
+$$
+
+On appelle matrice d'inertie du solide $S$ en $O$, $\inertie{O}{S}$, l'image de cette application linéaire : $\vect{J_{\left(O,S\right)}\left(\vect{u}\right)}  = \inertie{O}{S} \vect{u}$.
+ 
+\end{defi}
+
+
+Recherchons la matrice de l'application linéaire. On note $\vect{u}=u_x\vect{i}+u_y\vect{j}+u_z\vect{k}$ .
+On a donc :
+$$
+\begin{bmatrix}
+x_p \\ y_p \\ z_p
+\end{bmatrix}
+\wedge
+\left(
+\begin{bmatrix}
+u_x \\ u_y \\ u_z
+\end{bmatrix}
+\wedge
+\begin{bmatrix}
+x_p \\ y_p \\ z_p
+\end{bmatrix}
+\right)
+=
+\begin{bmatrix}
+x_p \\ y_p \\ z_p
+\end{bmatrix}
+\wedge
+\begin{bmatrix}
+u_y z_p - y_p u_z \\
+-u_x z_p + x_p u_z \\
+u_x y_p - x_p u_y \\
+\end{bmatrix}
+=
+\begin{bmatrix}
+ y_p \left( u_x y_p - x_p u_y\right)
+ -z_p \left( -u_x z_p + x_p u_z \right) \\
+ -x_p \left(u_x y_p - x_p u_y \right)
+ +z_p \left(u_y z_p - y_p u_z \right) \\
+ x_p \left( -u_x z_p + x_p u_z\right)
+ -y_p \left( u_y z_p - y_p u_z\right)
+\end{bmatrix}
+$$
+
+$$
+=
+\begin{bmatrix}
+  y_p^2 u_x  - y_p x_p u_y   +  z_p^2 u_x  -z_p x_p u_z  \\
+   -x_p  y_p u_x+x_p^2 u_y  + z_p^2 u_y  - z_p y_p u_z  \\
+   -x_p  z_p u_x+ x_p^2 u_z   -y_p  z_pu_y +y_p^2  u_z
+\end{bmatrix}
+=
+\begin{bmatrix}
+ y_p^2 +  z_p^2 &  - y_p x_p &      -x_p  z_p   \\
+ -x_p  y_p  & x_p^2   + z_p^2   & - z_p y_p   \\
+  -x_p  z_p &    -y_p  z_p  & y_p^2  + x_p^2 
+\end{bmatrix}
+\begin{bmatrix}
+u_x \\ u_y \\ u_z
+\end{bmatrix}
+$$
+
+
+\begin{defi}[Matrice d'inertie]
+La matrice d'inertie s'écrit ainsi : 
+$$
+\inertie{O}{S}=\matinertie{\int\limits_{S} \left(y_p^2 + z_p^2 \right)\,\dd m}{\int\limits_{S} \left(x_p^2 + z_p^2 \right)\,\dd m}{\int\limits_{S} \left(x_p^2 + y_p^2 \right)\,\dd m}{-\int\limits_{S} \left(y_pz_p\right)\,\dd m}{-\int\limits_{S} \left(x_pz_p\right)\,\dd m}{-\int\limits_{S} \left(x_py_p\right)\,\dd m}{\mathcal{R}_S}=\matinertie{A}{B}{C}{-D}{-E}{-F}{\mathcal{R}_S}
+.$$
+
+On appelle moments d'inertie par rapport aux axes $\axe{O}{{i}}$, $\axe{O}{{j}}$ et $\axe{O}{{k}}$  les termes $A$, $B$ et $C$. 
+
+On appelle produits d'inertie par rapport aux plans $\left(O, \vect{j}, \vect{k}\right)$, $\left(O, \vect{k}, \vect{i}\right)$ et $\left(O, \vect{i}, \vect{j}\right)$ 
+les termes $D$, $E$ et $F$.
+\end{defi}
+
+\subsubsection{Propriétés des matrices d'inertie}
+\subsubsection{Théorème de Huygens}
+\begin{theorem}[Théorème de Huygens]
+Le moment d'inertie d'un solide par rapport à un axe  $\axe{A}{\delta}$ est donné par :
+
+\begin{tabular}{m{.45\linewidth}m{.45\linewidth}}
+$$I_{\axe{A}{\delta}}(S)=I_{\axe{G}{\delta}}(S)+md^2 $$ & 
+avec :
+\begin{itemize}
+\item $d$ : distance séparant $\axe{A}{\delta}$ et $\axe{G}{\delta}$ en m;
+\item $m$ : masse de $S$ en kg.
+\end{itemize}
+\end{tabular}
+\end{theorem}
+
+
+
+\begin{theorem}[Théorème de Huygens]
+Soit $S$ un solide de centre d'inertie $G$, de masse $m$, d'inertie $\inertie{G}{S}$ et d'inertie $\inertie{O}{S}$ avec $\vect{OG}=a\vect{x}+b\vect{y}+c\vect{z}$. Les matrices $\inertie{G}{S}$ et $\inertie{O}{S}$ exprimées dans la base $\mathcal{B}=\base{x}{y}{z}$ sont liées par : 
+$$
+\matinertie{A_O}{B_O}{C_O}{-D_O}{-E_O}{-F_O}{\mathcal{B}}
+= \matinertie{A_G}{B_G}{C_G}{-D_G}{-E_G}{-F_G}{\mathcal{B}}
++ \matinertie{m\left(b^2+c^2\right)}{m\left(a^2+c^2\right)}{m\left(a^2+b^2\right)}{-mbc}{-mac}{-mab}{\mathcal{B}}.
+$$
+
+
+Si le solide est modélisé par une masse ponctuelle $m$ en $G$ et si on souhaite connaître le moment d'inertie pour un point situé à une distance $d$ de $G$, on a $I=md^2$.
+
+\end{theorem}
+
+\paragraph*{Démonstration}
+
+Par définition, 
+$\vect{J_{\left(O,S\right)}\left(\vect{u}\right)} 
+= \int\limits_{S} \vect{OP}\wedge \left(\vect{u}\wedge \vect{OP}\right)\,\dd m
+$. 
+
+En introduisant le point $G$, on a 
+$\vect{J_{\left(O,S\right)}\left(\vect{u}\right)} 
+= \int\limits_{S} \left(\vect{OG}+\vect{GP} \right) \wedge \left(\vect{u}\wedge \left(\vect{OG}+\vect{GP} \right) \right)\,\dd m
+= \int\limits_{S} \left(\vect{OG}+\vect{GP} \right) \wedge \left(\vect{u}\wedge\vect{OG}+\vect{u}\wedge \vect{GP} \right)\,\dd m
+$
+ 
+$= \int\limits_{S} \left(\vect{OG} \wedge \left(\vect{u}\wedge\vect{OG}+\vect{u}\wedge \vect{GP} \right) +\vect{GP}\wedge \left(\vect{u}\wedge\vect{OG}+\vect{u}\wedge \vect{GP} \right) \right) \,\dd m
+$ 
+
+$= \int\limits_{S} \left(\vect{OG} \wedge \left(\vect{u}\wedge\vect{OG}\right) +\vect{OG} \wedge \left(\vect{u}\wedge \vect{GP} \right) \right) \,\dd m+ \int\limits_{S} \left( \vect{GP}\wedge \left(\vect{u}\wedge\vect{OG}\right)+\vect{GP}\wedge \left(\vect{u}\wedge \vect{GP} \right) \right) \,\dd m
+$ 
+
+
+$= \int\limits_{S} \left(\vect{OG} \wedge \left(\vect{u}\wedge\vect{OG}\right) \right) \,\dd m
++\int\limits_{S} \left(\vect{OG} \wedge \left(\vect{u}\wedge \vect{GP} \right) \right) \,\dd m
++\int\limits_{S} \left( \vect{GP}\wedge \left(\vect{u}\wedge\vect{OG}\right)\right) \,\dd m
++\int\limits_{S} \left(\vect{GP}\wedge \left(\vect{u}\wedge \vect{GP} \right) \right) \,\dd m
+$ 
+
+$= \vect{J_{\left(G,S\right)}\left(\vect{u}\right)} 
++ \vect{OG} \wedge \left(\vect{u}\wedge \int\limits_{S}\vect{GP} \,\dd m\right) 
++\int\limits_{S} \left( \vect{GP}\right) \,\dd m\wedge \left(\vect{u}\wedge\vect{OG}\right)
++ \left(\vect{GP}\wedge \left(\vect{u}\wedge \vect{GP} \right) \right) \int\limits_{S}\,\dd m
+$ 
+
+$G$ étant le centre d'inertie du solide, on a $\vect{GP} \,\dd m=\vect{0}$ (par défintion du centre d'inertie). 
+
+En conséquences, $ \vect{J_{\left(O,S\right)}\left(\vect{u}\right)} = \vect{J_{\left(G,S\right)}\left(\vect{u}\right)} 
++ \left(\vect{GP}\wedge \left(\vect{u}\wedge \vect{GP} \right) \right) \int\limits_{S}\,\dd m
+$ 
+
+On note $\vect{GP}=a\vect{i}+b\vect{j}+c\vect{k}$ et $M_S=\int\limits_{S}\,\dd m$.
+
+En reprenant le calcul vu en \ref{def_inert}, on a : 
+$\left(\vect{GP}\wedge \left(\vect{u}\wedge \vect{GP} \right) \right) = $
+$\begin{bmatrix}
+ b^2 +  c^2 &  - ab &      -ac   \\
+ -ab  & a^2   +c^2   & - bc   \\
+  -ac &    -bc  &   a^2 +b^2 
+\end{bmatrix}
+\begin{bmatrix}
+u_x \\ u_y \\ u_z
+\end{bmatrix}$. 
+
+\begin{flushright}
+\textit{CQFD.}
+\end{flushright}
+
+
+\subsubsection{Rotation de la matrice d'inertie}
+
+\section{Cinétique et dynamique du solide indéformable}
+\subsection{Le torseur cinétique}
+\subsubsection{Définition}
+\subsubsection{Cas particuliers}
+
+\subsection{Le torseur dynamique}
+\subsubsection{Définition}
+\subsubsection{Cas particuliers}
+
+\subsection{Énergie cinétique}
+\subsubsection{Définition}
+\subsubsection{Cas du solide indéformable}
+\subsubsection{Cas d'un système de solide}
+\subsubsection{Inertie équivalente}
+
+\section{Principe fondamental de la dynamique}
+
+\section{Théorème de l'énergie puissance}
+
+\section{Méthodologie}
+
+
+
+
+
+\begin{thebibliography}{2}
+   \bibitem[1]{ref1} Émilien Durif, {\it Approche énergétique des systèmes, Lycée La Martinière Monplaisir, Lyon.}
+\end{thebibliography}
+
+
+\end{document}
+
+
+
+
