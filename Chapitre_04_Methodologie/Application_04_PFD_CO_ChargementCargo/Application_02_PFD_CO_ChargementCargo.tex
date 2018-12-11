@@ -95,10 +95,8 @@ la synthèse de la commande.
 \end{obj}
 En vue d’élaborer une commande automatisée du déchargement des conteneurs, une bonne compréhension de
 la dynamique du système est nécessaire. Cette partie vise à établir les équations du mouvement du conteneur.
-Seul le vérin 3 est libéré. La charge peut alors balancer selon le modèle présenté ci-après. Dans cette étude, le mouvement
-de levage est supposé arrêté et la vitesse de vent nulle. Les douze câbles supportant le conteneur sont assimilés
-à un seul câble indéformable, en liaison pivot à ses extrémités. Les liaisons entre les solides 0, 1, 2 et 3 sont
-supposées parfaites.
+%Seul le vérin 3 est libéré. 
+La charge peut alors balancer selon le modèle présenté ci-après. Dans cette étude, la vitesse de vent nulle. On fait l'hypothèse que le conteneur est suspendu à un seul câble indéformable, en liaison pivot à ses extrémités. Les liaisons entre les solides 0, 1, 2 et 3 sont supposées parfaites.
 Le portique support du chariot est noté 0, le chariot 1, le câble 2 et l’ensemble \{spreader + conteneur\} 3.
 
 \paragraph*{Paramétrage}
@@ -107,7 +105,7 @@ Le portique support du chariot est noté 0, le chariot 1, le câble 2 et l’ens
 galiléen avec $\vect{z_0}$ l’axe vertical ascendant.
 \item La position du chariot telle que $\vect{OE} = y_{ch}(t) \vect{y_0}$ est notée $y_{ch}(t)$ ;
 l’angle $\angl{z_0}{z_2}$ d’inclinaison du câble $\theta(t)$ et l’angle $\angl{z_2}{z_3}$ d’inclinaison
-du conteneur par rapport au câble $\beta(t)$.
+du conteneur par rapport au câble  $\beta(t)$.
 \end{itemize}
 
 
@@ -267,9 +265,12 @@ Les courbes temporelles ont été obtenues par simulation, à partir des équati
 %\fi
 %
 
+\ifprof
+\else
+\end{multicols}x
+\fi
 
 
-\end{multicols}
 %\begin{center}
 %\includegraphics[width=\linewidth]{images/cor_01}
 %\end{center}
