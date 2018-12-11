@@ -135,7 +135,22 @@ $\inertie{3}{G_3}=\matinertie{A_3}{B_3}{C_3}{0}{0}{0}{\left(\vect{x_0},\vect{y_3
 déduire le nombre de degrés de liberté non motorisés. Expliquer pourquoi il est difficile de poser le conteneur
 sur un camion avec précision ?}
 \ifprof
-\begin{corrige}
+\begin{corrige} ~\\
+
+\begin{center}
+\includegraphics[width=.5\linewidth]{images/cor_01}
+\hfill
+\includegraphics[width=.3\linewidth]{images/cor_02}
+\end{center}
+
+Le système a trois mobilités : 
+\begin{itemize}
+\item la translation de la liaison glissière de longueur $y_{ch}(t)$ (degré de liberté motorisé);
+\item la rotation du câble d'angle $\theta(t)$ (degré de liberté non motorisé);
+\item la rotation du conteneur d'angle $\beta(t)$ (degré de liberté non motorisé). 
+\end{itemize}
+
+Les deux liaisons pivot n'étant pas freinées ou motorisées, lorsque le chariot se positionne au-dessus du camion le conteneur va se balancer, ce qui rend difficile la dépose du conteneur. 
 
 \end{corrige}
 \else
@@ -143,9 +158,35 @@ sur un camion avec précision ?}
 
 
 \subparagraph{}
-\textit{Déterminer littéralement, dans la base $\mathcal{B}_2$ et au point $G_3$, la vitesse $\vectv{G}{3}{0}$ puis le torseur dynamique $\torseurdyn{D}{3}{0}$ de l’ensemble \{conteneur + spreader\} (3) dans son mouvement par rapport au repère galiléen $\mathcal{R}_0$.}
+\textit{Déterminer littéralement, au point $G_3$, la vitesse $\vectv{G_3}{3}{0}$ puis le torseur dynamique $\torseurdyn{3}{0}$ de l’ensemble \{conteneur + spreader\} (3) dans son mouvement par rapport au repère galiléen $\mathcal{R}_0$.}
 \ifprof
 \begin{corrige}
+$\vectv{G_3}{3}{0}=   \left[\dfrac{\dd \vect{OG_3}}{\dd t}\right]_{\rep{0}}=   \left[\dfrac{\dd }{\dd t}\left(
+\vect{OE}+\vect{EF}+\vect{FG_3} \right)\right]_{\rep{0}}$ 
+$=   \left[\dfrac{\dd }{\dd t}\left(
+y_{ch}(t) \vect{y_0}-\ell_2\vect{z_2}-h_3\vect{z_3} \right)\right]_{\rep{0}}$. 
+
+On a : 
+\begin{itemize}
+\item $ \left[\dfrac{\dd \vect{z_2}}{\dd t}\right]_{\rep{0}}=\left[\dfrac{\dd \vect{z_2}}{\dd t}\right]_{\rep{2}}+\vecto{2}{0} \wedge \vect{z_2}=\dot{\theta} \vect{x_2}\wedge \vect{z_2}=-\dot{\theta} \vect{y_2}$;
+\item $ \left[\dfrac{\dd \vect{z_3}}{\dd t}\right]_{\rep{0}}=\left[\dfrac{\dd \vect{z_3}}{\dd t}\right]_{\rep{3}}+\vecto{3}{0} \wedge \vect{z_3}=\left(\dot{\theta}+\dot{\beta}\right) \vect{x_2}\wedge \vect{z_3}=-\left(\dot{\theta}+\dot{\beta}\right) \vect{y_3}$;
+\item $ \left[\dfrac{\dd \vect{y_2}}{\dd t}\right]_{\rep{0}}=\dot{\theta} \vect{z_2}$;
+\item $ \left[\dfrac{\dd \vect{y_3}}{\dd t}\right]_{\rep{0}}=\left(\dot{\theta}+\dot{\beta}\right) \vect{z_3}$.
+\end{itemize}
+
+$\vectv{G_3}{3}{0}=   
+\dot{y}_{ch}(t) \vect{y_0}+\ell_2\dot{\theta} \vect{y_2}+h_3\left(\dot{\theta}+\dot{\beta}\right) \vect{y_3}$.
+
+$\vectg{G_3}{3}{0}=   
+\ddot{y}_{ch}(t) \vect{y_0}+\ell_2\ddot{\theta} \vect{y_2}+h_3\left(\ddot{\theta}+\ddot{\beta}\right) \vect{y_3}
++   
+\ell_2\dot{\theta}^2 \vect{z_2}  +h_3\left(\dot{\theta}+\dot{\beta}\right)^2\vect{z_3} $.
+
+Par ailleurs, $G_3$ étant le centre d'inertie, de 3, on a $\vectmd{G_3}{3}{0}=\left[\dfrac{\dd \vectmc{G_3}{3}{0}}{\dd t}\right]_{\rep{0}}=\left[\dfrac{\dd A_3 \left(\dot{\theta}+\dot{\beta} \right)\vect{x_0}}{\dd t}\right]_{\rep{0}}=A_3 \left(\ddot{\theta}+\ddot{\beta} \right)\vect{x_0}$.
+
+On a donc, $\torseurdyn{3}{0}=\torseurl{M_3\left(\ddot{y}_{ch}(t) \vect{y_0}+\ell_2\ddot{\theta} \vect{y_2}+h_3\left(\ddot{\theta}+\ddot{\beta}\right) \vect{y_3}
++   
+\ell_2\dot{\theta}^2 \vect{z_2}  +h_3\left(\dot{\theta}+\dot{\beta}\right)^2\vect{z_3}\right)}{A_3 \left(\ddot{\theta}+\ddot{\beta} \right)\vect{x_0}}{G_3}$
 \end{corrige}
 \else
 \fi
