@@ -44,7 +44,7 @@
 \def\xxonglet{Cycle 04}
 
 \def\xxactivite{Application 01}
-\def\xxauteur{\textsl{Équipe PT La Martinière Monplaisir}}
+\def\xxauteur{\textsl{Xavier Pessoles}}
 
 \def\xxcompetences{%
 \textsl{%
@@ -56,12 +56,12 @@
 %\end{itemize}
 }}
 \def\xxfigures{
-\includegraphics[width=.3\linewidth]{images/fig_00}
+\includegraphics[width=.7\linewidth]{images/fig_00}
 }%figues de la page de garde
 
 
 \def\xxpied{%
-Cycle 04 -- Modélisation mécanique -- Cinétique\\% afin de valider leurs performances.\\
+Cycle 04 -- Modélisation mécanique -- PFD\\% afin de valider leurs performances.\\
 Chapitre 4 -- \xxactivite%
 }
 
@@ -93,6 +93,9 @@ Chapitre 4 -- \xxactivite%
 Déterminer les équations du mouvement du conteneur de façon à en obtenir un modèle simple pour
 la synthèse de la commande.
 \end{obj}
+
+\ifprof
+\else
 En vue d’élaborer une commande automatisée du déchargement des conteneurs, une bonne compréhension de
 la dynamique du système est nécessaire. Cette partie vise à établir les équations du mouvement du conteneur.
 %Seul le vérin 3 est libéré. 
@@ -129,6 +132,7 @@ $\inertie{3}{G_3}=\matinertie{A_3}{B_3}{C_3}{0}{0}{0}{\left(\vect{x_0},\vect{y_3
 \includegraphics[width=.8\linewidth]{images/fig_01}
 \end{center}
 
+\fi
 
 \subparagraph{}
 \textit{Après avoir réalisé le graphe de structure, déterminer le nombre de degrés de liberté et le nombre d’actionneurs du modèle proposé figure précédente. En
@@ -253,15 +257,25 @@ reliant les paramètres $\theta(t)$, $\beta(t)$  et $y_{ch}(t)$ et sans inconnue
 \begin{corrige}
 Le TRD appliqué à 3 en projection suivant $\vect{z_2}$ se traduit par : 
 
-$-M_3 g \vect{z_0}\cdot \vect{z_2} = 
+$F-M_3 g \vect{z_0}\cdot \vect{z_2} = 
 \left( M_3\left(\ddot{y}_{ch}(t) \vect{y_0}+\ell_2\ddot{\theta} \vect{y_2}+h_3\left(\ddot{\theta}+\ddot{\beta}\right) \vect{y_3}
 +   
 \ell_2\dot{\theta}^2 \vect{z_2}  +h_3\left(\dot{\theta}+\dot{\beta}\right)^2\vect{z_3}\right)\right) \cdot \vect{z_2}$
 
-$\Leftrightarrow -M_3 g \cos \theta  = 
- M_3\left(- \ddot{y}_{ch}(t) \sin \theta -h_3\left(\ddot{\theta}+\ddot{\beta}\right) \sin\beta
+$\Leftrightarrow F-M_3 g \cos \theta  = 
+ M_3\left(- \ddot{y}_{ch}(t) \sin \theta +h_3\left(\ddot{\theta}+\ddot{\beta}\right) \sin\beta
 +   
-\ell_2\dot{\theta}^2   +h_3\left(\dot{\theta}+\dot{\beta}\right)^2\cos \beta \right) $
+\ell_2\dot{\theta}^2   +h_3\left(\dot{\theta}+\dot{\beta}\right)^2\cos \beta \right) $.
+
+
+
+Le TMD appliqué à 3 au point $F$ en projection suivant $\vect{x_0}$ se traduit par : 
+
+$\vect{FG_3}\wedge \left(-M_3g \vect{z_0} \right) \cdot \vect{x_0} =\left(\vectmd{G_3}{3}{0}+\vect{FG_3}\wedge \vectrd{3}{0}\right)\cdot \vect{x_0}$
+
+$\Leftrightarrow -h_3 \vect{z_3} \wedge \left(-M_3g \vect{z_0} \right) \cdot \vect{x_0} =A_3 \left(\ddot{\theta}+\ddot{\beta} \right)$
+
+$\Leftrightarrow - M_3gh_3 \sin\left( \beta + \theta\right) =A_3 \left(\ddot{\theta}+\ddot{\beta} \right)$.
 \end{corrige}
 \else
 \fi
@@ -271,23 +285,30 @@ $\Leftrightarrow -M_3 g \cos \theta  =
 \textit{En supposant que $\theta$, $\beta$, $\dot{\theta}$ et $\dot{\beta}$ sont petits, linéariser les équations précédentes.  }
 \ifprof
 \begin{corrige}
-On a 
+\begin{itemize}
+\item On a 
 $ -M_3 g \sin \theta  = 
  M_3\left(\ddot{y}_{ch}(t) \cos \theta +\ell_2\ddot{\theta} +h_3\left(\ddot{\theta}+\ddot{\beta}\right)\cos \beta 
 -h_3\left(\dot{\theta}+\dot{\beta}\right)^2\sin\beta \right)$. En linéarisant, on obtient 
-
 $ -M_3 g \theta  = 
  M_3\left(\ddot{y}_{ch}(t) +\ell_2\ddot{\theta} +h_3\left(\ddot{\theta}+\ddot{\beta}\right) 
--h_3\left(\dot{\theta}+\dot{\beta}\right)^2\beta \right)$.
-
-On a : $-M_3 g \cos \theta  = 
- M_3\left(- \ddot{y}_{ch}(t) \sin \theta -h_3\left(\ddot{\theta}+\ddot{\beta}\right) \sin\beta
+-h_3\left(\dot{\theta}+\dot{\beta}\right)^2\beta \right)$. En considérant que $\dot{\theta}$ et $\dot{\beta}$ sont petits, on a : 
+$ -M_3 g \theta  = 
+ M_3\left(\ddot{y}_{ch}(t) +\ell_2\ddot{\theta} +h_3\left(\ddot{\theta}+\ddot{\beta}\right)  \right)$.
+\item  On a : $F-M_3 g \cos \theta  = 
+ M_3\left(- \ddot{y}_{ch}(t) \sin \theta +h_3\left(\ddot{\theta}+\ddot{\beta}\right) \sin\beta
 +   
 \ell_2\dot{\theta}^2   +h_3\left(\dot{\theta}+\dot{\beta}\right)^2\cos \beta \right) $. En linéarisant, on obtient :
-$-M_3 g  = 
- M_3\left(- \ddot{y}_{ch}(t) \theta -h_3\left(\ddot{\theta}+\ddot{\beta}\right) \beta
+$F-M_3 g  = 
+ M_3\left(- \ddot{y}_{ch}(t) \theta +h_3\left(\ddot{\theta}+\ddot{\beta}\right) \beta
 +   
 \ell_2\dot{\theta}^2   +h_3\left(\dot{\theta}+\dot{\beta}\right)^2 \right) $
+En considérant que $\dot{\theta}$ et $\dot{\beta}$ sont petits, on a : 
+$F-M_3 g  = 
+ M_3\left(- \ddot{y}_{ch}(t) \theta +h_3\left(\ddot{\theta}+\ddot{\beta}\right) \beta
+ \right) $.
+ \item On a : $ M_3gh_3 \sin\left( \beta + \theta\right) =A_3 \left(\ddot{\theta}+\ddot{\beta} \right)$ En linéarisant, on obtient  $M_3gh_3 \left( \beta + \theta\right) =A_3 \left(\ddot{\theta}+\ddot{\beta} \right)$.
+ \end{itemize}
 
 \end{corrige}
 \else
@@ -297,7 +318,8 @@ $-M_3 g  =
 Les courbes temporelles ont été obtenues par simulation, à partir des équations précédentes, pour un
 échelon en $y_{ch}(t)$ de $\SI{10}{m}$. 
 
-
+\ifprof
+\begin{multicols}{2}
 \begin{center}
 \includegraphics[width=.8\linewidth]{images/fig_02}
 \end{center}
@@ -305,7 +327,9 @@ Les courbes temporelles ont été obtenues par simulation, à partir des équati
 \begin{center}
 \includegraphics[width=.8\linewidth]{images/fig_03}
 \end{center}
-
+\end{multicols}
+\else
+\fi
 
 
 
@@ -313,6 +337,14 @@ Les courbes temporelles ont été obtenues par simulation, à partir des équati
 \textit{Proposer une simplification de la modélisation précédente.   }
 \ifprof
 \begin{corrige}
+L'amplitude des oscillations de $\beta$ est 10 fois inférieure aux oscillations de $\theta$. En conséquences, on pourrait poser $\beta=0$ et :
+
+\begin{itemize}
+\item $ - g \theta  = \ddot{y}_{ch}(t) +\ell_2\ddot{\theta} +h_3\ddot{\theta} $;
+\item  $F-M_3 g  = - M_3 \ddot{y}_{ch}(t) \theta  $;
+ \item  $M_3gh_3 \theta =A_3 \ddot{\theta} $.
+ \end{itemize}
+ 
 \end{corrige}
 \else
 \fi
