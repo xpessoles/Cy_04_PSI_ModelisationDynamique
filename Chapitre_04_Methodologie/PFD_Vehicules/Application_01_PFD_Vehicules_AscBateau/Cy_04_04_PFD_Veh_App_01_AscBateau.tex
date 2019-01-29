@@ -1,0 +1,284 @@
+\documentclass[10pt,fleqn]{article} % Default font size and left-justified equations
+\usepackage[%
+    pdftitle={Modélisation dynamique : cinétique},
+    pdfauthor={Xavier Pessoles}]{hyperref}
+
+    
+\input{style/new_style}
+\input{style/macros_SII}
+
+\fichetrue
+%\fichefalse
+
+\proftrue
+\proffalse
+
+\tdtrue
+%\tdfalse
+
+\courstrue
+\coursfalse
+
+
+\def\discipline{Sciences \\Industrielles de \\ l'Ingénieur}
+\def\xxtete{Sciences Industrielles de l'Ingénieur}
+
+\def\classe{\textsf{PSI$\star$ -- MP}}
+\def\xxnumpartie{Cycle 04}
+\def\xxpartie{Modéliser le comportement des systèmes mécaniques dans le but d'établir une loi de comportement ou de déterminer des actions mécaniques en utilisant le PFD}
+
+\def\xxnumchapitre{Chapitre 4 \vspace{.2cm}}
+\def\xxchapitre{\hspace{.12cm} Méthodologie : détermination des équations de mouvement}
+
+
+
+
+\def\xxtitreexo{Dynamique du véhicule -- Chariot élévateur à bateaux}
+\def\xxsourceexo{\hspace{.2cm} \footnotesize{X -- ENS -- PSI -- 2012}}
+
+
+\def\xxposongletx{2}
+\def\xxposonglettext{1.45}
+\def\xxposonglety{20}
+%\def\xxonglet{Part. 1 -- Ch. 3}
+\def\xxonglet{Cycle 04}
+
+\def\xxactivite{Application 01}
+\def\xxauteur{\textsl{Xavier Pessoles}}
+
+\def\xxcompetences{%
+\textsl{%
+\textbf{Savoirs et compétences :}\\
+%\begin{itemize}[label=\ding{112},font=\color{ocre}] 
+%\item \textit{Mod2.C13} : centre d'inertie
+%\item \textit{Mod2.C14} : opérateur d'inertie
+%\item \textit{Mod2.C15} : matrice d'inertie
+%\end{itemize}
+}}
+\def\xxfigures{
+\includegraphics[width=.3\linewidth]{images/fig_00}
+}%figues de la page de garde
+
+
+\def\xxpied{%
+Cycle 04 -- Modélisation mécanique -- Cinétique\\% afin de valider leurs performances.\\
+Chapitre 4 -- \xxactivite%
+}
+
+\setcounter{secnumdepth}{5}
+%---------------------------------------------------------------------------
+
+\usepackage{pgfplots}
+\begin{document}
+\def\pathfig{images}
+%\chapterimage{png/Fond_Cin}
+\input{style/new_pagegarde}
+\vspace{5cm}
+\pagestyle{fancy}
+\thispagestyle{plain}
+
+\def\columnseprulecolor{\color{ocre}}
+\setlength{\columnseprule}{0.4pt} 
+
+\def\pathfig{images}
+
+\ifprof
+\else
+\begin{multicols}{2}
+\fi
+
+\subsection*{Présentation}
+
+
+On considère dans cette partie que le chariot élévateur se déplace sur le trajet de référence de la Figure 1. Les basculements frontal et latéral des chariots élévateurs représentent le principal risque auquel est confronté le conducteur. L’objectif de cette partie est de définir les conditions de stabilité du chariot élévateur dans les phases de freinage et lors des virages afin de définir les conditions optimales de déplacement du chariot dans chacune des phases.
+La caractérisation partielle de la fonction FS2 est donnée sur la Figure 2.
+
+
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/fig_01}
+\end{center}
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/fig_02}
+\end{center}
+
+\subsection*{Étude de la position du centre de gravité}
+
+
+La position du centre de gravité de l’ensemble « chariot+tablier » influence directement la stabilité lors des déplacements. Il est impératif de connaître avec précision sa position.
+Étant donné qu’il est possible de monter, sur le même chariot, différents types de tabliers en fonction de l’utilisation souhaitée, le chariot est équipé d’un contrepoids qui permet de régler la position du centre de gravité de l’ensemble. Ce réglage est effectué en usine et dépend du contexte d’utilisation du chariot élévateur.
+
+La Figure 23 donne le paramétrage retenu pour l’étude. On note $\rep{1}=\repere{O}{x_1}{y_1}{z_1}$ le repère lié au chariot. Le plan $\left(O,\vect{x_1},\vect{z_1} \right)$ est un plan de symétrie matériel pour le chariot.
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/fig_03}
+\end{center}
+
+Le repère  $\rep{0}=\repere{O_0}{x_0}{y_0}{z_0}$ est un repère lié à la route, supposé galiléen pour les conditions de l’étude.
+
+On note : 
+\begin{itemize}
+\item $G_B$ : centre de gravité du bateau de masse $m_B$;
+\item $G_T$ : centre de gravité du tablier de masse $m_T$;
+\item $G_1$ : centre de gravité du chariot seul de masse $m_1$;
+\item $G_C$ : centre de gravité du contrepoids de masse $m_C$;
+\item $G$ : centre de gravité de l'ensemble $\Sigma =  \{\text{chariot, tablier, contrepoids}\}$.
+\end{itemize}
+
+On donne : 
+$\vect{OG_B}=\begin{pmatrix}x_{G_B} \\ 0 \\ z_{G_B}\end{pmatrix}_{\rep{1}}$,
+$\vect{OG_T}=\begin{pmatrix}x_{G_T} \\ 0 \\ z_{G_T}\end{pmatrix}_{\rep{1}}$,
+$\vect{OG_1}=\begin{pmatrix}x_{G_1} \\ 0 \\ z_{G_1}\end{pmatrix}_{\rep{1}}$,
+$\vect{OG_C}=\begin{pmatrix}x_{G_C} \\ 0 \\ z_{G_C}\end{pmatrix}_{\rep{1}}$.
+
+Afin de minimiser les risques de basculement du chariot élévateur, on souhaite que le point $G$ soit
+confondu avec le point $O$ (critère C206).
+
+
+\subparagraph{}
+\textit{Déterminer l’expression de $x_{G_C}$ afin de valider le critère C206.}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+
+Pour toute la suite de l’étude, les points $G$ et $O$ sont supposés confondus et la masse totale de
+l’ensemble $\Sigma =  \{\text{chariot, tablier, contrepoids}\}$ est notée $M$.
+
+\subsection*{Étude du basculement frontal}
+Afin d’éviter les risques de basculement frontal du chariot lors des phases de freinage, le dispositif de
+sécurité ADS permet au conducteur de choisir, à partir des commandes disponibles sur son tableau de
+bord, la valeur de la décélération à imposer au chariot avant l’arrêt total. Ainsi, lorsque le conducteur
+relâche complètement la pédale de l’accélérateur, le dispositif ADS entre en action et le chariot est
+alors animé d’un mouvement uniformément décéléré. Le choix de la valeur de la décélération est fait
+en fonction des conditions de chargement du chariot. Ce dispositif permet au conducteur de maîtriser
+parfaitement les distances d’arrêt tout en évitant le basculement frontal.
+
+L’objectif de cette partie est de mettre en évidence l’intérêt d’un tel dispositif.
+
+Le chariot est en phase de freinage sur une route horizontale, il transporte un bateau (B) de masse $m_B$
+et de centre de gravité $G_B$. La vitesse du centre de gravité de l’ensemble $\Sigma$ est donnée par
+$\vectv{G}{\Sigma}{\rep{0}}=V(t)\vect{x_1}$. Tous les mouvements du tablier sont inactifs durant le déplacement. Il n’y a pas de mouvement relatif entre le bateau et l’ensemble $\Sigma$ au cours de cette phase.
+L’objet est de déterminer la valeur de la décélération qui provoque le basculement frontal de
+l’ensemble $\{\Sigma , B\}$.
+Le problème est traité en trois dimensions.
+
+L'action mécanique exercée par le sol sur le pneu $P_i$ est modélisée par le torseur $\torseurstat{T}{\text{sol}}{P_i}=\torseurl{\vectf{\text{sol}}{P_i}=-T_i\vect{x_1}+N_i\vect{z_1}}{\vectm{I_i}{\text{sol}}{P_i}=\vect{0}}{I_1}=\torseurcol{-T_i}{0}{N_i}{0}{0}{0}{I_i,\rep{1}}$.
+
+La masse et l’inertie des roues sont négligées. La décélération qui provoque le basculement de l’ensemble $\{\Sigma, B\}$ est notée $\vect{\Gamma_{\text{dec}}}\left( \{ \Sigma,B\}/\rep{0}\right)=-\text{dec}_x\vect{x_1}$
+
+On admet, dans un premier temps, que le basculement a lieu avant le glissement. Cette hypothèse sera
+vérifiée par la suite.
+
+\subparagraph{}
+\textit{Écrire les équations issues de l’application du principe fondamental de la dynamique à
+l’ensemble $\{\Sigma , B\}$ . Le théorème du moment dynamique sera appliqué au point $I_4$ (Justifier ?).}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+\subparagraph{}
+\textit{Donner les hypothèses qui peuvent être faites afin de réduire le nombre d’inconnues du
+problème.}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+On considère que le basculement a lieu lorsque les roues arrière perdent le contact avec le sol.
+
+\subparagraph{}
+\textit{Déterminer alors l’expression de $\text{dec}_x$.}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+Le facteur d’adhérence entre le pneu et la route est noté $f$ .
+
+\subparagraph{}
+\textit{Donner les expressions de $N_4$ et $T_4$ et expliquer qualitativement comment vérifier que le
+basculement a lieu avant le glissement afin de justifier l’hypothèse faite en début d’étude.}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+
+\subsection*{Étude du basculement latéral}
+
+Le centre de gravité de l’ensemble $\{\Sigma , B\}$ est noté $G_{\Sigma B}$ $\vect{OG_{\Sigma B}}\begin{pmatrix}x_{G_{\Sigma B}}\\y_{G_{\Sigma B}}\\z_{G_{\Sigma B}} \end{pmatrix}_{\rep{1}}$.
+
+
+L’objet est de déterminer la vitesse maximale avec laquelle le chariot peut aborder le virage sans
+risque de basculement latéral.
+Le schéma retenu pour l’étude est présenté sur la Figure 24.
+Le chariot aborde un virage de rayon de courbure $\rho$ avec $\vect{O_0G_{\Sigma B}}=-\rho \vect{y_1}$.Tous les mouvements du
+tablier sont inactifs durant le déplacement. Il n’y a pas de mouvement relatif entre le bateau B et
+l’ensemble $\Sigma$ au cours du mouvement.
+La vitesse du chariot est constante pendant toute la phase de virage et est notée $\vectv{G}{\Sigma}{\rep{0}}=V\vect{x_1}$.
+La masse et l’inertie des roues sont négligées.
+On admet que le basculement latéral a lieu avant le glissement, cette hypothèse pourra être vérifiée par
+la suite.
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/fig_04}
+\end{center}
+
+
+Le rayon de courbure du virage $\rho$ est suffisamment grand devant l’empattement $E$ du chariot pour
+pouvoir négliger l’influence du braquage des roues dans le modèle proposé. L’action mécanique
+exercée par le sol sur le pneu $i$ est modélisée par le torseur :
+$\torseurstat{T}{\text{sol}}{P_i}=\torseurl{\vectf{\text{sol}}{P_i}=-T_i\vect{x_1}+N_i\vect{z_1}}{\vectm{I_i}{\text{sol}}{P_i}=\vect{0}}{I_1}=\torseurcol{-T_i}{0}{N_i}{0}{0}{0}{I_i,\rep{1}}$.
+
+
+La matrice d'inertie de l'ensemble $\{\Sigma, B\}$ est de la forme $\inertie{G_{\{\Sigma B\}}}{\{\Sigma, B\}}=\matinertie{A_1}{B_1}{C_1}{0}{-E_1}{0}{\rep{1}}$. 
+
+\subparagraph{}
+\textit{Quel théorème doit-on utiliser afin d’obtenir directement l’équation permettant de déterminer
+l’expression de $V$ qui provoque le basculement latéral ?}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+
+\subparagraph{}
+\textit{En déduire l’expression de V qui provoque le basculement latéral .}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+\end{multicols}%
+
+
+
+%\begin{center}
+%\includegraphics[width=\linewidth]{images/cor_05}
+%\end{center}
+
+
+
+\end{document}
+\begin{center}
+\includegraphics[width=\linewidth]{images/}
+\end{center}
+
+\subparagraph{}
+\textit{}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
