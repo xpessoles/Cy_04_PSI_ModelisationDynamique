@@ -56,7 +56,7 @@
 %\end{itemize}
 }}
 \def\xxfigures{
-\includegraphics[width=.8\linewidth]{images/fig_00}
+\includegraphics[width=.6\linewidth]{images/fig_00}
 }%figues de la page de garde
 
 
@@ -83,6 +83,7 @@ Chapitre 4 -- \xxactivite%
 \def\pathfig{images}
 
 \ifprof
+%\begin{multicols}{2}
 \else
 \begin{multicols}{2}
 \fi
@@ -192,9 +193,59 @@ vérifiée par la suite.
 
 \subparagraph{}
 \textit{Écrire les équations issues de l’application du principe fondamental de la dynamique à
-l’ensemble $\{\Sigma , B\}$ . Le théorème du moment dynamique sera appliqué au point $I_4$ (Justifier ?).}
+l’ensemble $\{\Sigma , B\}$ . Le théorème du moment dynamique sera appliqué au point $I_4$.}
 \ifprof
 \begin{corrige}
+\textbf{On  isole $\{\Sigma , B\}$.}
+
+\textbf{On fait le BAME.}
+
+\begin{itemize}
+\item Poids du bateau : $\torseurstat{T}{\text{pes}}{B}=\torseurl{-m_Bg\vect{z}}{\vect{0}}{O}=\torseurl{-m_Bg\vect{z}}{m_Bg\vect{y}\left(x_{G_B}-\dfrac{2L}{3} \right)+Em_Bg\vect{x}}{I_4}$. 
+\item Poids de $\Sigma$ : $\torseurstat{T}{\text{pes}}{\Sigma}=\torseurl{-Mg\vect{z}}{\vect{0}}{O}=\torseurl{-Mg\vect{z}}{-\dfrac{2MgL}{3}\vect{y}+EMg\vect{x}}{I_4}$. 
+\item Action du sol sur chaque roue : 
+\begin{itemize}
+\item  $\torseurstat{T}{\text{sol}}{P_1}$ $=\torseurl{-T_1\vect{x}+N_1\vect{z}}{LN_1\vect{y}}{I_4}$;
+\item  $\torseurstat{T}{\text{sol}}{P_2}$ $=\torseurl{-T_1\vect{x}+N_1\vect{z}}{-2EN_2\vect{x}+LN_2\vect{y}-2ET_2\vect{z}}{I_4}$;
+\item  $\torseurstat{T}{\text{sol}}{P_3}$ $=\torseurl{-T_3\vect{x}+N_3\vect{z}}{-2EN_2\vect{x}+LN_2\vect{y}-2ET_2\vect{z}}{I_4}$;
+\item  $\torseurstat{T}{\text{sol}}{P_4}$ $=\torseurl{-T_4\vect{x}+N_4\vect{z}}{\vect{0}}{I_4}$.
+\end{itemize}
+\end{itemize}
+
+\textbf{Calcul du $\torseurdyn{\{\Sigma , B\}}{0}$.}
+
+$\torseurdyn{\{\Sigma , B\}}{0} = \torseurl{\vectrd{\{\Sigma , B\}}{0}}{\vectmd{I_4}{\{\Sigma , B\}}{0}}{I_4}$. 
+
+On a $\vectrd{\{\Sigma , B\}}{0}=-\left(M+m_B\right) \text{dec}_x\vect{x_1}$.
+
+Par ailleurs, on a $\vectmd{G}{\{\Sigma , B\}}{0}= \vectmd{G}{\{\Sigma , B\}}{0}+\vectmd{G}{\{\Sigma , B\}}{0}$.
+Le bateau étant en translation par rapport au bâti, on a donc :
+
+\begin{itemize}
+\item  $\vectmd{G}{\{\Sigma \}}{0}=\vect{0}$ et 
+$\vectmd{I_4}{\{\Sigma \}}{0}=\vectmd{G}{\{\Sigma ,\}}{0}+\vect{I_4 G} \wedge \vectrd{\{\Sigma \}}{0} $ $\left(-2\dfrac{L}{3} \vect{x_1}-E\vect{y_1}+h\vect{z_1} \right)\wedge -M\text{dec}_x \vect{x_1}=-M\text{dec}_x \left(E\vect{z_1}+h\vect{y_1}\right)$;
+\item  $\vectmd{G}{\{ B\}}{0}=\vect{0}$ et 
+$\vectmd{I_4}{\{ B\}}{0}=\vectmd{G_B}{\{ B\}}{0}+\vect{I_4 G_B} \wedge \vectrd{\{ B\}}{0} $ $=\left(\left(-x_{G_B}+2\dfrac{L}{3}\right) \vect{x_1}+E\vect{y_1}+\left(z_{G_B}+h\right) \vect{z_1} \right)\wedge -m_B \text{dec}_x \vect{x_1}=m_B \text{dec}_x \left(E\vect{z_1}-\left(z_{G_B}+h\right) \vect{y_1}\right)$; 
+\item au final, $\vectmd{I_4}{\{\Sigma , B\}}{0}=m_B \text{dec}_x \left(E\vect{z_1}-\left(z_{G_B}+h\right) \vect{y_1}\right)-M\text{dec}_x \left(E\vect{z_1}+h\vect{y_1}\right)$.
+\end{itemize}
+
+\textbf{On applique le PFD.}
+\begin{itemize}
+\item Théorème de la résultante dynamique :
+\begin{itemize}
+\item suivant $\vect{x_1}$ :$-\left(M+m_B\right) \text{dec}_x=-\sum\limits_{i=1}^{4} T_i$;
+\item suivant $\vect{y_1}$ :$0=0$;
+\item suivant $\vect{z_1}$ :$0=\sum\limits_{i=1}^{4} N_i-\left(M+m_B\right)g$.
+\end{itemize}
+\item Théorème du moment dynamique:
+\begin{itemize}
+\item suivant $\vect{x_1}$ :$0=Em_B g+EM g-2EN_2-2EN_3 $;
+\item suivant $\vect{y_1}$ :$-m_B \text{dec}_x \left(z_{G_B}+h\right)-M\text{dec}_x h=L\left(N_1+N_2 \right)+m_B g\left(x_{G_B}-2\dfrac{L}{3}\right)-\dfrac{M g2L}{3} $;
+\item suivant $\vect{z_1}$ :$ m_B \text{dec}_x E-M\text{dec}_x E=-2ET_2-2ET_3$.
+\end{itemize}
+\end{itemize}
+
+
 \end{corrige}
 \else
 \fi
@@ -278,6 +329,7 @@ l’expression de $V$ qui provoque le basculement latéral ?}
 \fi
 
 \ifprof
+%\end{multicols}%
 \else
 \end{multicols}%
 \fi
