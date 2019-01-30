@@ -11,7 +11,7 @@
 %\fichefalse
 
 \proftrue
-\proffalse
+%\proffalse
 
 \tdtrue
 %\tdfalse
@@ -56,7 +56,7 @@
 %\end{itemize}
 }}
 \def\xxfigures{
-\includegraphics[width=.3\linewidth]{images/fig_00}
+\includegraphics[width=.8\linewidth]{images/fig_00}
 }%figues de la page de garde
 
 
@@ -88,10 +88,19 @@ Chapitre 4 -- \xxactivite%
 \fi
 
 \subsection*{Présentation}
+Le chariot élévateur , objet de cette étude,  permet la manutention de bateaux de \SI{3000}{kg}
+à une hauteur de \SI{8}{m}. Il est principalement constitué :
+\begin{itemize}
+\item du chariot qui assure le déplacement de l’ensemble et apporte la puissance pour la préhension
+et le levage ;
+\item du tablier, constitué du mât et des fourches, qui permet la préhension et la dépose du bateau.
+\end{itemize}
 
-
-On considère dans cette partie que le chariot élévateur se déplace sur le trajet de référence de la Figure 1. Les basculements frontal et latéral des chariots élévateurs représentent le principal risque auquel est confronté le conducteur. L’objectif de cette partie est de définir les conditions de stabilité du chariot élévateur dans les phases de freinage et lors des virages afin de définir les conditions optimales de déplacement du chariot dans chacune des phases.
-La caractérisation partielle de la fonction FS2 est donnée sur la Figure 2.
+\begin{center}
+\includegraphics[width=\linewidth]{images/fig_01a}
+\end{center} 
+On considère que le chariot élévateur se déplace sur le trajet de référence de la Figure 1. Les basculements frontal et latéral des chariots élévateurs représentent le principal risque auquel est confronté le conducteur. L’objectif de cette partie est de définir les conditions de stabilité du chariot élévateur dans les phases de freinage et lors des virages afin de définir les conditions optimales de déplacement du chariot dans chacune des phases.
+La caractérisation partielle de l'exigence 2 est donnée sur la Figure 2.
 
 
 
@@ -103,12 +112,18 @@ La caractérisation partielle de la fonction FS2 est donnée sur la Figure 2.
 \includegraphics[width=\linewidth]{images/fig_02}
 \end{center}
 
+\begin{obj}
+L'objectif est de valider l'exigence suivante : << req 2 : le conducteur peut déplacer le bateau en toute sécurité >>. 
+\end{obj}
 \subsection*{Étude de la position du centre de gravité}
 
 
 La position du centre de gravité de l’ensemble « chariot+tablier » influence directement la stabilité lors des déplacements. Il est impératif de connaître avec précision sa position.
 Étant donné qu’il est possible de monter, sur le même chariot, différents types de tabliers en fonction de l’utilisation souhaitée, le chariot est équipé d’un contrepoids qui permet de régler la position du centre de gravité de l’ensemble. Ce réglage est effectué en usine et dépend du contexte d’utilisation du chariot élévateur.
 
+\begin{obj}
+L'objectif est de valider l'exigence suivante : << req 2.6 : la position du centre de gravité de l'ensemble $\Sigma$=\{chariot, tablier, contrepoids\} doit être situé à un tiers de l'empattement par rapport à l'axe des roues arrières>>. 
+\end{obj}
 La Figure 23 donne le paramétrage retenu pour l’étude. On note $\rep{1}=\repere{O}{x_1}{y_1}{z_1}$ le repère lié au chariot. Le plan $\left(O,\vect{x_1},\vect{z_1} \right)$ est un plan de symétrie matériel pour le chariot.
 
 \begin{center}
@@ -133,13 +148,15 @@ $\vect{OG_1}=\begin{pmatrix}x_{G_1} \\ 0 \\ z_{G_1}\end{pmatrix}_{\rep{1}}$,
 $\vect{OG_C}=\begin{pmatrix}x_{G_C} \\ 0 \\ z_{G_C}\end{pmatrix}_{\rep{1}}$.
 
 Afin de minimiser les risques de basculement du chariot élévateur, on souhaite que le point $G$ soit
-confondu avec le point $O$ (critère C206).
+confondu avec le point $O$ (exigence req 2.6).
 
 
 \subparagraph{}
-\textit{Déterminer l’expression de $x_{G_C}$ afin de valider le critère C206.}
+\textit{Déterminer l’expression de $x_{G_C}$ afin de valider l'exigence req 2.6.}
 \ifprof
 \begin{corrige}
+On a $\vect{OG}=\dfrac{m_T}{m_T+m_1+m_C}\vect{OG_T}+\dfrac{m_1}{m_T+m_1+m_C}\vect{OG_1}+\dfrac{m_C}{m_T+m_1+m_C}\vect{OG_C}$. On souhaite que $\vect{OG}=\vect{0}$. 
+On a donc $0=\dfrac{m_T}{m_T+m_1+m_C}x_{G_T}+\dfrac{m_1}{m_T+m_1+m_C}x_{G_1}+\dfrac{m_C}{m_T+m_1+m_C}x_{G_C}$ et donc : $x_{G_C}=-\dfrac{m_T}{m_C}x_{G_T}-\dfrac{m_1}{m_C}x_{G_1}$.
 \end{corrige}
 \else
 \fi
@@ -260,8 +277,10 @@ l’expression de $V$ qui provoque le basculement latéral ?}
 \else
 \fi
 
+\ifprof
+\else
 \end{multicols}%
-
+\fi
 
 
 %\begin{center}
