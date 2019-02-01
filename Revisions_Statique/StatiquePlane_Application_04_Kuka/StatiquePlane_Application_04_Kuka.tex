@@ -1,0 +1,292 @@
+\documentclass[10pt,fleqn]{article} % Default font size and left-justified equations
+\usepackage[%
+    pdftitle={Résolutions de problèmes de statique : PFS 2D - 3D},
+    pdfauthor={Xavier Pessoles}]{hyperref}
+
+\input{style/new_style}
+\input{style/macros_SII}
+\usepackage{multicol}
+\usepackage{siunitx}
+%\usepackage{picins}
+\fichetrue
+%\fichefalse
+
+\proftrue
+\proffalse
+
+\tdtrue
+%\tdfalse
+
+\courstrue
+\coursfalse
+
+% -------------------------------------
+% Déclaration des titres
+% -------------------------------------
+
+\def\discipline{Sciences \\Industrielles de \\ l'Ingénieur}
+\def\xxtete{Sciences Industrielles de l'Ingénieur}
+
+
+\def\classe{\textsf{PSI$\star$ -- MP}}
+\def\xxnumpartie{Rév -- Stat}
+\def\xxpartie{Modéliser le comportement statique des systèmes mécaniques}
+
+\def\xxnumchapitre{Révision 1 \vspace{.2cm}}
+\def\xxchapitre{\hspace{.12cm} Résolution des problèmes de statique -- Statique plane}
+
+\def\xxposongletx{2}
+\def\xxposonglettext{1.45}
+\def\xxposonglety{19}%16
+
+\def\xxonglet{\textsf{Rév -- Stat}}
+
+\def\xxactivite{Application 04}
+\def\xxauteur{\textsl{Xavier Pessoles}}
+
+
+\def\xxtitreexo{Étude d'un robot Kuka}
+\def\xxsourceexo{\hspace{.2cm} \footnotesize{CCP MP 2010}}
+
+\def\xxcompetences{%
+\textsl{%
+%\vspace{-.5cm}
+\textbf{Savoirs et compétences :}\\
+\vspace{-.5cm}
+\begin{itemize}
+\item Appliquer le PFS à un solide ou un système de solides;
+\item Réaliser l’inventaire des actions mécaniques agissant sur un solide ou un système de solides;
+%\item Identifier les paramètres cinématiques d’entrée et de sortie d’une chaîne cinématique de transformation de mouvement;
+\item Identifier les puissances extérieures à un solide ou à un système de solides.
+\end{itemize}
+}}
+
+\def\xxfigures{
+\includegraphics[width=.35\textwidth]{images/fig_01}
+}%figues de la page de garde
+
+\def\xxpied{%
+Révision statique -- Résolution des problèmes de statique plane\\
+Fiche 1 -- \xxactivite%
+}
+
+\setcounter{secnumdepth}{5}
+%---------------------------------------------------------------------------
+
+
+\begin{document}
+%\chapterimage{png/Fond_Cin}
+\input{style/new_pagegarde}
+\vspace{5cm}
+\pagestyle{fancy}
+\thispagestyle{plain}
+
+
+\def\columnseprulecolor{\color{ocre}}
+\setlength{\columnseprule}{0.4pt} 
+
+%\ifprof
+%\else
+\begin{multicols}{2}
+%\fi
+\section*{Mise en situation}
+\ifprof
+\else
+\fi
+
+Le robot Kuka, objet de cette étude, a pour objectif la palettisation de bidons utilisés en agriculture biologique (compléments permettant d'améliorer les qualités nutritives des produits agricoles).
+
+
+\begin{center}
+\includegraphics[width=.6\linewidth]{images/fig_04}
+\end{center}
+
+\begin{obj}
+Suite à  l’appui  sur  le bouton d’arrêt d’urgence, le robot doit immédiatement s’immobiliser dans la position courante. On souhaite alors  vérifier  que  les  freins  équipant  le  robot  sont  suffisants  pour  assurer  sa  configuration 
+d’équilibre dans le cas d’une charge maximale de \SI{50}{daN} (préhenseur + bidon de 40 litres) et 
+qu’il ne faudra pas mettre des actionneurs en parallèle. 
+\end{obj}
+
+On se place dans la situation particulière définie figure suivante avec  $\alpha_2= -90\degres$ et $\alpha_3 = +90\degres$. 
+
+On donne :
+\begin{itemize}
+\item $O_2O_3 = O_6O_7 = \SI{1250}{mm}$; 
+\item $O_3O_{10} = O_8O_9 = \SI{1350}{mm}$; 
+\item $O_2O_6 = O_3O_7 = O_3O_8 = O_9O_{10} = \SI{500}{mm}$ ; 
+\item $\vect{P} = -500\vect{z_4}$.
+\end{itemize}
+
+On admettra pour simplifier que le point $O_4$ est situé sur l’axe  $\vect{x_3}$ et que l’axe $\vect{z_4}$ passe par le 
+point  $O_9$.  De  même,  les  poids  propres  des  pièces  seront  négligés  par  rapport  aux  autres 
+actions. 
+
+Les liaisons pivot sont supposées parfaites (pas de frottement). 
+
+Les  couples de  freinage maxi $Mf_2$ et $Mf_3$ des  freins  associés  aux moteurs $M_2$ et $M_3$ sont de 
+\SI{5}{mN} sur l’arbre moteur. On leur adjoint en série un réducteur de rapport 1/200. 
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/fig_02}
+\end{center}
+
+
+\subparagraph{}\textit{Réaliser le graphe de structure du mécanisme.}
+\ifprof
+\begin{corrige}~\\
+
+\end{corrige}
+\else
+\fi
+
+
+\subparagraph{}\textit{Déterminer les actions de la barre 8 et du bras 3 sur le poignet 4.}
+\ifprof
+\begin{corrige}~\\
+
+\end{corrige}
+\else
+\fi
+
+\subparagraph{}\textit{En isolant l’ensemble 3 et 4 et en considérant les informations fournies dans le tableau suivant, déterminer l’expression du moment $Mf_3$ correspondant à l’action
+du frein sur la pièce 3 en $O_3$. }
+\ifprof
+\begin{corrige}~\\
+
+\end{corrige}
+\else
+\fi
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/fig_03}
+%\textit{}
+\end{center}
+
+Le dispositif de freinage ne permet qu’un couple maxi de \SI{5}{mN} sur l’axe moteur.
+
+\subparagraph{}\textit{Quel est alors le couple de freinage disponible en sortie du réducteur ?}
+\ifprof
+\begin{corrige}~\\
+
+\end{corrige}
+\else
+\fi
+
+
+\subparagraph{}\textit{Le maintien du freinage est-il assuré ? }
+\ifprof
+\begin{corrige}~\\
+
+\end{corrige}
+\else
+\fi
+ 
+ On veut alors vérifier que le dispositif de freinage du moteur $M_2$ convient.
+
+\subparagraph{}\textit{En isolant la pièce 7, déterminer l’action de la barre 6 sur la pièce 7.}
+\ifprof
+\begin{corrige}~\\
+
+\end{corrige}
+\else
+\fi
+ 
+
+\subparagraph{}\textit{En considérant l’ensemble 2, 3, 4, 7, 8, déterminer l’expression du moment $Mf_2$
+correspondant à l’action du frein sur la pièce 2 en $O_2$. Calculer $Mf_2$. }
+\ifprof
+\begin{corrige}~\\
+
+\end{corrige}
+\else
+\fi
+ 
+
+\subparagraph{}\textit{Le dispositif de freinage étant identique à celui de l’axe 3, le maintien du freinage
+est-il assuré ?}
+\ifprof
+\begin{corrige}~\\
+
+\end{corrige}
+\else
+\fi
+ 
+
+
+
+\end{multicols}
+
+\newpage 
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/cor_01}
+%\textit{}
+\end{center}
+\begin{center}
+\includegraphics[width=\linewidth]{images/cor_02}
+%\textit{}
+\end{center}
+\begin{center}
+\includegraphics[width=\linewidth]{images/cor_03}
+%\textit{}
+\end{center}
+
+\end{document}
+
+\subparagraph{}\textit{}
+\ifprof
+\begin{corrige}~\\
+\end{corrige}
+\else
+\fi
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/img_04}
+%\textit{}
+\end{center}
+
+
+\subparagraph{}\textit{}
+\ifprof
+\begin{corrige}~\\
+\end{corrige}
+\else
+\fi
+
+\subparagraph{}\textit{}
+\ifprof
+\begin{corrige}~\\
+\end{corrige}
+\else
+\fi
+
+\subparagraph{}\textit{}
+\ifprof
+\begin{corrige}~\\
+\end{corrige}
+\else
+\fi
+
+\subparagraph{}\textit{}
+\ifprof
+\begin{corrige}~\\
+\end{corrige}
+\else
+\fi
+
+\subparagraph{}\textit{}
+\ifprof
+\begin{corrige}~\\
+\end{corrige}
+\else
+\fi
+
+\subparagraph{}\textit{}
+\ifprof
+\begin{corrige}~\\
+\end{corrige}
+\else
+\fi
+\begin{center}
+%\includegraphics[width=\linewidth]{images/fig_05}
+\end{center}
