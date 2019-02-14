@@ -90,13 +90,26 @@ Chapitre 1 -- \xxactivite%
 \subsection{Torseur des actions mécaniques}
 \noindent\begin{minipage}[c]{.7\linewidth}
 Considérons le contact ponctuel ponctuel entre deux pièces \textbf{1} et \textbf{2}. En considérant la liaison parfaite, le torseur des actions mécaniques de 1 sur 2 s'écrit sous la forme suivante : $\torseurstat{T}{1}{2}=\torseurl{F_{12} \vect{n_{12}}}{\vect{0}}{I}$ en notant $\vect{n_{12}}$ le vecteur normal au contact orienté de 1 vers 2. 
-En considérant que la liaison n'est pas parfaite, un effort va <<~apparaître~>> dans le plan tangent au contact. Le torseur des actions mécaniques de 1 sur 2 peut alors s'écrire sous la forme $\torseurstat{T}{1}{2}=\torseurl{N_{12} \vect{n_{12}}+T_{12} \vect{t_{12}}}{\vect{0}}{I}$. 
+En considérant que la liaison n'est pas parfaite, plusieurs situation peuvent se présenter.  
 \end{minipage}\hfill
 \begin{minipage}[c]{.25\linewidth}
 \begin{center}
 \includegraphics[width=\linewidth]{images/fig_01}
 \end{center}
 \end{minipage}
+
+\begin{itemize}
+\item Si on considère qu'un effort tant à faire translater 2 suivant $\vect{t_{12}}$, le torseur des actions mécaniques de 1 sur 2 peut alors s'écrire sous la forme $\torseurstat{T}{1}{2}=\torseurl{N_{12} \vect{n_{12}}+T_{12} \vect{t_{12}}}{\vect{0}}{I}$.
+\item Si on considère qu'un effort tant à faire rouler 2 autour de $\vect{z_{12}}$, le torseur des actions mécaniques de 1 sur 2 peut alors s'écrire sous la forme $\torseurstat{T}{1}{2}=\torseurl{N_{12} \vect{n_{12}}}{M_{r12} \vect{z}}{I}$ avec $M_{r12}$ moment de résistance au roulement.
+\item Si on considère qu'un effort tant à faire pivoter 2 autour de $\vect{n_{12}}$, le torseur des actions mécaniques de 1 sur 2 peut alors s'écrire sous la forme $\torseurstat{T}{1}{2}=\torseurl{N_{12} \vect{n_{12}}}{M_{p12} \vect{n_{12}}}{I}$ avec $M_{p12}$ moment de résistance au pivotement.
+\end{itemize}
+
+\begin{rem}
+Il est possible de modéliser l'ensemble des composantes dues au frottement dans un même torseur. 
+
+On fait l'hypothèse ici d'un problème plan, mais il peut aisément être adapté à un modèle 3D. 
+\end{rem}
+
 \subsection{Facteur de glissement et d'adhérence}
 \noindent\begin{minipage}[c]{.7\linewidth}
 Considérons la pièce 2 sur un plan incliné 1. Notons $\varphi_a$ l'angle à partir duquel la pièce 2 se met à glisser sur le plan. On appelle  $f_a=\tan\varphi_a$ le facteur d'adhérence.
@@ -112,8 +125,8 @@ On constate expérimentalement qu'une fois la pièce est en mouvement, si on dim
 Ces facteurs sont sans unité. Ils dépendent de la nature des matériaux en contact ainsi que de la nature des surfaces de contact (et d'un lubrifiant éventuel). Ils sont indépendants de l'effort de 2 sur 1. Ces deux facteurs étant relativement proches, on fera l'hypothèse que $f=f_1=f_2$. 
 
 \subsection{Modélisation de l'adhérence et du glissement -- Lois de Coulomb}
-\noindent\begin{minipage}[t]{.35\linewidth}
 
+\noindent\begin{minipage}[t]{.35\linewidth}
 \begin{center}
 \textbf{Cas 1 -- Glissement -- $\vectv{I}{2}{1}\neq \vect{0}$}
 \end{center}
@@ -121,9 +134,8 @@ Ces facteurs sont sans unité. Ils dépendent de la nature des matériaux en con
 \begin{itemize}
 \item Connaissant le sens et la direction de $\vectv{I}{2}{1}$, alors $\vect{t_{12}}$ s'oppose à $\vectv{I}{2}{1}$.
 \item $|T_{12}| = f |N_{12}|$.
-\item La vecteur vitesse appartenant au plan tangent au contact, on dit que l'effort résultant ($\vect{F_12}=N_{12} \vect{n_{12}}+T_{12} \vect{t_{12}}$) est sur le cône de frottement. 
+\item La vecteur vitesse appartenant au plan tangent au contact, on dit que l'effort résultant ($\vect{F_{12}}=N_{12} \vect{n_{12}}+T_{12} \vect{t_{12}}$) est sur le cône de frottement. 
 \end{itemize}
-
 \end{minipage}\hfill
 \begin{minipage}[t]{.35\linewidth}
 \begin{center}
@@ -133,10 +145,11 @@ Ces facteurs sont sans unité. Ils dépendent de la nature des matériaux en con
 \begin{itemize}
 \item La direction de $\vect{t_{12}}$ n'est pas connue. 
 \item $|T_{12}| \leq f |N_{12}|$.
-\item La direction $\vect{t_{12}}$ n'étant pas connue, on dit que l'effort résultant ($\vect{F_12}=N_{12} \vect{n_{12}}+T_{12} \vect{t_{12}}$) appartient au cône d'adhérence. 
+\item La direction $\vect{t_{12}}$ n'étant pas connue, on dit que l'effort résultant ($\vect{F_{12}}=N_{12} \vect{n_{12}}+T_{12} \vect{t_{12}}$) appartient au cône d'adhérence. 
 \end{itemize}
 \end{minipage}\hfill
 \begin{minipage}[t]{.29\linewidth}
+$\quad$
 \begin{center}
 \includegraphics[width=\linewidth]{images/fig_03}
 \end{center}
@@ -144,6 +157,23 @@ Ces facteurs sont sans unité. Ils dépendent de la nature des matériaux en con
 
 
 \subsection{Modélisation de la résistance au roulement et au pivotement}
+\noindent\begin{minipage}[t]{.49\linewidth}
+\begin{center}
+\textbf{Modélisation de la résistance au roulement}
+\end{center}
+\begin{itemize}
+\item Le moment de résistance au roulement $M_{r12}$ s'oppose à $\vecto{2}{1}$
+\end{itemize}
+
+\end{minipage}\hfill
+\begin{minipage}[t]{.49\linewidth}
+\begin{center}
+\textbf{Modélisation de la résistance au pivotement}
+\end{center}
+
+
+\end{minipage}
+
 
 \section{Modélisation locale des actions mécaniques}
 \begin{defi}
@@ -156,7 +186,7 @@ $
 \vectm{P}{1}{2} = \iint\limits_{\mathcal{S}}\vect{PM}\wedge \text{d}\vectf{1}{2}}{M}
 $.
 
-La densité surfacique d'effort peut alors se décomposer sur le vecteur normal au contact et sur le vecteur tangentiel au contact. On a alors$f(M) \vect{u(M)} = p_{12}(M)\vect{n_{12}}+\vect{\tau_{12}}(M)$. 
+La densité surfacique d'effort peut alors se décomposer sur le vecteur normal au contact et sur un vecteur appartenant au plan tangent au contact. On a alors$f(M) \vect{u(M)} = p_{12}(M)\vect{n_{12}}+\vect{\tau_{12}}(M)$. 
 Dans le cas du glissement : $||\vect{\tau_{12}}(M)||=p_{12}\cdot f$.
 En notant : 
 \begin{itemize}
