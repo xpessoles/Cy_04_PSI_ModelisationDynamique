@@ -155,6 +155,9 @@ $\quad$
 \end{center}
 \end{minipage}
 
+\begin{rem}
+En considérant que la direction du vecteur vitesse peut décrire le plan tangent au contact, la résultante des efforts $\vect{F_{12}}$ décrit alors un cône. On parle donc de cône d'adhérence. 
+\end{rem}
 
 \subsection{Modélisation de la résistance au roulement et au pivotement}
 \noindent\begin{minipage}[t]{.49\linewidth}
@@ -162,7 +165,8 @@ $\quad$
 \textbf{Modélisation de la résistance au roulement}
 \end{center}
 \begin{itemize}
-\item Le moment de résistance au roulement $M_{r12}$ s'oppose à $\vecto{2}{1}$
+\item Le moment de résistance au roulement $\vect{M_{r12}}$ s'oppose à $\vecto{2}{1}\cdot \vect{z}$. 
+\item On note $r$ le coefficient de résistance au roulement ([m]) et on a $||\vect{M_{r12}}||=r||\vect{N_{12}} ||$.
 \end{itemize}
 
 \end{minipage}\hfill
@@ -170,10 +174,25 @@ $\quad$
 \begin{center}
 \textbf{Modélisation de la résistance au pivotement}
 \end{center}
-
-
+\begin{itemize}
+\item Le moment de résistance au pivotement $\vect{M_{p12}}$ s'oppose à $\vecto{2}{1}\cdot \vect{n_{12}}$. 
+\item On note $p$ le coefficient de résistance au pivotement ([m]) et on a $||\vect{M_{p12}}||=p||\vect{N_{12}} ||$.
+\end{itemize}
 \end{minipage}
 
+\vspace{1cm}
+
+\noindent\begin{minipage}[t]{.69\linewidth}
+Ainsi pour modéliser la résistance au roulement, on peut faire l'hypothèse que l'action normale de 1 sur 2 est <<~avancée~>> de $r$ par rapport au point $I$. 
+\end{minipage}
+\hfill
+\begin{minipage}[t]{.29\linewidth}
+$\quad$
+\vspace{-.5cm}
+\begin{center}
+\includegraphics[width=\linewidth]{images/fig_04}
+\end{center}
+\end{minipage}
 
 \section{Modélisation locale des actions mécaniques}
 \begin{defi}
@@ -190,13 +209,18 @@ La densité surfacique d'effort peut alors se décomposer sur le vecteur normal 
 Dans le cas du glissement : $||\vect{\tau_{12}}(M)||=p_{12}\cdot f$.
 En notant : 
 \begin{itemize}
-\item $p_{12}(M)$ pression de contact au point $M$ (en $N/m^2$);
-\item $\vect{\tau_{12}}(M)$ : la projection tangentielle de la densité surfacique (norme en $N/m^2$);
+\item $p_{12}(M)$ pression de contact au point $M$ (en $\left[\text{Nm}^{-2}\right]$);
+\item $\vect{\tau_{12}}(M)$ : la projection tangentielle de la densité surfacique (norme en $\left[\text{Nm}^{-2}\right]$);
 \item $f$ facteur de frottement.
 \end{itemize}
 \end{defi}
 
 \section{Résolution des problèmes d'arc-boutement}
+L'arc-boutement est un phénomène de blocage d'une liaison (souvent glissière ou pivot glissant). Ce phénomène est causé d'une part par le frottement dans une liaison et d'autre part par le jeu existant entre les deux pièces en mouvement. En effet, le jeu dans la liaison autorise une légère rotation de la pièce mâle, modifiant les zones de contact. Le frottement dans ces zones de contact conduit à l'arc-boutement. 
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/fig_05}
+\end{center}
 
 \end{document}
 
