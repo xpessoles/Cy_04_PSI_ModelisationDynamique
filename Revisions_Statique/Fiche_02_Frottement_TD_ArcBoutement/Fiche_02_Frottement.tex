@@ -1,0 +1,247 @@
+\documentclass[10pt,fleqn]{article} % Default font size and left-justified equations
+\usepackage[%
+    pdftitle={Modélisation du frottement en statique},
+    pdfauthor={Xavier Pessoles}]{hyperref}
+
+\input{style/new_style}
+\input{style/macros_SII}
+\usepackage{multicol}
+\usepackage{siunitx}
+%\usepackage{picins}
+\fichetrue
+%\fichefalse
+
+\proftrue
+%\proffalse
+
+\tdtrue
+%\tdfalse
+
+%\courstrue
+\coursfalse
+
+\newif\ifnormal
+\normaltrue
+%\normalfalse
+
+\newif\ifdifficile
+\difficilefalse
+%\difficiletrue
+
+\newif\iftdifficile
+\tdifficilefalse
+%\tdifficiletrue
+
+% -------------------------------------
+% Déclaration des titres
+% -------------------------------------
+
+\def\classe{\textsf{PSI$\star$ -- MP}}
+\def\xxnumpartie{Rév -- Stat }
+\def\xxpartie{Modélisation des actions mécaniques dans les systèmes}
+
+\def\xxnumchapitre{ Révisions 2\vspace{.2cm}}
+\def\xxchapitre{\hspace{.12cm} Modélisation du frottement}
+
+\def\discipline{Sciences \\Industrielles de \\ l'Ingénieur}
+\def\xxtete{Sciences Industrielles de l'Ingénieur}
+
+\def\xxposongletx{2}
+\def\xxposonglettext{1.45}
+\def\xxposonglety{19}%16
+
+\def\xxonglet{\textsf{Rév -- Stat}}
+
+\def\xxactivite{Fiche 2}
+\def\xxauteur{\textsl{Xavier Pessoles}}
+
+
+\def\xxtitreexo{Quille pendulaire \ifnormal $\star$ \else \fi \iftdifficile $\star\star\star$ \else \fi }
+\def\xxsourceexo{\hspace{.2cm} \footnotesize{Concours Commun Mines Ponts 2014}}
+
+\def\xxcompetences{%
+\textsl{%
+\textbf{Savoirs et compétences :}\\
+}}
+
+\def\xxfigures{
+%\includegraphics[width=.75\textwidth]{images/fig_00}
+}%figues de la page de garde
+\def\xxpied{%
+Cycle 06 -- Modélisation mécanique -- Énergétique\\% afin de valider leurs performances.\\
+Chapitre 1 -- \xxactivite%
+}
+
+
+\setcounter{secnumdepth}{5}
+%---------------------------------------------------------------------------
+
+
+\begin{document}
+\input{style/new_pagegarde}
+\vspace{5cm}
+\pagestyle{fancy}
+\thispagestyle{plain}
+
+
+\def\columnseprulecolor{\color{ocre}}
+\setlength{\columnseprule}{0.4pt} 
+
+%\ifprof
+%\else
+\begin{multicols}{2}
+
+
+\begin{center}
+\begin{tabular}{|p{4cm}|c|c|c|}
+\hline
+Grandeur & Notation & Unités & Valeur numérique \\ \hline
+Diamètre des colonnes  de guidage & d & cm & 10 \\ \hline
+Diamètre des vis de guidage & d' & cm & 5 \\ \hline
+Hauteur totale des colonnes & H & cm & 200 \\ \hline
+Limite de course du bras & h0 & cm & 10 \\ \hline
+Longueur de guidage des colonnes & $\ell$  & cm & 20 \\ \hline
+Coefficient de frottement colonne/bras & f & -- & 0,2 \\ \hline
+Excentration guidage en translation & e & cm & 20 \\ \hline
+%Module d’Young des colonnes  de guidage	E	GPa	200 \\ \hline
+\end{tabular}
+\end{center}
+
+On s’intéresse plus précisément à une des trois chaînes réalisant la liaison entre le bras mobile 1 et le bâti
+0. 
+Cette liaison est principalement réalisée par le biais d’une colonne 2, qui est en liaison complète avec 0. Un schéma de principe est représenté sur la Figure 26. La colonne est de diamètre $d$, l’alésage du bras de diamètre
+$d + j$ et  de longueur $\ell$. On suppose que le jeu $j$, bien que négligeable devant d ($j  << d$ ), permet un léger
+basculement du bras par rapport à la colonne, ce qui conduit à considérer cet assemblage comme l’association en parallèle de deux liaisons sphère-plan, en $I$ et $J$. Le contact est modélisé en utilisant la modèle de Coulomb et on note $f$  le coefficient  de frottement. Le bras 1 est soumis à une action mécanique motrice (issue de la
+liaison hélicoïdale) modélisée par un glisseur en $B$ noté $F = −F_z$ ($F > 0$) dont l’axe central est distant de $e$
+de l’axe de la liaison. On se propose  d’étudier le risque d’arcboutement  de cette liaison, supposée plane, en négligeant les actions de la pesanteur.
+
+
+\end{multicols}
+ 
+\end{document}
+
+On note $\vect{F_I} = X_I \vect{x} + Y_I\vect{y}$ et $\vect{F_J} = X_J \vect{x} + Y_J\vect{y}$. De plus $\vect{F}=-F\vect{y}$. On considère le jeu négligeable (mais suffisamment grand pour permettre le basculent de la pièce 2 et donc l'arcboutement. En appliquant le PFS en $A$, on a donc : 
+$\left\{
+\begin{array}{l}
+X_I + X_J = 0 \\
+Y_I + Y_J -F = 0 \\ 
+-eF + \dfrac{\ell}{2}X_J - \dfrac{\ell}{2}X_I + \dfrac{D}{2}Y_J - \dfrac{D}{2}Y_I = 0
+\end{array}
+\right.$
+$
+\Longleftrightarrow
+\left\{
+\begin{array}{l}
+X_I + X_J = 0 \\
+Y_I + Y_J -F = 0 \\ 
+-eF + \dfrac{\ell}{2}\left(X_J - X_I\right) + \dfrac{D}{2}\left(Y_J - Y_I\right) = 0
+\end{array}
+\right.$
+
+On a de plus : 
+$
+\left\{
+\begin{array}{l}
+X_I \leq 0 \text{ et } Y_I \geq 0 \\
+X_J \geq 0 \text{ et } Y_J \geq 0 \\
+|Y_I|\leq f|X_I| \text{ et }  |Y_J|\leq f|X_J| \\
+\end{array}
+\right.$
+$
+\Rightarrow
+\left\{
+\begin{array}{l}
+X_I \leq 0 \text{ et }  Y_I \geq 0 \\
+X_J \geq 0 \text{ et } Y_J \geq 0 \\
+Y_I\leq -fX_I \text{ et } Y_J\leq fX_J \\
+\end{array}
+\right.$
+
+On suppose qu'on est à la limite du glissement au point $I$. On a donc : 
+$
+\left\{
+\begin{array}{l}
+X_I + X_J = 0 \\
+Y_I + Y_J -F = 0 \\ 
+-eF + \dfrac{\ell}{2}\left(X_J - X_I\right) + \dfrac{D}{2}\left(Y_J - Y_I\right) = 0 \\
+Y_I= -fX_I
+\end{array}
+\right.$
+
+$
+\Rightarrow
+\left\{
+\begin{array}{l}
+X_J = -X_I   ** \\
+-fX_I + Y_J -F = 0 \\ 
+-eF + \dfrac{\ell}{2}\left(-X_I - X_I\right) + \dfrac{D}{2}\left(Y_J +fX_I\right) = 0 \\
+Y_I= -fX_I **
+\end{array}
+\right.$
+$
+\Rightarrow
+\left\{
+\begin{array}{l}
+X_J = -X_I   ** \\
+Y_J =F  +fX_I ** \\ 
+-eF + \dfrac{\ell}{2}\left(-2X_I \right) + \dfrac{D}{2}\left(F  +2fX_I \right) = 0 \\
+Y_I= -fX_I **
+\end{array}
+\right.$
+
+$
+\Rightarrow
+\left\{
+\begin{array}{l}
+X_J = -X_I   ** \\
+Y_J =F  +fX_I ** \\ 
+-eF -\ell X_I  + \dfrac{D}{2}F  +fDX_I  = 0 \\
+Y_I= -fX_I **
+\end{array}
+\right.$
+$
+\Rightarrow
+\left\{
+\begin{array}{l}
+X_J = -X_I   ** \\
+Y_J =F  +fX_I ** \\ 
+ F \left( -e + \dfrac{D}{2} \right) + X_I\left( -\ell+fD\right)   = 0 \\
+Y_I= -fX_I **
+\end{array}
+\right.$
+
+
+$
+\Rightarrow
+\left\{
+\begin{array}{l}
+X_J = -X_I   ** \\
+Y_J =F  +fX_I ** \\ 
+X_I   =  F \dfrac{ -e + \dfrac{D}{2} }{-\ell+fD}=  F \dfrac{ -e + \dfrac{D}{2} }{-\ell+fD} =  F \dfrac{ -2e + D }{-2\ell+2fD}  \\
+Y_I= -fX_I **
+\end{array}
+\right.$
+
+De plus, on  a $Y_J\leq fX_J$. 
+
+En conséquences, 
+
+$F  +fF \dfrac{ -2e + D }{-2\ell+2fD} \leq -fF \dfrac{ -2e + D }{-2\ell+2fD}$
+$\Rightarrow 1  +f\dfrac{ -2e + D }{-2\ell+2fD} \leq -f \dfrac{ -2e + D }{-2\ell+2fD}$
+$\Rightarrow 1  +2f\dfrac{ -2e + D }{-2\ell+2fD} \leq 0$
+$\Rightarrow \dfrac{ -4ef + 2fD-2\ell+2fD }{-2\ell+2fD} \leq 0$
+$\Rightarrow \dfrac{ -2ef + 2fD-\ell }{-\ell+fD} \leq 0$
+\end{document}
+
+\subparagraph{}\textit{}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/img_04}
+%\textit{}
+\end{center}
+
