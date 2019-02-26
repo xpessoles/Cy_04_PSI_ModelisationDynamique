@@ -52,12 +52,12 @@
 
 \def\xxonglet{\textsf{Rév -- Stat}}
 
-\def\xxactivite{Fiche 2}
+\def\xxactivite{TD}
 \def\xxauteur{\textsl{Xavier Pessoles}}
 
 
-\def\xxtitreexo{Quille pendulaire \ifnormal $\star$ \else \fi \iftdifficile $\star\star\star$ \else \fi }
-\def\xxsourceexo{\hspace{.2cm} \footnotesize{Concours Commun Mines Ponts 2014}}
+\def\xxtitreexo{Système EOS \ifnormal $\star$ \else \fi \iftdifficile $\star\star\star$ \else \fi }
+\def\xxsourceexo{\hspace{.2cm} \footnotesize{Banque PT SIA -- 2016}}
 
 \def\xxcompetences{%
 \textsl{%
@@ -65,11 +65,11 @@
 }}
 
 \def\xxfigures{
-%\includegraphics[width=.75\textwidth]{images/fig_00}
+\includegraphics[width=.45\textwidth]{images/fig_00}
 }%figues de la page de garde
 \def\xxpied{%
-Cycle 06 -- Modélisation mécanique -- Énergétique\\% afin de valider leurs performances.\\
-Chapitre 1 -- \xxactivite%
+Révisions Statique -- Arcboutement\\% afin de valider leurs performances.\\
+Révisions 2 -- \xxactivite%
 }
 
 
@@ -91,6 +91,163 @@ Chapitre 1 -- \xxactivite%
 %\else
 \begin{multicols}{2}
 
+\subsection*{Mise en situation}
+Le système EOS permet l’acquisition simultanée de radiographies de face et de profil du corps entier (ou d’une zone anatomique localisée) avec une réduction de la dose de rayons X de l’ordre de 90\,\% par rapport à un système radiographique conventionnel ou un scanner.
+
+
+\begin{center}
+\includegraphics[width=.7\linewidth]{images/fig_02}
+%\textit{}
+\end{center}
+
+Le mécanisme interne, constitué d’un bras mobile, guidé par rapport au bâti par trois colonnes
+verticales. Le bras supporte deux chaînes d’acquisition, chacune d’entre elles étant composée d’un tube à rayons X et d’un détecteur.
+
+\begin{center}
+\includegraphics[width=.7\linewidth]{images/fig_03}
+%\textit{}
+\end{center}
+
+
+La figure suivante représente le bras mobile en vue de dessus, ce qui permet de voir les passages des colonnes et
+des vis. Le modèle cinématique permettant d’appréhender le fonctionnement interne. 
+
+
+\begin{center}
+\includegraphics[width=.7\linewidth]{images/fig_04}
+%\textit{}
+\end{center}
+
+
+
+
+
+On s’intéresse plus précisément à une des trois chaînes réalisant la liaison entre le bras mobile 1 et le bâti
+0. 
+Cette liaison est principalement réalisée par le biais d’une colonne 2, qui est en liaison complète avec 0. Un schéma de principe est représenté sur la figure suivante. La colonne est de diamètre $d$, l’alésage du bras de diamètre
+$d + j$ et  de longueur $\ell$. On suppose que le jeu $j$, bien que négligeable devant d ($j  << d$ ), permet un léger
+basculement du bras par rapport à la colonne, ce qui conduit à considérer cet assemblage comme l’association en parallèle de deux liaisons sphère-plan, en $I$ et $J$. Le contact est modélisé en utilisant la modèle de Coulomb et on note $f$  le coefficient  de frottement. Le bras 1 est soumis à une action mécanique motrice (issue de la
+liaison hélicoïdale) modélisée par un glisseur en $B$ noté $F = -F_z$ ($F > 0$) dont l’axe central est distant de $e$
+de l’axe de la liaison. On se propose  d’étudier le risque d’arcboutement  de cette liaison, supposée plane, en négligeant les actions de la pesanteur.
+
+\begin{obj}
+Déterminer les conditions de non arcboutement du guidage du système EOS. 
+\end{obj}
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/fig_01}
+%\textit{}
+\end{center}
+
+\subsection*{Travail à réaliser}
+\subparagraph{}\textit{En introduisant $F_I = Y_ I \vect{y} + Z_ I \vect{z}$ et $F_J = Y_ J \vect{y} + Z_ J \vect{z}$, les glisseurs en $I$ et $J$ qui résultent des actions mécaniques exercées par la colonne 2 sur le bras 1, écrire les trois équations scalaires traduisant l’équilibre du bras.}
+\ifprof
+\begin{corrige}~\\
+
+En appliquant le PFS en $I$, on a : 
+
+$\left\{
+\begin{array}{l}
+Y_I + Y_J = 0 \\
+Z_I + Z_J -F = 0 \\ 
+-\left(e-\dfrac{d}{2}\right)F -\ell Y_J -d Z_J = 0
+\end{array}
+\right.$
+
+$
+\Leftrightarrow
+\left\{
+\begin{array}{l}
+Y_I + Y_J = 0 \\
+Z_I + Z_J -F = 0 \\ 
+d Z_J = -\left(e-\dfrac{d}{2}\right)F -\ell Y_J 
+\end{array}
+\right.$
+\end{corrige}
+\else
+\fi
+
+
+\subparagraph{}\textit{En supposant que $F > 0$, comme précisé ci-dessus, donner  les signes des composantes  $Y_I$, $Z_I$, $Y_J$ et $Z_J$ puis écrire,  en utilisant  le modèle  de Coulomb, les inéquations  qui lient ces composantes.}
+\ifprof
+\begin{corrige} ~\\
+On a de plus : 
+$
+\left\{
+\begin{array}{l}
+Y_I \geq 0 \text{ et } Z_I \geq 0 \\
+Y_J \leq 0 \text{ et } Z_J \geq 0 \\
+|Z_I|\leq f|Y_I| \text{ et }  |Z_J|\leq f|Y_J| \\
+\end{array}
+\right.$
+$ \Rightarrow 
+\left\{
+\begin{array}{l}
+Y_I \geq 0 \text{ et } Z_I \geq 0 \\
+Y_J \leq 0 \text{ et } Z_J \geq 0 \\
+Z_I\leq fY_I \text{ et }  Z_J\leq -fY_J \\
+\end{array}
+\right.$
+
+
+\end{corrige}
+\else
+\fi
+
+\subparagraph{}\textit{En supposant qu’on est à  la limite du glissement au niveau d’un des contacts, donner la condition nécessaire entre $\ell$, $f$ et $e$ pour qu’il n’y ait pas d’arcboutement dans la liaison.}
+\ifprof
+\begin{corrige}~\\
+
+On considère qu'on est à la limite du glissement au point $I$.  En conséquences, 
+$
+\left\{
+\begin{array}{l}
+Z_I =  fY_I  \\
+Y_I + Y_J = 0 \\
+Z_I + Z_J -F = 0 \\ 
+-\left(e-\dfrac{d}{2}\right)F -\ell Y_J -d Z_J = 0
+\end{array}
+\right.$
+
+$\Rightarrow
+\left\{
+\begin{array}{l}
+Z_I =  fY_I  \\
+Y_I =- Y_J \\
+Z_I + Z_J -F = 0 \Leftrightarrow  - f Y_J + Z_J -F = 0\Leftrightarrow  f Y_J =  Z_J -F  \\ 
+-\left(e-\dfrac{d}{2}\right)F -\ell \dfrac{Z_J -F}{f}  -d Z_J = 0
+\end{array}
+\right.$
+
+On a donc
+ $-\left(e-\dfrac{d}{2}\right)F - \dfrac{\ell Z_J }{f}  + \dfrac{ \ell F}{f}   -d Z_J = 0$
+ 
+ $\Leftrightarrow -\left(e-\dfrac{d}{2} + \dfrac{ \ell}{f} \right)F -\left( \dfrac{\ell }{f}+d \right)Z_J = 0$
+ 
+ $\Leftrightarrow -\left(e-\dfrac{d}{2} + \dfrac{ \ell}{f} \right)F =\left( \dfrac{\ell }{f}+d \right)Z_J $
+ 
+ $ \Leftrightarrow Z_J = \dfrac{-2fe+fd - 2\ell}{2\ell +2fd} F  $
+ 
+ 
+ De plus, on a : 
+$ Z_J\leq -fY_J$ 
+$\Leftrightarrow \dfrac{-2fe+fd - 2\ell}{2\ell +2fd} F  \leq f Y_I $ 
+\end{corrige}
+\else
+\fi
+
+
+\subsection*{Conclusion vis-à-vis de l'objectif}
+\subparagraph{}\textit{Vérifier que la condition de non arcboutement est satisfaite sur le système EOS pour lequel les grandeurs caractéristiques fournies ci-dessous ?}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+
+
+
 \footnotesize
 \noindent\begin{center}
 \begin{tabular}{|p{2.6cm}|c|c|p{1.5cm}|}
@@ -108,48 +265,6 @@ Excentration guidage en translation & e & cm & 20 \\ \hline
 \end{center}
 
 \normalsize
-
-On s’intéresse plus précisément à une des trois chaînes réalisant la liaison entre le bras mobile 1 et le bâti
-0. 
-Cette liaison est principalement réalisée par le biais d’une colonne 2, qui est en liaison complète avec 0. Un schéma de principe est représenté sur la figure suivante. La colonne est de diamètre $d$, l’alésage du bras de diamètre
-$d + j$ et  de longueur $\ell$. On suppose que le jeu $j$, bien que négligeable devant d ($j  << d$ ), permet un léger
-basculement du bras par rapport à la colonne, ce qui conduit à considérer cet assemblage comme l’association en parallèle de deux liaisons sphère-plan, en $I$ et $J$. Le contact est modélisé en utilisant la modèle de Coulomb et on note $f$  le coefficient  de frottement. Le bras 1 est soumis à une action mécanique motrice (issue de la
-liaison hélicoïdale) modélisée par un glisseur en $B$ noté $F = -F_z$ ($F > 0$) dont l’axe central est distant de $e$
-de l’axe de la liaison. On se propose  d’étudier le risque d’arcboutement  de cette liaison, supposée plane, en négligeant les actions de la pesanteur.
-
-\begin{center}
-\includegraphics[width=\linewidth]{images/fig_01}
-%\textit{}
-\end{center}
-
-
-\subparagraph{}\textit{En introduisant $F_I = Y_ I \vect{y} + Z_ I \vect{z}$ et $F_J = Y_ J \vect{y} + Z_ J \vect{z}$, les glisseurs en $I$ et $J$ qui résultent des actions mécaniques exercées par la colonne 2 sur le bras 1, écrire les trois équations scalaires traduisant l’équilibre du bras.}
-\ifprof
-\begin{corrige}
-\end{corrige}
-\else
-\fi
-
-
-\subparagraph{}\textit{En supposant que $F > 0$, comme précisé ci-dessus, donner  les signes des composantes  $Y_I$, $Z_I$, $Y_J$ et $Z_J$ puis écrire,  en utilisant  le modèle  de Coulomb, les inéquations  qui lient ces composantes.}
-\ifprof
-\begin{corrige}
-\end{corrige}
-\else
-\fi
-
-
-
-\subparagraph{}\textit{En supposant qu’on est à  la limite du glissement au niveau d’un des contacts, donner la condition nécessaire entre $\ell$, $f$ et $e$ pour qu’il n’y ait pas d’arcboutement dans la liaison. Cette condition est-elle satisfaite sur le système EOS pour lequel les grandeurs caractéristiques fournies précédemment ?}
-\ifprof
-\begin{corrige}
-\end{corrige}
-\else
-\fi
-
-
-
-
 
 
 \end{multicols}
