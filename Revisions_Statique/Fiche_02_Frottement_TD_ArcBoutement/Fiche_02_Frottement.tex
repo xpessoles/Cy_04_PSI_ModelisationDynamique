@@ -87,9 +87,10 @@ Révisions 2 -- \xxactivite%
 \def\columnseprulecolor{\color{ocre}}
 \setlength{\columnseprule}{0.4pt} 
 
-%\ifprof
-%\else
+\ifprof
+\else
 \begin{multicols}{2}
+\fi
 
 \subsection*{Mise en situation}
 Le système EOS permet l’acquisition simultanée de radiographies de face et de profil du corps entier (ou d’une zone anatomique localisée) avec une réduction de la dose de rayons X de l’ordre de 90\,\% par rapport à un système radiographique conventionnel ou un scanner.
@@ -199,6 +200,7 @@ Z_I\leq fY_I \text{ et }  Z_J\leq -fY_J \\
 \begin{corrige}~\\
 
 On considère qu'on est à la limite du glissement au point $I$.  En conséquences, 
+
 $
 \left\{
 \begin{array}{l}
@@ -247,6 +249,7 @@ $\Leftrightarrow 0    \leq   3\ell +2fe $
 \begin{corrige}~\\
 
 On considère qu'on est à la limite du glissement au point $J$.  En conséquences, 
+
 $
 \left\{
 \begin{array}{l}
@@ -275,6 +278,36 @@ Z_I + Z_J -F = 0 \Leftrightarrow   Z_I = - Z_J +F = - fY_J +F\\
 \left(e-\dfrac{d}{2}\right)F +\left(\ell  +d f\right)Y_J  = 0
 \end{array}
 \right.$
+$ \Leftrightarrow
+\left\{
+\begin{array}{l}
+Z_J =  fY_J  \\
+Y_I =- Y_J = \dfrac{e-\dfrac{d}{2}}{\ell  +d f}F\\
+Z_I = - fY_J +F=- f \dfrac{\dfrac{d}{2}-e}{\ell  +d f}F +F\\ 
+Y_J  = \dfrac{\dfrac{d}{2}-e}{\ell  +d f}F
+\end{array}
+\right.$
+
+
+$ \Leftrightarrow
+\left\{
+\begin{array}{l}
+Z_J =  fY_J  \\
+Y_I = \dfrac{e-\dfrac{d}{2}}{\ell  +d f}F\\
+Z_I =  \dfrac{fe+\dfrac{fd}{2}+\ell  }{\ell  +d f}F \\ 
+Y_J  = \dfrac{\dfrac{d}{2}-e}{\ell  +d f}F
+\end{array}
+\right.$
+
+De plus,  $Z_I\leq fY_I$.
+
+On a donc,  $\dfrac{fe+\dfrac{fd}{2}+\ell  }{\ell  +d f}F\leq f\dfrac{e-\dfrac{d}{2}}{\ell  +d f}F$
+
+$\Leftrightarrow fe+\dfrac{fd}{2}+\ell  \leq fe-\dfrac{fd}{2}$
+
+$\Leftrightarrow {fd}+\ell  \leq 0$
+
+$\Leftrightarrow {fd}+\ell  \leq 0$
 
 \end{corrige}
 \else
@@ -310,9 +343,13 @@ Excentration guidage en translation & e & cm & 20 \\ \hline
 
 \normalsize
 
+\ifprof
+\else
 
 \end{multicols}
  
+\fi
+
 \end{document}
 
 On note $\vect{F_I} = X_I \vect{x} + Y_I\vect{y}$ et $\vect{F_J} = X_J \vect{x} + Y_J\vect{y}$. De plus $\vect{F}=-F\vect{y}$. On considère le jeu négligeable (mais suffisamment grand pour permettre le basculent de la pièce 2 et donc l'arcboutement. En appliquant le PFS en $A$, on a donc : 
