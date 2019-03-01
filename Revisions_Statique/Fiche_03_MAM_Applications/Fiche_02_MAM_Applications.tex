@@ -12,7 +12,7 @@
 %\fichefalse
 
 \proftrue
-\proffalse
+%\proffalse
 
 \tdtrue
 %\tdfalse
@@ -346,6 +346,91 @@ géométriques de l’embrayage.}
 
 \subparagraph{}
 \textit{En déduire le couple maximal transmissible en fonction de $F_a$ (et non en fonction de $p$) et des caractéristiques géométriques de l’embrayage.}
+
+\ifprof
+\newpage
+\else
+\fi
+\begin{corrige}
+
+\textbf{Expression du couple infinitésimal}
+$$
+d\vectm{\text{Plateau}}{\text{Disque}}{O} =
+d\vectm{P}{D}{O} =  \vect{OM}\wedge d\vectf{P}{D}
+$$
+
+\textbf{Expression de la résultante infinitésimale}
+
+$$
+d\vectf{P}{D} = d\vect{N(P\rightarrow D)}+d\vect{T(P\rightarrow D)}
+$$
+
+\textbf{Expression de l'effort normal}
+
+$$
+d\vect{N(P\rightarrow D)} = p \vect{n} d\mathcal{S} = -p \vect{z} d\mathcal{S}
+$$
+
+\textbf{Expression de l'unité de surface}
+
+$$
+d\mathcal{S} = \rho d\theta d\rho
+$$
+
+\textbf{Expression de l'effort tangentiel}
+
+D'après le modèle de Coulomb, on commence par identifier le vecteur $\vectv{M}{D}{P}$.
+Le vecteur tangentiel est donc opposé à ce dernier. A la limite du glissement on a alors : 
+$$
+d\vect{T(P\rightarrow D)} = -f ||d\vect{N(P\rightarrow D)}|| \vect{v}    = fp d\mathcal{S}\vect{v}
+$$
+
+\textbf{Calcul final}
+
+On note $\vect{OM}=\rho\vect{u}$ :
+
+\begin{eqnarray*}
+\vectm{O}{P}{D}  
+&=& d\vectm{O}{P}{D}  \\
+&=& \int \vect{OM}\wedge d\vectf{P}{D} \\
+&=& \int \rho\vect{u} \wedge \left( d\vect{N(P\rightarrow D)}+d\vect{T(P\rightarrow D)} \right)\\
+&=& \int \rho\vect{u} \wedge \left( -p \vect{z} d\mathcal{S} +fp d\mathcal{S}\vect{v} \right)\\
+&=& \iint p\rho\vect{v} d\mathcal{S} +\iint pf\rho  \vect{z}d\mathcal{S} = 
+\iint p\rho\vect{v} \rho d\theta d\rho +\iint pf\rho  \vect{z}\rho d\theta d\rho \\
+\end{eqnarray*}
+
+\begin{eqnarray*}
+\iint p\rho\vect{v} \rho d\theta d\rho = \iint p\rho\left(\cos\theta\vect{y}-\sin\theta\vect{x} \right) \rho d\theta d\rho \\
+=\iint p\rho\cos\theta\vect{y}  \rho d\theta d\rho-\iint p\rho \sin\theta\vect{x}  \rho d\theta d\rho \\
+=p \vect{y}  \int\limits_{r}^{R} \int\limits_{0}^{2\pi}\cos\theta d\theta \rho^2 d\rho- p\vect{x}\int\limits_{r}^{R} \int\limits_{0}^{2\pi} \sin\theta  \rho^2 d\theta d\rho \\
+=p \left[ \sin\theta\right]_{0}^{2\pi}\left[ \dfrac{1}{3}\rho^3\right]_{r}^{R}\vect{y}\
+ -
+p \left[ -\cos\theta\right]_{0}^{2\pi}\left[ \dfrac{1}{3}\rho^3\right]_{r}^{R}\vect{x} = \vect{0}
+\end{eqnarray*}
+
+\begin{eqnarray*}
+\iint pf\rho^2 \vect{z} d\theta d\rho =
+pf \left[ \theta\right]_{0}^{2\pi}\left[ \dfrac{1}{3}\rho^3\right]_{r}^{R} \vect{z}\\
+= pf2\pi \dfrac{R^3-r^3}{3} 
+\end{eqnarray*} 
+
+Enfin, en notant $F_r$ l'effort (uniformément réparti) exercé par le ressort sur toute la couronne, on a donc :
+$$
+p=\dfrac{F_r}{\pi \left(R^2-r^2 \right)}
+$$
+
+Au final : 
+
+$$ \vectm{O}{P}{D}  
+= f\dfrac{2}{3} \dfrac{R^3-r^3}{R^2-r^2} F_r
+$$
+\end{corrige}
+
+
+\ifprof
+\newpage
+\else
+\fi
 
 \subsection*{Exercice 3 : Embrayage conique des synchroniseurs de boite de vitesses (surface de friction coniques)} 
 \setcounter{exo}{0}
