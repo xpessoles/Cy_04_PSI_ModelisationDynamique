@@ -155,6 +155,9 @@ $\quad$
 \end{center}
 \end{minipage}
 
+\begin{rem}
+En considérant que la direction du vecteur vitesse peut décrire le plan tangent au contact, la résultante des efforts $\vect{F_{12}}$ décrit alors un cône. On parle donc de cône d'adhérence. 
+\end{rem}
 
 \subsection{Modélisation de la résistance au roulement et au pivotement}
 \noindent\begin{minipage}[t]{.49\linewidth}
@@ -162,7 +165,8 @@ $\quad$
 \textbf{Modélisation de la résistance au roulement}
 \end{center}
 \begin{itemize}
-\item Le moment de résistance au roulement $M_{r12}$ s'oppose à $\vecto{2}{1}$
+\item Le moment de résistance au roulement $\vect{M_{r12}}$ s'oppose à $\vecto{2}{1}\cdot \vect{z}$. 
+\item On note $r$ le coefficient de résistance au roulement ([m]) et on a $||\vect{M_{r12}}||=r||\vect{N_{12}} ||$.
 \end{itemize}
 
 \end{minipage}\hfill
@@ -170,10 +174,25 @@ $\quad$
 \begin{center}
 \textbf{Modélisation de la résistance au pivotement}
 \end{center}
-
-
+\begin{itemize}
+\item Le moment de résistance au pivotement $\vect{M_{p12}}$ s'oppose à $\vecto{2}{1}\cdot \vect{n_{12}}$. 
+\item On note $p$ le coefficient de résistance au pivotement ([m]) et on a $||\vect{M_{p12}}||=p||\vect{N_{12}} ||$.
+\end{itemize}
 \end{minipage}
 
+\vspace{1cm}
+
+\noindent\begin{minipage}[t]{.69\linewidth}
+Ainsi pour modéliser la résistance au roulement, on peut faire l'hypothèse que l'action normale de 1 sur 2 est <<~avancée~>> de $r$ par rapport au point $I$. 
+\end{minipage}
+\hfill
+\begin{minipage}[t]{.29\linewidth}
+$\quad$
+\vspace{-.5cm}
+\begin{center}
+\includegraphics[width=\linewidth]{images/fig_04}
+\end{center}
+\end{minipage}
 
 \section{Modélisation locale des actions mécaniques}
 \begin{defi}
@@ -190,14 +209,134 @@ La densité surfacique d'effort peut alors se décomposer sur le vecteur normal 
 Dans le cas du glissement : $||\vect{\tau_{12}}(M)||=p_{12}\cdot f$.
 En notant : 
 \begin{itemize}
-\item $p_{12}(M)$ pression de contact au point $M$ (en $N/m^2$);
-\item $\vect{\tau_{12}}(M)$ : la projection tangentielle de la densité surfacique (norme en $N/m^2$);
+\item $p_{12}(M)$ pression de contact au point $M$ (en $\left[\text{Nm}^{-2}\right]$);
+\item $\vect{\tau_{12}}(M)$ : la projection tangentielle de la densité surfacique (norme en $\left[\text{Nm}^{-2}\right]$);
 \item $f$ facteur de frottement.
 \end{itemize}
 \end{defi}
 
 \section{Résolution des problèmes d'arc-boutement}
+L'arc-boutement est un phénomène de blocage d'une liaison (souvent glissière ou pivot glissant). Ce phénomène est causé d'une part par le frottement dans une liaison et d'autre part par le jeu existant entre les deux pièces en mouvement. En effet, le jeu dans la liaison autorise une légère rotation de la pièce mâle, modifiant les zones de contact. Le frottement dans ces zones de contact conduit à l'arc-boutement. 
 
+\begin{center}
+\includegraphics[width=\linewidth]{images/fig_05}
+\end{center}
+
+On commence donc par modéliser le contact par des liaisons ponctuelles avec frottement. L'écriture du PFS et l'utilisation du modèle de Coulomb permet de déterminer des conditions géométriques à la limite du coincement. 
+(Pour cela, on fait l'hypothèse qu'on est à la limite du glissement en un point (égalité) et dans le cône d'adhérence à l'autre point inégalité.) 
+\end{document}
+
+On note $\vect{F_I} = X_I \vect{x} + Y_I\vect{y}$ et $\vect{F_J} = X_J \vect{x} + Y_J\vect{y}$. De plus $\vect{F}=-F\vect{y}$. On considère le jeu négligeable (mais suffisamment grand pour permettre le basculent de la pièce 2 et donc l'arcboutement. En appliquant le PFS en $A$, on a donc : 
+$\left\{
+\begin{array}{l}
+X_I + X_J = 0 \\
+Y_I + Y_J -F = 0 \\ 
+-eF + \dfrac{\ell}{2}X_J - \dfrac{\ell}{2}X_I + \dfrac{D}{2}Y_J - \dfrac{D}{2}Y_I = 0
+\end{array}
+\right.$
+$
+\Longleftrightarrow
+\left\{
+\begin{array}{l}
+X_I + X_J = 0 \\
+Y_I + Y_J -F = 0 \\ 
+-eF + \dfrac{\ell}{2}\left(X_J - X_I\right) + \dfrac{D}{2}\left(Y_J - Y_I\right) = 0
+\end{array}
+\right.$
+
+On a de plus : 
+$
+\left\{
+\begin{array}{l}
+X_I \leq 0 \text{ et } Y_I \geq 0 \\
+X_J \geq 0 \text{ et } Y_J \geq 0 \\
+|Y_I|\leq f|X_I| \text{ et }  |Y_J|\leq f|X_J| \\
+\end{array}
+\right.$
+$
+\Rightarrow
+\left\{
+\begin{array}{l}
+X_I \leq 0 \text{ et }  Y_I \geq 0 \\
+X_J \geq 0 \text{ et } Y_J \geq 0 \\
+Y_I\leq -fX_I \text{ et } Y_J\leq fX_J \\
+\end{array}
+\right.$
+
+On suppose qu'on est à la limite du glissement au point $I$. On a donc : 
+$
+\left\{
+\begin{array}{l}
+X_I + X_J = 0 \\
+Y_I + Y_J -F = 0 \\ 
+-eF + \dfrac{\ell}{2}\left(X_J - X_I\right) + \dfrac{D}{2}\left(Y_J - Y_I\right) = 0 \\
+Y_I= -fX_I
+\end{array}
+\right.$
+
+$
+\Rightarrow
+\left\{
+\begin{array}{l}
+X_J = -X_I   ** \\
+-fX_I + Y_J -F = 0 \\ 
+-eF + \dfrac{\ell}{2}\left(-X_I - X_I\right) + \dfrac{D}{2}\left(Y_J +fX_I\right) = 0 \\
+Y_I= -fX_I **
+\end{array}
+\right.$
+$
+\Rightarrow
+\left\{
+\begin{array}{l}
+X_J = -X_I   ** \\
+Y_J =F  +fX_I ** \\ 
+-eF + \dfrac{\ell}{2}\left(-2X_I \right) + \dfrac{D}{2}\left(F  +2fX_I \right) = 0 \\
+Y_I= -fX_I **
+\end{array}
+\right.$
+
+$
+\Rightarrow
+\left\{
+\begin{array}{l}
+X_J = -X_I   ** \\
+Y_J =F  +fX_I ** \\ 
+-eF -\ell X_I  + \dfrac{D}{2}F  +fDX_I  = 0 \\
+Y_I= -fX_I **
+\end{array}
+\right.$
+$
+\Rightarrow
+\left\{
+\begin{array}{l}
+X_J = -X_I   ** \\
+Y_J =F  +fX_I ** \\ 
+ F \left( -e + \dfrac{D}{2} \right) + X_I\left( -\ell+fD\right)   = 0 \\
+Y_I= -fX_I **
+\end{array}
+\right.$
+
+
+$
+\Rightarrow
+\left\{
+\begin{array}{l}
+X_J = -X_I   ** \\
+Y_J =F  +fX_I ** \\ 
+X_I   =  F \dfrac{ -e + \dfrac{D}{2} }{-\ell+fD}=  F \dfrac{ -e + \dfrac{D}{2} }{-\ell+fD} =  F \dfrac{ -2e + D }{-2\ell+2fD}  \\
+Y_I= -fX_I **
+\end{array}
+\right.$
+
+De plus, on  a $Y_J\leq fX_J$. 
+
+En conséquences, 
+
+$F  +fF \dfrac{ -2e + D }{-2\ell+2fD} \leq -fF \dfrac{ -2e + D }{-2\ell+2fD}$
+$\Rightarrow 1  +f\dfrac{ -2e + D }{-2\ell+2fD} \leq -f \dfrac{ -2e + D }{-2\ell+2fD}$
+$\Rightarrow 1  +2f\dfrac{ -2e + D }{-2\ell+2fD} \leq 0$
+$\Rightarrow \dfrac{ -4ef + 2fD-2\ell+2fD }{-2\ell+2fD} \leq 0$
+$\Rightarrow \dfrac{ -2ef + 2fD-\ell }{-\ell+fD} \leq 0$
 \end{document}
 
 \subparagraph{}\textit{}
