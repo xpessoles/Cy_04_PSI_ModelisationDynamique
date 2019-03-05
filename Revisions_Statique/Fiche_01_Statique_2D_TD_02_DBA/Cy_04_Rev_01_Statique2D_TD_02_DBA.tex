@@ -1,0 +1,160 @@
+\documentclass[10pt,fleqn]{article} % Default font size and left-justified equations
+\usepackage[%
+    pdftitle={Résolutions de problèmes de statique : PFS 2D},
+    pdfauthor={Xavier Pessoles}]{hyperref}
+
+\input{style/new_style}
+\input{style/macros_SII}
+\usepackage{multicol}
+\usepackage{siunitx}
+%\usepackage{picins}
+\fichetrue
+%\fichefalse
+
+\proftrue
+\proffalse
+
+\tdtrue
+%\tdfalse
+
+\courstrue
+\coursfalse
+
+% -------------------------------------
+% Déclaration des titres
+% -------------------------------------
+
+\def\discipline{Sciences \\Industrielles de \\ l'Ingénieur}
+\def\xxtete{Sciences Industrielles de l'Ingénieur}
+
+
+\def\classe{\textsf{PSI$\star$ -- MP}}
+\def\xxnumpartie{Rév -- Stat}
+\def\xxpartie{Modéliser le comportement statique des systèmes mécaniques}
+
+\def\xxnumchapitre{Révision 1 \vspace{.2cm}}
+\def\xxchapitre{\hspace{.12cm} Résolution des problèmes de statique -- Statique 2D}
+
+\def\xxposongletx{2}
+\def\xxposonglettext{1.45}
+\def\xxposonglety{19}%16
+
+\def\xxonglet{\textsf{Rév -- Stat}}
+
+\def\xxactivite{TD 02}
+\def\xxauteur{\textsl{Xavier Pessoles}}
+
+
+\def\xxtitreexo{Dépose de bagage automatique dans les aéroports (DBA)}
+\def\xxsourceexo{\hspace{.2cm} \footnotesize{Concours Centrale Supelec TSI 2018}}
+
+\def\xxcompetences{%
+\textsl{%
+\textbf{Savoirs et compétences :}\\
+}}
+
+\def\xxfigures{
+\includegraphics[width=.65\textwidth]{images/fig_00}
+}%figues de la page de garde
+
+\def\xxpied{%
+Révision statique -- Résolution des problèmes de statique plane\\
+Fiche 1 -- \xxactivite%
+}
+
+\setcounter{secnumdepth}{5}
+%---------------------------------------------------------------------------
+
+\usepackage{bm}
+\begin{document}
+%\chapterimage{png/Fond_Cin}
+\input{style/new_pagegarde}
+\vspace{4.5cm}
+\pagestyle{fancy}
+\thispagestyle{plain}
+
+
+\def\columnseprulecolor{\color{ocre}}
+\setlength{\columnseprule}{0.4pt} 
+
+\ifprof
+\begin{multicols}{2}
+\else
+\begin{multicols}{2}
+\fi
+\section*{Mise en situation}
+\ifprof
+\else
+\fi
+
+Le processus d’enregistrement des passagers dans les aéroports est en train de
+vivre une mutation en évoluant de la « banque d’enregistrement » classique vers une idée de « dépose bagages »
+automatisée. Cette évolution a été justifiée pour fluidifier le trafic passager notamment sur les destinations avec
+des fréquences très importantes, par exemple certains vols Paris-Province.
+
+
+Le système DBA est constitué par un basculeur actionné par un dispositif bielle-manivelle et une machine
+asynchrone (figures 2 et 3).
+
+\begin{obj}~\\
+\vspace{-.3cm}
+\begin{itemize}
+\item ****
+\end{itemize}
+\end{obj}
+
+
+
+\vspace{-.5cm}
+
+\begin{center}
+\includegraphics[width=.8\linewidth]{images/fig_01_bis}
+%\includegraphics[width=.8\linewidth]{images/hayon_parametrage}
+%\textit{}
+\end{center}
+
+
+\vspace{-.5cm}
+
+\subsection*{Caractéristiques géométriques du vérin}
+\ifprof
+\else
+
+\footnotesize
+%\vspace{.5cm}
+
+\begin{multicols}{2}
+\fbox{
+\noindent Éléments de corrigé}
+%\begin{enumerate}
+%\item Angle d'ouverture: $67,5\degres$.
+%\item $L^2 =\left(-a + c\cos\theta \right)^2 + \left(b + c\sin\theta \right)^2  $.
+%\item Course de \SI{13,2}{cm}.
+%\item $   F_v = \dfrac{\lambda Mg\cos \theta}{c\sin \left( \alpha - \theta\right)} $ ($F_v/2$).
+%\item $k=\SI{1667}{N.m^{-1}}$, écrasement de $\SI{300}{mm}$.
+%\item .
+%\item $\Delta F = \pm \SI{443}{N}$.
+%\item $I_{\text{max}} = \SI{3,95}{A}$.
+%\end{enumerate}
+\end{multicols}
+\fi
+
+\normalsize
+
+
+\ifprof
+\end{multicols}
+\else
+\end{multicols}
+\fi
+
+
+\end{document}
+
+\subparagraph{}\textit{}
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/img_04}
+%\textit{}
+\end{center}
+
