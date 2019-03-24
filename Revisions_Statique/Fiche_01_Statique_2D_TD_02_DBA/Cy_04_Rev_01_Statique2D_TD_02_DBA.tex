@@ -8,7 +8,7 @@
 \usepackage{multicol}
 \usepackage{siunitx}
 %\usepackage{picins}
-\fichetrue
+ \fichetrue
 %\fichefalse
 
 \proftrue
@@ -136,7 +136,7 @@ $t_i$. Faire l’application numérique.}\textit{}
 \end{corrige}
 \else
 \fi
-\begin{center}
+
 
 \subsection*{Recherche du couple moteur maximal en vue du dimensionnement de la machine asynchrone}
 
@@ -148,10 +148,98 @@ l’exigence 1.2 (la masse du bagage pouvant être manœuvré par le système es
 %\includegraphics[width=.8\linewidth]{images/fig_01_bis}
 %\includegraphics[width=.8\linewidth]{images/hayon_parametrage}
 %\textit{}
+
+Pour calculer le couple moteur maximal, on se place dans un cas quasi-statique et on néglige tous les effets
+dynamiques. Compte tenu de la construction du mécanisme (non linéaire), le couple moteur est variable et on
+le calcule dans une position particulière correspondant au couple maximal.
+
+On note :
+\begin{itemize}
+\item $S_0$ le bâti ;
+\item $S_1$ l’ensemble constitué par le chariot, le bagage et les galets, dont le centre de gravité est noté $G$ et la masse
+est notée $m=\SI{80}{kg}$;
+\item $S_2$ la bielle $DB$ de direction $\vect{x_2}$;
+\item $S_3$ l’arbre de sortie de réducteur et la manivelle $\vect{ED}=R\vect{x_3}$ avec $R=\SI{86}{mm}$.
+\end{itemize}
+Le mouvement est considéré comme plan. On néglige toutes les masses sauf celle de l’ensemble $S_1$. Toutes les liaisons sont parfaites. Le référentiel lié au solide $S_0$ est considéré galiléen. On note l’accélération de la pesanteur $\vect{g}=-g\vect{y_0}$ avec $g=\SI{9,821}{m.s^{-2}}$.
+
+Les liaisons entre $S_0$ et $S_1$ sont des liaisons sphère-plan de normales $\axe{A_1}{{x}_{11}}$ et $\axe{A_1}{{x}_{12}}$.
+On note $I$ le point d’intersection des normales $\axe{A_1}{{x}_{11}}$ et $\axe{A_2}{{x}_{12}}$. On note $\vect{IB}=L_2\vect{x}_{12}$ et $\vect{IG}=x_G\vect{x}_{0}+y_G\vect{y}_{0}$.
+
+On note les angles $\alpha_i$ formés entre les vecteurs $\vect{x}_0$ et $\vect{x}_i$: $\alpha_i=\angl{{x}_0}{{x}_i}$ avec $i\in \{2;3;11;12\}$ .
+
+
+\begin{center}
+\includegraphics[width=.35\linewidth]{images/fig_03}
+%\textit{}
 \end{center}
 
+La liaison entre $S_1$ et $S_2$ est une liaison pivot d’axe $\axe{B}{z_0}$.
 
-\vspace{-.5cm}
+La liaison entre $S_2$ et $S_3$ est une liaison pivot d’axe $\axe{D}{z_0}$.
+
+La liaison entre $S_0$ et $S_3$ est une liaison pivot d’axe $\axe{Es}{z_0}$.
+
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/fig_04}
+%\textit{}
+\end{center}
+
+\subparagraph{}\textit{Déterminer la forme des torseurs $\torseurstat{T}{S_0}{S_1}_1$ au point $A_1$ et $\torseurstat{T}{S_0}{S_1}_2$ au point $A_2$ des actions mécaniques des rampes du bâti $S_0$ s’appliquant sur le chariot $S_1$. Ces torseurs sont-ils des glisseurs ?}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+\subparagraph{}\textit{La somme des torseurs $\torseurstat{T}{S_0}{S_1}_1$ et $\torseurstat{T}{S_0}{S_1}_2$ est-elle un glisseur ? Si oui, déterminer un point de son support.}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+\subparagraph{}\textit{Déterminer la forme du torseur $\torseurstat{T}{S_2}{S_1}$ de l’action mécanique de la bielle $S_2$ sur l’ensemble $S_1$ au point $B$. On notera $F_B$ la norme de la résultante de ce torseur.}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+
+\subparagraph{}\textit{En isolant $S_1$, et en ramenant les moments en $I$, déterminer l’expression de $F_B$ en fonction de la masse $m$ de $S_1$, des angles $\alpha_i$ et des constantes du problème.}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+\subparagraph{}\textit{On note $C_{red}$ le couple exercé par l’arbre de sortie de réducteur sur la manivelle $S_3$. Montrer que $C_{red}-RF_B \sin \left( \alpha_3 - \alpha_2\right) = 0$.}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+Dans la configuration choisie, on a $x_G=\SI{506}{mm}$, $L_2 = \SI{140}{mm}$, $\alpha_3=91\degres$, $\alpha_{12}=108\degres$  et $\alpha_2=3\degres$ (on montre par une simulation numérique que cette position conduit au couple maximal).
+
+\subparagraph{}\textit{En déduire l’expression du couple $C_{red}$ qu’exerce le réducteur sur la manivelle $S_3$ en fonction du poids du chariot, des angles $\alpha_i$ et des constantes du problème. Faire l’application numérique.}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+\subparagraph{}\textit{En déduire la valeur numérique $C_m$ du couple qu’exerce l’arbre de la machine asynchrone sur l’arbre
+d’entrée du réducteur (on supposera le rendement du réducteur égal à 1).}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+
 
 \subsection*{Caractéristiques géométriques du vérin}
 \ifprof
