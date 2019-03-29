@@ -12,7 +12,7 @@
 %\fichefalse
 
 \proftrue
-%\proffalse
+\proffalse
 
 \tdtrue
 %\tdfalse
@@ -46,11 +46,20 @@
 
 
 \def\xxtitreexo{Exercice d'application}
-\def\xxsourceexo{\hspace{.2cm} \footnotesize{Sources diverses}}
+\def\xxsourceexo{\hspace{.2cm} \footnotesize{Xavier Pessoles}}
 
 \def\xxcompetences{%
 \textsl{%
 \textbf{Savoirs et compétences :}\\
+\vspace{-.3cm}
+\footnotesize
+\begin{itemize}
+\item \textit{Mod2.C20} : modélisation locale, actions à distance et de contact.
+\item \textit{Res1.C2.SF1} : Proposer une méthode permettant la détermination d’une inconnue de liaison.
+\item \textit{Res2.C18} : Principe fondamental de la statique.
+\item \textit{Res2.C20} : Théorème des actions réciproques.
+\end{itemize}
+\normalsize
 }}
 
 \def\xxfigures{
@@ -58,7 +67,7 @@
 }%figues de la page de garde
 
 \def\xxpied{%
-Révision statique -- Résolution des problèmes de statique plane\\
+Révision statique \\%-- Résolution des problèmes de statique plane\\
 Fiche 1 -- \xxactivite%
 }
 
@@ -86,7 +95,8 @@ Fiche 1 -- \xxactivite%
 \section*{Torseur des actions mécaniques transmissibles dans un coussinet}
 
 
-
+\ifprof
+\else
 Un coussinet (ou bague) est un élément technologique permettant de réaliser des liaisons pivot. Suivant les cas d'utilisation d'un système, un chargement sur l'arbre est transmis au coussinet. 
 
 \begin{center}
@@ -99,9 +109,10 @@ On donne le modèle suivant où le champ de pression de l'arbre sur le coussinet
 On note $R=\dfrac{D}{2}$ le rayon du coussinet. 
 
 \begin{center}
-\includegraphics[width=.7\linewidth]{images/fig_02}
+\includegraphics[width=.4\linewidth]{images/fig_02}
 %\textit{}
 \end{center}
+\fi
 
 \subparagraph{}\textit{Déterminer la résultante des actions mécaniques de 1 sur 3. On la note $\vectf{1}{3}$.}
 \ifprof
@@ -150,6 +161,8 @@ $ = \left(z\vect{z} \wedge  p(M) \dd S \vect{e_r}\right) \vect{z} = 0$
 \else
 \fi
 
+\vspace{.5cm}
+
 On considère maintenant que la pression n'est pas uniforme et vaut au point $M$ $p_0\sin\theta$.
 \subparagraph{}\textit{Justifier que  $\vectf{1}{3}$ n'a une composante que sur $\vect{y}$.}
 \ifprof
@@ -158,6 +171,7 @@ Pour des raisons de symétrie du champ de pression, la seule composante sera sur
 \end{corrige}
 \else
 \fi
+
 
 \subparagraph{}\textit{Déterminer la résultante des actions mécaniques de 1 sur 3. On la note $\vectf{1}{3}$. On rappelle que $\sin^2\theta =\dfrac{1-\cos 2\theta }{2}$. }
 \ifprof
@@ -181,9 +195,28 @@ $ =   \dfrac{1}{4}p_0 D L {\pi} $.
 \else
 \fi
 
+\footnotesize
+\fbox{\parbox{\linewidth}{
+Éléments de corrigé : 
+\begin{multicols}{2}
+\begin{enumerate}
+ \item $\vectm{0}{1}{3}\vect{z_N}=0$.
+  \item $\vectf{1}{3}=-LDp   \vect{y}$.
+   \item 
+    \item $\vectf{1}{3} \cdot \vect{y_N} =\dfrac{1}{4}p_0 D L {\pi} $.
+\end{enumerate}
+\end{multicols}}}
+\normalsize
+
+\ifprof
+\newpage
+\else
+\fi
 
 \section*{Détermination des efforts dans une structure étayée}
 \setcounter{exo}{0}
+\ifprof
+\else
 Lors de la démolition d'une partie de la gare de Lyon Part-Dieu (en 2018), des étais ont du être posé afin de soutenir la structure supérieure. 
 
 \begin{center}
@@ -201,6 +234,7 @@ Pour cela, on utilise la modélisation suivante.
 \end{center}
 
 On a $\vect{AB}=a \vect{x}$,  $\vect{BD}=b \vect{x}$ et  $\vect{CB}=L \vect{x_1}$.
+\fi
 
 \subparagraph{}\textit{Tracer le graphe d'analyse du système (graphe des liaisons et actions extérieures).}
 \ifprof
@@ -254,21 +288,46 @@ $ \torseurstat{T}{0}{1} = -\torseurstat{T}{2}{1}  = \torseurl{F_{01}\vect{x_1}}{
 \textbf{On isole 2}.
 \textbf{On réalise le BAME :}
 \begin{itemize}
-\item $\torseurstat{T}{0}{2} =\torseurl{X_{02}\vect{x} +Y_{02}\vect{y}  }{\vect{0}}{A} $;
+\item $\torseurstat{T}{0}{2} =\torseurl{X_{02}\vect{x} +Y_{02}\vect{y}  }{\vect{0}}{A} $ $=\torseurl{X_{02}\vect{x} +Y_{02}\vect{y}  }{-aY_{02}\vect{z}}{A} $;
 \item $\torseurstat{T}{1}{2} = \torseurl{F_{01}\vect{x_1}  }{\vect{0}}{B} $;
-\item $\torseurstat{T}{\text{ext}}{2} = \torseurl{-F\vect{y}  }{\vect{0}}{C} $.
+\item $\torseurstat{T}{\text{ext}}{2} = \torseurl{-F\vect{y}  }{\vect{0}}{C} $ $= \torseurl{-F\vect{y}  }{-Fb\vect{z}}{C}$.
 \end{itemize}
 \textbf{D'après le PFS pour un solide soumis à 2 glisseurs, on a : }
-$\torseurstat{T}{0}{1} + \torseurstat{T}{2}{1} = {0}$.
+
+$\torseurstat{T}{0}{2} + \torseurstat{T}{1}{2}+\torseurstat{T}{\text{ext}}{2} = {0}$.
 
  \textbf{Résolution :}
-$ \torseurstat{T}{0}{1} = -\torseurstat{T}{2}{1}  = \torseurl{F_{01}\vect{x_1}}{\vect{0}}{A}$.
+
+$\left\{ \begin{array}{l}
+X_{02}+F_{01}\cos\alpha  = 0 \\
+Y_{02}+F_{01}\sin\alpha  -F= 0 \\
+-aY_{02}-Fb  = 0 \\
+\end{array}
+\right.$
+
+
+$
+\Leftrightarrow 
+\left\{ \begin{array}{l}
+X_{02}=-F_{01}\cos\alpha  =-F\dfrac{a+b}{a\tan\alpha} \\
+F_{01}  =\dfrac{F-Y_{02}}{\sin\alpha}=F\dfrac{a+b}{a\sin\alpha} \\
+Y_{02} = -\dfrac{b}{a}F  \\
+\end{array}
+\right.$
 
 \end{corrige}
 
 \else
 \fi
 
+
+\footnotesize
+\fbox{\parbox{\linewidth}{
+Éléments de corrigé : 
+\begin{enumerate}\setcounter{enumi}{2}
+    \item $X_{02}=-F\dfrac{a+b}{a\tan\alpha}$, $F_{01}  =F\dfrac{a+b}{a\sin\alpha}$, $Y_{02} = -\dfrac{b}{a}F$.
+\end{enumerate}}}
+\normalsize
 
 \ifprof
 \end{multicols}
