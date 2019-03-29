@@ -20,6 +20,10 @@
 \courstrue
 \coursfalse
 
+\newif\ifcolle
+\colletrue
+\collefalse
+
 \newif\ifnormal
 \normaltrue
 %\normalfalse
@@ -375,6 +379,8 @@ CDCF Validé.
 \else
 
 \ifnormal
+\ifcolle
+\else
 \footnotesize
 \begin{enumerate}
 \item $\vect{V\left(G_E /\rep{0}\right)}=-R_C\dot{\theta}\vect{x_1}$ et $V_L=R_C\dot{\theta}$.
@@ -390,6 +396,7 @@ CDCF Validé.
 \item  $V_L  \leq \SI{6,38}{m.s^{-1}}=\SI{22,9}{km.h^{-1}}$
 \end{enumerate}
 \normalsize
+\fi
 \else
 \fi
 
