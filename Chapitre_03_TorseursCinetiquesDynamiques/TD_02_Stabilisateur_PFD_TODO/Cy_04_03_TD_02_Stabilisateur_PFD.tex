@@ -1,0 +1,232 @@
+\documentclass[10pt,fleqn]{article} % Default font size and left-justified equations
+\usepackage[%
+    pdftitle={Modélisation dynamique : cinétique},
+    pdfauthor={Xavier Pessoles}]{hyperref}
+
+    
+\input{style/new_style}
+\input{style/macros_SII}
+
+
+
+
+\fichetrue
+%\fichefalse
+
+\fichetrue
+%\fichefalse
+
+\proftrue
+\proffalse
+
+\tdtrue
+%\tdfalse
+
+\courstrue
+\coursfalse
+
+\newif\ifnormal
+\normaltrue
+%\normalfalse
+
+\newif\ifdifficile
+\difficilefalse
+%\difficiletrue
+
+\newif\iftdifficile
+\tdifficilefalse
+%\tdifficiletrue
+
+
+\newif\ifcolle
+%\colletrue
+\collefalse
+
+
+
+\def\discipline{Sciences \\Industrielles de \\ l'Ingénieur}
+\def\xxtete{Sciences Industrielles de l'Ingénieur}
+
+\def\classe{\textsf{PSI$\star$ -- MP}}
+\def\xxnumpartie{Cycle 04}
+\def\xxpartie{Modéliser le comportement des systèmes mécaniques dans le but d'établir une loi de comportement ou de déterminer des actions mécaniques en utilisant le PFD}
+
+\def\xxnumchapitre{Chapitre 3 \vspace{.2cm}}
+\def\xxchapitre{\hspace{.12cm} Cinétique et application du Principe Fondamental de la Dynamique}
+
+
+
+
+\def\xxtitreexo{Stabilisateur passif d'image}
+\def\xxsourceexo{\hspace{.2cm} \footnotesize{Mines Ponts 2018 -- PSI}}
+
+
+\def\xxposongletx{2}
+\def\xxposonglettext{1.45}
+\def\xxposonglety{20}
+%\def\xxonglet{Part. 1 -- Ch. 3}
+\def\xxonglet{Cycle 04}
+
+\def\xxactivite{TD 2}
+\def\xxauteur{\textsl{Xavier Pessoles}}
+
+\def\xxcompetences{%
+\textsl{%
+\textbf{Savoirs et compétences :}\\
+%\begin{itemize}[label=\ding{112},font=\color{ocre}] 
+%\item \textit{Mod2.C13} : centre d'inertie
+%\item \textit{Mod2.C14} : opérateur d'inertie
+%\item \textit{Mod2.C15} : matrice d'inertie
+%\end{itemize}
+}}
+\def\xxfigures{
+\includegraphics[width=.36\linewidth]{images/fig_00}
+}%figues de la page de garde
+
+
+\def\xxpied{%
+Cycle 04 -- Modélisation mécanique -- Cinétique\\% afin de valider leurs performances.\\
+Chapitre 3 -- \xxactivite%
+}
+
+\setcounter{secnumdepth}{5}
+%---------------------------------------------------------------------------
+
+\usepackage{pgfplots}
+\begin{document}
+\def\pathfig{images}
+%\chapterimage{png/Fond_Cin}
+\input{style/new_pagegarde}
+\vspace{5cm}
+\pagestyle{fancy}
+\thispagestyle{plain}
+
+\def\columnseprulecolor{\color{ocre}}
+\setlength{\columnseprule}{0.4pt} 
+
+\def\pathfig{images}
+
+\ifprof
+\else
+\begin{multicols}{2}
+\fi
+
+\subsection*{Mise en situation}
+
+Les appareils photos modernes fonctionnent en rafales : 8 à 10 images par seconde et en mode vidéo. Le besoin de
+stabilisation de l’image dans de telles conditions est impératif. Le but de ce sujet est de s’intéresser au support de la caméra assurant la liaison entre le bras de l'utilisateur et la caméra elle-même.
+
+Le stabilisateur se compose principalement de trois objets :
+\begin{itemize}
+\item une poignée orientable \textbf{(1)} manipulée directement par le photographe, liée au support \textbf{(2)} en $O$;
+\item un support rigide \textbf{(2)} (supposé sans masse) sur lequel vient se fixer une caméra assimilée en première approximation à une masse ponctuelle $m_c$ placée en $G_c$ ;
+\item un contrepoids lié à \textbf{(2)} et assimilé à une masse ponctuelle $m_{cp}$ placée en $G_{cp}$.
+\end{itemize}
+
+\begin{center}
+\includegraphics[width=.7\linewidth]{images/fig_01}
+\end{center}
+
+L’utilisateur tient fermement la poignée \textbf{(1)} dans une position angulaire quelconque, ce qui permet d’affirmer que le \textbf{(porteur + (1))} ne forme qu’une seule classe d’équivalence.
+Afin de produire des images toujours fluides, sans à-coups, ce
+stabilisateur à main doit maintenir constamment la caméra dans
+une position verticale (parallèle au champ de
+gravité), que le porteur soit immobile (plan fixe) ou en
+mouvement (travelling).
+
+Dans le cas général, le mouvement du bras par rapport au référentiel terrestre est quelconque (6 degrés de libertés). Ici, on se limite à un mouvement de translation. Dans le cas général, afin que la caméra soit en position verticale, le support doit permettre 3 rotations dans la liaison avec \textbf{(porteur + (1))}. Ici on se limite à la stabilisation d'une seule rotation. 
+ 
+\begin{obj}
+Suite à une sollicitation brève de \SI{0,5}{m.s^{-2}}, l'amplitude des oscillations de la caméra ne doit pas dépasser les 0,5\degres.
+\end{obj}
+
+\subsection*{Travail demandé}
+
+On se place à présent dans une phase dite « dynamique ». Le porteur \textbf{(1)} est en mouvement par rapport au sol. On suppose qu'à l'instant initial, l'ensemble \textbf{(E)=Support + Caméra + Contrepoids} est en équilibre stable en position verticale. On note $\torseurcin{V}{1}{0}=\torseurl{\vect{0}}{\vectv{P}{1}{0}=v(t)\vect{X_0}}{\forall P}$.
+On note $a(t)=\dfrac{\dd v(t)}{\dd t}$. 
+
+
+\subparagraph{}
+\textit{Par une étude dynamique que vous mettrez en oeuvre, montrer que l'équation de mouvement de (E)
+dans \textbf{(0)} galiléen s'exprime comme $Q_1\dfrac{\dd^2\varphi(t) }{\dd t^2}+Q_2=Q_3a(t)$.}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+
+
+\ifnormal
+\textit{Indication : vous commencerez par exprimer le bilan des actions mécaniques extérieures s’exerçant sur (E). Puis,
+le théorème de la dynamique utilisé sera clairement énoncé. Enfin, les expressions des $Q_i$ en fonction de $m_c$,
+$m_{cp}$, $L_c$, $L_{cp}$, $g$, $\sin\left(\varphi(t)\right)$ et $\cos\left(\varphi(t)\right)$ seront établies.}
+\else
+\fi
+
+Afin de quantifier la modification d’attitude de (E), l'équation de mouvement est linéarisée autour de la position
+d'équilibre (verticale) en supposant que les valeurs de l'angle restent faibles. On transpose cette équation
+différentielle dans le domaine de Laplace et on note $\mathcal{L}\left(\varphi(t) \right)=\Phi(p)$ et $\mathcal{L}\left(a(t) \right)=A(p)$. 
+Afin de conserver la fluidité des images lors de travelling, les fluctuations indésirables des mouvements du porteur ne
+doivent pas être intégralement transmisses à (E).
+
+
+\subparagraph{}
+\textit{Etablir sous forme canonique la fonction de transfert $H(p)=\dfrac{\Phi(p)}{A(p)}$. Donner l'expression de la pulsation propre $\omega_0$ en fonction de $m_c$, $m_{cp}$, $L_{c}$, $L_{cp}$ et $g$.}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+\subparagraph{}
+\textit{Tracer l'allure du diagramme asymptotique de gain $G_{dB}=f\left( \omega\right)$ de la fonction de transfert $H\left(j\omega\right)$. Placer les caractéristiques remarquables.}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+
+\subparagraph{}
+\textit{Pour un fonctionnement filtrant satisfaisant, on impose que $\omega_0=0,1\omega_a$. Le stabilisateur est réglé en
+conséquence par l’intermédiaire du couple $\left( m_{cp},L_{cp}\right)$. En utilisant le comportement asymptotique en gain de $G_{\text{dB}}$, estimer numériquement l'amplitude $\Delta \varphi$ (en degrés) des oscillations de $\textbf{(E')}$
+selon l'axe $\axe{O}{y_0}$.}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+
+\subsection*{Retour sur le cahier des charges}
+
+\subparagraph{}
+\textit{Conclure vis-à-vis de l'objectif et sur les écarts obtenus.}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+
+
+\end{multicols}
+
+\newpage
+
+\setcounter{exo}{0}
+
+
+\end{document}
+\begin{center}
+\includegraphics[width=\linewidth]{images/}
+\end{center}
+
+\subparagraph{}
+\textit{}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
