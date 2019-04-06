@@ -17,7 +17,7 @@
 %\fichefalse
 
 \proftrue
-\proffalse
+%\proffalse
 
 \tdtrue
 %\tdfalse
@@ -27,11 +27,11 @@
 
 \newif\ifnormal
 \normaltrue
-%\normalfalse
+\normalfalse
 
 \newif\ifdifficile
 \difficilefalse
-%\difficiletrue
+\difficiletrue
 
 \newif\iftdifficile
 \tdifficilefalse
@@ -57,7 +57,7 @@
 
 
 
-\def\xxtitreexo{Stabilisateur passif d'image}
+\def\xxtitreexo{Stabilisateur passif d'image  \ifnormal $\star$ \else \fi \ifdifficile $\star\star$ \else \fi \iftdifficile $\star\star\star$ \else \fi }
 \def\xxsourceexo{\hspace{.2cm} \footnotesize{Mines Ponts 2018 -- PSI}}
 
 
@@ -107,6 +107,7 @@ Chapitre 3 -- \xxactivite%
 \def\pathfig{images}
 
 \ifprof
+\begin{multicols}{2}
 \else
 \begin{multicols}{2}
 \fi
@@ -143,19 +144,12 @@ Suite à une sollicitation brève de \SI{0,5}{m.s^{-2}}, l'amplitude des oscilla
 \subsection*{Travail demandé}
 
 On se place à présent dans une phase dite « dynamique ». Le porteur \textbf{(1)} est en mouvement par rapport au sol. On suppose qu'à l'instant initial, l'ensemble \textbf{(E)=Support + Caméra + Contrepoids} est en équilibre stable en position verticale. On note $\torseurcin{V}{1}{0}=\torseurl{\vect{0}}{\vectv{P}{1}{0}=v(t)\vect{X_0}}{\forall P}$.
-On note $a(t)=\dfrac{\dd v(t)}{\dd t}$. 
+On note $a(t)=\dfrac{\dd v(t)}{\dd t}$. De plus, $\vect{OG_C}=L_C\vect{Z_2}$ et $\vect{OG_{CP}}=-L_{CP}\vect{Z_2}$.
 
 
 \subparagraph{}
-\textit{Par une étude dynamique que vous mettrez en oeuvre, montrer que l'équation de mouvement de (E)
+\textit{Par une étude dynamique que vous mettrez en \oe{}uvre, montrer que l'équation de mouvement de (E)
 dans \textbf{(0)} galiléen s'exprime comme $Q_1\dfrac{\dd^2\varphi(t) }{\dd t^2}+Q_2=Q_3a(t)$.}
-\ifprof
-\begin{corrige}
-\end{corrige}
-\else
-\fi
-
-
 
 \ifnormal
 \textit{Indication : vous commencerez par exprimer le bilan des actions mécaniques extérieures s’exerçant sur (E). Puis,
@@ -163,6 +157,21 @@ le théorème de la dynamique utilisé sera clairement énoncé. Enfin, les expr
 $m_{cp}$, $L_c$, $L_{cp}$, $g$, $\sin\left(\varphi(t)\right)$ et $\cos\left(\varphi(t)\right)$ seront établies.}
 \else
 \fi
+
+
+\ifprof
+\begin{corrige}
+\textbf{(1)} et \textbf{(E)} sont en liaison pivot d'axe $\axe{O}{Y_0}$. On va donc réaliser un théorème du moment dynamique appliqué à \textbf{(E)} en $O$ en projection sur $\vect{Y_0}$. 
+
+\textbf{Calcul de $\vectmd{O}{E}{0}$}
+
+\textbf{Méthode 1 - Calcul de $\vectmd{O}{\text{Support}}{0}$, $\vectmd{O}{\text{Camera}}{0}$ et $\vectmd{O}{\text{Contrepoids}}{0}$}
+
+\end{corrige}
+\else
+\fi
+
+
 
 Afin de quantifier la modification d’attitude de (E), l'équation de mouvement est linéarisée autour de la position
 d'équilibre (verticale) en supposant que les valeurs de l'angle restent faibles. On transpose cette équation
@@ -172,7 +181,7 @@ doivent pas être intégralement transmisses à (E).
 
 
 \subparagraph{}
-\textit{Etablir sous forme canonique la fonction de transfert $H(p)=\dfrac{\Phi(p)}{A(p)}$. Donner l'expression de la pulsation propre $\omega_0$ en fonction de $m_c$, $m_{cp}$, $L_{c}$, $L_{cp}$ et $g$.}
+\textit{Établir sous forme canonique la fonction de transfert $H(p)=\dfrac{\Phi(p)}{A(p)}$. Donner l'expression de la pulsation propre $\omega_0$ en fonction de $m_c$, $m_{cp}$, $L_{c}$, $L_{cp}$ et $g$.}
 \ifprof
 \begin{corrige}
 \end{corrige}
@@ -180,7 +189,7 @@ doivent pas être intégralement transmisses à (E).
 \fi
 
 \subparagraph{}
-\textit{Tracer l'allure du diagramme asymptotique de gain $G_{dB}=f\left( \omega\right)$ de la fonction de transfert $H\left(j\omega\right)$. Placer les caractéristiques remarquables.}
+\textit{Tracer l'allure du diagramme asymptotique de gain $G_{\text{dB}}=f\left( \omega\right)$ de la fonction de transfert $H\left(j\omega\right)$. Placer les caractéristiques remarquables.}
 \ifprof
 \begin{corrige}
 \end{corrige}
