@@ -107,7 +107,7 @@ Chapitre 3 -- \xxactivite%
 \def\pathfig{images}
 
 \ifprof
-\begin{multicols}{2}
+%\begin{multicols}{2}
 \else
 \begin{multicols}{2}
 \fi
@@ -120,7 +120,7 @@ stabilisation de l’image dans de telles conditions est impératif. Le but de c
 Le stabilisateur se compose principalement de trois objets :
 \begin{itemize}
 \item une poignée orientable \textbf{(1)} manipulée directement par le photographe, liée au support \textbf{(2)} en $O$;
-\item un support rigide \textbf{(2)} (supposé sans masse) sur lequel vient se fixer une caméra assimilée en première approximation à une masse ponctuelle $m_c$ placée en $G_c$ ;
+\item un support rigide \textbf{(2)} (\textbf{supposé sans masse}) sur lequel vient se fixer une caméra assimilée en première approximation à une masse ponctuelle $m_c$ placée en $G_c$ ;
 \item un contrepoids lié à \textbf{(2)} et assimilé à une masse ponctuelle $m_{cp}$ placée en $G_{cp}$.
 \end{itemize}
 
@@ -143,7 +143,7 @@ Suite à une sollicitation brève de \SI{0,5}{m.s^{-2}}, l'amplitude des oscilla
 
 \subsection*{Travail demandé}
 
-On se place à présent dans une phase dite « dynamique ». Le porteur \textbf{(1)} est en mouvement par rapport au sol. On suppose qu'à l'instant initial, l'ensemble \textbf{(E)=Support + Caméra + Contrepoids} est en équilibre stable en position verticale. On note $\torseurcin{V}{1}{0}=\torseurl{\vect{0}}{\vectv{P}{1}{0}=v(t)\vect{X_0}}{\forall P}$.
+On se place à présent dans une phase dite « dynamique ». Le porteur \textbf{(1)} est en mouvement par rapport au sol. On suppose qu'à l'instant initial, l'ensemble \textbf{(E)=Support(2) + Caméra(C) + Contrepoids(Cp)} est en équilibre stable en position verticale. On note $\torseurcin{V}{1}{0}=\torseurl{\vect{0}}{\vectv{P}{1}{0}=v(t)\vect{X_0}}{\forall P}$.
 On note $a(t)=\dfrac{\dd v(t)}{\dd t}$. De plus, $\vect{OG_C}=L_C\vect{Z_2}$ et $\vect{OG_{CP}}=-L_{CP}\vect{Z_2}$.
 
 
@@ -165,7 +165,82 @@ $m_{cp}$, $L_c$, $L_{cp}$, $g$, $\sin\left(\varphi(t)\right)$ et $\cos\left(\var
 
 \textbf{Calcul de $\vectmd{O}{E}{0}$}
 
-\textbf{Méthode 1 - Calcul de $\vectmd{O}{\text{Support}}{0}$, $\vectmd{O}{\text{Camera}}{0}$ et $\vectmd{O}{\text{Contrepoids}}{0}$}
+\textbf{Méthode 1 -- En passant par le calcul de $\vectmd{O}{\text{2}}{0}$, $\vectmd{O}{\text{C}}{0}$ et $\vectmd{O}{\text{Cp}}{0}$}
+
+
+Le support 2 étant sans masse, on a $\vectmd{O}{\text{2}}{0}=\vect{0}$. La caméra et le contrepoids étant considérés comme des masses ponctuelles, on a $\vectmd{G_C}{\text{C}}{0}=\vect{0}$ et $\vectmd{G_{Cp}}{\text{Cp}}{0}=\vect{0}$.
+
+ \begin{tabular}{|p{.9\linewidth}}
+\textbf{Calcul de $\vectmd{O}{\text{C}}{0}$}
+
+ On a $\vectmd{O}{\text{C}}{0} = \vectmd{G_{C}}{\text{C}}{0}+\vect{OG_C} \wedge M_C\vectg{G_{C}}{\text{C}}{0}$.
+ 
+\textbf{Calcul de $\vectg{G_{C}}{\text{C}}{0}$}
+
+$\vectv{G_C}{\text{C}}{0}=\vectv{G_C}{\text{C}}{1}+\vectv{G_C}{\text{1}}{0}$ $=\vect{G_CO}\wedge \vecto{\text{C}}{0}+v(t)\vect{X_0}$ $=-L_C\vect{Z_2}\wedge \dot{\varphi}\vect{Y_2}+v(t)\vect{X_0}=L_C \dot{\varphi}\vect{X_2}+v(t)\vect{X_0}$.
+
+De plus  $\vectg{G_C}{\text{C}}{0}=L_C \ddot{\varphi}\vect{X_2}-L_C \dot{\varphi}^2\vect{Z_2}+a(t)\vect{X_0}$.
+
+Au final, $\vectmd{O}{\text{C}}{0} = \vect{OG_C} \wedge M_C\vectg{G_{C}}{\text{C}}{0}$
+$ =L_C\vect{Z_2} \wedge M_C \left( L_C \ddot{\varphi}\vect{X_2}-L_C \dot{\varphi}^2\vect{Z_2}+a(t)\vect{X_0} \right)$
+
+$\vectmd{O}{\text{C}}{0} =L_C M_C \left( L_C \ddot{\varphi}\vect{Y_2} +a(t) \cos \varphi \vect{Y_0} \right)$.
+
+\end{tabular}
+
+\vspace{.25cm}
+
+ \begin{tabular}{|p{.9\linewidth}}
+\textbf{Calcul de $\vectmd{O}{\text{Cp}}{0}$}
+
+ On a $\vectmd{O}{\text{Cp}}{0} = \vectmd{G_{Cp}}{\text{Cp}}{0}+\vect{OG_{Cp}} \wedge M_{Cp}\vectg{G_{Cp}}{\text{C}}{0}$.
+
+\textbf{Calcul de $\vectg{G_{Cp}}{\text{Cp}}{0}$}
+
+De même, $\vectv{G_{Cp}}{\text{Cp}}{0}=\vectv{G_{Cp}}{\text{Cp}}{1}+\vectv{G_{Cp}}{\text{1}}{0}$ $=\vect{G_{Cp}O}\wedge \vecto{\text{Cp}}{0}+v(t)\vect{X_0}$ $=L_{Cp}\vect{Z_2}\wedge \dot{\varphi}\vect{Y_2}+v(t)\vect{X_0}=-L_{Cp} \dot{\varphi}\vect{X_2}+v(t)\vect{X_0}$. 
+
+De plus  $\vectg{G_{Cp}}{\text{Cp}}{0}=-L_{Cp} \ddot{\varphi}\vect{X_2}+L_{Cp} \dot{\varphi}^2\vect{Z_2}+a(t)\vect{X_0}$. 
+
+Au final, $\vectmd{O}{\text{Cp}}{0} = \vect{OG_{Cp}} \wedge M_{Cp}\vectg{G_{Cp}}{\text{Cp}}{0}$
+$ =-L_{Cp}\vect{Z_2} \wedge M_{Cp} \left( -L_{Cp} \ddot{\varphi}\vect{X_2}+L_{Cp} \dot{\varphi}^2\vect{Z_2}+a(t)\vect{X_0}\right)$
+
+$\vectmd{O}{\text{C}}{0} =-L_{Cp} M_{Cp} \left( -L_{Cp} \ddot{\varphi}\vect{Y_2} +a(t)\cos\varphi\vect{Y_0} \right)$
+\\
+\end{tabular}
+
+On a donc $\vectmd{O}{E}{0}\cdot \vect{Y_0} =M_{Cp} L_{Cp}^2 \ddot{\varphi} -M_{Cp}L_{Cp}a(t)\cos\varphi +  M_CL_C^2 \ddot{\varphi} +M_CL_Ca(t) \cos \varphi $
+
+\textbf{Méthode 2 -- En passant par le calcul de $\inertie{O}{E}$}
+
+ \begin{tabular}{|p{.9\linewidth}}
+On a $\inertie{O}{C}=M_C\matinertie{L_C^2}{L_C^2}{0}{0}{0}{0}{\mathcal{B}_2}$ et $\inertie{O}{Cp}=M_{Cp}\matinertie{L_{Cp}^2}{L_{Cp}^2}{0}{0}{0}{0}{\mathcal{B}_2}$ et donc 
+
+$\inertie{O}{E}=\matinertie{M_{Cp}L_{Cp}^2+M_{C}L_{C}^2}{M_{Cp}L_{Cp}^2+M_{C}L_{C}^2}{0}{0}{0}{0}{\mathcal{B}_2}$.
+
+$O$ est un point quelconque; donc $\vectmd{O}{E}{0}\cdot \vect{Y_0} =$
+
+$\vectmd{O}{E}{R_0}=\left[\frac{\dd \vectmc{O}{E}{R_0}}{\dd t}\right]_{R_0}+\overrightarrow{V(O/R_0)}\wedge \overrightarrow{R_c}(E/R_0)$ et 
+$\vectmc{O}{E}{R_0}=\inertie{O}{E}\cdot \vecto{E}{R_0}+M\;\vect{OG}\wedge \vectv{O}{E}{R_0}$. 
+
+De plus, 
+$\vect{OG}=\dfrac{M_CL_C-M_{Cp}L_{Cp}}{M_C+M_{Cp}}\vect{Z_2}$, $\vectv{O}{E}{R_0}=v(t)\vect{X_0}$ et
+$\vectv{G}{E}{R_0}=v(t)\vect{X_0}+\dfrac{M_CL_C-M_{Cp}L_{Cp}}{M_C+M_{Cp}}\dot{\varphi}\vect{X_2}$.
+
+
+On a donc, 
+$\vectmc{O}{S}{R_0}=\dot{\varphi}\left(M_{Cp}L_{Cp}^2+M_{C}L_{C}^2 \right)\vect{Y_2}+\left( M_C+M_{Cp}\right) \dfrac{M_CL_C-M_{Cp}L_{Cp}}{M_C+M_{Cp}}\vect{Z_2}\wedge v(t)\vect{X_0}$
+$ = \dot{\varphi}\left(M_{Cp}L_{Cp}^2+M_{C}L_{C}^2 \right)\vect{Y_2}+\left( M_CL_C-M_{Cp}L_{Cp}\right) v(t)\cos\varphi \vect{Y_0}$.
+
+$\left[\frac{\dd \vectmc{O}{E}{R_0}}{\dd t}\right]_{R_0} =\ddot{\varphi}\left(M_{Cp}L_{Cp}^2+M_{C}L_{C}^2 \right)\vect{Y_2}+\left( M_CL_C-M_{Cp}L_{Cp}\right) \left( a(t)\cos\varphi - v(t)\dot{\varphi}\sin\varphi \right)\vect{Y_0}$.
+
+$\overrightarrow{V(O/R_0)}\wedge \overrightarrow{R_c}(E/R_0) =v(t)\vect{X_0} \wedge \left(M_C+M_{Cp}\right) \left( v(t)\vect{X_0}+\dfrac{M_CL_C-M_{Cp}L_{Cp}}{M_C+M_{Cp}}\dot{\varphi}\vect{X_2} \right)$
+$=\left(M_C+M_{Cp}\right) \left( \dfrac{M_CL_C-M_{Cp}L_{Cp}}{M_C+M_{Cp}}\dot{\varphi}v(t)\sin\varphi  \right)\vect{Y_2} $
+$=\left( M_CL_C-M_{Cp}L_{Cp}  \right)\dot{\varphi}v(t)\sin\varphi\vect{Y_2} $.
+
+Au final, $\vectmd{O}{E}{R_0}=\ddot{\varphi}\left(M_{Cp}L_{Cp}^2+M_{C}L_{C}^2 \right)\vect{Y_2}+\left( M_CL_C-M_{Cp}L_{Cp}\right)  a(t)\cos\varphi \vect{Y_0}$
+\\
+
+\end{tabular}
 
 \end{corrige}
 \else
@@ -220,7 +295,10 @@ selon l'axe $\axe{O}{y_0}$.}
 
 
 
+\ifprof
+\else
 \end{multicols}
+\fi
 
 \newpage
 
