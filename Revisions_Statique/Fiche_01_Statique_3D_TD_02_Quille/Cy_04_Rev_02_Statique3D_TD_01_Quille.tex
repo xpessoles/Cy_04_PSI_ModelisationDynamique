@@ -20,6 +20,11 @@
 \courstrue
 \coursfalse
 
+
+\newif\ifcolle
+\colletrue
+%\collefalse
+
 % -------------------------------------
 % Déclaration des titres
 % -------------------------------------
@@ -41,7 +46,7 @@
 
 \def\xxonglet{\textsf{Rév -- Stat}}
 
-\def\xxactivite{TD 02}
+\def\xxactivite{\ifcolle Colle \else TD 02\fi }
 \def\xxauteur{\textsl{Xavier Pessoles}}
 
 
@@ -472,6 +477,8 @@ Et donc, $p_{21}=\dfrac{136336}{80\cdot 50}\simeq \SI{34}{MPa}<p_{\text{adm}}$.
 \else
 \fi
 
+\ifcolle
+\else
 \ifprof
 \else
 \subsubsection*{Corrigé résumé}
@@ -486,7 +493,7 @@ Et donc, $p_{21}=\dfrac{136336}{80\cdot 50}\simeq \SI{34}{MPa}<p_{\text{adm}}$.
 \end{enumerate}
 \normalsize
 \fi
-
+\fi
 %\ifprof
 %\else
 

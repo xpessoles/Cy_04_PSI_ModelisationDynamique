@@ -12,13 +12,17 @@
 %\fichefalse
 
 \proftrue
-%\proffalse
+\proffalse
 
 \tdtrue
 %\tdfalse
 
 \courstrue
 \coursfalse
+
+\newif\ifcolle
+\colletrue
+%\collefalse
 
 \newif\ifnormal
 \normaltrue
@@ -346,10 +350,10 @@ Le couple moteur est alors de \SI{2,34}{Nm}.
 
 \footnotesize
 %
-
+\ifcolle
+\else
 \ifnormal
 \vspace{.5cm}
-
 \noindent \textbf{Éléments de corrigé}
 \vspace{-.5cm}
 \begin{multicols}{2}
@@ -375,6 +379,7 @@ Le couple moteur est alors de \SI{2,34}{Nm}.
 %\end{enumerate}
 \end{multicols}
 \else
+\fi
 \fi
 \fi
 
