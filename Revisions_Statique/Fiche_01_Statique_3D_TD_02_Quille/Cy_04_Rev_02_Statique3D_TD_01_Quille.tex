@@ -61,9 +61,9 @@
 \begin{itemize}
 \item \textit{Res1.C2.SF1} : Proposer une méthode permettant la détermination d’une inconnue de liaison.
 \item \textit{Res1.C3.SF1} : Choisir une méthode pour déterminer la valeur des paramètres conduisant à des positions d'équilibre.
-\item \textit{Res2.C18} : Principe fondamental de la statique
-\item \textit{Res2.C19} : Équilibre d’un solide, d’un ensemble de solides
-\item \textit{Res2.C20} : Théorème des actions réciproques
+\item \textit{Res2.C18} : Principe fondamental de la statique.
+\item \textit{Res2.C19} : Équilibre d’un solide, d’un ensemble de solides.
+\item \textit{Res2.C20} : Théorème des actions réciproques.
 \end{itemize}
 \normalsize
 }}
@@ -110,7 +110,7 @@ Les actions de l'air et de l'eau permettent au voilier d'avancer mais provoquent
 %\textit{}
 \end{center}
 
-Une évolution récente des voiliers de course océanique a été de les doter d’une quille pendulaire. Cette quille est en liaison pivot d’axe $\left(O,\vect{z}_N \right)$ avec la coque du navire et peut être orientée d’un côté ou de l’autre du navire. Une fois l’orientation désirée obtenue, tout mouvement dans la liaison pivot est supprimé par le blocage en rotation de celle-ci. 
+Une évolution récente des voiliers de course océanique a été de les doter d’une quille pendulaire. Cette quille est en liaison pivot d’axe $\left(O,\vect{z_N} \right)$ avec la coque du navire et peut être orientée d’un côté ou de l’autre du navire. Une fois l’orientation désirée obtenue, tout mouvement dans la liaison pivot est supprimé par le blocage en rotation de celle-ci. 
 %Cette quille est généralement constituée d’un voile immergé dans l’eau à l’extrémité duquel se trouve un lest profilé. L’efficacité de la quille dépend de la masse du lest et de la longueur du voile. Ces deux paramètres présentent des limitations : le lest ne peut être trop important sous peine de solliciter dangereusement le voile de quille et la longueur de quille est limitée par le tirant d’eau maximal admissible (il faut permettre l’entrée dans les ports sans toucher le fond !).
 
 
@@ -142,12 +142,12 @@ Le modèle de calcul est donné dans les figures suivantes.
 \begin{itemize}
 \item Les liaisons sont toutes parfaites.
 \item Seul le vérin 2--4 est moteur ($F_{h3}=0$). Le fluide (pression hydraulique) agit simultanément sur les pièces 2 et 4. L’action du fluide sur 2 est donnée par 
-$\torseurstat{T}{\text{ph}}{2}=\torseurl{F_{h2}\vect{x}_2}{\vect{0}}{C}$.
+$\torseurstat{T}{\text{ph}}{2}=\torseurl{F_{h2}\vect{x_2}}{\vect{0}}{C}$.
 \item Les actions mécaniques de frottement visqueux provenant du déplacement du fluide dans les canalisations sont toutes négligées.% ($k=0$).
 \item Les actions hydrodynamiques sur le voile et le lest de quille sont également négligées.
-%\item Les actions hydrodynamiques sur le voile et le lest de quille sont également négligées.
 \item Les poids des éléments constitutifs des deux vérins sont négligés.
-\item La variation de $\theta_2$ pour toute l’amplitude du mouvement de relevage de la quille est faible; $\theta_2$ sera pris égal à 0 : les bases $\mathcal{B}_2$, $\mathcal{B}_4$ et $\mathcal{B}_N$ sont donc confondues. Cependant l’angle $\theta_1$ est différent de zéro.
+%\item La variation de $\theta_2$ pour toute l’amplitude du mouvement de relevage de la quille est faible; $\theta_2$ sera pris égal à 0 : les bases $\mathcal{B}_2$, $\mathcal{B}_4$ et $\mathcal{B}_N$ sont donc confondues. Cependant l’angle $\theta_1$ est différent de zéro.
+\item Les bases $\mathcal{B}_2$ et $\mathcal{B}_N$ sont considérées confondues. Cependant l’angle $\theta_1$ est différent de zéro.
 \item Les conditions de déplacement rendent négligeables les effets dynamiques. Les théorèmes de la statique seront donc utilisés dans la suite.
 \end{itemize}
 
