@@ -1,0 +1,47 @@
+\documentclass[10pt,fleqn]{article} % Default font size and left-justified equations
+\usepackage[%
+    pdftitle={Conception de la commande des systèmes asservis},
+    pdfauthor={Xavier Pessoles}]{hyperref}
+
+\input{../../style/new_style}
+\input{../../style/macros_SII}
+\input{../../style/Cycle_04_Entete}
+
+
+\livrettrue
+
+\begin{document}
+
+\renewcommand{\chap}{Chapitre_01_Introduction}
+
+% Cours
+\graphicspath{{../../style/png/}{../../\chap/Cours/images/}}
+\input{../../\chap/Cours/Cy_03_Ch_01_Correction_Cours.tex}
+
+
+%% TD??
+\renewcommand{\td}{Cy_03_01_TD_RP_01_Quille}
+%% Sujet Normal par défaut
+\newpage
+\fichetrue \proffalse \tdtrue \coursfalse \normaltrue \difficilefalse \tdifficilefalse \collefalse
+\graphicspath{{../../style/png/}{../../\chap/\td/images/}}
+\input{../../\chap/\td/\td.tex}
+
+%% Sujet colle (TO DO)
+\newpage
+\fichetrue \proffalse \tdtrue \coursfalse \normaltrue \difficilefalse \tdifficilefalse \colletrue
+\graphicspath{{../../style/png/}{../../\chap/\td/images/}}
+%\input{../../Chapitre_01_Correction/\td/\td.tex}
+
+%% Sujet Corrigé
+\newpage
+\fichetrue \proftrue \tdtrue \coursfalse \normaltrue \difficilefalse  \tdifficilefalse \collefalse
+\graphicspath{{../../style/png/}{../../\chap/\td/images/}}
+%\input{../../Chapitre_01_Correction/\td/\td.tex}
+
+
+
+\end{document}
+
+
+
