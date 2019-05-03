@@ -1,14 +1,47 @@
-%%%% Paramétrage du cours %%%%
-\def\xxactivite{Cours}
-\def\xxauteur{\textsl{Xavier Pessoles}}
+\documentclass[10pt,fleqn]{article} % Default font size and left-justified equations
+\usepackage[%
+    pdftitle={Modélisation dynamique},
+    pdfauthor={Xavier Pessoles}]{hyperref}
 
+\input{style/new_style}
+\input{style/macros_SII}
+\usepackage{bm}
+\fichetrue
 \fichefalse
+
 \proftrue
+%\proffalse
+
+%\tdtrue
 \tdfalse
+
 \courstrue
+%\coursfalse
+
+
+
+% -------------------------------------
+% Déclaration des titres
+% -------------------------------------
+
+\def\discipline{Sciences \\Industrielles de \\ l'Ingénieur}
+\def\xxtete{Sciences Industrielles de l'Ingénieur}
+
+\def\classe{\textsf{PSI$\star$ -- MP}}
+\def\xxnumpartie{Cycle 04}
+\def\xxpartie{Modéliser le comportement des systèmes mécaniques dans le but d'établir une loi de comportement ou de déterminer des actions mécaniques en utilisant le PFD}
 
 \def\xxnumchapitre{Chapitre 1 \vspace{.2cm}}
 \def\xxchapitre{\hspace{.12cm} Introduction à la dynamique du solide indéformable}
+
+\def\xxposongletx{2}
+\def\xxposonglettext{1.45}
+\def\xxposonglety{19}%16
+
+\def\xxonglet{\textsf{Cycle 04}}
+
+\def\xxactivite{Cours}
+\def\xxauteur{\textsl{Xavier Pessoles}}
 
 \def\xxcompetences{%
 \textsl{%
@@ -18,8 +51,7 @@
 \item \textit{Res1.C1.SF1} : proposer une démarche permettant la détermination de la loi de mouvement.
 \end{itemize}
 }}
-
-
+		
 \def\xxfigures{
 \includegraphics[width=4cm]{images/newton}%images/prot_01
 %\\
@@ -27,83 +59,23 @@
  \textit{Isaac Newton -- 1643 - 1727.}
 }%figues de la page de garde
 
+\def\xxpied{%
+Cycle 04 -- Modéliser le comportement des systèmes mécaniques\\% afin de valider leurs performances.\\
+Chapitre 1 -- \xxactivite%
+}
 
-\iflivret
-\input{../../style/new_pagegarde}
-\else
-\input{../../style/new_pagegarde}
-\fi
+\setcounter{secnumdepth}{5}
+%---------------------------------------------------------------------------
+
+
+\begin{document}
+\chapterimage{png/Fond_CIN}
+\input{style/new_pagegarde}
 \setlength{\columnseprule}{.1pt}
 
 \vspace{2cm}
 \pagestyle{fancy}
 \thispagestyle{plain}
-
-%%%%%%%%%%%%%%%%%%%%%%%%
-%\documentclass[10pt,fleqn]{article} % Default font size and left-justified equations
-%\usepackage[%
-%    pdftitle={Modélisation dynamique},
-%    pdfauthor={Xavier Pessoles}]{hyperref}
-%
-%\input{style/new_style}
-%\input{style/macros_SII}
-%
-%\fichetrue
-%\fichefalse
-%
-%\proftrue
-%%\proffalse
-%
-%%\tdtrue
-%\tdfalse
-%
-%\courstrue
-%%\coursfalse
-%
-%
-%
-%% -------------------------------------
-%% Déclaration des titres
-%% -------------------------------------
-%
-%\def\discipline{Sciences \\Industrielles de \\ l'Ingénieur}
-%\def\xxtete{Sciences Industrielles de l'Ingénieur}
-%
-%\def\classe{\textsf{PSI$\star$ -- MP}}
-%\def\xxnumpartie{Cycle 04}
-%\def\xxpartie{Modéliser le comportement des systèmes mécaniques dans le but d'établir une loi de comportement ou de déterminer des actions mécaniques en utilisant le PFD}
-%
-%\def\xxnumchapitre{Chapitre 1 \vspace{.2cm}}
-%\def\xxchapitre{\hspace{.12cm} Introduction à la dynamique du solide indéformable}
-%
-%\def\xxposongletx{2}
-%\def\xxposonglettext{1.45}
-%\def\xxposonglety{19}%16
-%
-%\def\xxonglet{\textsf{Cycle 04}}
-%
-%\def\xxactivite{Cours}
-%\def\xxauteur{\textsl{Xavier Pessoles}}
-%
-%		
-%
-%\def\xxpied{%
-%Cycle 04 -- Modéliser le comportement des systèmes mécaniques\\% afin de valider leurs performances.\\
-%Chapitre 1 -- \xxactivite%
-%}
-%
-%\setcounter{secnumdepth}{5}
-%%---------------------------------------------------------------------------
-%
-%
-%\begin{document}
-%\chapterimage{png/Fond_CIN}
-%\input{style/new_pagegarde}
-%\setlength{\columnseprule}{.1pt}
-%
-%\vspace{2cm}
-%\pagestyle{fancy}
-%\thispagestyle{plain}
 
 \Large
 \textbf{A REORGANISER : 1 Objectif (type de problemes) 2 CAS GENERAL 3 CAS SIMPLIFIES 4 LOIS DE COMPORTEMETN}
@@ -330,10 +302,10 @@ $\ddot{x}(t)=-\ddot{x}_m$ \\
 
 \begin{thebibliography}{2}
    \bibitem[1]{ref1} Émilien Durif, {\it Introduction à la dynamique des solides, Lycée La Martinière Monplaisir, Lyon.}
-   \bibitem[2]{ref2} Florestan Mathurin, {\it Introduction à la dynamique du solide, Lycée Bellevue, Toulouse, \url{http://florestan.mathurin.free.fr/}.}
+      \bibitem[2]{ref2} Florestan Mathurin, {\it Introduction à la dynamique du solide, Lycée Bellevue, Toulouse, \url{http://florestan.mathurin.free.fr/}.}
 \end{thebibliography}
 
-%\end{document}
+\end{document}
 
 
 
