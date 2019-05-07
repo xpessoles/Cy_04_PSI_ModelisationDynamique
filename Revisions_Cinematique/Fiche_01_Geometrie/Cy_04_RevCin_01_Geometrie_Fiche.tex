@@ -1,70 +1,93 @@
-\documentclass[10pt,fleqn]{article} % Default font size and left-justified equations
-\usepackage[%
-    pdftitle={Modélisation cinématique : Géométrie},
-    pdfauthor={Xavier Pessoles}]{hyperref}
-
-\input{style/new_style}
-\input{style/macros_SII}
+%%%% Paramétrage du cours %%%%
+\def\xxactivite{Cours}
+\def\xxauteur{\textsl{Xavier Pessoles}}
 
 \fichetrue
-%\fichefalse
-
 \proftrue
-%\proffalse
-
-%\tdtrue
 \tdfalse
-
-%\courstrue
 \coursfalse
 
-% -------------------------------------
-% Déclaration des titres
-% -------------------------------------
-
-\def\discipline{Sciences \\Industrielles de \\ l'Ingénieur}
-\def\xxtete{Sciences Industrielles de l'Ingénieur}
-
-\def\classe{\textsf{PSI$\star$ -- MP}}
 \def\xxnumpartie{Rév -- Cin}
 \def\xxpartie{Modéliser le comportement cinématique des systèmes mécaniques}
-
 \def\xxnumchapitre{Révision 1 \vspace{.2cm}}
 \def\xxchapitre{\hspace{.12cm} Modélisation géométrique -- Lois entrées-sorties}
 
-\def\xxposongletx{2}
-\def\xxposonglettext{1.45}
-\def\xxposonglety{19}%16
-
-\def\xxonglet{Rév -- Cin}
-
-\def\xxactivite{Fiche}
-\def\xxauteur{\textsl{Xavier Pessoles}}
 
 \def\xxcompetences{%
 \textsl{%
 \textbf{Savoirs et compétences :}\\
+%\begin{itemize}[label=\ding{112},font=\color{ocre}] 
+%\item \textit{Res1.C2} : principe fondamental de la dynamique;
+%\item \textit{Res1.C1.SF1} : proposer une démarche permettant la détermination de la loi de mouvement.
+%\end{itemize}
 }}
 
+
 \def\xxfigures{
-%incgraphics[width=.8\textwidth]{}%images/prot_01}
+\includegraphics[width=4cm]{newton}%images/prot_01
+%\\
+
+ \textit{Isaac Newton -- 1643 - 1727.}
 }%figues de la page de garde
 
-\def\xxpied{%
-Révision cinématique -- Lois entrées -- sorties\\
-Fiche 1 -- \xxactivite%
-}
 
-\setcounter{secnumdepth}{5}
-%---------------------------------------------------------------------------
+\iflivret
+\input{../../style/new_pagegarde}
+\else
+\input{../../style/new_pagegarde}
+\fi
+\setlength{\columnseprule}{.1pt}
 
-
-\begin{document}
-%\chapterimage{png/Fond_Cin}
-\input{style/new_pagegarde}
 \vspace{2cm}
 \pagestyle{fancy}
 \thispagestyle{plain}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+%
+%\def\discipline{Sciences \\Industrielles de \\ l'Ingénieur}
+%\def\xxtete{Sciences Industrielles de l'Ingénieur}
+%
+%\def\classe{\textsf{PSI$\star$ -- MP}}
+%\def\xxnumpartie{Rév -- Cin}
+%\def\xxpartie{Modéliser le comportement cinématique des systèmes mécaniques}
+%
+%\def\xxnumchapitre{Révision 1 \vspace{.2cm}}
+%\def\xxchapitre{\hspace{.12cm} Modélisation géométrique -- Lois entrées-sorties}
+%
+%\def\xxposongletx{2}
+%\def\xxposonglettext{1.45}
+%\def\xxposonglety{19}%16
+%
+%\def\xxonglet{Rév -- Cin}
+%
+%\def\xxactivite{Fiche}
+%\def\xxauteur{\textsl{Xavier Pessoles}}
+%
+%\def\xxcompetences{%
+%\textsl{%
+%\textbf{Savoirs et compétences :}\\
+%}}
+%
+%\def\xxfigures{
+%%incgraphics[width=.8\textwidth]{}%images/prot_01}
+%}%figues de la page de garde
+%
+%\def\xxpied{%
+%Révision cinématique -- Lois entrées -- sorties\\
+%Fiche 1 -- \xxactivite%
+%}
+%
+%\setcounter{secnumdepth}{5}
+%%---------------------------------------------------------------------------
+
+
+%\begin{document}
+%%\chapterimage{png/Fond_Cin}
+%\input{style/new_pagegarde}
+%\vspace{2cm}
+%\pagestyle{fancy}
+%\thispagestyle{plain}
 
 \section{Modélisation et paramétrage des systèmes mécaniques}
 \begin{methode}[Modélisation d'un système mécanique réel]
@@ -143,8 +166,8 @@ Un système se présentant sous forme d'une chaîne de solide fermée a pour but
 
 
 \begin{methode}[Autre idée pour calculer la loi Entrée -- Sortie dans une chaîne de solides fermée]
-Dans certain mécanisme, on peut observer que deux vecteurs sont toujours orthogonaux. En utilisant le fait que le produit scalaire entre ces deux vecteurs est nul puis en projetant les vecteurs dans une même base et réalisant le calcul, il est possible de déterminer une loi entrée-sortie.
+Dans certains mécanismes, on peut observer que deux vecteurs sont toujours orthogonaux. En utilisant le fait que le produit scalaire entre ces deux vecteurs est nul puis en projetant les vecteurs dans une même base puis en réalisant le calcul, il est possible de déterminer une loi entrée-sortie.
 \end{methode}
-\end{document}
+%\end{document}
 
 
