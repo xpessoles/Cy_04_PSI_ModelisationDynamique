@@ -1,50 +1,13 @@
-\documentclass[10pt,fleqn]{article} % Default font size and left-justified equations
-\usepackage[%
-    pdftitle={Modélisation dynamique : cinétique},
-    pdfauthor={Xavier Pessoles}]{hyperref}
-
-    
-\input{style/new_style}
-\input{style/macros_SII}
-
-\fichetrue
-%\fichefalse
-
-\proftrue
-%\proffalse
-
-\tdtrue
-%\tdfalse
-
-\courstrue
-\coursfalse
-
-
-\def\discipline{Sciences \\Industrielles de \\ l'Ingénieur}
-\def\xxtete{Sciences Industrielles de l'Ingénieur}
-
-\def\classe{\textsf{PSI$\star$ -- MP}}
-\def\xxnumpartie{Cycle 04}
-\def\xxpartie{Modéliser le comportement des systèmes mécaniques dans le but d'établir une loi de comportement ou de déterminer des actions mécaniques en utilisant le PFD}
+%%%% Paramétrage du TD %%%%
+\def\xxactivite{Application 1 \ifprof -- Corrigé \else \fi} % \normalsize \vspace{-.4cm}
+\def\xxauteur{\textsl{Xavier Pessoles}}
 
 \def\xxnumchapitre{Chapitre 2 \vspace{.2cm}}
 \def\xxchapitre{\hspace{.12cm} Caractérisation inertielle des solides}
 
-
-
-
-\def\xxtitreexo{Activation 1}%Motorisation du moteur Haibike}
+\def\xxtitreexo{Application 2}%Motorisation du moteur Haibike}
 \def\xxsourceexo{ \hspace{.2cm} \footnotesize{X. Pessoles}}
 
-
-\def\xxposongletx{2}
-\def\xxposonglettext{1.45}
-\def\xxposonglety{20}
-%\def\xxonglet{Part. 1 -- Ch. 3}
-\def\xxonglet{Cycle 04}
-
-\def\xxactivite{Activation 1}
-\def\xxauteur{\textsl{X. Pessoles}}
 
 \def\xxcompetences{%
 \textsl{%
@@ -56,31 +19,33 @@
 \end{itemize}
 }}
 \def\xxfigures{
-%\includegraphics[width=.7\linewidth]{images/fig_00}
+%\includegraphics[width=.7\linewidth]{triaxe}
 }%figues de la page de garde
 
 
-\def\xxpied{%
-Cycle 04 -- Modélisation mécanique -- Cinétique\\% afin de valider leurs performances.\\
-Chapitre 2 -- \xxactivite%
-}
+\iflivret
+\input{../../style/new_pagegarde}
+\else
+\input{../../style/new_pagegarde}
+\fi
+\setlength{\columnseprule}{.1pt}
 
-\setcounter{secnumdepth}{5}
-%---------------------------------------------------------------------------
-
-\usepackage{pgfplots}
-\begin{document}
-\def\pathfig{images}
-%\chapterimage{png/Fond_Cin}
-\input{style/new_pagegarde}
-\vspace{5cm}
 \pagestyle{fancy}
 \thispagestyle{plain}
+
+\ifprof
+\vspace{5.1cm}
+\else
+\vspace{5.2cm}
+\fi
 
 \def\columnseprulecolor{\color{ocre}}
 \setlength{\columnseprule}{0.4pt} 
 
-\def\pathfig{images}
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\setcounter{exo}{0}
+
 
 \ifprof
 \else
@@ -90,7 +55,7 @@ Chapitre 2 -- \xxactivite%
 %On donne le plan d'un vilebrequin. 
 %
 %\begin{center}
-%\includegraphics[width=\linewidth]{images/plan.png}
+%\includegraphics[width=\linewidth]{plan.png}
 %\end{center}
 %
 %\subparagraph{}
@@ -112,7 +77,7 @@ Chapitre 2 -- \xxactivite%
 %
 %Pour cette pièce, SolidWorks nous donne les informations suivantes. 
 %\begin{center}
-%\includegraphics[width=\linewidth]{images/SW_03.png}
+%\includegraphics[width=\linewidth]{SW_03.png}
 %\end{center}
 %
 %%
@@ -164,7 +129,7 @@ Chapitre 2 -- \xxactivite%
 On donne le plan d'un triaxe constitué des 3 axes $A_1$, $A_2$, $A_3$ et du moyeu central noté $M$. On note  $T$ l'ensemble.
 
 \begin{center}
-\includegraphics[width=\linewidth]{images/triaxe.png}
+\includegraphics[width=\linewidth]{triaxe.png}
 \end{center}
 On note :
 \begin{itemize}
@@ -187,7 +152,7 @@ $\alpha_3=\angl{x}{x_3}=-30\degres$.
 On donne ci-dessous le paramétrage d'un axe $A_i$.
 
 \begin{center}
-\includegraphics[width=.8\linewidth]{images/param.png}
+\includegraphics[width=.8\linewidth]{param.png}
 \end{center}
 \subparagraph{}
 \textit{Déterminer (sans calcul) la position du centre de gravité du triaxe. }
@@ -473,7 +438,7 @@ $\inertie{O}{A_i}_{\rep{}}=\matinertie{f(\alpha)}{g(\alpha)}{h(\alpha)}{0}{0}{fg
 %\fi
 %Pour cette pièce, SolidWorks nous donne les informations suivantes. 
 %\begin{center}
-%\includegraphics[width=.9\linewidth]{images/SW_04.png}
+%\includegraphics[width=.9\linewidth]{SW_04.png}
 %\end{center}
 
 %Propriétés de masse de TriAxe
@@ -527,17 +492,17 @@ $\inertie{O}{A_i}_{\rep{}}=\matinertie{f(\alpha)}{g(\alpha)}{h(\alpha)}{0}{0}{fg
 \else
 \end{multicols}
 \fi
-
-\end{document}
-\begin{center}
-\includegraphics[width=\linewidth]{images/}
-\end{center}
-
-\subparagraph{}
-\textit{}
-\ifprof
-\begin{corrige}
-\end{corrige}
-\else
-\fi
+%
+%\end{document}
+%\begin{center}
+%\includegraphics[width=\linewidth]{}
+%\end{center}
+%
+%\subparagraph{}
+%\textit{}
+%\ifprof
+%\begin{corrige}
+%\end{corrige}
+%\else
+%\fi
 
