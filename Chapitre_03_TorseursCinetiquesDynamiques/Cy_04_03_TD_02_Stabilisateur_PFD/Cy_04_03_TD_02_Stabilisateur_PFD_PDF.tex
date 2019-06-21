@@ -1,0 +1,49 @@
+\documentclass[10pt,fleqn]{article} % Default font size and left-justified equations
+\usepackage[%
+    pdftitle={Modélisation dynamique},
+    pdfauthor={Xavier Pessoles}]{hyperref}
+
+\input{../../style/new_style}
+\input{../../style/macros_SII}
+\input{../../style/Cycle_04_Entete}
+\livretfalse
+
+
+
+
+
+\begin{document}
+\newcommand{\td}{Cy_04_03_TD_02_Stabilisateur_PFD}
+%% Sujet
+\fichetrue \proffalse \tdtrue \coursfalse \collefalse 
+\normaltrue \difficilefalse \tdifficilefalse
+\graphicspath{{../../style/png/}{images/}}
+\input{\td.tex}
+\newpage
+
+\fichetrue \proffalse \tdtrue \coursfalse \collefalse 
+\normalfalse \difficiletrue  \tdifficilefalse
+\graphicspath{{../../style/png/}{images/}}
+\input{\td.tex}
+\newpage
+
+\fichetrue \proffalse \tdtrue \coursfalse \collefalse 
+\normalfalse \difficilefalse \tdifficiletrue
+\graphicspath{{../../style/png/}{images/}}
+\input{\td.tex}
+\newpage
+
+
+%% Colle
+\fichetrue \proffalse \tdtrue \coursfalse \colletrue
+\normaltrue \difficilefalse \tdifficilefalse
+\graphicspath{{../../style/png/}{images/}}
+\input{\td.tex}
+
+% Corrigé
+\newpage
+\fichetrue \proftrue \tdtrue \coursfalse \collefalse
+\graphicspath{{../../style/png/}{images/}}
+\input{\td.tex}
+
+\end{document}
