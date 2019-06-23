@@ -1,0 +1,158 @@
+%%%% Paramétrage du TD %%%%
+\def\xxactivite{\ifcolle Colle \else Application 1 \fi  \ifprof -- Corrigé \else \fi} % \normalsize \vspace{-.4cm}
+\def\xxauteur{\textsl{Xavier Pessoles}}
+
+\def\xxnumchapitre{Chapitre 4 \vspace{.2cm}}
+\def\xxchapitre{\hspace{.12cm} Méthodologie : détermination des équations de mouvement}
+\def\xxpartie{Modéliser le comportement des systèmes mécaniques dans le but d'établir une loi de comportement ou de déterminer des actions mécaniques en utilisant le PFD}
+
+
+
+\def\xxtitreexo{Chaîne ouverte -- Wheeling moto\ifnormal $\star$ \else \fi \ifdifficile $\star\star$ \else \fi \iftdifficile $\star\star\star$ \else \fi }
+\def\xxsourceexo{\hspace{.2cm} \footnotesize{Équipe PT La Martinière Monplaisir}}
+
+
+\def\xxcompetences{%
+\vspace{-.5cm}
+\textsl{%
+\textbf{Savoirs et compétences :}
+\begin{itemize}[label=\ding{112},font=\color{ocre}] 
+%\item \textit{Mod2.C16} : torseur cinétique
+%\item \textit{Mod2.C17} : torseur dynamique
+%\item \textit{Mod2.C17.SF1} : déterminer le torseur dynamique d’un solide, ou d’un ensemble de solides, par rapport à un autre solide
+%\item \textit{Mod2.C15} : matrice d'inertie
+\item \textit{Res1.C2} : principe fondamental de la dynamique
+\item \textit{Res1.C1.SF1} : proposer une démarche permettant la détermination de la loi de mouvement
+%\item \textit{Res1.C2.SF1} : proposer une méthode permettant la détermination d’une inconnue de liaison
+\end{itemize}
+}}
+\def\xxfigures{
+\includegraphics[width=.36\linewidth]{fig_00}
+}%figues de la page de garde
+
+
+\iflivret
+\input{../../../style/new_pagegarde}
+\else
+\input{../../../style/new_pagegarde}
+\fi
+\setlength{\columnseprule}{.1pt}
+
+\pagestyle{fancy}
+\thispagestyle{plain}
+
+\ifprof
+\vspace{4.8cm}
+\else
+\vspace{4.8cm}
+\fi
+
+\def\columnseprulecolor{\color{ocre}}
+\setlength{\columnseprule}{0.4pt} 
+
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\setcounter{exo}{0}
+
+\ifprof
+\else
+
+\ifprof
+\else
+\begin{multicols}{2}
+\fi
+
+\subsection*{Modélisation}
+L'étude proposée concerne l'étude dynamique d'une moto dans une phase de wheeling. Il s’agit d’une figure acrobatique consistant à soulever la roue avant, et de ne garder que l’appui sous la roue arrière. La moto est supposée se déplacer en ligne droite, sur une route horizontale, et l'étude menée est cinématiquement plane. Le modèle d'étude est sur la figure ci-dessous.
+
+\begin{center}
+\includegraphics[width=\linewidth]{fig_01}
+\end{center}
+\begin{itemize}
+\item $\mathcal{R}_0=\repere{O_0}{x_0}{y_0}{z_0}$ est un repère supposé galiléen, où $\vect{x_0}$ est dirigé suivant la vitesse de la moto et $\vect{y_0}$ suivant la verticale ascendante;
+\item $\mathcal{R}_1=\repere{G_1}{x_1}{y_1}{z_1}$ est un repère lié à l'ensemble considéré indéformable \{cadre + bras arrière + fourche avant + pilote\}. On note $\theta_1=\angl{x_0}{x_1}$;
+\item $\mathcal{R}_2=\repere{O_2}{x_2}{y_2}{z_2}$ est un repère lié à la roue avant (2), de rayon $R$ et de centre $O_2$ tel que $\vect{z_2}=\vect{z_0}$. On note $\theta_2=\angl{x_0}{x_2}$;
+\item $\mathcal{R}_3=\repere{O_3}{x_3}{y_3}{z_3}$ est un repère lié à la roue arrière (3), de rayon $R$ et de centre $O_3$ tel que $\vect{z_3}=\vect{z_0}$. On note $\theta_3=\angl{x_0}{x_3}$. Les contacts entre les roues \textbf{(2)} et \textbf{(3)} et le sol \textbf{(0)} sont modélisés par des liaisons ponctuelles en $H_2$ et $H_3$.
+\end{itemize}
+
+On note :
+\begin{itemize}
+\item $\vect{OO_3} = \lambda \vect{x_0}+R\vect{y_0}$;
+\item $\vect{O_3O_2} = L_1\vect{x_1}$;
+\item $\vect{O_3G_1} = a_1\vect{x_1}+b_1\vect{y_1}$;
+\item $\vect{H_3O_3} = R \vect{y_0}$;
+\item $\vect{H_2O_2} = R \vect{y_0}$;
+\item $G_2 = O_2$ et $G_3 = O_3$.
+\end{itemize}
+
+On note $G_i$ le centre d'inertie, $m_i$ la masse et $C_i$ le moment d'inertie par rapport à l'axe   de la pièce \textbf{(i)}. 
+
+\subsection*{Étude dynamique}
+La transmission exerce sur la roue arrière un couple moteur $\vect{C_m}=C_m\vect{z_0}$. 
+On suppose que l’adhérence roue/sol est suffisante pour assurer le roulement sans glissement de la roue \textbf{(3)} au contact en $H$ avec le sol.
+La situation initiale est définie au moment où la roue avant quitte le contact avec le sol, avec   $\dot{\theta_1}=0$ (après $\neq 0$).
+
+
+\subparagraph{}
+\textit{Construire le graphe de structure de la moto dans la phase de wheeling.
+Préciser le degré de mobilité de l'ensemble, compte tenu de l'hypothèse de roulement sans glissement en $H_3$.}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+\subparagraph{}
+\textit{En se limitant à l'application des théorèmes généraux de la dynamique, définir quelles équations permettent de déterminer le mouvement de l'ensemble, en précisant:
+\begin{itemize}
+\item élément(s) isolé(s) ;
+\item théorème appliqué, en précisant quelle projection et quel point de réduction éventuel sont retenus. 
+\end{itemize}
+}
+
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+
+\subparagraph{}
+\textit{Mettre en place les équations précédentes.
+Conclure sur la possibilité d'intégration de ces équations. }
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+\end{multicols}
+
+
+
+\fi
+
+
+\ifprof
+\begin{center}
+\includegraphics[width=.8\linewidth]{cor_01}
+\end{center}
+
+\begin{center}
+\includegraphics[width=\linewidth]{cor_02}
+\end{center}
+
+\begin{center}
+\includegraphics[width=\linewidth]{cor_03}
+\end{center}
+
+\begin{center}
+\includegraphics[width=\linewidth]{cor_04}
+\end{center}
+\else
+\fi
+%\begin{center}
+%\includegraphics[width=\linewidth]{cor_05}
+%\end{center}
+
+
