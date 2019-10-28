@@ -1,0 +1,123 @@
+\documentclass[10pt,fleqn]{article} % Default font size and left-justified equations
+\usepackage[%
+    pdftitle={Conception de la commande des systèmes asservis},
+    pdfauthor={Xavier Pessoles}]{hyperref}
+
+\input{../../style/new_style}
+\input{../../style/macros_SII}
+\input{../../style/Cycle_04_Entete}
+
+
+\livrettrue
+
+\begin{document}
+
+\newcommand{\chap}{Revisions_Statique}
+\newcommand{\td}{Cy_04_04_PFD_CF_App_01_Micromoteur}
+
+\def\xxYCartouche{-2.25cm}
+\def\xxYongletGarde{.5cm}
+\def\xxYOnget{.9cm}
+
+% FICHE  2 Statique frottement
+\graphicspath{{../../style/png/}{../../\chap/Fiche_02_Frottement/images/}}
+\input{../../\chap/Fiche_02_Frottement/Fiche_02_Frottement_Fiche.tex}
+\newpage
+
+
+% TD HAYON
+\def\xxYongletGarde{1.1cm}
+\renewcommand{\td}{Fiche_01_Statique_2D_TD_01_Hayon}
+\newpage 
+% Sujet
+\normaltrue\newpage
+\fichetrue \proffalse \tdtrue \coursfalse \collefalse
+\graphicspath{{../../style/png/}{../../\chap/\td/images/}}
+\input{../../\chap/\td/\td.tex}
+%
+%% Colle
+%\fichetrue \proffalse \tdtrue \coursfalse \colletrue
+%\graphicspath{{../../style/png/}{images/}}
+%\newpage \input{\td.tex}
+%
+%% Corrigé
+\newpage
+\fichetrue \proftrue \tdtrue \coursfalse \collefalse
+\graphicspath{{../../style/png/}{../../\chap/\td/images/}}
+\input{../../\chap/\td/\td.tex}
+
+%DBA
+\renewcommand{\td}{Fiche_01_Statique_2D_TD_02_DBA}
+% Sujet
+\newpage
+\normaltrue
+\fichetrue \proffalse \tdtrue \coursfalse \collefalse
+\graphicspath{{../../style/png/}{../../\chap/\td/images/}}
+\input{../../\chap/\td/\td.tex}
+\newpage
+% Sujet Difficile
+\normalfalse\difficiletrue
+\fichetrue \proffalse \tdtrue \coursfalse \collefalse
+\graphicspath{{../../style/png/}{../../\chap/\td/images/}}
+\input{../../\chap/\td/\td.tex}
+\normaltrue\difficilefalse
+\newpage
+%
+% Colle
+\fichetrue \proffalse \tdtrue \coursfalse \colletrue
+\graphicspath{{../../style/png/}{../../\chap/\td/images/}}
+\newpage 
+\input{../../\chap/\td/\td.tex}
+%
+%% Corrigé
+%\def\xxYongletGarde{.7cm}
+\newpage
+\fichetrue \proftrue \tdtrue \coursfalse \collefalse
+\graphicspath{{../../style/png/}{../../\chap/\td/images/}}
+\newpage 
+\input{../../\chap/\td/\td.tex}
+
+
+% Statique 3D MC2E
+\renewcommand{\td}{Fiche_01_Statique_3D_TD_01_MC2E}
+% Sujet
+\newpage
+\normaltrue
+\fichetrue \proffalse \tdtrue \coursfalse \collefalse
+\graphicspath{{../../style/png/}{../../\chap/\td/images/}}
+\input{../../\chap/\td/\td.tex}
+\newpage
+
+%
+%% Corrigé
+%\def\xxYongletGarde{.7cm}
+\newpage
+\fichetrue \proftrue \tdtrue \coursfalse \collefalse
+\graphicspath{{../../style/png/}{../../\chap/\td/images/}}
+\newpage 
+\input{../../\chap/\td/\td.tex}
+
+
+
+
+\renewcommand{\td}{Fiche_01_Statique_3D_TD_02_Quille}
+% Sujet QUILLE
+\normaltrue
+\fichetrue \proffalse \tdtrue \coursfalse \collefalse
+\graphicspath{{../../style/png/}{../../\chap/\td/images/}}
+\newpage 
+\input{../../\chap/\td/\td.tex}
+
+
+%
+%% Corrigé
+\def\xxYongletGarde{.7cm}
+\newpage
+\fichetrue \proftrue \tdtrue \coursfalse \collefalse
+\graphicspath{{../../style/png/}{../../\chap/\td/images/}}
+\input{../../\chap/\td/\td.tex}
+
+\end{document}
+
+
+
