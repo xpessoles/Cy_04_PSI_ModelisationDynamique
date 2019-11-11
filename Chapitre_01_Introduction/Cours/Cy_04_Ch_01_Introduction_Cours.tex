@@ -105,10 +105,7 @@
 %\pagestyle{fancy}
 %\thispagestyle{plain}
 
-\Large
-\textbf{A REORGANISER : 1 Objectif (type de problemes) 2 CAS GENERAL 3 CAS SIMPLIFIES 4 LOIS DE COMPORTEMETN}
 
-\normalsize
 
 \section{Introduction}
 \begin{obj} ~\\
@@ -120,6 +117,38 @@ L'objectif de ce cycle est triple. L'étude dynamique des systèmes de solide pe
 \end{itemize}
 \end{obj}
 %\subsection{Définitions}
+
+
+
+On distingue deux principaux types de problèmes en dynamique : 
+\begin{itemize}
+\item \textbf{type 1} :
+\begin{itemize}
+\item on connaît : les actionneurs et les inerties,
+\item on détermine : les lois de mouvement et les actions mécaniques dans les liaisons;
+\end{itemize} 
+\item \textbf{type 2} :
+\begin{itemize}
+\item on connaît : les lois de mouvement et inerties,
+\item on détermine : les caractéristiques des actionneurs et les actions mécaniques de liaison.
+\end{itemize}
+\end{itemize}
+
+La méthodologie de résolution d'un problème de dynamique est très similaire à celle utilisée lors de la détermination des performances statiques des systèmes.
+
+\begin{enumerate}
+\item On choisit un repère galiléen et on effectue le bilan complet des données d'entrée du problème.
+\item On construit un graphe de structure.
+\item On isole le solide ou le système de solides considéré.
+\item On effectue le Bilan des Actions Mécaniques Extérieures agissant sur le système isolé.
+\item On écrit le PFD.
+\item On projette les relations vectorielles sur les axes choisis.
+\item On injecte les lois de comportement (ressort, lois de Coulomb, ...).
+\item On effectue la résolution.
+\end{enumerate}
+
+
+
 
 
 \begin{definition}[Référentiel galiléen]
@@ -148,44 +177,6 @@ En mécanique classique (ou Newtonienne), les deux repères d'\textbf{espace et 
 %\caption{Définition d'un référentiel galiléen \label{fig:ref_galileen}}
 %\end{figure}
 
-
-
-\section[PFD : applications simplifiées]{Principe Fondamental de la Dynamique : applications simplifiées}
-
-%\subsection{Cas particulier d'un solide en translation}
-
-\begin{definition}[Solide en translation par rapport à un référentiel galiléen] ~\\
-Si un ensemble matériel $E$ (de centre d'inertie $G$) est en mouvement de translation dans un référentiel galiléen ($R_g$) alors : 
-
-\begin{itemize}
-\item d'après le \textbf{théorème de la résultante dynamique : } la résultante des efforts extérieurs est égale au produit de la masse par l'accélération de G par rapport à $R_g$ :
-\bm{$
-%m\;\overrightarrow{\Gamma}(G/R_g)=\vectf{\bar E}{E};%\resultante[\bar E]{E}
-m\;\vectg{G}{E}{R_g}=\vectf{\bar E}{E}$};%\resultante[\bar E]{E}
-\item d'après le \textbf{théorème du moment dynamique : } le moment des actions mécaniques extérieures s'appliquant sur $E$ est égal au vecteur nul en tout point :
-\bm{$\vectm{A}{\bar E}{E}=\overrightarrow{0}\forall  A$}.
-\end{itemize}
-
-\end{definition}
- 
-
-%\subsection{Cas d'un solide en mouvement de rotation autour d'un axe fixe}
-
-
-\begin{definition}[Solide en rotation autour d'un axe fixe par rapport à un référentiel galiléen] ~\\
-Si un ensemble matériel $E$ (de centre d'inertie $G$) est en mouvement de rotation autour d'un axe $\Delta$ (dirigé par $\overrightarrow{u}$ unitaire) fixe dans un référentiel galiléen ($R_g$) alors, d'après le \textbf{théorème du moment dynamique} :
-
-\bm{$
-\vectm{A}{\bar E}{E}\cdot \overrightarrow{u}=J_{\Delta}(E)\cdot \ddot{\theta}\;\;\forall A\in \Delta
-$} avec :
-\begin{itemize}
-\item  $J_{\Delta}(E)$ le moment d'inertie de $E$ par rapport à l'axe $\Delta$ (en $\text{kg  m}^2$) ;
-\item $\ddot{\theta}$, l'accélération angulaire de $E$ par rapport à $R_g$ suivant $\Delta$ : $\overrightarrow{\Omega}(E/R_g)\cdot \overrightarrow{u}$.
-\end{itemize}
-\end{definition}
-
-
-%\end{bilan}
 
 \section[PFD : cas général]{Principe Fondamental de la Dynamique : cas général}
 
@@ -241,37 +232,45 @@ en mouvement par rapport à un référentiel galiléen, et exerçant une action 
 		
 
 
+\section[PFD : applications simplifiées]{Principe Fondamental de la Dynamique : applications simplifiées}
 
-\section{Objectif et Méthodologie}
+%\subsection{Cas particulier d'un solide en translation}
 
-\subsection{Objectifs}
-On distingue deux principaux types de problèmes en dynamique : 
+\begin{definition}[Solide en translation par rapport à un référentiel galiléen] ~\\
+Si un ensemble matériel $E$ (de centre d'inertie $G$) est en mouvement de translation dans un référentiel galiléen ($R_g$) alors : 
+
 \begin{itemize}
-\item \textbf{type 1} :
-\begin{itemize}
-\item on connaît : les actionneurs et les inerties,
-\item on détermine : les lois de mouvement et les actions mécaniques dans les liaisons;
-\end{itemize} 
-\item \textbf{type 2} :
-\begin{itemize}
-\item on connaît : les lois de mouvement et inerties,
-\item on détermine : les caractéristiques des actionneurs et les actions mécaniques de liaison.
-\end{itemize}
+\item d'après le \textbf{théorème de la résultante dynamique : } la résultante des efforts extérieurs est égale au produit de la masse par l'accélération de G par rapport à $R_g$ :
+\bm{$
+%m\;\overrightarrow{\Gamma}(G/R_g)=\vectf{\bar E}{E};%\resultante[\bar E]{E}
+m\;\vectg{G}{E}{R_g}=\vectf{\bar E}{E}$};%\resultante[\bar E]{E}
+\item d'après le \textbf{théorème du moment dynamique : } le moment des actions mécaniques extérieures s'appliquant sur $E$ est égal au vecteur nul en tout point :
+\bm{$\vectm{A}{\bar E}{E}=\overrightarrow{0}\forall  A$}.
 \end{itemize}
 
-\subsection{Méthodologie}
-La méthodologie de résolution d'un problème de dynamique est très similaire à celle utilisée lors de la détermination des performances statiques des systèmes.
+\end{definition}
+ 
 
-\begin{enumerate}
-\item On choisit un repère galiléen et on effectue le bilan complet des données d'entrée du problème.
-\item On construit un graphe de structure.
-\item On isole le solide ou le système de solides considéré.
-\item On effectue le Bilan des Actions Mécaniques Extérieures agissant sur le système isolé.
-\item On écrit le PFD.
-\item On projette les relations vectorielles sur les axes choisis.
-\item On injecte les lois de comportement (ressort, lois de Coulomb, ...).
-\item On effectue la résolution.
-\end{enumerate}
+%\subsection{Cas d'un solide en mouvement de rotation autour d'un axe fixe}
+
+
+\begin{definition}[Solide en rotation autour d'un axe fixe par rapport à un référentiel galiléen] ~\\
+Si un ensemble matériel $E$ (de centre d'inertie $G$) est en mouvement de rotation autour d'un axe $\Delta$ (dirigé par $\overrightarrow{u}$ unitaire) fixe dans un référentiel galiléen ($R_g$) alors, d'après le \textbf{théorème du moment dynamique} :
+
+\bm{$
+\vectm{A}{\bar E}{E}\cdot \overrightarrow{u}=J_{\Delta}(E)\cdot \ddot{\theta}\;\;\forall A\in \Delta
+$} avec :
+\begin{itemize}
+\item  $J_{\Delta}(E)$ le moment d'inertie de $E$ par rapport à l'axe $\Delta$ (en $\text{kg  m}^2$) ;
+\item $\ddot{\theta}$, l'accélération angulaire de $E$ par rapport à $R_g$ suivant $\Delta$ : $\overrightarrow{\Omega}(E/R_g)\cdot \overrightarrow{u}$.
+\end{itemize}
+\end{definition}
+
+
+%\end{bilan}
+
+
+
 
 \section{Loi de mouvement en trapèze}
 \noindent

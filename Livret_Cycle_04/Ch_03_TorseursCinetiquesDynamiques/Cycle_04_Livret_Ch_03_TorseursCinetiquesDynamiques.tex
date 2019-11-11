@@ -10,6 +10,12 @@
 
 \livrettrue
 
+\newif\ifcorrige
+\corrigefalse
+
+\def\xxYCartouche{-2.25cm}
+\def\xxYongletGarde{.5cm}
+\def\xxYOnget{.9cm}
 \begin{document}
 
 \newcommand{\chap}{Chapitre_03_TorseursCinetiquesDynamiques}
@@ -18,6 +24,8 @@
 % Cours
 \graphicspath{{../../style/png/}{../../\chap/Cours/images/}}
 \input{../../\chap/Cours/Cy_04_Ch_03_TorseursCinetiquesDynamiques.tex}
+
+\def\xxYongletGarde{1.1cm}
 
 %%% Activation Exosquelette
 \renewcommand{\td}{Cy_04_03_Activation_01_Exosquelette}
@@ -31,13 +39,15 @@
 \newpage
 \fichetrue \proffalse \tdtrue \coursfalse \normaltrue \difficilefalse \tdifficilefalse \colletrue
 \graphicspath{{../../style/png/}{../../\chap/\td/images/}}
-\input{../../\chap/\td/\td.tex}
+%\input{../../\chap/\td/\td.tex}
 %
+\ifcorrige
 % Corrigé
 \newpage
 \fichetrue \proftrue \tdtrue \coursfalse \normaltrue \difficilefalse  \tdifficilefalse \collefalse
 \graphicspath{{../../style/png/}{../../\chap/\td/images/}}
 \input{../../\chap/\td/\td.tex}
+\fi
 
 %%% Activation Eolienne
 \renewcommand{\td}{Cy_04_03_Activation_02_Eolienne}
@@ -48,10 +58,12 @@
 \input{../../\chap/\td/\td.tex}
 
 % Corrigé
+\ifcorrige
 \newpage
 \fichetrue \proftrue \tdtrue \coursfalse \normaltrue \difficilefalse  \tdifficilefalse \collefalse
 \graphicspath{{../../style/png/}{../../\chap/\td/images/}}
 \input{../../\chap/\td/\td.tex}
+\fi
 
 
 
@@ -65,11 +77,12 @@
 \input{../../\chap/\td/\td.tex}
 
 %%  Corrigé
+\ifcorrige
 \newpage
 \fichetrue \proftrue \tdtrue \coursfalse \normaltrue \difficilefalse  \tdifficilefalse \collefalse
 \graphicspath{{../../style/png/}{../../\chap/\td/images/}}
 \input{../../\chap/\td/\td.tex}
-
+\fi
 
 
 %% Application triaxe
@@ -83,11 +96,12 @@
 
 
 %%  Corrigé
+\ifcorrige
 \newpage
 \fichetrue \proftrue \tdtrue \coursfalse \normaltrue \difficilefalse  \tdifficilefalse \collefalse
 \graphicspath{{../../style/png/}{../../\chap/\td/images/}}
 \input{../../\chap/\td/\td.tex}
-
+\fi
 
 
 %% Sujet Stabilisateur Mines Ponts
@@ -98,16 +112,18 @@
 \input{../../\chap/\td/\td.tex}
 \newpage
 
+% DIFFICILE
 \fichetrue \proffalse \tdtrue \coursfalse \collefalse 
 \normalfalse \difficiletrue  \tdifficilefalse
 \graphicspath{{../../style/png/}{../../\chap/\td/images/}}
-\input{../../\chap/\td/\td.tex}
+%\input{../../\chap/\td/\td.tex}
 \newpage
 
+% T DIFFICILE
 \fichetrue \proffalse \tdtrue \coursfalse \collefalse 
 \normalfalse \difficilefalse \tdifficiletrue
 \graphicspath{{../../style/png/}{../../\chap/\td/images/}}
-\input{../../\chap/\td/\td.tex}
+%\input{../../\chap/\td/\td.tex}
 \newpage
 
 
@@ -115,13 +131,15 @@
 \fichetrue \proffalse \tdtrue \coursfalse \colletrue
 \normaltrue \difficilefalse \tdifficilefalse
 \graphicspath{{../../style/png/}{../../\chap/\td/images/}}
-\input{../../\chap/\td/\td.tex}
+%\input{../../\chap/\td/\td.tex}
 
 % Corrigé
+\ifcorrige
 \newpage
 \fichetrue \proftrue \tdtrue \coursfalse \collefalse
 \graphicspath{{../../style/png/}{../../\chap/\td/images/}}
 \input{../../\chap/\td/\td.tex}
+\fi
 \end{document}
 
 

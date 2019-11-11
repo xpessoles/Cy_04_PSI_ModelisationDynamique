@@ -10,6 +10,13 @@
 
 \livrettrue
 
+\newif\ifeleve
+\elevetrue
+
+\def\xxYCartouche{-2.25cm}
+\def\xxYongletGarde{.9cm}
+\def\xxYOnget{.9cm}
+
 \begin{document}
 
 \newcommand{\chap}{Chapitre_04_Methodologie/PFD_CF}
@@ -19,29 +26,32 @@
 %\graphicspath{{../../style/png/}{../../\chap/Cours/images/}}
 %\input{../../\chap/Cours/Cy_04_Ch_03_TorseursCinetiquesDynamiques.tex}
 
+
 %%% Activation Exosquelette
 \renewcommand{\td}{Cy_04_04_PFD_CF_App_01_Micromoteur}
+\ifeleve
 %%% Sujet Normal par défaut
 \newpage
 \fichetrue \proffalse \tdtrue \coursfalse \normaltrue \difficilefalse \tdifficilefalse \collefalse
 \graphicspath{{../../style/png/}{../../\chap/\td/images/}}
 \input{../../\chap/\td/\td.tex}
-
+\else
 % Sujet colle 
 \newpage
 \fichetrue \proffalse \tdtrue \coursfalse \normaltrue \difficilefalse \tdifficilefalse \colletrue
 \graphicspath{{../../style/png/}{../../\chap/\td/images/}}
-\input{../../\chap/\td/\td.tex}
+%\input{../../\chap/\td/\td.tex}
 %
 % Corrigé
 \newpage
 \fichetrue \proftrue \tdtrue \coursfalse \normaltrue \difficilefalse  \tdifficilefalse \collefalse
 \graphicspath{{../../style/png/}{../../\chap/\td/images/}}
 \input{../../\chap/\td/\td.tex}
-
+\fi
 
 
 \renewcommand{\chap}{Chapitre_04_Methodologie/PFD_CO}
+\ifeleve
 
 %%% Activation Moto
 \renewcommand{\td}{Cy_04_04_PFD_CO_App_01_MotoWheeling}
@@ -50,18 +60,20 @@
 \fichetrue \proffalse \tdtrue \coursfalse \normaltrue \difficilefalse \tdifficilefalse \collefalse
 \graphicspath{{../../style/png/}{../../\chap/\td/images/}}
 \input{../../\chap/\td/\td.tex}
-
+\else
 % Corrigé
 \newpage
 \fichetrue \proftrue \tdtrue \coursfalse \normaltrue \difficilefalse  \tdifficilefalse \collefalse
 \graphicspath{{../../style/png/}{../../\chap/\td/images/}}
 \input{../../\chap/\td/\td.tex}
-
+\fi
 
 
 
 % Application Vilebrequin
 \renewcommand{\td}{Cy_04_04_PFD_CO_App_02_BancVib}
+\ifeleve
+
 % Sujet Normal par défaut
 \newpage
 \fichetrue \proffalse \tdtrue \coursfalse \normaltrue \difficilefalse \tdifficilefalse \collefalse
@@ -72,20 +84,22 @@
 \newpage
 \fichetrue \proffalse \tdtrue \coursfalse \normaltrue \difficilefalse \tdifficilefalse \colletrue
 \graphicspath{{../../style/png/}{../../\chap/\td/images/}}
-\input{../../\chap/\td/\td.tex}
+%\input{../../\chap/\td/\td.tex}
 
-
+\else
 %  Corrigé
 \newpage
 \fichetrue \proftrue \tdtrue \coursfalse \normaltrue \difficilefalse  \tdifficilefalse \collefalse
 \graphicspath{{../../style/png/}{../../\chap/\td/images/}}
 \input{../../\chap/\td/\td.tex}
-
+\fi
 
 
 % Application 
 
 \renewcommand{\td}{Cy_04_04_PFD_CO_App_03_Centrifugeuse}
+\ifeleve
+
 % Sujet Normal par défaut
 \newpage
 \fichetrue \proffalse \tdtrue \coursfalse \normaltrue \difficilefalse \tdifficilefalse \collefalse
@@ -93,17 +107,18 @@
 \input{../../\chap/\td/\td.tex}
 
 
-
+\else
 %  Corrigé
 \newpage
 \fichetrue \proftrue \tdtrue \coursfalse \normaltrue \difficilefalse  \tdifficilefalse \collefalse
 \graphicspath{{../../style/png/}{../../\chap/\td/images/}}
 \input{../../\chap/\td/\td.tex}
-
+\fi
 
 
 %% Sujet Chargement de cargo
 \newpage
+\ifeleve
 \renewcommand{\td}{Cy_04_04_PFD_CO_App_04_ChargementCargo}
 \fichetrue \proffalse \tdtrue \coursfalse \collefalse 
 \normaltrue \difficilefalse \tdifficilefalse
@@ -115,13 +130,14 @@
 %\graphicspath{{../../style/png/}{../../\chap/\td/images/}}
 %\input{../../\chap/\td/\td.tex}
 %\newpage
-
+\else
+%corrige
 \newpage
 \fichetrue \proftrue \tdtrue \coursfalse \collefalse 
 \normalfalse \difficilefalse \tdifficiletrue
 \graphicspath{{../../style/png/}{../../\chap/\td/images/}}
 \input{../../\chap/\td/\td.tex}
-
+\fi
 
 %
 %

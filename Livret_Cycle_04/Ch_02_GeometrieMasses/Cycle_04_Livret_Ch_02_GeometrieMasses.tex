@@ -10,6 +10,13 @@
 
 \livrettrue
 
+\newif\ifcorrige
+\corrigefalse
+
+\def\xxYCartouche{-2.25cm}
+\def\xxYongletGarde{.5cm}
+\def\xxYOnget{.9cm}
+
 \begin{document}
 
 \newcommand{\chap}{Chapitre_02_GeometrieMasses}
@@ -20,7 +27,7 @@
 \input{../../\chap/Cours/Cy_04_Ch_02_GeometrieMasses_Cours.tex}
 
 
-
+\def\xxYongletGarde{1.1cm}
 %% Activation Barriere
 \renewcommand{\td}{Cy_04_02_Activation_01_Barrirere}
 %% Sujet Normal par défaut
@@ -36,11 +43,12 @@
 %\input{../../Chapitre_01_Correction/\td/\td.tex}
 
 %% Sujet Corrigé
+\ifcorrige
 \newpage
 \fichetrue \proftrue \tdtrue \coursfalse \normaltrue \difficilefalse  \tdifficilefalse \collefalse
 \graphicspath{{../../style/png/}{../../\chap/\td/images/}}
 \input{../../\chap/\td/\td.tex}
-
+\fi
 %% Application Vilebrequin
 \renewcommand{\td}{Cy_04_02_Application_01_Vilebrequin}
 %% Sujet Normal par défaut
@@ -50,11 +58,12 @@
 \input{../../\chap/\td/\td.tex}
 
 %%  Corrigé
+\ifcorrige
 \newpage
 \fichetrue \proftrue \tdtrue \coursfalse \normaltrue \difficilefalse  \tdifficilefalse \collefalse
 \graphicspath{{../../style/png/}{../../\chap/\td/images/}}
 \input{../../\chap/\td/\td.tex}
-
+\fi
 
 %% Application triaxe
 \renewcommand{\td}{Cy_04_02_Application_02_Triaxe}
@@ -65,11 +74,12 @@
 \input{../../\chap/\td/\td.tex}
 
 %%  Corrigé
+\ifcorrige
 \newpage
 \fichetrue \proftrue \tdtrue \coursfalse \normaltrue \difficilefalse  \tdifficilefalse \collefalse
 \graphicspath{{../../style/png/}{../../\chap/\td/images/}}
 \input{../../\chap/\td/\td.tex}
-
+\fi
 \end{document}
 
 
