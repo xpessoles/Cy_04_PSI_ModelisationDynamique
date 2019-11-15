@@ -9,7 +9,9 @@
 
 
 \livrettrue
-\newif\ifcoreleve\corelevetrue
+\newif\ifcoreleve
+%\corelevetrue
+\corelevefalse
 \begin{document}
 
 \newcommand{\chap}{Revisions_Statique}
@@ -19,15 +21,20 @@
 \def\xxYongletGarde{.5cm}
 \def\xxYOnget{.9cm}
 \proffalse
+\ifcoreleve
+\else
 % FICHE  2 Statique frottement
 \graphicspath{{../../style/png/}{../../\chap/Fiche_02_Frottement/images/}}
 \input{../../\chap/Fiche_02_Frottement/Fiche_02_Frottement_Fiche.tex}
 \newpage
-
+\fi
 
 % TD HAYON
 \def\xxYongletGarde{1.1cm}
+
 \renewcommand{\td}{Fiche_01_Statique_2D_TD_01_Hayon}
+\ifcoreleve
+\else
 \newpage 
 % Sujet
 \normaltrue\newpage
@@ -41,6 +48,7 @@
 %\newpage \input{\td.tex}
 %
 %% Corrigé
+\fi
 \ifcoreleve
 \newpage
 \fichetrue \proftrue \tdtrue \coursfalse \collefalse
@@ -51,12 +59,16 @@
 %DBA
 \renewcommand{\td}{Fiche_01_Statique_2D_TD_02_DBA}
 % Sujet
+\ifcoreleve
+\else
+
 \newpage
 \normaltrue
 \fichetrue \proffalse \tdtrue \coursfalse \collefalse
 \graphicspath{{../../style/png/}{../../\chap/\td/images/}}
 \input{../../\chap/\td/\td.tex}
 \newpage
+\fi
 % Sujet Difficile
 %\normalfalse\difficiletrue
 %\fichetrue \proffalse \tdtrue \coursfalse \collefalse
@@ -67,6 +79,7 @@
 %
 % Colle
 \ifcoreleve
+\else
 \fichetrue \proffalse \tdtrue \coursfalse \colletrue
 \graphicspath{{../../style/png/}{../../\chap/\td/images/}}
 \newpage 
@@ -86,13 +99,15 @@
 % Statique 3D MC2E
 \renewcommand{\td}{Fiche_01_Statique_3D_TD_01_MC2E}
 % Sujet
+\ifcoreleve
+\else
 \newpage
 \normaltrue
 \fichetrue \proffalse \tdtrue \coursfalse \collefalse
 \graphicspath{{../../style/png/}{../../\chap/\td/images/}}
 \input{../../\chap/\td/\td.tex}
 \newpage
-
+\fi
 %
 %% Corrigé
 %\def\xxYongletGarde{.7cm}
@@ -108,11 +123,14 @@
 
 \renewcommand{\td}{Fiche_01_Statique_3D_TD_02_Quille}
 % Sujet QUILLE
+\ifcoreleve
+\else
 \normaltrue
 \fichetrue \proffalse \tdtrue \coursfalse \collefalse
 \graphicspath{{../../style/png/}{../../\chap/\td/images/}}
 \newpage 
 \input{../../\chap/\td/\td.tex}
+\fi
 
 
 %
@@ -129,12 +147,14 @@
 
 \renewcommand{\td}{Fiche_02_Frottement_TD_01_wHing}
 % Sujet WHING
+\ifcoreleve
+\else
 \normaltrue
 \fichetrue \proffalse \tdtrue \coursfalse \collefalse
 \graphicspath{{../../style/png/}{../../\chap/\td/images/}}
 \newpage 
 \input{../../\chap/\td/\td.tex}
-
+\fi
 
 %
 %% Corrigé
@@ -150,12 +170,14 @@
 \renewcommand{\td}{Fiche_02_Frottement_TD_ArcBoutement}
 % Sujet EOS Arc boutement
 \def\xxYongletGarde{1.1cm}
+\ifcoreleve
+\else
 \normaltrue
 \fichetrue \proffalse \tdtrue \coursfalse \collefalse
 \graphicspath{{../../style/png/}{../../\chap/\td/images/}}
 \newpage 
 \input{../../\chap/\td/\td.tex}
-
+\fi
 
 %
 %% Corrigé
