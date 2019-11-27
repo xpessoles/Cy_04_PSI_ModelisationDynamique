@@ -75,6 +75,7 @@ On s'intéresse ici à la modélisation d'un seul axe (selon la direction notée
 \item les solides seront supposés indéformables ; 
 \item on notera $J_1$ le moment d'inertie du solide 1 selon l'axe $\couple{O_0}{y_0}$ : $J_1=I_{\couple{O_0}{y_0}}(S_1)$ ;
 \item on note $M_3$ et $G_3$ respectivement la masse et le centre d'inertie du solide $S_3$ ;
+\item la masse du solide 2 est négligée;
 \item la position de $G_3$ est définie par $\overrightarrow{O_0G_3}=x\overrightarrow{x_0}+y \overrightarrow{y_0}+z \overrightarrow{z_0}$
 \item les liaisons sont supposées parfaites (sans jeu ni frottement).
 \end{itemize}
@@ -100,6 +101,9 @@ On donne les caractéristiques du moteur entraînant l'axe et la vis $S_1$ :
 \item moment d'inertie du moteur suivant l'axe $\overrightarrow{y_0}$ : $I_m = \SI{1,6}{10^{-4} kg.m^2}$ ;
 \item moment d'inertie de la vis à billes suivant l'axe $\overrightarrow{y_0}$ : $I_v = 2,1\,  10^{-4}\text{kg m}^2$.
 \end{itemize}
+
+\textbf{On prendre $J=J_1 + I_v + I_m$ le moment d'inertie de l'ensemble moteur, vis, rotor selon l'axe $\vect{y_0}$.}
+
 De plus $\overrightarrow{\Omega}(S_1/R_0)=\dot{\theta}(t)\cdot \overrightarrow{y_0}$
 
 \fi
@@ -116,7 +120,9 @@ L'objectif de cette étude est de relier les grandeurs liées à l'actionneur du
 \end{itemize}
 \end{obj}
 
-
+\begin{warn}
+$y$ correspond au mouvement de << l'écrou par rapport au bâti>> et $\theta$ correspond au mouvement de la vis par rapport au bâti. 
+\end{warn}
 
 %\begin{exemple}[Machine de dépose de composants électroniques : déplacement dynamique de $S_3$]
 %\begin{minipage}{0.35\textwidth}
