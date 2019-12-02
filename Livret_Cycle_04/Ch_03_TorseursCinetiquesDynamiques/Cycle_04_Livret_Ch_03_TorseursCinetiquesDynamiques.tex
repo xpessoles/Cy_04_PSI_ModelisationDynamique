@@ -11,7 +11,7 @@
 \livrettrue
 
 \newif\ifcorrige
-\corrigefalse
+\corrigetrue
 
 \def\xxYCartouche{-2.25cm}
 \def\xxYongletGarde{.5cm}
@@ -23,7 +23,10 @@
 
 % Cours
 \graphicspath{{../../style/png/}{../../\chap/Cours/images/}}
+\ifcorrige
+\else
 \input{../../\chap/Cours/Cy_04_Ch_03_TorseursCinetiquesDynamiques.tex}
+\fi
 
 \def\xxYongletGarde{1.1cm}
 
@@ -33,7 +36,10 @@
 \newpage
 \fichetrue \proffalse \tdtrue \coursfalse \normaltrue \difficilefalse \tdifficilefalse \collefalse
 \graphicspath{{../../style/png/}{../../\chap/\td/images/}}
+\ifcorrige
+\else
 \input{../../\chap/\td/\td.tex}
+\fi
 
 % Sujet colle 
 \newpage
@@ -55,7 +61,10 @@
 \newpage
 \fichetrue \proffalse \tdtrue \coursfalse \normaltrue \difficilefalse \tdifficilefalse \collefalse
 \graphicspath{{../../style/png/}{../../\chap/\td/images/}}
+\ifcorrige
+\else
 \input{../../\chap/\td/\td.tex}
+\fi
 
 % Corrigé
 \ifcorrige
@@ -74,7 +83,10 @@
 \newpage
 \fichetrue \proffalse \tdtrue \coursfalse \normaltrue \difficilefalse \tdifficilefalse \collefalse
 \graphicspath{{../../style/png/}{../../\chap/\td/images/}}
+\ifcorrige
+\else
 \input{../../\chap/\td/\td.tex}
+\fi
 
 %%  Corrigé
 \ifcorrige
@@ -91,8 +103,10 @@
 \newpage
 \fichetrue \proffalse \tdtrue \coursfalse \normaltrue \difficilefalse \tdifficilefalse \collefalse
 \graphicspath{{../../style/png/}{../../\chap/\td/images/}}
+\ifcorrige
+\else
 \input{../../\chap/\td/\td.tex}
-
+\fi
 
 
 %%  Corrigé
@@ -109,7 +123,10 @@
 \fichetrue \proffalse \tdtrue \coursfalse \collefalse 
 \normaltrue \difficilefalse \tdifficilefalse
 \graphicspath{{../../style/png/}{../../\chap/\td/images/}}
+\ifcorrige
+\else
 \input{../../\chap/\td/\td.tex}
+\fi
 \newpage
 
 % DIFFICILE
