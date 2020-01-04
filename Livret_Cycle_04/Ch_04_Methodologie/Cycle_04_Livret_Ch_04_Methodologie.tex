@@ -136,8 +136,36 @@
 \fichetrue \proftrue \tdtrue \coursfalse \collefalse 
 \normalfalse \difficilefalse \tdifficiletrue
 \graphicspath{{../../style/png/}{../../\chap/\td/images/}}
-\input{../../\chap/\td/\td.tex}
+%\input{../../\chap/\td/\td.tex}
 \fi
+
+
+
+%% Sujet Segway
+\renewcommand{\chap}{Chapitre_04_Methodologie/PFD_Vehicules}
+
+\newpage
+\ifeleve
+\renewcommand{\td}{Cy_04_04_PFD_Veh_TD_01_Segway}
+\fichetrue \proffalse \tdtrue \coursfalse \collefalse 
+\normaltrue \difficilefalse \tdifficilefalse
+\graphicspath{{../../style/png/}{../../\chap/\td/images/}}
+\input{../../\chap/\td/\td.tex}
+%
+%\fichetrue \proffalse \tdtrue \coursfalse \collefalse 
+%\normalfalse \difficiletrue  \tdifficilefalse
+%\graphicspath{{../../style/png/}{../../\chap/\td/images/}}
+%\input{../../\chap/\td/\td.tex}
+%\newpage
+\else
+%corrige
+\newpage
+\fichetrue \proftrue \tdtrue \coursfalse \collefalse 
+\normalfalse \difficilefalse \tdifficiletrue
+\graphicspath{{../../style/png/}{../../\chap/\td/images/}}
+%\input{../../\chap/\td/\td.tex}
+\fi
+
 
 %
 %
