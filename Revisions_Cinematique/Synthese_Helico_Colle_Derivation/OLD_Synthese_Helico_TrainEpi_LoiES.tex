@@ -1,66 +1,91 @@
-%%%% Paramétrage du TD %%%%
-\def\xxactivite{Révisions \ifprof -- Corrigé \else \fi} % \normalsize \vspace{-.4cm}
+\documentclass[10pt,fleqn]{article} % Default font size and left-justified equations
+\usepackage[%
+    pdftitle={Modélisation cinématique : Chaîne ouverte},
+    pdfauthor={Xavier Pessoles}]{hyperref}
+
+\input{style/new_style}
+\input{style/macros_SII}
+\usepackage{multicol}
+\usepackage{siunitx}
+%\usepackage{picins}
+\fichetrue
+%\fichefalse
+
+\proftrue
+\proffalse
+
+\tdtrue
+%\tdfalse
+
+\courstrue
+\coursfalse
+
+% -------------------------------------
+% Déclaration des titres
+% -------------------------------------
+
+\def\discipline{Sciences \\Industrielles de \\ l'Ingénieur}
+\def\xxtete{Sciences Industrielles de l'Ingénieur}
+
+
+\def\classe{\textsf{PSI$\star$ -- MP}}
+\def\xxnumpartie{Rév -- Cin}
+\def\xxpartie{Modéliser le comportement cinématique des systèmes mécaniques}
+
+\def\xxnumchapitre{Révision 1 \vspace{.2cm}}
+\def\xxchapitre{\hspace{.12cm} Modélisation cinématique}
+
+\def\xxposongletx{2}
+\def\xxposonglettext{1.45}
+\def\xxposonglety{19}%16
+
+\def\xxonglet{\textsf{Rév -- Cin}}
+
+\def\xxactivite{TD}
 \def\xxauteur{\textsl{Xavier Pessoles}}
 
 
-\def\xxnumchapitre{Chapitre 1 \vspace{.2cm}}
-\def\xxchapitre{\hspace{.12cm} Correction des systèmes}
-
+\def\xxtitreexo{TD -- Révisions de cinématique}
+\def\xxsourceexo{\hspace{.2cm} \footnotesize{Xavier Pessoles}}
 
 \def\xxcompetences{%
-\vspace{-.3cm}
 \textsl{%
 \textbf{Savoirs et compétences :}\\
-%\vspace{-.4cm}
-%\begin{itemize}[label=\ding{112},font=\color{ocre}] 
-%%\item \textit{Res1.C4 : } Correction
-% \item \textit{Res1.C4.SF1 : } Proposer la démarche de réglage d’un correcteur proportionnel
-%%proportionnel intégral 
-%%et à avance de phase
-%\item \textit{Con.C2 : } 	Correction d’un système asservi	
-%\item \textit{Con.C2.SF1 : } Choisir un type de correcteur adapté
-%\end{itemize}
 }}
 
-\def\xxauteur{\textsl{Xavier Pessoles}}
-
-\def\xxtitreexo{TD -- Révisions de cinématique \ifnormal $\star$ \else \fi \iftdifficile $\star\star\star$ \else \fi }
-\def\xxsourceexo{}%\hspace{.2cm} \footnotesize{Concours CCP -- PSI 2018}}
-
 \def\xxfigures{
-\includegraphics[width=.6\linewidth]{fig1}
-}%figues de la page de garde
+\includegraphics[width=.6\linewidth]{images/fig1}}
+%\includegraphics[width=.6\linewidth]{images/capsuleuse}
+
+%\textit{Centrifugeuse humaine développée par le CNRS / MEDES } 
+
+%}%figues de la page de garde
 
 \def\xxpied{%
 Révision cinématique -- Modélisation cinématique\\
 \xxactivite%
 }
 
-\iflivret
-\input{../../style/new_pagegarde}
-\else
-\input{../../style/new_pagegarde}
-\fi
-\setlength{\columnseprule}{.1pt}
+\setcounter{secnumdepth}{5}
+%---------------------------------------------------------------------------
 
+
+\begin{document}
+%\chapterimage{images/Fond_Cin}
+\input{style/new_pagegarde}
+\vspace{4.4cm}
 \pagestyle{fancy}
 \thispagestyle{plain}
 
-\vspace{5cm}
 
 \def\columnseprulecolor{\color{ocre}}
 \setlength{\columnseprule}{0.4pt} 
-
-\setcounter{exo}{0}
 
 \ifprof
 %\begin{multicols}{2}
 \else
 \begin{multicols}{2}
 \fi
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
 
 
 \section*{Pales d'hélicoptères}
@@ -70,7 +95,7 @@ Révision cinématique -- Modélisation cinématique\\
 \else
 %\begin{minipage}[c]{.6\linewidth}
 %\begin{center}
-%\includegraphics[width=.7\linewidth]{fig1}
+%\includegraphics[width=.7\linewidth]{images/fig1}
 %\end{center}
 L'hélicoptère est un giravion dont la sustentation est assurée par un rotor primaire équipé de pales. Un rotor secondaire (ou rotor de queue, lui aussi équipé de pales) permet à l'hélicoptère de ne pas tourner sur lui même. Ces rotors sont entraînés par une ou deux turbines suivant les hélicoptères, par l'intermédiaire d'une boîte de vitesse. 
 
@@ -82,7 +107,7 @@ En vol, les rotors tournent à une vitesse de rotation fixe. La modification de 
 %\end{minipage}
 
 \begin{center}
-\includegraphics[width=\linewidth]{SysML/Exigences}
+\includegraphics[width=\linewidth]{images/SysML/Exigences}
 \end{center}
 %}
 \fi
@@ -90,7 +115,7 @@ En vol, les rotors tournent à une vitesse de rotation fixe. La modification de 
 \ifprof
 \else
 \begin{center}
-\includegraphics[width=.8\linewidth]{fig2}
+\includegraphics[width=.8\linewidth]{images/fig2}
 \end{center}
 
 Le fuselage de l'hélicoptère est repéré par $S_0$ et on lui associe le repère $\mathcal{R}_0(O,\vect{x_0},\vect{y_0},\vect{z_{01}})$ défini de la
@@ -123,7 +148,7 @@ On pose $\vect{OA_3} = r\cdot \vect{x_1}$ et $\vect{A_3G}=a\cdot \vect{x_{23}}$ 
 
 
 \begin{center}
-\includegraphics[width=.9\linewidth]{cor1}
+\includegraphics[width=.9\linewidth]{images/cor1}
 \end{center}
 
 \fi
@@ -132,13 +157,13 @@ On pose $\vect{OA_3} = r\cdot \vect{x_1}$ et $\vect{A_3G}=a\cdot \vect{x_{23}}$ 
 %\ifprof
 %\begin{corrige}
 %\begin{center}
-%\includegraphics[width=.9\linewidth]{cor1}
+%\includegraphics[width=.9\linewidth]{images/cor1}
 %\end{center}
 %\end{corrige}\else \fi
 
 \subparagraph{}
 %\textit{Déterminer le torseur $\torseurcin{V}{S_3}{S_2}$ au point $G$.}
-\textit{Déterminer les vecteurs $\vectv{G}{S_3}{S_2}$, $\vectv{G}{S_3}{S_1}$, $\vectv{G}{S_3}{S_0}$.}
+\textit{Déterminer le vecteur $\vectv{G}{S_3}{S_2}$.}
 \ifprof
 \begin{corrige}
 On a: 
@@ -160,9 +185,9 @@ $$
 \end{corrige}
 \else \fi
 
-%\subparagraph{}
+\subparagraph{}
 %\textit{Déterminer le torseur $\torseurcin{V}{S_2}{S_1}$ au point $G$.}
-%\textit{Déterminer le vecteur $\vectv{G}{S_2}{S_1}$.}
+\textit{Déterminer le vecteur $\vectv{G}{S_2}{S_1}$.}
 \ifprof
 \begin{corrige}
 On a: 
@@ -182,9 +207,9 @@ $$
 \torseurcin{V}{S_2}{S_1} = \torseurl{\vecto{S_2}{S_1}=\dot{\beta}\vect{y_{12}}}{\vectv{G}{S_2}{S_1}=-a\dot{\beta}\vect{z_{2}}}{G}
 $$\end{corrige}\else \fi
 
-%\subparagraph{}
+\subparagraph{}
 %\textit{Déterminer le torseur $\torseurcin{V}{S_1}{S_0}$ au point $G$.}
-%\textit{Déterminer le vecteur $\vectv{G}{S_1}{S_0}$.}
+\textit{Déterminer le vecteur $\vectv{G}{S_1}{S_0}$.}
 \ifprof
 \begin{corrige}
 On a: 
@@ -212,9 +237,9 @@ $$
 
 \end{corrige}\else \fi
 
-%\subparagraph{}
+\subparagraph{}
 %\textit{En déduire $\torseurcin{V}{S_3}{S_0}$ au point $G$.}
-%\textit{Déduire des questions précédentes le torseur $\torseurcin{V}{S_3}{S_0}$ au point $G$.}
+\textit{Déduire des questions précédentes le torseur $\torseurcin{V}{S_3}{S_0}$ au point $G$.}
 
 \ifprof
 \begin{corrige}
@@ -315,7 +340,7 @@ $$
 \else
 
 \begin{center}
-\includegraphics[width=.7\linewidth]{A6_coffre}
+\includegraphics[width=.7\linewidth]{images/A6_coffre}
 \end{center}
 
 %\ifprof
@@ -344,7 +369,7 @@ du véhicule.
 %\end{minipage}\hfill
 %\begin{minipage}[c]{.59\linewidth}
 \begin{center}
-\includegraphics[width=.95\linewidth]{SysML/Req}
+\includegraphics[width=.95\linewidth]{images/SysML/Req}
 \end{center}
 
 %\end{minipage}
@@ -360,12 +385,12 @@ La chaîne d'énergie du système est constituée :
 \end{itemize}
 
 \begin{center}
-\includegraphics[width=.95\linewidth]{SysML/BDD}
+\includegraphics[width=.95\linewidth]{images/SysML/BDD}
 \end{center}
 
 
 \begin{center}
-\includegraphics[width=.95\linewidth]{A6_schema}
+\includegraphics[width=.95\linewidth]{images/A6_schema}
 \end{center}
 
 \fi
@@ -402,7 +427,7 @@ Le second train est constitué :
 
 
 \begin{center}
-\includegraphics[width=\linewidth]{A6_train}
+\includegraphics[width=\linewidth]{images/A6_train}
 \end{center}
 
 \subparagraph{}
@@ -586,7 +611,7 @@ $$
 \else
 
 \begin{center}
-\includegraphics[width=\linewidth]{A6_3barres}
+\includegraphics[width=\linewidth]{images/A6_3barres}
 \end{center}
 
 On donne : 
@@ -670,3 +695,23 @@ L_3^2\cos^2\gamma_{3}+ L_1^2 \cos^2\gamma_{1} + a^2 \\
 \else
 \end{multicols}
 \fi
+
+%\begin{center}
+%\includegraphics[width=\linewidth]{images/fig_04}
+%%\textit{}
+%\end{center}
+
+\end{document}
+
+\subparagraph{}\textit{}
+
+
+\begin{center}
+\includegraphics[width=\linewidth]{images/fig_06}
+%\textit{}
+\end{center}
+\begin{center}
+\includegraphics[width=\linewidth]{images/img_04}
+%\textit{}
+\end{center}
+
