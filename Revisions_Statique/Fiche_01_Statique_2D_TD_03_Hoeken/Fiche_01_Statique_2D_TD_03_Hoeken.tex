@@ -63,10 +63,10 @@ Fiche 1 -- \xxactivite%
 
 
 
-%\ifprof
-%\else
+\ifprof
+\else
 \begin{multicols}{2}
-%\fi
+\fi
 
 
 \section*{Mise en situation}
@@ -131,6 +131,16 @@ appliquée au point $E$.
 \textit{Réaliser le graphe d'analyse du mécanisme (liaisons et efforts).}
 \ifprof
 \begin{corrige}~\\
+
+\begin{center}
+\includegraphics[width=\linewidth]{cor_01}
+%\textit{}
+\end{center}
+
+\begin{center}
+\includegraphics[width=.6\linewidth]{cor_02}
+%\textit{}
+\end{center}
 \end{corrige}
 \else
 \fi
@@ -164,6 +174,11 @@ $$C_m = \dfrac{L_1 F}{\sin \left(\theta_2 - \theta_3\right)}\left( \sin \theta_1
 \textit{Proposer une démarche permettant d'exprimer le couple moteur en fonction de l'effort de l'opérateur et des parmètres géométriques.}
 \ifprof
 \begin{corrige}~\\
+\begin{itemize}
+\item On commence par isoler le solide $S_2$ soumis à deux forces. D'après le PFS, on a donc $\torseurstat{T}{0}{2}=-\torseurstat{T}{3}{2}=\torseurl{F_{23}\vect{x_2}}{\vect{0}}{D}$.
+\item Le solide $S_1$ est en rotation d'axe $\axe{B}{z_0}$. On réalise un TMS en $B$.
+\item On isole $S_3$.Pour ne pas introduire les inconnues de liaison en $D$, on réalise un TMS en $D$.
+\end{itemize}
 \end{corrige}
 \else
 \fi
@@ -177,11 +192,136 @@ $$C_m = \dfrac{L_1 F}{\sin \left(\theta_2 - \theta_3\right)}\left( \sin \theta_1
 $$C_m = \dfrac{L_1 F}{\sin \left(\theta_2 - \theta_3\right)}\left( \sin \theta_1 \sin\left( \theta_2+\theta_3 \right)  -2\cos \theta_1 \sin\theta_2\sin\theta_3\right).$$}
 \ifprof
 \begin{corrige}~\\
+Après avoir isolé $S_2$, on a vu que $\torseurstat{T}{2}{3}=\torseurl{F_{23}\vect{x_2}}{\vect{0}}{D}$.
+
+
+\vspace{.5cm} 
+
+On isole $S_1$.
+
+On réalise le BAME.
+\begin{itemize}
+\item Action de la liaison pivot. 
+\item Action du couple moteur.
+\item Action de $S_3$ sur $S_1$ : $\torseurstat{T}{0}{1}=\torseurl{X_{31}\vect{x_0}+Y_{31}\vect{y_0}}{\vect{0}}{C}$. 
+\end{itemize}
+
+On applique le TMS en $B$ en projection sur $\vect{z_0}$ et on a : 
+
+$C_m + \vect{BC}\wedge\left(X_{31}\vect{x_0}+Y_{31}\vect{y_0} \right) \cdot\vect{z_0}=0$
+
+$\Leftrightarrow C_m + L_1\vect{x_1}\wedge\left(X_{31}\vect{x_0}+Y_{31}\vect{y_0} \right) \cdot\vect{z_0}=0$
+
+$\Leftrightarrow C_m + L_1\left(-X_{31}\sin \theta_1+Y_{31} \cos \theta_1 \right) =0$
+
+
+\vspace{.5cm} 
+
+On isole $S_3$.
+
+On réalise le BAME.
+\begin{itemize}
+\item Action de la liaison pivot en $C$ (1 sur 3). 
+\item Action de la liaison pivot en $D$ (2 sur 3). 
+\item Action de l'opérateur en $E$.
+\end{itemize}
+
+On applique le TMS en $B$ en projection sur $\vect{z_0}$ et on a : 
+
+$\vect{DC}\wedge-\left(X_{31}\vect{x_0}+Y_{31}\vect{y_0} \right) +\left(\vect{DE}\wedge F(t)\vect{x_0} \right)\cdot\vect{z_0}=0$
+
+$\Leftrightarrow\left( L_2\vect{x_3}\wedge-\left(X_{31}\vect{x_0}+Y_{31}\vect{y_0} \right) \right) \cdot\vect{z_0}-\left(L_2\vect{x_3}\wedge F(t)\vect{x_0}\right)\cdot\vect{z_0}=0$
+
+$\Leftrightarrow L_2\left(X_{31} \sin \theta_3-Y_{31}\cos \theta_3 \right)  +L_2 F(t)\sin\theta_3=0$
+
+À ce stade, il manque une équation pour éliminer $X_{31}$ ou $Y_{31}$. Il faut donc une équation de la résultante. Pour ne pas faire apparaître $F_{23}$, on peut isoler $S_3$ et réaliser un théorème de la résultante statique suivant $\vect{y_2}$ :
+
+$\left(-\left(X_{31}\vect{x_0}+Y_{31}\vect{y_0} \right) +F_{23}\vect{x_2}+F(t)\vect{x_0}\right) \cdot \vect{y_2}=0$
+
+$\Leftrightarrow -\left(- X_{31}\sin \theta_2+Y_{31}\cos\theta_2 \right)- F(t)\sin \theta_2=0$
+
+$\Leftrightarrow  X_{31}\sin \theta_2-Y_{31}\cos\theta_2- F(t)\sin \theta_2=0$.
+
+On a donc : 
+
+$\left\{\begin{array}{l}
+ C_m + L_1\left(-X_{31}\sin \theta_1+Y_{31} \cos \theta_1 \right) =0 \\
+ L_2\left(X_{31} \sin \theta_3-Y_{31}\cos \theta_3 \right)  +L_2 F(t)\sin\theta_3=0 \\
+ X_{31}\sin \theta_2-Y_{31}\cos\theta_2- F(t)\sin \theta_2=0
+\end{array}
+\right.
+$
+
+$\Leftrightarrow \left\{\begin{array}{l}
+ C_m + L_1\left(-X_{31}\sin \theta_1+Y_{31} \cos \theta_1 \right) =0 \\
+ L_2\left(X_{31} \sin \theta_3-Y_{31}\cos \theta_3 \right)  +L_2 F(t)\sin\theta_3=0 \\
+ X_{31} = \dfrac{Y_{31}\cos\theta_2+ F(t)\sin \theta_2}{\sin \theta_2}
+\end{array}
+\right.
+$
+
+$\Leftrightarrow \left\{\begin{array}{l}
+ C_m + L_1\left(-X_{31}\sin \theta_1+Y_{31} \cos \theta_1 \right) =0 \\
+\dfrac{Y_{31}\cos\theta_2+ F(t)\sin \theta_2}{\sin \theta_2} \sin \theta_3-Y_{31}\cos \theta_3   +F(t)\sin\theta_3=0 \\
+ X_{31} = \dfrac{Y_{31}\cos\theta_2+ F(t)\sin \theta_2}{\sin \theta_2}
+\end{array}
+\right.
+$
+
+$\Leftrightarrow \left\{\begin{array}{l}
+ C_m + L_1\left(-X_{31}\sin \theta_1+Y_{31} \cos \theta_1 \right) =0 \\
+Y_{31}\cos\theta_2\sin \theta_3+ F(t)\sin \theta_2 \sin \theta_3-Y_{31}\cos \theta_3\sin \theta_2   +F(t)\sin\theta_3\sin \theta_2=0 \\
+ X_{31} = \dfrac{Y_{31}\cos\theta_2+ F(t)\sin \theta_2}{\sin \theta_2}
+\end{array}
+\right.
+$
+
+$\Leftrightarrow \left\{\begin{array}{l}
+ C_m + L_1\left(-X_{31}\sin \theta_1+Y_{31} \cos \theta_1 \right) =0 \\
+Y_{31}\left(\cos\theta_2\sin \theta_3-\cos \theta_3\sin \theta_2 \right)  =-2F(t)\sin \theta_2\sin\theta_3  \\
+ X_{31} = \dfrac{Y_{31}\cos\theta_2+ F(t)\sin \theta_2}{\sin \theta_2}
+\end{array}
+\right.
+$
+
+
+
+$\Leftrightarrow \left\{\begin{array}{l}
+ C_m + L_1\left(-X_{31}\sin \theta_1+Y_{31} \cos \theta_1 \right) =0 \\
+Y_{31}\sin \left(\theta_3-\theta_2 \right)  =-2F(t)\sin \theta_2\sin\theta_3  \\
+ X_{31} = \dfrac{Y_{31}\cos\theta_2+ F(t)\sin \theta_2}{\sin \theta_2}
+\end{array}
+\right.
+$
+
+
+$\Leftrightarrow \left\{\begin{array}{l}
+ C_m + L_1\left(-X_{31}\sin \theta_1+Y_{31} \cos \theta_1 \right) =0 \\
+Y_{31}  =-2F(t)\dfrac{\sin \theta_2\sin\theta_3}{\sin \left(\theta_3-\theta_2 \right)}  \\
+ X_{31} = \dfrac{Y_{31}\cos\theta_2+ F(t)\sin \theta_2}{\sin \theta_2}
+\end{array}
+\right.
+$
+
+$\Leftrightarrow \left\{\begin{array}{l}
+ C_m + L_1\left(- \dfrac{-2F(t)\dfrac{\sin \theta_2\sin\theta_3}{\sin \left(\theta_3-\theta_2 \right)}\cos\theta_2+ F(t)\sin \theta_2}{\sin \theta_2}\sin \theta_1-2F(t)\dfrac{\sin \theta_2\sin\theta_3}{\sin \left(\theta_3-\theta_2 \right)} \cos \theta_1 \right) =0 \\
+Y_{31}  =-2F(t)\dfrac{\sin \theta_2\sin\theta_3}{\sin \left(\theta_3-\theta_2 \right)}  \\
+ X_{31} = \dfrac{Y_{31}\cos\theta_2+ F(t)\sin \theta_2}{\sin \theta_2}
+\end{array}
+\right.
+$
+
+
+$ C_m + L_1 \dfrac{F(t)}{\sin \left(\theta_3-\theta_2 \right)}\left(2\sin\theta_3\cos\theta_2-\sin \left(\theta_3-\theta_2 \right)\sin \theta_1-2\sin \theta_2\sin\theta_3 \cos \theta_1 \right) =0$
+
+
 \end{corrige}
 \else
 \fi
 \else
 \fi
+
+$$C_m = \dfrac{L_1 F}{\sin \left(\theta_2 - \theta_3\right)}\left( \sin \theta_1 \sin\left( \theta_2+\theta_3 \right)  -2\cos \theta_1 \sin\theta_2\sin\theta_3\right).$$
 
 Cette relation n’étant pas linéaire, on propose d’analyser les résultats d’une
 simulation numérique en traçant le couple moteur/effort opérateur en fonction de l’abscisse du point $E$
@@ -217,4 +357,10 @@ exigences précédemment vérifiées.}
 \else
 \fi
 
+
+\ifprof
+\else
 \end{multicols}
+\fi
+
+
