@@ -254,19 +254,19 @@ $
 
 $\Leftrightarrow \left\{\begin{array}{l}
  C_m + L_1\left(-X_{31}\sin \theta_1+Y_{31} \cos \theta_1 \right) =0 \\
- L_2\left(X_{31} \sin \theta_3-Y_{31}\cos \theta_3 \right)  +L_2 F(t)\sin\theta_3=0 \\
+X_{31} \sin \theta_3-Y_{31}\cos \theta_3  + F(t)\sin\theta_3=0 \\
  X_{31} = \dfrac{Y_{31}\cos\theta_2+ F(t)\sin \theta_2}{\sin \theta_2}
 \end{array}
 \right.
 $
-
-$\Leftrightarrow \left\{\begin{array}{l}
- C_m + L_1\left(-X_{31}\sin \theta_1+Y_{31} \cos \theta_1 \right) =0 \\
-\dfrac{Y_{31}\cos\theta_2+ F(t)\sin \theta_2}{\sin \theta_2} \sin \theta_3-Y_{31}\cos \theta_3   +F(t)\sin\theta_3=0 \\
- X_{31} = \dfrac{Y_{31}\cos\theta_2+ F(t)\sin \theta_2}{\sin \theta_2}
-\end{array}
-\right.
-$
+%
+%$\Leftrightarrow \left\{\begin{array}{l}
+% C_m + L_1\left(-X_{31}\sin \theta_1+Y_{31} \cos \theta_1 \right) =0 \\
+%\dfrac{Y_{31}\cos\theta_2+ F(t)\sin \theta_2}{\sin \theta_2} \sin \theta_3-Y_{31}\cos \theta_3   +F(t)\sin\theta_3=0 \\
+% X_{31} = \dfrac{Y_{31}\cos\theta_2+ F(t)\sin \theta_2}{\sin \theta_2}
+%\end{array}
+%\right.
+%$
 
 $\Leftrightarrow \left\{\begin{array}{l}
  C_m + L_1\left(-X_{31}\sin \theta_1+Y_{31} \cos \theta_1 \right) =0 \\
@@ -276,19 +276,19 @@ Y_{31}\cos\theta_2\sin \theta_3+ F(t)\sin \theta_2 \sin \theta_3-Y_{31}\cos \the
 \right.
 $
 
-$\Leftrightarrow \left\{\begin{array}{l}
- C_m + L_1\left(-X_{31}\sin \theta_1+Y_{31} \cos \theta_1 \right) =0 \\
-Y_{31}\left(\cos\theta_2\sin \theta_3-\cos \theta_3\sin \theta_2 \right)  =-2F(t)\sin \theta_2\sin\theta_3  \\
- X_{31} = \dfrac{Y_{31}\cos\theta_2+ F(t)\sin \theta_2}{\sin \theta_2}
-\end{array}
-\right.
-$
+%$\Leftrightarrow \left\{\begin{array}{l}
+% C_m + L_1\left(-X_{31}\sin \theta_1+Y_{31} \cos \theta_1 \right) =0 \\
+%Y_{31}\left(\cos\theta_2\sin \theta_3-\cos \theta_3\sin \theta_2 \right)  =-2F(t)\sin \theta_2\sin\theta_3  \\
+% X_{31} = \dfrac{Y_{31}\cos\theta_2+ F(t)\sin \theta_2}{\sin \theta_2}
+%\end{array}
+%\right.
+%$
 
 
 
 $\Leftrightarrow \left\{\begin{array}{l}
  C_m + L_1\left(-X_{31}\sin \theta_1+Y_{31} \cos \theta_1 \right) =0 \\
-Y_{31}\sin \left(\theta_3-\theta_2 \right)  =-2F(t)\sin \theta_2\sin\theta_3  \\
+Y_{31}  =-2F(t)\dfrac{\sin \theta_2\sin\theta_3 }{\sin \left(\theta_3-\theta_2 \right)} \\
  X_{31} = \dfrac{Y_{31}\cos\theta_2+ F(t)\sin \theta_2}{\sin \theta_2}
 \end{array}
 \right.
@@ -304,16 +304,19 @@ Y_{31}  =-2F(t)\dfrac{\sin \theta_2\sin\theta_3}{\sin \left(\theta_3-\theta_2 \r
 $
 
 $\Leftrightarrow \left\{\begin{array}{l}
- C_m + L_1\left(- \dfrac{-2F(t)\dfrac{\sin \theta_2\sin\theta_3}{\sin \left(\theta_3-\theta_2 \right)}\cos\theta_2+ F(t)\sin \theta_2}{\sin \theta_2}\sin \theta_1-2F(t)\dfrac{\sin \theta_2\sin\theta_3}{\sin \left(\theta_3-\theta_2 \right)} \cos \theta_1 \right) =0 \\
+ C_m + L_1\left(-X_{31}\sin \theta_1+Y_{31} \cos \theta_1 \right) =0 \\
 Y_{31}  =-2F(t)\dfrac{\sin \theta_2\sin\theta_3}{\sin \left(\theta_3-\theta_2 \right)}  \\
- X_{31} = \dfrac{Y_{31}\cos\theta_2+ F(t)\sin \theta_2}{\sin \theta_2}
+ X_{31} = -2F(t)\dfrac{\sin \theta_2\sin\theta_3}{\sin \left(\theta_3-\theta_2 \right)} \dfrac{\cos\theta_2}{\sin \theta_2}+ F(t) =F(t) \left(-2\dfrac{\cos\theta_2\sin\theta_3}{\sin \left(\theta_3-\theta_2 \right)} 
+ +1\right)
 \end{array}
 \right.
 $
 
+On a donc 
+$ C_m = L_1X_{31}\sin \theta_1- L_1Y_{31} \cos \theta_1 $ 
+$ = -2F(t)\dfrac{\sin \theta_2\sin\theta_3}{\sin \left(\theta_3-\theta_2 \right)} L_1\sin \theta_1+ 2F(t)\dfrac{\sin \theta_2\sin\theta_3}{\sin \left(\theta_3-\theta_2 \right)}  L_1 \cos \theta_1 $ 
 
-$ C_m + L_1 \dfrac{F(t)}{\sin \left(\theta_3-\theta_2 \right)}\left(2\sin\theta_3\cos\theta_2-\sin \left(\theta_3-\theta_2 \right)\sin \theta_1-2\sin \theta_2\sin\theta_3 \cos \theta_1 \right) =0$
-
+$ = 2F(t) L_1\dfrac{\sin \theta_2\sin\theta_3}{\sin \left(\theta_3-\theta_2 \right)}\left(-\sin \theta_1+  \cos \theta_1\right) $ 
 
 \end{corrige}
 \else
@@ -322,6 +325,9 @@ $ C_m + L_1 \dfrac{F(t)}{\sin \left(\theta_3-\theta_2 \right)}\left(2\sin\theta_
 \fi
 
 $$C_m = \dfrac{L_1 F}{\sin \left(\theta_2 - \theta_3\right)}\left( \sin \theta_1 \sin\left( \theta_2+\theta_3 \right)  -2\cos \theta_1 \sin\theta_2\sin\theta_3\right).$$
+
+
+$$C_m = \dfrac{L_1 F}{\sin \left(\theta_2 - \theta_3\right)}\left( \sin \theta_1\sin \theta_2\cos\theta_3+\sin \theta_1\cos \theta_2\sin\theta_3  -2\cos \theta_1 \sin\theta_2\sin\theta_3\right).$$
 
 Cette relation n’étant pas linéaire, on propose d’analyser les résultats d’une
 simulation numérique en traçant le couple moteur/effort opérateur en fonction de l’abscisse du point $E$
