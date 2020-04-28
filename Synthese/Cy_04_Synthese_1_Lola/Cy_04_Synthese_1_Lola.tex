@@ -41,7 +41,7 @@
 \ifprof
 \vspace{5.1cm}
 \else
-\vspace{5.2cm}
+\vspace{4.5cm}
 \fi
 
 \def\columnseprulecolor{\color{ocre}}
@@ -193,15 +193,21 @@ $J_{eq}$ est le moment d'inertie équivalent de l'ensemble du tronc ramené sur 
 
 \subsection*{Modèle du contrôle actif de la position verticale}
 
-On note $\Gamma(t)=\dfrac{\dd v(t)}{\dd t }$. Les conditions de Heaviside sont vérifiées. Le schéma-blocs du contrôle de la position angulaire du tronc de LOLA est représenté sur l'annexe 2. La consigne angulaire est nulle afin de garder le
+On note $\Gamma(t)=\dfrac{\dd v(t)}{\dd t }$. Les conditions de Heaviside sont vérifiées. Le schéma-blocs du contrôle de la position angulaire du tronc de LOLA est représenté sur la figure suivante. La consigne angulaire est nulle afin de garder le
 tronc du robot vertical: $\alpha_c(t)=0$. Les transformées de Laplace des fonctions seront notées en majuscules et
 le paramètre de Laplace sera noté $p$.
+
+\begin{center}
+\includegraphics[width=\linewidth]{ann_02}
+\end{center}
+
+
 
 Le comportement du moteur sera considéré comme celui d'un moteur à courant continu dont les équations de
 comportement sont les suivantes : $u_c (t)=e(t)+L \dfrac{\dd i(t)}{\dd t} +Ri (t)$; $e(t)=k_e\omega_m(t)$ et $C_m( t)=k_c i(t)$.
 
 
-\subparagraph{} \textit{Indiquer sur le document-réponse les fonctions de transfert des blocs $B_1$, $B_2$, $B_3$, $B_4$ , $B_5$ , $B_6$ et $B_7$ ainsi que l'expression de la fonction de transfert $H_1(p)$ .}
+\subparagraph{} \textit{Indiquer les fonctions de transfert des blocs $B_1$, $B_2$, $B_3$, $B_4$ , $B_5$ , $B_6$ et $B_7$ ainsi que l'expression de la fonction de transfert $H_1(p)$ .}
 \ifprof
 \begin{corrige}
 \end{corrige}
@@ -227,9 +233,13 @@ Indiquer son ordre, sa classe et donner son gain statique $K$ en fonction des do
 \else
 \fi
 
-Une simulation numérique permet de montrer que $F(p)$ est de la forme \dfrac{K}{(1+ \tau_1p)(-1+ \tau_1p)(1+ \tau_2p)}$ . Les diagrammes de Bode de cette fonction de transfert sont donnés sur le document-réponse.
+Une simulation numérique permet de montrer que $F(p)$ est de la forme $\dfrac{K}{(1+ \tau_1p)(-1+ \tau_1p)(1+ \tau_2p)}$. Les diagrammes de Bode de cette fonction de transfert sont donnés ci-dessous.
 
-\subparagraph{} \textit{En analysant les diagrammes de Bode du document-réponse, déterminer les valeurs de $\tau_1$, $\tau_2$ et $K$. Justifier en complétant les diagrammes du document-réponse avec les diagrammes asymptotiques de
+\begin{center}
+\includegraphics[width=\linewidth]{dr_12}
+\end{center}
+
+\subparagraph{} \textit{En analysant les diagrammes de Bode, déterminer les valeurs de $\tau_1$, $\tau_2$ et $K$. Justifier en complétant les diagrammes avec les diagrammes asymptotiques de
 gain et de phase.}
 \ifprof
 \begin{corrige}
@@ -259,7 +269,7 @@ fermée.}
 \fi
 
 
-\subparagraph{} \textit{Afin de résoudre ce problème, il est décidé d'asservir la chaîne directe en position et en vitesse. Pour cela, la centrale inertielle permet de mesurer l'angle de tangage $\alpha (t )$ ainsi que la vitesse angulaire $\dfrac{\dd \alpha(t)}{\dd t}$.
+\subparagraph{} \textit{Afin de résoudre ce problème, il est décidé d'asservir la chaîne directe en position et en vitesse. Pour cela, la centrale inertielle permet de mesurer l'angle de tangage $\alpha (t )$ ainsi que la vitesse angulaire $\dfrac{\dd \alpha(t)}{\dd t}$.}
 \ifprof
 \begin{corrige}
 \end{corrige}
@@ -269,15 +279,15 @@ fermée.}
 
 L'asservissement ainsi réalisé est présenté sous la forme du schéma-blocs de la figure 8 (page 9).
 $U_c (p)$ est la tension de commande en sortie du correcteur. La fonction de transfert de la centrale inertielle
-sera prise égale à $H_{c i}(p)=K_1(p+1)$.}
+sera prise égale à $H_{c i}(p)=K_1(p+1)$.
 
 \begin{center}
-\includegraphics[width=\linewidth]{fig_07_a}
+\includegraphics[width=\linewidth]{fig_08}
 \end{center}
 
 
 
-\subparagraph{} \textit{}
+\subparagraph{} \textit{Déterminer deux conditions sur $K_1$ pour que la fonction de transfert en boucle ouverte non-corrigée $\dfrac{\alpha (p)}{U_C(p)}$ soit stable. En déduire la valeur minimale de $K_1$.}
 \ifprof
 \begin{corrige}
 \end{corrige}
@@ -285,7 +295,65 @@ sera prise égale à $H_{c i}(p)=K_1(p+1)$.}
 \fi
 
 
-\subparagraph{} \textit{}
+
+\subparagraph{} \textit{Déterminer $K_1$ pour que la fonction de transfert $\dfrac{\alpha (p)}{U_C(p)}$
+ ait un facteur d'amortissement $\xi=1,7$.
+Vérifier que cette valeur est compatible avec les conditions obtenues précédemment. En déduire les
+valeurs de la pulsation propre$\omega_0$ et du gain statique de la boucle ouverte $K_{\text{BO}}$.}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+Quels que soient les résultats trouvés précédemment, nous utiliserons les expressions suivantes pour la suite
+de l'étude : $\dfrac{\alpha (p)}{U_C(p)} = \dfrac{K_{\text{BO}}}{1+\dfrac{2\xi}{\omega_0}p+\dfrac{p^2}{\omega_0^2}}$
+avec $K_{\text{BO}}=1,1\cdot 10^{-3}$ , $\xi=1,7$ et $\omega_0=\SI{3}{rad.s^{-1}}$ . Pour répondre au cahier des
+charges, il est décidé d'implanter un correcteur de fonction de transfert suivante : $H_{\text{cor}} (p)=K_p \dfrac{1+aT_d p}{1+T_d p}$ avec $a>1$.
+
+\subparagraph{} \textit{Nommer ce correcteur.}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+Les diagrammes de Bode de gain et de phase (pour $K_p=1$ ) de ce correcteur sont fournis ci-dessou. Afin
+d'assurer un gain significatif de phase, nous décidons de placer $\omega_c$ en $\omega_{\text{BP}}=\SI{50}{rad.s^{-1}}$, définissant ainsi la bande passante.
+
+\begin{center}
+\includegraphics[width=\linewidth]{ann_03}
+\end{center}
+
+\subparagraph{} \textit{Déterminer la valeur du paramètre a pour que le correcteur permette d'assurer la marge de phase
+du cahier des charges. En déduire la valeur de $T_d$.}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+
+\subparagraph{} \textit{Déterminer le gain $K_p$ pour que le critère de bande passante du cahier des charges soit bien vérifié.}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+La stabilité du tronc étant assurée, nous devons maintenant analyser les performances en précision et rapidité
+de l'asservissement de position angulaire. La consigne est nulle, ainsi seule la perturbation va écarter le tronc
+du robot de sa posture verticale. Cette perturbation provient du mouvement de marche souhaité c'est à dire de
+l'accélération subie $\Gamma(t)=\dfrac{\dd v(t)}{\dd t}$. Avec les réglages du correcteur, une simulation numérique a permis de tracer la réponse temporelle du système pour une perturbation $\Gamma(t)$ respectant la loi de vitesse présentée précédemment.
+Cette réponse est tracée sur la figure suivante.
+
+\begin{center}
+\includegraphics[width=\linewidth]{ann_04}
+\end{center}
+
+
+\subparagraph{} \textit{Justifier l'allure de la réponse temporelle. Déterminer graphiquement sur le document réponse le temps de réponse à 5\%, le dépassement maximal et l'erreur statique. Conclure sur la capacité du correcteur à
+vérifier l'ensemble des critères du cahier des charges.}
 \ifprof
 \begin{corrige}
 \end{corrige}
