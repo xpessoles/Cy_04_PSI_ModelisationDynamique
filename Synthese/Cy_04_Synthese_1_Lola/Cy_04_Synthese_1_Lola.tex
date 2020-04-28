@@ -1,0 +1,301 @@
+%%%% Paramétrage du TD %%%%
+\def\xxactivite{Activation 3 \ifprof -- Corrigé \else \fi} % \normalsize \vspace{-.4cm}
+\def\xxauteur{\textsl{Xavier Pessoles}}
+
+\def\xxnumchapitre{Chapitre 3 \vspace{.2cm}}
+\def\xxchapitre{\hspace{.12cm} Application du Principe Fondamental de la Dynamique}
+
+\def\xxtitreexo{Le robot humanoïde Lola}
+\def\xxsourceexo{\hspace{.2cm} \footnotesize{Concours Mines Ponts -- PSI 2015}}
+%\def\xxauteur{\textsl{Xavier Pessoles}}
+
+
+\def\xxcompetences{%
+\vspace{-.5cm}
+\textsl{%
+\textbf{Savoirs et compétences :}
+\begin{itemize}[label=\ding{112},font=\color{ocre}] 
+%\item \textit{Mod2.C16} : torseur cinétique
+%\item \textit{Mod2.C17} : torseur dynamique
+\item \textit{Mod2.C17.SF1} : déterminer le torseur dynamique d’un solide, ou d’un ensemble de solides, par rapport à un autre solide
+%\item \textit{Mod2.C15} : matrice d'inertie
+\item \textit{Res1.C2} : principe fondamental de la dynamique
+%\item \textit{Res1.C1.SF1} : proposer une démarche permettant la détermination de la loi de mouvement
+%\item \textit{Res1.C2.SF1} : proposer une méthode permettant la détermination d’une inconnue de liaison
+\end{itemize}
+}}
+\def\xxfigures{
+\includegraphics[width=.5\linewidth]{fig_00}}%figues de la page de garde
+
+
+\iflivret
+\input{../../style/new_pagegarde}
+\else
+\input{../../style/new_pagegarde}
+\fi
+\setlength{\columnseprule}{.1pt}
+
+\pagestyle{fancy}
+\thispagestyle{plain}
+
+\ifprof
+\vspace{5.1cm}
+\else
+\vspace{5.2cm}
+\fi
+
+\def\columnseprulecolor{\color{ocre}}
+\setlength{\columnseprule}{0.4pt} 
+
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\setcounter{exo}{0}
+
+
+
+\ifprof
+\else
+\begin{multicols}{2}
+\fi
+
+\subsection*{Mise en situation}
+Le développement de robots à forme humaine est en
+croissance constante depuis quelques dizaines
+d’années. En robotique, il est difficile d’affirmer que
+tous les robots remplaçant l’homme dans ses tâches
+doivent être de forme humaine. Les véhicules
+autonomes, par exemple, ne sont pas
+anthropomorphes. Les tâches auxquelles sont
+destinées les robots définissent leur forme idéale. Si
+nous souhaitons un jour que les robots remplacent
+l’homme dans ses tâches ennuyeuses, ils devront
+s’intégrer au mieux à notre société, à notre
+environnement et à notre ergonomie.
+
+Les dimensions d’une maison et la hauteur des meubles sont adaptées à notre forme humaine. L’avantage
+des robots humanoïdes devient alors économique : il n’est pas indispensable de modifier l’environnement
+quotidien pour les utiliser.
+
+Le robot humanoïde LOLA, développé par l’Université de Munich, est un robot de forme humaine
+conçu pour un mode de marche rapide. LOLA possède une structure à 25 degrés de liberté lui permettant une
+flexibilité accrue. Chaque jambe possède 7 degrés de liberté, le haut du corps 8 et la tête 3.
+Le robot est équipé d’une caméra stéréoscopique haute définition afin de percevoir son environnement, d’une
+centrale inertielle équipée de 3 gyroscopes et de 3 accéléromètres. Chaque articulation possède un codeur
+angulaire absolu et chaque pied est muni d’un capteur d’effort 6 axes permettant d’obtenir l’effort de contact
+avec le sol. Les caractéristiques techniques de LOLA sont données dans le tableau suivant.
+
+
+\begin{center}
+\includegraphics[width=\linewidth]{fig_01_a}
+\end{center}
+
+\subsection*{Contrôle de la posture de LOLA}
+Pour assurer une marche rapide et stable de LOLA, la méthode choisie est le contrôle de la verticalité du tronc
+du robot (figure 5). Le haut du corps (tronc, bras, tête) sera maintenu vertical en réalisant un asservissement
+de position angulaire au niveau de l'articulation de la hanche. L'action mécanique de redressement est
+développée par l'ensemble de motorisation de tangage autour de l'axe $(O_T,\vect{x_0})$. Les performances à vérifier
+dans cette partie sont définies par les exigences suivantes.
+
+
+\begin{center}
+\includegraphics[width=\linewidth]{fig_05_a}
+\end{center}
+
+
+\begin{center}
+\includegraphics[width=\linewidth]{fig_05_b}
+\end{center}
+
+La chaîne structurelle permettant de modifier la posture du haut du corps autour de l'axe de tangage est
+représentée sur la figure 6. Elle est composée d’un moteur électrique (1,2) synchrone à aimants
+permanents piloté par un variateur électronique, d’un réducteur
+Harmonic-Drive© (3) de rapport de réduction 1/100, d’un codeur
+incrémental (5) ainsi que d’un codeur angulaire absolu (6+7).
+Une centrale inertielle équipée d'un accéléromètre, d'un gyroscope et
+d'une unité de traitement permet d'obtenir en temps réel la valeur de
+l'angle d'inclinaison du haut du corps par rapport à la verticale.
+
+
+\begin{center}
+\includegraphics[width=.8\linewidth]{fig_06}
+\end{center}
+
+
+\begin{obj}
+L'objectif de cette partie est de mettre en place un modèle du maintien
+vertical du tronc de LOLA et de déterminer une structure de
+commande permettant d'assurer les performances du cahier des
+charges de l'exigence 1.3.2.
+\end{obj}
+
+Les performances dynamiques de l'axe de tangage doivent vérifier les critères suivants:
+\begin{center}
+\includegraphics[width=\linewidth]{fig_07_a}
+\end{center}
+
+\subsection*{Modèle de connaissance de la dynamique de tangage}
+
+Le modèle mécanique utilisé pour mener notre étude est donné sur la figure 7. L'association des liaisons entre
+le tronc et les jambes au niveau de la hanche est équivalente, dans le plan sagittal $\left(O_T,\vect{y_0},\vect{z_0}\right)$, à une liaison pivot d'axe $\left(O_T,\vect{x_0}\right)$ . Le tronc sera considéré comme un solide admettant le plan $\left(O_T,\vect{y_0},\vect{z_0}\right)$ comme plan de
+symétrie. Le cahier des charges stipule que LOLA doit pouvoir marcher à la vitesse de \SI{5}{km/h}. Cette vitesse
+est atteinte en \SI{1}{s} lors de la première foulée. La loi de commande en vitesse correspondante est représentée
+sur la figure 7.
+
+\begin{center}
+\includegraphics[width=\linewidth]{fig_07_b}
+\end{center}
+
+Le mouvement de marche est imposé et modélisé par le torseur cinématique en $O_T$ du mouvement du tronc 1
+par rapport au sol 0 : $\torseurcin{V}{1}{0}=\torseurl{\dfrac{\dd \alpha}{\dd t}\vect{x_0}}{v(t)\vect{y_0}}{O_T}$.
+
+Les caractéristiques d'inertie du tronc 1 de LOLA sont :
+\begin{itemize}
+\item la matrice d'inertie en $O_T$ $\inertie{O_T}{1} = \matinertie{A_1}{B_1}{C_1}{-D_1}{0}{0}{B_1}$;
+\item position du centre de gravité : $\vect{O_TG_T}=Z_G\vect{z_1}$;
+\item masse : $m_1$;
+\item l'accélération de la pesanteur sera prise égale à $g=\SI{9,81}{m.s^{-2}}$ .
+\end{itemize}
+
+
+L'axe de sortie du réducteur exerce un couple de redressement sur le tronc 1 modélisé par le torseur couple
+suivant : $\torseurstat{T}{\text{hd}}{1}=\torseurl{\vect{0}}{C_R\vect{x_0}}{O_T}$. L'angle $\alpha$ sera supposé faible pendant le mouvement : ainsi $\cos \alpha \simeq 1$ et $\cos \alpha \simeq \alpha$.
+
+
+\subparagraph{} \textit{Proposer une démarche de résolution afin d'obtenir l'équation différentielle du mouvement reliant $\alpha$ et
+ses dérivées successives aux données du problème. Effectuer un bilan des actions mécaniques
+extérieures au système matériel isolé.}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+
+\subparagraph{} \textit{Développer l'ensemble des calculs pour déterminer l'équation différentielle reliant $\alpha$ et ses dérivées
+successives aux données du problème.}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+
+Le contrôle de l'angle s'effectue par l'intermédiaire du moteur asservi en position, suivi du réducteur Harmonic-
+Drive© de rapport de réduction $r= \dfrac{1}{100}$. Le moment d'inertie de l'arbre moteur suivant son axe de rotation est
+noté $J_m$, le couple moteur exercé sur l'arbre d'entrée du réducteur est noté $C_m$. Le réducteur Harmonic-
+Drive© sera considéré sans masse. La masse de l'arbre moteur est négligeable devant l'ensemble des autres
+grandeurs inertielles. Une étude dynamique a permis de montrer que : $C_R=\dfrac{C_m}{r}-\dfrac{J_m}{r^2}\dfrac{\dd^2\alpha(t)}{\dd t^2}$. Ainsi, l'équation
+différentielle du mouvement devient : 
+$J_{eq} \dfrac{\dd^2\alpha(t)}{\dd t^2} -m_1gZ_G\alpha(t)=m_1 Z_G \dfrac{\dd v(t)}{\dd t}+\dfrac{C_m(t)}{r}$.
+
+$J_{eq}$ est le moment d'inertie équivalent de l'ensemble du tronc ramené sur l'axe moteur.
+
+
+\subsection*{Modèle du contrôle actif de la position verticale}
+
+On note $\Gamma(t)=\dfrac{\dd v(t)}{\dd t }$. Les conditions de Heaviside sont vérifiées. Le schéma-blocs du contrôle de la position angulaire du tronc de LOLA est représenté sur l'annexe 2. La consigne angulaire est nulle afin de garder le
+tronc du robot vertical: $\alpha_c(t)=0$. Les transformées de Laplace des fonctions seront notées en majuscules et
+le paramètre de Laplace sera noté $p$.
+
+Le comportement du moteur sera considéré comme celui d'un moteur à courant continu dont les équations de
+comportement sont les suivantes : $u_c (t)=e(t)+L \dfrac{\dd i(t)}{\dd t} +Ri (t)$; $e(t)=k_e\omega_m(t)$ et $C_m( t)=k_c i(t)$.
+
+
+\subparagraph{} \textit{Indiquer sur le document-réponse les fonctions de transfert des blocs $B_1$, $B_2$, $B_3$, $B_4$ , $B_5$ , $B_6$ et $B_7$ ainsi que l'expression de la fonction de transfert $H_1(p)$ .}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+Afin d'analyser la stabilité de cet asservissement, nous cherchons à déterminer la fonction de transfert en
+boucle ouverte du système non-corrigé : $ F(p)= \dfrac{\alpha (p)}{U_c (p)}$ en supposant la perturbation nulle.
+
+\subparagraph{} \textit{Déterminer la fonction de transfert de la boucle dynamique $H_{\text{dyn}}(p)=\dfrac{\alpha (p)}{C_m(p)}$ en supposant la perturbation nulle.}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+
+\subparagraph{} \textit{Déterminer la fonction de transfert en boucle ouverte non-corrigée de l'asservissement $ F(p)= \dfrac{\alpha (p)}{U_c (p)}$.
+Indiquer son ordre, sa classe et donner son gain statique $K$ en fonction des données.}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+Une simulation numérique permet de montrer que $F(p)$ est de la forme \dfrac{K}{(1+ \tau_1p)(-1+ \tau_1p)(1+ \tau_2p)}$ . Les diagrammes de Bode de cette fonction de transfert sont donnés sur le document-réponse.
+
+\subparagraph{} \textit{En analysant les diagrammes de Bode du document-réponse, déterminer les valeurs de $\tau_1$, $\tau_2$ et $K$. Justifier en complétant les diagrammes du document-réponse avec les diagrammes asymptotiques de
+gain et de phase.}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+Pour la suite de l'étude, nous simplifierons $F(p)$ sous la forme suivante : $\dfrac{K}{(1+\tau_1p)(-1+ \tau_1p)}$.
+
+
+
+
+\subparagraph{} \textit{Justifier le choix de cette simplification.}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+
+\subparagraph{} \textit{Expliquer pourquoi le critère du revers ne peut pas être appliqué pour étudier la stabilité en boucle
+fermée.}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+
+\subparagraph{} \textit{Afin de résoudre ce problème, il est décidé d'asservir la chaîne directe en position et en vitesse. Pour cela, la centrale inertielle permet de mesurer l'angle de tangage $\alpha (t )$ ainsi que la vitesse angulaire $\dfrac{\dd \alpha(t)}{\dd t}$.
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+
+L'asservissement ainsi réalisé est présenté sous la forme du schéma-blocs de la figure 8 (page 9).
+$U_c (p)$ est la tension de commande en sortie du correcteur. La fonction de transfert de la centrale inertielle
+sera prise égale à $H_{c i}(p)=K_1(p+1)$.}
+
+\begin{center}
+\includegraphics[width=\linewidth]{fig_07_a}
+\end{center}
+
+
+
+\subparagraph{} \textit{}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+
+\subparagraph{} \textit{}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+
+
+\ifprof
+\else
+\end{multicols}
+\fi
+
