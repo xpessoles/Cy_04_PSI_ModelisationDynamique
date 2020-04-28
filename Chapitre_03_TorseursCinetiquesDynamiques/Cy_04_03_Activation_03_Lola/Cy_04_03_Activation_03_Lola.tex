@@ -128,20 +128,26 @@ sur les deux segments de contact $[O_S ;A_S]$ et $[B_S;C_S]$ . En chaque point $
 segments, la densité d'efforts de contact est $p(M)\vect{z_0}$ , avec $p(M)$ en $\text{N m}^{-2}$. On notera que si le robot n'est pas équipé de semelles magnétiques ou adhésives, on a $p(M)> 0$. Ainsi, en notant $b$ la largeur de la semelle
 suivant$\vect{x_0}$ et $\Sigma=[O_S ,A_S]\cup [B_S,C_S]$, le modèle global d'action mécanique de contact du sol sur le pied peut être donné par le torseur :
 $
-\torseurstat{T}{\text{sol}}{\text{pied}}=\torseurl{\vectf{\text{sol}}{\text{pied}}=b\int_{M\in\Sigma} p(M)\vect{z_0} \dd y }{\vectm{O_S}{\text{sol}}{\text{pied}}=b\int_{M\in\Sigma} \vect{O_S M} \wedge p(M)\vect{z_0} \dd \vect{y}}{O_S}$.
+\torseurstat{T}{\text{sol}}{\text{pied}}=\torseurl{\vectf{\text{sol}}{\text{pied}}=b\int_{M\in\Sigma} p(M)\vect{z_0} \dd y }{\vectm{O_S}{\text{sol}}{\text{pied}}=b\int_{M\in\Sigma} \vect{O_S M} \wedge p(M)\vect{z_0} \dd {y}}{O_S}$.
 
 
 
 \subparagraph{} \textit{Montrer que $\torseurstat{T}{\text{sol}}{\text{pied}}$ est un glisseur.}
 \ifprof
-\begin{corrige}
+\begin{corrige}~\\
+L'automoment est un des invariants du torseur : $\forall P, \vectf{\text{sol}}{\text{pied}}\cdot\vectm{O_S}{\text{sol}}{\text{pied}}=\text{cst}$. Dans le cas d'un glisseur, il existe un point tel que le moment est nul. L'automoment est donc nul en tous points de l'espace.
+
+Dans notre cas, $b\int_{M\in\Sigma} p(M)\vect{z_0} \dd y \cdot b\int_{M\in\Sigma} \vect{O_S M} \wedge p(M)\vect{z_0} \dd y = 0$ (permutation circulaire du produit mixte). 
+
+
+ 
 \end{corrige}
 \else
 \fi
 
 
 Soit $H_S$ le point de la droite $\left(O_S,\vect{y_0}\right)$ tel que  
-$\vectm{H_S}{\text{sol}}{\text{pied}}=\vect{0}$, on notera $\vect{O_SH_S} = Y_{H_S}\vect{y}_0$. Ce point est
+$\vectm{H_S}{\text{sol}}{\text{pied}}=\vect{0}$, on notera $\vect{O_SH_S} = Y_{H_S}\vect{y_0}$. Ce point est
 fondamental en robotique humanoïde, il prend le nom de Zero Moment Point (ZMP) : de l'anglais « point de
 moment nul ».
 
@@ -150,6 +156,8 @@ moment nul ».
 \subparagraph{} \textit{Montrer que $H_S\in [O_S;C_S]$, c'est à-dire qu'il est situé sous le pied du robot.}
 \ifprof
 \begin{corrige}
+On cherche $H_S$ tel que $   \vectm{H_S}{\text{sol}}{\text{pied}} =  \vectm{O_S}{\text{sol}}{\text{pied}}   + \vect{H_S O_S} \wedge \vectf{\text{sol}}{\text{pied}} = \vect{0} $ soit 
+$ \vectm{O_S}{\text{sol}}{\text{pied}}   + \vect{H_S O_S} \wedge \vectf{\text{sol}}{\text{pied}} = \vect{0}$
 \end{corrige}
 \else
 \fi
