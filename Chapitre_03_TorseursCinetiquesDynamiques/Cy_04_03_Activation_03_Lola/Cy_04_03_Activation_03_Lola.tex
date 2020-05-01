@@ -172,43 +172,55 @@ moment nul ».
 \subparagraph{} \textit{Montrer que $H_S\in [O_S;C_S]$, c'est à-dire qu'il est situé sous le pied du robot.}
 \ifprof
 \begin{corrige}
-On a $   \vectm{H_S}{\text{sol}}{\text{pied}} =\vect{0}$.
-
-D'une part,  $\vectm{O_S}{\text{sol}}{\text{pied}} =  \vectm{H_S}{\text{sol}}{\text{pied}} + \vect{ O_SH_S} \wedge \vectf{\text{sol}}{\text{pied}}$
-
-$\Leftrightarrow  \int_{M\in\Sigma} \vect{O_S M} \wedge p(M)\vect{z_0} \dd {y}=   \vect{ O_SH_S} \wedge \int_{M\in\Sigma} p(M)\vect{z_0} \dd y$
-
-$\Leftrightarrow \int_{M\in\Sigma} \lambda \vect{y_0} \wedge p(M)\vect{z_0} \dd {y}=   L_1 \vect{y_0} \wedge \int_{M\in\Sigma} p(M)\vect{z_0} \dd y$
-
-$\Leftrightarrow  \int_{M\in\Sigma}\lambda  p(M) \dd {y}=   L_1  \int_{M\in\Sigma} p(M) \dd y$
-
-$\Leftrightarrow L_1 = \dfrac{\int_{M\in\Sigma}\lambda  p(M) \dd {y}}{  \int_{M\in\Sigma} p(M) \dd y}$
-
-D'autre part,  $\vectm{C_S}{\text{sol}}{\text{pied}} =  \vectm{H_S}{\text{sol}}{\text{pied}} + \vect{ C_SH_S} \wedge \vectf{\text{sol}}{\text{pied}}$
-
-$\Leftrightarrow  \int_{M\in\Sigma} \vect{O_S M} \wedge p(M)\vect{z_0} \dd {y}=  \vect{ C_SH_S}  \wedge \int_{M\in\Sigma} p(M)\vect{z_0} \dd y$
-
-$\Leftrightarrow  \int_{M\in\Sigma} \lambda \vect{y_0} \wedge p(M)\vect{z_0} \dd {y}=  L_2 \vect{y_0}   \wedge \int_{M\in\Sigma} p(M)\vect{z_0} \dd y$
+On cherche $H_S$  tel que $ \vectm{H_S}{\text{sol}}{\text{pied}} =\vect{0}$.
 
 
-$\Leftrightarrow  \int_{M\in\Sigma} \lambda  p(M)\dd {y}=  L_2   \int_{M\in\Sigma} p(M) \dd y$
+On a donc $ b \int_{M\in\Sigma} \vect{H_S M} \wedge p(M)\vect{z_0} \dd {y}= \vect{0}$
 
-$\Leftrightarrow L_2 =  \dfrac{\int_{M\in\Sigma} \lambda  p(M)\dd {y} }{ \int_{M\in\Sigma} p(M) \dd y}  $
+$ \Leftrightarrow \int_{M\in\Sigma}\left( \vect{H_S O_S}+\vect{O_S M} \right)\wedge p(M)\vect{z_0} \dd {y}= \vect{0}$
 
-%
-%On cherche $H_S$ tel que $   \vectm{H_S}{\text{sol}}{\text{pied}} =  \vectm{O_S}{\text{sol}}{\text{pied}}   + \vect{H_S O_S} \wedge \vectf{\text{sol}}{\text{pied}} = \vect{0} $ 
-%soit 
-%$ \vectm{O_S}{\text{sol}}{\text{pied}}   + \vect{H_S O_S} \wedge \vectf{\text{sol}}{\text{pied}} = \vect{0}$
-%
-%$ b\int_{M\in\Sigma} \vect{O_S M} \wedge p(M)\vect{z_0} \dd {y}  + \vect{H_S O_S} \wedge b\int_{M\in\Sigma} p(M)\vect{z_0} \dd y = \vect{0}$
-%
-%$\Leftrightarrow  \int_{M\in\Sigma} \vect{O_S M} \wedge p(M)\vect{z_0} \dd {y}  + \vect{H_S O_S} \wedge \int_{M\in\Sigma} p(M)\vect{z_0} \dd y = \vect{0}$
-%
-%$\Leftrightarrow  \int_{M\in\Sigma} \left( \vect{O_S M} \wedge p(M)\vect{z_0}  + \vect{H_S O_S} \wedge p(M)\vect{z_0} \right) \dd {y}   = \vect{0}$
-%
-%$\Leftrightarrow  \int_{M\in\Sigma} \left( \vect{O_S M}  + \vect{H_S O_S} \right) \wedge p(M)\vect{z_0}  \dd {y}   = \vect{0}$
-%
-%$\Leftrightarrow  \int_{M\in\Sigma}   \vect{H_S M}  \wedge p(M)\vect{z_0}  \dd {y}   = \vect{0}$
+
+$ \Leftrightarrow \int_{M\in\Sigma} \vect{H_S O_S}\wedge p(M)\vect{z_0} \dd {y} +\int_{M\in\Sigma}\vect{O_S M}\wedge p(M)\vect{z_0} \dd {y}  = \vect{0}$
+
+
+$ \Leftrightarrow \int_{M\in\Sigma} -Y_{H_S}\vect{y_0}\wedge p(M)\vect{z_0} \dd {y} +\int_{M\in\Sigma}\vect{O_S M}\wedge p(M)\vect{z_0} \dd {y}  = \vect{0}$
+
+
+$ \Leftrightarrow -Y_{H_S}\int_{M\in\Sigma}  p(M) \dd {y}\vect{x_0} +\int_{M\in\Sigma}\vect{O_S M}\wedge p(M)\vect{z_0} \dd {y}  = \vect{0}$
+
+Projetons cette expression sur $\vect{x_0}$ :
+$  -Y_{H_S}\int_{M\in\Sigma}  p(M) \dd {y} +\int_{M\in\Sigma}\left(\vect{O_S M}\wedge p(M)\vect{z_0}\right)\cdot \vect{x_0} \dd {y}  = {0}$
+
+$  \Leftrightarrow -Y_{H_S}\int_{M\in\Sigma}  p(M) \dd {y} +\int_{M\in\Sigma}p(M)\vect{y_0}\cdot \vect{O_S M} \dd {y}  = {0}$
+
+$  \Leftrightarrow -Y_{H_S}\int_{M\in\Sigma}  p(M) \dd {y} +\int_{M\in\Sigma} Y_Mp(M) \dd {y}  = {0}$. soit 
+
+$  Y_{H_S}  = \dfrac{\int_{M\in\Sigma} Y_Mp(M) \dd {y}}{\int_{M\in\Sigma}  p(M) \dd {y}}  $.
+
+On a, en raison du parmaétrage, $Y_M > 0$. 
+Nécessairement, $H_S$ est donc à droite du point $O_S$. 
+
+
+De même, on a donc $ b \int_{M\in\Sigma} \vect{H_S M} \wedge p(M)\vect{z_0} \dd {y}= \vect{0}$
+
+$ \Leftrightarrow \int_{M\in\Sigma}\left( \vect{H_S C_S}+\vect{C_S M} \right)\wedge p(M)\vect{z_0} \dd {y}= \vect{0}$
+
+
+$ \Leftrightarrow \int_{M\in\Sigma} \vect{H_S C_S}\wedge p(M)\vect{z_0} \dd {y} +\int_{M\in\Sigma}\vect{C_S M}\wedge p(M)\vect{z_0} \dd {y}  = \vect{0}$
+
+On a $\vect{C_SM}= - \lambda \vect{y_0}$ avec $\lambda>0$ ( $M\in \Sigma$) et $\vect{H_S C_S} = \mu \vect{y}$. En projetant de plus suivant $\vect{x_0}$, on a : 
+
+$ \left(\int_{M\in\Sigma}\mu \vect{y_0} \wedge p(M)\vect{z_0} \dd {y} +\int_{M\in\Sigma}- \lambda \vect{y_0} \wedge p(M)\vect{z_0} \dd {y}\right)\vect{x_0}  = {0}$
+
+$ \Rightarrow \int_{M\in\Sigma}\mu p(M) \dd {y} +\int_{M\in\Sigma}- \lambda  p(M)\dd {y}  = {0}$
+soit $  \mu  =\dfrac{ \int_{M\in\Sigma} \lambda  p(M)\dd {y}}{\int_{M\in\Sigma} p(M) \dd {y}} $.
+
+$\mu$ est donc nécessairement positif et $H_S$ est à gauche de $C_S$. 
+
+Au final, $H_S$ appartient à $\left[O_S C_S \right]$.
+
+
+
 
 \end{corrige}
 \else
