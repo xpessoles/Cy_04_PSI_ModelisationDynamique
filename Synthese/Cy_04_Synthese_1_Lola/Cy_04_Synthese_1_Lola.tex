@@ -226,9 +226,9 @@ noté $J_m$, le couple moteur exercé sur l'arbre d'entrée du réducteur est no
 Drive© sera considéré sans masse. La masse de l'arbre moteur est négligeable devant l'ensemble des autres
 grandeurs inertielles. Une étude dynamique a permis de montrer que : $C_R=\dfrac{C_m}{r}-\dfrac{J_m}{r^2}\dfrac{\dd^2\alpha(t)}{\dd t^2}$. Ainsi, l'équation
 différentielle du mouvement devient : 
-$J_{eq} \dfrac{\dd^2\alpha(t)}{\dd t^2} -m_1gZ_G\alpha(t)=m_1 Z_G \dfrac{\dd v(t)}{\dd t}+\dfrac{C_m(t)}{r}$.
+$J_{\text{eq}} \dfrac{\dd^2\alpha(t)}{\dd t^2} -m_1gZ_G\alpha(t)=m_1 Z_G \dfrac{\dd v(t)}{\dd t}+\dfrac{C_m(t)}{r}$.
 
-$J_{eq}$ est le moment d'inertie équivalent de l'ensemble du tronc ramené sur l'axe moteur.
+$J_{\text{eq}}$ est le moment d'inertie équivalent de l'ensemble du tronc ramené sur l'axe moteur.
 
 
 \subsection*{Modèle du contrôle actif de la position verticale}
@@ -250,6 +250,14 @@ comportement sont les suivantes : $u_c (t)=e(t)+L \dfrac{\dd i(t)}{\dd t} +Ri (t
 \subparagraph{} \textit{Indiquer les fonctions de transfert des blocs $B_1$, $B_2$, $B_3$, $B_4$ , $B_5$ , $B_6$ et $B_7$ ainsi que l'expression de la fonction de transfert $H_1(p)$ .}
 \ifprof
 \begin{corrige}
+$B_6 = k_e$, $H_1(p)=\dfrac{1}{Lp + R}$, $B_5 = k_c$. 
+
+On a de plus, $J_{\text{eq}} p^2 A(p) -m_1gZ_GA(p)=m_1 Z_G p V(p) +\dfrac{C_m(p)}{r}$.
+
+On a donc $B_3 = \dfrac{1}{r}$, $p V(p) = \Gamma(p)$ et $B_1 = m_1 Z_G$, $B_2 =m_1gZ_G$ et $B_7 = \dfrac{1}{J_{\text{eq}}}$.
+
+Enfin, $B_4 = \dfrac{1}{r}$.
+
 \end{corrige}
 \else
 \fi
@@ -260,6 +268,13 @@ boucle ouverte du système non-corrigé : $ F(p)= \dfrac{\alpha (p)}{U_c (p)}$ e
 \subparagraph{} \textit{Déterminer la fonction de transfert de la boucle dynamique $H_{\text{dyn}}(p)=\dfrac{\alpha (p)}{C_m(p)}$ en supposant la perturbation nulle.}
 \ifprof
 \begin{corrige}
+En déplaçant le point de prélèvement allant vers $B_2$ vers la gauche, $B_2$ est remplacé par $B_2/p$. On réduit donc la boucle (avec un + sur le retour) : $H_{\text{dyn}}(p)=\dfrac{\dfrac{B_7}{p}}{1-\dfrac{B_2B_7}{p^2}}\dfrac{B_3}{p}$ $=\dfrac{B_7}{1-\dfrac{B_2B_7}{p^2}}\dfrac{B_3}{p^2}$
+ $=\dfrac{B_3B_7}{p^2-B_2B_7}$
+  $=\dfrac{\dfrac{1}{r}\dfrac{1}{J_{\text{eq}}}}{p^2-m_1gZ_G\dfrac{1}{J_{\text{eq}}}}$
+  
+    $=\dfrac{1}{r J_{\text{eq}}p^2-m_1gZ_Gr}$.
+
+
 \end{corrige}
 \else
 \fi
@@ -269,6 +284,29 @@ boucle ouverte du système non-corrigé : $ F(p)= \dfrac{\alpha (p)}{U_c (p)}$ e
 Indiquer son ordre, sa classe et donner son gain statique $K$ en fonction des données.}
 \ifprof
 \begin{corrige}
+
+On réduit alors le bouclage sur le moteur : $F_2(p)=\dfrac{H_1B_5B_3 F(p)}{1+H_1B_5B_3 F(p)B_4 B_6}$. 
+
+Au final, $H_{\text{dyn}}(p) = F_2 (p)\dfrac{1}{p}$ $=\dfrac{H_1B_5B_3 F(p)}{1+H_1B_5B_3 F(p)B_4 B_6} \cdot\dfrac{1}{p}$ $=\dfrac{H_1B_5B_3 \dfrac{B_7 p}{p^2-B_2B_7}}{1+H_1B_5B_3 \dfrac{B_7 p}{p^2-B_2B_7}B_4 B_6} \cdot\dfrac{1}{p}$
+
+$=\dfrac{H_1B_5B_3 B_7 p}{\left(p^2-B_2B_7 \right)+H_1B_5B_3 B_7 pB_4 B_6} \cdot\dfrac{1}{p}$
+
+$=\dfrac{\dfrac{1}{Lp + R}k_c\dfrac{1}{r} \dfrac{1}{J_{\text{eq}}} p}{\left(p^2-m_1gZ_G\dfrac{1}{J_{\text{eq}}} \right)+\dfrac{1}{Lp + R}k_c\dfrac{1}{r} \dfrac{1}{J_{\text{eq}}} p\dfrac{1}{r} k_e} \cdot\dfrac{1}{p}$
+
+$=\dfrac{k_c }{ r J_{\text{eq}} \left(Lp + R\right) \left(p^2-m_1gZ_G\dfrac{1}{J_{\text{eq}}} \right)+k_c p\dfrac{1}{r} k_e} $
+
+
+$=\dfrac{k_c }{ r J_{\text{eq}}  \left(Lp^3 + Rp^2-Lpm_1gZ_G\dfrac{1}{J_{\text{eq}}} - Rm_1gZ_G\dfrac{1}{J_{\text{eq}}} \right)+k_c p\dfrac{1}{r} k_e} $
+
+$=\dfrac{k_c r}{   r^2 J_{\text{eq}}Lp^3 + r^2 J_{\text{eq}}Rp^2-r^2 Lpm_1gZ_G -r  Rm_1gZ_G +k_c p k_e} $
+
+$=\dfrac{k_c r}{   r^2 J_{\text{eq}}Lp^3 + r^2 J_{\text{eq}}Rp^2+p\left(-r^2 Lm_1gZ_G  +k_c  k_e\right)-r  Rm_1gZ_G} $
+
+$=\dfrac{\dfrac{k_c }{ Rm_1gZ_G}}{   \dfrac{r J_{\text{eq}}L}{ Rm_1gZ_G}p^3 + \dfrac{r J_{\text{eq}}}{  m_1gZ_G}p^2+p\dfrac{-r^2 Lm_1gZ_G  +k_c  k_e}{r  Rm_1gZ_G}-1} $.
+
+Fonction de transfert d'ordre 3, de classe 0 et de gain $K=-\dfrac{k_c }{ Rm_1gZ_G}$.
+
+\textbf{Erreur éventuelle avec des $r$ qui se baladent.}
 \end{corrige}
 \else
 \fi
