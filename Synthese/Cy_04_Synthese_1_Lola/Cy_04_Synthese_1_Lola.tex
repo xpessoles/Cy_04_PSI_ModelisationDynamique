@@ -135,11 +135,11 @@ Les performances dynamiques de l'axe de tangage doivent vérifier les critères 
 
 \subsection*{Modèle de connaissance de la dynamique de tangage}
 
-Le modèle mécanique utilisé pour mener notre étude est donné sur la figure 7. L'association des liaisons entre
+Le modèle mécanique utilisé pour mener notre étude est donné sur la figure suivante. L'association des liaisons entre
 le tronc et les jambes au niveau de la hanche est équivalente, dans le plan sagittal $\left(O_T,\vect{y_0},\vect{z_0}\right)$, à une liaison pivot d'axe $\left(O_T,\vect{x_0}\right)$ . Le tronc sera considéré comme un solide admettant le plan $\left(O_T,\vect{y_0},\vect{z_0}\right)$ comme plan de
 symétrie. Le cahier des charges stipule que LOLA doit pouvoir marcher à la vitesse de \SI{5}{km/h}. Cette vitesse
 est atteinte en \SI{1}{s} lors de la première foulée. La loi de commande en vitesse correspondante est représentée
-sur la figure 7.
+ci-dessous.
 
 \begin{center}
 \includegraphics[width=\linewidth]{fig_07_b}
@@ -165,7 +165,20 @@ suivant : $\torseurstat{T}{\text{hd}}{1}=\torseurl{\vect{0}}{C_R\vect{x_0}}{O_T}
 ses dérivées successives aux données du problème. Effectuer un bilan des actions mécaniques
 extérieures au système matériel isolé.}
 \ifprof
-\begin{corrige}
+\begin{corrige} ~\\
+
+\begin{center}
+\includegraphics[width=.5\linewidth]{cor_01}
+\end{center}
+
+Pour ne pas faire apparaître des inconues de liaisons, on va isoler 1 et réaliser un TMD en projection sur $\axe{O_T}{x_0}$.
+
+Bilan des actions mécaniques extérieures à 1 : 
+\begin{itemize}
+\item action de la pesanteur;
+\item $\torseurstat{T}{\text{hd}}{1}$;
+\item action des jambes sur 1. 
+\end{itemize}
 \end{corrige}
 \else
 \fi
@@ -174,7 +187,34 @@ extérieures au système matériel isolé.}
 \subparagraph{} \textit{Développer l'ensemble des calculs pour déterminer l'équation différentielle reliant $\alpha$ et ses dérivées
 successives aux données du problème.}
 \ifprof
-\begin{corrige}
+\begin{corrige} ~\\
+
+\textbf{Déplacement du torseur de pesanteur}
+On a : $\torseurstat{T}{\text{pes}}{1} = \torseurl{-gm_1\vect{z_0}}{\vect{0}}{G_T}$ 
+%$= \torseurl{-gm_1\vect{z_0}}{\vect{O_TG}\wedge -gm_1\vect{z_0}}{O_T}$
+$= \torseurl{-gm_1\vect{z_0}}{Z_G \vect{z_1}\wedge -gm_1\vect{z_0}}{O_T}$
+$= \torseurl{-gm_1\vect{z_0}}{Z_G gm_1\sin\alpha \vect{x_0}}{O_T}$.
+
+
+\textbf{Calcul du moment dynamique} 
+
+Calcul en $G_T$. 
+
+$\vectmd{1}{0}{G} = \left[\dfrac{\dd \vectmc{1}{0}{G_T}}{\dd t}\right]_{\rep{0}}$ $=\left[\dfrac{\dd \left( A_1 \dot{\alpha}\vect{x_0}\right)}{\dd t}\right]_{\rep{0}}$
+$= A_1 \ddot{\alpha}\vect{x_0}$
+
+Déplacement en $O_T$. 
+
+On a $\vectmd{1}{0}{O_T} = \vectmd{1}{0}{G_T} + \vect{O_T G_T}\wedge m_1 \dot{v}(t) \vect{y_0}$
+$= A_1 \ddot{\alpha}\vect{x_0} + Z_G \vect{z_1} \wedge m_1 \dot{v}(t) \vect{y_0}$
+$= \left(A_1 \ddot{\alpha} - Z_G   m_1 \dot{v}(t) \cos \alpha \right)\vect{x_0} $.
+
+
+\textbf{Théorème du moment dynamique en $O_T$ suivant $\vect{x_0}$}
+
+$A_1 \ddot{\alpha}(t) - Z_G   m_1 \dot{v}(t) \cos \alpha = Z_G gm_1\sin\alpha  +C_R $
+
+
 \end{corrige}
 \else
 \fi
