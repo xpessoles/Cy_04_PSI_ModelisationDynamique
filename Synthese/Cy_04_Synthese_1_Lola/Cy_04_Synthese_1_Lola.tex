@@ -59,6 +59,8 @@
 \fi
 
 \subsection*{Mise en situation}
+\ifprof
+\else
 Le développement de robots à forme humaine est en
 croissance constante depuis quelques dizaines
 d’années. En robotique, il est difficile d’affirmer que
@@ -120,6 +122,7 @@ l'angle d'inclinaison du haut du corps par rapport à la verticale.
 \includegraphics[width=.8\linewidth]{fig_06}
 \end{center}
 
+\fi
 
 \begin{obj}
 L'objectif de cette partie est de mettre en place un modèle du maintien
@@ -128,13 +131,16 @@ commande permettant d'assurer les performances du cahier des
 charges de l'exigence 1.3.2.
 \end{obj}
 
+\ifprof
+\else
 Les performances dynamiques de l'axe de tangage doivent vérifier les critères suivants:
 \begin{center}
 \includegraphics[width=\linewidth]{fig_07_a}
 \end{center}
-
+\fi
 \subsection*{Modèle de connaissance de la dynamique de tangage}
-
+\ifprof
+\else
 Le modèle mécanique utilisé pour mener notre étude est donné sur la figure suivante. L'association des liaisons entre
 le tronc et les jambes au niveau de la hanche est équivalente, dans le plan sagittal $\left(O_T,\vect{y_0},\vect{z_0}\right)$, à une liaison pivot d'axe $\left(O_T,\vect{x_0}\right)$ . Le tronc sera considéré comme un solide admettant le plan $\left(O_T,\vect{y_0},\vect{z_0}\right)$ comme plan de
 symétrie. Le cahier des charges stipule que LOLA doit pouvoir marcher à la vitesse de \SI{5}{km/h}. Cette vitesse
@@ -160,7 +166,7 @@ Les caractéristiques d'inertie du tronc 1 de LOLA sont :
 L'axe de sortie du réducteur exerce un couple de redressement sur le tronc 1 modélisé par le torseur couple
 suivant : $\torseurstat{T}{\text{hd}}{1}=\torseurl{\vect{0}}{C_R\vect{x_0}}{O_T}$. L'angle $\alpha$ sera supposé faible pendant le mouvement : ainsi $\cos \alpha \simeq 1$ et $\sin \alpha \simeq \alpha$.
 
-
+\fi
 \subparagraph{} \textit{Proposer une démarche de résolution afin d'obtenir l'équation différentielle du mouvement reliant $\alpha$ et
 ses dérivées successives aux données du problème. Effectuer un bilan des actions mécaniques
 extérieures au système matériel isolé.}
@@ -219,7 +225,8 @@ $A_1 \ddot{\alpha}(t) - Z_G   m_1 \dot{v}(t) \cos \alpha = Z_G gm_1\sin\alpha  +
 \else
 \fi
 
-
+\ifprof
+\else
 Le contrôle de l'angle s'effectue par l'intermédiaire du moteur asservi en position, suivi du réducteur Harmonic-
 Drive© de rapport de réduction $r= \dfrac{1}{100}$. Le moment d'inertie de l'arbre moteur suivant son axe de rotation est
 noté $J_m$, le couple moteur exercé sur l'arbre d'entrée du réducteur est noté $C_m$. Le réducteur Harmonic-
@@ -229,10 +236,12 @@ différentielle du mouvement devient :
 $J_{\text{eq}} \dfrac{\dd^2\alpha(t)}{\dd t^2} -m_1gZ_G\alpha(t)=m_1 Z_G \dfrac{\dd v(t)}{\dd t}+\dfrac{C_m(t)}{r}$.
 
 $J_{\text{eq}}$ est le moment d'inertie équivalent de l'ensemble du tronc ramené sur l'axe moteur.
+\fi
 
 
 \subsection*{Modèle du contrôle actif de la position verticale}
-
+\ifprof
+\else
 On note $\Gamma(t)=\dfrac{\dd v(t)}{\dd t }$. Les conditions de Heaviside sont vérifiées. Le schéma-blocs du contrôle de la position angulaire du tronc de LOLA est représenté sur la figure suivante. La consigne angulaire est nulle afin de garder le
 tronc du robot vertical: $\alpha_c(t)=0$. Les transformées de Laplace des fonctions seront notées en majuscules et
 le paramètre de Laplace sera noté $p$.
@@ -246,6 +255,7 @@ le paramètre de Laplace sera noté $p$.
 Le comportement du moteur sera considéré comme celui d'un moteur à courant continu dont les équations de
 comportement sont les suivantes : $u_c (t)=e(t)+L \dfrac{\dd i(t)}{\dd t} +Ri (t)$; $e(t)=k_e\omega_m(t)$ et $C_m( t)=k_c i(t)$.
 
+\fi
 
 \subparagraph{} \textit{Indiquer les fonctions de transfert des blocs $B_1$, $B_2$, $B_3$, $B_4$ , $B_5$ , $B_6$ et $B_7$ ainsi que l'expression de la fonction de transfert $H_1(p)$ .}
 \ifprof
@@ -262,8 +272,11 @@ Enfin, $B_4 = \dfrac{1}{r}$.
 \else
 \fi
 
+\ifprof
+\else
 Afin d'analyser la stabilité de cet asservissement, nous cherchons à déterminer la fonction de transfert en
 boucle ouverte du système non-corrigé : $ F(p)= \dfrac{\alpha (p)}{U_c (p)}$ en supposant la perturbation nulle.
+\fi
 
 \subparagraph{} \textit{Déterminer la fonction de transfert de la boucle dynamique $H_{\text{dyn}}(p)=\dfrac{\alpha (p)}{C_m(p)}$ en supposant la perturbation nulle.}
 \ifprof
@@ -311,28 +324,49 @@ Fonction de transfert d'ordre 3, de classe 0 et de gain $K=-\dfrac{k_c }{ Rm_1gZ
 \else
 \fi
 
+\ifprof
+\else
 Une simulation numérique permet de montrer que $F(p)$ est de la forme $\dfrac{K}{(1+ \tau_1p)(-1+ \tau_1p)(1+ \tau_2p)}$. Les diagrammes de Bode de cette fonction de transfert sont donnés ci-dessous.
 
 \begin{center}
 \includegraphics[width=\linewidth]{dr_12}
 \end{center}
+\fi
+
 
 \subparagraph{} \textit{En analysant les diagrammes de Bode, déterminer les valeurs de $\tau_1$, $\tau_2$ et $K$. Justifier en complétant les diagrammes avec les diagrammes asymptotiques de
 gain et de phase.}
 \ifprof
 \begin{corrige}
+On a $G_{\text{dB}}(\omega)=20\log K - 20\log \sqrt{1+\tau_1^2\omega^2} - 20\log \sqrt{1+\tau_1^2\omega^2}-20\sqrt{1+\tau_2^2\omega^2}$ 
+
+$=20\log K - 20\log \left(1+\tau_1^2\omega^2 \right)-20\log\sqrt{1+\tau_2^2\omega^2}$.
+
+
+De plus $\varphi\left(\omega\right)=\arg K - \arg \left( 1+ \tau_1p\right)- \arg \left( -1+ \tau_1p\right)- \arg \left( 1+ \tau_2p\right)$ 
+
+$= -\arctan\left( \tau_1 \omega\right)-\pi -\arctan\left( \tau_1 \omega\right)-\arctan\left( \tau_2 \omega\right)$
+
+ $= -\pi-2\arctan\left( \tau_1 \omega\right)-\arctan\left( \tau_2 \omega\right)$.
+ 
+ On a donc $\tau_1 = \dfrac{1}{\omega_1} = \SI{1}{s}$ et $\tau_2 = \dfrac{1}{\omega_2} = \SI{1e-3}{s}$.
+ 
+ De plus, $20\log K=-40$ et $K=\SI{0,01}{rad.V^{-1}}$.
 \end{corrige}
 \else
 \fi
 
+\ifprof
+\else
 Pour la suite de l'étude, nous simplifierons $F(p)$ sous la forme suivante : $\dfrac{K}{(1+\tau_1p)(-1+ \tau_1p)}$.
-
+\fi
 
 
 
 \subparagraph{} \textit{Justifier le choix de cette simplification.}
 \ifprof
 \begin{corrige}
+Les pôles de la fonction de transfert sont $\dfrac{-1}{\tau_1}=-1$, $\dfrac{1}{\tau_1}=1$ et $\dfrac{-1}{\tau_2}=-1000$. Les poles dominants sont ceux les plus proches de l'axe des imaginaires. $-1$ et $1$ sont donc les pôles dominants. Cela justifie donc la forme proposée (le pôle $-1000$ est négligé).
 \end{corrige}
 \else
 \fi
@@ -342,32 +376,35 @@ Pour la suite de l'étude, nous simplifierons $F(p)$ sous la forme suivante : $\
 fermée.}
 \ifprof
 \begin{corrige}
+Pour que le critère du revers, les pôles doivent être à partie réelle négative ou nulle. 
 \end{corrige}
 \else
 \fi
 
 
-\subparagraph{} \textit{Afin de résoudre ce problème, il est décidé d'asservir la chaîne directe en position et en vitesse. Pour cela, la centrale inertielle permet de mesurer l'angle de tangage $\alpha (t )$ ainsi que la vitesse angulaire $\dfrac{\dd \alpha(t)}{\dd t}$.}
 \ifprof
-\begin{corrige}
-\end{corrige}
 \else
-\fi
+Afin de résoudre ce problème, il est décidé d'asservir la chaîne directe en position et en vitesse. Pour cela, la centrale inertielle permet de mesurer l'angle de tangage $\alpha (t )$ ainsi que la vitesse angulaire $\dfrac{\dd \alpha(t)}{\dd t}$.
 
-
-L'asservissement ainsi réalisé est présenté sous la forme du schéma-blocs de la figure 8 (page 9).
+L'asservissement ainsi réalisé est présenté sous la forme du schéma-blocs de la figure suivante.
 $U_c (p)$ est la tension de commande en sortie du correcteur. La fonction de transfert de la centrale inertielle
-sera prise égale à $H_{c i}(p)=K_1(p+1)$.
+sera prise égale à $H_{\text{c i}}(p)=K_1(p+1)$.
 
 \begin{center}
 \includegraphics[width=\linewidth]{fig_08}
 \end{center}
-
+\fi
 
 
 \subparagraph{} \textit{Déterminer deux conditions sur $K_1$ pour que la fonction de transfert en boucle ouverte non-corrigée $\dfrac{\alpha (p)}{U_C(p)}$ soit stable. En déduire la valeur minimale de $K_1$.}
 \ifprof
 \begin{corrige}
+La fonction de transfert en boucle ouverte non corrigée est donnée par : $\dfrac{F(p)}{1+F(p)H_{\text{c i}}(p)}$ 
+
+$=\dfrac{\dfrac{K}{(1+\tau_1p)(-1+ \tau_1p)}}{1+\dfrac{K}{(1+\tau_1p)(-1+ \tau_1p)} K_1(p+1) }$
+$=\dfrac{K}{(1+\tau_1p)(-1+ \tau_1p)+K K_1(p+1) }$
+$=\dfrac{K}{-1-\tau_1p+\tau_1p + \tau_1^2p^2+K K_1p+K K_1 }$
+$=\dfrac{K}{-1+K K_1  +K K_1p + \tau_1^2p^2}$. Il faut donc que $KK_1 -1>0$ soit $K_1 >\dfrac{1}{K}$ soit $K_1>\SI{100}{V.rad^{-1}}$.
 \end{corrige}
 \else
 \fi
@@ -377,36 +414,90 @@ sera prise égale à $H_{c i}(p)=K_1(p+1)$.
 \subparagraph{} \textit{Déterminer $K_1$ pour que la fonction de transfert $\dfrac{\alpha (p)}{U_C(p)}$
  ait un facteur d'amortissement $\xi=1,7$.
 Vérifier que cette valeur est compatible avec les conditions obtenues précédemment. En déduire les
-valeurs de la pulsation propre$\omega_0$ et du gain statique de la boucle ouverte $K_{\text{BO}}$.}
+valeurs de la pulsation propre $\omega_0$ et du gain statique de la boucle ouverte $K_{\text{BO}}$.}
 \ifprof
-\begin{corrige}
+\begin{corrige}~\\
+
+En mettant la fonction précédente sous forme canonique, on a donc $\dfrac{\dfrac{K}{K K_1-1}}{ 1 +\dfrac{K K_1}{K K_1-1}p + \dfrac{\tau_1^2}{K K_1-1}p^2}$.
+
+On a $\dfrac{1}{\omega_0^2}= \dfrac{\tau_1^2}{K K_1-1}$ $\Leftrightarrow {\omega_0^2}= \dfrac{K K_1-1}{\tau_1^2}$. 
+
+De plus, $\dfrac{2\xi}{\omega_0} = \dfrac{K K_1}{K K_1-1}$ $\Leftrightarrow 2\xi \left( K K_1-1 \right) = K K_1 \omega_0$  $\Leftrightarrow 2\xi \left( K K_1-1 \right) = K K_1 \sqrt{K K_1-1}$.
+
+ $\Rightarrow 4\xi^2 \left( K K_1-1 \right)^2 = K^2 K_1^2 \left(K K_1-1\right)$
+  $\Leftrightarrow 4\xi^2 \left( K K_1-1 \right)^2 - K^2 K_1^2 \left(K K_1-1\right)=0$
+    $\Leftrightarrow 4\xi^2 \left( K K_1-1 \right) - K^2 K_1^2 =0$
 \end{corrige}
 \else
 \fi
 
+\ifprof
+\else
 Quels que soient les résultats trouvés précédemment, nous utiliserons les expressions suivantes pour la suite
 de l'étude : $\dfrac{\alpha (p)}{U_C(p)} = \dfrac{K_{\text{BO}}}{1+\dfrac{2\xi}{\omega_0}p+\dfrac{p^2}{\omega_0^2}}$
 avec $K_{\text{BO}}=1,1\cdot 10^{-3}$ , $\xi=1,7$ et $\omega_0=\SI{3}{rad.s^{-1}}$ . Pour répondre au cahier des
 charges, il est décidé d'implanter un correcteur de fonction de transfert suivante : $H_{\text{cor}} (p)=K_p \dfrac{1+aT_d p}{1+T_d p}$ avec $a>1$.
 
+\fi
+
 \subparagraph{} \textit{Nommer ce correcteur.}
 \ifprof
 \begin{corrige}
+Il s'agit d'un correcteur proportionnel et à avance de phase. 
 \end{corrige}
 \else
 \fi
 
-Les diagrammes de Bode de gain et de phase (pour $K_p=1$ ) de ce correcteur sont fournis ci-dessou. Afin
+\ifprof
+\else
+Les diagrammes de Bode de gain et de phase (pour $K_p=1$ ) de ce correcteur sont fournis ci-dessous. Afin
 d'assurer un gain significatif de phase, nous décidons de placer $\omega_c$ en $\omega_{\text{BP}}=\SI{50}{rad.s^{-1}}$, définissant ainsi la bande passante.
 
 \begin{center}
 \includegraphics[width=\linewidth]{ann_03}
 \end{center}
 
+\fi
+
 \subparagraph{} \textit{Déterminer la valeur du paramètre a pour que le correcteur permette d'assurer la marge de phase
 du cahier des charges. En déduire la valeur de $T_d$.}
 \ifprof
-\begin{corrige}
+\begin{corrige} ~\\
+
+D'après le cahier des charges, on souhaite que la bande passante à \SI{0}{dB} en boucle ouverte soit de \SI{50}{rad.s^{-1}} et la marge de phase doit être de 50\degres.
+
+\textbf{Calculons la phase pour le système non corrigé.}
+
+Pour calculer la phase, il faut faire attention, au domaine de définition de l'arctan. Il y a plusieurs façons de s'y prendre...
+On peut par exemple calculer les deux constantes de temps du système (vu que $\xi>1$). On peut aussi constater que pour un second ordre où $\xi>1$, la phase est comprise entre 0 et $-90\degres$ lorsque la pulsation est inférieure à \SI{3}{rad.s^{-1}} et la phase est comprise entre $-90$ et $-180\degres$ lorsque la pulsation est supérieure à \SI{3}{rad.s^{-1}}. 
+
+Ici on souhaite calculer la marge pour une pulsation de \SI{50}{rad.s^{-1}}. On aura donc une phase comprise entre $-90$ et $-180\degres$. Le calcul de l'arctan se fera donc avec un décalage de $-180\degres$. 
+
+
+
+$\varphi\left(\omega\right)=-180- \arctan\left( \dfrac{\dfrac{2 \xi \omega}{\omega_0}}{1-\dfrac{\omega^2}{\omega_0^2}}\right)=-168\degres $.
+
+La marge de phase est donc de $-168-(-180) = 12\degres$. Le correcteur doit donc apporter 38\degres. 
+
+On a $\sin\varphi_m = \dfrac{a-1}{a+1}$ $\Leftrightarrow a \sin\varphi_m + \sin\varphi_m = a- 1 $
+$\Leftrightarrow a \sin\varphi_m + \sin\varphi_m -a+1 = 0 $
+
+$\Leftrightarrow a \left( \sin\varphi_m -1\right)+ \sin\varphi_m +1 = 0 $
+$\Leftrightarrow a   = \dfrac{\sin\varphi_m +1}{1-\sin\varphi_m} =4,28$.
+
+Par suite, $T_d = \dfrac{1}{\omega_c\sqrt{a}}\simeq \SI{9,7e-3}{s}$.
+
+
+%Tout d'abord, $\xi>1$. On peut donc factoriser le dénominateur. 
+%On a $\Delta = \dfrac{4\xi^2}{\omega_0^2}-\dfrac{4}{\omega_0^2}=\dfrac{4}{\omega_0^2}\left(\xi^2 - 1 \right) = \left(\dfrac{2}{\omega_0}\sqrt{\xi^2 - 1}\right)^2$.
+%On a donc $p_{1,2} = \dfrac{- \dfrac{2\xi }{\omega_0}\pm\left(\dfrac{2}{\omega_0}\sqrt{\xi^2 - 1}\right) }{\dfrac{2}{\omega_0^2}}$ 
+%$= \omega_0\left(- \xi\pm\sqrt{\xi^2 - 1} \right)$.
+%
+%Le dénominateur est donc de la forme $\dfrac{1}{\omega_0^2}\left( p-  \omega_0\left(- \xi-\sqrt{\xi^2 - 1} \right)\right)\left( p-  \omega_0\left(- \xi+\sqrt{\xi^2 - 1} \right)\right)$
+%
+% $=\dfrac{1}{\omega_0^2}\left( p+ \omega_0\left( \xi+\sqrt{\xi^2 - 1} \right)\right)\left( p+  \omega_0\left(\xi-\sqrt{\xi^2 - 1} \right)\right)$. 
+ 
+
 \end{corrige}
 \else
 \fi
@@ -415,10 +506,17 @@ du cahier des charges. En déduire la valeur de $T_d$.}
 \subparagraph{} \textit{Déterminer le gain $K_p$ pour que le critère de bande passante du cahier des charges soit bien vérifié.}
 \ifprof
 \begin{corrige}
+On doit choisir $K_p$ pour que le gain soit nul lorsque $\omega_c = \SI{50}{rad.s^{-1}}$. 
+
+La gain non corrigé est de $G_{\text{dB}}(\omega)=20\log K_{BO} - 20 \log \left( \sqrt{\left( 1-\dfrac{\omega^2}{\omega_0^2}\right)^2+\left( \dfrac{2\omega\xi}{\omega_0}\right)^2}\right)$
+$=\SI{-108}{dB}$.
+
+Le gain apporté par l'avance de phase est de $10\log a=\SI{6,31}{dB}$. Le gain proportionnel doit donc apporter $-108+6=\SI{102}{dB}$. On cherche donc $20\log K_p = 102$ soit $K_p = 10^{102/20}=\SI{125892}{SI}$
 \end{corrige}
 \else
 \fi
-
+\ifprof
+\else
 La stabilité du tronc étant assurée, nous devons maintenant analyser les performances en précision et rapidité
 de l'asservissement de position angulaire. La consigne est nulle, ainsi seule la perturbation va écarter le tronc
 du robot de sa posture verticale. Cette perturbation provient du mouvement de marche souhaité c'est à dire de
@@ -428,12 +526,20 @@ Cette réponse est tracée sur la figure suivante.
 \begin{center}
 \includegraphics[width=\linewidth]{ann_04}
 \end{center}
+\fi
 
 
 \subparagraph{} \textit{Justifier l'allure de la réponse temporelle. Déterminer graphiquement sur le document réponse le temps de réponse à 5\%, le dépassement maximal et l'erreur statique. Conclure sur la capacité du correcteur à
 vérifier l'ensemble des critères du cahier des charges.}
 \ifprof
 \begin{corrige}
+Le système est perturbé << en accélération >>. On souhaite minimiser l'influence de cette perturbation sur l'angle de tangage (souhaité nul).
+On mesure : 
+\begin{itemize}
+\item temps de réponse à 5\% : $\SI{40}{ms} <\SI{0,2}{s}$ : CDCF OK;
+\item écart statique : $\simeq \SI{2,4e3}{\degres} <0,5\degres$ : CDCF OK;
+\item dépassement $\simeq \SI{0,8e3}{\degres} <1\degres$ : CDCF OK.
+\end{itemize}
 \end{corrige}
 \else
 \fi
