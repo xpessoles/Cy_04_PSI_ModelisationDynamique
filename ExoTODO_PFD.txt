@@ -4,3 +4,7 @@ Mines Ponts PSI 2010
 Robot lolta : PFD en un point non fixe et non centre d'inertie.
 
 PFD Chaine ouverte CCS MP 2010
+
+\def\xxYCartouche{-2.25cm}
+\def\xxYongletGarde{.9cm}
+\def\xxYOnget{.9cm}

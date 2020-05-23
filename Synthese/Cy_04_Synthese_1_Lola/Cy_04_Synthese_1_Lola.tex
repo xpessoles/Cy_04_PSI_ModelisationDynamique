@@ -204,21 +204,42 @@ $= \torseurl{-gm_1\vect{z_0}}{Z_G gm_1\sin\alpha \vect{x_0}}{O_T}$.
 
 \textbf{Calcul du moment dynamique} 
 
-Calcul en $G_T$. 
+Calcul de $\vectv{G_T}{1}{0} =\vectv{O_T}{1}{0} + \vect{G_TO_T} \wedge \dot{\alpha} \vect{x_0}$
+$=v(t)\vect{y_0}-Z_G\vect{z_1} \wedge \dot{\alpha}\vect{x_0}$
+$=v(t)\vect{y_0}-Z_G \dot{\alpha}\vect{y_1}$
+$=\left(v(t)-Z_G \dot{\alpha}\right)\vect{y_1}$
 
-$\vectmd{1}{0}{G} = \left[\dfrac{\dd \vectmc{1}{0}{G_T}}{\dd t}\right]_{\rep{0}}$ $=\left[\dfrac{\dd \left( A_1 \dot{\alpha}\vect{x_0}\right)}{\dd t}\right]_{\rep{0}}$
-$= A_1 \ddot{\alpha}\vect{x_0}$
 
-Déplacement en $O_T$. 
+La matrice d'inertie est donnée en $O_T$, point quelconque. 
 
-On a $\vectmd{1}{0}{O_T} = \vectmd{1}{0}{G_T} + \vect{O_T G_T}\wedge m_1 \dot{v}(t) \vect{y_0}$
-$= A_1 \ddot{\alpha}\vect{x_0} + Z_G \vect{z_1} \wedge m_1 \dot{v}(t) \vect{y_0}$
-$= \left(A_1 \ddot{\alpha} - Z_G   m_1 \dot{v}(t) \cos \alpha \right)\vect{x_0} $.
+Commençons par calculer le moment cinétique : 
+
+$\vectmc{1}{0}{O_T} = \inertie{O_T}{1}\vecto{1}{0}+m_1\vect{O_TG} \wedge \vectv{O_T}{1}{0}$
+$=A_1\dot{\alpha}_1 \vect{x_1}  + m_1 Z_g\vect{z_1} \wedge v(t) \vect{y_0}$
+$=A_1\dot{\alpha}_1 \vect{x_1}  - m_1 Z_g v(t)  \cos \alpha \vect{x_0}$ %\vect{z_1} \wedge  \vect{y_0}$
+
+
+Calcul du moment dynamique :
+ $\vectmd{1}{0}{O_T}=\left[\dfrac{\dd \vectmc{1}{0}{O_T}  }{\dd t }\right]_{\rep{0}} + m_1 \vectv{O_T}{1}{0}\wedge \vectv{G}{1}{0}$
+$=A_1\ddot{\alpha}_1 \vect{x_1}  - m_1 Z_g \ddot{v}(t)  \cos \alpha \vect{x_0} + m_1 Z_g v(t) \dot{\alpha} \sin \alpha \vect{x_0} + m_1 v(t) \vect{y_0}  \wedge \left(v(t)-Z_G \dot{\alpha}\right)\vect{y_1} $
+
+$=A_1\ddot{\alpha}_1 \vect{x_1}  - m_1 Z_g \ddot{v}(t)  \cos \alpha \vect{x_0} + 2m_1 Z_g v(t) \dot{\alpha} \sin \alpha \vect{x_0} - m_1 v(t)^2 \sin\alpha \vect{x_0}$
+
+%
+%
+%$\vectmd{1}{0}{G} = \left[\dfrac{\dd \vectmc{1}{0}{G_T}}{\dd t}\right]_{\rep{0}}$ $=\left[\dfrac{\dd \left( A_1 \dot{\alpha}\vect{x_0}\right)}{\dd t}\right]_{\rep{0}}$
+%$= A_1 \ddot{\alpha}\vect{x_0}$
+%
+%Déplacement en $O_T$. 
+%
+%On a $\vectmd{1}{0}{O_T} = \vectmd{1}{0}{G_T} + \vect{O_T G_T}\wedge m_1 \dot{v}(t) \vect{y_0}$
+%$= A_1 \ddot{\alpha}\vect{x_0} + Z_G \vect{z_1} \wedge m_1 \dot{v}(t) \vect{y_0}$
+%$= \left(A_1 \ddot{\alpha} - Z_G   m_1 \dot{v}(t) \cos \alpha \right)\vect{x_0} $.
 
 
 \textbf{Théorème du moment dynamique en $O_T$ suivant $\vect{x_0}$}
 
-$A_1 \ddot{\alpha}(t) - Z_G   m_1 \dot{v}(t) \cos \alpha = Z_G gm_1\sin\alpha  +C_R $
+%$A_1 \ddot{\alpha}(t) - Z_G   m_1 \dot{v}(t) \cos \alpha = Z_G gm_1\sin\alpha  +C_R $
 
 
 \end{corrige}
