@@ -114,7 +114,7 @@ Les différents repères sont les suivants :
 \begin{itemize}
 \item repère galiléen : $\rep{g} \repere{O_R}{X_g}{Y_g}{Z_g}$, $O_R$ est lié à la route, $\Pi_R = \angl{X_g}{Y_g}$ plan fixe par rapport à la route;
 \item repère intermédiaire : $\rep{1} \repere{O_1}{X_g}{Y_g}{Z_g}$, $\vect{O_R O_1} = a \vect{Y_g}$ ;
-\item repère intermédiaire : $\rep{0} \repere{O}{X_g}{Y_g}{Z_g}$, O lié au châssis et $\vect{O_1 O} = b \vect{X_L}$, $\vecto{\rep{0}}{\rep{g}}=\vect{0}$, $\vectv{O}{\rep{0}}{\rep{g}}=V\vect{U}$ avec $\vect{O_R O}\cdot \vect{Z_g}=0$ 
+\item repère intermédiaire : $\rep{0} \repere{O}{X_g}{Y_g}{Z_g}$, $O$ lié au châssis et $\vect{O_1 O} = b \vect{X_L}$, $\vecto{\rep{0}}{\rep{g}}=\vect{0}$, $\vectv{O}{\rep{0}}{\rep{g}}=V\vect{U}$ avec $\vect{O_R O}\cdot \vect{Z_g}=0$ 
 et $V$ constante positive;
 \item repère lacet $\rep{0} \repere{G}{X_L}{Y_L}{Z_L}$, $\vect{OG}=h\vect{Z_g}$ avec $G$ centre d'inertie lié du châssis  
 lié au véhicule, $\vect{Z_L}=\vect{Z_g}$ et $\angl{Y_g}{Y_L}=\angl{X_g}{X_L}=\psi(t)$ angle de lacet, $h$ constate positive;
@@ -154,14 +154,29 @@ dans la mise en équation comme un solide indéformable.
 \subsection*{Modélisation du comportement dynamique du véhicule}
 
 \subparagraph{}\textit{Déterminer les composantes dans le repère $\rep{L}$ du moment cinétique
-$\vectmc{O}{\text{VH}}{\rep{g}}$
-au point $O$, du véhicule (VH) dans son mouvement par rapport au
-repère $\rep{g}$, en fonction de $\dot{\psi}$, $\alpha$, $h$, $V$ et des caractéristiques inertielles.
-}
+$\vectmc{O}{\text{VH}}{\rep{g}}$ au point $O$, du véhicule (VH) dans son mouvement par rapport au repère $\rep{g}$, en fonction de $\dot{\psi}$, $\alpha$, $h$, $V$ et des caractéristiques inertielles.}
 \ifprof
 \begin{corrige}
 
+La matrice d'inertie étant donnée en $G$, commençons par calculer 
+$\vectmc{G}{\text{VH}}{\rep{g}} = \inertie{G}{\text{VH}} \vecto{\text{VH}}{\rep{g}} $
+$ =\matinertie{A}{B}{C}{0}{-E}{0}{\rep{L}} \dot{\psi}\vect{Z_g} $
+$ =\matinertie{A}{B}{C}{0}{-E}{0}{\rep{L}} \begin{pmatrix} 0 \\ 0 \\ \dot{\psi} \end{pmatrix}_{\rep{L}} $
+$ =  \begin{pmatrix} -E\dot{\psi} \\ 0 \\ C\dot{\psi} \end{pmatrix}_{\rep{L}} $.
 
+Il faut alors déplacer le moment cinétique. On aura pour cela besoin de $\vectv{G}{\text{VH}}{\rep{g}} $
+$= \vectv{O}{\text{VH}}{\rep{g}} + \vect{GO}\wedge  \vecto{\text{VH}}{\rep{g}}$
+$ = V\vect{U}-h\vect{Z_g} \wedge  \dot{\psi}\vect{Z_g} $
+$ = V\vect{U}$.
+
+Au final, 
+$\vectmc{O}{\text{VH}}{\rep{g}} =\vectmc{G}{\text{VH}}{\rep{g}} +\vect{OG}\wedge MV\vect{U}$
+$ = \begin{pmatrix} -E\dot{\psi} \\ 0 \\ C\dot{\psi} \end{pmatrix}_{\rep{L}} + h\vect{Z_g} \wedge MV\vect{U}$ 
+$ = \begin{pmatrix} -E\dot{\psi} \\ 0 \\ C\dot{\psi} \end{pmatrix}_{\rep{L}} + hMV\vect{V}$ 
+$ = \begin{pmatrix} -E\dot{\psi} \\ 0 \\ C\dot{\psi} \end{pmatrix}_{\rep{L}} + hMV\left(\cos\alpha \vect{Y_L} - \sin\alpha \vect{X_L} \right)$ 
+$ = \begin{pmatrix} -E\dot{\psi} - hMV \sin\alpha \\ hMV\cos\alpha \\ C\dot{\psi} \end{pmatrix}_{\rep{L}} $.
+
+\textbf{ -- Je note $\vect{V}$ le vecteur tel que $\base{U}{V}{Z_L}$ est une base. --}
 \end{corrige}
 \else
 \fi
@@ -171,8 +186,28 @@ $\vectmd{O}{\text{VH}}{\rep{g}}$
 au point $O$, du véhicule (VH) dans son mouvement par rapport au
 repère $\rep{g}$, en fonction de $\dot{\psi}$, $\ddot{\psi}$, $\dot{\alpha}$, $\alpha$, $h$, $V$ et des caractéristiques inertielles.
 }\ifprof
-\begin{corrige}
+\begin{corrige} ~\\
 
+On a en un point quelconque
+ $\vectmd{O}{\text{VH}}{\rep{g}} =\left[ \dfrac{\dd \vectmc{O}{\text{VH}}{\rep{g}}}{\dd t}\right]_{\rep{g}}+\vectv{O}{\text{VH}}{\rep{g}} \wedge M\vectv{G}{\text{VH}}{\rep{g}}$.
+ 
+ D'une part, $\left[ \dfrac{\dd \vect{X_L} }{\dd t}\right]_{\rep{g}} = \dot{\psi}\vect{Y_L}$ et $\left[ \dfrac{\dd \vect{Y_L} }{\dd t}\right]_{\rep{g}} = -\dot{\psi}\vect{X_L}$. On a donc 
+ $\left[ \dfrac{\dd \vectmc{O}{\text{VH}}{\rep{g}}}{\dd t}\right]_{\rep{g}} $ 
+ 
+ $ = 
+  \begin{pmatrix} 
+  -E\ddot{\psi} - \dot{\alpha} hMV \cos\alpha - \dot{\psi}\left( hMV\cos\alpha\right)\\ 
+  -\dot{\alpha} hMV\sin\alpha +\dot{\psi}\left( -E\dot{\psi} -  hMV \sin\alpha\right)\\ 
+  C\ddot{\psi} \end{pmatrix}_{\rep{L}} 
+  $.
+  
+  D'autre part, $\vectv{O}{\text{VH}}{\rep{g}} \wedge M\vectv{G}{\text{VH}}{\rep{g}}$ $=V\vect{U}\wedge MV\vect{U} = \vect{0}$.
+  
+  Au final, $\vectmd{O}{\text{VH}}{\rep{g}} = \begin{pmatrix} 
+  -E\ddot{\psi} - \left(\dot{\alpha} + \dot{\psi}\right( hMV\cos\alpha)\\ 
+  -E\dot{\psi}^2 -\left(\dot{\alpha} +\dot{\psi}\right)  hMV \sin\alpha\\ 
+  C\ddot{\psi} \end{pmatrix}_{\rep{L}} 
+  $.
 
 \end{corrige}
 \else
@@ -183,17 +218,24 @@ en fonction de $\dot{\psi}$, $\dot{\alpha}$, $\alpha$, $V$. Linéariser la relat
 de la position d'équilibre définie par $\alpha=0$, $\psi=0$ et $\beta=0$.}
 \ifprof
 \begin{corrige}
-
+On a vu que $\vectv{G}{\text{VH}}{\rep{g}} = V\vect{U}$, donc  $\vectg{G}{\text{VH}}{\rep{g}} = V\left(\dot{\psi}+\dot{\alpha} \right)\vect{V}$
+$= V\left(\dot{\psi}+\dot{\alpha} \right)\left( \cos\alpha \vect{Y_L} - \sin\alpha \vect{X_L} \right)$. 
+On a donc  $\vect{\Gamma\left(G/\rep{g} \right)}\cdot \vect{Y_L} = V\left(\dot{\psi}+\dot{\alpha} \right) \cos\alpha  $.
+En linéarisant cette relation, on a  $\vect{\Gamma\left(G/\rep{g} \right)}\cdot \vect{Y_L} = V\left(\dot{\psi}+\dot{\alpha} \right)$.
 
 \end{corrige}
 \else
 \fi
 
 
-\subparagraph{}\textit{En admettant que l’angle de dérive de la roue avant s’écrit : $\delta_{12}\simeq\alpha=-\beta+\dfrac{\ell_1}{V}\dot{\psi}$ et celui de la roue arrière $\delta_{34}\simeq\alpha-\dfrac{\ell_2}{V}\dot{\psi}$, en déduire l’expression de $\vectf{\overline{\text{VH}}}{\text{VH}}$. Linéariser la relation obtenue au voisinage
+\subparagraph{}\textit{En admettant que l’angle de dérive de la roue avant s’écrit : $\delta_{12}\simeq\alpha-\beta+\dfrac{\ell_1}{V}\dot{\psi}$ et celui de la roue arrière $\delta_{34}\simeq\alpha-\dfrac{\ell_2}{V}\dot{\psi}$, en déduire l’expression de $\vectf{\overline{\text{VH}}}{\text{VH}}\cdot \vect{Y_L}$. Linéariser la relation obtenue au voisinage
 de la position d'équilibre définie par $\alpha=0$, $\psi=0$ et $\beta=0$.}
 \ifprof
 \begin{corrige}
+On a $Y_{12}=-2D\delta_{12}$ et $Y_{34}=-2D\delta_{34}$. En conséquence, 
+$Y_{12}=-2D\left( \alpha-\beta+\dfrac{\ell_1}{V}\dot{\psi} \right)$ et $Y_{34}=-2D \left(  \alpha-\dfrac{\ell_2}{V}\dot{\psi}\right)$.
+
+Au final, $\vectf{\overline{\text{VH}}}{\text{VH}}\cdot \vect{Y_L} =-2D\left( \alpha-\beta+\dfrac{\ell_1}{V}\dot{\psi} \right) -2D \left(  \alpha-\dfrac{\ell_2}{V}\dot{\psi}\right)$ $=-2D\left( 2\alpha-\beta+\dfrac{\ell_1-\ell_2}{V}\dot{\psi} \right)$.
 
 
 \end{corrige}
@@ -228,7 +270,9 @@ $$
 
 \ifprof
 \begin{corrige}
+La première équation correspond au théorème de la résultante dynamique appliqué à VH en projection sur  $\vect{Y_L}$.
 
+La seconde équation correspond au théorème du moment dynamique appliqué à VH en  $O$ projection sur  $\vect{Z_L}$.
 
 \end{corrige}
 \else
@@ -239,8 +283,49 @@ et l’angle de braquage $\beta(p)$ de la roue avant : $H_2(p)=\dfrac{\psi(p)}{\
 Discuter de la stabilité de ce modèle.}
 \ifprof
 \begin{corrige}
+Dans le domaine de Laplace, on a 
+$$
+\left\{
+\begin{array}{l}
+211 p {\psi}(p)+225p{\alpha}(p)+840\alpha(p)=420\beta(p) \\
+31p^2{\psi}(p)+91p{\psi}(p)-210\alpha(p)=420\beta(p) 
+\end{array}
+\right. $$
+
+$
+\Rightarrow \left\{
+\begin{array}{l}
+\left(225p+840\right)\alpha(p)=420\beta(p) - 211 p {\psi}(p)\\
+\left(31p^2+91p\right){\psi}(p)-210\alpha(p)=420\beta(p) 
+\end{array}
+\right. $
+
+$
+\Rightarrow \left\{
+\begin{array}{l}
+\alpha(p)=\dfrac{420\beta(p) - 211 p {\psi}(p)}{225p+840}\\
+\left(31p^2+91p\right){\psi}(p)-210\dfrac{420\beta(p) - 211 p {\psi}(p)}{225p+840}=420\beta(p) 
+\end{array}
+\right. $
+
+$\left(31p^2+91p + \dfrac{210\times 211p}{225p+840}\right){\psi}(p)-210\dfrac{420\beta(p)}{225p+840}=420\beta(p) $
+
+$\Rightarrow \left(31p^2+91p + \dfrac{210\times 211p}{225p+840}\right){\psi}(p)+\left(\dfrac{-210\times 420}{225p+840}-420\right)\beta(p)=0 $
+
+$\Rightarrow H_2(p) = \dfrac{\dfrac{210\times 420}{225p+840}+420}{31p^2+91p + \dfrac{210\times 211p}{225p+840}} 
+ = \dfrac{210\times 420+420\left(225p+840\right)}{\left(225p+840\right)\left(31p^2+91p \right)+ 210\times 211p}   $
+
+$ = \dfrac{210\times 420+420\times 840+420\times 225p}{p\left(\left(225p+840\right)\left(31p+91 \right)+ 210\times 211\right)}   $
 
 
+$ = \dfrac{210\times 420+420\times 840+420\times 225p}{p\left(225\times 31 p^2 
++840\times 31 p + 91 \times 225 p+91\times 840 + 210\times 211\right)}   $
+
+$ = \dfrac{210\times 420+420\times 840+420\times 225p}{p\left(225\times 31 p^2 
++840\times 31 p + 91 \times 225 p+91\times 840 + 210\times 211\right)}   $
+
+$ = \dfrac{441000+94500p}{p\left(6975  p^2 
++46515 p+120750\right)}   $
 \end{corrige}
 \else
 \fi
