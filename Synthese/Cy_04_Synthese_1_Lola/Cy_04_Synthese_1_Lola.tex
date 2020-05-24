@@ -206,8 +206,7 @@ $= \torseurl{-gm_1\vect{z_0}}{Z_G gm_1\sin\alpha \vect{x_0}}{O_T}$.
 
 Calcul de $\vectv{G_T}{1}{0} =\vectv{O_T}{1}{0} + \vect{G_TO_T} \wedge \dot{\alpha} \vect{x_0}$
 $=v(t)\vect{y_0}-Z_G\vect{z_1} \wedge \dot{\alpha}\vect{x_0}$
-$=v(t)\vect{y_0}-Z_G \dot{\alpha}\vect{y_1}$
-$=\left(v(t)-Z_G \dot{\alpha}\right)\vect{y_1}$
+$=v(t)\vect{y_0}-Z_G \dot{\alpha}\vect{y_1}$.
 
 
 La matrice d'inertie est donnée en $O_T$, point quelconque. 
@@ -221,9 +220,10 @@ $=A_1\dot{\alpha}_1 \vect{x_1}  - m_1 Z_g v(t)  \cos \alpha \vect{x_0}$ %\vect{z
 
 Calcul du moment dynamique :
  $\vectmd{1}{0}{O_T}=\left[\dfrac{\dd \vectmc{1}{0}{O_T}  }{\dd t }\right]_{\rep{0}} + m_1 \vectv{O_T}{1}{0}\wedge \vectv{G}{1}{0}$
-$=A_1\ddot{\alpha}_1 \vect{x_1}  - m_1 Z_g \ddot{v}(t)  \cos \alpha \vect{x_0} + m_1 Z_g v(t) \dot{\alpha} \sin \alpha \vect{x_0} + m_1 v(t) \vect{y_0}  \wedge \left(v(t)-Z_G \dot{\alpha}\right)\vect{y_1} $
+$=A_1\ddot{\alpha}_1 \vect{x_1}  - m_1 Z_g \dot{v}(t)  \cos \alpha \vect{x_0} + m_1 Z_g v(t) \dot{\alpha} \sin \alpha \vect{x_0} + m_1 v(t) \vect{y_0}  \wedge \left(v(t)\vect{y_0}-Z_G \dot{\alpha}\vect{y_1}\right) $
 
-$=A_1\ddot{\alpha}_1 \vect{x_1}  - m_1 Z_g \ddot{v}(t)  \cos \alpha \vect{x_0} + 2m_1 Z_g v(t) \dot{\alpha} \sin \alpha \vect{x_0} - m_1 v(t)^2 \sin\alpha \vect{x_0}$
+$=A_1\ddot{\alpha}_1 \vect{x_1}  - m_1 Z_g \dot{v}(t)  \cos \alpha \vect{x_0} + m_1 Z_g v(t) \dot{\alpha} \sin \alpha \vect{x_0} -Z_G \dot{\alpha} m_1 v(t) \sin \alpha  \vect{x_0}  $
+$=A_1\ddot{\alpha}_1 \vect{x_1}  - m_1 Z_g \dot{v}(t)  \cos \alpha \vect{x_0}  $
 
 %
 %
@@ -456,7 +456,7 @@ De plus, $\dfrac{2\xi}{\omega_0} = \dfrac{K K_1}{K K_1-1}$ $\Leftrightarrow 2\xi
 \else
 Quels que soient les résultats trouvés précédemment, nous utiliserons les expressions suivantes pour la suite
 de l'étude : $\dfrac{\alpha (p)}{U_C(p)} = \dfrac{K_{\text{BO}}}{1+\dfrac{2\xi}{\omega_0}p+\dfrac{p^2}{\omega_0^2}}$
-avec $K_{\text{BO}}=1,1\cdot 10^{-3}$ , $\xi=1,7$ et $\omega_0=\SI{3}{rad.s^{-1}}$ . Pour répondre au cahier des
+avec $K_{\text{BO}}=1,1\cdot 10^{-3}$, $\xi=1,7$ et $\omega_0=\SI{3}{rad.s^{-1}}$ . Pour répondre au cahier des
 charges, il est décidé d'implanter un correcteur de fonction de transfert suivante : $H_{\text{cor}} (p)=K_p \dfrac{1+aT_d p}{1+T_d p}$ avec $a>1$.
 
 \fi

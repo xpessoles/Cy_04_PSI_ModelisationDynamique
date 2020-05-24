@@ -61,14 +61,15 @@
 \fi
 
 
-
+\ifprof
+\else
 L'accroissement de la circulation automobile dans les grandes agglomérations
 menace de saturation leur réseau d'autoroutes. Une des solutions consiste à
 augmenter les flux en automatisant les voitures sur ces dernières. Après une
 évaluation du gain en terme de flux d'automobiles que peut apporter ce concept,
 l'étude portera sur le système de guidage automatique latéral d'une automobile
 sur une autoroute dite « intelligente ».
-
+\fi
 
 
 \begin{obj}
@@ -78,11 +79,13 @@ d'utiliser un modèle mécanique relativement simple, associé à une commande
 très robuste.
 \end{obj}
 
-\begin{center}
+%\begin{center}
 %\includegraphics[width=.5\linewidth]{fig_02}
-\end{center}
+%\end{center}
 
 
+\ifprof
+\else
 Une approche simplifiée permettant d'aborder le problème consiste à adopter un
 modèle dit « bicyclette », représenté sur la figure suivante, qui assimile le comportement
 du véhicule à celui d'une bicyclette :
@@ -149,7 +152,7 @@ La matrice d’inertie du véhicule de masse $M$, dans le repère $\rep{L}$, est
 forme : $\inertie{G}{\text{VH}}=\matinertie{A}{B}{C}{0}{-E}{0}{\rep{L}}$
 Remarque : le véhicule comprend la caisse, les roues, et sera modélisé
 dans la mise en équation comme un solide indéformable.
-
+\fi
 
 \subsection*{Modélisation du comportement dynamique du véhicule}
 
