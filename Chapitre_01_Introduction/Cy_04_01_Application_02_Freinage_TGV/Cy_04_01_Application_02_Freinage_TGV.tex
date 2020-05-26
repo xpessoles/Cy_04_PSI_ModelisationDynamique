@@ -1,0 +1,140 @@
+%%%% Paramétrage du TD %%%%
+\def\xxactivite{ \ifprof {Application 2 -- Corrigé } \else  Application 2 \fi} % \normalsize \vspace{-.4cm}
+\def\xxauteur{\textsl{Xavier Pessoles}}
+
+
+\def\xxnumchapitre{Chapitre 1 \vspace{.2cm}}
+\def\xxchapitre{\hspace{.12cm} Introduction à la dynamique du solide indéformable}
+
+\def\xxcompetences{%
+\textsl{%
+\textbf{Savoirs et compétences :}\\
+\begin{itemize}[label=\ding{112},font=\color{ocre}] 
+\item \textit{Res1.C2} : principe fondamental de la dynamique;
+\item \textit{Res1.C1.SF1} : proposer une démarche permettant la détermination de la loi de mouvement.
+\end{itemize}
+}}
+
+\def\xxtitreexo{Système de freinage d'un TGV DUPLEX}%Motorisation du moteur Haibike}
+\def\xxsourceexo{\hspace{.2cm} \footnotesize{Centrale Supelec PSI 2006}}
+%\def\xxauteur{\textsl{Xavier Pessoles}}
+
+\def\xxfigures{
+\includegraphics[width=.4\linewidth]{fig_00}
+}%figues de la page de garde
+
+
+\iflivret
+\input{../../style/new_pagegarde}
+\else
+\input{../../style/new_pagegarde}
+\fi
+\setlength{\columnseprule}{.1pt}
+
+\pagestyle{fancy}
+\thispagestyle{plain}
+
+\ifprof
+\vspace{5.5cm}
+\else
+\vspace{4.9cm}
+\fi
+
+\def\columnseprulecolor{\color{ocre}}
+\setlength{\columnseprule}{0.4pt} 
+
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\setcounter{exo}{0}
+
+
+
+%\ifprof
+%%\begin{multicols}{2}
+%\else
+%\begin{multicols}{2}
+%\fi
+%
+%
+%\subsection*{Paramétrage}
+%
+%\subparagraph{}\textit{}
+%\subparagraph{}\textit{}
+%
+%
+%\ifprof
+%\else
+%\end{multicols}
+%\fi
+
+
+
+\begin{center}
+\includegraphics[width=.9\linewidth]{cor_01}
+\end{center}
+
+On cherche une relation entre $\dot{\nu}$, $\nu$ et $F_R$ en fonction de $F_R$, $V_T$, $f(\nu)$, $I$, $r$, $M$ et $g$.
+
+\begin{itemize}
+\item On isole l'ensemble du TGV. 
+\item BAME :
+\begin{itemize}
+\item pesanteur;
+\item action des rails sur les N roues --- sur la roue $i$ $\vectf{\text{Rail}}{\text{Roue } i} = N_i \vect{Y_0}-f(\nu)N_i \vect{X_0}$ --- ;
+\end{itemize}
+\item Théorème de la résultante dynamique en projection sur $\vect{x_0}$ : $-f(\nu) N N_i  = M \vectg{G}{\text{Bogie}}{\text{Rail}}\cdot\vect{X_0} = M\dot{V}_T$ et donc $-f(\nu) N N_i = M\dot{V}_T$.
+\item Théorème de la résultante dynamique en projection sur $\vect{y_0}$ : $ N N_i  - Mg = 0$.
+\item Bilan :  $-f(\nu) g = \dot{V}_T$.
+\end{itemize}
+
+\vspace{.5cm}
+
+\begin{itemize}
+\item On isole la roue :
+\item BAME :
+\begin{itemize}
+\item contact roue rail;
+\item liaison pivot;
+\item couple de freinage.
+\end{itemize}
+\item Théorème de la résultante dynamique suivant $\vect{x_0}$ : $X-f(\nu)N_i=0$ (masse de la roue négligeable).
+\item Théorème de la résultante dynamique suivant $\vect{y_0}$ : $Y+N_i=0$ (avec $Y=-Mg$).
+\item Théorème du moment dynamique en $G_1$ : $C_f -rT_1 = I\ddot{\beta}$ $\Leftrightarrow C_f -rf(\nu)N_1 = I\ddot{\beta}$.
+\item Bilan : $X=f(\nu)Mg$, $N_i=Mg $ et $C_f -rf(\nu)Mg = I\ddot{\beta}$.
+\end{itemize}
+
+Par ailleurs, $F_R=C_f/r$; donc $C_f=rF_r$ et donc $rF_r -rf(\nu)Mg = I\ddot{\beta}$. 
+\vspace{.5cm}
+
+
+Il faut supprimer $\beta$ et introduire $\nu$. $\beta$ est défini comme l'angle de rotation de la roue par rapport au bogie. On a $V_R=-\vectv{I_1}{\text{Roue}}{\text{Bogie}} \cdot\vect{x_0}$ $=-\left(\vectv{G_1}{\text{Roue}}{\text{Bogie}} +\vect{I_1G_1} \wedge \vecto{\text{Roue}}{\text{Bogie}}\right)\cdot\vect{x_0}$
+$=-\left(r\vect{Y_0} \wedge \dot{\beta}\vect{Z_0}\right)\cdot\vect{x_0}$
+$=-r \dot{\beta}$.
+
+On a donc $rF_r -rf(\nu)Mg = - I\dfrac{\dot{V}_R}{r}$. Par ailleurs, on a $\nu = 1- \dfrac{V_R}{V_T}$; donc 
+$ V_R= V_T-\nu V_T$. En dérivant $ \dot{V}_R= \dot{V}_T-\dot{\nu} V_T-\nu \dot{V_T}$ 
+$= \dot{V}_T \left(1-\nu \right) -\dot{\nu} V_T$. De plus, $-f(\nu) g = \dot{V}_T$; donc $ \dot{V}_R=-f(\nu) g \left(1-\nu \right) -\dot{\nu} V_T$.
+
+\vspace{.5cm}
+
+Au final,  $rF_r -rf(\nu)Mg = - I\dfrac{\dot{V}_R}{r}$ $\Leftrightarrow rF_r -rf(\nu)Mg = - I\dfrac{-f(\nu) g \left(1-\nu \right) -\dot{\nu} V_T}{r}$.   
+
+
+$\Leftrightarrow r^2F_r -r^2f(\nu)Mg = If(\nu) g \left(1-\nu \right) +I\dot{\nu} V_T$
+
+$\Leftrightarrow I\dot{\nu} V_T =      -r^2f(\nu)Mg - If(\nu) g +  If(\nu) g \nu  + r^2F_r$
+
+$\Leftrightarrow \dot{\nu}=-\dfrac{gf(\nu)}{IV_T}\left(r^2M +I \right) +  \dfrac{f(\nu) g}{V_T} \nu  + \dfrac{r^2F_r}{IV_T}$
+
+   
+
+%
+% $\Leftrightarrow r^2F_r -r^2f(\nu)Mg = - I\dot{V}_T+ I\dot{\nu} V_T+ I\nu \dot{V_T}$
+%
+% $\Leftrightarrow I\dot{\nu} V_T = r^2F_r -r^2f(\nu)Mg + I\dot{V}_T - I\nu \dot{V_T} $
+% 
+% $\Leftrightarrow I\dot{\nu} V_T =           - I\nu \dot{V_T}     +  r^2F_r          -r^2f(\nu)Mg + I\dot{V}_T  $
+% 
+%  $\Leftrightarrow  \dot{\nu}  =   \dfrac{\dot{V_T} }{ V_T} - \dfrac{r^2f(\nu)Mg}{I V_T}  - \dfrac{ \dot{V_T}}{ V_T}\nu     +  \dfrac{r^2}{I V_T} F_r    $
+% 
+
