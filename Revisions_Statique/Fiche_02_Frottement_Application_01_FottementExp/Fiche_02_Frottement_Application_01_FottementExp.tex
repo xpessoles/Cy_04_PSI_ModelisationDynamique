@@ -1,0 +1,188 @@
+%%%% Paramétrage du TD %%%%
+\def\xxactivite{Révisions \ifprof -- Corrigé \else \fi} % \normalsize \vspace{-.4cm}
+\def\xxauteur{\textsl{Xavier Pessoles}}
+\def\xxnumchapitre{ Révisions 2\vspace{.2cm}}
+\def\xxchapitre{\hspace{.12cm} Modélisation du frottement}
+\def\xxonglet{\textsf{Rév -- Stat}}
+\def\xxactivite{\ifcolle Colle \else TD 01\fi }
+\def\xxauteur{\textsl{Xavier Pessoles}}
+
+\def\xxpied{%
+Révision statique -- Frottement sec\\
+Fiche 1 -- \xxactivite%
+}
+
+\def\xxtitreexo{Modèle du frottement exponentiel -- Poulie-courroie  \ifnormal $\star$ \else \fi \ifdifficile $\star\star$ \else \fi \iftdifficile $\star\star\star$ \else \fi}
+\def\xxsourceexo{\hspace{.2cm} \footnotesize{Lycée Mistral Avignon}}
+
+\def\xxcompetences{%
+\textsl{%
+\textbf{Savoirs et compétences :}\\} \vspace{-.5cm}
+\begin{itemize}
+\item \textit{Res2.C18} : principe fondamental de la statique:
+\item \textit{Res2.C19} : équilibre d’un solide, d’un ensemble de solides;
+\item \textit{Res2.C20} : théorème des actions réciproques.
+\end{itemize}
+}
+
+\def\xxauteur{\textsl{Xavier Pessoles}}
+
+
+\def\xxfigures{
+%\includegraphics[width=.5\textwidth]{fig_00}
+}%figues de la page de garde
+
+
+\iflivret
+\input{../../style/new_pagegarde}
+\else
+\input{../../style/new_pagegarde}
+\fi
+\setlength{\columnseprule}{.1pt}
+
+\pagestyle{fancy}
+\thispagestyle{plain}
+
+\vspace{5cm}
+
+\def\columnseprulecolor{\color{ocre}}
+\setlength{\columnseprule}{0.4pt} 
+
+\setcounter{exo}{0}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\ifprof
+\begin{multicols}{2}
+\else
+\begin{multicols}{2}
+\fi
+\section*{Mise en situation}
+\ifprof
+\else
+\fi
+
+Le problème du frottement d'une corde, d'une sangle ou d'une courroie sur une poulie ou
+un tambour est un problème classique. 
+\begin{obj}
+Modéliser l'évolution de la tension dans un câble en fonction de l'angle d'enroulement sur une poulie. 
+\end{obj}
+
+On note $f$ le coefficient de frottement entre le câble et la poulie. 
+\begin{center}
+\includegraphics[width=\linewidth]{fig_01}
+%\textit{}
+\end{center}
+
+On considère que le câble est enroulé d'un angle $\alpha$ autour de la poulie. Le câble est à la limite du glissement sous l'action des deux brins $\vect{T_1}$ et $\vect{T_2}$. Soit $M(\theta)$ un point de l'enroulement. 
+
+\subparagraph{}\textit{Après avoir isolé une tranche élémentaire de câble en $M(\theta)$ de largeur $\dd \theta$, réaliser un bilan des actions mécaniques extérieures. }
+\ifprof
+\begin{corrige}
+BAME :
+\begin{itemize}
+\item action de tension du câble 1 $\vect{F}\left(\theta+\dfrac{\dd \theta}{2}\right)$;
+\item action de tension du câble 2 $\vect{F}\left(\theta-\dfrac{\dd \theta}{2}\right)$;
+\item action de la poulie sur le câble : $N\vect{u_r}+T\vect{u_{\theta}}$ avec $T=\pm fN$.
+\end{itemize}
+
+\end{corrige}
+\else
+\fi
+
+
+\subparagraph{}\textit{Appliquer le théorème en résultante statique en projection dans la base $\left( \vect{u_r}, \vect{u_{\theta}}\right)$.}
+\ifprof
+\begin{corrige}
+L'application du TRS à la tranche de câble, on a $\vect{F}\left(\theta+\dfrac{\dd \theta}{2}\right) + \vect{F}\left(\theta-\dfrac{\dd \theta}{2}\right) + N\vect{u_r}+T\vect{u_{\theta}} = \vect{0}$.
+
+En projetant dans $\left( \vect{u_r}, \vect{u_{\theta}}\right)$ on a :
+ 
+$\left\{ 
+\begin{array}{l}
+-F\left(\theta+\dfrac{\dd \theta}{2}\right)  \sin\left(\dfrac{\dd \theta}{2}\right)  -F\left(\theta-\dfrac{\dd \theta}{2}\right) \sin\left(\dfrac{\dd \theta}{2}\right) + N= 0 \\
+F\left(\theta+\dfrac{\dd \theta}{2}\right) \cos\left(\dfrac{\dd \theta}{2}\right) -F\left(\theta-\dfrac{\dd \theta}{2}\right) \cos\left(\dfrac{\dd \theta}{2}\right) + T = 0
+\end{array}
+\right.$.
+
+\end{corrige}
+\else
+\fi
+
+
+\subparagraph{}\textit{En considérant que l'angle $\theta$ est petit, établir l'équation différentielle liant $f$ et $F(\theta)$ et $\theta$.}
+\ifprof
+\begin{corrige} ~\\
+En utilisant $\cos \dd \theta/2 \simeq 1$ et $\sin \dd \theta/2 \simeq \dd \theta/2$ :
+$\left\{ 
+\begin{array}{l}
+-F\left(\theta+\dfrac{\dd \theta}{2}\right)\dfrac{\dd \theta}{2} -F\left(\theta-\dfrac{\dd \theta}{2}\right) \dfrac{\dd \theta}{2} + N= 0 \\
+F\left(\theta+\dfrac{\dd \theta}{2}\right) -F\left(\theta-\dfrac{\dd \theta}{2}\right) + T = 0
+\end{array}
+\right.$.
+
+
+$
+\Leftrightarrow \left\{ 
+\begin{array}{l}
+-\left(F\left(\theta+\dfrac{\dd \theta}{2}\right) +F\left(\theta-\dfrac{\dd \theta}{2}\right)\right) \dfrac{\dd \theta}{2} + N= 0 \\
+F\left(\theta+\dfrac{\dd \theta}{2}\right) -F\left(\theta-\dfrac{\dd \theta}{2}\right) + T = 0
+\end{array}
+\right.$.
+
+De plus, en faisant un DL à l'ordre 2, $F\left(\theta+\dfrac{\dd \theta}{2}\right)\simeq  F(\theta)+\dfrac{\dd \theta}{2} \dfrac{\dd F(\theta)}{\dd \theta}$.
+On a donc : 
+$
+\left\{ 
+\begin{array}{l}
+-2 F\left(\theta\right) \dfrac{\dd \theta}{2} + N= 0 \\
+ \dd F(\theta)+ T = 0
+\end{array}
+\right.$.
+
+En utilisant le modèle de Coulomb, $T=\pm fN$
+
+ $ \dd F(\theta)\pm f \left( 2 F\left(\theta\right) \dfrac{\dd \theta}{2}\right) = 0$
+ $  \Leftrightarrow \dd F(\theta)\pm f  F\left(\theta\right) \dd \theta = 0$
+
+%
+%En utilisant le modèle de Coulomb, on a $T=fN$ et 
+%
+%$F\left(\theta+\dfrac{\dd \theta}{2}\right) -F\left(\theta-\dfrac{\dd \theta}{2}\right)  = -f \left(F\left(\theta+\dfrac{\dd \theta}{2}\right)\dfrac{\dd \theta}{2} +F\left(\theta-\dfrac{\dd \theta}{2}\right) \dfrac{\dd \theta}{2} \right)$.
+%
+%
+%$ \Leftrightarrow F\left(\theta+\dfrac{\dd \theta}{2}\right) -F\left(\theta-\dfrac{\dd \theta}{2}\right)  + f \left(F\left(\theta+\dfrac{\dd \theta}{2}\right)\dfrac{\dd \theta}{2} +F\left(\theta-\dfrac{\dd \theta}{2}\right) \dfrac{\dd \theta}{2} \right) = 0$.
+%
+%$ \Leftrightarrow F\left(\theta+\dfrac{\dd \theta}{2}\right) \left(1 +f\dfrac{\dd \theta}{2} \right) -F\left(\theta-\dfrac{\dd \theta}{2}\right) \left(1+ f\dfrac{\dd \theta}{2} \right) = 0$.
+%
+%
+%$ \Leftrightarrow  \left(1 +f\dfrac{\dd \theta}{2} \right)\left(F\left(\theta+\dfrac{\dd \theta}{2}\right) - F\left(\theta-\dfrac{\dd \theta}{2}\right) \right)  = 0$.
+%
+%En réutilisant l'hypothèse des petits angles, on a : 
+%$ \Leftrightarrow  \left(1 +f\dfrac{\dd \theta}{2} \right)\left(F\left(\theta\right) - F\left(\theta\right) \right)  = 0$.
+
+\end{corrige}
+\else
+\fi
+
+\subparagraph{}\textit{Résoudre l'équation différentielle pour établir la relation entre $T_1$, $T_2$, $f$ et $\alpha$.}
+\ifprof
+\begin{corrige}
+On a :
+ $ \dd F(\theta)= \pm  F\left(\theta\right) \dd \theta $
+  $ \Leftrightarrow \dfrac{ \dd F(\theta)}{ F\left(\theta\right)}= \pm \dd \theta $
+  
+  En intégrant l'équation précédente, on a :
+  $\left[ \ln F \right] _{T_2}^{T_1} =\pm f \left[ \theta \right] _{0}^{\alpha}$
+  Soit $\ln T_2 - \ln T_1 = -f\alpha$ $\Leftrightarrow \ln \dfrac{T_2}{T_1} = \pm f\alpha$ et $T_2 = T_1 \text{e}^{\pm f\alpha}$.
+  
+(Le signe dépend du sens de glissement. )
+\end{corrige}
+\else
+\fi
+
+\ifprof
+\end{multicols}
+\else
+\end{multicols}
+\fi
