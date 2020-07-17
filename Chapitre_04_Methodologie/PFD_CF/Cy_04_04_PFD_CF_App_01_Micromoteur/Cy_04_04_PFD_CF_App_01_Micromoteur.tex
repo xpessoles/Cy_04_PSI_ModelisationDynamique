@@ -60,6 +60,8 @@
 \fi
 
 \subsection*{Mise en situation}
+\ifprof
+\else
 Les figures et le schéma ci-dessous représentent un micromoteur à combustion interne de modèle réduit. Du point de vue cinématique, il est basé sur un système bielle manivelle \textbf{(2,1)}, associé à un piston \textbf{(3)}, animé d’un mouvement de translation rectiligne alternatif. 
 \ifprof
 \begin{center}
@@ -79,6 +81,7 @@ On note :
 \end{itemize}
 
 On note $C_m \vect{z_0}$ le couple délivré par le moteur et $F_e \vect{y_0}$ la force exercée sur le piston suite à l'explosion du mélange air -- carburant. On néglige les effets de la pesanteur.
+\fi
 
 \subparagraph{}
 \textit{Exprimer la relation liant la vitesse de rotation $\omega_{10}$ du vilebrequin \textbf{(1)} et la vitesse du piston \textbf{(3)}, notée $\dot{\lambda}=V_{3/0}$.}% Déterminer la vitesse et l'accélération du centre d'inertie de la bielle \textbf{(2)} par rapport à \textbf{(0)}.}
@@ -111,9 +114,13 @@ $ \Rightarrow \lambda_3 = \sqrt{L_2^2 - e^2\cos^2 \theta_1}+e\sin \theta_1$.
 \else
 \fi
 
+\ifprof
+
+\else
 Dans la perspective d’une étude dynamique, on se propose d’évaluer les caractéristiques de masse et inertie des trois pièces mobiles, ainsi que leurs propriétés cinétiques.
 
-On note $\inertie{H}{1}=\matinertie{A_1}{B_1}{C_1}{-D_1}{-E_1}{-F_1}{\repere{H}{x_1}{y_1}{z_1}}$ la matrice d'inertie en $H$ de l'ensemble \{vilebrequin, hélice\} repéré \textbf{(1)}. 
+On note $\inertie{H}{1}=\matinertie{A_1}{B_1}{C_1}{-D_1}{-E_1}{-F_1}{\repere{H}{x_1}{y_1}{z_1}}$ la matrice d'inertie en $H$ de l'ensemble \{vilebrequin, hélice\} repéré~\textbf{(1)}. 
+\fi
 
 \subparagraph{}
 \textit{En considérant que seul le plan $\left(H,\vect{x_1},\vect{z_1}\right)$ est le plan de symétrie, indiquer quelle(s) simplification(s) cela apporte à cette matrice d'inertie.} 
