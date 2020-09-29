@@ -102,6 +102,15 @@ On rencontre principalement deux types de structures : des chaînes fermées, ou
 
 On commence toujours, \large{toujours}, \Large{toujours}, \LARGE{toujours}, \huge{toujours} \normalsize par isoler les ensembles soumis à 2 glisseurs. Cela permet de conclure que, d'après le PFS (et le principe des actions réciproques qui en découle) les actions mécaniques agissant sur ce solide ont même direction, même norme et sens opposé. Ce qui supprime des inconnues.
 
+\textbf{Mais qu'est-ce qu'un glisseur ?}
+
+Un glisseur est un torseur dont-il existe un point tel que le moment est nul. Ainsi, le torseur statique d'une lisaison rotule est un glisseur. Le torseur statique d'une liaison pivot n'est pas un glisseur. Lorsque le problème est plan est une liaison pivot à son axe perpendiculaire au plan, c'est un glisseur. 
+
+Le torseur cinématique d'une glissière est un glisseur... alors que le torseur statique d'une liaison glissière ne l'est pas... 
+
+\begin{rem}
+Pour démontrer qu'un torseur est un glisseur, on peut par exemple montrer que son automoent est nul. L'automoment est le produit de la résultante du moment d'un torseur. Il est identique en tout point. C'est un invariant du torseur (comme la résultante).
+\end{rem}
 
 \begin{minipage}[c]{.4\linewidth}
 \begin{center}
@@ -163,8 +172,6 @@ $\axe{B}{x}$, on isolera \textbf{\{3 et 4\}} et on réalisera un théorème du m
 
 
 \subsection{Il y a plus qu'à ...}
-
-\vspace{2cm}
 
 Petite remarque pour finir : le produit mixte. Lorsqu'on applique un TMS suivant une direction, le produit mixte peut être un bon outil :
 $\vectm{B}{1}{2}\cdot \vect{z} = \left( \vectm{B}{1}{2} + \vect{BA}\wedge \vectf{1}{2}\right)\cdot \vect{z}$
