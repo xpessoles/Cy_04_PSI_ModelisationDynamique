@@ -65,7 +65,7 @@ On s'intéresse à un pendule guidé par une glissière. On fait l'hypothèse qu
 \includegraphics[width=.65\linewidth]{fig_01}
 \end{center}
 \begin{itemize}
-\item On note 1 la pièce de masse $M_1$ et de centre de gravité $G_1$.
+\item On note 1 la pièce de masse $M_1$ et de centre de gravité $G_1$. $\vect{OA}=\lambda(t)\vect{x_0}-h\vect{y_0}$.
 \item On note 2 la pièce de masse $M_2$ et de centre de gravité $G$ et de matrice d'inertie $\inertie{1}{G}= \matinertie{A}{B}{C}{-D}{-E}{-F}{\rep{1}}$. On a $\vect{AG}=L\vect{x_2}$
 \end{itemize}
 
@@ -75,6 +75,22 @@ On s'intéresse à un pendule guidé par une glissière. On fait l'hypothèse qu
 \textit{Déterminer $\vectmd{A}{2}{0}$ en utilisant la formule de changement de point (par rapport à $G$). }
 \ifprof
 \begin{corrige}
+~\\
+
+\textbf{Cinématique}
+
+On a $\vectv{G}{2}{0}=\derivvect{\vect{OG}}{\rep{0}} $ 
+$=\derivvect{\lambda\vect{x_0}-h\vect{y_0}+L\vect{x_2}}{\rep{0}}$ 
+$=\dot{\lambda}(t)\vect{x_0}+L\dot{\theta}\vect{y_2}$.
+
+
+
+On a $\vectg{G}{2}{0}=\derivvect{\vectv{G}{2}{0}}{\rep{0}} $ 
+$=\ddot{\lambda}(t)\vect{x_0}+L\ddot{\theta}\vect{y_2}-L\dot{\theta}^2\vect{x_2}$.
+
+\textbf{Cinétique \& dynamique}
+
+
 On a $\vectmd{G}{2}{0} = \derivvect{\vectmc{G}{2}{0}}{\rep{0}} $
 \end{corrige}
 \else
