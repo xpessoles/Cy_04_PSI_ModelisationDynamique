@@ -1,52 +1,18 @@
-\documentclass[10pt,fleqn]{article} % Default font size and left-justified equations
-\usepackage[%
-    pdftitle={Résolutions de problèmes de statique : PFS 3D},
-    pdfauthor={Xavier Pessoles}]{hyperref}
-
-\input{style/new_style}
-\input{style/macros_SII}
-\usepackage{multicol}
-\usepackage{siunitx}
-%\usepackage{picins}
-\fichetrue
-%\fichefalse
-
-\proftrue
-\proffalse
-
-\tdtrue
-%\tdfalse
-
-\courstrue
-\coursfalse
-
-% -------------------------------------
-% Déclaration des titres
-% -------------------------------------
-
-\def\discipline{Sciences \\Industrielles de \\ l'Ingénieur}
-\def\xxtete{Sciences Industrielles de l'Ingénieur}
-
-
-\def\classe{\textsf{PTSI}}
-\def\xxnumpartie{Rév -- Stat}
-\def\xxpartie{Modéliser le comportement statique des systèmes mécaniques}
-
-\def\xxnumchapitre{Révision 1 \vspace{.2cm}}
-\def\xxchapitre{\hspace{.12cm} Résolution des problèmes de statique}
-
-\def\xxposongletx{2}
-\def\xxposonglettext{1.45}
-\def\xxposonglety{19}%16
-
-\def\xxonglet{\textsf{Rév -- Stat}}
-
-\def\xxactivite{Applications}
+%%%% Paramétrage du TD %%%%
+\def\xxactivite{Révisions \ifprof -- Corrigé \else \fi} % \normalsize \vspace{-.4cm}
 \def\xxauteur{\textsl{Xavier Pessoles}}
 
 
-\def\xxtitreexo{Exercice d'application}
-\def\xxsourceexo{\hspace{.2cm} \footnotesize{Xavier Pessoles}}
+\def\xxnumchapitre{Révision 1 \vspace{.2cm}}
+\def\xxchapitre{\hspace{.12cm} Résolution des problèmes de statique -- Modélisation des actions mécaniques}
+\def\xxonglet{\textsf{Rév -- Stat}}
+\def\xxactivite{Application 01}
+\def\xxauteur{\textsl{Xavier Pessoles}}
+
+\def\xxpied{%
+Révision statique -- Modélisation des actions mécaniques\\
+Fiche 1 -- \xxactivite%
+}
 
 \def\xxcompetences{%
 \textsl{%
@@ -55,36 +21,40 @@
 \footnotesize
 \begin{itemize}
 \item \textit{Mod2.C20} : modélisation locale, actions à distance et de contact.
-\item \textit{Res1.C2.SF1} : Proposer une méthode permettant la détermination d’une inconnue de liaison.
-\item \textit{Res2.C18} : Principe fondamental de la statique.
-\item \textit{Res2.C20} : Théorème des actions réciproques.
+\item \textit{Res1.C2.SF1} : proposer une méthode permettant la détermination d’une inconnue de liaison.
+\item \textit{Res2.C18} : principe fondamental de la statique.
+\item \textit{Res2.C20} : théorème des actions réciproques.
 \end{itemize}
 \normalsize
 }}
 
+\def\xxauteur{\textsl{Xavier Pessoles}}
+
+\def\xxtitreexo{Exercice d'application}
+\def\xxsourceexo{\hspace{.2cm} \footnotesize{Xavier Pessoles}}
+
 \def\xxfigures{
-%\includegraphics[width=.75\textwidth]{images/fig_00}
+%\includegraphics[width=.55\textwidth]{fig_00}
 }%figues de la page de garde
 
-\def\xxpied{%
-Révision statique \\%-- Résolution des problèmes de statique plane\\
-Fiche 1 -- \xxactivite%
-}
 
-\setcounter{secnumdepth}{5}
-%---------------------------------------------------------------------------
+\iflivret
+\input{../../style/new_pagegarde}
+\else
+\input{../../style/new_pagegarde}
+\fi
+\setlength{\columnseprule}{.1pt}
 
-
-\begin{document}
-%\chapterimage{png/Fond_Cin}
-\input{style/new_pagegarde}
-\vspace{4.5cm}
 \pagestyle{fancy}
 \thispagestyle{plain}
 
+\vspace{5cm}
 
 \def\columnseprulecolor{\color{ocre}}
 \setlength{\columnseprule}{0.4pt} 
+
+\setcounter{exo}{0}
+
 
 \ifprof
 \begin{multicols}{2}
@@ -100,7 +70,7 @@ Fiche 1 -- \xxactivite%
 Un coussinet (ou bague) est un élément technologique permettant de réaliser des liaisons pivot. Suivant les cas d'utilisation d'un système, un chargement sur l'arbre est transmis au coussinet. 
 
 \begin{center}
-\includegraphics[width=\linewidth]{images/fig_01}
+\includegraphics[width=\linewidth]{fig_01}
 %\textit{}
 \end{center}
 
@@ -109,7 +79,7 @@ On donne le modèle suivant où le champ de pression de l'arbre sur le coussinet
 On note $R=\dfrac{D}{2}$ le rayon du coussinet. 
 
 \begin{center}
-\includegraphics[width=.4\linewidth]{images/fig_02}
+\includegraphics[width=.4\linewidth]{fig_02}
 %\textit{}
 \end{center}
 \fi
@@ -220,7 +190,7 @@ $ =   \dfrac{1}{4}p_0 D L {\pi} $.
 Lors de la démolition d'une partie de la gare de Lyon Part-Dieu (en 2018), des étais ont du être posés afin de soutenir la structure supérieure. 
 
 \begin{center}
-\includegraphics[width=\linewidth]{images/fig_03}
+\includegraphics[width=\linewidth]{fig_03}
 %\textit{}
 \end{center}
 
@@ -229,7 +199,7 @@ Dans le but de dimensionner les étais, il est nécessaire de déterminer les ac
 Pour cela, on utilise la modélisation suivante. 
 
 \begin{center}
-\includegraphics[width=\linewidth]{images/fig_04}
+\includegraphics[width=\linewidth]{fig_04}
 %\textit{}
 \end{center}
 
@@ -240,7 +210,7 @@ On a $\vect{AB}=a \vect{x}$,  $\vect{BD}=b \vect{x}$ et  $\vect{CB}=L \vect{x_1}
 \ifprof
 \begin{corrige}
 \begin{center}
-\includegraphics[width=\linewidth]{images/cor_01}
+\includegraphics[width=\linewidth]{cor_01}
 %\textit{}
 \end{center}
 
@@ -334,19 +304,3 @@ Y_{02} = -\dfrac{b}{a}F  \\
 \else
 \end{multicols}
 \fi
-
-
-\end{document}
-
-\subparagraph{}\textit{}
-\ifprof
-\begin{corrige}
-\end{corrige}
-\else
-\fi
-
-\begin{center}
-\includegraphics[width=\linewidth]{images/img_04}
-%\textit{}
-\end{center}
-
