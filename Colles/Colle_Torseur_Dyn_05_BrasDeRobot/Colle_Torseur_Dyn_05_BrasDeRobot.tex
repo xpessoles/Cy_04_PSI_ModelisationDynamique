@@ -1,0 +1,125 @@
+%%%% Paramétrage du TD %%%%
+\def\xxactivite{Activation 5 \ifprof -- Corrigé \else \fi} % \normalsize \vspace{-.4cm}
+\def\xxauteur{\textsl{Pôle Chateaubriand -- Joliot-Curie}}
+
+\def\xxnumchapitre{Chapitre 3 \vspace{.2cm}}
+\def\xxchapitre{\hspace{.12cm} Application du Principe Fondamental de la Dynamique}
+
+\def\xxtitreexo{Pendule}
+\def\xxsourceexo{\hspace{.2cm} \footnotesize{Bras de robot}}
+%\def\xxauteur{\textsl{Xavier Pessoles}}
+
+
+\def\xxcompetences{%
+\vspace{-.5cm}
+\textsl{%
+\textbf{Savoirs et compétences :}
+\begin{itemize}[label=\ding{112},font=\color{ocre}] 
+%\item \textit{Mod2.C16} : torseur cinétique
+%\item \textit{Mod2.C17} : torseur dynamique
+\item \textit{Mod2.C17.SF1} : déterminer le torseur dynamique d’un solide, ou d’un ensemble de solides, par rapport à un autre solide
+%\item \textit{Mod2.C15} : matrice d'inertie
+\item \textit{Res1.C2} : principe fondamental de la dynamique
+\item \textit{Res1.C1.SF1} : proposer une démarche permettant la détermination de la loi de mouvement
+%\item \textit{Res1.C2.SF1} : proposer une méthode permettant la détermination d’une inconnue de liaison
+\end{itemize}
+}}
+\def\xxfigures{
+%\includegraphics[width=.5\linewidth]{fig_00}
+}%figues de la page de garde
+
+\iflivret
+\input{../../style/new_pagegarde}
+\else
+\input{../../style/new_pagegarde}
+\fi
+\setlength{\columnseprule}{.1pt}
+
+\pagestyle{fancy}
+\thispagestyle{plain}
+
+\ifprof
+\vspace{5.1cm}
+\else
+\vspace{5.2cm}
+\fi
+
+\def\columnseprulecolor{\color{ocre}}
+\setlength{\columnseprule}{0.4pt} 
+
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\setcounter{exo}{0}
+
+
+
+\ifprof
+\else
+\begin{multicols}{2}
+\fi
+
+\subsection*{Mise en situation}
+On s’intéresse à un robot oscillant dans le plan vertical $\plan{O}{x}{y}$ du repère fixe $\rep{0}=\repere{O}{x}{y}{z}$
+associé au bâti 0.
+Ce robot est constitué de deux bras cylindriques 1 et 2 identiques homogènes de masse $m$, de longueur
+$2\times a$ et de section négligeable.
+
+On note $\rep{1}=\repere{0}{x_1}{y_1}{z}$ un repère associé à 1 tel que $\vect{OA}=2a\vect{x_1}$ et on pose
+$\alpha=\angl{x}{x_1}$. 
+
+On note $\rep{2}=\repere{0}{x_2}{y_2}{z}$ un repère associé à 2 tel que $\vect{AB}=2a\vect{x_2}$ et on pose
+$\beta=\angl{x}{x_2}$. 
+
+On note $G$ le centre d’inertie du bras 2 situé au milieu du segment $AB$.
+
+\subsection*{Travail à réaliser}
+
+\subparagraph{}
+\textit{Déterminer l'expression de la matrice d'inertie du bras 2 au point $G$ dans $\mathcal{B}_2$.}
+\ifprof
+\begin{corrige}
+~\\
+\end{corrige}
+\else
+\fi
+
+
+
+\subparagraph{}
+\textit{Déterminer au point $A$ les éléments de réduction du torseur dynamique $\torseurdyn{2}{0}$.}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+\subparagraph{}
+\textit{Déterminer au point $O$ les éléments de réduction du torseur dynamique $\torseurdyn{1+2}{0}$.}
+\ifprof
+\begin{corrige}
+\end{corrige}
+\else
+\fi
+
+
+
+\ifprof
+
+\begin{enumerate}
+\item $\inertie{G}{2}=\matinertie{0}{m\dfrac{a^2}{3}}{m\dfrac{a^2}{3}}{0}{0}{0}{\mathcal{B}_2}{A}$.
+\item  $\torseurdyn{2}{0} = 
+\torseurl{ma\left(\ddot{\beta}\vect{y_2}-\dot{\beta}^2\vect{x_2} \right)+2ma\left( \ddot{\alpha}\vect{y_1}-\dot{\alpha}^2 \vect{x_1} \right)}{2ma^2\left( \dfrac{2}{3}\ddot{\beta} + \ddot{\alpha} \cos\left(\beta-\alpha\right)+\dot{\alpha}^2  \sin\left(\beta-\alpha\right) \right)\vect{z}}{A}$
+\item  $\torseurdyn{1+2}{0} = 
+\torseurl{ma\left(\ddot{\beta}\vect{y_2}-\dot{\beta}^2\vect{x_2} \right)+3ma\left( \ddot{\alpha}\vect{y_1}-\dot{\alpha}^2 \vect{x_1} \right)}{2ma^2\left( \dfrac{2}{3}\ddot{\beta} +\dfrac{8}{3}\ddot{\alpha} + \left(\ddot{\alpha} +\ddot{\beta} \right)\cos\left(\beta-\alpha\right)+\left(\dot{\alpha}^2 -\dot{\beta}^2  \right)\sin\left(\beta-\alpha\right) \right)\vect{z}}{O}$
+
+\end{enumerate}
+
+
+\else
+\fi
+
+\ifprof
+\else
+\end{multicols}
+\fi
+
