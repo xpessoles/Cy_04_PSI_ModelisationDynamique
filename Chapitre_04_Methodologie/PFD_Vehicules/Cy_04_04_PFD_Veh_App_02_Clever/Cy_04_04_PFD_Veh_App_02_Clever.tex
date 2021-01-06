@@ -1,5 +1,5 @@
 %%%% Paramétrage du TD %%%%
-\def\xxactivite{\ifcolle Colle \else Application 2 \fi  \ifprof -- Corrigé \else \fi} % \normalsize \vspace{-.4cm}
+\def\xxactivite{\ifcolle Colle \else TD 2 \fi  \ifprof -- Corrigé \else \fi} % \normalsize \vspace{-.4cm}
 \def\xxauteur{\textsl{Xavier Pessoles}}
 
 \def\xxnumchapitre{Chapitre 4 \vspace{.2cm}}
@@ -28,7 +28,7 @@
 \end{itemize}
 }}
 \def\xxfigures{
-\includegraphics[width=.55\linewidth]{fig_00}
+\includegraphics[width=.5\linewidth]{fig_00}
 }%figues de la page de garde
 
 
@@ -64,15 +64,17 @@
 
 
 
-Le Clever, présenté sur la \autoref{fig_01}, est un démonstrateur technologique développé par un tissu d'industriels européens — dont BMW, l'Institut Français du Pétrole (IFP) et de nombreux équipementiers — grâce au financement de l'Union Européenne. Clever est la contraction de Compact Low Emission VEhiclefor uRban tRansportation (véhicule compacte à faibles émissions pour le transport urbain) car, avec une consommation de seulement \SI{2,5}{L/100km}, il s'annonce très écologique. Les premiers prototypes ont vu le jour en 2006. Ce type de véhicule pourrait être un des prochains commercialisés par BMW si le prix de vente peut être ramené sous la barre des \SI{10000}{euros}.
+Le Clever%, présenté sur la \autoref{fig_01}, 
+est un démonstrateur technologique développé par un tissu d'industriels européens.% — dont BMW, l'Institut Français du Pétrole (IFP) et de nombreux équipementiers — grâce au financement de l'Union Européenne. Clever est la contraction de Compact Low Emission VEhiclefor uRban tRansportation (véhicule compacte à faibles émissions pour le transport urbain) car, avec une consommation de seulement \SI{2,5}{L/100km}, il s'annonce très écologique. Les premiers prototypes ont vu le jour en 2006. Ce type de véhicule pourrait être un des prochains commercialisés par BMW si le prix de vente peut être ramené sous la barre des \SI{10000}{euros}.
 
-\begin{center}
-\includegraphics[width=0.5\linewidth]{fig_01}
+%\begin{center}
+%\includegraphics[width=0.5\linewidth]{fig_01}
+%
+%\textit{Véhicule à trois roues Clever \label{fig_01}}
+%\end{center}
 
-\textit{Véhicule à trois roues Clever}
-\end{center}
-
-La \autoref{fig_02} présente un diagramme partiel des interacteurs, issu de l'analyse fonctionnelle du besoin dans la phase d'utilisation normale (véhicule Clever utilisé pour se déplacer). Le Tableau \autoref{tab_01} décrit les fonctions de service correspondantes. À l'issue de l'analyse fonctionnelle technique, les solutions qui ont été retenues sont les suivantes : le Clever se présente comme un véhicule à trois roues pouvant embarquer deux personnes assises en tandem. Il adopte une architecture pendulaire, c'est-à-dire qu'il se penche dans les virages (cf. \autoref{fig_03}). Le déplacement du centre de gravité qui en résulte lui confère une grande stabilité malgré une faible largeur du véhicule (légèrement inférieure à \SI{1}{m}, contre 60 à \SI{75}{cm} pour une moto, et \SI{1,5}{m} pour une petite voiture). Cette étroitesse se veut une réponse aux problèmes d'encombrement dans les villes mais permet aussi une surface frontale moins importante que sur une voiture conventionnelle et donc des pertes aérodynamiques réduites. En outre, les sensations de conduite sont semblables à celle d'une moto mais avec un pilotage, à l'aide d'un volant, propre à un véhicule à 4 roues. Le moteur est un monocylindre à gaz naturel qui a été développé par l'IFP et dont les performances permettent d'atteindre une vitesse de pointe de $\SI{100}{km.h^{-1}}$ avec une accélération en phase avec les attentes pour un véhicule urbain.
+%La \autoref{fig_02} présente un diagramme partiel des interacteurs, issu de l'analyse fonctionnelle du besoin dans la phase d'utilisation normale (véhicule Clever utilisé pour se déplacer). Le Tableau \autoref{tab_01} décrit les fonctions de service correspondantes. À l'issue de l'analyse fonctionnelle technique, les solutions qui ont été retenues sont les suivantes : 
+Il se présente comme un véhicule à trois roues pouvant embarquer deux personnes assises en tandem. Il adopte une architecture pendulaire, c'est-à-dire qu'il se penche dans les virages (cf. \autoref{fig_03}). Le déplacement du centre de gravité qui en résulte lui confère une grande stabilité malgré une faible largeur du véhicule (légèrement inférieure à \SI{1}{m}, contre 60 à \SI{75}{cm} pour une moto, et \SI{1,5}{m} pour une petite voiture). Cette étroitesse se veut une réponse aux problèmes d'encombrement dans les villes mais permet aussi une surface frontale moins importante que sur une voiture conventionnelle et donc des pertes aérodynamiques réduites. En outre, les sensations de conduite sont semblables à celle d'une moto mais avec un pilotage, à l'aide d'un volant, propre à un véhicule à 4 roues. Le moteur est un monocylindre à gaz naturel qui a été développé par l'IFP et dont les performances permettent d'atteindre une vitesse de pointe de $\SI{100}{km.h^{-1}}$ avec une accélération en phase avec les attentes pour un véhicule urbain.
 
 \begin{center}
 \includegraphics[width=\linewidth]{fig_02}
@@ -210,6 +212,7 @@ On se place dans un cas où le rayon de courbure $R_C$ de la trajectoire du poin
 \begin{center}%[H]
 \centering
 \includegraphics[width=0.75\linewidth]{fig_1_2_all}
+
 \textit{Modélisation simplifiée du Clever en position inclinée}
 \label{fig_1_2}
 \end{center}
