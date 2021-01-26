@@ -12,6 +12,7 @@
 
 \newif\ifeleve
 \elevetrue
+%\elevefalse
 
 \def\xxYCartouche{-2.25cm}
 \def\xxYongletGarde{.9cm}
@@ -51,10 +52,9 @@
 
 
 \renewcommand{\chap}{Chapitre_04_Methodologie/PFD_CO}
-\ifeleve
-
-%%% Activation Moto
 \renewcommand{\td}{Cy_04_04_PFD_CO_App_01_MotoWheeling}
+\ifeleve
+%%% Activation Moto
 %% Sujet Normal par défaut
 \newpage
 \fichetrue \proffalse \tdtrue \coursfalse \normaltrue \difficilefalse \tdifficilefalse \collefalse
@@ -70,7 +70,7 @@
 
 
 
-% Application Vilebrequin
+% Application 
 \renewcommand{\td}{Cy_04_04_PFD_CO_App_02_BancVib}
 \ifeleve
 
@@ -117,9 +117,9 @@
 
 
 %% Sujet Chargement de cargo
+\renewcommand{\td}{Cy_04_04_PFD_CO_App_04_ChargementCargo}
 \newpage
 \ifeleve
-\renewcommand{\td}{Cy_04_04_PFD_CO_App_04_ChargementCargo}
 \fichetrue \proffalse \tdtrue \coursfalse \collefalse 
 \normaltrue \difficilefalse \tdifficilefalse
 \graphicspath{{../../style/png/}{../../\chap/\td/images/}}
@@ -136,7 +136,7 @@
 \fichetrue \proftrue \tdtrue \coursfalse \collefalse 
 \normalfalse \difficilefalse \tdifficiletrue
 \graphicspath{{../../style/png/}{../../\chap/\td/images/}}
-%\input{../../\chap/\td/\td.tex}
+\input{../../\chap/\td/\td.tex}
 \fi
 
 
@@ -149,10 +149,9 @@
 
 %% Sujet Segway
 \renewcommand{\chap}{Chapitre_04_Methodologie/PFD_Vehicules}
-
-\newpage
-\ifeleve
 \renewcommand{\td}{Cy_04_04_PFD_Veh_TD_01_Segway}
+\newpage
+\ifeleve
 \fichetrue \proffalse \tdtrue \coursfalse \collefalse 
 \normaltrue \difficilefalse \tdifficilefalse
 \graphicspath{{../../style/png/}{../../\chap/\td/images/}}
@@ -169,13 +168,13 @@
 \fichetrue \proftrue \tdtrue \coursfalse \collefalse 
 \normalfalse \difficilefalse \tdifficiletrue
 \graphicspath{{../../style/png/}{../../\chap/\td/images/}}
-%\input{../../\chap/\td/\td.tex}
+\input{../../\chap/\td/\td.tex}
 \fi
 
 
 \newpage
-\ifeleve
 \renewcommand{\td}{Cy_04_04_PFD_Veh_App_02_Clever}
+\ifeleve
 \fichetrue \proffalse \tdtrue \coursfalse \collefalse 
 \normaltrue \difficilefalse \tdifficilefalse
 \graphicspath{{../../style/png/}{../../\chap/\td/images/}}
@@ -196,8 +195,8 @@
 \fi
 
 \newpage
-\ifeleve
 \renewcommand{\td}{Cy_04_04_PFD_Veh_App_01_AscBateau}
+\ifeleve
 \fichetrue \proffalse \tdtrue \coursfalse \collefalse 
 \normaltrue \difficilefalse \tdifficilefalse
 \graphicspath{{../../style/png/}{../../\chap/\td/images/}}
@@ -214,7 +213,7 @@
 \fichetrue \proftrue \tdtrue \coursfalse \collefalse 
 \normalfalse \difficilefalse \tdifficiletrue
 \graphicspath{{../../style/png/}{../../\chap/\td/images/}}
-%\input{../../\chap/\td/\td.tex}
+\input{../../\chap/\td/\td.tex}
 \fi
 
 %
