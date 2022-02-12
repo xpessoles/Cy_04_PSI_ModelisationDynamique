@@ -95,11 +95,11 @@ L'inertie d'un solide peut se << caractériser >> par la résistance ressentie l
 Pour un mouvement de rotation, il est nécessaire de connaître la répartition de la masse autour de l'axe de rotation.
 
 \begin{exemple}~\\
-
-\begin{itemize}
-\item Couple pour faire tourner une hélice bipale, tripale, quadripale.
-\item Couple pour faire tourner une bille et effort pour faire translater une bille.
-\end{itemize}
+%
+%\begin{itemize}
+%\item Couple pour faire tourner une hélice bipale, tripale, quadripale.
+%\item Couple pour faire tourner une bille et effort pour faire translater une bille.
+%\end{itemize}
 \end{exemple}
 
 \subsection{Détermination de la masse d'un solide}
@@ -252,7 +252,7 @@ On appelle matrice d'inertie du solide $S$ en $O$, $\inertie{O}{S}$, l'image de 
 
 
 Recherchons la matrice de l'application linéaire. On note $\vect{u}=u_x\vect{i}+u_y\vect{j}+u_z\vect{k}$ .
-On a donc :
+Calculons :$\vect{OP}\wedge \left(\vect{u}\wedge \vect{OP}\right)$.
 $$
 \begin{bmatrix}
 x_p \\ y_p \\ z_p
@@ -671,12 +671,14 @@ $$
 \mathcal{P}(S_1 \leftrightarrow S_2/R_g)=\mathcal{P}(S_1 \rightarrow S_2/R_g)+\mathcal{P}(S_2 \rightarrow S_1/R_g).
 $$		
  
+ \end{defi}
 
+\begin{prop}
 La \textbf{puissance des actions mutuelles} entre $(S_1)$ et $(S_2)$ \textbf{est indépendante du repère $R$}.
 Ainsi,
 $$\mathcal{P}(S_1 \leftrightarrow S_2/R)=\mathcal{P}(S_1 \leftrightarrow S_2).
 $$
-\end{defi}
+\end{prop}
 
 
 \begin{rem}%
